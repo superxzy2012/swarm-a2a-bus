@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-21T13:13:39Z",
- "count": 11,
+ "source_head_at": "2026-10-21T22:18:52+08:00",
+ "count": 12,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -57,6 +57,14 @@
    "to": "xiaodou",
    "status": "",
    "ts": "20261021T120134"
+  },
+  {
+   "file": "task_T-20261021T141908-WINPC-XIAOKA_xiaoka_20261021T141908.json",
+   "task_id": "T-20261021T141908-WINPC-XIAOKA_xiaoka_20261021T141908",
+   "from": "xiaoka",
+   "to": "winpc",
+   "status": "",
+   "ts": "20261021T141908"
   },
   {
    "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
