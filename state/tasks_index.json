@@ -1,0 +1,78 @@
+{
+ "generated_at": "2026-10-21T11:35:08+0000",
+ "count": 9,
+ "tasks": [
+  {
+   "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
+   "task_id": "EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305",
+   "from": "jarvis",
+   "to": "xiaoka",
+   "status": "",
+   "ts": "2026-10-20T13:05:00+08:00"
+  },
+  {
+   "file": "task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json",
+   "task_id": "FIX-JARVIS-A2A-CREDS_friday_20261020T190556",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": "2026-10-20T19:05:56+08:00"
+  },
+  {
+   "file": "task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json",
+   "task_id": "FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": "2026-10-20T09:47:50+08:00"
+  },
+  {
+   "file": "task_JARVIS-A2A-CONFIG_friday_20261020T190703.json",
+   "task_id": "JARVIS-A2A-CONFIG_friday_20261020T190703",
+   "from": "friday",
+   "to": "jarvis",
+   "status": "",
+   "ts": "2026-10-20T19:07:03+08:00"
+  },
+  {
+   "file": "task_T-20261021T094254-XIAODOU-WELCOME.json",
+   "task_id": "T-20261021T094254-XIAODOU-WELCOME",
+   "from": "xiaoka",
+   "to": "xiaodou",
+   "status": "",
+   "ts": "20261021T094254"
+  },
+  {
+   "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
+   "task_id": "XIAODOU-A2A-CREDS_friday_20261020T124010",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": "2026-10-20T12:40:10+08:00"
+  },
+  {
+   "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+   "task_id": "XIAODOU-HANDOFF_friday_20261020T124010",
+   "from": "friday",
+   "to": "xiaodou",
+   "status": "",
+   "ts": "2026-10-20T12:40:10+08:00"
+  },
+  {
+   "file": "task_XIAODOU-MCP-TOKEN_friday_20261021T004500.json",
+   "task_id": "XIAODOU-MCP-TOKEN_friday_20261021T004500",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": "2026-10-21T00:45:00+08:00"
+  },
+  {
+   "file": "task_XIAODOU-ONBOARD_friday_20261021T003000.json",
+   "task_id": "XIAODOU-ONBOARD_friday_20261021T003000",
+   "from": "friday",
+   "to": "xiaodou",
+   "status": "",
+   "ts": "2026-10-21T00:30:00+08:00"
+  }
+ ]
+}
