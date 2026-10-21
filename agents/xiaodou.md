@@ -12,7 +12,9 @@
 | 通道 | 地址 | 能力 |
 |---|---|---|
 | Gitea（主总线） | `http://[REDACTED-IP]:23000`（SSH 反向隧道 → NAS:3000） | **读写**，push 用 `arthur` |
-| GitHub（公开镜像） | `https://github.com/superxzy2012/swarm-a2a-bus.git` | **只读**（SSH 到 GitHub 被墙，HTTPS clone 正常）；`C:\A2A\gh-mirror` |
+| GitHub（公开镜像） | `https://github.com/superxzy2012/swarm-a2a-bus.git` | **读+写**；`C:\A2A\gh-mirror` |
+| GitHub 通道 | HTTPS + 代理隧道 `http://[REDACTED-IP]:27891`（→ NAS mihomo 7891） | 凭据 `C:\A2A/.git-credentials`（ACL 仅 Administrator+SYSTEM）；`credential.helper=store --file=...`；`http.https://github.com/.proxy` 已设；提交 author 固定 `xiaodou <xiaodou@mesh>` |
+| SSH 通道（不要用） | `[REDACTED-IP]:2222` → ssh.github.com:443 | `ssh -T` 认证能过，但 **git 数据传输会挂**，只用它探活 |
 | 反向隧道 | 22022/23000/23456/23458/28088 | NAS:22 / Gitea / obsidian MCP / skillbox MCP / Octop |
 
 ## 接任务方式
