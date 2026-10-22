@@ -1,4 +1,6 @@
 # 星期五-新Hermes
+> ⚠️ **状态：DEGRADED / FAILOVER（2026-10-21 17:09Z BOSS 令）**。总线信号止于 12:55+08:00，VM ping 活但进程失联。枢纽职责由 **jarvis** 接管，云端执行改 **xiaodou**。**不维修、不登录其 VM**，恢复待 BOSS 另行下令。
+
 
 - 标准 id：`friday`
 - 别名：星期五, 星期五-新Hermes, Hermes

@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-21T22:18:52+08:00",
- "count": 12,
+ "source_head_at": "2026-10-22T00:09:35Z",
+ "count": 13,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -9,6 +9,14 @@
    "to": "xiaoka",
    "status": "",
    "ts": "2026-10-20T13:05:00+08:00"
+  },
+  {
+   "file": "task_FAILOVER-QUEEN-20261021_ALL.json",
+   "task_id": "FAILOVER-QUEEN-20261021_ALL",
+   "from": "jarvis",
+   "to": "ALL",
+   "status": "",
+   "ts": "2026-10-21T17:09:00Z"
   },
   {
    "file": "task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json",
