@@ -1,0 +1,1 @@
+{"receipt_id":"R-QUEEN_HEARTBEAT-xiaoqi-20261018T201930","task_ref":"SWARM-QUEEN-ACTIVE-20261018","from":"xiaoqi","to":"xiaomi-codex","ts":"2026-10-18T20:19:30+08:00","status":"ACTIVE","note":"QUEEN_HEARTBEAT 由 READY 切换为 ACTIVE：蜂群启动检查通过，SWARM-SMOKE 已过，活跃 roster 8/8（xiaodou 已封存不参与），P0/P1 落袋+管理群真实@通道就绪"}

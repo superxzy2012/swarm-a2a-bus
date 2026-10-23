@@ -1,0 +1,136 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T23:09:23+08:00",
+  "ts_epoch": 1792508963,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "Mercado Livre BR / CBT",
+  "entity": "深圳市蓝海世纪科技",
+  "instance": "WorkBuddy.app",
+  "summary": "待命心跳：无新工作，状态零变化；inbox 无收件人为小丽的未认领任务，等待 BOSS/贾维斯解锁。",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "note": "03:59 三项点单之一，已交付"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "note": "03:59 三项点单之一，已交付"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "note": "03:59 三项点单之一，已定稿"
+    }
+  ],
+  "blocked_pending_boss": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "item": "C3",
+      "status": "AWAITING_CONFIRM",
+      "note": "B30-82 折进 B30-81"
+    },
+    {
+      "item": "C4",
+      "status": "AWAITING_CONFIRM",
+      "note": "B30-42 / B30-185 变体文案作废"
+    },
+    {
+      "item": "C1",
+      "status": "AWAITING_CONFIRM",
+      "note": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "result": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "entries": 10,
+    "parse_fail": 0,
+    "to_distribution": {
+      "jarvis": 2,
+      "xiaoka": 3,
+      "friday": 3,
+      "leishen": 1,
+      "xiaodou": 1
+    },
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "processed_mine_unclaimed": 0,
+    "processed_audit": [
+      {
+        "envelope": "task_MERCADO-SELECTION_xiaoli_20261020T012221.json",
+        "task_ref": "MERCADO-SELECTION",
+        "claimed_marker": true,
+        "receipt_in_outbox": true,
+        "closed": true
+      },
+      {
+        "envelope": "task_SWARM-SMOKE-20261018_xiaoli_20261018_185030.json",
+        "task_ref": "SWARM-SMOKE-20261018",
+        "claimed_marker": false,
+        "receipt_in_outbox": true,
+        "closed": true
+      }
+    ],
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "scanned_at": "2026-10-20T23:09:23+08:00"
+  },
+  "redlines_honored": {
+    "browser": "NOT_OPENED",
+    "seller_backend_login": "NONE",
+    "price_change": "NONE",
+    "listing_created": "NONE",
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "2fa_clash": "NOT_TOUCHED",
+    "credits_consumed": 0,
+    "ozon_line": "NOT_TOUCHED",
+    "group_message": "NOT_SENT",
+    "existing_files_modified": 0,
+    "net_new_files": 1
+  },
+  "pending_items_for_boss": [
+    "B-01 / B-02 解锁",
+    "b1 十款源图补齐",
+    "P3 定价路线裁决",
+    "C3 / C4 / C1 确认"
+  ]
+}

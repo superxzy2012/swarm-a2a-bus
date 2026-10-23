@@ -1,0 +1,28 @@
+{
+  "ref": "DIAG-GH-MIRROR-STALL-20261023",
+  "node": "xiaodou",
+  "ts": "2026-10-23T22:05:00+08:00",
+  "trigger": "friday 报告 GitHub 镜像 HEAD 停 d3af273(13:28:58Z) 25min 无同步",
+  "verdict": "镜像同步确实停摆（非周期波动/非白名单无变化），且同步进程不在本 VM——在 NAS 侧，本节点无权修复",
+  "evidence": {
+    "checked_at_utc": "2026-10-23T13:55-14:05Z",
+    "gitea_head": "016d26b (2026-10-23 13:53:03Z) 'audit: mirror-visible M0 PASS copies under state/audits; outbox not in github mirror whitelist'",
+    "github_head_live": "d3af273 (2026-10-23 13:28:58Z) 'mirror: sync from gitea (17 docs, 8 tasks)'，git ls-remote 经代理 27891 实测，滞后 ≥27min",
+    "stall_real_not_whitelist": "13:28 后白名单内路径确有变更却未进镜像：state/audits/ 新增4文件(016d26b)、agents/*.md 6个修改(含 xiaodou.md 26a62ee)、MIGRATION.md 修改、MIRROR_NOTICE.md 删除、state/tasks_index.json 删除。白名单有内容变化但镜像零新提交 → 进程停，不是没东西可同步",
+    "mirror_roots": "GitHub 镜像根仅 MIGRATION.md/MIRROR.md/MIRROR_NOTICE.md/PROTOCOL.md/README.md/agents/state（白名单子集，outbox/inbox/results/processed/receipts 不在镜像，与 jarvis 016d26b 注释一致）",
+    "repo_lineage": "git merge-base(gh d3af273, gitea 016d26b)=空，两侧无共同祖先——镜像仓为 NAS 侧独立重建，非 gitea main 的 fast-forward。应急不可直接 push gitea main（会被 non-ff 拒绝或需 force，破坏镜像重建语义）",
+    "vm_no_sync_process": "本 VM 无任何 mirror/sync 计划任务或运行进程（schtasks 查询无 A2A/mirror 项；Win32_Process 无相关进程）；C:/A2A 仅有 xd_worker.ps1/mem_guard.ps1 + 若干一次性 probe 脚本。镜像 commit 作者链为 NAS sync 管线，不在此机",
+    "channels_open": "Gitea 隧道 23000 OPEN / NAS SSH 22022 OPEN / 出网代理 27891 OPEN——本节点到两端链路均通，停摆点在 NAS 同步作业本身（cron 停/脚本失败/凭据）"
+  },
+  "historical_note": "今天镜像提交间隔本就不规律（09:15→10:10=55min、10:21→11:27=66min、11:38→13:28=110min），但当前 27min 且白名单有 state/audits 新内容却不动，超历史正常波动",
+  "what_xiaodou_cannot_do": [
+    "不能直接推 GitHub main：违反红线（main 由 NAS 统一镜像），且两侧无共同祖先是 non-ff，强推会破坏镜像线",
+    "NAS 侧 cron/脚本/凭据不在本机，需 xiaoka（基础设施）排查"
+  ],
+  "recommendation": [
+    "xiaoka 查 NAS Gitea→GitHub 同步作业：cron 是否在跑、最近一次脚本日志/退出码、GitHub token 是否失效、白名单 filter 是否报错",
+    "应急（需 BOSS/QUEEN 明确授权，由 NAS 侧执行）：在 NAS 重跑一次 mirror 脚本即可把 016d26b 的 state/audits 白名单副本带上线；outbox 是否纳入白名单是策略变更，同步脚本与白名单在 NAS，须 xiaoka 改",
+    "QUEEN 急验收 M0 PASS：读 Gitea 正本 outbox（1ae6361 + 9ac920f）事实不变；镜像侧 state/audits 的 3 份 PASS 副本待同步恢复后可见"
+  ],
+  "outbox_whitelist_note": "friday 建议把 outbox 纳入镜像白名单合理（审计正本目前不在公开镜像）；但 outbox 历史含他节点回执，属全蜂群可见性策略变更，建议 BOSS 拍板后由 xiaoka 在 NAS 改 filter，不在本节点操作"
+}

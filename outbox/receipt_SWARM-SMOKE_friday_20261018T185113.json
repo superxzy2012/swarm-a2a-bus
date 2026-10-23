@@ -1,0 +1,9 @@
+{
+  "receipt_id": "SMOKE-friday-20261018T185113",
+  "task_ref": "SWARM-SMOKE-20261018",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T18:51:13+08:00",
+  "status": "PING",
+  "note": "星期五-新Hermes PING ✅ 云VM在线; A2A总线读写正常; SMOKE任务书到达后即领并出队(dedupe已生效)。QUEEN=READY等待9/9。"
+}

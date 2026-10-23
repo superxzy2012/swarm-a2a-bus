@@ -1,0 +1,1 @@
+{"audit_ref":"M0-ARCH","auditor":"jarvis","status":"PASS","ts":"20261023T132423Z","evidence":"subject commit 4052b05 author xiaodou@swarm.local；双主干/认证方向/端口表(22022/23000/23456/23458/28088/2222/27891)/频率(worker5min,镜像10min,feed2min)/禁止项齐备；Gitea分支独立API复核=['main']一致；禁ff-only静默skip对应10-21真实分叉事故。GitHub侧分支声明本节点不可达,留顾问侧复核。","detail_artifact":"receipts/audit_M0-ARCH_jarvis_20261023.json"}

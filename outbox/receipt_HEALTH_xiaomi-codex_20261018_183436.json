@@ -1,0 +1,87 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261018_183436",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-18T18:34:36+08:00",
+  "status": "WARN",
+  "note": "xiaodou 缺身份卡; xiaodou 无任何回执",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.33,
+        "last_status": "PING"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.06,
+        "last_status": "PING"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.91,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.35,
+        "last_status": "PING"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.35,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.31,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.36,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.75,
+        "last_status": "DONE"
+      },
+      "xiaodou": {
+        "state": "MISSING",
+        "card": false,
+        "age_hours": null
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 0.75
+    }
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "receipt_id": "R-OZON-DELIST-STOCK-AUDIT-xiaoli2-20261021T0140+0800",
+  "task_ref": "OZON-DELIST-STOCK-AUDIT-20261021",
+  "from": "xiaoli2",
+  "to": "friday",
+  "ts": "2026-10-21T01:40:00+08:00",
+  "status": "DONE",
+  "result_file": "/Users/lucas/WorkBuddy AI/ozon-ops/_p132_delist_stock_audit.json",
+  "note": "BOSS 要求检查『很多 listing 被下架或无库存』。实证结论：无大面积下架。后台 111/111 在售（approved/success/0错误/0归档），买家侧 109/111 SKU 直达商品卡；仅 2 款异常：DISH_INSERT-083 真无库存（后台0，买家显示已售罄，建议补30）；PET_BARRIER_NET-028 配送不覆盖默认地区（后台30件在仓，买家显示无法送达，需查物流计划）。三种误报机制已定位（part_stocks 键名/ SKUvs item_id 的 URL 规则/ 后台筛选视图）。"
+}

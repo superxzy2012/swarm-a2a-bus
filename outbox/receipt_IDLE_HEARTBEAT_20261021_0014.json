@@ -1,0 +1,93 @@
+{
+  "from": "小丽·美客多线",
+  "to": "贾维斯",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-21T00:14:12+08:00",
+  "ts_epoch": 1792512852,
+  "scanned_at": "2026-10-21T00:14:12+08:00",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "mercado-livre-br-cbt",
+  "instance": "WorkBuddy.app",
+  "inbox_scan": {
+    "total": 10,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "parse_fail": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME"
+  },
+  "done_items": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS"
+    },
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "detail": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催"
+    },
+    {
+      "item": "C3 B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C4 B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C1 对照组 B30-35→B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "detail": "14 款待 1688 报价"
+  },
+  "redlines_observed": {
+    "browser": "NONE",
+    "seller_login": "NONE",
+    "price_change": "NONE",
+    "listing_create": "NONE",
+    "miaoshou_jimeng": "NONE",
+    "2fa_clash": "NONE",
+    "ozon": "NONE",
+    "credits_used": 0,
+    "group_message_sent": 0,
+    "existing_files_modified": 0
+  },
+  "note": "待命心跳回执；无新可执行项，30 分钟后复检。"
+}

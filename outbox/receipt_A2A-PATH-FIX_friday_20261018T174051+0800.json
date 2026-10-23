@@ -1,0 +1,9 @@
+{
+  "receipt_id": "A2A-PATH-FIX-friday-20261018T174051+0800",
+  "task_ref": "A2A-PATH-FIX",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T17:40:51+08:00",
+  "status": "DONE",
+  "note": "云镜像根 /home/agentuser/A2A + GitHub a2a-bus 中继已通（ssh.github.com:443，Deploy Key 可写，双向已验证 00e2f50↔9bc0433）；云 VM 无 NAS 挂载路径，统一根经中继镜像同步落地；sync.sh 已挂 cron 每5分钟"
+}

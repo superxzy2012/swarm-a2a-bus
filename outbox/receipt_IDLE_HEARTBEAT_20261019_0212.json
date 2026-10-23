@@ -1,0 +1,98 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T02:12:43+08:00",
+  "ts_epoch": 1792347163,
+  "next_check_in_min": 30,
+  "agent": {
+    "name": "小丽·美客多线",
+    "line": "MERCADO",
+    "instance": "WorkBuddy.app",
+    "platform": "Mercado Livre 巴西站 CBT",
+    "store_entity": "深圳市蓝海世纪科技"
+  },
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "at": "2026-10-18T03:59:00+08:00",
+      "state": "DONE"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "at": "2026-10-18T03:59:00+08:00",
+      "state": "DONE"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "at": "2026-10-18T03:59:00+08:00",
+      "state": "DONE"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等待 BOSS 授权"
+    },
+    {
+      "id": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等待 BOSS 授权"
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "state": "HOLD",
+      "note": "文本全绿，源图待补，补图后自动转 READY"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3 定价路线裁决",
+      "state": "AWAITING_DECISION",
+      "note": "等 BOSS / 贾维斯裁决，不放水不催"
+    },
+    {
+      "id": "C3",
+      "state": "AWAITING_CONFIRM",
+      "note": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "state": "AWAITING_CONFIRM",
+      "note": "B30-42/185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "state": "AWAITING_CONFIRM",
+      "note": "对照组 B30-35→B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "inbox_scan": {
+    "scanned_dir": "A2A/inbox (live root /Volumes/2-AI-1/A2A/inbox)",
+    "task_files_found": 3,
+    "recipients": [
+      "friday",
+      "leishen",
+      "lvjuren"
+    ],
+    "addressed_to_me": 0,
+    "claim_state": "NO_TASK",
+    "note": "inbox 无 to==小丽 的未认领任务；近 24h 命中我的 2 封已在 processed/。未触发 TASK_NEEDS_EXECUTION_TURN。"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_or_jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_consumed": 0,
+    "existing_files_modified": 0
+  },
+  "notes": "本轮无可执行新项，维持 IDLE。仅新增本回执文件，未改动任何既有文件。未向群发送任何额外文字。"
+}

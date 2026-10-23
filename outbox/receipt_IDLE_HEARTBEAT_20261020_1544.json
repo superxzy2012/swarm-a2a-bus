@@ -1,0 +1,103 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T15:44:08+08:00",
+  "ts_epoch": 1792482248,
+  "platform": "mercado-libre-br-cbt",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "summary": "待命心跳：无可做新项，维持 IDLE。仅写本回执，未做任何业务动作。",
+  "done_items": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水、不催"
+    },
+    {
+      "item": "C3 待确认",
+      "status": "AWAITING_CONFIRM",
+      "note": "B30-82 折进 B30-81"
+    },
+    {
+      "item": "C4 待确认",
+      "status": "AWAITING_CONFIRM",
+      "note": "B30-42 / B30-185 变体文案作废"
+    },
+    {
+      "item": "C1 待确认",
+      "status": "AWAITING_CONFIRM",
+      "note": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "10 主推 + 4 备选；14 款待 1688 真实报价（LinkFox 401 + 阿里风控，零付费调用）"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T15:44:08+08:00",
+    "inbox_root": "/Volumes/2-AI-1/A2A/inbox",
+    "entries": 9,
+    "task_envelopes": 8,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": "8 封收件人分别为 jarvis×1 / xiaoka×3 / friday×3 / xiaodou×1；processed 内小丽相关仅 MERCADO-SELECTION（已 CLAIMED 且 01:39 出回执，已闭环），xiaoli2 前缀属 Ozon 线另一实例排除 → mine_unclaimed=0"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "auth_2fa_touched": false,
+    "clash_touched": false,
+    "ozon_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0,
+    "new_files_created": 1
+  },
+  "note": "本轮回执落 SMB 真根 /Volumes/2-AI-1/A2A/outbox（工作区 A2A/outbox 软链指向不可读的 /Volumes/2-AI，已漂移，未擅改软链）。"
+}

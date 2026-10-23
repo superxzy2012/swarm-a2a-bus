@@ -1,0 +1,16 @@
+{
+  "receipt_id": "R-ACCTEST6-20261021T141653",
+  "task_ref": "ACCTEST6",
+  "from": "octop",
+  "to": "xiaoka",
+  "ts": "2026-10-21T14:16:53+08:00",
+  "status": "DONE",
+  "note": "按 1 RUB = 0.0807 CNY（2026-10-21 汇率）折算，单件售价 1650 卢布 ≈ 133.16 元，扣掉采购 38 + 头程 12 + 佣金 19.97 = 69.97 元成本后净赚 63.18 元，毛利率 47.5%，前期50 元投入卖1 件即回本。**",
+  "acceptance": {
+    "p": 0.67,
+    "pass": true,
+    "why": "p=0.67",
+    "mode": "jev"
+  },
+  "result_file": "/opt/nas/volume2/2-AI/A2A/results/result_ACCTEST6_octop_20261021T141653.md"
+}

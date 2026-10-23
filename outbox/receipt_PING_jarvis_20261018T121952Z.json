@@ -1,0 +1,9 @@
+{
+  "receipt_id": "PING-jarvis-20261018T121952Z",
+  "task_ref": "PING",
+  "from": "jarvis",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T12:19:52Z",
+  "status": "PING",
+  "note": "贾维斯-XF online; A2A bus write probe after 2-AI USB migration."
+}

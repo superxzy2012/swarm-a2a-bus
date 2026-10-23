@@ -1,0 +1,111 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T17:49:40+08:00",
+  "ts_epoch": 1792489780,
+  "platform": "mercado-livre-br",
+  "instance": "WorkBuddy.app",
+  "new_work": "NONE",
+  "next_check_in_min": 30,
+  "scanned_at": "2026-10-20T17:49:40+08:00",
+  "inbox_scan": {
+    "inbox_dir": "/Volumes/2-AI-1/A2A/inbox",
+    "entries": 9,
+    "envelopes": 8,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "addressees_seen": [
+      "jarvis(BACKUP-TAKEOVER-DRILL)",
+      "xiaoka(FIX-JARVIS-A2A-CREDS)",
+      "friday(MCP-TOKEN-FRIDAY x2 / SWARM-QUEEN-ACTIVE)",
+      "leishen(SWARM-SMOKE)",
+      "xiaoka(XIAODOU-A2A-CREDS)",
+      "xiaodou(XIAODOU-HANDOFF)"
+    ],
+    "processed_mine_unclaimed": 0,
+    "closed_loop": [
+      "task_MERCADO-SELECTION_xiaoli_20261020T012221.json (+CLAIMED, executed 01:39)",
+      "task_SWARM-SMOKE-20261018_xiaoli_20261018_185030.json (archived)"
+    ],
+    "excluded": "xiaoli2 前缀 = Ozon 线另一实例，已排除"
+  },
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "100 款底表 → 16 合格 → 10 主推 + 4 备选；14 款标 PENDING_1688_QUOTE（1688 真实报价取不到，未编造）"
+  },
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "detail": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting": [
+    {
+      "id": "P3",
+      "what": "定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "stance": "等 BOSS/贾维斯，不放水不催"
+    },
+    {
+      "id": "C3",
+      "what": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "what": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "what": "对照组 B30-35→B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "redlines_ok": {
+    "browser": false,
+    "seller_login": false,
+    "price_change": false,
+    "listing_created": false,
+    "miaoshou_jimeng": false,
+    "tfa_clash": false,
+    "ozon_touched": false,
+    "credits_spent": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0,
+    "net_new_files": 1
+  },
+  "env_note": "工作区 A2A/inbox|outbox 软链指向不可读 /Volumes/2-AI，本轮穿透 SMB 真根 /Volumes/2-AI-1/A2A，未擅改软链"
+}

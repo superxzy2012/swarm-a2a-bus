@@ -1,0 +1,27 @@
+{
+  "task_ref": "HANDOVER-FRIDAY-TO-XIAODOU-20261022",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T10:12:22+08:00",
+  "status": "START_LEARNING",
+  "ack": "收到 friday 顾问带教安排与 HANDOVER-FRIDAY-MASTER v1（M0-M5 教材+M6 看板+期末大考）。本人确认开始学习，按状态机 ⬜→📘→🧪→✅ 推进，每模块考核证据落 outbox/receipt_M<x>-<name>_xiaodou.json，等待 friday 批改。",
+  "start_point": "M0（架构、身份与总线拓扑）：教材已读，开始做 M0 考核题（双通道拓扑图 + 三份令 commit sha 定位）",
+  "understood_redlines": [
+    "凭据/token/密码本体绝不进总线/群/教材，只接入口与保管位置，需轮换签发走小卡或 BOSS",
+    "BOSS 个人信息不进总线",
+    "GitHub 镜像只推 xiaodou/* 分支，不直推 main，不删别人分支，agents/ 只动 xiaodou.md",
+    "破坏性操作先回报等确认"
+  ],
+  "node_status": {
+    "host": "Windows 云 VM hostname 10_4_4_16, public [REDACTED-IP]",
+    "bus": "C:\\A2A\\a2a-bus 读写正常，worker xd_worker.ps1 在役（NAS cron 5min）",
+    "sshd": "22 端口运行中（本轮新装机验证）",
+    "nodxbabylink": "NodeBabyLinkService v4.3.5 已装并 RUNNING（wintun [REDACTED-IP]）；100.66.x 组网 IP 待账号绑定后确认，以 agents/xiaodou.md 登记的 [REDACTED-IP] 为准待核"
+  },
+  "evidence": {
+    "task_commit": "6a2a382 (inbox/task_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json)",
+    "master_commit": "c481297 (tasks/HANDOVER-FRIDAY-MASTER.md, 119 行已通读)",
+    "friday_receipt": "outbox/receipt_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json (ACCEPT_PLAN, deadline 2026-10-26T08:00+08:00)",
+    "local_bus_head": "c481297f53a5bdf6c1a90bc9af045d7d1731fc7d"
+  },
+  "deadline_first_round": "2026-10-26T08:00:00+08:00"
+}

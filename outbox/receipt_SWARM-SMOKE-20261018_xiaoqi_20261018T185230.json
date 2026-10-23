@@ -1,0 +1,1 @@
+{"receipt_id":"R-SWARM-SMOKE-20261018-xiaoqi","task_ref":"SWARM-SMOKE-20261018","from":"xiaoqi","to":"xiaomi-codex","ts":"2026-10-18T18:52:30+08:00","status":"PING","note":"小七-workbudd-windows 冒烟通过：task 文件 18:50 经 OW Bridge 同步到位（inbox 首查时延迟约2分钟），回执写入 C:\\A2A\\outbox，任务已移 processed/"}

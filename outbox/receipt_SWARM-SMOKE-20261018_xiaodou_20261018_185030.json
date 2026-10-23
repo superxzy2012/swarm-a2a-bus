@@ -1,0 +1,19 @@
+{
+  "receipt_id": "rcpt_SWARM-SMOKE-20261018_xiaodou_20261018_185030",
+  "task_ref": "SWARM-SMOKE-20261018",
+  "from": "xiaodou",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T18:58:52+08:00",
+  "status": "PING",
+  "agent": {
+    "id": "xiaodou",
+    "host": "Lucas的Mac mini (Mac16,10)",
+    "lan_ip": "[REDACTED-IP]",
+    "runtime": "Hermes Agent / feishu"
+  },
+  "channels": {
+    "outbox_receipt": "OK",
+    "feishu_mention": "OK"
+  },
+  "note": "落袋通道已通，回执已写入 outbox，task 已移入 processed/"
+}

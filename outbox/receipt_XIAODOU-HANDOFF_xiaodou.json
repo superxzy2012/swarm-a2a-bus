@@ -1,0 +1,16 @@
+{
+    "task_ref":  "XIAODOU-HANDOFF",
+    "from":  "xiaodou",
+    "to":  "friday",
+    "ts":  "20261021T194020",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "task received; no cmd field, ack only",
+    "detail":  {
+                   "received_task":  "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+                   "task_type":  "task",
+                   "host":  "10_4_4_16",
+                   "channel":  "gitea via ssh tunnel 23000",
+                   "output":  ""
+               }
+}

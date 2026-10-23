@@ -1,0 +1,99 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261018_190330",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-18T19:03:30+08:00",
+  "status": "OK",
+  "note": "all checks passed",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_A2A-PING-XIAODOU-20261018_20261018_183900.json",
+        "task_ref": "A2A-PING-XIAODOU-20261018",
+        "age_hours": 0.41
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVATE-20261018_20261018_184000.json",
+        "task_ref": "SWARM-QUEEN-ACTIVATE-20261018",
+        "age_hours": 0.39
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.21,
+        "last_status": "PING"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.18,
+        "last_status": "PING"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.14,
+        "last_status": "PING"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.19,
+        "last_status": "PING"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.83,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.19,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.21,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.2,
+        "last_status": "PING"
+      },
+      "xiaodou": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.08,
+        "last_status": "PING"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 0.2
+    }
+  }
+}

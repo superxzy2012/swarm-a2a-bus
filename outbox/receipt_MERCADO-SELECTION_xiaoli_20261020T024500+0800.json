@@ -1,0 +1,53 @@
+{
+  "receipt_id": "receipt_MERCADO-SELECTION_xiaoli_20261020T024500+0800",
+  "task_ref": "MERCADO-SELECTION",
+  "from": "xiaoli",
+  "to": "friday",
+  "ts": "2026-10-20T02:45:00+08:00",
+  "status": "DONE_PARTIAL",
+  "task_book": "/Volumes/2-AI-1/A2A/inbox/task_MERCADO-SELECTION_xiaoli_20261020T012221.json",
+  "deliverables": {
+    "candidate_list": "/Users/lucas/ANC-COMMERCE/MERCADO/results/mercadoselect_20261020/MERCADO_SELECTION_CANDIDATES_20261020.json",
+    "prescreen_100": "/Users/lucas/ANC-COMMERCE/MERCADO/results/mercadoselect_20261020/prescreen_100.json",
+    "margin_model": "/Users/lucas/ANC-COMMERCE/MERCADO/ops/ml_margin_calc.py",
+    "sourcing_script": "/Users/lucas/ANC-COMMERCE/MERCADO/ops/ml_1688_source_cdp.py"
+  },
+  "summary": {
+    "candidates_total": 11,
+    "READY_SOURCE_PENDING": 3,
+    "HOLD_WEIGHT": 4,
+    "BACKUP_SOURCE_PENDING": 4,
+    "eliminated": "低价死亡区56款DROP + 车载手机支架4款实测证伪 + seq14床上电脑桌品类错位移除",
+    "pool_prescreen": "100池 → TierA 10 / TierB 6 / TierC 28 / DROP 56"
+  },
+  "ready_candidates": [
+    {"seq": 99, "item": "防水围裙 Kit10", "price_brl": 99.99, "sold": 5000, "cid": 101436272, "max_buy_cny": 38.91, "est_margin_pct": 64.2},
+    {"seq": 58, "item": "钢卷尺 长规格", "price_brl": 99.99, "sold": 500, "cid": 101413985, "max_buy_cny": 38.91, "est_margin_pct": 64.2},
+    {"seq": 40, "item": "不锈钢沥水架 2层", "price_brl": 109.99, "sold": 1000, "cid": 101436433, "max_buy_cny": 44.04, "est_margin_pct": 68.3}
+  ],
+  "hold_weight_candidates": [
+    {"seq": 3, "item": "多层鞋架6层", "price_brl": 125.9, "sold": 10000, "cid": 10174590, "blocker": ">0.3kg运费UNKNOWN"},
+    {"seq": 19, "item": "旋转拖把套装", "price_brl": 116.93, "sold": 5000, "cid": 101127692, "blocker": ">0.3kg"},
+    {"seq": 33, "item": "木鞋架4层", "price_brl": 122.69, "sold": 1000, "cid": 10174590, "blocker": ">0.3kg"},
+    {"seq": 77, "item": "陶瓷宠物碗5件", "price_brl": 83.42, "sold": 100, "cid": 101370457, "blocker": ">0.3kg+易碎"}
+  ],
+  "key_findings": [
+    "低价死亡区实证：巴西站R$16固定运费+14%佣金+R$6.25-6.75固定费，结构上杀死一切<R$50轻小件；100池中sold 10000-50000的需求王者(擦手巾R$23.74/指甲剪R$19.99/车载支架R$15.2)全部DROP",
+    "车载手机支架实测证伪：9222 CDP后台1688标签采集到真实报价¥5-33，模型margin -57%~-66%",
+    "B30历史成本锚：75款实证成本占售价比median5.8%(¥4 vs R$89)，支撑R$79+价位margin 60%+",
+    "1688通道间歇可用：CDP后台标签页面内提交搜索成功一次(60张真实卡片)，随后触发阿里x5secdata滑块验证 punish页，PC+移动端均需真人验证"
+  ],
+  "blockers_boss_side": [
+    "1688滑块验证：s.1688.com 与 m.1688.com 均被 x5secdata punish 重定向(_____tmd_____/punish?x5secdata=)，需BOSS在9222标签完成真人滑块验证后恢复货源采集",
+    "LinkFox key：本会话环境变量无LINKFOX_AGENT_API_KEY，trace无真实值，未硬刚"
+  ],
+  "data_integrity": "竞品全字段(价格/销量/评分/URL/图/MLB ID/葡语名/1688关键词)原样读取自 MLB_selection_100_20261009.json 并经脚本核对零偏差；1688未采价=未采，不填数零编造；cid映射来自本机 ml_cat_flat_CBT.json 实搜",
+  "red_lines_compliance": "禁CDP直操美客多后台✓(仅读1688前台搜索) / 即梦未用作假主图✓ / 禁编造✓ / margin≥20%+FX1.285口径✓ / 妙手任务号未伪造✓(未发布)",
+  "next_actions": [
+    "BOSS：9222标签完成1688滑块验证→通知我恢复采集(脚本已就绪 ml_1688_source_cdp.py)",
+    "恢复后按11款sourcing_kw批量采价，对照max_buy_cny门槛定PASS/DROP",
+    "重货4款待>0.3kg运费实证或改轻量版",
+    "9333妙手通道恢复后，READY 3款按B30-164方法上架"
+  ],
+  "note": "治理令合规：回执走总线文件；无卡片无碎碎念。"
+}

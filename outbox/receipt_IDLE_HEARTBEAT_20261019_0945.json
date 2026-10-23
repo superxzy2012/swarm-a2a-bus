@@ -1,0 +1,138 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T09:45:11+08:00",
+  "ts_epoch": 1792374311,
+  "next_check_in_min": 30,
+  "line": "MERCADO",
+  "instance": "WorkBuddy.app",
+  "new_work": "NONE",
+  "done": {
+    "at": "2026-10-18 03:59",
+    "items": [
+      {
+        "id": "A1",
+        "name": "选品硬规格 v3",
+        "state": "DONE"
+      },
+      {
+        "id": "A2",
+        "name": "变体属性总表 v2",
+        "state": "DONE"
+      },
+      {
+        "id": "A3",
+        "name": "b1b2 标题定稿",
+        "state": "DONE"
+      }
+    ]
+  },
+  "blocked": [
+    {
+      "id": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "state": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "name": "定价路线裁决",
+      "state": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "name": "B30-82 折进 B30-81",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "name": "B30-42/185 变体文案作废",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "name": "对照组 B30-35 → B30-69",
+      "state": "AWAITING_CONFIRM"
+    }
+  ],
+  "inbox_scan": {
+    "scanned_at": "2026-10-19T09:45:11+08:00",
+    "root": "/Volumes/2-AI-1/A2A",
+    "note": "工作区 A2A/inbox 软链仍指向不可读的 /Volumes/2-AI，本次判定与写入一律穿透 live 真根 /Volumes/2-AI-1/A2A",
+    "envelopes": 5,
+    "items": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "to": "friday",
+        "age_hours": 2.24,
+        "mine": false,
+        "subject": ""
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "to": "friday",
+        "age_hours": 2.23,
+        "mine": false,
+        "subject": ""
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday",
+        "age_hours": 14.4,
+        "mine": false,
+        "subject": "task"
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen",
+        "age_hours": 8.67,
+        "mine": false,
+        "subject": "ping"
+      },
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "to": "lvjuren",
+        "age_hours": 8.67,
+        "mine": false,
+        "subject": "ping"
+      }
+    ],
+    "mine_unclaimed": 0,
+    "mine_files": [],
+    "claim_state": "NO_TASK",
+    "task_note": ""
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "new_files_created": 1,
+    "existing_files_modified": 0
+  },
+  "message": "待命。03:59 三项点单已交付；B-01/B-02 未解锁，b1 十款 HOLD 待源图；P3 等裁决；C3/C4/C1 待确认。无新可执行项，30 分钟后再报。"
+}

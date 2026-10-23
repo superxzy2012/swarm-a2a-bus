@@ -1,0 +1,17 @@
+{
+  "receipt_id": "R-QUEEN-ROLLCALL-azheng-20261019T215526",
+  "task_ref": "QUEEN-ROLLCALL-20261019",
+  "from": "azheng",
+  "node": "阿正-workbuddy-win国际版",
+  "to": "friday",
+  "ts": "2026-10-19T21:55:26+08:00",
+  "type": "rollcall",
+  "status": "ONLINE",
+  "message": "【点名回执】阿正-workbuddy-win国际版 ONLINE",
+  "note": "节点在线；C:/A2A 的 inbox/outbox/processed 就绪，git 可用；本机 IM 无头模式无法直发群消息，改走落袋总线回执",
+  "payload": {
+    "machine": "Windows 11 台式机 / x86_64 / 用户 EDY / WorkBuddy 国际版",
+    "bus": "C:/A2A 通道就绪；git 2.56.0.windows.2 可用",
+    "open_id": null
+  }
+}

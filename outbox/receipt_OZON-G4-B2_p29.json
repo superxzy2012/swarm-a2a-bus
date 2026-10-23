@@ -1,0 +1,47 @@
+{
+  "task_id": "OZON-G4-B2-P29",
+  "channel": "A2A",
+  "bus_path": "A2A/outbox/receipt_OZON-G4-B2_p29.json",
+  "from": "本线 (CrossBorderEcommerceExpert)",
+  "to": "BOSS / 小丽2号-workbuddy国际版",
+  "envelope": "OZON-G4-B2-P29 (issued 07:55, claimed 08:10, chase 1/2 + 2/2 FINAL)",
+  "status": "DEAD_END",
+  "verdict": "FAIL_ARCHIVED",
+  "outcome": "no_submission",
+  "dead_ends_hit": 4,
+  "dead_end_evidence_file": "ozon-ops/ozon_next_round/_p29_dead_ends.json",
+  "dead_end_reasons": [
+    "DE1_tree_absence: 卖家后台 类目树(住宅和花园 展开49子) 无 厨房剪刀 叶; deep DOM probe 0 命中 кухонн/14516/ножниц/剪刀/scissor",
+    "DE2_search_failure: 弹窗搜索 кухонные ножницы / Ножницы кухонные / 厨房剪刀 / 菜 / ножницы 全部 0 命中",
+    "DE3_url_autodetect_failure: 4 URL(带跟踪/clean/category/alt) 全部 '链接不适用' 拒绝",
+    "DE4_fallback_risk: confirm 菜刀 会变成 '住宅和花园 > 菜刀' — 错类目(厨房剪刀→刀类) 违反红线(上架到错类目); 已拒绝 fallback"
+  ],
+  "intended_target": {
+    "product": "kitchen_scissors",
+    "assets_ready": "P27 8张 1200x1600 CDN 净图(ir.ozone.ru/s3/multimedia-tmp-*) + batch1_copy.json 俄文文案 均就绪",
+    "buyer_category": "Кухонные ножницы / category id 14516 / ozon.ru/category/nozhnitsy-kuhonnye-14516/",
+    "dedicated_tab": "27CE843167B7233628D6E5DD0663CC88 (alive, page=import/file)"
+  },
+  "boss_disposition": {
+    "decided_at": "2026-10-07 ~10:16-10:23",
+    "ruling": "OZON-G4-B2-P29 = FAIL 归档; kitchen_scissors 四条死路成立, 不再重试同路径; 挂起等裁决",
+    "kitchen_scissors_state": "HOLD_pending_boss_decision",
+    "forbidden_paths": [
+      "后台解锁类目 14516 — 需 BOSS 裁决",
+      "seller API 显式 category_id=14516 — 按现行铁律禁用",
+      "落 菜刀(刀类) — 红线 上架到错类目"
+    ],
+    "no_retry_same_path": true
+  },
+  "current_state_harmless": {
+    "page_url": "https://seller.ozon.ru/app/products/import/file",
+    "combo_preview": "住宅和花园 > 菜刀 (仅UI预览, 未发布任何listing, 未下载模板, 未调上架API)",
+    "listings_published_this_session": 0
+  },
+  "evidence_or_it_did_not_happen": true,
+  "no_silence": true,
+  "no_fabrication": true,
+  "receipt_bus_note": "本回执已落 A2A 总线 outbox（非仅本地），此前 0854 版未被总线识别导致误催两次，本版为总线终版。",
+  "ts": "2026-10-07T10:20:00+08:00",
+  "session": "continuation"
+}

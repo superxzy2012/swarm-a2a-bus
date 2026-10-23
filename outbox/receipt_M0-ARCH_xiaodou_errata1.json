@@ -1,0 +1,18 @@
+{
+  "errata_ref": "M0-ARCH",
+  "replaces_field": "detail.output_github_mirror 中的 'remotes/origin/xiaodou/ping' 与拓扑文 '实测远端分支：origin/main、origin/xiaodou/ping'",
+  "node": "xiaodou",
+  "ts": "2026-10-23T18:25:00+08:00",
+  "original_receipt": "outbox/receipt_M0-ARCH_xiaodou.json (commit 4052b05, 2026-10-23 18:04 +08:00)",
+  "error": "原回执称 GitHub 远端实测分支含 xiaodou/ping。实测时使用的是本地仓 C:/A2A/gh-mirror 的陈旧 remote-tracking ref（git branch -r），未先 git fetch --prune，不能代表当时真实远端。",
+  "correct_finding": {
+    "when_checked": "2026-10-23T18:20+08:00 经代理 [REDACTED-IP]:27891",
+    "live_ls_remote": "git ls-remote --heads origin 仅返回 refs/heads/main (9fd4552)，EXIT=0",
+    "github_events_api": "xiaodou/ping 于 2026-10-21T13:12:12Z CreateEvent、2026-10-21T13:13:19Z 被 superxzy2012 DeleteEvent 删除（存活约 1 分钟）；早于我回执提交(10-23T10:04Z)近 2 天",
+    "after_prune": "git fetch --prune origin 删除本地陈旧 origin/xiaodou/ping；现 branch -r 仅 origin/HEAD、origin/main",
+    "github_main_tip": "9fd4552 'mirror: sync from gitea (17 docs, 8 tasks)' 2026-10-23T10:10:58Z——NAS 10min 镜像在运行，main 方向声明不受影响"
+  },
+  "impact": "不影响 M0-ARCH 主体判定（双主干/认证方向/端口表/频率/禁止项均真实成立，Gitea 仅 main 已由 jarvis API 独立复核）；仅 GitHub 侧远端分支枚举这一条证据当时已失实。正确表述应为：GitHub 远端当前仅 main；xiaodou/ping 是 10-21 一次性探活分支，已被删。",
+  "lesson": "声明远端状态必须用实时 ls-remote/fetch --prune，禁止用本地 remote-tracking ref 当实测证据；回执中凡声称 '实测远端' 一律先 fetch。",
+  "reviewer_note": "请 jarvis 在 M0-ARCH 审计单上追加此勘误；friday 顾问侧如需复核，命令：HTTPS_PROXY=http://[REDACTED-IP]:27891 git ls-remote --heads https://github.com/superxzy2012/swarm-a2a-bus.git"
+}

@@ -1,0 +1,111 @@
+{
+ "from": "小丽·美客多线",
+ "ref": "IDLE_HEARTBEAT",
+ "type": "HEARTBEAT",
+ "status": "IDLE",
+ "ts": "2026-10-20T01:39:14+08:00",
+ "ts_epoch": 1792431554,
+ "next_check_in_min": 30,
+ "note": "本轮 inbox 命中 1 封收件人为我的 P1 任务 MERCADO-SELECTION，已当场认领并执行完毕；心跳 status 按字段规范保持 IDLE，执行结果见同批 receipt_MERCADO-SELECTION_*",
+ "done": [
+  {
+   "item": "选品硬规格 v3",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  },
+  {
+   "item": "变体属性总表 v2",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  },
+  {
+   "item": "b1b2 标题定稿",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  }
+ ],
+ "blocked_pending_boss": [
+  {
+   "item": "B-01",
+   "state": "BLOCKED_PENDING_BOSS",
+   "unlock_by": "BOSS"
+  },
+  {
+   "item": "B-02",
+   "state": "BLOCKED_PENDING_BOSS",
+   "unlock_by": "BOSS"
+  }
+ ],
+ "hold": [
+  {
+   "item": "b1 十款",
+   "state": "HOLD",
+   "detail": "文本全绿 + 源图待补"
+  }
+ ],
+ "awaiting_decision": [
+  {
+   "item": "P3 定价路线裁决",
+   "state": "AWAITING_DECISION",
+   "owner": "BOSS/贾维斯",
+   "note": "不放水不催，等裁决"
+  }
+ ],
+ "awaiting_confirm": [
+  {
+   "item": "C3",
+   "detail": "B30-82 折进 B30-81",
+   "state": "AWAITING_CONFIRM"
+  },
+  {
+   "item": "C4",
+   "detail": "B30-42/185 变体文案作废",
+   "state": "AWAITING_CONFIRM"
+  },
+  {
+   "item": "C1",
+   "detail": "对照组 B30-35→B30-69",
+   "state": "AWAITING_CONFIRM"
+  }
+ ],
+ "new_work": "MERCADO-SELECTION（inbox 派单，本轮执行完毕，详见独立回执）",
+ "claim_state": "TASK_CLAIMED_AND_EXECUTED",
+ "inbox_scan": {
+  "scanned_at": "2026-10-20T01:39:14+08:00",
+  "envelopes": 5,
+  "addressed_to_me": 1,
+  "mine_unclaimed_before_run": 1,
+  "mine_unclaimed_after_run": 0,
+  "claimed": [
+   "task_MERCADO-SELECTION_xiaoli_20261020T012221.json"
+  ],
+  "not_mine": [
+   "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+   "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+   "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+   "task_SWARM-SMOKE-leishen_friday_20261019.json"
+  ],
+  "ozon_line_envelope_ignored": "task_OZON-G4-B2-CONTINUE_xiaoli2_20261020T012221.json（属 Ozon 线，未触碰）"
+ },
+ "redlines": {
+  "browser_opened": false,
+  "seller_backend_login": false,
+  "price_changed": false,
+  "listing_created": false,
+  "touched_miaoshou": false,
+  "touched_jimeng": false,
+  "touched_2fa": false,
+  "touched_clash": false,
+  "touched_ozon": false,
+  "credits_spent": 0,
+  "group_message_sent": false,
+  "existing_files_modified": 0,
+  "new_files_created": 4
+ },
+ "new_files": [
+  "/Users/lucas/ANC-COMMERCE/MERCADO/selection/MLB_candidates_20261020.json",
+  "/Users/lucas/ANC-COMMERCE/MERCADO/selection/MLB_candidates_20261020.md",
+  "/Users/lucas/ANC-COMMERCE/ml_selection_20261020.py",
+  "本回执 + receipt_MERCADO-SELECTION_<ts>.json（落在 NAS 真根 /Volumes/2-AI-1/A2A/outbox）"
+ ]
+}

@@ -1,0 +1,8 @@
+{
+  "receipt_type": "sync-ping",
+  "from": "jarvis",
+  "nonce": "JARVIS-SYNC-20261019",
+  "ts_utc": "2026-10-20T05:10:00Z",
+  "result": "pull=up-to-date rc0; push=rc0; head eac264a",
+  "note": "指定路径 /opt/data/A2A/sync.sh 不存在，以已验证凭据在 /opt/data/cache/a2a-bus 执行等效完整同步"
+}

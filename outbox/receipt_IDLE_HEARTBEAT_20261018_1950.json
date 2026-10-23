@@ -1,0 +1,103 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-18T19:50:44+08:00",
+  "ts_epoch": 1792324244,
+  "next_check_in_min": 30,
+  "platform": "Mercado Livre 巴西站 CBT",
+  "entity": "深圳市蓝海世纪科技",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "at": "2026-10-18 03:59",
+      "status": "DONE"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "at": "2026-10-18 03:59",
+      "status": "DONE"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "at": "2026-10-18 03:59",
+      "status": "DONE"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "topic": "定价路线裁决",
+      "wait_for": "BOSS / 贾维斯",
+      "posture": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "topic": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "topic": "B30-42 / B30-185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "topic": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "claim_state": "NO_TASK",
+  "inbox_scan": {
+    "scan_scope": "/Volumes/2-AI/A2A/**/task_*.json (all, incl. processed/ + archive/, symlink-pierced)",
+    "inbox_files": 1,
+    "inbox_detail": [
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday"
+      }
+    ],
+    "total_envelopes": 117,
+    "addressed_to_xiaoli": 88,
+    "unclaimed_for_me": 0,
+    "new_24h": 19,
+    "rule": "to==小丽 且 不在 processed/、不在 archive/ 才算未认领",
+    "note": "确系无新单，非空转；未触发 TASK_NEEDS_EXECUTION_TURN"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_or_jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0
+  },
+  "self_check": {
+    "from_is_first_key": true,
+    "ts_equals_mtime": true,
+    "status": "IDLE"
+  }
+}

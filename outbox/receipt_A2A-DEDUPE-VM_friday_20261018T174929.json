@@ -1,0 +1,9 @@
+{
+  "receipt_id": "A2A-DEDUPE-VM-friday-20261018T174929",
+  "task_ref": "A2A-DEDUPE-VM-20261018",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T17:49:29+08:00",
+  "status": "DONE",
+  "note": "sync.sh已更新: processed/纳入同步目录; 去重逻辑落dedupe.py(同名processed/或同task_ref终态回执DONE/BLOCKED/HOLD/REJECT/PING且ts>=任务ts, 两条件任一命中即从本地+仓库inbox移除并保留processed/)。实测: PATH-FIX同名去重生效, 伪造终态回执重复投递被拦截。cron */5不变, 未动secrets/archive。"
+}

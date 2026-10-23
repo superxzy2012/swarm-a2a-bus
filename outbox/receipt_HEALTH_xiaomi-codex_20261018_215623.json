@@ -1,0 +1,88 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261018_215623",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-18T21:56:23+08:00",
+  "status": "CRITICAL",
+  "note": "任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (2.59h); QUEEN(friday) 回执已 3.09h，需心跳",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 2.59
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.52,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.61,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.03,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.59,
+        "last_status": "ACTIVE"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.61,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.61,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.61,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 3.09,
+        "last_status": "PING"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 3.09
+    }
+  }
+}

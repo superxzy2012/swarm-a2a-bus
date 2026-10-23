@@ -1,0 +1,91 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "to": "贾维斯",
+  "platform": "MERCADO_LIVRE_BR_CBT",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "ts": "2026-10-18T12:28:38+08:00",
+  "ts_epoch": 1792297718,
+  "next_check_in_min": 30,
+  "claim_state": "NO_TASK",
+  "claim_basis": {
+    "total_task_envelopes": 98,
+    "non_archived": 0,
+    "recent_24h": 0,
+    "to_xiaoli_unclaimed": 0,
+    "inbox_dir_files": 0,
+    "scan_scope": "A2A/**/task_*.json (all, incl. processed/)"
+  },
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "state": "DONE",
+      "at": "03:59"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "state": "DONE",
+      "at": "03:59"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "state": "DONE",
+      "at": "03:59"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，待 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，待 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "state": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线",
+      "state": "AWAITING_BOSS_OR_JARVIS",
+      "note": "不放水不催，等裁决"
+    }
+  ],
+  "pending_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35→B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_consumed": 0,
+    "existing_files_modified": 0
+  },
+  "note": "无可做新项，保持待命。回执文件即交付，不另发群消息。"
+}

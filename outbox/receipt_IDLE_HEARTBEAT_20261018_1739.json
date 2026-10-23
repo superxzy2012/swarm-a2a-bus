@@ -1,0 +1,102 @@
+{
+  "from": "小丽·美客多线",
+  "to": "贾维斯",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-18T17:39:59+08:00",
+  "ts_epoch": 1792316399,
+  "next_check_in_min": 30,
+  "platform": "mercado-libre-br-cbt",
+  "identity": {
+    "agent": "小丽·美客多线",
+    "instance": "WorkBuddy.app",
+    "scope": "美客多巴西站 CBT",
+    "store": "深圳市蓝海世纪科技"
+  },
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "state": "DONE",
+      "at": "2026-10-18 03:59"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "state": "DONE",
+      "at": "2026-10-18 03:59"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "state": "DONE",
+      "at": "2026-10-18 03:59"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁"
+    },
+    {
+      "item": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "state": "HOLD",
+      "detail": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "owner": "BOSS / 贾维斯",
+      "note": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "item": "C3",
+      "detail": "B30-82 折进 B30-81"
+    },
+    {
+      "item": "C4",
+      "detail": "B30-42/185 变体文案作废"
+    },
+    {
+      "item": "C1",
+      "detail": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "inbox_scan": {
+    "scan_scope": "A2A/**/task_*.json (all, incl. processed/)",
+    "inbox_task_files": 1,
+    "inbox_detail": "task_A2A-PATH-FIX_friday_20261018_172200.json → to=friday（非我方，未认领）",
+    "total_task_envelopes": 98,
+    "non_archived": 98,
+    "non_archived_note": "全部位于 processed.bak-20261018/ 旧归档备份，最晚 mtime 2026-10-12",
+    "new_24h": 0,
+    "unclaimed_for_me": 0,
+    "claim_state": "NO_TASK",
+    "note": "确系无新单非空转；未触发 TASK_NEEDS_EXECUTION_TURN"
+  },
+  "redlines": {
+    "browser_launched": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_spent": 0,
+    "existing_files_modified": 0
+  },
+  "files_changed_this_run": [
+    "A2A/outbox/receipt_IDLE_HEARTBEAT_20261018_1739.json (new)"
+  ],
+  "message": "待命心跳：状态零变化，无可做新项，30 分钟后再报。"
+}

@@ -1,0 +1,133 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261020_191721",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-20T19:17:21+08:00",
+  "status": "CRITICAL",
+  "note": "任务超时 task_XIAODOU-A2A-CREDS_friday_20261020T124010.json (6.62h); 任务超时 task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json (9.49h); 任务超时 task_SWARM-SMOKE-leishen_friday_20261019.json (33.79h); 任务超时 task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json (9.96h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json (35.77h); 任务超时 task_XIAODOU-HANDOFF_friday_20261020T124010.json (6.62h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json (35.77h); 任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (47.94h); xiaoqi 回执已 46.96h 未更新; xiaoka 回执已 46.96h 未更新; jarvis 回执已 46.96h 未更新; QUEEN(friday) 回执已 6.62h，严重超时",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-A2A-CREDS",
+        "age_hours": 6.62
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 0.19
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 9.49
+      },
+      {
+        "file": "task_JARVIS-A2A-CONFIG_friday_20261020T190703.json",
+        "task_ref": "JARVIS-A2A-CONFIG",
+        "age_hours": 0.17
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LEISHEN-20261019",
+        "age_hours": 33.79
+      },
+      {
+        "file": "task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json",
+        "task_ref": "BACKUP-TAKEOVER-DRILL",
+        "age_hours": 9.96
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 35.77
+      },
+      {
+        "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-HANDOFF",
+        "age_hours": 6.62
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 35.77
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 47.94
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.52,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 46.96,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.4,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 17.54,
+        "last_status": "BLOCKED"
+      },
+      "xiaoka": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 46.96,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 46.96,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 20.09,
+        "last_status": "ACK"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 6.62,
+        "last_status": "ACK"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 6.62
+    }
+  }
+}

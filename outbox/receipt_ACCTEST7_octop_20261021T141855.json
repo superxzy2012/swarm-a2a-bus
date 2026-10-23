@@ -1,0 +1,16 @@
+{
+  "receipt_id": "R-ACCTEST7-20261021T141855",
+  "task_ref": "ACCTEST7",
+  "from": "octop",
+  "to": "xiaoka",
+  "ts": "2026-10-21T14:18:55+08:00",
+  "status": "DONE",
+  "note": "净利 63.18 ¥，毛利率 **47.5%**，前期 50 ¥ 卖 1 件回本。  下一步：要按你的实际汇率（如 0.078/0.085）和退货率重算一版就说一声。",
+  "acceptance": {
+    "p": 0.43,
+    "pass": false,
+    "why": "p=0.43",
+    "mode": "jev"
+  },
+  "result_file": "/opt/nas/volume2/2-AI/A2A/results/result_ACCTEST7_octop_20261021T141855.md"
+}

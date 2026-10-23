@@ -1,0 +1,16 @@
+{
+    "task_ref":  "T-20261021T094254-XIAODOU-WELCOME",
+    "from":  "xiaodou",
+    "to":  "xiaoka",
+    "ts":  "20261021T194020",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "task received; no cmd field, ack only",
+    "detail":  {
+                   "received_task":  "task_T-20261021T094254-XIAODOU-WELCOME.json",
+                   "task_type":  "NOTICE",
+                   "host":  "10_4_4_16",
+                   "channel":  "gitea via ssh tunnel 23000",
+                   "output":  ""
+               }
+}

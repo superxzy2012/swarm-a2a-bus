@@ -1,0 +1,105 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T04:18:34+08:00",
+  "ts_epoch": 1792354714,
+  "agent_instance": "WorkBuddy.app",
+  "platform_scope": "MERCADO_LIBRE_BR_CBT",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "item": "定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催，等裁决"
+    }
+  ],
+  "pending_confirm": [
+    {
+      "id": "C3",
+      "item": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "item": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "item": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "inbox_scan": {
+    "scanned_at": "2026-10-19T04:18:34+08:00",
+    "root": "/Volumes/2-AI-1/A2A",
+    "inbox_count": 3,
+    "envelopes": [
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday"
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen"
+      },
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "to": "lvjuren"
+      }
+    ],
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "inbox 3 封收件人无一为我；全库 24h 内提我名的 2 封（xiaoli/xiaoli2）已在 processed/，未触发只读登记循环"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_jimeng_touched": false,
+    "twofa_clash_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false
+  },
+  "path_note": "工作区 A2A/outbox 软链仍指向断链的 /Volumes/2-AI；本次写入穿透走 live 真根 /Volumes/2-AI-1/A2A/outbox，未擅自改软链"
+}

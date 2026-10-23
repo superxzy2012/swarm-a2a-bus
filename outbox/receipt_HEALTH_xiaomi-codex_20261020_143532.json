@@ -1,0 +1,123 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261020_143532",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-20T14:35:32+08:00",
+  "status": "CRITICAL",
+  "note": "任务待回执 task_XIAODOU-A2A-CREDS_friday_20261020T124010.json (1.92h); 任务超时 task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json (4.79h); 任务超时 task_SWARM-SMOKE-leishen_friday_20261019.json (29.09h); 任务超时 task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json (5.26h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json (31.07h); 任务待回执 task_XIAODOU-HANDOFF_friday_20261020T124010.json (1.92h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json (31.08h); 任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (43.24h); xiaoqi 回执已 42.27h 未更新; xiaoka 回执已 42.26h 未更新; jarvis 回执已 42.26h 未更新",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-A2A-CREDS",
+        "age_hours": 1.92
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 4.79
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LEISHEN-20261019",
+        "age_hours": 29.09
+      },
+      {
+        "file": "task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json",
+        "task_ref": "BACKUP-TAKEOVER-DRILL",
+        "age_hours": 5.26
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 31.07
+      },
+      {
+        "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-HANDOFF",
+        "age_hours": 1.92
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 31.08
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 43.24
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.53,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 42.27,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.97,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 12.84,
+        "last_status": "BLOCKED"
+      },
+      "xiaoka": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 42.26,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 42.26,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 15.39,
+        "last_status": "ACK"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 1.93,
+        "last_status": "ACK"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 1.93
+    }
+  }
+}

@@ -1,0 +1,107 @@
+{
+  "from": "小丽·美客多线",
+  "to": "贾维斯",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T13:37:22+08:00",
+  "ts_epoch": 1792474642,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "mercado-livre-br-cbt",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "source": "03:59 点单"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "source": "03:59 点单"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "source": "03:59 点单"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "b1-十款",
+      "state": "HOLD",
+      "note": "文案文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "item": "定价路线裁决",
+      "state": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "item": "B30-82 折进 B30-81",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "item": "B30-42/185 变体文案作废",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "item": "对照组 B30-35 → B30-69",
+      "state": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "100 款底表 → 16 合格 → 10 主推 + 4 备选；14 款待 1688 真实报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T13:37:22+08:00",
+    "root": "/Volumes/2-AI-1/A2A",
+    "entries": 9,
+    "task_envelopes": 8,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "mine_unclaimed": 4,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": "收件人 friday×3 / jarvis×1 / leishen×1 / xiaodou×1 / xiaoka×2"
+  },
+  "red_lines": {
+    "browser": "NOT_USED",
+    "seller_backend_login": "NOT_USED",
+    "price_change": "NONE",
+    "listing_created": "NONE",
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "two_fa_clash": "NOT_TOUCHED",
+    "credits_spent": 0,
+    "ozon": "NOT_TOUCHED",
+    "group_message": "NONE",
+    "existing_files_modified": 0
+  },
+  "note": "无可做新项，待命；30 分钟后复检。"
+}

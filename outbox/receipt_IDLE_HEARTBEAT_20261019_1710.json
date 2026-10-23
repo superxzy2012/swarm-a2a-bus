@@ -1,0 +1,135 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T17:10:10+08:00",
+  "ts_epoch": 1792401010,
+  "next_check_in_min": 30,
+  "platform": "MERCADO_LIVRE_BR_CBT",
+  "store_entity": "深圳市蓝海世纪科技",
+  "summary": "待命心跳：inbox 无寄给我的新点单，状态与上一轮一致，未产生新工作，未执行任何对外动作。",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "BOSS 未解锁，未擅自推进"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "BOSS 未解锁，未擅自推进"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿 + 源图待补，待源图到位后统一放行"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS / 贾维斯",
+      "note": "等裁决，不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "item": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "item": "B30-42 / B30-185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "item": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "new_work": "NONE",
+  "inbox_scan": {
+    "path": "/Volumes/2-AI-1/A2A/inbox",
+    "note": "工作区 A2A/inbox 软链仍指向不可读的 /Volumes/2-AI，已穿透 SMB 真根 /Volumes/2-AI-1 判定，未擅自改软链（红线：不动既有文件）",
+    "envelopes_seen": 5,
+    "addressed_to_me": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "detail": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "to": "friday",
+        "from": "xiaoka",
+        "age_h": 9.65
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "to": "friday",
+        "from": "xiaoka",
+        "age_h": 9.65
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday",
+        "from": "xiaomi-codex",
+        "age_h": 21.82
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen",
+        "from": "friday",
+        "age_h": 16.09
+      },
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "to": "lvjuren",
+        "from": "friday",
+        "age_h": 16.09
+      }
+    ],
+    "processed_sweep_24h_xiaoli_hits": 1,
+    "processed_sweep_detail": [
+      "task_SWARM-SMOKE-20261018_xiaoli_20261018_185030.json"
+    ],
+    "processed_sweep_note": "同批次历史命中件均已落 processed/ 且对应回执存在 → 属已认领已闭环，不计入 unclaimed",
+    "scanned_at": "2026-10-19T17:10:10+08:00",
+    "scanned_at_epoch": 1792401010
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "tfa_touched": false,
+    "clash_touched": false,
+    "credits_spent": 0,
+    "group_message_sent": false,
+    "existing_files_modified": false,
+    "new_files_created": 1
+  }
+}

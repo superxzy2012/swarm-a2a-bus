@@ -1,0 +1,95 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T08:01:01+08:00",
+  "ts_epoch": 1792454461,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "done": {
+    "at": "2026-10-20T03:59:00+08:00",
+    "items": [
+      "选品硬规格 v3",
+      "变体属性总表 v2",
+      "b1b2 标题定稿"
+    ]
+  },
+  "blocked": {
+    "B-01": "BLOCKED_PENDING_BOSS (未解锁)",
+    "B-02": "BLOCKED_PENDING_BOSS (未解锁)",
+    "b1_10sku": "HOLD (文本全绿 + 源图待补)"
+  },
+  "awaiting_decision": {
+    "P3_定价路线裁决": "AWAITING_DECISION by BOSS/JARVIS (不放水、不催)"
+  },
+  "awaiting_confirm": {
+    "C3": "B30-82 折进 B30-81",
+    "C4": "B30-42/185 变体文案作废",
+    "C1": "对照组 B30-35 → B30-69"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T08:01:01+08:00",
+    "entries_total": 5,
+    "task_files": 4,
+    "addressed_to_me": 0,
+    "claimed_this_run": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "to": "friday",
+        "action": "SKIP_NOT_MINE"
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "to": "friday",
+        "action": "SKIP_NOT_MINE"
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday",
+        "action": "SKIP_NOT_MINE"
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen",
+        "action": "SKIP_NOT_MINE"
+      },
+      {
+        "file": "group_feed.jsonl",
+        "to": "-",
+        "action": "SKIP_NON_TASK"
+      }
+    ],
+    "last_mine_closed": {
+      "ref": "MERCADO-SELECTION",
+      "to": "xiaoli",
+      "executed_at": "2026-10-20T01:39:00+08:00",
+      "receipt": "/Volumes/2-AI-1/A2A/outbox/receipt_MERCADO-SELECTION_xiaoli_20261020T024500+0800.json",
+      "state": "CLOSED"
+    }
+  },
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "pending": "14 款待 1688 报价"
+  },
+  "redline_compliance": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_touched": false,
+    "clash_touched": false,
+    "credits_used": 0,
+    "existing_files_modified": 0,
+    "files_added": 1
+  },
+  "note": "无新点单，维持待命；B-01/B-02 待解锁，P3 待裁决，C1/C3/C4 待确认。"
+}

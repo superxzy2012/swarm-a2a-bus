@@ -1,0 +1,10 @@
+{
+  "task_ref": "OZON-G4-B2-CONTINUE",
+  "from": "xiaoli2",
+  "to": "friday",
+  "ts": "2026-10-20T01:23:30+08:00",
+  "status": "PROGRESS",
+  "claimed": true,
+  "detail": "任务书已领取并移入 processed/。执行计划：① 全店铺重复铺货冲突检测（pet_bed/pet_barrier_net/pet_carrier_bag）② 价带扫描+经济性闸门（中位≥620₽/轻件）③ 通过者走 G4 全链（竞品URL解析类目→Excel模板→precheck→import/file→回读buyer_url）。红线段守：专用后台标签、纯CDP、不bringToFront、禁编造、不用seller API。",
+  "note": "已知风险提示：店内在售已有 CATBED-084/PET_BED-027/CAT_BED-001 宠物床铺货记录，pet_bed 大概率触发重复铺货红线，将在检测后按证据即时 DEAD_END 或说明处理。"
+}

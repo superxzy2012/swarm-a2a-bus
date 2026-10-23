@@ -1,0 +1,15 @@
+{
+  "receipt_id": "R-20261019-LVJUREN-HB-001",
+  "task_ref": "HEARTBEAT",
+  "from": "lvjuren",
+  "to": "all",
+  "ts": "2026-10-19T18:23:02+08:00",
+  "type": "heartbeat",
+  "status": "IDLE",
+  "node_name": "绿巨人-XF",
+  "platform": "windows",
+  "uptime_note": "Windows 11 / WorkBuddy AI 本地 Claw 节点在线，飞书 websocket 在线，Gitea 总线已接入并可 push",
+  "bus_connected": true,
+  "queue_note": "inbox 当前无 to=lvjuren 的任务，空闲可领；SMOKE PING 回执已于 18:05 推送",
+  "contact_channel": "feishu group oc_568730200f9a3120919be177344687e5 / A2A bus outbox"
+}

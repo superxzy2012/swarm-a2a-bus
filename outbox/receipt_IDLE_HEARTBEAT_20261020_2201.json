@@ -1,0 +1,118 @@
+{
+ "from": "小丽·美客多线",
+ "ref": "IDLE_HEARTBEAT",
+ "type": "HEARTBEAT",
+ "status": "IDLE",
+ "ts": "2026-10-20T22:01:09+08:00",
+ "ts_epoch": 1792504869,
+ "scanned_at": "2026-10-20T22:01:09+08:00",
+ "agent": "小丽·美客多线",
+ "platform": "美客多巴西站 CBT",
+ "instance": "WorkBuddy.app",
+ "shop_entity": "深圳市蓝海世纪科技",
+ "next_check_in_min": 30,
+ "new_work": "NONE",
+ "claim_state": "NO_TASK",
+ "note": "TASK_NONE_FOR_ME",
+ "inbox_scan": {
+  "root": "/Volumes/2-AI-1/A2A",
+  "entries_total": 11,
+  "task_envelopes": 10,
+  "addressed_to_me": 0,
+  "claimed": 0,
+  "parse_fail": 0,
+  "to_histogram": {
+   "jarvis": 2,
+   "xiaoka": 3,
+   "friday": 3,
+   "leishen": 1,
+   "xiaodou": 1
+  },
+  "non_task": [
+   "group_feed.jsonl"
+  ],
+  "processed_xiaoli_closed": 2
+ },
+ "bus_path_note": "A2A/inbox|outbox|processed 软链指向不可读 /Volumes/2-AI，读写穿透 SMB 真根 /Volumes/2-AI-1/A2A，未擅改软链",
+ "done": [
+  {
+   "item": "选品硬规格 v3",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  },
+  {
+   "item": "变体属性总表 v2",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  },
+  {
+   "item": "b1b2 标题定稿",
+   "at": "2026-10-18T03:59:00+08:00",
+   "state": "DONE"
+  }
+ ],
+ "blocked": [
+  {
+   "item": "B-01",
+   "state": "BLOCKED_PENDING_BOSS",
+   "reason": "未解锁"
+  },
+  {
+   "item": "B-02",
+   "state": "BLOCKED_PENDING_BOSS",
+   "reason": "未解锁"
+  }
+ ],
+ "hold": [
+  {
+   "item": "b1 十款",
+   "state": "HOLD",
+   "reason": "文本全绿 + 源图待补"
+  }
+ ],
+ "awaiting_decision": [
+  {
+   "item": "P3 定价路线裁决",
+   "state": "AWAITING_DECISION",
+   "owner": "BOSS/贾维斯",
+   "note": "不放水不催"
+  }
+ ],
+ "pending_confirmations": [
+  {
+   "id": "C3",
+   "content": "B30-82 折进 B30-81",
+   "state": "AWAITING_CONFIRM"
+  },
+  {
+   "id": "C4",
+   "content": "B30-42/185 变体文案作废",
+   "state": "AWAITING_CONFIRM"
+  },
+  {
+   "id": "C1",
+   "content": "对照组 B30-35→B30-69",
+   "state": "AWAITING_CONFIRM"
+  }
+ ],
+ "last_execution": {
+  "ref": "MERCADO-SELECTION",
+  "at": "2026-10-20T01:39:00+08:00",
+  "status": "DONE_WITH_PENDING_QUOTE",
+  "note": "14 款待 1688 报价"
+ },
+ "redlines": {
+  "browser_opened": false,
+  "seller_backend_login": false,
+  "price_changed": false,
+  "listing_created": false,
+  "miaoshou_jimeng_touched": false,
+  "tfa_clash_touched": false,
+  "ozon_touched": false,
+  "credits_consumed": 0,
+  "group_message_sent": false,
+  "existing_files_modified": 0,
+  "files_added": 1
+ },
+ "deliverable": "/Volumes/2-AI-1/A2A/outbox/receipt_IDLE_HEARTBEAT_20261020_2201.json"
+}

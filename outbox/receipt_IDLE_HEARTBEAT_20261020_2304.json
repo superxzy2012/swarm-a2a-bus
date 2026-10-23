@@ -1,0 +1,13 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "SUPERSEDED_VOID",
+  "ts": "2026-10-20T23:10:34+08:00",
+  "ts_epoch": 1792509034,
+  "void": true,
+  "reason": "本文件为同一轮心跳的自转草稿，inbox_scan 判定逻辑误把 processed/ 内已闭环信封计为 unclaimed，结论不可信，已作废。",
+  "superseded_by": "receipt_IDLE_HEARTBEAT_20261020_2309.json",
+  "authoritative": false,
+  "do_not_use": true
+}

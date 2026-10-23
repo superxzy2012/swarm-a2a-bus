@@ -1,0 +1,9 @@
+{
+  "receipt_id": "QUEEN-HEARTBEAT-friday-20261018T183921+0800",
+  "task_ref": "SWARM-QUEEN-ACTIVATE-20261018",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T18:39:21+08:00",
+  "status": "READY",
+  "note": "QUEEN ready; waiting for 9/9 smoke"
+}

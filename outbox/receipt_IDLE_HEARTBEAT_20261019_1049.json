@@ -1,0 +1,133 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "agent_instance": "WorkBuddy.app (美客多巴西 CBT)",
+  "platform_scope": "Mercado Livre 巴西站 CBT / 深圳市蓝海世纪科技",
+  "next_check_in_min": 30,
+  "ts": "2026-10-19T10:49:26+08:00",
+  "ts_epoch": 1792378166,
+  "done": {
+    "note": "03:59 三项点单已完成（10-18）",
+    "items": [
+      {
+        "item": "选品硬规格 v3",
+        "state": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      },
+      {
+        "item": "变体属性总表 v2",
+        "state": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      },
+      {
+        "item": "b1b2 标题定稿",
+        "state": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      }
+    ]
+  },
+  "blocked_pending_boss": [
+    {
+      "id": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "unlocked": false
+    },
+    {
+      "id": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "unlocked": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "state": "HOLD",
+      "reason": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "subject": "定价路线裁决",
+      "by": "BOSS/贾维斯",
+      "note": "等裁决，不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "subject": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "subject": "B30-42/185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "subject": "对照组 B30-35→B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "new_work_note": "无可做新项，维持待命",
+  "inbox_scan": {
+    "path": "/Volumes/2-AI-1/A2A/inbox",
+    "scanned_at": "2026-10-19T10:49:26+08:00",
+    "count": 5,
+    "files": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "from": "xiaoka",
+        "to": "friday",
+        "type": null,
+        "age_hours": 3.31
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "from": "xiaoka",
+        "to": "friday",
+        "type": null,
+        "age_hours": 3.31
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "from": "xiaomi-codex",
+        "to": "friday",
+        "type": "task",
+        "age_hours": 15.47
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "from": "friday",
+        "to": "leishen",
+        "type": "ping",
+        "age_hours": 9.74
+      },
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "from": "friday",
+        "to": "lvjuren",
+        "type": "ping",
+        "age_hours": 9.74
+      }
+    ],
+    "mine_unclaimed": 0,
+    "mine": [],
+    "claim_state": "NO_TASK",
+    "note": "TASK_NEEDS_EXECUTION_TURN"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_spent": 0,
+    "existing_files_modified": 0,
+    "new_files_created": 1,
+    "note": "除本次新增回执外未改动任何既有文件"
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T05:51:33+08:00",
+  "ts_epoch": 1792446693,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "MERCADO",
+  "instance": "WorkBuddy.app",
+  "done": [
+    {
+      "at": "2026-10-20 03:59",
+      "item": "选品硬规格 v3",
+      "state": "DONE"
+    },
+    {
+      "at": "2026-10-20 03:59",
+      "item": "变体属性总表 v2",
+      "state": "DONE"
+    },
+    {
+      "at": "2026-10-20 03:59",
+      "item": "b1b2 标题定稿",
+      "state": "DONE"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁"
+    },
+    {
+      "item": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁"
+    },
+    {
+      "item": "b1 十款",
+      "state": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting": [
+    {
+      "item": "P3 定价路线裁决",
+      "owner": "BOSS/贾维斯",
+      "state": "AWAITING_DECISION",
+      "note": "不放水不催"
+    },
+    {
+      "item": "C3（B30-82 折进 B30-81）",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C4（B30-42/185 变体文案作废）",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C1（对照组 B30-35→B30-69）",
+      "state": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20 01:39",
+    "result": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "path": "/Volumes/2-AI-1/A2A/inbox",
+    "entries": 5,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "note": "TASK_NONE_FOR_ME"
+  },
+  "redlines": {
+    "browser": false,
+    "seller_login": false,
+    "price_change": false,
+    "listing_create": false,
+    "miaoshou_jimeng": false,
+    "tfa_clash": false,
+    "credits_spent": 0,
+    "files_modified_except_receipt": 0
+  },
+  "scanned_at": "2026-10-20T05:51:33+08:00"
+}

@@ -1,0 +1,16 @@
+{
+    "task_ref":  "T-20261021T120134-XIAODOU-XIAOKA",
+    "from":  "xiaodou",
+    "to":  "xiaoka",
+    "ts":  "20261021T200641",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "command executed",
+    "detail":  {
+                   "received_task":  "task_T-20261021T120134-XIAODOU-XIAOKA_xiaoka_20261021T120134.json",
+                   "task_type":  "TASK",
+                   "host":  "10_4_4_16",
+                   "channel":  "gitea via ssh tunnel 23000",
+                   "output":  "CRON_AUTONOMY_OK \r\n10_4_4_16\r\n2026-10-21 20:06:41\r\n"
+               }
+}

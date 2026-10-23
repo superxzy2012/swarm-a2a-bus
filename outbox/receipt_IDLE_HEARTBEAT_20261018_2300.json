@@ -1,0 +1,97 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-18T23:00:21+08:00",
+  "ts_epoch": 1792335621,
+  "next_check_in_min": 30,
+  "instance": "WorkBuddy.app",
+  "platform": "mercado-livre-br-cbt",
+  "note": "待命心跳：状态零变化，无可做新项。outbox 软链漂移，本回执实写 live 真根 /Volumes/2-AI-1/A2A/outbox/。",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 授权"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 授权"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿 + 源图待补"
+    }
+  ],
+  "pending_decision": [
+    {
+      "id": "P3",
+      "topic": "定价路线裁决",
+      "status": "AWAITING_BOSS_OR_JARVIS",
+      "stance": "不放水、不催，等裁决下发"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "topic": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "topic": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "topic": "对照组 B30-35→B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "new_work": "NONE",
+  "inbox_scan": {
+    "root_scanned": "/Volumes/2-AI-1/A2A",
+    "inbox_files": 1,
+    "inbox_mine": 0,
+    "total_task_files": 117,
+    "hit_xiaoli": 91,
+    "unclaimed_for_me": 0,
+    "claim_state": "NO_TASK",
+    "task_needs_execution_turn": false
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "2fa_touched": false,
+    "clash_touched": false,
+    "credits_spent": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0
+  },
+  "write_path_actual": "/Volumes/2-AI-1/A2A/outbox/receipt_IDLE_HEARTBEAT_20261018_2300.json",
+  "symlink_note": "A2A/inbox|outbox|processed 软链指向 /Volumes/2-AI/A2A/*，SMB 现挂载于 /Volumes/2-AI-1，软链断链；未擅自改软链。"
+}

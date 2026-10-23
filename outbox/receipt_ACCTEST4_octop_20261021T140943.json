@@ -1,0 +1,16 @@
+{
+  "receipt_id": "R-ACCTEST4-20261021T140943",
+  "task_ref": "ACCTEST4",
+  "from": "octop",
+  "to": "xiaoka",
+  "ts": "2026-10-21T14:09:43+08:00",
+  "status": "DONE",
+  "note": "Answer: three compliance traps, one sentence each. Concise.1. **认证主体错**：EAC/GOST 证书必须由俄境内法人持证，且证书 AR、俄文铭牌、后台资质三处名称地址 100% 一致，用中国公司名义或信息不一致即下架、冻保证金。  2. **品牌权利缺失**：品牌须在 Роспатент 注册，未注册品牌他人可自由蹭用，投诉无门。  3. **强制标识未办**：Честный знак、Меркурий 等类目无标识码不得销售，且实物标识须永久印刷，纸质贴纸不合格、仓库直接拒收。  依据：20260815-EAC与GOST认证体系(Ozon上传).md、products.md、20260815-统一提炼_合规认证域共识(…三源交叉).md  下一步：报品类，我按这三条逐项判缺项。",
+  "acceptance": {
+    "p": 0.76,
+    "pass": true,
+    "why": "p=0.76",
+    "mode": "jev"
+  },
+  "result_file": "/opt/nas/volume2/2-AI/A2A/results/result_ACCTEST4_octop_20261021T140943.md"
+}

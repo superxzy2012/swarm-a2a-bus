@@ -1,0 +1,12 @@
+{
+  "receipt_id": "R-HEARTBEAT-xiaoli2-20261018_202112",
+  "task_ref": "HEARTBEAT",
+  "from": "xiaoli2",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T20:21:12+08:00",
+  "status": "ACTIVE",
+  "platform": "Ozon 俄罗斯站 跨境",
+  "entity": "深圳市蓝海世纪科技",
+  "note": "USB 迁移后恢复在线；A2A 新根 /Volumes/2-AI-1/A2A 可写；Ozon G4 线上架节律继续",
+  "next_check_in_min": 30
+}

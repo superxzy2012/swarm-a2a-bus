@@ -1,0 +1,11 @@
+{
+  "task_ref": "M0-ORDERS",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T18:15:00+08:00",
+  "status": "DONE",
+  "note": "三份 P0 令按文件引入提交定位：FAILOVER=6b82776(jarvis,10-22 00:09:35Z)；ORG=6a2a382(jarvis,10-23 00:07:49Z)；HANDOVER 与 ORG 同提交 6a2a382。区分了指令本体提交与本人 ACK 提交。",
+  "detail": {
+    "cmd": "git log -1 --format='%h|%an|%ci|%s' -- <taskfile>",
+    "output": "| 令 | task_ref | commit | 作者 | 提交时间 | remote |\n|---|---|---|---|---|---|\n| FAILOVER | FAILOVER-QUEEN-20261021 | 6b82776 | jarvis | 2026-10-22 00:09:35 +0000 (UTC) | origin(Gitea) |\n| ORG | ORG-20261022-CEO-TRANSITION | 6a2a382 | jarvis | 2026-10-23 00:07:49 +0000 (UTC) | origin(Gitea) |\n| HANDOVER | HANDOVER-FRIDAY-TO-XIAODOU-20261022 | 6a2a382（同提交：HANDOVER 任务文件随 ORG 令同一 commit 引入） | jarvis | 2026-10-23 00:07:49 +0000 (UTC) | origin(Gitea) |\n\n实测方法：git log -1 --format='%h | %an | %ci | %s' -- <task 文件路径>\n- inbox/task_FAILOVER-QUEEN-20261021_ALL.json → 6b82776 jarvis 2026-10-22 00:09:35 +0000\n- inbox/task_ORG-20261022-CEO-TRANSITION_ALL.json → 6a2a382 jarvis 2026-10-23 00:07:49 +0000\n- inbox/task_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json → 6a2a382（同提交）\nremote 归属：本机 origin=Gitea NAS [REDACTED-IP]:3000；GitHub 为 NAS 10min 镜像，这些 sha 随镜像到达 GitHub，但权威提交在 Gitea。\n备注：教材给的 grep 转义（\"FAILOVER\\|...\" 基本正则）在本机 git 下无输出，用 git log -E --grep 与按文件 git log 定位，结果一致；225399f 是 xiaodou 本人的 ACK 提交，非指令本体。"
+  }
+}

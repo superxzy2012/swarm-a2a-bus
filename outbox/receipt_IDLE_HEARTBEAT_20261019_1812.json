@@ -1,0 +1,95 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T18:12:47+08:00",
+  "ts_epoch": 1792404767,
+  "next_check_in_min": 30,
+  "platform": "mercado-livre-br-cbt",
+  "instance": "WorkBuddy.app",
+  "summary": "待命心跳：无新增工作，状态维持 10-18 03:59 done 基线，等待 BOSS / 贾维斯解锁。",
+  "done": {
+    "as_of": "2026-10-18T03:59:00+08:00",
+    "items": [
+      {
+        "id": "选品硬规格 v3",
+        "status": "DONE"
+      },
+      {
+        "id": "变体属性总表 v2",
+        "status": "DONE"
+      },
+      {
+        "id": "b1b2 标题定稿",
+        "status": "DONE"
+      }
+    ]
+  },
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "BOSS 未解锁，不擅自推进"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "BOSS 未解锁，不擅自推进"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补；图未到位不发布"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS / 贾维斯",
+      "note": "只等裁决，不放水、不催促"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "status": "AWAITING_CONFIRM",
+      "desc": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "status": "AWAITING_CONFIRM",
+      "desc": "B30-42 / B30-185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "status": "AWAITING_CONFIRM",
+      "desc": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "new_work": "NONE",
+  "inbox_scan": {
+    "scanned_at": "2026-10-19T18:12:47+08:00",
+    "live_root": "/Volumes/2-AI-1/A2A",
+    "inbox_count": 5,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "inbox 5 封收件人分别为 friday×3 / leishen / lvjuren，无一指向小丽；processed/ 24h 内提「小丽」的 SWARM-SMOKE 均已在 processed/ 且回执已存在（已认领已闭环，不计 unclaimed）"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_touched": false,
+    "clash_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": false,
+    "new_files_created": 1
+  },
+  "notes": "工作区 A2A/inbox|outbox 软链仍指向不可读的 /Volumes/2-AI（软链漂移第二十一次），全部判定与写入穿透 live 真根 /Volumes/2-AI-1/A2A；未擅自改软链。outbox 内 .tmp_a_xiaoli.json / .probe_xiaoli_76255 两件历史残件仍在，待 BOSS 授权清理，本轮未搬移。"
+}

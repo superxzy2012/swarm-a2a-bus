@@ -1,0 +1,101 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T11:29:21+08:00",
+  "ts_epoch": 1792466961,
+  "platform": "MERCADO-LIVRE-BR-CBT",
+  "instance": "WorkBuddy.app",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "order_ref": "03:59 三项点单"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "order_ref": "03:59 三项点单"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00",
+      "order_ref": "03:59 三项点单"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "BOSS 未解锁"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "BOSS 未解锁"
+    },
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "item": "C3",
+      "detail": "B30-82 折进 B30-81"
+    },
+    {
+      "item": "C4",
+      "detail": "B30-42/185 变体文案作废"
+    },
+    {
+      "item": "C1",
+      "detail": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T11:29:21+08:00",
+    "entries": 7,
+    "tasks": 6,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": "6 封 task 收件人分别为 jarvis×1 / xiaoka×1 / friday×3 / leishen×1，无一致命给小丽；processed 内属我的 MERCADO-SELECTION 已闭环"
+  },
+  "redlines_honored": {
+    "browser": "NOT_OPENED",
+    "seller_backend_login": "NO",
+    "price_change": "NO",
+    "listing_created": "NO",
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "fa2_clash": "NOT_TOUCHED",
+    "credits_consumed": 0,
+    "group_message_sent": "NO",
+    "existing_files_modified": 0,
+    "net_new_files": 1
+  },
+  "note": "待命心跳。状态与上一轮（10:27）零变化，无新点单可执行。"
+}

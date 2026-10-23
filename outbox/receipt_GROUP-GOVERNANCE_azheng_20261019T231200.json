@@ -1,0 +1,12 @@
+{
+  "receipt_id": "R-GROUP-GOVERNANCE-azheng-20261019T231200",
+  "task_ref": "GROUP-GOVERNANCE-20261019",
+  "from": "azheng",
+  "node": "阿正-workbuddy-win国际版",
+  "to": "friday",
+  "ts": "2026-10-19T23:12:00+08:00",
+  "type": "ack",
+  "status": "ACK",
+  "message": "阿正-workbuddy-win国际版-已阅",
+  "note": "管理群消息治理令 v1.0 已阅并遵守：群内仅 BOSS/QUEEN 指令与一句话节点简报，禁闲聊/碎碎念/群内审批，审批走 DM 私聊 BOSS。总线未收到 GROUP-GOVERNANCE-20261019 任务文件，本条回执作为收令凭据。"
+}

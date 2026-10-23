@@ -1,0 +1,88 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261018_194953",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-18T19:49:53+08:00",
+  "status": "CRITICAL",
+  "note": "Mac 中继同步桥 screen 未运行; Windows 同步桥 screen 未运行; Mac 同步日志超过 5 分钟未更新",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": false,
+      "a2a-win-sync": false
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": false
+    },
+    "pending": [
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 0.48
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.45,
+        "last_status": "OK"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.96,
+        "last_status": "PING"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.91,
+        "last_status": "PING"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.96,
+        "last_status": "PING"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.44,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.97,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.98,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.98,
+        "last_status": "PING"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 0.98
+    }
+  }
+}

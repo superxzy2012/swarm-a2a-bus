@@ -1,0 +1,11 @@
+{
+  "task_ref": "M0-IDENTITY",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T18:15:00+08:00",
+  "status": "DONE",
+  "note": "open_id 跨 app 三问作答并引 ledger 规则 2/3/4 原文行号；身份卡 agents/xiaodou.md 已含 open_id 多视角/app_id/角色/标准sid并已在总线（本轮无新字段变更）。",
+  "detail": {
+    "cmd": "sed -n '7,12p' swarm_oid_ledger.md",
+    "output": "题3 作答（依据 swarm_oid_ledger.md 核心规则，原文行号实测截取）：\nL7  ## 核心规则（必读）\nL9  1. open_id 是应用维度：同一节点在不同飞书 app 下 open_id 不同\nL10 2. @ 对方必须用「自己 app 视角下对方的 sender id」（即自己收到的消息里的 id）\nL11 3. 自报 open_id 仅作节点身份声明，不能直接跨 app @\nL12 4. 群 chat_id 租户维度跨 app 一致：管理群 = oc_568730200f9a3120919be177344687e5\n\nQ1：friday @ 我时，应用 friday app 视角下我的 id = ou_3501ce1fe1ab90a9c94fc232db1927dd，而不是我自报的本 app id ou_66e3...c043——因为 @ 发生在 friday 的 app 里，必须用该 app 视角 id。\nQ2：我 @ friday 时，必须用我（本 app cli_aa07a4442a78dbcf）收到消息里 friday 的 sender id，本 app 视角实测 = ou_25caad82a5c79314a9a766f0707b5225（2026-10-23 群内 @ 实测发送响应 mentions 解析正确），而非 friday 自报的 ou_b172...cbb8（那是 friday 在其对端 app 的视角 id，对本 app 无意义）。\nQ3：飞书 open_id 按 app 隔离（同一用户在不同 app 下 open_id 不同），自报 id 只声明\"我是谁\"，不授予\"你能在你的 app 里定位我\"；跨 app 寻址只能用自己收到消息中的 sender id（规则2），chat_id 因租户维度一致是例外（规则4）。"
+  }
+}

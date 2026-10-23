@@ -1,0 +1,109 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-21T05:26:05+08:00",
+  "ts_epoch": 1792531565,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "agent": "xiaoli",
+  "line": "美客多巴西站 CBT",
+  "instance": "WorkBuddy.app",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "done": {
+    "ref_time": "2026-10-18T03:59:00+08:00",
+    "items": [
+      {
+        "name": "选品硬规格 v3",
+        "state": "DONE"
+      },
+      {
+        "name": "变体属性总表 v2",
+        "state": "DONE"
+      },
+      {
+        "name": "b1b2 标题定稿",
+        "state": "DONE"
+      }
+    ]
+  },
+  "blocked": [
+    {
+      "id": "B-01",
+      "state": "BLOCKED_PENDING_BOSS"
+    },
+    {
+      "id": "B-02",
+      "state": "BLOCKED_PENDING_BOSS"
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "state": "HOLD",
+      "detail": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3 定价路线裁决",
+      "state": "AWAITING_DECISION",
+      "stance": "不放水不催，等 BOSS/贾维斯"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废",
+      "state": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35→B30-69",
+      "state": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "result": "DONE_WITH_PENDING_QUOTE",
+    "pending": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-21T05:26:05+08:00",
+    "total_task_files": 10,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "executed": 0,
+    "parse_fail": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "addressees_histogram": {
+      "jarvis": 2,
+      "xiaoka": 3,
+      "friday": 3,
+      "leishen": 1,
+      "xiaodou": 1
+    }
+  },
+  "guardrails": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "touched_miaoshou_or_jimeng": false,
+    "touched_2fa_or_clash": false,
+    "touched_ozon": false,
+    "credits_consumed": 0,
+    "existing_files_modified": 0,
+    "new_files_only": true
+  },
+  "notes": "待命心跳回执；状态零变化，无可做新项，30 分钟后复检。"
+}

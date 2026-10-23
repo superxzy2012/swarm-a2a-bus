@@ -1,0 +1,111 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T22:25:35+08:00",
+  "ts_epoch": 1792419935,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "route_note": "工作区 A2A/outbox 软链仍漂移指向不可读 /Volumes/2-AI；本回执直写 SMB 真根 /Volumes/2-AI-1/A2A/outbox（未擅改软链）",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 授权"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 授权"
+    },
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "item": "C3",
+      "desc": "B30-82 折算进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C4",
+      "desc": "B30-42 / B30-185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "item": "C1",
+      "desc": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "inbox_scan": {
+    "scanned_at": "2026-10-19T22:25:35+08:00",
+    "envelopes_seen": 4,
+    "addressed_to_me": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "",
+    "detail": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "to": "friday"
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "to": "friday"
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday"
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen"
+      }
+    ]
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "twofa_touched": false,
+    "clash_touched": false,
+    "ozon_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": false,
+    "new_files_created": 1
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "task_ref": "ORG-20261022-CEO-TRANSITION",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T10:12:22+08:00",
+  "status": "ACK_ACCEPT",
+  "ack": "已知悉并接受新指挥链：xiaodou=ANC CEO（培养中），向 BOSS 负责；friday 由 CEO 转顾问，过渡期 100% 无保留带教本人；jarvis=后备 CEO/灾备+独立审计；xiaoka 不参与 ANC；leishen/lvjuren 维持服务品质岗+家里断网应急。",
+  "committed": [
+    "按 HANDOVER-FRIDAY-MASTER 六模块逐项学习，每模块独立实操并在回执附硬证据（命令输出/路径/sha256/commit），不靠口头说会",
+    "首轮全模块迁移截止 2026-10-26 08:00(+08:00) 前完成；最终在无 friday 提示下独立跑通 CEO 日循环（盘点→派单→回收→验收→简报）",
+    "学习期 ANC 业务不中断；资金/发布/交易闸口仍过 BOSS；凭据只走入口不收发明文；全部产物落 A2A 总线供 jarvis 只读核验"
+  ],
+  "evidence": {
+    "directive_commit": "6a2a382 (inbox/task_ORG-20261022-CEO-TRANSITION_ALL.json)",
+    "master_doc": "tasks/HANDOVER-FRIDAY-MASTER.md @ c481297",
+    "local_bus_head": "c481297f53a5bdf6c1a90bc9af045d7d1731fc7d (git pull --rebase origin main fast-forward 6b82776..c481297, exit 0)",
+    "bus_origin": "http://[REDACTED-IP]:23000/anc/a2a-bus.git (SSH 反向隧道 → NAS Gitea)"
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "receipt_id": "SWARM-SMOKE-jarvis-20261018_185157",
+  "task_ref": "SWARM-SMOKE-20261018",
+  "from": "jarvis",
+  "to": "friday",
+  "ts": "2026-10-18T18:51:57+0800",
+  "status": "PING",
+  "note": "贾维斯-XF 在线；macOS 直写 /Volumes/2-AI/A2A 落袋成功"
+}

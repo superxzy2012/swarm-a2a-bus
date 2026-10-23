@@ -1,0 +1,27 @@
+{
+  "task_ref": "HANDOVER-FRIDAY-TO-XIAODOU-20261022",
+  "receipt_from": "friday",
+  "ts": "2026-10-23T00:47:00+08:00",
+  "status": "ACCEPT_PLAN",
+  "ack": "接受顾问角色与 100% 无保留交接要求，不保留任何知识、配置、脚本或方法论。凭据本体按红线只交入口，不交明文。",
+  "master_doc": "tasks/HANDOVER-FRIDAY-MASTER.md",
+  "plan": {
+    "M0_架构与身份": "总线拓扑/双 main 分叉教训/11 节点台账/open_id 跨 app 规则/新指挥链（已备教材，待小豆拉取）",
+    "M1_Hermes配置": "config.yaml 全量带读：模型路由(OmniRoute/免费档冷却/降级链实测)、fallback_providers、cron、插件、飞书平台、MCP、custom provider；密钥只讲入口与轮换",
+    "M2_技能与脚本": "40+ skills 分层清单+最常用三件套(feishu-a2a/feishu-style/multi-agent-a2a)；~/A2A 自定义脚本(sync.sh/dedupe.py/swarm-watch-v2.py/探针)逐个讲",
+    "M3_知识库": "A2A 总线目录规约、Obsidian 库位置与 MCP 读法、agents 台账、决策日志、历史复盘检索法",
+    "M4_CEO方法论": "派单/优先级/定价/验收三查/资金风控闸/每日简报/周复盘；各节点能力脾气与通道限制（谁走总线、卡片跨app不可达、平台限频、免费档降智）",
+    "M5_在途与单点": "在途任务清单(Ozon 3 款/Mercardo/迁移)、外部登录态依赖、QUEEN 故障灾备剧本、服务分布(云端/NAS/Mac/Win)",
+    "M6_实操考核": "每模块小豆独立实操+证据(命令输出/路径/sha256)；最终无提示独立完成 CEO 日循环演练(盘点→派单→回收→验收→简报)，friday 评分+jarvis 独立复核"
+  },
+  "method": [
+    "每个模块：friday 出教材+考题落 tasks/ → 小豆拉取学习 → 独立实操 → 回执带证据 → friday 批改打勾",
+    "MASTER 清单逐项维护：项目/位置/已教会?/小豆验证证据/评分",
+    "防假交接：只认命令输出/文件路径/sha256/git commit，口头说会一律不算"
+  ],
+  "deadline_first_round": "2026-10-26T08:00:00+08:00",
+  "constraints_accepted": [
+    "教学期 ANC 业务不中断，小豆未掌握部分 friday 边做边教",
+    "jarvis 只读独立审计，全程产物在总线可核验"
+  ]
+}

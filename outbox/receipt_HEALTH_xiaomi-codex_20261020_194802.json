@@ -1,0 +1,133 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261020_194802",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-20T19:48:02+08:00",
+  "status": "CRITICAL",
+  "note": "任务超时 task_XIAODOU-A2A-CREDS_friday_20261020T124010.json (7.13h); 任务待回执 task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json (0.7h); 任务超时 task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json (10.0h); 任务待回执 task_JARVIS-A2A-CONFIG_friday_20261020T190703.json (0.68h); 任务超时 task_SWARM-SMOKE-leishen_friday_20261019.json (34.3h); 任务超时 task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json (10.47h); 任务超时 task_XIAODOU-HANDOFF_friday_20261020T124010.json (7.13h); 任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (48.45h); xiaoqi 回执已 47.48h 未更新; xiaoka 回执已 47.47h 未更新; jarvis 回执已 47.47h 未更新; QUEEN(friday) 回执已 7.13h，严重超时",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-A2A-CREDS",
+        "age_hours": 7.13
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 0.7
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 10.0
+      },
+      {
+        "file": "task_JARVIS-A2A-CONFIG_friday_20261020T190703.json",
+        "task_ref": "JARVIS-A2A-CONFIG",
+        "age_hours": 0.68
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LEISHEN-20261019",
+        "age_hours": 34.3
+      },
+      {
+        "file": "task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json",
+        "task_ref": "BACKUP-TAKEOVER-DRILL",
+        "age_hours": 10.47
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 0.04
+      },
+      {
+        "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-HANDOFF",
+        "age_hours": 7.13
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 0.04
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 48.45
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.51,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 47.48,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.91,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 18.05,
+        "last_status": "BLOCKED"
+      },
+      "xiaoka": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 47.47,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 47.47,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 20.6,
+        "last_status": "ACK"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 7.13,
+        "last_status": "ACK"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 7.13
+    }
+  }
+}

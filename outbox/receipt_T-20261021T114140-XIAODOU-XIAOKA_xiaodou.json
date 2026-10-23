@@ -1,0 +1,16 @@
+{
+    "task_ref":  "T-20261021T114140-XIAODOU-XIAOKA",
+    "from":  "xiaodou",
+    "to":  "xiaoka",
+    "ts":  "20261021T194202",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "command executed",
+    "detail":  {
+                   "received_task":  "task_T-20261021T114140-XIAODOU-XIAOKA_xiaoka_20261021T114140.json",
+                   "task_type":  "TASK",
+                   "host":  "10_4_4_16",
+                   "channel":  "gitea via ssh tunnel 23000",
+                   "output":  "10_4_4_16\r\nMESH_WORKER_OK \r\ncmd.exe : \u0027git\u0027 不是内部或外部命令，也不是可运行的程序\r\n所在位置 C:\\A2A\\xd_worker.ps1:43 字符: 21\r\n+             $out = (\u0026 cmd.exe /c $cmd 2\u003e\u00261 | Out-String)\r\n+                     ~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (\u0027git\u0027 不是内部或外部命令，也不是可运行的程序:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n或批处理文件。\r\n"
+               }
+}

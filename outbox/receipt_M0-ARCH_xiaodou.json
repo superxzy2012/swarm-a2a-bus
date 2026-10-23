@@ -1,0 +1,11 @@
+{
+  "task_ref": "M0-ARCH",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T18:15:00+08:00",
+  "status": "DONE",
+  "note": "双通道拓扑图（飞书信令+git总线）+组网/Gitea/GitHub/MCP端点/同步脚本分层说明，附 git remote -v 与 git branch -r 实测；修正前版回执 detail.output 为空的问题。",
+  "detail": {
+    "cmd": "git remote -v && git branch -r",
+    "output": "双通道拓扑（xiaodou 视角，2026-10-23 实测）\n\n【信令通道 · 飞书】\n管理群 oc_568730200f9a3120919be177344687e5（chat_id 租户维度，跨 app 一致）\nBOSS/QUEEN/friday 等 → @bot 派单/教学/审批；bot open_id 按 app 隔离，@ 人只能用本 app 收到消息里的 sender id。\n本节点 app_id cli_aa07a4442a78dbcf；本 app 视角 friday=ou_25caad82a5c79314a9a766f0707b5225（实测可@）。\n\n【任务/档案通道 · git 总线】\n                    读+写 (5min pull / push)\n  xiaodou WinVM  ───────────────────────▶  Gitea NAS  http://[REDACTED-IP]:3000/anc/a2a-bus\n  C:\\A2A\\a2a-bus        组网直连(0.25s)             （节点小宝 [REDACTED-IP] → [REDACTED-IP]）\n                       ▲ 备用：[REDACTED-IP]:23000 SSH反向隧道(22022)\n  认证：HTTP 账号 xiaodou（Gitea id=8，协作者 Write），credential.helper=store（C:/A2A/.git-credentials，ACL 仅 Administrators+SYSTEM）\n  commit author 固定：xiaodou <xiaodou@swarm.local>\n        │\n        │ NAS 每 10 分钟统一镜像 main（唯一 main 镜像者）\n        ▼ 只读 / 只推 xiaodou/* 分支 —— 绝不推 main\n  GitHub  https://github.com/superxzy2012/swarm-a2a-bus.git （本机 clone: C:\\A2A\\gh-mirror）\n  认证：HTTPS PAT，helper=store；出网经代理 http://[REDACTED-IP]:27891（→NAS mihomo 7891），http.https://github.com/.proxy 已设\n\n【同步脚本层】\n- NAS cron fdaa4c3b5d57 每 5 分钟经组网 SSH 触发 C:\\A2A\\xd_worker.ps1：pull --rebase --autostash origin main → 扫 inbox(to=xiaodou) → 执行 → 写 outbox/receipt → push；pull/push 非 0 记 PULL_FAILED/exit 1\n- 冲突兜底：--rebase --autostash；worker 无强制 reset（破坏性 reset 需人工确认，按红线）\n\n【禁止项】\n- SSH [REDACTED-IP]:2222（→ssh.github.com:443）仅 ssh -T 探活，不走 git 数据（会挂）\n- 不直推 main 到 GitHub；不删别人分支；agents/ 下只动 xiaodou.md\n\n【MCP / 其他隧道端口】23456 obsidian MCP / 23458 skillbox MCP / 28088 Octop / 22022 NAS SSH\n\n===== git remote -v 实测（URL 中凭据已脱敏）=====\norigin  http://[REDACTED-IP]:3000/anc/a2a-bus.git (fetch/push)\ntunnel  http://[REDACTED-IP]:23000/anc/a2a-bus.git (fetch/push)\n注：本机未配 GitHub remote（GitHub 操作在独立 clone C:\\A2A\\gh-mirror，origin=GitHub HTTPS+代理）；教材所称双 remote 在该 clone 内成立。\n\n===== git branch -r 实测 =====\norigin/HEAD -> origin/main\norigin/main\n（xiaodou/* 分支仅在有镜像推送需求时出现于 gh-mirror）"
+  }
+}

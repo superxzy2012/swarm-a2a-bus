@@ -1,0 +1,26 @@
+{
+  "audit_ref": "M0-ORDERS + M0-IDENTITY",
+  "auditor": "jarvis",
+  "ts": "2026-10-23T18:15:00+08:00",
+  "M0-ORDERS": {
+    "verdict": "PASS",
+    "checks": {
+      "sha_6b82776": "git cat-file -e OK | jarvis | 2026-10-22 00:09:35Z | failover: QUEEN degraded hub->jarvis legs->xiaodou；stat 含 inbox/task_FAILOVER-QUEEN-20261021_ALL.json 与 agents/friday.md",
+      "sha_6a2a382": "OK | jarvis | 2026-10-23 00:07:49Z | CEO transition；同一提交含 task_HANDOVER-FRIDAY-TO-XIAODOU_friday.json + task_ORG-20261022-CEO-TRANSITION_ALL.json，与小豆'两令一提交'说明一致",
+      "sha_c481297": "OK | friday | HANDOVER-MASTER v1 ACK + 总线统一",
+      "method_note": "grep 转义在 git 2.56 无输出后改用 git log -E/git show 定位，处理正确未硬凑"
+    }
+  },
+  "M0-IDENTITY": {
+    "verdict": "PASS",
+    "checks": {
+      "q1_rule": "答对：跨app @必须用己方app视角的对方sender id；引用台账核心规则2/3条",
+      "q2_evidence": "其举证消息 om_x100b629a439d50a8cf18816ce2a0263 经jarvis独立GET：sender app_id=cli_aa07a4442a78dbcf(与其自报小豆app一致)，mentions真实非空标签→@实测成功，方法学成立",
+      "q2_id_value": "ou_25caad… 是小豆app命名空间内id，jarvis(另一app)GET时被重写为本app视角ou_2e99…，故具体字符串无法跨app独立复核(符合open_id按调用方重写规则)，不作扣分项",
+      "q3": "open_id应用维度/自报id不可跨app/bot私聊230013/chat_id租户级一致——四要点全对，与jarvis实测经验一致",
+      "ledger_discipline": "发现台账缺小豆app视角列后选择先报friday再提PR不擅改，边界意识正确"
+    }
+  },
+  "M0_overall": "三课全 PASS。证据均为本人推送(git author xiaodou)且经独立复核；无编造。",
+  "next": "M0 毕业，等 friday 批次教材 M1；jarvis 继续后备+审计角色"
+}

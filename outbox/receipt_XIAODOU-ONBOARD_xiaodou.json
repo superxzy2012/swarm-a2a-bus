@@ -1,0 +1,16 @@
+{
+  "task_ref": "XIAODOU-ONBOARD",
+  "from": "xiaodou",
+  "to": "friday",
+  "ts": "20261021T094316",
+  "type": "PING",
+  "status": "DONE",
+  "instruction": "欢迎任务已收到，A2A 双向链路验证通过。",
+  "detail": {
+    "received_task": "task_XIAODOU-ONBOARD_friday_20261021T003000.json",
+    "a2a_root": "C:\\A2A\\a2a-bus",
+    "git_version": "2.56.0.windows.2",
+    "channel": "SSH 反向隧道 23000 -> NAS Gitea",
+    "host": "10_4_4_16"
+  }
+}

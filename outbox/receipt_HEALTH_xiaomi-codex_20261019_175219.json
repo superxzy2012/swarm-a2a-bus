@@ -1,0 +1,108 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261019_175219",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-19T17:52:19+08:00",
+  "status": "CRITICAL",
+  "note": "任务超时 task_SWARM-SMOKE-lvjuren_friday_20261019.json (8.37h); 任务超时 task_SWARM-SMOKE-leishen_friday_20261019.json (8.37h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json (10.35h); 任务超时 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json (10.35h); 任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (22.52h); QUEEN(friday) 回执已 16.87h，严重超时",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LVJUREN-20261019",
+        "age_hours": 8.37
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LEISHEN-20261019",
+        "age_hours": 8.37
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 10.35
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 10.35
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 22.52
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.53,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.55,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.7,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.52,
+        "last_status": "ACTIVE"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.54,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.54,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.54,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 16.87,
+        "last_status": "DONE"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 16.87
+    }
+  }
+}

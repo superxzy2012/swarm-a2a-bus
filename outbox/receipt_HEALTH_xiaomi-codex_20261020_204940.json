@@ -1,0 +1,133 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261020_204940",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-20T20:49:40+08:00",
+  "status": "CRITICAL",
+  "note": "任务超时 task_XIAODOU-A2A-CREDS_friday_20261020T124010.json (8.16h); 任务待回执 task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json (1.73h); 任务超时 task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json (11.03h); 任务待回执 task_JARVIS-A2A-CONFIG_friday_20261020T190703.json (1.71h); 任务超时 task_SWARM-SMOKE-leishen_friday_20261019.json (35.33h); 任务超时 task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json (11.5h); 任务待回执 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json (1.07h); 任务超时 task_XIAODOU-HANDOFF_friday_20261020T124010.json (8.16h); 任务待回执 task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json (1.07h); 任务超时 task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json (49.47h); xiaoqi 回执已 48.5h 未更新; xiaoka 回执已 48.49h 未更新; jarvis 回执已 48.5h 未更新; QUEEN(friday) 回执已 8.16h，严重超时",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-A2A-CREDS",
+        "age_hours": 8.16
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 1.73
+      },
+      {
+        "file": "task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json",
+        "task_ref": "FIX-JARVIS-A2A-CREDS",
+        "age_hours": 11.03
+      },
+      {
+        "file": "task_JARVIS-A2A-CONFIG_friday_20261020T190703.json",
+        "task_ref": "JARVIS-A2A-CONFIG",
+        "age_hours": 1.71
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "task_ref": "SWARM-SMOKE-LEISHEN-20261019",
+        "age_hours": 35.33
+      },
+      {
+        "file": "task_BACKUP-TAKEOVER-DRILL_jarvis_20261020T091949.json",
+        "task_ref": "BACKUP-TAKEOVER-DRILL",
+        "age_hours": 11.5
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 1.07
+      },
+      {
+        "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
+        "task_ref": "XIAODOU-HANDOFF",
+        "age_hours": 8.16
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "task_ref": "MCP-TOKEN-FRIDAY-20261018_xiaoka",
+        "age_hours": 1.07
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+        "age_hours": 49.47
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.51,
+        "last_status": "CRITICAL"
+      },
+      "xiaoqi": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 48.5,
+        "last_status": "ACTIVE"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.9,
+        "last_status": "IDLE"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 19.08,
+        "last_status": "BLOCKED"
+      },
+      "xiaoka": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 48.49,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "STALE",
+        "card": true,
+        "age_hours": 48.5,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 21.63,
+        "last_status": "ACK"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 8.16,
+        "last_status": "ACK"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 8.16
+    }
+  }
+}

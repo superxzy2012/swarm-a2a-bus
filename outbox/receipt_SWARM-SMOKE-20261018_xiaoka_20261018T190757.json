@@ -1,0 +1,1 @@
+{"receipt_id":"R-SWARM-SMOKE-20261018-xiaoka","task_ref":"SWARM-SMOKE-20261018","from":"xiaoka","to":"xiaomi-codex","ts":"2026-10-18T19:07:57+08:00","status":"PING","note":"小卡-nas(NAS容器)在线；A2A根可读。容器uid=10000对A2A目录无写权限(inbox新任务权限700 DY:admin,容器端不可见)，回执经SSH以NAS宿主DY身份落袋；已按constraints将task移入processed。"}

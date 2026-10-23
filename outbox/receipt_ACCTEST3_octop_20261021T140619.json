@@ -1,0 +1,16 @@
+{
+  "receipt_id": "R-ACCTEST3-20261021T140619",
+  "task_ref": "ACCTEST3",
+  "from": "octop",
+  "to": "xiaoka",
+  "ts": "2026-10-21T14:06:19+08:00",
+  "status": "DONE",
+  "note": "「价格与促销（Цены и акции）」→「价格管理（Работа с ценами）」，路径 `seller.ozon.ru/app/prices/ceny-i-akcii/rabota-s-cenami`；「价格指数」子项位置资料未确认，需后台核对。",
+  "acceptance": {
+    "p": 0.19,
+    "pass": false,
+    "why": "p=0.19",
+    "mode": "jev"
+  },
+  "result_file": "/opt/nas/volume2/2-AI/A2A/results/result_ACCTEST3_octop_20261021T140619.md"
+}

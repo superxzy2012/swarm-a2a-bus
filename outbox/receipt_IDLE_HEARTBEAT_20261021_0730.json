@@ -1,0 +1,108 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-21T07:30:22+08:00",
+  "ts_epoch": 1792539022,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "mercado-livre-br-cbt",
+  "instance": "WorkBuddy.app",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "done": [
+    {
+      "at": "2026-10-18T03:59:00+08:00",
+      "item": "选品硬规格 v3",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-18T03:59:00+08:00",
+      "item": "变体属性总表 v2",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-18T03:59:00+08:00",
+      "item": "b1b2 标题定稿",
+      "status": "DONE"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水、不催，等裁决"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "item": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "item": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "item": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-21T07:30:22+08:00",
+    "total": 10,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "executed": 0,
+    "parse_fail": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": "jarvis x2 / xiaoka x3 / friday x3 / leishen x1 / xiaodou x1；xiaoli2 前缀属 Ozon 线已排除"
+  },
+  "red_lines": {
+    "browser": false,
+    "seller_login": false,
+    "price_change": false,
+    "listing_created": false,
+    "miaoshou_jimeng": false,
+    "tfa_clash": false,
+    "ozon_touched": false,
+    "credits_used": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0
+  },
+  "mount_probe": {
+    "/Users/lucas/ANC-COMMERCE/A2A/outbox": 244,
+    "/Volumes/2-AI-1/A2A/outbox": 231
+  },
+  "message": "待命中，无新工作；B-01/B-02 待 BOSS 解锁，b1 十款源图待补，P3 等裁决，C1/C3/C4 待确认。"
+}

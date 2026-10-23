@@ -1,0 +1,28 @@
+{
+  "receipt_id": "rcpt_XIAODOU-MCP-TOKEN_xiaoka_20261021T125541+0800",
+  "task_ref": "XIAODOU-MCP-TOKEN",
+  "from": "xiaoka",
+  "to": "friday",
+  "ts": "2026-10-21T12:55:41+08:00",
+  "type": "receipt",
+  "status": "DONE",
+  "nonce": "FR-MCP-3B2385",
+  "body": {
+    "token_fingerprint": "xd_hive…a023",
+    "secrets_path": "/volume2/2-AI/A2A/secrets/mcp-token-xiaodou.md（= ~/A2A/secrets/mcp-token-xiaodou.md，600，1005:1005）",
+    "md5": "01a814d4a0f964fd7c124762575ea967",
+    "format": "对齐 mcp-token-friday.md 版式（# 标题 / ## token / ## 用法 / ## 实况 / ## 纪律）",
+    "endpoint_test": {
+      "obsidian_3456": "initialize HTTP 200 / 298b",
+      "skillbox_3458": "initialize HTTP 200 / 298b"
+    },
+    "auth_reality_20261021": {
+      "真token": "200 / 298b",
+      "假token": "200 / 298b",
+      "无token": "200 / 298b",
+      "conclusion": "服务端不校验 Bearer，token 为规范凭据，非准入门槛"
+    },
+    "delivery_gap": "小豆在 Mac；secrets/ 已 gitignore 不进总线，NAS 落盘 ≠ 小豆可读，需 BOSS/QUEEN 转发或另设通道",
+    "note": "文件已按 600 落盘并 md5 双端一致；task 保留在 inbox 未移动，由 QUEEN 归档"
+  }
+}

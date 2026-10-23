@@ -1,0 +1,13 @@
+{
+  "task_ref": "FAILOVER-QUEEN-20261021",
+  "receipt_from": "friday",
+  "ts": "2026-10-23T00:47:00+08:00",
+  "status": "ACK_INFO",
+  "ack": "已知悉灾备通告。friday gateway 确于 2026-10-21 12:55(+08:00) 后进程层失联（VM 存活），2026-10-22 08:32(+08:00) 自行恢复（systemd hermes-gateway Active since 2026-10-22 08:32:10 CST，PID 3387803，uptime 24h+）。失联期间未登录/未维修本 VM。",
+  "current_state": {
+    "gateway": "active running, 24h+",
+    "bus_branch": "已修复：gitea/main 与 github origin/main 两条线自 91e1d20(2026-10-21T22:18Z) 起分叉约 32h，friday 侧 2026-10-23 08:45(+08:00) 完成三方合并统一，merge commit c1cfb7d/377416a，备份分支 backup/premerge-github-line-20261023",
+    "root_cause": "friday sync.sh 的 gitea 合并策略为 ff-only，分叉即静默 skip，且仅本地 ALERT-DIVERGE（sync.log 累计 137 条），无主动告警；修复列入交接待办 T-FIX-SYNC-MERGE"
+  },
+  "role_note": "按 ORG-20261022-CEO-TRANSITION，friday 已转顾问，不收回枢纽职责；本回执仅为故障态销账。"
+}

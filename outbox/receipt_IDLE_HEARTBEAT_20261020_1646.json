@@ -1,0 +1,112 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T16:46:30+08:00",
+  "ts_epoch": 1792485990,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "to": "jarvis",
+  "platform": "MERCADO",
+  "line": "美客多巴西站 CBT（店铺主体：深圳市蓝海世纪科技）",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00",
+      "note": "03:59 点单项，已完成"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00",
+      "note": "03:59 点单项，已完成"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59+08:00",
+      "note": "03:59 点单项，已完成"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "topic": "定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "topic": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "topic": "B30-42 / B30-185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "topic": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T16:46:30+08:00",
+    "entries": 9,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": "inbox 8 封 task + group_feed.jsonl，收件人 jarvis×1 / xiaoka×3 / friday×3 / leishen×1 / xiaodou×1，无 to==小丽；processed/ 内无我方未闭环项（xiaoli2 前缀属 Ozon 线另一实例，已排除）。真实无任务，非只读登记循环。"
+  },
+  "red_lines": {
+    "browser": "NOT_OPENED",
+    "seller_backend": "NOT_LOGGED_IN",
+    "price_change": "NONE",
+    "listing_created": "NONE",
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "2fa_clash": "NOT_TOUCHED",
+    "credits": "ZERO",
+    "ozon": "NOT_TOUCHED",
+    "group_message": "NONE",
+    "existing_files_modified": "NONE",
+    "net_new_files": 1
+  },
+  "symlink_drift": {
+    "workspace": "/Users/lucas/ANC-COMMERCE/A2A/{inbox,outbox} -> /Volumes/2-AI/A2A/... 不可读",
+    "actual_mount": "//DY@[REDACTED-IP]/2-AI on /Volumes/2-AI-1",
+    "action": "读写穿透 SMB 真根，未擅改软链",
+    "recurrence": 35
+  },
+  "note": "待命心跳：无可做新项，status=IDLE，30 分钟后复检。"
+}

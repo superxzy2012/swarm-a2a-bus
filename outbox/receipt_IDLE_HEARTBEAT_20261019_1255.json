@@ -1,0 +1,101 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T12:55:10+08:00",
+  "ts_epoch": 1792385710,
+  "next_check_in_min": 30,
+  "platform": "mercado-livre-br-cbt",
+  "instance": "WorkBuddy.app",
+  "new_work": "NONE",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "note": "未解锁"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "note": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "item": "C3",
+      "note": "B30-82 折进 B30-81"
+    },
+    {
+      "item": "C4",
+      "note": "B30-42/185 变体文案作废"
+    },
+    {
+      "item": "C1",
+      "note": "对照组 B30-35→B30-69"
+    }
+  ],
+  "inbox_scan": {
+    "scanned_at": "2026-10-19T12:55:10+08:00",
+    "scanned_epoch": 1792385710,
+    "inbox_dir": "/Volumes/2-AI-1/A2A/inbox (live root; workspace symlink -> /Volumes/2-AI is broken)",
+    "envelopes_seen": 5,
+    "recipients": [
+      "friday x3",
+      "leishen",
+      "lvjuren"
+    ],
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NEEDS_EXECUTION_TURN 未触发；无我的未认领派单"
+  },
+  "redlines": {
+    "browser_launched": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_touched": false,
+    "jimeng_touched": false,
+    "clash_2fa_touched": false,
+    "credits_spent": 0,
+    "existing_files_modified": 0,
+    "new_files_created": 1,
+    "group_message_sent": 0
+  },
+  "delivery": {
+    "channel": "file-only",
+    "note": "回执文件即交付，未向群内发送额外文字"
+  }
+}

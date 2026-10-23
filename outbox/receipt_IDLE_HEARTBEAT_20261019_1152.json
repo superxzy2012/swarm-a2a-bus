@@ -1,0 +1,120 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-19T11:52:38+08:00",
+  "ts_epoch": 1792381958,
+  "line": "美客多巴西站 CBT",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "state": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "state": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "state": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    }
+  ],
+  "hold": [
+    {
+      "item": "b1 十款",
+      "state": "HOLD",
+      "reason": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "owner": "BOSS / 贾维斯",
+      "note": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35 → B30-69"
+    }
+  ],
+  "inbox_scan": {
+    "inbox_root": "/Volumes/2-AI-1/A2A/inbox",
+    "count": 5,
+    "scanned_at": "2026-10-19T11:52:38+08:00",
+    "envelopes": [
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+        "to": "friday",
+        "from": "xiaoka",
+        "age_h": 4.36
+      },
+      {
+        "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+        "to": "friday",
+        "from": "xiaoka",
+        "age_h": 4.36
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+        "to": "friday",
+        "from": "xiaomi-codex",
+        "age_h": 16.52
+      },
+      {
+        "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+        "to": "leishen",
+        "from": "friday",
+        "age_h": 10.79
+      },
+      {
+        "file": "task_SWARM-SMOKE-lvjuren_friday_20261019.json",
+        "to": "lvjuren",
+        "from": "friday",
+        "age_h": 10.79
+      }
+    ],
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_or_jimeng_touched": false,
+    "twofa_or_clash_touched": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": false,
+    "new_files_created": 1
+  },
+  "note": "无新点单，待命中；30 分钟后复检。"
+}

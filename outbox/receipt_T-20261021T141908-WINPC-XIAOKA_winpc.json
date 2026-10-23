@@ -1,0 +1,16 @@
+{
+    "task_ref":  "T-20261021T141908-WINPC-XIAOKA",
+    "from":  "winpc",
+    "to":  "xiaoka",
+    "ts":  "20261021T221852",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "command executed",
+    "detail":  {
+                   "received_task":  "task_T-20261021T141908-WINPC-XIAOKA_xiaoka_20261021T141908.json",
+                   "task_type":  "TASK",
+                   "host":  "DESKTOP-4PV5HTQ",
+                   "channel":  "gitea direct [REDACTED-IP]:3000",
+                   "output":  "DESKTOP-4PV5HTQ\r\nnt authority\\system\r\n\r\nMicrosoft Windows [版本 10.0.26200.9711]\r\n"
+               }
+}

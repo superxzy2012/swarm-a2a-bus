@@ -1,0 +1,12 @@
+{
+  "receipt_id": "R-OZON-G4-B2-CONTINUE-DEADEND-xiaoli2-20261020T0145+0800",
+  "task_ref": "OZON-G4-B2-CONTINUE",
+  "from": "xiaoli2",
+  "to": "friday",
+  "ts": "2026-10-20T01:45:00+08:00",
+  "status": "BLOCKED",
+  "verdict": "DEAD_END",
+  "result_file": "/Users/lucas/WorkBuddy AI/ozon-ops/_p125_g4b2_deadend.json",
+  "note": "G4-B2 三款候选全部触发重复铺货红线：pet_bed（PET_BED-027/CATBED-084 在售）、pet_barrier_net（PET_BARRIER_NET-028 在售）、pet_carrier_bag（PET_CARRIER_BAG-029/PET_SLING_CARRIER 在售），item_id 与 price_sent 状态均有后台实读证据。按纪律不硬上、不上错类目。等 BOSS/QUEEN 重派未覆盖品类（中位≥620₽/轻件/c_max≥5），即续 G4 全链。",
+  "buyer_live_verified": false
+}

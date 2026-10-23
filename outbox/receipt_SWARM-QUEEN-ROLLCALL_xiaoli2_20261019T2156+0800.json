@@ -1,0 +1,11 @@
+{
+  "receipt_id": "R-SWARM-QUEEN-ROLLCALL-xiaoli2-20261019T2156+0800",
+  "task_ref": "SWARM-QUEEN-ROLLCALL-20261019",
+  "from": "xiaoli2",
+  "to": "friday",
+  "ts": "2026-10-19T21:56:00+08:00",
+  "status": "PING",
+  "node": "小丽2号",
+  "state": "ONLINE",
+  "note": "Queen 全员点名双向@回执：【点名回执】小丽2号 ONLINE。节点在线，Ozon G4 节律维持（上款 TABLET_CASE-093 stock30/买家端 LIVE），听后派单。friday open_id=ou_cec7da8fb7c87ba06dcb4b2110c9ede1"
+}

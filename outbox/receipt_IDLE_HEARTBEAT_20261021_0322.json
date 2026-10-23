@@ -1,0 +1,130 @@
+{
+  "from": "小丽·美客多线",
+  "to": "jarvis",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "ts": "2026-10-21T03:22:11+08:00",
+  "ts_epoch": 1792524131,
+  "scanned_at": "2026-10-21T03:22:11+08:00",
+  "inbox_scan": {
+    "dir": "/Users/lucas/ANC-COMMERCE/A2A/inbox",
+    "task_files_total": 10,
+    "parse_fail": 0,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "executed": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "detail": {
+      "jarvis": [
+        "BACKUP-TAKEOVER-DRILL",
+        "JARVIS-A2A-CONFIG"
+      ],
+      "xiaoka": [
+        "FIX-JARVIS-A2A-CREDS x2",
+        "XIAODOU-A2A-CREDS"
+      ],
+      "friday": [
+        "MCP-TOKEN-FRIDAY-20261018 x2",
+        "SWARM-QUEEN-ACTIVE-20261018"
+      ],
+      "leishen": [
+        "SWARM-SMOKE (type=ping)"
+      ],
+      "xiaodou": [
+        "XIAODOU-HANDOFF"
+      ]
+    },
+    "excluded": "xiaoli2 前缀属 Ozon 线（另一实例），已按平台边界排除"
+  },
+  "done": [
+    {
+      "at": "2026-10-18 03:59",
+      "item": "选品硬规格 v3",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-18 03:59",
+      "item": "变体属性总表 v2",
+      "status": "DONE"
+    },
+    {
+      "at": "2026-10-18 03:59",
+      "item": "b1b2 标题定稿",
+      "status": "DONE"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "unlocked": false
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "unlocked": false
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿 + 源图待补",
+      "unblock_cond": "BOSS 补源图"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3",
+      "item": "定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS / 贾维斯",
+      "stance": "不放水、不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "item": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "item": "B30-42 / B30-185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "item": "对照组 B30-35 -> B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20 01:39",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "redline": {
+    "browser": "NOT_OPENED",
+    "seller_backend_login": "NONE",
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "2fa_clash": "NOT_TOUCHED",
+    "ozon": "NOT_TOUCHED",
+    "credits_used": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0
+  },
+  "carried_over": [
+    "outbox 内 .tmp_a_xiaoli.json（2 B，10-18 18:47）陈旧残留，按红线未清理，待 BOSS 授权",
+    "PROTOCOL_V2.md 新增 state/<agent>.json 心跳租约：本轮仍未写 state/小丽.json，待 BOSS/贾维斯裁定"
+  ],
+  "note": "待命心跳，无新工作；本回执即交付物，未向群内发送额外文字"
+}

@@ -1,0 +1,9 @@
+{
+  "receipt_id": "SWARM-QUEEN-ACTIVE-friday-20261019T005449",
+  "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-19T00:54:49+08:00",
+  "status": "ACTIVE",
+  "note": "QUEEN转ACTIVE。总线卡死已由小卡修复(reset兜底+cron恢复), 双向闭环实测通过。迁移冻结解除: crontab */5 sync.sh已恢复并实测干净跑完。蜂群全量恢复调度。"
+}

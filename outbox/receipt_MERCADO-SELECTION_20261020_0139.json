@@ -1,0 +1,36 @@
+{
+ "from": "小丽·美客多线",
+ "ref": "MERCADO-SELECTION",
+ "type": "TASK_RECEIPT",
+ "status": "DONE_WITH_PENDING_QUOTE",
+ "ts": "2026-10-20T01:39:14+08:00",
+ "ts_epoch": 1792431554,
+ "task_ref": "MERCADO-SELECTION",
+ "assigned_by": "friday(QUEEN)",
+ "to": "xiaoli",
+ "priority": "P1",
+ "claimed_at": "2026-10-20T01:39:14+08:00",
+ "deliverable": {
+  "candidates_main": 10,
+  "candidates_alt": 4,
+  "qualified_from_screen": 16,
+  "screened_from": 100,
+  "json": "/Users/lucas/ANC-COMMERCE/MERCADO/selection/MLB_candidates_20261020.json",
+  "markdown": "/Users/lucas/ANC-COMMERCE/MERCADO/selection/MLB_candidates_20261020.md",
+  "a2a_copy": "/Volumes/2-AI-1/A2A/results/MLB_candidates_20261020.json"
+ },
+ "method": "以 10-09 采集的 100 款真实 MLB 底表（真实买家前端 URL / 售价 / 销量 / 评分）为需求侧证据；沿用 QC-3 已锚定毛利口径（FX 1.285 / 佣金 13% / 菜鸟巴西档 USD×5.0 / margin≥20%）反推每款 1688 采购价上限，作为选品可行性闸门",
+ "pending": "1688 实际报价未取（本轮红线：不开浏览器、不登录任何卖家后台），报价状态标记为 PENDING_1688_QUOTE；重量为 0.1/0.3/0.5kg 假设档位，实测后须重算",
+ "blockers": "LinkFox / 大麦网关 401（本机 REDFOX 密钥对该网关失效），付费接口不可用；本轮零付费调用、零积分消耗",
+ "redlines": {
+  "browser_opened": false,
+  "seller_backend_login": false,
+  "cdp_seller_backend": false,
+  "price_changed": false,
+  "listing_created": false,
+  "touched_miaoshou": false,
+  "touched_jimeng": false,
+  "fabricated_data": false,
+  "credits_spent": 0
+ }
+}

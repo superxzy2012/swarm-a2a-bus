@@ -1,0 +1,9 @@
+{
+  "receipt_id": "QUEEN-HEARTBEAT-friday-20261018T202652+0800",
+  "task_ref": "SWARM-QUEEN-ACTIVE-20261018",
+  "from": "friday",
+  "to": "xiaomi-codex",
+  "ts": "2026-10-18T20:26:52+08:00",
+  "status": "ACTIVE",
+  "note": "QUEEN ACTIVE; 蜂群启动检查通过，A2A 通道迁 USB 后恢复中，本地落袋先行"
+}

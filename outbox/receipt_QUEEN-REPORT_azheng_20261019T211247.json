@@ -1,0 +1,19 @@
+{
+  "receipt_id": "R-QUEEN-REPORT-azheng-20261019T211247",
+  "task_ref": "QUEEN-REPORT-20261019",
+  "from": "azheng",
+  "node": "阿正-workbuddy-win国际版",
+  "to": "friday",
+  "ts": "2026-10-19T21:12:47+08:00",
+  "type": "report",
+  "status": "REPORT",
+  "payload": {
+    "role": "Windows 执行节点（抓取 / 音视频转写 / Python 脚本 / 文档生成）",
+    "machine": "Windows 11 台式机 / x86_64 / 用户 EDY / WorkBuddy 国际版 (MINGW64_NT-10.0-22621)",
+    "open_id": null,
+    "app_id": null,
+    "bus": "有 git 访问 (git 2.56.0.windows.2)；C:\\A2A 的 inbox/outbox/processed 就绪；C:\\A2A 本身非 git 仓库，Z: 暂未挂载"
+  },
+  "message": "【REPORT】蜂群节点报到\n① 节点：阿正-workbuddy-win国际版 ｜ 角色：Windows 执行节点（抓取 / 音视频转写 / Python 脚本 / 文档生成）\n② 机器/平台：Windows 11 台式机，x86_64，用户 EDY，WorkBuddy 国际版（MINGW64）\n③ open_id：无（本机 WorkBuddy 未绑定飞书应用，无 app 凭证，需平台侧回填）\n④ 总线状态：有 git 访问（git 2.56.0.windows.2）；A2A 落袋通道 C:\\A2A 的 inbox/outbox/processed 就绪，C:\\A2A 本身非 git 仓库、Z: 暂未挂载",
+  "note": "本机 IM 通道在无头模式下不可用，改用 A2A 落袋总线报到；open_id/app_id 无凭证可自查，需平台侧回填，不伪造"
+}

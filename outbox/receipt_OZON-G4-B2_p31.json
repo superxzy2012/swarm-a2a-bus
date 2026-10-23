@@ -1,0 +1,70 @@
+{
+  "task_id": "OZON-G4-B2-P31",
+  "channel": "A2A",
+  "bus_path": "A2A/outbox/receipt_OZON-G4-B2_p31.json",
+  "from": "本线 (CrossBorderEcommerceExpert)",
+  "to": "BOSS / 小丽2号-workbuddy国际版",
+  "envelope": "P31 (1016令): b2_ready 其余挑类目可解析款走 G4 图片通道 + import/file 提交; 同轮补 silicone_drain_mat 重量; 15min 文件回执",
+  "status": "SUCCESS",
+  "headline": "clothes_hanger 已成功上架（新增 1 款）+ silicone_drain_mat 重量已补(400g)",
+  "new_listing": {
+    "key": "clothes_hanger",
+    "item_id": "6535248701",
+    "offer_id": "LANHAI-CLOTHES_HANGER-026",
+    "name": "Вешалка-плечики для одежды 42 см с вращающимся крючком, нескользящие плечики для шкафа",
+    "buyer_url": "https://www.ozon.ru/product/6535248701/",
+    "state": "offer_validated",
+    "validation_status": "success",
+    "state_name": "Не продается / Создается (import 后正常态, 待补库存→price_sent)",
+    "create_origin": "mass-create/xls",
+    "price_cny": 34.70,
+    "old_price_cny": 42.59,
+    "category": "住宅和花园 > 衣架 > 衣架",
+    "created_at": "2026-10-07T02:59:34Z (10:59 GMT+8)",
+    "import_history": "clothes_hanger.xlsx · 07.10.2026 10:59 · 已通过验证"
+  },
+  "how": {
+    "channel": "Ozon 专用后台标签 27CE843167B7233628D6E5DD0663CC88 (import/file), 纯 CDP, 未 bringToFront",
+    "category_resolve": "竞品URL解析法(P23已验证): 粘 https://www.ozon.ru/product/4203977683/ → 解析出树 住宅和花园 > 衣架 > 衣架 → 点叶子 → 确认",
+    "template": "Excel 模式 → 下载模板 → tpl/衣架_07.10.2026.xlsx (64KB, 40列)",
+    "fill": "openpyxl(/usr/bin/python3) 填 row5 共29列 → xlsx_out/clothes_hanger.xlsx",
+    "qc_gate": "ozon_g4_precheck.py clothes_hanger → PASS (problems=0)",
+    "upload": "DOM.setFileInputFiles → 取消在线审核已勾选?否 → 发布 → 导入历史『已通过验证』",
+    "images": "b2_cdn_images.json 8张 ir-20.ozonstatic.cn CDN 净图 (validate_raw 通道产物)"
+  },
+  "silicone_drain_mat_weight": {
+    "key": "silicone_drain_mat",
+    "src_offer_id": "672759736649",
+    "weight_g": 400,
+    "source": "1688 详情实测: 规格表『重量(g) 400』+ 页面 JSON pieceWeightScaleInfo.weight=400",
+    "flag": "⚠️ 超原估 ≤300g 阈值(硅胶垫类典型150–250g) → 物流计费重与定价须按 400g 复核",
+    "card_updated": "ozon-ops/ozon_next_round/sel_cards/silicone_drain_mat_025.json",
+    "evidence": ["ozon-ops/ozon_next_round/_p31_silicone_weight.json", "ozon-ops/ozon_next_round/_p31_silicone_weight2.json"]
+  },
+  "b2_ready_15_status": {
+    "total": 15,
+    "already_listed_before": 11,
+    "dead_end": ["kitchen_scissors (P29 四条死路, FAIL归档)"],
+    "newly_listed_this_round": ["clothes_hanger"],
+    "remaining_candidates": ["pet_bed", "pet_barrier_net", "pet_carrier_bag"],
+    "remaining_note": "三款均有模板+竞品URL, 类目可解析; 下一轮按同法继续 (pet_bed 3245303883 / pet_barrier_net 4430139591 / pet_carrier_bag 3703359150)"
+  },
+  "evidence_artifacts": {
+    "scripts": ["_p31_cat_a.py", "_p31_cat_b.py", "_p31_cat_c.py", "_p31_cat_d.py", "_p31_cat_e.py", "_p31_fill.py", "_p31_upload.py", "_p31_publish2.py", "_p31_readback.py", "_p31_1688_weight.py"],
+    "json": ["_p31_cat_a.json", "_p31_tree_items.json", "_p31_cat_c.json", "_p31_cat_d.json", "_p31_cat_e.json", "_p31_upload.json", "_p31_publish2.json", "_p31_readback.json", "_p31_getbyid.json", "_p31_silicone_weight.json", "_p31_silicone_weight2.json"],
+    "screenshots": ["ops/images/p31_modal_open.png", "p31_url_paste.png", "p31_tree_rendered.png", "p31_leaf_selected.png", "p31_after_confirm.png", "p31_excel_mode.png", "p31_template_dl.png", "p31_uploaded.png", "p31_published.png", "p31_publish2.png"],
+    "files": ["ozon_next_round/tpl/衣架_07.10.2026.xlsx", "ozon_next_round/xlsx_out/clothes_hanger.xlsx"]
+  },
+  "red_lines_honored": {
+    "ozon_cdp_dedicated_only": true,
+    "no_bringToFront": true,
+    "bcs_lt_1rps": true,
+    "gap_ge_2s": true,
+    "touched_mercado": false,
+    "no_fabrication": true,
+    "api_route_not_used": "未用 seller API 提交; 仅用同源 fetch 只读回读 item_id/state"
+  },
+  "no_silence": true,
+  "ts": "2026-10-07T11:06:00+08:00",
+  "session": "continuation"
+}

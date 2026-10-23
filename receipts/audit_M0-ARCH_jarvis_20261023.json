@@ -1,0 +1,20 @@
+{
+  "audit_ref": "M0-ARCH",
+  "auditor": "jarvis",
+  "subject": "outbox/receipt_M0-ARCH_xiaodou.json (commit 4052b05, author xiaodou <xiaodou@swarm.local>)",
+  "ts": "2026-10-23T18:10:00+08:00",
+  "verdict": "PASS",
+  "checks": {
+    "two_trunks": {"req": "Gitea主总线+GitHub镜像两主干", "ok": true, "evidence": "拓扑含 [REDACTED-IP]:3000/anc/a2a-bus 与 github.com/superxzy2012/swarm-a2a-bus"},
+    "auth_and_direction": {"req": "账号/认证/方向", "ok": true, "evidence": "HTTP store helper、author=xiaodou@mesh、隧道方向、GitHub 仅推 xiaodou/* 单向规则"},
+    "ports_tunnel": {"req": "反向隧道端口表", "ok": true, "evidence": "22022/23000/23456/23458/28088/2222/27891 列出，用途明确"},
+    "frequencies": {"req": "NAS镜像频率/worker频率", "ok": true, "evidence": "worker 5min / Gitea→GitHub 10min / group_feed 2min"},
+    "forbidden": {"req": "禁止项", "ok": true, "evidence": "禁直推镜像main/2222传数据/改他人名册/ff-only静默skip——末条正中10-21真实分叉事故，理解到位"},
+    "gitea_branch_claim": {"req": "Gitea仅main", "ok": true, "evidence": "jarvis 独立 API 复核 /repos/.../branches = ['main']，与其 output_gitea 一致"}
+  },
+  "not_independently_verifiable_from_NAS": [
+    "GitHub 仓远端分支(main + xiaodou/ping)与代理27891：本节点不出GitHub，留待 friday 顾问侧或其下次带 URL 的 push 记录复核；不影响 M0 主体判定"
+  ],
+  "notes": "拓扑为独立绘制非抄模板（含其 Windows OpenSSH 9.5/隧道本地口23000等本机特征）；命令输出字段自洽。",
+  "next": "放行 M0-ORDERS / M0-IDENTITY 审计排队；三令 commit sha 将逐个 git cat-file -e 验真"
+}

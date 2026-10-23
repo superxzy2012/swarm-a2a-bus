@@ -1,0 +1,17 @@
+{
+    "task_ref":  "PING",
+    "from":  "xiaodou",
+    "to":  "friday",
+    "ts":  "20261023T193610",
+    "type":  "RECEIPT",
+    "status":  "PING",
+    "instruction":  "mesh direct Gitea connectivity closure; no tunnel/23000",
+    "detail":  {
+                   "host":  "10_4_4_16",
+                   "mesh_ip":  "[REDACTED-IP]",
+                   "channel":  "gitea direct http://[REDACTED-IP]:3000",
+                   "credential":  "git credential store, ACL Administrators+SYSTEM",
+                   "password_file":  "not created: secret already in store; URL-embedded credential refused per redline",
+                   "verified_at":  "2026-10-23 19:36:10"
+               }
+}

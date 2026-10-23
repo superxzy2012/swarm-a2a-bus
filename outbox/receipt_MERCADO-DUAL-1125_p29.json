@@ -1,0 +1,59 @@
+{
+  "task_id": "MERCADO-DUAL-1125-P29",
+  "channel": "A2A",
+  "from": "本线 (CrossBorderEcommerceExpert)",
+  "to": "BOSS / 小丽2号-workbuddy国际版",
+  "envelope": "新单P29 (MERCADO-DUAL-1125-P29): 复用 ms_p26b 在9333妙手批量上架剩余11款(3款/批)，每款买家前端复检给URL；25分钟回执逐款success+前端PASS",
+  "status": "blocked_needs_data_package",
+  "submitted_this_session": 0,
+  "verified_this_session": 0,
+  "scope": {
+    "intended_remaining_11": ["B30-114","B30-138","B30-154","B30-160","B30-53","B30-58","B30-71","B30-81","B30-88","B30-151","B30-162"],
+    "pilot_already_done": "B30-83 (P28 pilot, proven channel; sits in 公用采集箱 as 'Gancho inox 4 pcs', 采集箱ID 4044002551)",
+    "site": "巴西(Up)", "store": "蓝海世纪", "marketplace": "Mercado Libre (mercadolibre.com.br)",
+    "constraint_recalled": "红线: 美客多永禁 CDP 直操卖家后台，只走妙手9333+买家前端；FX 1.285；margin>=20%；即梦禁当假主图；禁编造"
+  },
+  "blocker": {
+    "id": "B1_missing_package",
+    "summary": "复用 ms_p26b 导入需要 12款数据包 (p25_miaoshou_package_final.json: 含葡语标题/价/申报重/计费重/卖点/图/来源URL) 来生成 11 个导入 xlsx。该数据包在本工作区不存在，且 11 款当前未进入妙手，无法导入。",
+    "evidence": [
+      "LIVE 妙手状态 (9333, 探测日志见 ozon-ops/ozon_next_round/_p29_*.json):",
+      "  - 产品管理 /mercadolibre/item/item (站点=巴西(Up) 正确选中): 全部(0) 上架中(0) 审核中(0) 已下架(0)  => 0 个在线/待发布产品 (_p29_pm3.json 可信, 站点已正确选择)。",
+      "  - 公用采集箱 common_collect_box/items x2: 全部(4) 已认领(3) 未认领(1)，可见行仅 B30-83 ('Gancho inox 4 pcs', 采集箱ID 4044002551)。11 款不在采集箱 (_p29_collect_all.json)。",
+      "  - 美客多采集箱 mercadolibre/collect_box/items: 全部(0) => 无待发布到 Mercado 的货 (_p29_collect_all.json)。",
+      "数据包文件检索 (全失败):",
+      "  - Glob '**/p25_miaoshou_package_final.json' / '**/*miaoshou_package*' => 无。",
+      "  - Grep 唯一词 葡语/申报重/计费重/来源URL/卖点 => 无对应数据包文件 (仅 Ozon 报告与 妙手 read/dedup 脚本)。",
+      "  - sku/ 子目录仅有 ai/final/video 图片资产，无产品数据 JSON。",
+      "  - 文件系统 maxdepth 检索 p25*/package_final/miaoshou_package => 无。",
+      "ms_p26b 流程确认: ms_p26b_b.py = 点『导入产品』-> 上传 xlsx (input[type=file)。无数据包则无法生成导入 xlsx。"
+    ]
+  },
+  "what_was_done": [
+    "认领/接管 MERCADO-DUAL-1125-P29 (独立于已 dead-end 的 OZON-G4-B2-P29)",
+    "确认 9333 妙手存活: 4 个标签页含 common_collect_box/items x2 + mercadolibre/collect_box/items + alibaba_ai_collect",
+    "逐标签读取真实状态 (per-target ws, 未 bringToFront, 未碰卖家后台)",
+    "修正记忆 L78-79 要点: 行是 div-row 非 tr，B30 文本在 input.value 不在 innerText；产品管理需先选 站点(巴西Up)+店铺 才出数",
+    "修正产品管理探针: 站点选择器必须用 .jx-select-dropdown li 模式 (ms_publish_b3083.py 已验证)，首次探测 site 未真正选中导致 全部(0) 不可信；本次已正确选中 巴西(Up) 后仍为 全部(0)"
+  ],
+  "needed_from_BOSS": [
+    "(a) 提供/定位 12款数据包 p25_miaoshou_package_final.json (含 11 款的 葡语标题/价/申报重/计费重/卖点/图URL/来源URL)。收到后立即用 ms_p26b 按 3款/批 导入 妙手 -> 认领货源 -> 发布 -> 买家前端复检取 URL。",
+    "(b) 或确认 11 款已在妙手其它视图 (非 公用采集箱/产品管理 巴西Up/蓝海世纪)，指明具体位置，我直接发布+复检。",
+    "(c) 若数据包在 小丽 线未物理转交，请触发转交/粘贴数据。"
+  ],
+  "cannot_do": "在未取得数据包(或确认11款已落地于妙手)前，无法对 11 款做 success 上架或前端PASS —— 否则为编造(禁编造红线)。绝不虚报 success。",
+  "ozen_p29_status": "OZON-G4-B2-P29 已另作 dead-end 回执 (A2A/outbox/receipt_OZON-G4-B2_p29.json)，与本 Mercado 任务相互独立，互不影响。",
+  "evidence_files": [
+    "ozon-ops/ozon_next_round/_p29_merc_probe.json",
+    "ozon-ops/ozon_next_round/_p29_pm_probe.json",
+    "ozon-ops/ozon_next_round/_p29_pm2.json",
+    "ozon-ops/ozon_next_round/_p29_pm3.json (可信: 站点已正确选中)",
+    "ozon-ops/ozon_next_round/_p29_collect_all.json",
+    "ozon-ops/ms_p29_probe.py / ms_p29_pm_probe.py / ms_p29_pm2.py / ms_p29_pm3.py / ms_p29_collect_all.py"
+  ],
+  "next_action": "等待 BOSS 提供数据包或确认11款落地位置；收到后 25 分钟内出逐款 success+前端PASS 回执。本任务处于 BLOCKED，非 PARTIAL 停等——因缺输入数据，非执行中受阻。",
+  "evidence_or_it_did_not_happen": true,
+  "no_fabrication": true,
+  "ts": "2026-10-07",
+  "session": "continuation"
+}

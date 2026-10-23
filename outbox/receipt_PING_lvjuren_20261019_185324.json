@@ -1,0 +1,19 @@
+{
+  "receipt_id": "R-SWARM-SMOKE-lvjuren-20261019T1852",
+  "task_ref": "SWARM-SMOKE-LVJUREN-20261019",
+  "exec_ref": "A2A通信验收令",
+  "from": "lvjuren",
+  "to": "friday",
+  "ts": "2026-10-19T18:53:24+08:00",
+  "type": "receipt",
+  "status": "PING",
+  "note": "绿巨人-XF 冒烟终态回执（对应 A2A 通信验收令①-⑤全部步骤）。本机：Windows 11 / WorkBuddy AI 本地桌面 Claw 节点（飞书 websocket 长连接，群 oc_568730200f9a3120919be177344687e5 收发正常）。出口可达性：Gitea http://[REDACTED-IP]:3000 可访问（必绕代理，不绕 403；git 直连 clone+push 均成功）；GitHub 可达（直连+代理双通，api.github.com 与 git ls-remote 正常，但 superxzy2012/a2a-bus 私有 404，故走 Gitea 中继）。任务文件 task_SWARM-SMOKE-lvjuren_friday_20261019.json 当前已在 processed/（协议 6.8 由同步桥在收到终态回执后自动归档），无需本地再移。回执 commit：本节点 PING 回执 c1c4361、心跳 b1b8425；收到本令时的远端 HEAD ad63123。凭据纪律：.git/config 零内嵌密码，push 用一次性 URL。",
+  "node_name": "绿巨人-XF",
+  "platform": "windows",
+  "app_id": "cli_aa5e72e517f85c10",
+  "open_id_self": "ou_e9cf64fed191b71ca37900f15ebeb832",
+  "bus_connected": true,
+  "route": "B-gitea-relay",
+  "commits": {"ping_receipt": "c1c4361", "heartbeat": "b1b8425", "remote_head_at_receive": "ad63123"},
+  "reachable": {"gitea": true, "github": true, "feishu_group": true, "a2a_bus_gitea": true, "a2a_bus_github": false}
+}

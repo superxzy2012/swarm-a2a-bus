@@ -1,0 +1,133 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T20:58:19+08:00",
+  "ts_epoch": 1792501099,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "MERCADO_LIBRE_BR_CBT",
+  "store_entity": "深圳市蓝海世纪科技",
+  "heartbeat_scope": "IDLE_NO_NEW_WORK",
+  "done": {
+    "note": "10-18 03:59 点单三项全部完成，本轮无新增",
+    "items": [
+      {
+        "item": "选品硬规格 v3",
+        "status": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      },
+      {
+        "item": "变体属性总表 v2",
+        "status": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      },
+      {
+        "item": "b1b2 标题定稿",
+        "status": "DONE",
+        "at": "2026-10-18T03:59:00+08:00"
+      }
+    ]
+  },
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    },
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "stance": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35→B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "inbox_scan": {
+    "scanned_at": "2026-10-20T20:58:19+08:00",
+    "scanned_path": "/Volumes/2-AI-1/A2A/inbox",
+    "entries": 11,
+    "task_files": 10,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "recipients_seen": {
+      "jarvis": [
+        "BACKUP-TAKEOVER-DRILL",
+        "JARVIS-A2A-CONFIG"
+      ],
+      "xiaoka": [
+        "FIX-JARVIS-A2A-CREDS",
+        "FIX-JARVIS-A2A-CREDS",
+        "XIAODOU-A2A-CREDS"
+      ],
+      "friday": [
+        "MCP-TOKEN-FRIDAY-20261018",
+        "MCP-TOKEN-FRIDAY-20261018",
+        "SWARM-QUEEN-ACTIVE-20261018"
+      ],
+      "leishen": [
+        "SWARM-SMOKE-leishen"
+      ],
+      "xiaodou": [
+        "XIAODOU-HANDOFF"
+      ]
+    },
+    "new_since_last_run": [],
+    "mine_unclaimed": 0,
+    "processed_caliber": "排除 xiaoli2 前缀（Ozon 线另一实例）；processed/ 内视为已归档闭环；小丽相关项 MERCADO-SELECTION(含 .CLAIMED.json, 01:39 已执行出回执) 与 SWARM-SMOKE-20261018(已归档) 均闭环",
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME"
+  },
+  "last_execution": {
+    "ref": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "status": "DONE_WITH_PENDING_QUOTE",
+    "pending": "14 款待 1688 报价"
+  },
+  "redlines_honored": {
+    "browser": "NOT_OPENED",
+    "seller_backend_login": "NONE",
+    "price_changed": false,
+    "listing_created": false,
+    "miaoshou_jimeng": "UNTOUCHED",
+    "2fa_clash": "UNTOUCHED",
+    "credits_consumed": 0,
+    "ozon_line": "NOT_TOUCHED",
+    "group_message_sent": false,
+    "existing_files_modified": 0,
+    "net_new_files": 1
+  },
+  "carried_over": {
+    "note": "outbox 内 .tmp_a_xiaoli.json（2 B，10-18 18:47）为陈旧残留，按红线未清理，待 BOSS 授权"
+  },
+  "note": "状态零变化，无可做新项，保持待命"
+}

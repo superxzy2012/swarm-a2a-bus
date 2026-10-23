@@ -1,0 +1,108 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-21T01:16:55+08:00",
+  "ts_epoch": 1792516615,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "platform": "Mercado Livre 巴西站 CBT",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "item": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "reason": "未解锁，等 BOSS 放行"
+    },
+    {
+      "item": "b1 十款",
+      "status": "HOLD",
+      "reason": "文本全绿，源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "item": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "stance": "不放水不催"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35→B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:00+08:00",
+    "result": "DONE_WITH_PENDING_QUOTE",
+    "note": "14 款待 1688 报价"
+  },
+  "inbox_scan": {
+    "scanned_at": "2026-10-21T01:16:55+08:00",
+    "total_tasks": 10,
+    "parse_fail": 0,
+    "addressed_to_me": 0,
+    "claimed": 0,
+    "mine_unclaimed": 0,
+    "claim_state": "NO_TASK",
+    "note": "TASK_NONE_FOR_ME",
+    "recipients_seen": {
+      "jarvis": 2,
+      "xiaoka": 3,
+      "friday": 3,
+      "leishen": 1,
+      "xiaodou": 1
+    },
+    "excluded": "xiaoli2 前缀属 Ozon 线，已排除，未串台"
+  },
+  "redlines": {
+    "browser_opened": false,
+    "seller_backend_login": false,
+    "price_changed": false,
+    "listing_created": false,
+    "touched_miaoshou_or_jimeng": false,
+    "touched_2fa_or_clash": false,
+    "touched_ozon": false,
+    "credits_consumed": 0,
+    "group_message_sent": false,
+    "existing_files_modified": 0
+  },
+  "deliverable": "本回执文件本身（未向群内发送任何额外文字）"
+}

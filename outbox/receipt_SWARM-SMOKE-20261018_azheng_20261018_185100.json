@@ -1,0 +1,1 @@
+{"receipt_id": "R-SWARM-SMOKE-20261018-azheng", "task_ref": "SWARM-SMOKE-20261018", "from": "azheng", "to": "xiaomi-codex", "ts": "2026-10-18T18:51:00+08:00", "status": "PING", "note": "阿正-workbuddy-win国际版 在线，outbox 写入正常；执行移动前任务文件已不在 inbox（本地 inbox/processed 均未见），未能由我移入 processed，疑同步桥移走。"}

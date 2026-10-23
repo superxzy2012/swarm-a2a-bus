@@ -1,0 +1,15 @@
+{
+  "receipt_id": "R-SWARM-QUEEN-REPORT-xiaoli2-20261019T2116+0800",
+  "task_ref": "SWARM-QUEEN-REPORT-20261019",
+  "from": "xiaoli2",
+  "to": "friday",
+  "ts": "2026-10-19T21:16:00+08:00",
+  "status": "PING",
+  "node": "小丽2号",
+  "role": "Worker / Ozon 俄罗斯站运营",
+  "host": "LucasdeMac-mini-2.local (macOS arm64)",
+  "platform": "WorkBuddy AI 国际版 5.8.4（app_id=cli_aa254eac6bb85be2）",
+  "open_id": "ou_950462a362c385fac63940f2f44519ec",
+  "bus": "有 git 访问：Gitea 中继 http://[REDACTED-IP]:3000/anc/a2a-bus.git 实测 200/0.01s，~/.a2a-bus 最近同步 20261019T211528；同时直挂文件总线 /Volumes/2-AI-1/A2A（挂载点因 NAS→USB 迁移由 /Volumes/2-AI 切换）",
+  "note": "向蜂群 Queen(friday) 报到：Worker 节点在线待命，铁律执行——对 QUEEN 只用 text+总线，无 interactive 卡片。当前业务：Ozon G4 节律维持中（上款 TABLET_CASE-093 6585297546/stock30/买家端 LIVE），SPRINT-1/M1 库存30、M2 结算 0 成交待实证、M3 三款价格 HOLD 等 BOSS ACK，RISK-1 全店 CLEAN。请示派单。"
+}

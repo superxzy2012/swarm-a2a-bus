@@ -1,0 +1,101 @@
+{
+  "from": "小丽·美客多线",
+  "ref": "IDLE_HEARTBEAT",
+  "type": "HEARTBEAT",
+  "status": "IDLE",
+  "ts": "2026-10-20T03:46:53+08:00",
+  "ts_epoch": 1792439213,
+  "next_check_in_min": 30,
+  "new_work": "NONE",
+  "instance": "WorkBuddy.app",
+  "platform": "mercadolibre-BR-CBT",
+  "shop_entity": "深圳市蓝海世纪科技",
+  "done": [
+    {
+      "item": "选品硬规格 v3",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "变体属性总表 v2",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    },
+    {
+      "item": "b1b2 标题定稿",
+      "status": "DONE",
+      "at": "2026-10-18T03:59:00+08:00"
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B-01",
+      "status": "BLOCKED_PENDING_BOSS",
+      "unlocked": false,
+      "unlock_by": "BOSS"
+    },
+    {
+      "id": "B-02",
+      "status": "BLOCKED_PENDING_BOSS",
+      "unlocked": false,
+      "unlock_by": "BOSS"
+    }
+  ],
+  "hold": [
+    {
+      "id": "b1 十款",
+      "status": "HOLD",
+      "note": "文本全绿 + 源图待补"
+    }
+  ],
+  "awaiting_decision": [
+    {
+      "id": "P3 定价路线裁决",
+      "status": "AWAITING_DECISION",
+      "owner": "BOSS/贾维斯",
+      "stance": "不放水、不催，等裁决"
+    }
+  ],
+  "awaiting_confirm": [
+    {
+      "id": "C3",
+      "desc": "B30-82 折进 B30-81",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C4",
+      "desc": "B30-42/185 变体文案作废",
+      "status": "AWAITING_CONFIRM"
+    },
+    {
+      "id": "C1",
+      "desc": "对照组 B30-35 → B30-69",
+      "status": "AWAITING_CONFIRM"
+    }
+  ],
+  "last_execution": {
+    "task": "MERCADO-SELECTION",
+    "at": "2026-10-20T01:39:14+08:00",
+    "receipt": "receipt_MERCADO-SELECTION_20261020_0139.json",
+    "result": "DONE_WITH_RECEIPT"
+  },
+  "inbox_scan": {
+    "inbox_path": "/Volumes/2-AI-1/A2A/inbox",
+    "envelopes": 5,
+    "addressed_to_me": [],
+    "claimed": 0,
+    "executed": 0,
+    "note": "TASK_NONE_FOR_ME"
+  },
+  "constraints_kept": {
+    "browser": "NOT_OPENED",
+    "seller_backend_login": "NO",
+    "price_change": "NO",
+    "listing_created": "NO",
+    "miaoshou_jimeng": "NOT_TOUCHED",
+    "2fa_clash": "NOT_TOUCHED",
+    "credits_used": 0,
+    "files_modified": "ONLY_NEW_RECEIPT"
+  },
+  "path_note": "outbox 软链 /Users/lucas/ANC-COMMERCE/A2A/outbox -> /Volumes/2-AI/A2A/outbox 当前失效（该挂载点下无 A2A 目录且无写权限）；本回执写入同一逻辑 outbox 的真实挂载位置 /Volumes/2-AI-1/A2A/outbox，未改动任何既有文件/软链。"
+}

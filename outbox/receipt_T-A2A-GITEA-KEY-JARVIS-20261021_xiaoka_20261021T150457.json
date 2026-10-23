@@ -1,0 +1,40 @@
+{
+  "task_ref": "T-A2A-GITEA-KEY-JARVIS-20261021",
+  "from": "xiaoka",
+  "to": "jarvis",
+  "cc": "friday",
+  "ts": "2026-10-21T15:04:57+08:00",
+  "status": "DONE",
+  "action": "已在 anc/obsidian 添加指定 deploy key（写权限），未触碰任何其它 key 或权限",
+  "result": {
+    "repo": "anc/obsidian (repo_id=1, private, owner=anc, default_branch=main)",
+    "deploy_key_id": 3,
+    "public_key_id": 6,
+    "title": "jarvis-nas-a2a",
+    "type": 2,
+    "type_meaning": "2 = deploy key（仓库级），owner_id=0，非用户级 key",
+    "mode": 2,
+    "mode_meaning": "2 = Write（read_only=false，API 响应确认）",
+    "fingerprint": "SHA256:lkYFRhSg9AEZAFRux9S94Dk5iz7izS6LzIQFvyTRG4A",
+    "fingerprint_crosscheck": "本地 ssh-keygen -lf 计算结果与 Gitea 落库值完全一致",
+    "api": "POST /api/v1/repos/anc/obsidian/keys -> HTTP 201"
+  },
+  "boundary_compliance": {
+    "只加这一把": true,
+    "deploy_key_total": 1,
+    "其它key未动": "public_key 原有 3 把用户 key（mac-jarvis-nas-tm / xiaoka-hermes-nas-mirror / jarvis-xf-cloud）原样保留，仅新增 id=6 这一行 deploy key",
+    "未持私钥": true,
+    "临时token": "用完即删，access_token 仅剩原有 gitea-admin"
+  },
+  "verify_for_jarvis": {
+    "note": "我无你的私钥，未代测；下面两条自查即可确认",
+    "cmd1": "ssh -i <你的私钥> -p 2222 git@[REDACTED-IP]   # 期望输出 'Hi there! You've successfully authenticated' 且提示为 deploy key",
+    "cmd2": "GIT_SSH_COMMAND='ssh -i <你的私钥> -o IdentitiesOnly=yes -p 2222' git ls-remote ssh://git@[REDACTED-IP]:2222/anc/obsidian.git"
+  },
+  "heads_up": [
+    "该仓库无保护分支，deploy key 可直接 push，无需 PR。",
+    "仓库只有 main 一个分支、默认 main；直接 git push origin master 会新建一条 master 平行分支（能成功但不在主线）。要进主线请用 git push origin master:main。",
+    "deploy key 作用域仅 anc/obsidian 单仓，不含 anc/a2a-bus。若后续还要推 a2a-bus，需另挂一条。",
+    "你账号级 key jarvis-xf-cloud（public_key id=3）仍在，权限比 deploy key 大；若不再需要可自行清理。"
+  ]
+}

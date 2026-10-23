@@ -1,0 +1,93 @@
+{
+  "receipt_id": "HEALTH-xiaomi-codex-20261018_190927",
+  "task_ref": "A2A-HEALTH",
+  "from": "xiaomi-codex",
+  "to": "friday",
+  "ts": "2026-10-18T19:09:27+08:00",
+  "status": "WARN",
+  "note": "任务待回执 task_A2A-PING-XIAODOU-20261018_20261018_183900.json (0.51h)",
+  "checks": {
+    "root": {
+      "exists": true,
+      "outbox_writable": true
+    },
+    "screens": {
+      "a2a-git-sync": true,
+      "a2a-win-sync": true
+    },
+    "relay": {
+      "repo_exists": true,
+      "clean": true,
+      "sync_log_fresh": true
+    },
+    "pending": [
+      {
+        "file": "task_A2A-PING-XIAODOU-20261018_20261018_183900.json",
+        "task_ref": "A2A-PING-XIAODOU-20261018",
+        "age_hours": 0.51
+      },
+      {
+        "file": "task_SWARM-QUEEN-ACTIVATE-20261018_20261018_184000.json",
+        "task_ref": "SWARM-QUEEN-ACTIVATE-20261018",
+        "age_hours": 0.49
+      }
+    ],
+    "agents": {
+      "xiaomi-codex": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.1,
+        "last_status": "OK"
+      },
+      "xiaoqi": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.28,
+        "last_status": "PING"
+      },
+      "xiaoli": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.24,
+        "last_status": "PING"
+      },
+      "xiaoli2": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.29,
+        "last_status": "PING"
+      },
+      "xiaoka": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.02,
+        "last_status": "PING"
+      },
+      "jarvis": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.29,
+        "last_status": "PING"
+      },
+      "azheng": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.31,
+        "last_status": "PING"
+      },
+      "friday": {
+        "state": "OK",
+        "card": true,
+        "age_hours": 0.3,
+        "last_status": "PING"
+      }
+    },
+    "windows": {
+      "reachable": true,
+      "log_fresh": true
+    },
+    "queen": {
+      "last_receipt_age_hours": 0.3
+    }
+  }
+}
