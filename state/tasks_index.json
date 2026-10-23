@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-23T09:13:22Z",
- "count": 11,
+ "source_head_at": "2026-10-23T10:09:47Z",
+ "count": 8,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -57,30 +57,6 @@
    "to": "jarvis",
    "status": "",
    "ts": "2026-10-20T19:07:03+08:00"
-  },
-  {
-   "file": "task_M0-ARCH_xiaodou_20261023T091500.json",
-   "task_id": "M0-ARCH_xiaodou_20261023T091500",
-   "from": "",
-   "to": "xiaodou",
-   "status": "",
-   "ts": ""
-  },
-  {
-   "file": "task_M0-IDENTITY_xiaodou_20261023T091500.json",
-   "task_id": "M0-IDENTITY_xiaodou_20261023T091500",
-   "from": "",
-   "to": "xiaodou",
-   "status": "",
-   "ts": ""
-  },
-  {
-   "file": "task_M0-ORDERS_xiaodou_20261023T091500.json",
-   "task_id": "M0-ORDERS_xiaodou_20261023T091500",
-   "from": "",
-   "to": "xiaodou",
-   "status": "",
-   "ts": ""
   },
   {
    "file": "task_ORG-20261022-CEO-TRANSITION_ALL.json",
