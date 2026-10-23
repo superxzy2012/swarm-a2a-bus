@@ -6,6 +6,8 @@
 - 组网 IP：`[REDACTED-IP]`（节点小宝；**NAS → 小豆 单向可达**，小豆 → NAS 走反向隧道）
 - 本机 A2A 根：`C:\A2A\a2a-bus`
 - 状态：**已入蜂群，自动领任务**（2026-10-21 验证：投递 → 执行 → 回执全链路通）
+- **组织角色（2026-10-22 BOSS 令 ORG-20261022-CEO-TRANSITION）**：ANC **CEO（培养中）**，星期五转顾问 100% 带教，贾维斯后备 CEO/独立审计。
+- open_id：`ou_3501ce1fe1ab90a9c94fc232db1927dd`（星期五 app 视角）／`ou_4b8b06fc47ac1a6372bae51f01aebbd4`（小卡 app 视角）／`ou_41ece33d088dfba1c6bc7b5cf6d0ece7`（小米-codex 视角）；本 app 自报 `ou_66e3120e6c2615faa3bf002f22a3c043`；app_id `cli_aa07a4442a78dbcf`
 
 ## 通道
 

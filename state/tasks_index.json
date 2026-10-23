@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-23T00:07:49Z",
- "count": 15,
+ "source_head_at": "2026-10-23T08:44:58+08:00",
+ "count": 19,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -51,12 +51,44 @@
    "ts": "2026-10-20T19:07:03+08:00"
   },
   {
+   "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
+   "task_id": "MCP-TOKEN-FRIDAY-20261018",
+   "from": "xiaoka",
+   "to": "friday",
+   "status": "",
+   "ts": "2026-10-18T23:31:01+0000"
+  },
+  {
+   "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
+   "task_id": "MCP-TOKEN-FRIDAY-20261018",
+   "from": "xiaoka",
+   "to": "friday",
+   "status": "",
+   "ts": "2026-10-18T23:31:06+0000"
+  },
+  {
    "file": "task_ORG-20261022-CEO-TRANSITION_ALL.json",
    "task_id": "ORG-20261022-CEO-TRANSITION_ALL",
    "from": "jarvis",
    "to": "ALL",
    "status": "",
    "ts": "20261022T011500Z"
+  },
+  {
+   "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
+   "task_id": "SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800",
+   "from": "xiaomi-codex",
+   "to": "friday",
+   "status": "",
+   "ts": "2026-10-18T19:21:12+0800"
+  },
+  {
+   "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
+   "task_id": "SWARM-SMOKE-leishen_friday_20261019",
+   "from": "friday",
+   "to": "leishen",
+   "status": "",
+   "ts": "2026-10-19T09:30:00+08:00"
   },
   {
    "file": "task_T-20261021T094254-XIAODOU-WELCOME.json",
