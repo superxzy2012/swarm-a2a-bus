@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-22T00:09:35Z",
- "count": 13,
+ "source_head_at": "2026-10-23T00:07:49Z",
+ "count": 15,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -35,12 +35,28 @@
    "ts": "2026-10-20T09:47:50+08:00"
   },
   {
+   "file": "task_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json",
+   "task_id": "HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday",
+   "from": "jarvis",
+   "to": "friday",
+   "status": "",
+   "ts": "20261022T011500Z"
+  },
+  {
    "file": "task_JARVIS-A2A-CONFIG_friday_20261020T190703.json",
    "task_id": "JARVIS-A2A-CONFIG_friday_20261020T190703",
    "from": "friday",
    "to": "jarvis",
    "status": "",
    "ts": "2026-10-20T19:07:03+08:00"
+  },
+  {
+   "file": "task_ORG-20261022-CEO-TRANSITION_ALL.json",
+   "task_id": "ORG-20261022-CEO-TRANSITION_ALL",
+   "from": "jarvis",
+   "to": "ALL",
+   "status": "",
+   "ts": "20261022T011500Z"
   },
   {
    "file": "task_T-20261021T094254-XIAODOU-WELCOME.json",
