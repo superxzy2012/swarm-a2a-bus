@@ -1,0 +1,12 @@
+{
+  "task_ref": "M2-1",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T23:58:47+08:00",
+  "status": "DONE",
+  "note": "CEO 调度权实操：已按标准 sid 向 xiaoka 派 P0 只读健康任务（inbox/task_M2-CEO-DISPATCH-xiaoka_xiaodou_20261023T235819.json，含 3 条验收标准+2h 截止+心跳监控+升级路径）。闭环监控文件 results/m2-1-heartbeat-xiaodou.json；xiaodaou 每 30min 查回执，结果将在其回执到达或超时升级时补记。派单走总线（跨 app open_id 不能直接 @，遵循 ledger 规则2/3）。",
+  "evidence": {
+    "dispatch": "inbox/task_M2-CEO-DISPATCH-xiaoka_xiaodou_20261023T235819.json",
+    "heartbeat": "results/m2-1-heartbeat-xiaodou.json",
+    "deadline": "2026-10-24T01:58:19+08:00"
+  }
+}
