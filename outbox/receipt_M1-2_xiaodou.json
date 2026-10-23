@@ -1,0 +1,12 @@
+{
+  "task_ref": "M1-2",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T23:32:22+08:00",
+  "status": "DONE",
+  "note": "协议掌控：读懂 results/xiaodou-sync.sh 全逻辑（fetch→脏区自动commit→rebase→冲突reset+cherry-pick -Xtheirs→push→末尾硬对齐）。故障注入（本地 bare 双节点同行冲突）实测发现两个 edge case：①cherry-pick -Xtheirs 在同行冲突时静默跳过，本地回执丢失；②push 失败后末尾无条件 reset --hard origin/main 会吞掉本地提交。修复版 results/xiaodou-sync-hardened.sh：冲突先打 quarantine/<ts> 保命分支、再 -Xtheirs 重试，失败 exit2 不硬对齐；push 失败保留本地 exit1。演练见 results/drill_m1-2-20261023.md。去重=worker 幂等(outbox 回执存在即跳)+processed/ 同名归档（PROTOCOL v1 第5条），总线上无 dedupe.py 实体，已按真实实现掌握。",
+  "evidence": {
+    "new_script": "results/xiaodou-sync-hardened.sh",
+    "drill_log": "results/drill_m1-2-20261023.md",
+    "observed": "CONFLICT(content) state.txt; 旧流程 cherry-pick 后本地提交不在 log; 新流程 quarantine 分支保留本地提交"
+  }
+}

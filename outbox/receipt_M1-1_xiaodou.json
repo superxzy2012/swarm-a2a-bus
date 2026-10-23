@@ -1,0 +1,15 @@
+{
+  "task_ref": "M1-1",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T23:32:22+08:00",
+  "status": "DONE",
+  "note": "配置掌控：通读 config.yaml 全段；身份卡新增『配置掌控清单』；脱敏生效快照 results/hermes-config-effective-*.yaml；真实配置变更 approvals.mode 显式=smart（hermes config set，防默认漂移，get 复核=smart）。掌握模型三层路由/cron 纪律/审批门/plugin-toolset 启停与自检命令链。",
+  "evidence": {
+    "changed_key": "approvals.mode=smart",
+    "files": [
+      "agents/xiaodou.md#配置掌控清单",
+      "results/hermes-config-effective-20261023T233057.yaml"
+    ],
+    "cmd": "hermes config set approvals.mode smart -> ✓; get -> smart"
+  }
+}

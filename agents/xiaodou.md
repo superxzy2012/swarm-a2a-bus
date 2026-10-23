@@ -55,3 +55,42 @@
 /opt/data/.venv-browser/bin/python /opt/data/bin/a2a_dispatch.py \
   --to xiaodou --instruction "任务说明" --cmd "要执行的命令"
 ```
+
+## 配置掌控清单（M1-1，2026-10-23 实测生效项）
+
+> 配置文件 `%LOCALAPPDATA%\hermes\config.yaml`（2434 行，v50）。铁律：不手改 config.yaml，只用 `hermes config get/set KEY VAL`；密钥只进 `.env`。改完 `/reset` 或重启 gateway 生效。
+
+### 1. 模型路由分层（三处，互不影响）
+| 层 | 键 | 现值 | 作用 |
+|---|---|---|---|
+| 主会话 | `model.default/provider/base_url/api_mode` | ark-code-latest / custom / 火山 ark coding v3 / chat_completions | 本节点全部对话默认走火山 ark |
+| 子代理 | `delegation.model/provider`、`fallback_providers` | 未单独设（继承父模型），max_iterations=250 | delegate_task 子任务可下沉便宜模型；[] 可关 fallback |
+| 单频道覆盖 | `platforms.feishu.channel_overrides[chat_id].model/provider/system_prompt` | 无 | 给特定群/私聊单独定模型与人格 |
+命令：`hermes config set delegation.model deepseek/deepseek-chat`；会话内临时切用 `/model`（不写全局）。
+
+### 2. cron 纪律
+- `cron.catch_up_missed: true`（停机后补发过期任务；计划停机可临时置 false）
+- 建任务只用 cronjob 工具，delivery 三选：`origin`（回触发群）/`feishu`（home=管理群）/`local`（只落盘 ~/hermes/cron/output/）
+- A2A 总线轮询**不进 hermes cron**：由 NAS cron→xd_worker.ps1 每 5 分钟跑，两套调度不许重叠（防重复回执）。
+
+### 3. approvals 模式
+- 全局 `approvals.mode`：smart（默认，风险命令审批）/manual（全审）/off（=yolo，禁长期开）
+- 现仅 `approvals.destructive_slash_confirm: false`；群里审批用 `/approve`、`/deny`
+- 飞书审批门 5 分钟不点=BLOCKED 不自动重试，BOSS 说"重新审批/我同意"后原样重发；`approvals.cron_mode` 决定无人值守时策略
+- 红线不变：凭据/删库/写授权类即使 yolo 也要 BOSS 明确确认
+
+### 4. plugins / toolsets 启停
+- `plugins.clone_timeout_seconds: 300`；安装 `hermes plugins install <name>`，目录 ~/hermes/desktop-plugins 等
+- 工具集：`hermes tools enable|disable NAME`（web/browser/terminal/feishu_doc/yuanbao…），**新会话才生效**，禁中途换 toolset（破坏 prompt cache）
+- 本平台生效工具集见 `platform_toolsets`（L1449）；feishu 额外有顶层 `feishu.enabled=true`、`feishu.allow_bots=mentions`（只在 config 读，.env 被跳过——小卡 2026-10-23 修）
+
+### 5. 其他已核实关键段
+- `platforms.feishu.home_channel`：管理群 oc_5687…687e5（name 乱码已修为「管理群」）
+- `compression`: enabled, threshold 0.50 → 压到 0.20, protect 前3后20, max_attempts 3
+- `agent.max_turns=150`, reasoning medium, fast_auto_seconds=60
+- `memory`: 双开，nudge 每 10 turn；`terminal.backend=local`, timeout 180
+- `gateway`：loop/startup/restart 三看门狗（3 strikes / 300s / 3次·60s 窗），bot_loop_guard 300s 内 20 事件冷却 600s，delivery_ledger=true（消息投递台账）
+- `stt.enabled=true` local base 模型；display.skin=default
+
+### 6. 自检命令链
+`hermes config check`（查老配置缺段）→ `hermes doctor`（整体健康）→ `hermes config get <key>` 单点核对 → gateway 改完 `/restart` 排空后重启。

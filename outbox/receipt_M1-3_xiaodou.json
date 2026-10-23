@@ -1,0 +1,15 @@
+{
+  "task_ref": "M1-3",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T23:32:22+08:00",
+  "status": "DONE",
+  "note": "调度掌控：读 swarm_oid_ledger.md(11节点位置+open_id 四铁律)/agents 全档/HANDOVER-FRIDAY-MASTER.md。模拟派单 P0 信封 inbox/task_DRILL-M1-DISPATCH_xiaodou_20261023T232504.json（to=xiaodou 干跑不扰其他节点，cc friday，含 acceptance 三条验收标准），本回执即验收闭环：回执存在+status DONE+commit sha 可在远端 main 核对+幂等。@ 规则按 ledger#2 用本 app 视角 sender id。",
+  "evidence": {
+    "dispatch": "inbox/task_DRILL-M1-DISPATCH_xiaodou_20261023T232504.json",
+    "acceptance_check": [
+      "outbox/receipt_M1-3_xiaodou.json 存在 DONE",
+      "随本次提交入远端 main，sha 见群回执",
+      "重复 worker 轮询幂等跳过"
+    ]
+  }
+}

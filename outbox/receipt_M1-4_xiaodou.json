@@ -1,0 +1,13 @@
+{
+  "task_ref": "M1-4",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-23T23:32:22+08:00",
+  "status": "DONE",
+  "note": "监控掌控：新增探针 results/mcp_probe.sh（5 端点：组网Gitea/隧道Gitea/obsidian/skillbox/octop；连续失败计数 PROBE_FAIL_LIMIT 默认3，strike 1/2 为 WARN、第3 次升级 ALERT，恢复即清计数）。真实发现并修复一个兼容 bug：git-bash 下 curl %{http_code} 与 echo 000 拼成 200000 致全端点误判，改为 tr 取数字前三位，修复后实测 5/5 OK(rc=0)。伪造异常闭环：把 gitea-mesh 指向死端口 [REDACTED-IP]:59999 连跑3轮，实测 WARN(1/3)→WARN(2/3)→ALERT(3 consecutive)，恢复后计数清零。告警统一打 'ALERT' 关键字供上层抓；识别卡片黑洞看 gateway delivery_ledger + bot_loop_guard(300s/20事件/冷却600s)；飞书 230013(频控)/230001(内容/格式) 处置已并入演练记录。",
+  "evidence": {
+    "probe": "results/mcp_probe.sh",
+    "live": "gitea-mesh 200 / tunnel 200 / obsidian 404 / skillbox 404 / octop 200, rc=0",
+    "forged_outage": "59999: WARN 1/3, WARN 2/3, ALERT 3 consecutive",
+    "log": "results/drill_m1-4-20261023.md"
+  }
+}
