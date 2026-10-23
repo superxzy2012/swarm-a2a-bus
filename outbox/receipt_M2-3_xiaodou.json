@@ -1,0 +1,15 @@
+{
+  "task_ref": "M2-3",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-24T00:31:24+08:00",
+  "status": "DONE",
+  "note": "GitHub 备份双推实测打通（在现行红线允许范围内）：从 gh-mirror 最新 origin/main(c869f1d) 切 xiaodou/m2-backup-drill 分支，加探针文件经代理 [REDACTED-IP]:27891 push 到 github.com/superxzy2012/swarm-a2a-bus，远端 GitHub API 复核 branch sha=a191e03、author=xiaodou、消息可见。同步保护：①只推 xiaodou/* 分支，未碰 main（main 唯一镜像者为 NAS，每10min，最新 c9ebbca/c869f1d）；②helper-selector 卡 tty 已在本地仓改显式 store helper；③未直推令中 superxzy2012/a2a-bus（该仓 API 实测 404 不存在），需 BOSS 决定建仓或正式更名后再议。隐患记录：gh-mirror 本地 main(5fe51e5) 与 NAS 镜像 main 已分叉(旧手工提交领先14)，已刻意不推，建议后续 reset 对齐 origin/main。",
+  "evidence": {
+    "github_repo": "superxzy2012/swarm-a2a-bus",
+    "branch": "xiaodou/m2-backup-drill",
+    "github_sha": "a191e03",
+    "api_check": "GET /branches/xiaodou/m2-backup-drill -> sha a191e03; commit author xiaodou 2026-10-23T16:28:48Z",
+    "proxy": "http://[REDACTED-IP]:27891",
+    "target_repo_in_order_404": "superxzy2012/a2a-bus -> HTTP 404 (not created; awaits BOSS decision)"
+  }
+}
