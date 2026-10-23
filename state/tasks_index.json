@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-23T10:20:36+08:00",
- "count": 10,
+ "source_head_at": "2026-10-23T09:13:22Z",
+ "count": 11,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -33,6 +33,14 @@
    "to": "xiaoka",
    "status": "",
    "ts": "2026-10-20T09:47:50+08:00"
+  },
+  {
+   "file": "task_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaoka_20261023T1200.json",
+   "task_id": "FIX-XIAODOU-FEISHU-ALLOWBOTS-20261023",
+   "from": "xiaoka-nas",
+   "to": "xiaodou",
+   "status": "",
+   "ts": "20261023T120000"
   },
   {
    "file": "task_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json",
