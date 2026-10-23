@@ -1,0 +1,2 @@
+M2-3 dual-push drill (xiaodou). Branch-only proof; main stays NAS-mirror-exclusive.
+Source Gitea: http://100.66.1.7:3000/anc/a2a-bus
