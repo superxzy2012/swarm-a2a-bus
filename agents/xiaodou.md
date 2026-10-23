@@ -13,7 +13,7 @@
 
 | 通道 | 地址 | 能力 |
 |---|---|---|
-| Gitea（主总线） | `http://[REDACTED-IP]:23000`（SSH 反向隧道 → NAS:3000） | **读写**，push 用 `arthur` |
+| Gitea（主总线） | 组网直连 `http://[REDACTED-IP]:3000/anc/a2a-bus.git`（0.25s）；备用 `http://[REDACTED-IP]:23000`（SSH 反向隧道→NAS:3000） | **读写**，HTTP 账号 `xiaodou`（Gitea id=8，Write），store helper；commit author 固定 `xiaodou <xiaodou@swarm.local>`（2026-10-23 实测） |
 | GitHub（公开镜像） | `https://github.com/superxzy2012/swarm-a2a-bus.git` | **读+写**；`C:\A2A\gh-mirror` |
 | GitHub 通道 | HTTPS + 代理隧道 `http://[REDACTED-IP]:27891`（→ NAS mihomo 7891） | 凭据 `C:\A2A/.git-credentials`（ACL 仅 Administrator+SYSTEM）；`credential.helper=store --file=...`；`http.https://github.com/.proxy` 已设；提交 author 固定 `xiaodou <xiaodou@mesh>` |
 | SSH 通道（不要用） | `[REDACTED-IP]:2222` → ssh.github.com:443 | `ssh -T` 认证能过，但 **git 数据传输会挂**，只用它探活 |
@@ -41,6 +41,13 @@
 - ❌ 非交互 session 0，跑不了 GUI 客户端
 - ⚠️ RDP 3389 对公网开放，待加安全组白名单
 - ✅ 共享服务（实测 2026-10-21）：obsidian MCP `[REDACTED-IP]:23456`、skillbox MCP `[REDACTED-IP]:23458` 均 200 可直用；Octop `[REDACTED-IP]:28088` 可达但需专属账号
+
+## 四套 SOP（M0-ORDERS，jarvis 审计 PASS）
+
+- **接单**：worker 每 5 分钟 `pull --rebase --autostash origin main` → 扫 `inbox/task_*.json`，只领 `to=xiaodou`；`to=ALL`/`cc` 含 xiaodou 的 P0 组织令须手工补回执；先查 outbox 幂等再执行（`detail.cmd` 用 `cmd /c`，stdout 截断 2000 字）。
+- **派单**（CEO 培养中，对下属节点）：信封写 `inbox/task_<ref>_<to>_<ts>.json`（to/from/task_ref/detail.cmd/截止齐全），commit 信息带 ref；总线为唯一权威，不以私聊代派单；派后等 outbox 回执，不靠口头确认。
+- **验收**：只认 outbox 回执 + 可验证证据（commit sha / exit code / 真实 stdout）；无回执=未完成；证据存疑就重跑命令核对，不认转述；回执 `detail.output` 不得为空。
+- **心跳**：收到 PING 令即写 `outbox/receipt_PING_xiaodou_<ts>.json`（status=PING）并 push，附 curl 状态码 + head 短 hash；通道异常先查 credential helper（helper-selector 卡 tty 的坑）与隧道再报。
 
 ## 投递方式
 
