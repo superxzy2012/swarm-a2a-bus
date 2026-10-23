@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-23T08:44:58+08:00",
- "count": 19,
+ "source_head_at": "2026-10-23T08:51:46+08:00",
+ "count": 7,
  "tasks": [
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -51,108 +51,12 @@
    "ts": "2026-10-20T19:07:03+08:00"
   },
   {
-   "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233101.json",
-   "task_id": "MCP-TOKEN-FRIDAY-20261018",
-   "from": "xiaoka",
-   "to": "friday",
-   "status": "",
-   "ts": "2026-10-18T23:31:01+0000"
-  },
-  {
-   "file": "task_MCP-TOKEN-FRIDAY-20261018_xiaoka_20261018T233106.json",
-   "task_id": "MCP-TOKEN-FRIDAY-20261018",
-   "from": "xiaoka",
-   "to": "friday",
-   "status": "",
-   "ts": "2026-10-18T23:31:06+0000"
-  },
-  {
    "file": "task_ORG-20261022-CEO-TRANSITION_ALL.json",
    "task_id": "ORG-20261022-CEO-TRANSITION_ALL",
    "from": "jarvis",
    "to": "ALL",
    "status": "",
    "ts": "20261022T011500Z"
-  },
-  {
-   "file": "task_SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800.json",
-   "task_id": "SWARM-QUEEN-ACTIVE-20261018_friday_20261018T192112+0800",
-   "from": "xiaomi-codex",
-   "to": "friday",
-   "status": "",
-   "ts": "2026-10-18T19:21:12+0800"
-  },
-  {
-   "file": "task_SWARM-SMOKE-leishen_friday_20261019.json",
-   "task_id": "SWARM-SMOKE-leishen_friday_20261019",
-   "from": "friday",
-   "to": "leishen",
-   "status": "",
-   "ts": "2026-10-19T09:30:00+08:00"
-  },
-  {
-   "file": "task_T-20261021T094254-XIAODOU-WELCOME.json",
-   "task_id": "T-20261021T094254-XIAODOU-WELCOME",
-   "from": "xiaoka",
-   "to": "xiaodou",
-   "status": "",
-   "ts": "20261021T094254"
-  },
-  {
-   "file": "task_T-20261021T114140-XIAODOU-XIAOKA_xiaoka_20261021T114140.json",
-   "task_id": "T-20261021T114140-XIAODOU-XIAOKA_xiaoka_20261021T114140",
-   "from": "xiaoka",
-   "to": "xiaodou",
-   "status": "",
-   "ts": "20261021T114140"
-  },
-  {
-   "file": "task_T-20261021T120134-XIAODOU-XIAOKA_xiaoka_20261021T120134.json",
-   "task_id": "T-20261021T120134-XIAODOU-XIAOKA_xiaoka_20261021T120134",
-   "from": "xiaoka",
-   "to": "xiaodou",
-   "status": "",
-   "ts": "20261021T120134"
-  },
-  {
-   "file": "task_T-20261021T141908-WINPC-XIAOKA_xiaoka_20261021T141908.json",
-   "task_id": "T-20261021T141908-WINPC-XIAOKA_xiaoka_20261021T141908",
-   "from": "xiaoka",
-   "to": "winpc",
-   "status": "",
-   "ts": "20261021T141908"
-  },
-  {
-   "file": "task_XIAODOU-A2A-CREDS_friday_20261020T124010.json",
-   "task_id": "XIAODOU-A2A-CREDS_friday_20261020T124010",
-   "from": "friday",
-   "to": "xiaoka",
-   "status": "",
-   "ts": "2026-10-20T12:40:10+08:00"
-  },
-  {
-   "file": "task_XIAODOU-HANDOFF_friday_20261020T124010.json",
-   "task_id": "XIAODOU-HANDOFF_friday_20261020T124010",
-   "from": "friday",
-   "to": "xiaodou",
-   "status": "",
-   "ts": "2026-10-20T12:40:10+08:00"
-  },
-  {
-   "file": "task_XIAODOU-MCP-TOKEN_friday_20261021T004500.json",
-   "task_id": "XIAODOU-MCP-TOKEN_friday_20261021T004500",
-   "from": "friday",
-   "to": "xiaoka",
-   "status": "",
-   "ts": "2026-10-21T00:45:00+08:00"
-  },
-  {
-   "file": "task_XIAODOU-ONBOARD_friday_20261021T003000.json",
-   "task_id": "XIAODOU-ONBOARD_friday_20261021T003000",
-   "from": "friday",
-   "to": "xiaodou",
-   "status": "",
-   "ts": "2026-10-21T00:30:00+08:00"
   }
  ]
 }
