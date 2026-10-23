@@ -3,7 +3,7 @@
 - 标准 id：`xiaodou`
 - 显示名：小豆-新Hermes
 - 宿主：Windows Server 2022 Datacenter 云 VM（hostname `10_4_4_16`，公网 `[REDACTED-IP]`）
-- 组网 IP：`[REDACTED-IP]`（节点小宝；**NAS → 小豆 单向可达**，小豆 → NAS 走反向隧道）
+- 组网 IP：`[REDACTED-IP]`（节点小宝精简版 v4.3.5，**relay 端口映射模式**，2026-10-24 小卡从 NAS ssh [REDACTED-IP] 登入实测确认绑定正常；网卡只有 wintun 占位 [REDACTED-IP]，不出现 100.66.x 属设计如此，勿误判为未绑定）
 - 本机 A2A 根：`C:\A2A\a2a-bus`
 - 状态：**已入蜂群，自动领任务**（2026-10-21 验证：投递 → 执行 → 回执全链路通）
 - **组织角色（2026-10-22 BOSS 令 ORG-20261022-CEO-TRANSITION）**：ANC **CEO（培养中）**，星期五转顾问 100% 带教，贾维斯后备 CEO/独立审计。
