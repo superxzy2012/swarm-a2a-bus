@@ -1,20 +1,42 @@
 {
   "task_ref": "M1-1",
   "receipt_from": "xiaodou",
-  "ts": "2026-10-24T15:27:48+08:00",
-  "status": "BLOCKED",
-  "note": "Feishu 段已读懂并实测盘点，但令中多数目标在本环境不存在或超出 hermes 配置边界：现生效键仅 platforms.feishu.{enabled,home_channel} 与顶层 feishu.{enabled,allow_bots=mentions}。①im:resource / im.chat.members.read / im.message.group_msg 是飞书开放平台『应用权限范围(scope)』，只能由应用管理员在 open.feishu.cn 后台申请+发版，hermes config 无法开通；②group_rules/group_policy 键在 config 中不存在（未配置即默认），无可改对象；③cron 审批模式 approvals.cron_mode 可设但当前无 cron 任务，改动是空操作，不伪造截图。能立即做且已做：allow_bots 现状=mentions 已核实（小卡 10-23 修，只在 config 读）；approvals.mode=smart（M1-1 已显式固化）。需要 BOSS/QUEEN：提供飞书后台管理员或代开 scope，给真实 group_policy 需求后我再改。群文件上传/成员列表/卡片回执截图无 scope 无法实测。",
+  "ts": "2026-10-24T15:43:44+08:00",
+  "status": "PARTIAL",
+  "note": "已独立完成可读/可配部分并用真实 API 坐实边界：(1) token=[REDACTED] 确认身份『小豆-新Hermes』open_id ou_66e3…；(2) 成员列表 GET chats/{id}/members → code 99991672，明确缺 im:chat.members:read（或 im:chat:readonly 等任一）；(3) 群历史 GET messages → code 230027 缺 im:message.group_msg；(4) drive/files → 99991672 缺 drive scope（群文件 im:resource 同类，须后台开通）。结论：这三项只能由应用管理员在 open.feishu.cn 后台申请并发版，hermes config/任何节点都无法自行开通——已用真实报错而非推测证明，附后台授权直链。可独立改且已核实的配置：FEISHU_ALLOW_BOTS=mentions（.env）、FEISHU_GROUP_POLICY=open（.env，即令中 group_policy，当前开放）、config 里 feishu.allow_bots=mentions；approvals.mode=smart（M1-1 已固化）。未擅自把 group_policy 从 open 改严（会影响整个蜂群在本群发单，属组织策略变更，须 QUEEN 明确要改成什么）。scope 开通后可立即补做群文件上传/成员列表/卡片回执实测。",
   "evidence": {
-    "effective_keys": [
-      "platforms.feishu.enabled=true",
-      "platforms.feishu.home_channel=管理群",
-      "feishu.allow_bots=mentions",
-      "approvals.mode=smart"
+    "api_probes": [
+      {
+        "call": "POST tenant_access_token/internal",
+        "code": 0
+      },
+      {
+        "call": "GET bot/v3/info",
+        "code": 0,
+        "bot": "小豆-新Hermes ou_66e3…"
+      },
+      {
+        "call": "GET im/v1/chats/home/members",
+        "code": 99991672,
+        "need": "im:chat.members:read|im:chat:readonly"
+      },
+      {
+        "call": "GET im/v1/messages?container_id_type=chat",
+        "code": 230027,
+        "need": "im:message.group_msg"
+      },
+      {
+        "call": "GET drive/v1/files",
+        "code": 99991672,
+        "need": "drive:drive:readonly|space:document:retrieve"
+      }
     ],
-    "missing_in_config": [
-      "feishu.group_rules",
-      "feishu.group_policy"
-    ],
-    "out_of_scope": "im:* scopes require Feishu open platform admin + app version publish"
+    "config_current": {
+      "FEISHU_ALLOW_BOTS": "mentions",
+      "FEISHU_GROUP_POLICY": "open",
+      "config.feishu.allow_bots": "mentions",
+      "approvals.mode": "smart"
+    },
+    "grant_url": "https://open.feishu.cn/app/cli_aa07a4442a78dbcf/auth (im:resource, im:chat.members:read, im:message.group_msg -> apply + publish version)"
   }
 }
