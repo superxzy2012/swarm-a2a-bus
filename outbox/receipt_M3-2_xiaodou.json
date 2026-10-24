@@ -1,0 +1,24 @@
+{
+  "task_ref": "M3-2",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-24T15:27:48+08:00",
+  "status": "BLOCKED",
+  "note": "模型路由段已读懂盘点：本机 model 段只有单一 custom provider → 火山 ark（default=ark-code-latest, base_url=ark.cn-beijing.volces.com/api/coding/v3, api_mode=chat_completions）；custom_providers 仅 Ark 一条。令中 providers.nas-gateway / omniroute / free-pool、model.auto、x-omniroute-model 在 config 中均不存在——没有可改成 flash→mini→pro 的降级链，也没有 omniroute 网关可打响应头，无法产出命中轨迹。不编造不存在的路由表。需要：QUEEN/小卡 提供 nas-gateway/omniroute 的真实 base_url+key_env（入 .env）或确认要新建 custom_providers 三档（flash/mini/pro 的具体模型名与 provider），我即可配置并用真实请求验证命中头。",
+  "evidence": {
+    "model": {
+      "default": "ark-code-latest",
+      "provider": "custom",
+      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3"
+    },
+    "custom_providers": [
+      "Ark"
+    ],
+    "missing": [
+      "providers.nas-gateway",
+      "providers.omniroute",
+      "free-pool chain",
+      "model.auto",
+      "x-omniroute-model"
+    ]
+  }
+}

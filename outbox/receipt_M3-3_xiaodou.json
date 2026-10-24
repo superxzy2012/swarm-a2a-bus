@@ -1,0 +1,12 @@
+{
+  "task_ref": "M3-3",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-24T15:27:48+08:00",
+  "status": "DONE",
+  "note": "插件/技能生态实测完成：①创建最小可用 skill devops/a2a-bus-health（frontmatter 含 name/version/description/trigger，scripts/probe.sh 可执行），已装到本机 skills 目录并实测调用：OK gitea-http 200 / OK git-ls-remote b153751（首版在 git-bash 用 git -C /c/.. 失败，定位为 MSYS 路径坑，改 cd 后全绿；WARN worker-log stale 为真实但预期）。②插件可逆操作：hermes plugins disable browser-firecrawl→list 见 disabled；enable→'✓ enabled / Gateway reloaded' 恢复，无破坏。技能副本留痕 results/a2a-bus-health-skill/。",
+  "evidence": {
+    "skill": "results/a2a-bus-health-skill/{SKILL.md,scripts/probe.sh}",
+    "live_run": "OK gitea-http 200; OK git-ls-remote b153751",
+    "plugin_toggle": "browser-firecrawl enabled→disabled→enabled(verified list)"
+  }
+}

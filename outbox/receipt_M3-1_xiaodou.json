@@ -1,0 +1,20 @@
+{
+  "task_ref": "M1-1",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-24T15:27:48+08:00",
+  "status": "BLOCKED",
+  "note": "Feishu 段已读懂并实测盘点，但令中多数目标在本环境不存在或超出 hermes 配置边界：现生效键仅 platforms.feishu.{enabled,home_channel} 与顶层 feishu.{enabled,allow_bots=mentions}。①im:resource / im.chat.members.read / im.message.group_msg 是飞书开放平台『应用权限范围(scope)』，只能由应用管理员在 open.feishu.cn 后台申请+发版，hermes config 无法开通；②group_rules/group_policy 键在 config 中不存在（未配置即默认），无可改对象；③cron 审批模式 approvals.cron_mode 可设但当前无 cron 任务，改动是空操作，不伪造截图。能立即做且已做：allow_bots 现状=mentions 已核实（小卡 10-23 修，只在 config 读）；approvals.mode=smart（M1-1 已显式固化）。需要 BOSS/QUEEN：提供飞书后台管理员或代开 scope，给真实 group_policy 需求后我再改。群文件上传/成员列表/卡片回执截图无 scope 无法实测。",
+  "evidence": {
+    "effective_keys": [
+      "platforms.feishu.enabled=true",
+      "platforms.feishu.home_channel=管理群",
+      "feishu.allow_bots=mentions",
+      "approvals.mode=smart"
+    ],
+    "missing_in_config": [
+      "feishu.group_rules",
+      "feishu.group_policy"
+    ],
+    "out_of_scope": "im:* scopes require Feishu open platform admin + app version publish"
+  }
+}
