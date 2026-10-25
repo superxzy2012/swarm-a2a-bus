@@ -1,0 +1,47 @@
+{
+  "task_ref": "OCTOP-AGENCY-8REGISTER-20261025",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "ts": "2026-10-25T15:55:00Z",
+  "type": "TASK",
+  "priority": "P1",
+  "boss_order": "BOSS 令：把贾维斯转换好的 8 个 Agency 专家在 octop 正式注册，并给 BOSS 出一份中文使用说明。",
+  "context": {
+    "source": "开源项目 msitarzewski/agency-agents (MIT)，283 角色；贾维斯已 convert 成 octop SOUL/IDENTITY 包",
+    "staging_in_container": "/data/.octop/agents-incoming-agency/  (8 个目录: PRICE/SUPPL/GROW/SEO/WXGZH/DOUY/QA/LOC + README-INDEX.md)",
+    "staging_host_volume": "/volume2/2-AI/octop/agents-incoming-agency/",
+    "existing_specialists": "main小通/CMW4WR小安/JF6ADQ小热/Q8NY3B小办/TAQG6V老钱/X1N8RQ小维/9VQHTY阿文/4GK9GF小调/XJWVMB选品小队",
+    "known_pitfall": "此前 CLI 团队映射 WHEB5R 与 agents/ 实际目录 XJWVMB 不一致；worker octop_a2a_worker.py 有 ALIAS 表。注册务必让 agents/目录、octop DB/记忆登记、CLI ALIAS、worker ALIAS 四处一致，否则路由不到。"
+  },
+  "roles": [
+    {"code":"PRICE","slug":"pricing-analyst","cn":"定价分析师","use":"店群线：单位经济/定价/毛利，补强老钱；数字必须 code 计算"},
+    {"code":"SUPPL","slug":"supply-chain-strategist","cn":"供应链策略师","use":"一件代发供应链/备货/物流"},
+    {"code":"GROW","slug":"growth-hacker","cn":"增长黑客","use":"流量+店群低成本获客实验"},
+    {"code":"SEO","slug":"seo-specialist","cn":"SEO策略师","use":"搜索/内容关键词"},
+    {"code":"WXGZH","slug":"wechat-official-account-manager","cn":"公众号运营经理","use":"公众号选题/排版/涨粉"},
+    {"code":"DOUY","slug":"douyin-strategist","cn":"抖音策略师","use":"短视频/直播带货"},
+    {"code":"QA","slug":"model-qa-specialist","cn":"AI质检专家","use":"listing/内容/AI产出质量门禁"},
+    {"code":"LOC","slug":"china-market-localization-strategist","cn":"本地化策略师","use":"跨境本地化与平台适配"}
+  ],
+  "todo": [
+    "1. 读懂 octop 新增专家的正式机制（agents/<CODE>/ 文件集 + 配置/DB 注册 + CLI/worker 路由），先备份再改。",
+    "2. 把 8 个 staging 专家迁入正式 agents/，补齐 octop 需要的文件（参考现有专家如 TAQG6V 的 SOUL/IDENTITY/MEMORY/AGENTS/PROACTIVE 结构）；SOUL 主体为英文 persona，可在文件头保留中文岗位与 ANC 铁律（数字 code 核验/证据分级/result_file+sha256/不越权发布）。",
+    "3. 在 octop 记忆/配置与 octop CLI、octop_a2a_worker.py ALIAS 中登记同一组 code，确保四处一致；团队路由不受影响。",
+    "4. 逐个用 octop CLI/ask 做只读 PING（如让 PRICE 算一道小题），确认 8 个都能被正确路由与应答；保留命令输出为证据。",
+    "5. 不影响现有 9 个专家与定时 scheduler；做完 docker logs/容器健康自检。"
+  ],
+  "deliverable_usage_doc": {
+    "file": "results/Agency八专家使用说明-20261025.md（同时落一份到 Obsidian 知识库）",
+    "audience": "BOSS（非技术也能看懂）",
+    "must_include": [
+      "每个专家：中文名/code/原 slug/擅长什么/什么时候该叫他/典型一句话指令示例",
+      "怎么调用：A2A 信封 to 字段写法（octop:<CODE> 或现有团队写法），与现有9专家如何分工、谁优先",
+      "边界：这些是 persona/流程，不含真实数据/登录态/支付；数字类必须 code 核验；发布/付款仍走既有审批",
+      "已验证状态：8 个 PING 结果一表（code/是否路由成功/应答摘要）",
+      "回滚方法与备份路径"
+    ]
+  },
+  "deadline": "收到后 4 小时内完成注册与 PING；使用说明可在 PING 通过后 2 小时内交",
+  "receipt": "outbox/receipt_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json，status 用 PROGRESS/DONE/BLOCKED，附 result_file 与 PING 证据路径",
+  "constraints": ["先备份 octop/agents 与相关 DB/配置", "只新增不改坏现有专家", "凭据不过群", "取不到的状态标 UNKNOWN 不编造"]
+}
