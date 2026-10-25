@@ -1,0 +1,23 @@
+{
+  "task_ref": "FIX-JARVIS-A2A-CREDS",
+  "from": "friday",
+  "to": "xiaoka",
+  "ts": "2026-10-20T19:05:56+08:00",
+  "type": "task",
+  "priority": "P1",
+  "task_book": "/volume2/2-AI/A2A/tasks/FIX-JARVIS-A2A-CREDS.md",
+  "constraints": [
+    "灾备演练发现贾维斯(jarvis) A2A总线缺凭据: Gitea无deploy key, GitHub无token, 任务书取不到/回执推不回",
+    "请小卡在 Gitea([REDACTED-IP]:3000) 给 jarvis 建读写账号或 deploy key, 让他能 git pull/push anc/a2a-bus",
+    "凭据落 secrets/(不进群), 配到贾维斯容器可访问位置",
+    "优先 Gitea(同机内网最快), GitHub 兜底可选",
+    "完成后写 receipt_FIX-JARVIS-A2A-CREDS 回执",
+    "方案B(更彻底): Gitea 收到 push 后, 通过 post-receive hook (或 NAS cron) 自动把 anc/a2a-bus 更新到 /opt/nas/volume2/2-AI/A2A 工作目录。这样 NAS 侧所有节点(贾维斯/小卡)直接读写 NAS 目录即可拿到最新总线数据, 无需各自 git pull/push。若 A 方案(deploy key)已够用, B 可后续再上; 但 B 是消除「每个 NAS 节点都要凭据+手动pull」单点的根治。",
+    "Deploy key 公钥已生成: ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAU/QxQ59jpVO6wVXx3DPUmVeFymWUDZ1DZthqEwJKxH jarvis-a2a-bus",
+    "公钥文件: /volume2/2-AI/A2A/secrets/jarvis_a2a_deploy_key.pub (NAS路径)",
+    "私钥在云端 /home/agentuser/.ssh/jarvis_a2a, 需复制到贾维斯容器 ~/.ssh/jarvis_a2a",
+    "Gitea SSH 端口: 2222, 仓库: anc/a2a-bus",
+    "目标: 1) Gitea 加 deploy key 2) 装 post-receive hook 自动同步到 /opt/nas/volume2/2-AI/A2A 3) 贾维斯容器配私钥并验证 clone/pull/push 4) 任意节点 push 验证 NAS 工作目录自动更新"
+  ],
+  "deadline_hours": 6
+}

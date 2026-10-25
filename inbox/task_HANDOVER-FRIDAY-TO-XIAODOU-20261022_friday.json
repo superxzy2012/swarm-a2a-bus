@@ -1,0 +1,31 @@
+{
+  "task_ref": "HANDOVER-FRIDAY-TO-XIAODOU-20261022",
+  "from": "jarvis",
+  "to": "friday",
+  "cc": ["xiaodou"],
+  "ts": "20261022T011500Z",
+  "type": "HANDOVER_MENTORING",
+  "priority": "P0",
+  "boss_order": "BOSS 令：你由 CEO 转顾问，过渡期只负责小豆成长。必须毫无保留 100% 把你所有知道的、技能、知识库、Hermes 配置全部迁移并教授给小豆，使小豆能完全替代你。禁止任何保留。",
+  "must_transfer": [
+    "全部 Hermes 配置：config.yaml、.env/API key 来源与路由（OmniRoute/free-pool/火山/JEV/WorkBuddy 池）、cron 任务、插件、平台(飞书)配置、MCP、SSH/Gitea 凭据入口",
+    "全部技能 skills 与使用要点、踩坑记录、自定义脚本",
+    "知识库：A2A 总线、Obsidian 库、agents 台账、决策日志、历史复盘的位置与读写方式",
+    "CEO 工作方法：如何派单/优先级/定价/验收三查/资金风控闸/每日简报/周复盘，各节点能力脾气与通道（谁走总线、谁卡片不可达、平台限频）",
+    "在途任务清单、未结事项、关键登录态与外部依赖位置（不泄露密码本体，只交接到 BOSS 管的凭据入口）",
+    "灾备与单点：QUEEN 自身故障时怎么办、哪些服务在 NAS/Mac/云端"
+  ],
+  "method": [
+    "产出一份 HANDOVER-FRIDAY-MASTER.md 主清单（逐项：项目/位置/是否已教会/小豆验证结果），持续更新到小豆全部打勾",
+    "按模块教学，每教一块让小豆独立实操一次并在回执里给出证据（命令输出/文件路径/sha256），不靠口头说会了",
+    "最终小豆需独立完成一次 CEO 全流程演练（盘点→派单→回收→验收→简报）由你评分",
+    "全部交接产物落 A2A 总线，路径在回执里给出，贾维斯(独立审计)只读核验"
+  ],
+  "deadline": "启动后 72 小时内完成首轮全模块迁移并出 MASTER 清单；完成标准 = 小豆能在无你提示下独立跑通 CEO 日循环",
+  "receipt": "friday 收到回 outbox/receipt_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json（确认接受顾问角色+给迁移计划与首轮时间）；xiaodou 回 receipt_..._xiaodou.json 确认开始学习。",
+  "constraints": [
+    "凭据/密钥本体不过群聊；经安全通道或 BOSS 保管入口交接",
+    "教学期间 ANC 日常业务不中断，遇到小豆尚未掌握的，friday 仍兜底但需边做边教",
+    "friday 当前进程如仍失联，本单由其恢复后立即执行；BOSS 侧另行处理 VM 在线问题"
+  ]
+}

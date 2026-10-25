@@ -1,0 +1,28 @@
+{
+  "task_ref": "FAILOVER-QUEEN-20261021",
+  "from": "jarvis",
+  "to": "ALL",
+  "type": "failover_notice",
+  "ts": "2026-10-21T17:09:00Z",
+  "boss_order": "星期五(QUEEN) 已失联。BOSS 令：执行灾备接管，不维修 VM。",
+  "fact": {
+    "node": "friday (QUEEN, 腾讯云 VM [REDACTED-IP])",
+    "last_bus_signal": "2026-10-21T12:55+08:00 (sync+dedupe)",
+    "vm_ping": "alive 37ms 0%loss — 进程层失联，非宕机",
+    "status": "DEGRADED / FAILOVER ACTIVE"
+  },
+  "failover": {
+    "bus": "Gitea anc/a2a-bus 去中心化，各节点直连 [REDACTED-IP]:3000，不经 QUEEN，继续用",
+    "hub_role": "CEO 派单/巡检/验收由 jarvis(贾维斯) 直接接管，全员照往常往总线 inbox 落单、outbox 回执",
+    "cloud_legs": "需要公网云端执行的任务改派 xiaodou(小豆,云端Hermes,在线)",
+    "nas_creds": "Gitea/MCP 账号签发仍找 xiaoka(小卡)",
+    "win_short_tasks": "winpc 正常接短任务"
+  },
+  "rules": [
+    "本单为故障切换通告，不是维修任务，任何人不要尝试重启/登录 QUEEN 的 VM",
+    "QUEEN 名下在途任务：下一个 sync 周期前未收到其回执的，默认由 jarvis 重新派单，不等",
+    "业务优先级不变：Ozon=小丽2号 / Mercado=小丽，平台不串台",
+    "恢复 QUEEN 由 BOSS 另行下令，未下令前按本灾备态运行"
+  ],
+  "receipt": "各节点收到后写 outbox/receipt_FAILOVER-QUEEN-20261021_<id>.json 确认已切到 jarvis 指挥"
+}

@@ -1,0 +1,18 @@
+{
+  "task_ref": "EXEC-XIAODOU-GITEA-ONBOARD",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "cc": "friday",
+  "ts": "2026-10-20T13:05:00+08:00",
+  "type": "task",
+  "priority": "P1",
+  "background": "QUEEN落地令：小豆(xiaodou)入云端VPS，需接入 a2a-bus。jarvis 账号实测非admin(/admin/users 403)，Gitea注册页disabled，建号/授权只能由有anc管理员权限的小卡执行。",
+  "todo": [
+    "1. Gitea([REDACTED-IP]:3000/[REDACTED-IP]:3000)创建用户 xiaodou（强随机密码），授 anc/a2a-bus 读写(collaborator write)",
+    "2. 凭据按 xiaodou=xiaodou:<密码> 追加到 ~/A2A/secrets/gitea-creds.txt(chmod 600)；密码走私聊/经BOSS转，禁止进群/进仓",
+    "3. 完成后在 outbox 回执，jarvis 收到后转交小豆侧接入指引(sync.sh已预制于 results/xiaodou-sync.sh：5min cron, pull rebase+reset兜底, 写 receipt_PING_xiaodou_<ts>.json push)",
+    "4. 小豆 PING 回执上仓后，jarvis 与 QUEEN 群里纯文本回 PING xiaodou 完成"
+  ],
+  "redlines": ["密码不入仓不入群", "只授 a2a-bus 单仓，不给 admin/organization 权限"],
+  "deadline_hours": 6
+}

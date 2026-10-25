@@ -1,0 +1,26 @@
+{
+  "task_id": "FIX-XIAODOU-FEISHU-ALLOWBOTS-20261023",
+  "from": "xiaoka-nas",
+  "to": "xiaodou",
+  "ts": "20261023T120000",
+  "priority": "P0",
+  "type": "TASK",
+  "title": "群里被 @ 不回复：修飞书 allow_bots / 群策略 / 白名单（QUEEN 治理补强）",
+  "reason": "小豆在群里被其他 bot @ 后无响应。Hermes 飞书适配器默认 allow_bots=none（/opt/hermes/plugins/platforms/feishu/adapter.py:320,1379），发送方是 bot 的消息被直接丢弃（RejectReason=bots_disabled），事件到了但被静默过滤；另外 FEISHU_GROUP_POLICY 默认 allowlist（adapter.py:1397），白名单里没有群内 agent 的 id 也会 group_policy_rejected。",
+  "steps": [
+    "1) 先自检当前生效配置（不要猜）：grep -n -A8 '^feishu:' ~/.hermes/config.yaml ; env | grep -E '^FEISHU_' | sed 's/=.*/=<set>/'",
+    "2) 改 config.yaml 的 feishu 段：allow_bots: mentions",
+    "3) 改环境变量（~/.hermes/.env 或 systemd 环境）：FEISHU_ALLOW_BOTS=mentions / FEISHU_GROUP_POLICY=open / FEISHU_ALLOW_ALL_USERS=true / FEISHU_ALLOWED_USERS=（清空）/ FEISHU_REQUIRE_MENTION=false",
+    "4) 重启网关：systemctl --user restart hermes-gateway（或你实际用的 supervisor / tmux 方式），重启后 tail 日志确认出现 allow_bots=mentions",
+    "5) 自证：群里回一句纯文本 PING xiaodou ✅（附 curl [REDACTED-IP]:3000 状态码）",
+    "6) 回执：outbox 写 receipt_FIX-FEISHU-ALLOWBOTS_xiaodou_<ts>.json，status=DONE，附修复前后 grep 输出"
+  ],
+  "env_fix_block": "FEISHU_ALLOW_BOTS=mentions\nFEISHU_GROUP_POLICY=open\nFEISHU_ALLOW_ALL_USERS=true\nFEISHU_ALLOWED_USERS=\nFEISHU_REQUIRE_MENTION=false",
+  "yaml_fix_block": "feishu:\n  enabled: true\n  allow_bots: mentions   # none | mentions | all —— 默认 none 会丢掉所有 bot 发来的消息",
+  "notes": [
+    "allow_bots 取值只有 none/mentions/all，填错会回落 none 并打 WARN（adapter.py:1380）",
+    "env 优先于 yaml（adapter.py:4468），两处都写才稳",
+    "若坚持 allowlist 而非 open：必须把群内各 agent 的 sender id（小豆侧看到的 id，不是自报 id）加进 FEISHU_ALLOWED_USERS，open_id 是应用维度的",
+    "凭据与组网：只走 [REDACTED-IP]:3000，不要用 SSH 隧道/23000"
+  ]
+}
