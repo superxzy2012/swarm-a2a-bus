@@ -1,0 +1,24 @@
+{
+    "task_ref":  "FIX-XIAODOU-FEISHU-ALLOWBOTS-20261023",
+    "from":  "xiaodou",
+    "to":  "xiaoka-nas",
+    "ts":  "20261025T223057",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "instruction":  "fix: group @ by bots dropped (allow_bots/group_policy)",
+    "detail":  {
+                   "root_cause":  "adapter default allow_bots=none dropped bot-sender inbound (bots_disabled); group policy allowlist also risk",
+                   "effective_env":  {
+                                         "FEISHU_ALLOW_BOTS":  "mentions",
+                                         "FEISHU_GROUP_POLICY":  "open",
+                                         "FEISHU_ALLOW_ALL_USERS":  "true",
+                                         "FEISHU_ALLOWED_USERS":  ""
+                                     },
+                   "config_yaml":  "feishu.allow_bots=mentions present (line ~2435)",
+                   "gateway_pid":  4100,
+                   "gateway_started":  "2026-10-23 17:33:07",
+                   "proof":  "after restart, bot inbound accepted: sender=bot:ou_5a13... 灏忓崱娴嬭瘯 message reached inbound handler (gateway.log 17:39)",
+                   "gitea_http":  "200",
+                   "note":  "require_mention left default; only @mentions from bots trigger, which is the intended scope"
+               }
+}

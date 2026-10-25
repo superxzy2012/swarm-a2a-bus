@@ -1,0 +1,20 @@
+{
+    "task_ref":  "DRILL-M1-DISPATCH-20261023T232504",
+    "from":  "xiaodou",
+    "to":  "xiaodou",
+    "cc":  [
+               "friday"
+           ],
+    "ts":  "20261025T223057",
+    "type":  "RECEIPT",
+    "status":  "DONE",
+    "drill":  true,
+    "instruction":  "M1-3 dispatch closure drill (dry run)",
+    "detail":  {
+                   "note":  "receipt present; commit sha attached and reachable on remote main",
+                   "gitea_http":  "200",
+                   "channel":  "mesh direct [REDACTED-IP]:3000",
+                   "host":  "10_4_4_16",
+                   "commit_sha":  "bb135e7"
+               }
+}
