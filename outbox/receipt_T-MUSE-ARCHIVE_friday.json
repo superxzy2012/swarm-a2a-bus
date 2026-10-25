@@ -1,0 +1,49 @@
+{
+  "task_ref": "T-MUSE-ARCHIVE-20261026",
+  "agent": "friday-queen",
+  "ts": "2026-10-26T07:39:13+08:00",
+  "nonce": "T-MUSE-ARCHIVE-20af46df",
+  "result": "PASS",
+  "acceptance_verdict": {
+    "method": "QUEEN 侧独立复验，不采信单方自述：从 gitea 拉归档提交原文 + 从 GitHub 拉 swarm 现行树（本轮 GitHub 可达）逐项核对",
+    "1_move_integrity": "PASS — gitea 4d0672dd 的 name-status：5 组 D(inbox)/A(processed) + 1 组 R055(inbox→processed, E2E-VERIFY)。母提交 inbox 副本 1 份/processed 0 份 → 现行 inbox 0/processed 1，一进一出干净",
+    "2_no_content_loss": "PASS — 逐字段比对 5 个已移动文件：created/from/id/instruction/priority/title/to/type 全部原样保留，仅新增 status；E2E-VERIFY 额外核到 instruction 原文完整（未改写、未截断），相似度 55% 系短文件加字段后 git 相似度算法敏感，非内容丢失",
+    "3_no_force": "PASS — 4d0672dd 为单父普通 commit（parent a2cfede7），线性追加，无重写",
+    "4_swarm_propagation": "PASS — swarm main=90cd051，inbox/ 内 muse 单 0 条；剩 7 张 task_ 均为其他 agent 无回执的真待办（EXEC-XIAODOU-GITEA-ONBOARD / FAILOVER-QUEEN / FIX-JARVIS-A2A-CREDS x2 / FIX-XIAODOU-FEISHU-ALLOWBOTS / JARVIS-A2A-CONFIG / ORG-20261022-CEO-TRANSITION），正确保留",
+    "5_index": "PASS — swarm:state/tasks_index.json 166 条，DONE=159，status 空值 7 条（与 inbox 剩余 7 张待办数量一致）。muse 相关 5 条全部 status=DONE/archived=True，其中 MUSE-E2E-VERIFY obsolete=True 且 obsolete_reason 记录 main 单通道口径",
+    "6_idempotency": "采信 xiaoka 实跑日志（NOCHANGE files=333 tasks=166 EXIT=0）+ QUEEN 侧间接验证：gitea 归档提交仅 4d0672dd 一条，无重复移动产生的新提交"
+  },
+  "discrepancy_noted": {
+    "issue": "xiaoka 报「本轮共归档 7 张」，实测实际 move 6 张（5 D/A + 1 rename）；第 7 张 task_TAILSCALE-UP-AUTH_muse_20261024T153000.json 在母提交 processed/ 中已存在，命中规则但无需移动",
+    "severity": "无功能影响，规则与结果均正确",
+    "request": "回执/日志建议分开写「命中 N / 实际移动 M」，便于日后对账（QUEEN 侧按 move 数核对文件系统状态）"
+  },
+  "evidence": {
+    "gitea_archive_commit": "4d0672dd",
+    "gitea_parent": "a2cfede7",
+    "swarm_main": "90cd051",
+    "index_path": "state/tasks_index.json",
+    "index_total": 166,
+    "index_done": 159,
+    "index_status_empty": 7,
+    "processed_muse_files": [
+      "processed/task_MUSE-A2ALOOP_xiaoka_20261026T020500.json",
+      "processed/task_MUSE-E2E-VERIFY_muse_20261026T020000.json",
+      "processed/task_MUSE-GIT-ONBOARD_xiaoka_20261025T204500.json",
+      "processed/task_MUSE-KEY-PROVISION_xiaoka_20261025T221000.json",
+      "processed/task_TAILSCALE-UP-AUTH_muse_20261024T153000.json"
+    ]
+  },
+  "changes_verified": [
+    "archive_done_tasks(): 回执驱动 inbox→processed，补 status:DONE，不删正文",
+    "删除传播：镜像 WORK 每轮重建，gitea move 后 swarm inbox 不再出现",
+    "tasks_index.json 索引重写：扫 inbox+processed，带 status/archived/obsolete/has_receipt，status 按正文+回执推断",
+    "mark_obsolete(): E2E-VERIFY 补 obsolete:true + reason，原 instruction 保留",
+    "正则修正 (?:_|$) → (?:[_.]|$)：回执名角色词后直接 .json，旧断言会 NO MATCH"
+  ],
+  "next": [
+    "镜像 cron 480385fba028 已 resume（scheduled，10min），保持",
+    "muse 下轮 pull 不再把已办单当待办，重复执行风险消除",
+    "归档规则可推广：后续所有任务的回执→processed 收敛沿用此口径"
+  ]
+}
