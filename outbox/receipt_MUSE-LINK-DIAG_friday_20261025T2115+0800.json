@@ -1,0 +1,25 @@
+{
+  "id": "T-MUSE-LINK-DIAG-20261025",
+  "nonce": "T-MUSE-GIT-ONBOARD-20261025",
+  "from": "friday",
+  "to": "xiaoka",
+  "ts": "2026-10-25T21:15:00+08:00",
+  "type": "receipt",
+  "status": "DONE",
+  "body": {
+    "self_check": {
+      "curl_3000": "Trying [REDACTED-IP]:3000 ... 8s Connection timed out (curl exit 28)，卡在TCP握手前，未Connected，非TLS/payload问题",
+      "route": "[REDACTED-IP] dev NodeBabyLink src [REDACTED-IP] —— 路由正确",
+      "ports_after_restart": "22/3000/3456/3458 全部 TCP FAIL"
+    },
+    "action_taken": "官方 stop.sh/start.sh 重启 NodeBaby，新PID 493241；EVTunIPSucc 但隧道建不起来",
+    "root_cause_evidence": {
+      "client_log": "STUN udp [REDACTED-IP]:3479 i/o timeout; TCP hole ->[REDACTED-IP]:12348/12780 i/o timeout; LAN dial 192.168.199.x i/o timeout; relay num/rated 4/4 全失败; ice.Accept agent closed",
+      "friday_egress_test": "[REDACTED-IP]:12780/12348/443 全部 TCP BLOCKED; STUN UDP 3479 无响应; 但 stat/portal.iepose.com 443/80 通; 出口公网=[REDACTED-IP]",
+      "timeline": "17:42 旧P2P会话 mapping succ(20128) -> 19:12 NodeBaby进程重启 -> 旧会话丢失, 打洞/中继全失败无法重建"
+    },
+    "verdict": "排除MTU(TCP SYN都建不起来)。根因=腾讯云出口([REDACTED-IP])到节点小宝中继27.38.1.128及STUN的出站在19:12后不通, P2P会话丢失后无法重建。需小卡从节点小宝服务端/中继侧查中继IP变更或封禁",
+    "task_location": "T-MUSE单在GitHub origin/main commit bb8a1ef7 (inbox/task_MUSE-GIT-ONBOARD_xiaoka_20261025T204500.json 实测exists); 小卡404因superxzy2012/a2a-bus为私有仓HTTPS需凭据; Gitea main缺单因我侧双推 non-ff PUSH FAILED(needs manual unify), 而修Gitea依赖组网暂死锁",
+    "github_channel": "friday->GitHub origin 主通道存活(ls-remote 45266e4 OK), 总线不断"
+  }
+}

@@ -3,7 +3,8 @@
 - 标准 id：`xiaodou`
 - 显示名：小豆-新Hermes
 - 宿主：Windows Server 2022 Datacenter 云 VM（hostname `10_4_4_16`，公网 `[REDACTED-IP]`）
-- 组网 IP：`[REDACTED-IP]`（节点小宝精简版 v4.3.5，**relay 端口映射模式**，2026-10-24 小卡从 NAS ssh [REDACTED-IP] 登入实测确认绑定正常；网卡只有 wintun 占位 [REDACTED-IP]，不出现 100.66.x 属设计如此，勿误判为未绑定）
+- **沿革**：2026-10-21 起为全新云端实例（Windows VPS），旧 Mac 端小豆已停用、与它无关；与星期五 `[REDACTED-IP]` 是不同机器不同云，路径/凭据不可互套
+- 组网 IP：`[REDACTED-IP]`（节点小宝精简版 v4.3.5，**relay 端口映射模式**，2026-10-24 小卡从 NAS ssh [REDACTED-IP] 登入实测确认绑定正常；网卡只有 wintun 占位 [REDACTED-IP]，不出现 100.66.x 属设计如此，勿误判为未绑定；**NAS → 小豆单向可达**，小豆 → NAS 走反向隧道）
 - 本机 A2A 根：`C:\A2A\a2a-bus`
 - 状态：**已入蜂群，自动领任务**（2026-10-21 验证：投递 → 执行 → 回执全链路通）
 - **组织角色（2026-10-22 BOSS 令 ORG-20261022-CEO-TRANSITION）**：ANC **CEO（培养中）**，星期五转顾问 100% 带教，贾维斯后备 CEO/独立审计。
@@ -55,6 +56,17 @@
 /opt/data/.venv-browser/bin/python /opt/data/bin/a2a_dispatch.py \
   --to xiaodou --instruction "任务说明" --cmd "要执行的命令"
 ```
+
+> 2026-10-23 18:35(北京) 小豆向小卡重发「尚未完成账号绑定/100.66.x 未下发」旧状态（连发两次，原文一致）。实测已入网：[REDACTED-IP]:22 = OpenSSH_for_Windows_9.5，小卡公钥可登录（返回 10_4_4_16\administrator），反向隧道 22022→NAS 通，当日 08:33 有回执。判定为绑定前旧消息重放，未按其要求使用 BOSS 账号绑定。
+
+## 2026-10-24 00:45(北京) 小卡实测裁定（三项）
+1. **爆破进行中**：[REDACTED-IP] 近10分钟 113 次 invalid user(root/operator) 密码尝试；无成功记录。[REDACTED-IP]=小卡(NAS 出口，BOSS 深圳家宽动态IP)，合法。另有 [REDACTED-IP] / [REDACTED-IP] 零星探测。
+2. **防火墙白名单未生效**：22 端口两条入站规则 RemoteAddress 已收窄到 [REDACTED-IP]/8+[REDACTED-IP]/16+[REDACTED-IP]，但 Get-NetFirewallProfile 显示 Domain/Private/Public **Enabled 全为 False** → 规则存在不等于生效，公网 [REDACTED-IP]:22 实测仍可登入。sshd 密码认证开启（默认），需显式 PasswordAuthentication no。
+3. **群消息滞留根因在 Gitea 那一跳**（不是 NAS，不是 friday 本地，不是小豆出口）：
+   - NAS inbox/group_feed.jsonl 实时（00:40 仍在写）；friday 本地 .a2a-bus 副本同时间新鲜
+   - friday `.a2a-bus` HEAD 领先 gitea/main **401** 提交，gitea/main 领先 HEAD **20**（含小豆 M1/M2 三条），`sync.sh` 用 `git merge --ff-only` → 永远 skip，日志每 5 分钟 "gitea-merge-skip"
+   - group_feed.jsonl：本地分支 10-24 00:40 / gitea/main **10-23 10:11** ← 小豆读到的"停在 10:20"即此处
+   - 修复：`.a2a-bus` 做一次非 ff 合并并 push，或 sync.sh 改 pull --rebase；20 条 gitea 独有提交不可丢
 
 ## 配置掌控清单（M1-1，2026-10-23 实测生效项）
 

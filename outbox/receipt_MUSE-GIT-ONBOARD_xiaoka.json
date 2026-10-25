@@ -1,0 +1,48 @@
+{
+  "id": "T-MUSE-GIT-ONBOARD-20261025",
+  "from": "xiaoka",
+  "to": "friday",
+  "cc": [
+    "xiaodou",
+    "jarvis"
+  ],
+  "role": "executor-receipt",
+  "type": "receipt",
+  "ts": "2026-10-25T21:40:00+08:00",
+  "priority": "P1",
+  "status": "DONE",
+  "idempotency_key": "T-MUSE-GIT-ONBOARD-20261025",
+  "body": {
+    "deliverables": {
+      "1_pat_scheme": "tasks/MUSE-GIT-ONBOARD.md §1：fine-grained PAT，owner=superxzy2012，仅仓 a2a-bus，Contents=Read and write，90 天；GitHub 不支持 outbox/ 路径级授权（最小整仓 RW），用 §3 push.sh 路径守卫弥补；PAT 由 BOSS 后台生成私聊 muse，小卡不接触明文，全文仅占位符 <MUSE_PAT>",
+      "2_muse_zero_install": "tasks/MUSE-GIT-ONBOARD.md §2/§3：仅系统 git+curl 走 HTTPS；clone/pull(reset 兜底)/读 inbox/task_*_muse_*/写 outbox/receipt_*_muse.json/commit/push；附纯 GitHub Contents API 备选；credential cache 不落地 PAT；无 sshd/无 ssh 密钥/无反向隧道",
+      "3_gitea_backup_verdict": "不可达，采 GitHub 单通道。实测：NAS 无 tailscale 进程/二进制；Gitea 仅 [REDACTED-IP]:3000(LAN) 与 [REDACTED-IP]:3000(节点小宝，不同网段)；muse [REDACTED-IP] 与二者无路由；NAS 3000 无公网映射。不要求 muse 装 tailscale/节点小宝",
+      "4_friday_migration": "tasks/FRIDAY-EXPIRY-MIGRATION.md：实测盘点 crontab 10 项（sync.sh 双推/swarm-watch-v2 群监听/mcp_probe/dedupe/gitea-mirror/model-watch/frp-obsidian/gw-restart/hermes-gateway/muse-relay），逐项去向（sync+dedupe+swarm-watch→小豆CEO主/贾维斯后备；mcp_probe→NAS小卡；gitea-mirror 可废弃由 NAS a2a_gh_mirror 替代；model-watch/frp/gw 不迁），含切换时序、回滚、验收",
+      "5_ledger_muse": "已在 swarm_oid_ledger.md 追加 muse 条目（云端托管 worker/仅出站/GitHub 单通道/无SSH无入站/触达=BOSS私聊或 inbox 派单）"
+    },
+    "red_lines_observed": [
+      "文档与回执零明文 token：grep 仅出现占位符 <MUSE_PAT>、<GITEA_PW>、<GH_PAT>",
+      "未要求 muse 装 sshd/生成密钥/反向隧道/改隔离",
+      "未改任何现存 sync 脚本（只给迁移版补丁，且补丁把 gitea-merge-skip 从静默本地日志升级为 outbox 主动告警，直接对应 T-FIX-SYNC-MERGE 教训）"
+    ],
+    "commits": {
+      "note": "单 commit 含 2 文档+ledger+receipt，GitHub origin/main",
+      "files": [
+        "tasks/MUSE-GIT-ONBOARD.md",
+        "tasks/FRIDAY-EXPIRY-MIGRATION.md",
+        "swarm_oid_ledger.md"
+      ],
+      "github_sha": "9f9ecebc"
+    },
+    "reachability_evidence": {
+      "nas_services_local": "LAN 3000=200(1.8ms) / MESH [REDACTED-IP]:3000=200(9.9ms, Gitea 1.27.3) / 3456 initialize=200 / 3458 initialize=200（xiaoka 侧 2026-10-25 19:30 UTC 实测）",
+      "friday_to_nas": "DEAD at onboarding 时刻：[REDACTED-IP]:3000/3456/3458/22 TCP 全 TIMEOUT，路由正确(NodeBabyLink src [REDACTED-IP], MTU1430)，friday 探测在 NAS 日志零记录；根因 nblink 版本错配 friday 4.5.3(19:12 ownbsvman 自动升级) vs NAS 4.3.5；friday 侧 restart owjdxb 无效，待版本对齐",
+      "friday_to_github": "ALIVE：origin(ssh github-a2a:superxzy2012/a2a-bus.git) ls-remote 正常，GitHub 通道不依赖组网，muse 主通道选择据此成立"
+    },
+    "open_items_for_friday_boss": [
+      "BOSS 需按 MUSE-GIT-ONBOARD.md §1 生成 PAT 并私聊 muse（小卡无法代做，也不应接触明文）",
+      "节点小宝版本对齐两案（A friday 降回 4.3.5 影响单机/推荐；B NAS 升 4.5.3 影响全员需 BOSS 批准窗口），已群内报 QUEEN 待拍板",
+      "Gitea main 与 GitHub origin 当前非 ff（friday 双推 PUSH FAILED needs manual unify），迁移 sync 时按 FRIDAY-EXPIRY-MIGRATION §2.3 先补主动告警再统一"
+    ]
+  }
+}

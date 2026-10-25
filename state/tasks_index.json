@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-25T22:31:06+08:00",
- "count": 10,
+ "source_head_at": "2026-10-25T23:56:19+08:00",
+ "count": 14,
  "tasks": [
   {
    "file": "task_DRILL-M1-DISPATCH_xiaodou_20261023T232504.json",
@@ -75,12 +75,44 @@
    "ts": ""
   },
   {
+   "file": "task_MUSE-GIT-ONBOARD_xiaoka_20261025T204500.json",
+   "task_id": "T-MUSE-GIT-ONBOARD-20261025",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": ""
+  },
+  {
+   "file": "task_MUSE-KEY-PROVISION_xiaoka_20261025T221000.json",
+   "task_id": "T-MUSE-KEY-PROVISION-20261025",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "ts": ""
+  },
+  {
    "file": "task_ORG-20261022-CEO-TRANSITION_ALL.json",
    "task_id": "ORG-20261022-CEO-TRANSITION_ALL",
    "from": "jarvis",
    "to": "ALL",
    "status": "",
    "ts": "20261022T011500Z"
+  },
+  {
+   "file": "task_TAILSCALE-UP-AUTH_muse_20261024T153000.json",
+   "task_id": "TAILSCALE-UP-AUTH_muse_20261024T153000",
+   "from": "",
+   "to": "muse",
+   "status": "",
+   "ts": ""
+  },
+  {
+   "file": "task_XIAODOU-GOVERNANCE-20261021_xiaoka_20261023T083108.json",
+   "task_id": "XIAODOU-GOVERNANCE-20261021",
+   "from": "xiaoka",
+   "to": "friday",
+   "status": "",
+   "ts": "2026-10-23T08:31:08+0000"
   }
  ]
 }
