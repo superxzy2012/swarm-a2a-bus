@@ -1,5 +1,5 @@
 {
- "source_head_at": "2026-10-26T01:40:10+08:00",
+ "source_head_at": "2026-10-25T17:55:58Z",
  "count": 13,
  "tasks": [
   {
@@ -67,6 +67,14 @@
    "ts": "20261026T020500"
   },
   {
+   "file": "task_MUSE-E2E-VERIFY_muse_20261026T020000.json",
+   "task_id": "MUSE-E2E-VERIFY-20261026",
+   "from": "xiaoka",
+   "to": "muse",
+   "status": "",
+   "ts": ""
+  },
+  {
    "file": "task_MUSE-GIT-ONBOARD_xiaoka_20261025T204500.json",
    "task_id": "T-MUSE-GIT-ONBOARD-20261025",
    "from": "friday",
@@ -89,14 +97,6 @@
    "to": "ALL",
    "status": "",
    "ts": "20261022T011500Z"
-  },
-  {
-   "file": "task_TAILSCALE-UP-AUTH_muse_20261024T153000.json",
-   "task_id": "TAILSCALE-UP-AUTH_muse_20261024T153000",
-   "from": "",
-   "to": "muse",
-   "status": "",
-   "ts": ""
   },
   {
    "file": "task_XIAODOU-GOVERNANCE-20261021_xiaoka_20261023T083108.json",
