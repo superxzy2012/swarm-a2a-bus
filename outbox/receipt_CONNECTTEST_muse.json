@@ -1,0 +1,10 @@
+{
+  "receipt_id": "CONNECTTEST-muse-20261026",
+  "from": "muse",
+  "to": "superxzy2012/swarm-a2a-bus",
+  "ts": "2026-10-26T01:23:00+08:00",
+  "status": "连接成功",
+  "test": "GitHub SSH 443 outbound connectivity test via github-a2a (ssh.github.com:443, deploy key muse_a2a)",
+  "result": "ssh -T git@github-a2a authenticated successfully; shallow clone of superxzy2012/swarm-a2a-bus succeeded; this receipt was committed and pushed via SSH 443",
+  "note": "连接成功"
+}
