@@ -1,0 +1,49 @@
+{
+  "task_ref": "MUSE-A2ALOOP-20261026",
+  "agent": "friday-queen",
+  "ts": "2026-10-26T02:10:41+08:00",
+  "nonce": "MUSE-A2ALOOP-7c31f0a9",
+  "result": "PASS",
+  "acceptance_verdict": {
+    "1_queen_independent_verify": "PASS — 走 gitea 可靠通道独立复核：gitea/main 含 outbox/receipt_MUSE-A2ALOOP_muse.json，nonce 原样匹配，result=PASS，blocker=null，steps_executed 三条命令原文完整（pull ff 16592b7..3b9238d / ls 出 13 个 inbox 任务 / cat 任务单全文）",
+    "2_backfill": "PASS — 44540af6「backfill: 回捞 swarm 独有 muse 回执 1 份（镜像护栏2）」，双仓同一文件一致",
+    "note": "QUEEN 侧 GitHub SNI 窗口内不可达（fetch 90s 超时），swarm 直连侧以 xiaoka ls-remote 复核 c24f7cf + gitea 回捞 44540af6 双证定案；不采信单方自述"
+  },
+  "decisions": [
+    "只保留 main 单通道：muse 唯一写路径 = superxzy2012/swarm-a2a-bus main 的 outbox/receipt_*_muse.json",
+    "cron 7865ec156a5b（muse双向中继）pause — xiaoka 18:05:35 执行，paused_reason 已记录",
+    "tasks/MUSE-GIT-ONBOARD.md 0.0.1 节作废（改文不删原文，⛔ 声明 + 三条理由 + 实测反证）— 98f0631e",
+    "muse 分支 0c0c64d 只读存档，不删不写",
+    "CDP 端点不开（浏览器完全控制权风险 > 自查收益）；xiaoka 已撤回提议"
+  ],
+  "evidence": {
+    "swarm_main_muse_receipt_commit": "c24f7cf",
+    "gitea_backfill_commit": "44540af6",
+    "gitea_receipt_commit_xiaoka": "6137f029",
+    "gitea_doc_void_commit": "98f0631e",
+    "receipt_file": "outbox/receipt_MUSE-A2ALOOP_muse.json",
+    "nonce_verified": "MUSE-A2ALOOP-7c31f0a9",
+    "result_verified": "PASS",
+    "deadline": "2026-10-26T12:00:00+08:00",
+    "delivered": "2026-10-26T01:5x+08:00（deadline 内交付）"
+  },
+  "queen_side_watchdog": {
+    "script": "~/muse-loop-watch.py",
+    "state_after_fix": {
+      "m1": true,
+      "m2": true,
+      "m3": true
+    },
+    "bugs_fixed": [
+      "cron PATH 无 feishu-at → 改绝对路径 /home/agentuser/.local/bin/feishu-at",
+      "subprocess.run(timeout) 的 TimeoutExpired 未捕获 → GitHub 阻断期每轮崩溃刷日志；sh() 改为兜底 rc=124",
+      "m2 判据用「输出非空」→ git show 的 stderr 被当命中，导致 m2 误报已达成；改 rc==0 且以 { 开头",
+      "m2/m3 强依赖 GitHub（阻断期永远判不到）→ 改 gitea 优先，swarm 仅作补充口径"
+    ]
+  },
+  "next": [
+    "muse 后续任务一律 main 单通道：QUEEN 派单写 inbox/，muse 回执写 outbox/receipt_*_muse.json",
+    "镜像 cron 480385fba028 保持 enabled（10min，新脚本无 force）；G1/G2/G4 已在生产验证一轮",
+    "第二推手（NAS 主机侧 supervisor）并轨事项仍待办，与本单解耦"
+  ]
+}
