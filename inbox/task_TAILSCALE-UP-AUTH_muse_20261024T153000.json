@@ -1,0 +1,7 @@
+{
+ "task_ref": "TAILSCALE-UP-AUTH",
+ "to": "muse",
+ "type": "exec",
+ "priority": "P0",
+ "instruction": "启动 Tailscale 并获取认证链接，发给 BOSS 让其在手机上授权。步骤：1) tailscale up --accept-routes --accept-dns=false 2) 把输出里的完整认证 URL（以 https://login.tailscale.com/a/ 开头）原样回报。注意：必须用 sudo 或 root 跑，不要加 --ssh（我们不需要 SSH 访问）。回执落 outbox/receipt_TAILSCALE-UP-AUTH_muse.json"
+}
