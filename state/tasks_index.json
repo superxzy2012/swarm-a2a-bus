@@ -1,15 +1,7 @@
 {
- "source_head_at": "2026-10-25T23:56:19+08:00",
- "count": 14,
+ "source_head_at": "2026-10-26T00:11:17+08:00",
+ "count": 13,
  "tasks": [
-  {
-   "file": "task_DRILL-M1-DISPATCH_xiaodou_20261023T232504.json",
-   "task_id": "DRILL-M1-DISPATCH_xiaodou_20261023T232504",
-   "from": "xiaodou",
-   "to": "xiaodou",
-   "status": "",
-   "ts": ""
-  },
   {
    "file": "task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
    "task_id": "EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305",
