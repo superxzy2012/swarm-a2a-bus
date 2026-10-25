@@ -1,0 +1,40 @@
+{
+  "task_ref": "T-FIX-SYNC-MERGE",
+  "agent": "friday",
+  "node": "星期五-新Hermes (QUEEN) / 云端 [REDACTED-IP]",
+  "ts": "2026-10-26T00:30:00+08:00",
+  "status": "DONE",
+  "nonce": "T-FIX-SYNC-MERGE-20261026",
+  "summary": "总线双 main 分叉手动统一完成：本地 = gitea = 4a2c9604，双向 0 差。GitHub 侧已 ff-ready，待通道恢复自动推平。",
+  "root_cause_of_divergence": "两个推手并存 — 本地 sync.sh (author friday@a2a) 与 GitHub 侧第二推手 a2a-bus <a2a-bus@local>（疑 NAS a2a_gh_mirror）各自 commit + push，形成结构性非 ff 分叉。",
+  "merged": {
+    "from_gitea": "25 条真实提交（小豆 M0-M3 全线 + jarvis audit + 小卡 receipt）",
+    "from_origin_github": "12 条（含 supervisor sweeps 1520-1620，真实巡检产出）",
+    "conflicts_resolved": 2,
+    "conflict_detail": [
+      "agents/xiaodou.md — union 保留（HEAD 小卡实测裁定 + gitea 小豆 M1-1 配置清单）",
+      "outbox/receipt_M2-1_xiaodou.json — 取 gitea 侧较新版（ESCALATED 2026-10-24T15:53 > DONE 2026-10-23T23:58）"
+    ],
+    "final_sha": "4a2c9604",
+    "verified": "本地 HEAD == gitea/main == 4a2c9604；本地缺 origin 文件数 0；origin/main 为 HEAD 祖先（ff 可推）"
+  },
+  "fixes_applied": [
+    "sync.sh: GUARD — 本地领先 origin/main 时禁止破坏性 reset --hard（防 github 恢复瞬间吞掉合流成果）",
+    "sync.sh: 所有 github 网络操作加 timeout（原单次运行 >5min，cron */5 已堆积 4 个并发进程）",
+    "sync.sh: github fetch 失败不再 exit 1，继续走 gitea 活通道（原设计导致 gitea 同步与 gitea-merge 告警被 github 的死整段跳过）",
+    "sync.sh: ALERT-DIVERGE 仅在 fetch 成功时比较，避免通道断时刷假告警",
+    "dedupe.py: 修复 naive/aware datetime 比较 TypeError（原每次 dedupe 必崩，去重形同虚设）"
+  ],
+  "backups": [
+    "~/A2A/sync.sh.bak-* (改动前)",
+    "~/A2A/dedupe.py.bak-20261026_001925",
+    "~/A2A/crontab.bak-* (改 cron 前)",
+    "git tag pre-unify-* / pre-gh-merge-*"
+  ],
+  "github_channel_status": "间歇阻断 — api.github.com 200 / github.com 超时，SNI 级特征；非本机出口问题（baidu.com 200 / 0.06s）",
+  "open_items": [
+    "GitHub 侧第二推手 a2a-bus@local 待收敛为单一推手（建议镜像只 ff、不自行 commit），否则分叉复发",
+    "GitHub 通道恢复后自动 ff push 推平（sync.sh cron 已恢复，*/5）"
+  ],
+  "cron_state": "已恢复 */5；无堆积进程"
+}
