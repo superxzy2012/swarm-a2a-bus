@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-26T07:41:17+08:00",
- "count": 166,
+ "source_head_at": "2026-10-26T07:44:46+08:00",
+ "count": 167,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -67,6 +67,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-20T19:07:03+08:00"
+  },
+  {
+   "file": "inbox/task_MUSE-RELAY-20261026.json",
+   "task_id": "MUSE-RELAY-20261026",
+   "from": "friday-queen",
+   "to": "muse",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "20261026T074446+0800"
   },
   {
    "file": "inbox/task_ORG-20261022-CEO-TRANSITION_ALL.json",
