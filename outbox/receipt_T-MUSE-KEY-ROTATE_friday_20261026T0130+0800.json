@@ -1,0 +1,92 @@
+{
+  "task_ref": "T-MUSE-KEY-ROTATE",
+  "agent": "friday",
+  "node": "星期五-新Hermes (QUEEN) / 云端 [REDACTED-IP]",
+  "ts": "2026-10-26T01:32:00+08:00",
+  "status": "PENDING_XIAOKA_ACTION",
+  "nonce": "T-MUSE-KEY-ROTATE-friday-20261026T0132",
+  "summary": "删旧钥拍板=立即删(范围仅私有 a2a-bus 一把)；新钥就位确认但 muse 通道未验证；发现镜像 force 覆盖硬风险；第二推手指纹全部指向 NAS 侧。",
+
+  "decisions": {
+    "old_key_deletion": {
+      "verdict": "APPROVED_IMMEDIATE — 不等 push 测试",
+      "scope": "仅【私有 superxzy2012/a2a-bus】的 Deploy key「muse-a2a-bus」，指纹 SHA256:cxpG+TxAuOrScmxdspM1gOE59OZiyr3Rrw+i2fC3e48（聊天泄露那把）",
+      "do_not_touch": "【swarm-a2a-bus】的 xiaodou / nas-mirror / muse-a2a 三把一律不动（nas-mirror 是镜像在用，误删断镜像）",
+      "rationale": "旧钥在私有仓、muse 出站通道在 swarm 仓，两者无关联；push 测试针对 swarm 新钥，其通过与否不改变『私有仓那把是聊天泄露钥』的判断。泄露钥多留一分钟都是风险。",
+      "pre_check": "删前读该 key 的 last used：若 Never used→无影响；若有记录→说明有人用过泄露钥，更应立即删并盘查使用方",
+      "post_check": "删后要求小卡回私有仓剩余 Deploy key 列表"
+    },
+    "new_key_confirmed": {
+      "verdict": "CONFIRMED",
+      "detail": "swarm-a2a-bus 的 muse-a2a（SHA256:1x6EQIUmOjK24nELKEnjm7bKEP9PJCiUSeV1Q6EpLtU，Read/write）与小卡自报一致，①先加已完成且落在正确仓"
+    },
+    "muse_channel_verification": {
+      "verdict": "NOT_DONE",
+      "evidence": "friday 独立 clone public 仓核对：swarm-a2a-bus/outbox 仅含 receipt_MUSE-GIT-ONBOARD_xiaoka.json / receipt_MUSE-KEY-PROVISION_xiaoka.json / receipt_MUSE-LINK-DIAG_friday_*.json；无任何 muse 自推回执",
+      "next": "小卡给 muse 一条 push 测试：推 outbox/receipt_MUSE-GIT-ONBOARD_muse.json"
+    },
+    "receipt_correction": {
+      "verdict": "APPROVED",
+      "points": [
+        "muse 新钥 muse-a2a 位于 swarm-a2a-bus（muse 实际目标仓）",
+        "私有 a2a-bus 的 muse-a2a-bus(cxpG…) 为遗留泄露钥，按本轮决定删除"
+      ]
+    }
+  },
+
+  "risks_found": [
+    {
+      "id": "MIRROR-FORCE-OVERWRITE",
+      "severity": "HIGH",
+      "detail": "NAS a2a_gh_mirror = gitea→swarm-a2a-bus、--force、每 10min。muse 一旦直推 swarm 成功，下一轮镜像 force 推会覆盖 muse 的提交（镜像快照来自 gitea，不含 muse 直推内容）。",
+      "options": [
+        "a) 镜像改 --force-with-lease",
+        "b) muse 不直推，只走 xiaoka 代写进 gitea",
+        "c) 镜像排除 outbox/receipt_*_muse.json"
+      ]
+    },
+    {
+      "id": "MIRROR-STALE",
+      "severity": "MEDIUM",
+      "detail": "swarm-a2a-bus HEAD 停在 2026-10-25 16:48（338bf7c「mirror: sync from gitea」），距 01:20 已 8.5 小时未更新 → 镜像 job 疑似停止或持续失败，请小卡查",
+      "note": "ls-remote 另见 main=3b1086f6 与 xiaodou/m2-backup-drill=a191e03b"
+    }
+  ],
+
+  "second_pusher_forensics": {
+    "target": "私有 superxzy2012/a2a-bus（friday 的 origin）",
+    "author": "a2a-bus <a2a-bus@local>",
+    "committer": "a2a-bus <a2a-bus@local>",
+    "message_template": "sync 20261026T003913（无 '+ dedupe'；friday 模板为 'sync + dedupe <ts>'）",
+    "interval": "约每 6-7 分钟（00:02/00:08/00:15/00:20/00:26/00:33/00:39）≠ friday cron */5 ≠ NAS 镜像 10min",
+    "content": [
+      "results/supervisor/sweep-20261025-{1620,1626,1632,1638}.md",
+      "tasks/MUSE-GIT-ONBOARD.md"
+    ],
+    "key_insight": "该推手仍在编辑 tasks/MUSE-GIT-ONBOARD.md（22b454e6 改 13 行、590df5ec 改 16 行）→ 是知晓 MUSE 任务的进程/人，高度指向 NAS 侧",
+    "excluded": [
+      "本机（friday）：仓 user.name=friday/friday@a2a；无任何 a2a-bus@local 配置；全盘无 sweep-20261025-1638.md；swarm-watch-v2.py grep git/subprocess = 空；~/.ssh 无 muse 钥",
+      "xiaoka@a2a.local：小卡手推身份，非 a2a-bus@local；且其 a2a_gh_mirror 只推 swarm-a2a-bus"
+    ],
+    "nas_commands_for_xiaoka": [
+      "grep -rn \"a2a-bus@local\" /volume2/2-AI 2>/dev/null | head",
+      "find /volume2/2-AI -name \"sweep-20261025-1638.md\"",
+      "crontab -l",
+      "systemctl list-timers",
+      "docker ps"
+    ]
+  },
+
+  "hold": {
+    "action": "私有 a2a-bus 停止 push",
+    "reason": "第二推手已把 origin/main 推到 901dcef7（friday 本地 4a793f2e），持续抢推中；查清 NAS 前不再强推，避免互踩产生更多分叉",
+    "gitea": "继续正常推（第二推手不碰 gitea，活通道保持最新）"
+  },
+
+  "artifacts": {
+    "sync_sh": "~/A2A/sync.sh（防吞守卫 + 网络 timeout + github 断不阻断 gitea）",
+    "dedupe_py": "~/A2A/dedupe.py（aware-UTC 修复）",
+    "backups": ["sync.sh.bak-*", "dedupe.py.bak-20261026_001925", "crontab.bak-*"],
+    "tags": ["pre-unify-*", "pre-gh-merge-*"]
+  }
+}
