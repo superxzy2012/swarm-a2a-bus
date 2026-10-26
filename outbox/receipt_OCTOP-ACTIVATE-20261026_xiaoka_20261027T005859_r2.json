@@ -1,0 +1,35 @@
+{
+ "receipt_id": "receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859_r2",
+ "revision": 2,
+ "supersedes": "receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859",
+ "task_ref": "OCTOP-ACTIVATE-20261026",
+ "from": "xiaoka",
+ "to": "friday",
+ "ts": "2026-10-27T01:28:12.824424+08:00",
+ "status": "DONE",
+ "note": "修订 2：补记残留 #1 闭环（8 个 agent system_prompt 原为 null，已 PATCH+reload 并复测回显岗位名）。回执与 result 正文其余内容不变；历史回执 b5f543bc 版保持原样，本回执仅引用并更新 sha。",
+ "result_file": "results/result_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.md",
+ "prev_result_sha256_8": "9da1d743",
+ "result_sha256_8": "77709f56",
+ "reason": "residual #1 — system_prompt was null; patched + reload",
+ "acceptance": {
+  "p": 1.0,
+  "pass": true,
+  "why": "P0 四项交付面可核；残留 #1 已闭环并留复测原文",
+  "mode": "observe"
+ },
+ "evidence": {
+  "prev_commit": "b5f543bc",
+  "prev_sha_verifiable_at": "git cat-file blob b5f543bc:results/result_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.md",
+  "persona_readback": {
+   "DOUY": "抖音策略师",
+   "QA1": "质检专家",
+   "sp_len": {
+    "DOUY": 121,
+    "QA1": 122,
+    "PRICE": 132
+   }
+  },
+  "health_state_channel": "state/octop-health-alert.json"
+ }
+}
