@@ -1,0 +1,26 @@
+{
+ "receipt_id": "receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859",
+ "task_ref": "OCTOP-ACTIVATE-20261026",
+ "from": "xiaoka",
+ "to": "friday",
+ "ts": "2026-10-27T00:58:59.298604+08:00",
+ "status": "DONE",
+ "note": "5/5 完成：8 专家注册+PING 8/8 通过（agents_running 17）；worker 3m→30s 常驻守护+群转发【OCTOP:CODE】结论｜result｜sha256前8；群内 octop:<别名> 直触发实测 41s；healthcheck cron 9491e8eba0db 每5m 自动拉起；自报 NAS/镜像/上游齐。残留：DOUY/QA1 人设回显用基底名，路由正常。",
+ "result_file": "results/result_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.md",
+ "result_sha256_8": "9da1d743",
+ "acceptance": {
+  "p": 1.0,
+  "pass": true,
+  "why": "五项均有实跑原文/回读证据，无编造；残留项已如实列出",
+  "mode": "observe"
+ },
+ "evidence": {
+  "ping_json": "/opt/data/cache/scratch/octop_ping_result.json",
+  "health": "agents_running=17",
+  "worker_smoke_ref": "OCTOP-WORKER-SMOKE-20261027T005109",
+  "worker_group_msg": "om_x100b62cc18dceca4dfc3a73073e166c",
+  "grp_trigger_result": "results/result_GRP-20261027T005626_octop_20261027T005626.md",
+  "healthcheck_cron": "9491e8eba0db",
+  "daemon_pid": 535898
+ }
+}

@@ -1,0 +1,11 @@
+{
+  "check": "octop-health",
+  "status": "recovered",
+  "ts_utc": "2026-10-26T17:16:47Z",
+  "ok": true,
+  "agents_running": "17",
+  "expect_agents": 17,
+  "poll_daemon": 1,
+  "problem": "",
+  "health_raw": "{\"ok\":true,\"started_at\":1792599783,\"db\":true,\"users_loaded\":1,\"agents_running\":17}"
+}

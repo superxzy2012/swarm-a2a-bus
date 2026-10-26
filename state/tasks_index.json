@@ -1,5 +1,5 @@
 {
- "source_head_at": "2026-10-27T00:45:11+08:00",
+ "source_head_at": "2026-10-26T17:22:38Z",
  "count": 170,
  "tasks": [
   {
@@ -89,17 +89,6 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "20261026T074446+0800"
-  },
-  {
-   "file": "inbox/task_OCTOP-ACTIVATE-20261026_xiaoka.json",
-   "task_id": "OCTOP-ACTIVATE-20261026_xiaoka",
-   "from": "friday",
-   "to": "xiaoka",
-   "status": "",
-   "archived": false,
-   "obsolete": false,
-   "has_receipt": false,
-   "ts": "2026-10-26T00:00:00+08:00"
   },
   {
    "file": "inbox/task_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json",
@@ -936,6 +925,17 @@
    "obsolete": false,
    "has_receipt": true,
    "ts": "2026-10-25T22:10:00+08:00"
+  },
+  {
+   "file": "processed/task_OCTOP-ACTIVATE-20261026_xiaoka.json",
+   "task_id": "OCTOP-ACTIVATE-20261026_xiaoka",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "DONE",
+   "archived": true,
+   "obsolete": false,
+   "has_receipt": true,
+   "ts": "2026-10-26T00:00:00+08:00"
   },
   {
    "file": "processed/task_OZON-G4-B2-CONTINUE_xiaoli2_20261020T012221.CLAIMED.json",
