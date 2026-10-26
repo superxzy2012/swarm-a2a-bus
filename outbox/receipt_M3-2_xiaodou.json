@@ -1,24 +1,22 @@
 {
   "task_ref": "M3-2",
   "receipt_from": "xiaodou",
-  "ts": "2026-10-24T15:27:48+08:00",
-  "status": "BLOCKED",
-  "note": "模型路由段已读懂盘点：本机 model 段只有单一 custom provider → 火山 ark（default=ark-code-latest, base_url=ark.cn-beijing.volces.com/api/coding/v3, api_mode=chat_completions）；custom_providers 仅 Ark 一条。令中 providers.nas-gateway / omniroute / free-pool、model.auto、x-omniroute-model 在 config 中均不存在——没有可改成 flash→mini→pro 的降级链，也没有 omniroute 网关可打响应头，无法产出命中轨迹。不编造不存在的路由表。需要：QUEEN/小卡 提供 nas-gateway/omniroute 的真实 base_url+key_env（入 .env）或确认要新建 custom_providers 三档（flash/mini/pro 的具体模型名与 provider），我即可配置并用真实请求验证命中头。",
+  "ts": "2026-10-26T23:46:38+08:00",
+  "status": "DONE",
+  "note": "OmniRoute 已接入并真实命中。key 由小卡经 SSH stdin 写入 .env（本机实测 OMNIROUTE_API_KEY 存在；注意：小卡通报 keylen=36，本机去引号/换行后实测 keylen=35，http=200 证明该 35 位值有效，二者差一可能是计数/换行口径，不影响认证）。按令用 hermes config set 逐键写入 model 五键与 providers.omniroute 五子树（未覆盖其他 provider），get 全部复核一致。自验：GET /v1/models 无 key=401(对照)、带 key=200 且模型清单 225 个、含目标 a2a/deepseek-v4.1-flash；POST /v1/chat/completions 返回 content=PONG，响应头 x-omniroute-model=deepseek-v4.1-flash、x-omniroute-decision strategy=single、provider=openai-compatible-chat-14095c1f…、version 3.8.51，命中轨迹完整。配置快照与原文头/体已入 results。尚未重启 gateway：新会话起走 OmniRoute；当前会话模型不中途切换（守 prompt-cache 红线），可按 QUEEN 令 /reset 或重启 gateway 全量生效。",
   "evidence": {
-    "model": {
-      "default": "ark-code-latest",
-      "provider": "custom",
-      "base_url": "https://ark.cn-beijing.volces.com/api/coding/v3"
+    "terminal_raw": "no-auth http=401 t=0.399s; authed GET /v1/models http=200 bytes=79485 (225 models, target present); POST chat http=200 bytes=388 t=21.2s; keylen=35",
+    "route_headers": {
+      "x-omniroute-model": "deepseek-v4.1-flash",
+      "x-omniroute-decision": "strategy=single; provider=openai-compatible-chat-14095c1f-21fe-4be8-bfbb-3573d910fe81; latency_ms=20268",
+      "x-omniroute-cache": "MISS",
+      "x-omniroute-version": "3.8.51"
     },
-    "custom_providers": [
-      "Ark"
-    ],
-    "missing": [
-      "providers.nas-gateway",
-      "providers.omniroute",
-      "free-pool chain",
-      "model.auto",
-      "x-omniroute-model"
+    "response": "choices[0].message.content=PONG; usage in=231 out=3",
+    "files": [
+      "results/m3-2-omniroute-config.yaml",
+      "results/m3-2-omniroute-headers.txt",
+      "results/m3-2-omniroute-resp.json"
     ]
   }
 }
