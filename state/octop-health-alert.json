@@ -1,12 +1,10 @@
 {
   "check": "octop-health",
-  "status": "ok",
-  "ts_utc": "2026-10-26T17:50:58Z",
+  "status": "recovered",
+  "ts_utc": "2026-10-26T17:56:35Z",
   "ok": true,
   "agents_running": "17",
   "expect_agents": 17,
-  "expect_source": "registry",
-  "expect_detail": "reports/octop-expect-latest.json",
   "poll_daemon": 1,
   "problem": "",
   "health_raw": "{\"ok\":true,\"started_at\":1792599783,\"db\":true,\"users_loaded\":1,\"agents_running\":17}"
