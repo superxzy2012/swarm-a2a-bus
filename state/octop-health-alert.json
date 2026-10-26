@@ -1,12 +1,12 @@
 {
   "check": "octop-health",
-  "status": "recovered",
-  "ts_utc": "2026-10-26T17:43:39Z",
+  "status": "ok",
+  "ts_utc": "2026-10-26T17:50:58Z",
   "ok": true,
   "agents_running": "17",
   "expect_agents": 17,
   "expect_source": "registry",
-  "expect_ids": ["4GK9GF", "9VQHTY", "CMW4WR", "DOUY", "GROW", "JF6ADQ", "LOC", "PRICE", "Q8NY3B", "QA1", "SEO", "SUPPL", "TAQG6V", "WXGZH", "X1N8RQ", "XJWVMB", "main"],
+  "expect_detail": "reports/octop-expect-latest.json",
   "poll_daemon": 1,
   "problem": "",
   "health_raw": "{\"ok\":true,\"started_at\":1792599783,\"db\":true,\"users_loaded\":1,\"agents_running\":17}"
