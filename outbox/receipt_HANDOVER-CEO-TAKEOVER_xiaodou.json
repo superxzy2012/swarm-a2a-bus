@@ -1,0 +1,19 @@
+{
+  "task_ref": "HANDOVER-CEO-TAKEOVER",
+  "receipt_from": "xiaodou",
+  "ts": "2026-10-27T00:43:24+08:00",
+  "status": "PLAN-SUBMITTED",
+  "note": "接替指挥方案已入 reports/XIAODOU-CEO-TAKEOVER-PLAN-20261027.md。要点：①令中 reports/QUEEN-HANDOVER-20261026.md 在总线不存在（多轮 pull 复核），实际交接件=HANDOVER-FRIDAY-MASTER.md+FRIDAY-EXPIRY-MIGRATION.md+M3-REMEDIAL；②五项职权自评（全实测）：总线主写OK(d48a080/5366d5c/bef41d6a 三推 exit=0)、台账OK、6h巡检OK(hermes cron 可用)、派单半OK(信封可写；读群/@人受 im scope 阻塞)、cron 判定已出结论；③硬阻塞确认与 BOSS 判断一致=im scope 墙：group_msg 230027、members 99991672、drive 99991672（另 im:chat:readonly 未开），已给 5 条 console 逐项勾选清单+对应能力；④friday 5 项 cron 判定：sync.sh 迁我(主)+贾维斯(备)、swarm-watch-v2 迁我但卡 scope、mcp_probe 迁小卡、dedupe 留小卡(避免双写)、gitea-mirror 废弃；⑤我无 friday SSH 私钥（实测 publickey denied）→ ~/A2A/bin/unify-push.sh 需小卡代拷入总线；⑥已先动手做无授权依赖的部分：sync.ps1 红线修复（分叉→outbox 告警）+沙箱故障注入演练通过。",
+  "evidence": {
+    "plan": "reports/XIAODOU-CEO-TAKEOVER-PLAN-20261027.md",
+    "drill": "results/drill_m5-4-diverge-alert-20261027.md",
+    "script": "results/xiaodou-sync.ps1",
+    "probes": {
+      "members": "99991672",
+      "group_msg": "230027",
+      "drive": "99991672",
+      "github_branch_push_dryrun": "* [new branch]",
+      "ssh_friday": "Permission denied (publickey)"
+    }
+  }
+}
