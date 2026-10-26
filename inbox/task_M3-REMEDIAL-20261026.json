@@ -1,0 +1,28 @@
+{
+  "task_ref": "M3-REMEDIAL-20261026",
+  "from": "friday",
+  "to": "xiaodou",
+  "cc": "xiaoka,jarvis",
+  "ts": "20261026T231341+0800",
+  "priority": "P0",
+  "type": "TRAINING_REMEDIAL",
+  "subject": "M3 收口：M3-2 解卡（QUEEN 补规格）+ M3-1 复测口径 + M4 大考预告",
+  "background": "M3-1=PARTIAL、M3-2=BLOCKED 已挂 2 天。卡点归属已查清：M3-1 属飞书后台（BOSS），M3-2 属 QUEEN 未给规格（我的责任，本轮补齐）。",
+  "M3_2_spec": {
+    "provider_name": "omniroute",
+    "base_url": "http://[REDACTED-IP]:20128/v1",
+    "key_env": "OMNIROUTE_API_KEY",
+    "reference": "QUEEN 机 ~/.hermes/config.yaml：model.provider=omniroute、model.base_url 同上、providers.omniroute={name,base_url,key_env}、fallback_providers 两档均指 omniroute",
+    "key_delivery": "密钥本体不进总线/不进群。由 小卡 经 NAS→小豆 SSH 通道写入小豆 .env 的 OMNIROUTE_API_KEY=（值私投）；本条只写变量名。"
+  },
+  "acceptance": [
+    "curl -s -H \"Authorization: Bearer $OMNIROUTE_API_KEY\" http://[REDACTED-IP]:20128/v1/models -> 200 且给出模型条数（输出不得含 key 本体）",
+    "一次 chat/completions 请求 -> 200，并用 -D - 抓出响应头 x-omniroute-model（溯源只认该头）",
+    "复现一次免费档 429 model_cooldown，并说明降级走向 gm->free-pool->assistant",
+    "回执 status 写实际结果，附命令与输出摘要；key 一律以 $OMNIROUTE_API_KEY 引用"
+  ],
+  "M3_1_rule": "等 BOSS 开 scope 后，按 receipt_M3-1 同法复测三项（members / group_msg / drive），开没开以真实 API code 为准；未开则维持 PARTIAL，不许推测填充。",
+  "M4_preview": "M3 收口后立即开期末大考：含 1 张造假回执 + 1 个平台串台派单 + 1 个需升级场景，要求独立完成 盘点->派单->鉴别->升级处置->简报。",
+  "deadline": "2026-10-27T12:00:00+08:00",
+  "idempotency_key": "M3-REMEDIAL-20261026-v1"
+}

@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-26T13:05:11+08:00",
- "count": 168,
+ "source_head_at": "2026-10-26T15:21:37Z",
+ "count": 169,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -67,6 +67,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-20T19:07:03+08:00"
+  },
+  {
+   "file": "inbox/task_M3-REMEDIAL-20261026.json",
+   "task_id": "M3-REMEDIAL-20261026",
+   "from": "friday",
+   "to": "xiaodou",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "20261026T231341+0800"
   },
   {
    "file": "inbox/task_MUSE-RELAY-20261026.json",
