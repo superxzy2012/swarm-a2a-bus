@@ -20,3 +20,5 @@
 ### 公共面口径（镜像脱敏）
 - `state/` 是公共面：只放计数与来源（如 `expect_agents` + `expect_source`），**不放内部标识明细**（agent code、open_id 等）。
 - 明细放 `reports/`（正本可读、不进镜像）；单份结果外发也走 `reports/` 或单文件放行，不整目录开。
+- 公共面里指向非镜像文件的指针必须标注可见性，与回执同构：指针字段 + `<name>_in_mirror: false`（如 `expect_detail` + `expect_detail_in_mirror`），避免悬空指针。
+- 判镜像新鲜度走 **GitHub API contents**，不用 `raw.githubusercontent.com`——raw 有 CDN 缓存，陈旧内容会造成「未同步」假阴性。
