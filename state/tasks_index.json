@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-26T15:21:37Z",
- "count": 169,
+ "source_head_at": "2026-10-26T15:32:37Z",
+ "count": 170,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -89,6 +89,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "20261026T074446+0800"
+  },
+  {
+   "file": "inbox/task_OCTOP-ACTIVATE-20261026_xiaoka.json",
+   "task_id": "OCTOP-ACTIVATE-20261026_xiaoka",
+   "from": "friday",
+   "to": "xiaoka",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-26T00:00:00+08:00"
   },
   {
    "file": "inbox/task_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json",

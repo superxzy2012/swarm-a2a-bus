@@ -1,0 +1,42 @@
+{
+  "task_ref": "OCTOP-ACTIVATE-20261026",
+  "from": "friday",
+  "to": "xiaoka",
+  "ts": "2026-10-26T00:00:00+08:00",
+  "type": "TASK",
+  "priority": "P0",
+  "boss_order": "BOSS 令：ANC 盘点落地，OCTOP 必须真正用起来。本单合并上一张漏单 task_OCTOP-AGENCY-8REGISTER-20261025（贾维斯 10-25 P1，outbox 无回执、results 无产出），并把 OCTOP 从总线文件升级为群内可用成员。",
+  "evidence_of_gap": [
+    "octop GET /api/health 实测 = {\"ok\":true,\"db\":true,\"users_loaded\":1,\"agents_running\":9}，started_at=1792599783 (2026-10-22 00:23)，已连跑 4d22h —— 说明 8 个 Agency 专家未注册（9 = main + 原 8 专家）",
+    "outbox/receipt_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json = 不存在",
+    "results/ 下无 Agency八专家使用说明-20261025.md",
+    "octop GET /api/experts = 401 AUTH_FAILED missing credentials（能通，但需凭据）"
+  ],
+  "todo": [
+    "T1【P0】完成 8 个 Agency 专家注册：PRICE/SUPPL/GROW/SEO/WXGZH/DOUY/QA/LOC。四处一致性硬要求：agents/<CODE>/ 目录、octop DB/记忆登记、CLI ALIAS、worker octop_a2a_worker.py ALIAS 必须同一组 code（历史坑：WHEB5R vs XJWVMB 不一致导致路由不到）。逐个 PING 留命令回显。注意 agents_running 应从 9 增加。",
+    "T2【P0】worker 降门槛三改：①cron 轮询 3min -> 30s；②回执落地后由小卡飞书 bot 自动转发管理群，格式【OCTOP:<CODE>】<一句话结论>｜results/<file>｜sha256:<前8>；③支持群内自然语言触发：@小卡 octop:小安 <问题> -> 转成标准信封写 inbox。目标：业务节点不用会写 JSON 也能用。",
+    "T3【P1】自报硬件与事实（不报任何凭据值）：NAS 的 lscpu Model name / nproc / free -h / df -h、UGOS 版本、DXP 型号；claude 容器的镜像名/版本/模型接入方式（BOSS 口述走 WorkBuddy 网关 deepseek v4.1-flash，请核实端点写法）；octop 容器是否配置了模型上游（走的哪条线、是否 OmniRoute [REDACTED-IP]:20128）。",
+    "T4【P1】octop 健康看护：worker 依赖小卡容器，容器重建会导致 OCTOP 静默断。加 healthcheck：/api/health 连续 3 次失败 -> 私聊 QUEEN + 写 outbox/alert_octop_<ts>.json。",
+    "T5【P2】确认 OCTOP 是否已有 API token（只回 yes/no + token 存放路径，不要回值），供后续飞书 bridge 使用。"
+  ],
+  "boss_context_20261026": {
+    "corrections": [
+      "阿正与小七同机：都跑在局域网 .184 的 Windows 上",
+      "雷神与绿巨人都跑在公司 Win11 上",
+      "BOSS 在 NAS 容器里另部署了 claude，模型走 WorkBuddy 网关 deepseek v4.1-flash",
+      "局域网 .184 Windows 上封存 Hermes 社区中文版（内有诸葛亮），暂未启用"
+    ],
+    "therefore": "15 个 agent 只分布在 5 台宿主，NAS 一台压了 4 个 agent + Gitea + OmniRoute + OCTOP，属 P0 单点。"
+  },
+  "not_in_scope": [
+    "不要改 octop 已有 9 个专家的路由与记忆",
+    "不要为 OCTOP 申请飞书 app（需 BOSS console 授权，QUEEN 另案）",
+    "不要在群内贴任何 token/密码"
+  ],
+  "deliverable": {
+    "receipt": "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka.json（status: PROGRESS/DONE/BLOCKED）",
+    "result_file": "results/OCTOP激活报告-20261026.md（含 8 条 PING 回显、agents_running 变化前后值、worker 改动 diff 摘要）"
+  },
+  "deadline_hours": 24,
+  "rule": "取不到的状态写 UNKNOWN，不编造；改了 worker 先备份并留回滚路径。"
+}
