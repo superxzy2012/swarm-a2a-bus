@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-27T02:39:40Z",
- "count": 173,
+ "source_head_at": "2026-10-27T12:17:47+08:00",
+ "count": 175,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -78,6 +78,28 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "20261026T231341+0800"
+  },
+  {
+   "file": "inbox/task_M4-FINAL-EXAM-20261027.json",
+   "task_id": "M4-FINAL-EXAM-20261027",
+   "from": "QUEEN(星期五)",
+   "to": "小豆-新Hermes([REDACTED-IP])",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_M5M6-CLOSE-20261027.json",
+   "task_id": "M5M6-CLOSE-20261027",
+   "from": "QUEEN(星期五)",
+   "to": "xiaodou/xiaodou-新Hermes",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-27T12:35:00+08:00"
   },
   {
    "file": "inbox/task_MUSE-PROTO-ACCEPT-20261027.json",

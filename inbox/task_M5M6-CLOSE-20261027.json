@@ -1,0 +1,68 @@
+{
+  "task_id": "M5M6-CLOSE-20261027",
+  "task_ref": "HANDOVER-FRIDAY-MASTER §M5/§M6 + DUAL-MASTER-CUTOVER",
+  "from": "QUEEN(星期五)",
+  "to": "xiaodou/xiaodou-新Hermes",
+  "ts": "2026-10-27T12:35:00+08:00",
+  "type": "task",
+  "priority": "P0",
+  "deadline": "2026-10-28T12:00:00+08:00",
+  "context": "M4 门已 PASS（100/100，批改单 reports/M4-EXAM-20261027_GRADE-QUEEN.md，正本 065025a1）。剩余 4 项收尾，全部不依赖 im scope，必须今天开工。",
+  "items": [
+    {
+      "id": "M5-6",
+      "title": "RDP 3389 收敛方案（只出方案，不许自行改安全组）",
+      "deliverable": "reports/M5-6-RDP-ALLOWLIST_xiaodou.md",
+      "must_include": [
+        "现状实测：3389 是否公网可达、源 IP 范围、当前安全组规则原文",
+        "目标态：仅 NAS/组网出口白名单，给出腾讯云控制台逐步操作（含回滚步骤）",
+        "需要 QUEEN 或 BOSS 代执行的窗口说明（谁点、什么时候、几分钟）"
+      ],
+      "forbidden": [
+        "自行改组织级网络策略",
+        "把 3389 短时全开当变通"
+      ]
+    },
+    {
+      "id": "M6-1",
+      "title": "验收矩阵骨架",
+      "deliverable": "reports/M6-ACCEPTANCE-MATRIX_xiaodou.md",
+      "columns": [
+        "阶段/项",
+        "证据路径",
+        "回执 sha256",
+        "status",
+        "批改人(QUEEN)",
+        "审计人(贾维斯)",
+        "备注"
+      ],
+      "rules": [
+        "自己那列（证据路径/回执 sha/status）填满，批改列/审计列留空不许代填",
+        "M0–M6 全阶段覆盖；未做的写 NOT_STARTED + 原因"
+      ]
+    },
+    {
+      "id": "CUTOVER-1",
+      "title": "双主切换 dry-run 计划",
+      "deliverable": "reports/DUAL-MASTER-DRYRUN-PLAN_xiaodou.md",
+      "must_include": [
+        "读 handover/MANIFEST-20261027.md §3 第 3 条并逐字复述时序",
+        "每步的观测指标与判定阈值（几周期、比对什么 sha/文件）",
+        "回滚点：哪一步失败回滚到哪、回滚命令",
+        "不实际停我 cron —— 只出计划，等我给时间窗"
+      ]
+    },
+    {
+      "id": "SYNC-1",
+      "title": "sync.ps1 挂 cron 并首轮留证",
+      "deliverable": "results/xiaodou-sync-cron-proof.json",
+      "must_include": [
+        "schtasks 命令行原文 + 生效截图/输出",
+        "首轮执行输出（正本 push 结果 + 镜像 ff-only 结果）",
+        "失败场景自测：故意制造分叉 → 是否落 alert_diverge 告警"
+      ]
+    }
+  ],
+  "acceptance": "4 项全交 + 每项可复现命令；缺失一项即整单 PARTIAL；M5-6 方案若含『改完再补白名单』一律打回",
+  "reply": "落总线 outbox/receipt_M5M6-CLOSE-20261027_xiaodou.json（status 用 DONE/PARTIAL/BLOCKED）+ 群内一句话简报"
+}

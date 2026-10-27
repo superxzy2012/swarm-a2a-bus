@@ -1,0 +1,16 @@
+{
+ "doc": "443 中继入站探针（QUEEN 侧持有；NAS 容器内 ss/journalctl 不可用）",
+ "host": "friday-bridge",
+ "listen_443": 1,
+ "established_443": 0,
+ "inbound_accepted": 0,
+ "inbound_rejected": 0,
+ "last_inbound_ts": "never(since-log-start)",
+ "log_valid_since": "2026-10-27 10:47:18",
+ "tunnel_state_file": "DOWN 2026-10-26 23:06:01 CST",
+ "verdict": "OK: 在听，但本日志期内 0 入站 ⇒ 对端未发起",
+ "source": "ss -tln + ss -tn(established) + /var/log/muse-relay-sshd.log（unit 已加 -E）",
+ "history_note": "日志自 2026-10-27T10:47（unit 加 -E 后）有效；更早唯一证据 = muse-tunnel-state 的 DOWN/UP 时间锚",
+ "ts": "2026-10-27T10:58:23+08:00",
+ "note": "只记计数与时间戳，不含任何地址"
+}

@@ -47,6 +47,17 @@
    "source_blob": "725d463770b43d33a20f4cbe8d89bfffb94dda8a",
    "transform": "redact+templatize"
   },
+  "inbox/task_M4-FINAL-EXAM-20261027.json": {
+   "local_blob": "09d3d4fb2c2a894d1b82f66e6783911620a3c222",
+   "public_blob": "79c01f78f71fed35315f1d9b1070ed4d18c9bf50",
+   "source_blob": "09d3d4fb2c2a894d1b82f66e6783911620a3c222",
+   "transform": "redact+templatize"
+  },
+  "inbox/task_M5M6-CLOSE-20261027.json": {
+   "public_blob": "3e845667bd159fc31e4d1b2ae319151756ffa033",
+   "source_blob": "3e845667bd159fc31e4d1b2ae319151756ffa033",
+   "transform": "copy"
+  },
   "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
    "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "source_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
@@ -1229,6 +1240,11 @@
    "source_blob": "fb248c848e14241c38986cdf3eaaab36e4558c77",
    "transform": "copy"
   },
+  "outbox/receipt_M4-FINAL-EXAM-20261027_xiaodou.json": {
+   "public_blob": "8d626f829b66649f5148e0652e13494081a5ab6a",
+   "source_blob": "8d626f829b66649f5148e0652e13494081a5ab6a",
+   "transform": "copy"
+  },
   "outbox/receipt_MCP-TOKEN-FRIDAY_friday_20261019T0100+0800.json": {
    "public_blob": "d279fd959c60854f9f913f56785245c0a44cf928",
    "source_blob": "3e434a6c5c97d35f94d38d3f95c7a9f351649a4f",
@@ -1658,7 +1674,12 @@
    "public_blob": "56132973ec2fee1828901eb415574fdaa1c98865",
    "source_blob": "56132973ec2fee1828901eb415574fdaa1c98865",
    "transform": "copy"
+  },
+  "state/relay-inbound.json": {
+   "public_blob": "5b5fff5751a9931a7f286c65e48f18e0b1fb067f",
+   "source_blob": "5b5fff5751a9931a7f286c65e48f18e0b1fb067f",
+   "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T02:39:40Z"
+ "generated_at": "2026-10-27T12:17:47+08:00"
 }
