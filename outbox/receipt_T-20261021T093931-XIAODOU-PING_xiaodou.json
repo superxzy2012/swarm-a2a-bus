@@ -10,7 +10,7 @@
     "host": "10_4_4_16",
     "public_ip": "[REDACTED-IP]",
     "os": "Windows Server (OpenSSH_for_Windows_9.5)",
-    "tunnel": "[REDACTED-IP] -> [REDACTED-IP]:23000 -> NAS:3000 (Gitea)",
+    "tunnel": "[REDACTED-IP] -> 127.0.0.1:23000 -> NAS:3000 (Gitea)",
     "git_version": "2.56.0.windows.2",
     "note": "未经节点小宝组网，走 SSH 反向隧道"
   }

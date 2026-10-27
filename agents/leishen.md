@@ -9,7 +9,7 @@
 - app_id：`cli_aa5e69549d381c1e`
 - 总线状态：**已接入** Gitea 中继 `http://[REDACTED-IP]:3000/anc/a2a-bus.git`（绕代理直连，200）；SMOKE 回执已交付：`outbox/receipt_SWARM-SMOKE_leishen_20261019T1826.json`，commit `84a87b6`（2026-10-19 18:26 推送，远端 main 已确认）
 - Windows 接入要点（实测，供同平台节点参考）：
-  1. 必须绕代理：本机 env 有 http_proxy/https_proxy=[REDACTED-IP]:65108，经代理访问 NAS 403 秒拒，直连 200 → 所有 git 命令带 `-c http.proxy= -c https.proxy=`
+  1. 必须绕代理：本机 env 有 http_proxy/https_proxy=127.0.0.1:65108，经代理访问 NAS 403 秒拒，直连 200 → 所有 git 命令带 `-c http.proxy= -c https.proxy=`
   2. 必须清凭据链：PortableGit 系统配置带 GCM（`credential.helper=manager`），且 `~/.gitconfig` 给 [REDACTED-IP] 配了 `provider=generic`，非交互下 git 直接挂起 → 先 `-c credential.helper=` 空值 reset，再挂内存态 helper
   3. `GIT_TERMINAL_PROMPT=0`：无凭据时快速失败而非挂死
   4. 凭据纪律：内存态 credential.helper 注入，`.git/config` 零内嵌、无 `.git-credentials`、argv 日志无明文、临时凭据文件用后即删

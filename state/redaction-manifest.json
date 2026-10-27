@@ -1,39 +1,46 @@
 {
  "entries": {
   "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json": {
-   "public_blob": "c7a227bbdb9779e21bf1aae6ec7d31685211aab7",
+   "local_blob": "6563fa9d89d3533bfd1aa7482dfc5ab4717aac7d",
+   "public_blob": "531b9330f9db3f11a608cf15a76babcd51ae37be",
    "source_blob": "6563fa9d89d3533bfd1aa7482dfc5ab4717aac7d",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_FAILOVER-QUEEN-20261021_ALL.json": {
-   "public_blob": "f3f94d71ac7bcf198007a5f83b1393dd93719600",
+   "local_blob": "05fcbe26d7ce60bf60c3862e631aee588cc97421",
+   "public_blob": "ac0c527bd2c35c6e35c717826e92b60ea99be34b",
    "source_blob": "05fcbe26d7ce60bf60c3862e631aee588cc97421",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json": {
-   "public_blob": "6f087a91d1f505ccac14f746a3190eae818f84aa",
+   "local_blob": "4b0269957b277e83ecae0bd90c0d62b6cdcdb282",
+   "public_blob": "e6c5dea4160f6ec33a551fa214bcd9683fc4a60a",
    "source_blob": "4b0269957b277e83ecae0bd90c0d62b6cdcdb282",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json": {
-   "public_blob": "0442ec0f584c9169884eaec5c9c8fe65056b4082",
+   "local_blob": "3364c2b2b47d334f253b4ec3083531e97e763d21",
+   "public_blob": "0da8f13399dc3ebfff52fa8fd9c734b95b045887",
    "source_blob": "3364c2b2b47d334f253b4ec3083531e97e763d21",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaoka_20261023T1200.json": {
-   "public_blob": "296f123164a5b5fd79a7d8ad015fb39f79202512",
+   "local_blob": "4e82309da870e383bc9b47d952be609116aa5e8b",
+   "public_blob": "7c4b06a95cc37e6c619420476c5ee0c9c2388945",
    "source_blob": "4e82309da870e383bc9b47d952be609116aa5e8b",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_JARVIS-A2A-CONFIG_friday_20261020T190703.json": {
+   "local_blob": "bdb32a20ef8e3ed3261e9214ec0ddf2f43ba245a",
    "public_blob": "9cd6e5afb9bef4d029678d81bd206a1c04ce0856",
    "source_blob": "bdb32a20ef8e3ed3261e9214ec0ddf2f43ba245a",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_M3-REMEDIAL-20261026.json": {
-   "public_blob": "361cdbc23075ba7089f0c1e36089de63df74ccf6",
+   "local_blob": "725d463770b43d33a20f4cbe8d89bfffb94dda8a",
+   "public_blob": "c5d8724979d8d8a5a42369835cbcf01fc727499c",
    "source_blob": "725d463770b43d33a20f4cbe8d89bfffb94dda8a",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
    "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
@@ -46,9 +53,16 @@
    "transform": "copy"
   },
   "inbox/task_MUSE-RELAY-20261026.json": {
-   "public_blob": "727fefd8dce5955b04d5a24d6174edbbca1ec685",
+   "local_blob": "35832ecc19bc72a762de1e66251589698a32535b",
+   "public_blob": "024cd9e0e35e14be0b8d6df66fc2cfb59a90f267",
    "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
-   "transform": "redact"
+   "transform": "redact+templatize"
+  },
+  "inbox/task_MUSE-RELAY-20261026_r3.json": {
+   "local_blob": "07a3e9413671500c1b4c7f1a2f8c4585bee12ee5",
+   "public_blob": "345e39f9fe7f3de6d20841a7b4880f343cce2943",
+   "source_blob": "07a3e9413671500c1b4c7f1a2f8c4585bee12ee5",
+   "transform": "redact+templatize"
   },
   "inbox/task_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json": {
    "public_blob": "7a350e641013c7f4dd403899b43a6707c75588b3",
@@ -1116,7 +1130,7 @@
    "transform": "copy"
   },
   "outbox/receipt_M0-ARCH-IDENTITY-BUS_xiaodou.json": {
-   "public_blob": "def973c035adfea1401eb27ebf28f2f62f0c4a16",
+   "public_blob": "2f035f677040f99aad38339256d903ab113eb157",
    "source_blob": "cd62cc9d92b00a318b7d16ff41f1143a39360e11",
    "transform": "redact"
   },
@@ -1126,14 +1140,14 @@
    "transform": "copy"
   },
   "outbox/receipt_M0-ARCH_xiaodou.json": {
-   "public_blob": "bcad619542a4d0228d3fe1eca131f3425ad1cb81",
+   "public_blob": "3e7f4d41325e04e556f21e3d84c00925c9e78e05",
    "source_blob": "f3acc3d0f9895c16c584f919244c0c849e3723d3",
    "transform": "redact"
   },
   "outbox/receipt_M0-ARCH_xiaodou_errata1.json": {
-   "public_blob": "b49f870a6a77a3ead94f4483a2a5b8e59fb2d7d2",
+   "public_blob": "54ad105bde95f0b8fdcccf269135b3151277d5ad",
    "source_blob": "54ad105bde95f0b8fdcccf269135b3151277d5ad",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_M0-IDENTITY-PASS_jarvis_20261023T132423Z.json": {
    "public_blob": "f8376471c63dbc7a3251c706e0f0318117a73dab",
@@ -1171,9 +1185,9 @@
    "transform": "copy"
   },
   "outbox/receipt_M1-4_xiaodou.json": {
-   "public_blob": "269d9f60e28ba0bc3fe908e8cb3fe38183488cac",
+   "public_blob": "dbd2ba40ada939acaa40dae7457e5630f5d664c2",
    "source_blob": "dbd2ba40ada939acaa40dae7457e5630f5d664c2",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_M2-1_xiaodou.json": {
    "public_blob": "fbd5d590d157dd29aa6a9762b35a59f791829c28",
@@ -1181,14 +1195,14 @@
    "transform": "copy"
   },
   "outbox/receipt_M2-2_xiaodou.json": {
-   "public_blob": "251b4bc5b511e45119ae6fed585ae4d801a6f8e4",
+   "public_blob": "4fbde31b79b7f7df0c46712ec62640f120fa90ac",
    "source_blob": "4fbde31b79b7f7df0c46712ec62640f120fa90ac",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_M2-3_xiaodou.json": {
-   "public_blob": "cd9278c6f07c5778d6b3641e90879a243d6c263e",
+   "public_blob": "053f3a582d644877e2be41c3bda8193737f9003f",
    "source_blob": "053f3a582d644877e2be41c3bda8193737f9003f",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_M2-CEO-DISPATCH-xiaoka_xiaoka.json": {
    "public_blob": "fd4a4b5202568a47d5e92a356a5ba734e195c756",
@@ -1241,9 +1255,9 @@
    "transform": "copy"
   },
   "outbox/receipt_MUSE-A2ALOOP_xiaoka.json": {
-   "public_blob": "c2044229e5b8d3e07a0cb674dc60b7085836447e",
+   "public_blob": "c1d02744b2177f0094e2befb6fda665b559314be",
    "source_blob": "c1d02744b2177f0094e2befb6fda665b559314be",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_MUSE-E2E-VERIFY_muse.json": {
    "public_blob": "b34065f0ee3892a86f054a1d4b51b6c280f3ea4b",
@@ -1286,9 +1300,9 @@
    "transform": "copy"
   },
   "outbox/receipt_ORG-20261022-CEO-TRANSITION_xiaodou.json": {
-   "public_blob": "56761a162433ad49c50a8375719f0cf3de3bf4fc",
+   "public_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
    "source_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
-   "transform": "redact"
+   "transform": "copy"
   },
   "outbox/receipt_OZON-DELIST-STOCK-AUDIT_xiaoli2_20261021T0140+0800.json": {
    "public_blob": "5ba5ec7cca847cfb64edb29c94210f935f525a1c",
@@ -1336,7 +1350,7 @@
    "transform": "redact"
   },
   "outbox/receipt_PING_xiaodou_20261023T180441.json": {
-   "public_blob": "9b297a397a61b3e2edbb04afeca17680d49f1369",
+   "public_blob": "afe29ad5531a418e9219f94f3559af5cf328f8ed",
    "source_blob": "111e931f895f742ebf6fe73d763ec33d231222a4",
    "transform": "redact"
   },
@@ -1396,7 +1410,7 @@
    "transform": "copy"
   },
   "outbox/receipt_SWARM-EXEC004-BROUTE-MAC-xiaoli_20261019T083200+0800.json": {
-   "public_blob": "852bd4430817161cea45403c3cc1b6050d1c2412",
+   "public_blob": "d1edebff505358184ea0646843e23325302f5bec",
    "source_blob": "0c455a6f1ac8b7bbd80a8d4671ff6096696b2a6f",
    "transform": "redact"
   },
@@ -1496,7 +1510,7 @@
    "transform": "copy"
   },
   "outbox/receipt_T-20261021T093931-XIAODOU-PING_xiaodou.json": {
-   "public_blob": "d4b448262fa5cc09f46913bae8dbd40b4be6b04f",
+   "public_blob": "7ef0752a5825080e47ab10cfe504b90205e5b2e7",
    "source_blob": "a924ac751d21fab0dfce7c720f839aa771ad12fa",
    "transform": "redact"
   },
@@ -1636,5 +1650,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T09:08:14+08:00"
+ "generated_at": "2026-10-27T02:05:46Z"
 }

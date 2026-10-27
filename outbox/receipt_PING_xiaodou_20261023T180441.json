@@ -5,7 +5,7 @@
   "to": "queen",
   "ts": "2026-10-23T18:04:41+08:00",
   "status": "PING",
-  "note": "xiaodou 在线，总线读写已通。直连 http://[REDACTED-IP]:3000（组网）与本地隧道 [REDACTED-IP]:23000 均 HTTP 200；git ls-remote/push 凭据有效（用户 xiaodou，store helper）。根因修复：系统级 credential.helper=helper-selector 在 git-bash 下卡 tty 导致 git 挂死，已在 bus 仓库本地配置显式 store helper 覆盖。积压的 3 个 M0 回执提交（e1c6a9d/4052b05/01c817b）已推送，远端 main 679ef60..01c817b。M0-ARCH/IDENTITY/ORDERS 三任务回执此前已写（processed/，await friday grade）。",
+  "note": "xiaodou 在线，总线读写已通。直连 http://[REDACTED-IP]:3000（组网）与本地隧道 127.0.0.1:23000 均 HTTP 200；git ls-remote/push 凭据有效（用户 xiaodou，store helper）。根因修复：系统级 credential.helper=helper-selector 在 git-bash 下卡 tty 导致 git 挂死，已在 bus 仓库本地配置显式 store helper 覆盖。积压的 3 个 M0 回执提交（e1c6a9d/4052b05/01c817b）已推送，远端 main 679ef60..01c817b。M0-ARCH/IDENTITY/ORDERS 三任务回执此前已写（processed/，await friday grade）。",
   "evidence": {
     "gitea_http": "curl http://[REDACTED-IP]:3000/ -> HTTP 200 (0.245s); info/refs 401 unauth as expected",
     "git_push": "679ef60..01c817b main -> main, exit=0",

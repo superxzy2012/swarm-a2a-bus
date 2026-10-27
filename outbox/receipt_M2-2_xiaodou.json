@@ -7,7 +7,7 @@
   "note": "M2-2 双通道同步全流程跑通含删仓：删除损坏的旧 SSH 克隆仓 swarm-a2a-bus(HEAD=refs/heads/.invalid 坏分支、无工作文件、零损失)，重新 HTTPS+代理 clone 对齐；gh-mirror 未删(无分叉，仅落后，ff-only 对齐即可，保留 xiaodou/* 分支)。落地本机 C:\\A2A\\sync.ps1，修掉 MASTER M5-4 点名的 ff-only 静默 skip 缺陷：分叉时 merge --ff-only 实测退出码 128，脚本据此 fail+告警退出并写 results/sync-status.json，绝不强推/不静默。",
   "evidence": {
     "deleted_repo": "C:\\A2A\\swarm-a2a-bus — 删除前: .git/HEAD='ref: refs/heads/.invalid', refs/heads 不存在, git 报 'current branch appears to be broken', 工作区仅空.git；rm -rf 成功",
-    "reclone": "git clone https://github.com/superxzy2012/swarm-a2a-bus.git (http.proxy=[REDACTED-IP]:27891, sslverify=false) -> HEAD d75c0a7, 分支 main + xiaodou/m2-backup-drill, EXIT=0",
+    "reclone": "git clone https://github.com/superxzy2012/swarm-a2a-bus.git (http.proxy=127.0.0.1:27891, sslverify=false) -> HEAD d75c0a7, 分支 main + xiaodou/m2-backup-drill, EXIT=0",
     "gitea_pull": "a2a-bus pull --rebase --autostash origin main -> Already up to date, head 139cb1a, exit 0",
     "ghmirror_align": "fetch c869f1d..d75c0a7; merge --ff-only origin/main -> 对齐 d75c0a7, status main...origin/main clean",
     "xiaodou_push": "push origin xiaodou/* -> Everything up-to-date（只推 xiaodou/*，未推 main）",

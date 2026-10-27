@@ -10,13 +10,13 @@
   "background": "M3-1=PARTIAL、M3-2=BLOCKED 已挂 2 天。卡点归属已查清：M3-1 属飞书后台（BOSS），M3-2 属 QUEEN 未给规格（我的责任，本轮补齐）。",
   "M3_2_spec": {
     "provider_name": "omniroute",
-    "base_url": "http://[REDACTED-IP]:20128/v1",
+    "base_url": "http://{{GITEA_HOST}}:20128/v1",
     "key_env": "OMNIROUTE_API_KEY",
     "reference": "QUEEN 机 ~/.hermes/config.yaml：model.provider=omniroute、model.base_url 同上、providers.omniroute={name,base_url,key_env}、fallback_providers 两档均指 omniroute",
     "key_delivery": "密钥本体不进总线/不进群。由 小卡 经 NAS→小豆 SSH 通道写入小豆 .env 的 OMNIROUTE_API_KEY=（值私投）；本条只写变量名。"
   },
   "acceptance": [
-    "curl -s -H \"Authorization: Bearer $OMNIROUTE_API_KEY\" http://[REDACTED-IP]:20128/v1/models -> 200 且给出模型条数（输出不得含 key 本体）",
+    "curl -s -H \"Authorization: Bearer $OMNIROUTE_API_KEY\" http://{{GITEA_HOST}}:20128/v1/models -> 200 且给出模型条数（输出不得含 key 本体）",
     "一次 chat/completions 请求 -> 200，并用 -D - 抓出响应头 x-omniroute-model（溯源只认该头）",
     "复现一次免费档 429 model_cooldown，并说明降级走向 gm->free-pool->assistant",
     "回执 status 写实际结果，附命令与输出摘要；key 一律以 $OMNIROUTE_API_KEY 引用"

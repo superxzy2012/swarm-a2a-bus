@@ -14,10 +14,10 @@
 
 | 通道 | 地址 | 能力 |
 |---|---|---|
-| Gitea（主总线） | 组网直连 `http://[REDACTED-IP]:3000/anc/a2a-bus.git`（0.25s）；备用 `http://[REDACTED-IP]:23000`（SSH 反向隧道→NAS:3000） | **读写**，HTTP 账号 `xiaodou`（Gitea id=8，Write），store helper；commit author 固定 `xiaodou <xiaodou@swarm.local>`（2026-10-23 实测） |
+| Gitea（主总线） | 组网直连 `http://[REDACTED-IP]:3000/anc/a2a-bus.git`（0.25s）；备用 `http://127.0.0.1:23000`（SSH 反向隧道→NAS:3000） | **读写**，HTTP 账号 `xiaodou`（Gitea id=8，Write），store helper；commit author 固定 `xiaodou <xiaodou@swarm.local>`（2026-10-23 实测） |
 | GitHub（公开镜像） | `https://github.com/superxzy2012/swarm-a2a-bus.git` | **读+写**；`C:\A2A\gh-mirror` |
-| GitHub 通道 | HTTPS + 代理隧道 `http://[REDACTED-IP]:27891`（→ NAS mihomo 7891） | 凭据 `C:\A2A/.git-credentials`（ACL 仅 Administrator+SYSTEM）；`credential.helper=store --file=...`；`http.https://github.com/.proxy` 已设；提交 author 固定 `xiaodou <xiaodou@mesh>` |
-| SSH 通道（不要用） | `[REDACTED-IP]:2222` → ssh.github.com:443 | `ssh -T` 认证能过，但 **git 数据传输会挂**，只用它探活 |
+| GitHub 通道 | HTTPS + 代理隧道 `http://127.0.0.1:27891`（→ NAS mihomo 7891） | 凭据 `C:\A2A/.git-credentials`（ACL 仅 Administrator+SYSTEM）；`credential.helper=store --file=...`；`http.https://github.com/.proxy` 已设；提交 author 固定 `xiaodou <xiaodou@mesh>` |
+| SSH 通道（不要用） | `127.0.0.1:2222` → ssh.github.com:443 | `ssh -T` 认证能过，但 **git 数据传输会挂**，只用它探活 |
 | 反向隧道 | 22022/23000/23456/23458/28088 | NAS:22 / Gitea / obsidian MCP / skillbox MCP / Octop |
 
 ## 接任务方式
@@ -41,7 +41,7 @@
 - ❌ 无 Python、无 Node（别派需要它们的任务）
 - ❌ 非交互 session 0，跑不了 GUI 客户端
 - ⚠️ RDP 3389 对公网开放，待加安全组白名单
-- ✅ 共享服务（实测 2026-10-21）：obsidian MCP `[REDACTED-IP]:23456`、skillbox MCP `[REDACTED-IP]:23458` 均 200 可直用；Octop `[REDACTED-IP]:28088` 可达但需专属账号
+- ✅ 共享服务（实测 2026-10-21）：obsidian MCP `127.0.0.1:23456`、skillbox MCP `127.0.0.1:23458` 均 200 可直用；Octop `127.0.0.1:28088` 可达但需专属账号
 
 ## 四套 SOP（M0-ORDERS，jarvis 审计 PASS）
 
@@ -61,7 +61,7 @@
 
 ## 2026-10-24 00:45(北京) 小卡实测裁定（三项）
 1. **爆破进行中**：[REDACTED-IP] 近10分钟 113 次 invalid user(root/operator) 密码尝试；无成功记录。[REDACTED-IP]=小卡(NAS 出口，BOSS 深圳家宽动态IP)，合法。另有 [REDACTED-IP] / [REDACTED-IP] 零星探测。
-2. **防火墙白名单未生效**：22 端口两条入站规则 RemoteAddress 已收窄到 [REDACTED-IP]/8+[REDACTED-IP]/16+[REDACTED-IP]，但 Get-NetFirewallProfile 显示 Domain/Private/Public **Enabled 全为 False** → 规则存在不等于生效，公网 [REDACTED-IP]:22 实测仍可登入。sshd 密码认证开启（默认），需显式 PasswordAuthentication no。
+2. **防火墙白名单未生效**：22 端口两条入站规则 RemoteAddress 已收窄到 [REDACTED-IP]/8+[REDACTED-IP]/16+127.0.0.1，但 Get-NetFirewallProfile 显示 Domain/Private/Public **Enabled 全为 False** → 规则存在不等于生效，公网 [REDACTED-IP]:22 实测仍可登入。sshd 密码认证开启（默认），需显式 PasswordAuthentication no。
 3. **群消息滞留根因在 Gitea 那一跳**（不是 NAS，不是 friday 本地，不是小豆出口）：
    - NAS inbox/group_feed.jsonl 实时（00:40 仍在写）；friday 本地 .a2a-bus 副本同时间新鲜
    - friday `.a2a-bus` HEAD 领先 gitea/main **401** 提交，gitea/main 领先 HEAD **20**（含小豆 M1/M2 三条），`sync.sh` 用 `git merge --ff-only` → 永远 skip，日志每 5 分钟 "gitea-merge-skip"

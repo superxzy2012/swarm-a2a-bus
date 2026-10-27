@@ -9,23 +9,23 @@
   "boss_order": "BOSS 原话：给 muse 配独立凭据直连内网正本实现完全自治，你来开权限给他。gitea 能想办法给他配置好双通吗？",
   "goal": "MUSE 从「只能靠 GitHub 镜像」升级为「经 QUEEN 中继直连 Gitea 正本 anc/a2a-bus」，并使用 MUSE 专属、可单独吊销的凭据。",
   "relay": {
-    "host": "[REDACTED-IP]",
+    "host": "{{RELAY_HOST}}",
     "ports_try_in_order": [
       443,
       22
     ],
     "user": "muse-relay",
     "auth": "publickey only（密码/键盘交互全关，无 shell，命令固定 /bin/false）",
-    "permitopen": "[REDACTED-IP]:3000  （只允许转发到 Gitea，其它目标会被 sshd 拒绝：administratively prohibited）",
+    "permitopen": "{{GITEA_HOST}}:3000  （只允许转发到 Gitea，其它目标会被 sshd 拒绝：administratively prohibited）",
     "hostkey_fingerprint": "SHA256:ukGKdzdBxVT1bIrmElPGumWlPsvkgy1YhswblL9iOZg",
     "hostkey_type": "ssh-ed25519",
-    "known_hosts_entry": "[[REDACTED-IP]]:443 ssh-ed25519 <由 ssh-keyscan 取，需与上述指纹一致>"
+    "known_hosts_entry": "[{{RELAY_HOST}}]:443 ssh-ed25519 <由 ssh-keyscan 取，需与上述指纹一致>"
   },
   "steps": [
     {
       "id": "R1",
       "name": "探测中继可达性（决定性一步，先做）",
-      "cmd": "timeout 5 bash -c 'exec 3<>/dev/tcp/[REDACTED-IP]/443' && echo OPEN443 || echo CLOSED443",
+      "cmd": "timeout 5 bash -c 'exec 3<>/dev/tcp/{{RELAY_HOST}}/443' && echo OPEN443 || echo CLOSED443",
       "note": "443 不通再测 22。两个都不通说明 MUSE 平台出站被限，立即按 blocker 模板如实回执，不要自造替代方案。"
     },
     {
@@ -37,20 +37,20 @@
     {
       "id": "R3",
       "name": "固定中继主机指纹",
-      "cmd": "ssh-keyscan -p 443 [REDACTED-IP] >> ~/.ssh/known_hosts",
+      "cmd": "ssh-keyscan -p 443 {{RELAY_HOST}} >> ~/.ssh/known_hosts",
       "note": "指纹必须等于 SHA256:ukGKdzdBxVT1bIrmElPGumWlPsvkgy1YhswblL9iOZg，不等就停手上报（防中间人）。"
     },
     {
       "id": "R4",
       "name": "建隧道到 Gitea",
-      "cmd": "ssh -N -f -i ~/.ssh/muse_relay -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -p 443 -L 3000:[REDACTED-IP]:3000 muse-relay@[REDACTED-IP]",
-      "verify": "curl -s -o /dev/null -w '%{http_code}' http://[REDACTED-IP]:3000/api/v1/version  # 期望 200"
+      "cmd": "ssh -N -f -i ~/.ssh/muse_relay -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -p 443 -L 3000:{{GITEA_HOST}}:3000 muse-relay@{{RELAY_HOST}}",
+      "verify": "curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/api/v1/version  # 期望 200"
     },
     {
       "id": "R5",
       "name": "用独立凭据直连正本仓",
-      "remote": "http://muse:<TOKEN>@[REDACTED-IP]:3000/anc/a2a-bus.git",
-      "cmd": "git ls-remote http://muse:<TOKEN>@[REDACTED-IP]:3000/anc/a2a-bus.git",
+      "remote": "http://muse:{{GITEA_TOKEN}}@127.0.0.1:3000/anc/a2a-bus.git",
+      "cmd": "git ls-remote http://muse:{{GITEA_TOKEN}}@127.0.0.1:3000/anc/a2a-bus.git",
       "note": "TOKEN 由小卡经私聊/CDP 单独投递，不进群、不进总线、不写回执。落地方式：git config credential.helper store 或写入 remote URL（本地文件权限 600）。"
     }
   ],
@@ -68,10 +68,10 @@
     ],
     "nonce_must_equal": "MUSE-RELAY-9f42c1d8"
   },
-  "fallback": "R1 不通 ⇒ 保持现有链路（MUSE→GitHub swarm-a2a-bus→NAS 镜像→Gitea），照旧写 outbox 回执；直连作为能力储备，等 BOSS 在 Muse 平台放行出站到 [REDACTED-IP]。",
+  "fallback": "R1 不通 ⇒ 保持现有链路（MUSE→GitHub swarm-a2a-bus→NAS 镜像→Gitea），照旧写 outbox 回执；直连作为能力储备，等 BOSS 在 Muse 平台放行出站到 {{RELAY_HOST}}。",
   "constraints": [
     "私钥永不出生成机，任何私钥出现即视为泄露需轮换。",
     "凭据只走私聊/secrets 通道，禁止出现在群消息、回执、总线提交里。",
-    "中继只放行 [REDACTED-IP]:3000，不要试图用它翻墙访问其他内网资产。"
+    "中继只放行 {{GITEA_HOST}}:3000，不要试图用它翻墙访问其他内网资产。"
   ]
 }

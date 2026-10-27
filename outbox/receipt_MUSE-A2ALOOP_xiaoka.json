@@ -49,7 +49,7 @@
   },
   "open_items": [
     "第二条 muse 通道：cron 7865ec156a5b muse双向中继（每5分钟，维护 swarm muse 分支）+ tasks/MUSE-GIT-ONBOARD.md 0.0.1 节称 main 为单向镜像（前提已失效）。已报 QUEEN 裁决，未擅自停用。",
-    "CDP 端点对外暴露方案待 QUEEN 拍板（现仅 [REDACTED-IP]:9223 隧道）"
+    "CDP 端点对外暴露方案待 QUEEN 拍板（现仅 127.0.0.1:9223 隧道）"
   ],
   "result": "PASS",
   "blocker": null

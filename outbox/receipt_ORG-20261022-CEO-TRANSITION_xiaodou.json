@@ -13,6 +13,6 @@
     "directive_commit": "6a2a382 (inbox/task_ORG-20261022-CEO-TRANSITION_ALL.json)",
     "master_doc": "tasks/HANDOVER-FRIDAY-MASTER.md @ c481297",
     "local_bus_head": "c481297f53a5bdf6c1a90bc9af045d7d1731fc7d (git pull --rebase origin main fast-forward 6b82776..c481297, exit 0)",
-    "bus_origin": "http://[REDACTED-IP]:23000/anc/a2a-bus.git (SSH 反向隧道 → NAS Gitea)"
+    "bus_origin": "http://127.0.0.1:23000/anc/a2a-bus.git (SSH 反向隧道 → NAS Gitea)"
   }
 }

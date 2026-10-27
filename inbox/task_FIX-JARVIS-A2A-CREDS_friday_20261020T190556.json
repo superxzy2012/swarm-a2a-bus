@@ -8,7 +8,7 @@
   "task_book": "/volume2/2-AI/A2A/tasks/FIX-JARVIS-A2A-CREDS.md",
   "constraints": [
     "灾备演练发现贾维斯(jarvis) A2A总线缺凭据: Gitea无deploy key, GitHub无token, 任务书取不到/回执推不回",
-    "请小卡在 Gitea([REDACTED-IP]:3000) 给 jarvis 建读写账号或 deploy key, 让他能 git pull/push anc/a2a-bus",
+    "请小卡在 Gitea({{GITEA_HOST}}:3000) 给 jarvis 建读写账号或 deploy key, 让他能 git pull/push anc/a2a-bus",
     "凭据落 secrets/(不进群), 配到贾维斯容器可访问位置",
     "优先 Gitea(同机内网最快), GitHub 兜底可选",
     "完成后写 receipt_FIX-JARVIS-A2A-CREDS 回执",
