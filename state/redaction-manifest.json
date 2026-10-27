@@ -1,0 +1,1640 @@
+{
+ "entries": {
+  "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json": {
+   "public_blob": "c7a227bbdb9779e21bf1aae6ec7d31685211aab7",
+   "source_blob": "6563fa9d89d3533bfd1aa7482dfc5ab4717aac7d",
+   "transform": "redact"
+  },
+  "inbox/task_FAILOVER-QUEEN-20261021_ALL.json": {
+   "public_blob": "f3f94d71ac7bcf198007a5f83b1393dd93719600",
+   "source_blob": "05fcbe26d7ce60bf60c3862e631aee588cc97421",
+   "transform": "redact"
+  },
+  "inbox/task_FIX-JARVIS-A2A-CREDS_friday_20261020T190556.json": {
+   "public_blob": "6f087a91d1f505ccac14f746a3190eae818f84aa",
+   "source_blob": "4b0269957b277e83ecae0bd90c0d62b6cdcdb282",
+   "transform": "redact"
+  },
+  "inbox/task_FIX-JARVIS-A2A-CREDS_xiaoka_20261020T094750.json": {
+   "public_blob": "0442ec0f584c9169884eaec5c9c8fe65056b4082",
+   "source_blob": "3364c2b2b47d334f253b4ec3083531e97e763d21",
+   "transform": "redact"
+  },
+  "inbox/task_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaoka_20261023T1200.json": {
+   "public_blob": "296f123164a5b5fd79a7d8ad015fb39f79202512",
+   "source_blob": "4e82309da870e383bc9b47d952be609116aa5e8b",
+   "transform": "redact"
+  },
+  "inbox/task_JARVIS-A2A-CONFIG_friday_20261020T190703.json": {
+   "public_blob": "9cd6e5afb9bef4d029678d81bd206a1c04ce0856",
+   "source_blob": "bdb32a20ef8e3ed3261e9214ec0ddf2f43ba245a",
+   "transform": "redact"
+  },
+  "inbox/task_M3-REMEDIAL-20261026.json": {
+   "public_blob": "361cdbc23075ba7089f0c1e36089de63df74ccf6",
+   "source_blob": "725d463770b43d33a20f4cbe8d89bfffb94dda8a",
+   "transform": "redact"
+  },
+  "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
+   "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
+   "source_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
+   "transform": "copy"
+  },
+  "inbox/task_MUSE-PROTO-ACCEPT-20261027_r2.json": {
+   "public_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
+   "source_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
+   "transform": "copy"
+  },
+  "inbox/task_MUSE-RELAY-20261026.json": {
+   "public_blob": "727fefd8dce5955b04d5a24d6174edbbca1ec685",
+   "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
+   "transform": "redact"
+  },
+  "inbox/task_OCTOP-AGENCY-8REGISTER-20261025_xiaoka.json": {
+   "public_blob": "7a350e641013c7f4dd403899b43a6707c75588b3",
+   "source_blob": "7a350e641013c7f4dd403899b43a6707c75588b3",
+   "transform": "copy"
+  },
+  "inbox/task_ORG-20261022-CEO-TRANSITION_ALL.json": {
+   "public_blob": "adfde80d9d6e39d35d9fca63abe587ebacd495b4",
+   "source_blob": "adfde80d9d6e39d35d9fca63abe587ebacd495b4",
+   "transform": "copy"
+  },
+  "outbox/.tmp_a_xiaoli.json": {
+   "public_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+   "source_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
+   "transform": "copy"
+  },
+  "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
+   "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
+   "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-DEDUPE-VM_friday_20261018T174929.json": {
+   "public_blob": "80f4863cd10d10d0550568b7a5cda45fa99efbd8",
+   "source_blob": "80f4863cd10d10d0550568b7a5cda45fa99efbd8",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-FRIDAY-UNBLOCK_friday_20261019T0045+0800.json": {
+   "public_blob": "8e06c6842aed7a32912c9cc960b8217ff44eb82e",
+   "source_blob": "8e06c6842aed7a32912c9cc960b8217ff44eb82e",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PATH-FIX_friday_20261018T174051+0800.json": {
+   "public_blob": "294702a198a19e21bd0ae3034f97fad11389e82c",
+   "source_blob": "294702a198a19e21bd0ae3034f97fad11389e82c",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_azheng_20261018T091303Z.json": {
+   "public_blob": "177c1dc2b259078925da0af6e47de9a213e7b1a6",
+   "source_blob": "177c1dc2b259078925da0af6e47de9a213e7b1a6",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_friday_20261018T171301.json": {
+   "public_blob": "97a06cccc10a92aeb902a5570bff3c2dc158e628",
+   "source_blob": "97a06cccc10a92aeb902a5570bff3c2dc158e628",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_friday_新hermes_20261018T171301+0800.json": {
+   "public_blob": "2b228b2900095ef50c17ee047cbd038ae79f0926",
+   "source_blob": "2b228b2900095ef50c17ee047cbd038ae79f0926",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_jarvis_20261018T171602.json": {
+   "public_blob": "32d7290e72663896f02b14e931cb3d9855423486",
+   "source_blob": "32d7290e72663896f02b14e931cb3d9855423486",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_lixiaoworkbuddy_20261018_1712.json": {
+   "public_blob": "07b60aabeb9d1343b13c501014e269664fc9c2dc",
+   "source_blob": "07b60aabeb9d1343b13c501014e269664fc9c2dc",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_xiaoka_20261018_171340.json": {
+   "public_blob": "cb87c0b389ceaa6e18171f0ad16735e0637ad9ea",
+   "source_blob": "cb87c0b389ceaa6e18171f0ad16735e0637ad9ea",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_xiaoka_20261018_201942.json": {
+   "public_blob": "b1f0013047548a77f4397fac6be46270b44c1a5b",
+   "source_blob": "b1f0013047548a77f4397fac6be46270b44c1a5b",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_xiaoli2_20261018_171345.json": {
+   "public_blob": "d841322c857ba8314e3f2405d3c27041b48d59e2",
+   "source_blob": "d841322c857ba8314e3f2405d3c27041b48d59e2",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_xiaomi-codex_20261018T171442.json": {
+   "public_blob": "20e57a9858ef826bc61d71fc5437e2612b72880c",
+   "source_blob": "20e57a9858ef826bc61d71fc5437e2612b72880c",
+   "transform": "copy"
+  },
+  "outbox/receipt_A2A-PING_xiaoqi_20261018T171330.json": {
+   "public_blob": "691ee674502f74f003f7bafa6af801ffdfce6415",
+   "source_blob": "691ee674502f74f003f7bafa6af801ffdfce6415",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST1_octop_20261021T134949.json": {
+   "public_blob": "3267be9c777a5ad59a5037965dcff958d8c7d762",
+   "source_blob": "3267be9c777a5ad59a5037965dcff958d8c7d762",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST2_octop_20261021T135116.json": {
+   "public_blob": "f464b264ab55619fc93078248ae8e1e0d035707d",
+   "source_blob": "f464b264ab55619fc93078248ae8e1e0d035707d",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST3_octop_20261021T140619.json": {
+   "public_blob": "1b66e9f6bdeff542068cdf4234aa6385a5189dc7",
+   "source_blob": "1b66e9f6bdeff542068cdf4234aa6385a5189dc7",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST4_octop_20261021T140943.json": {
+   "public_blob": "a2b867be36862221b547caad915e79c4fc94ef82",
+   "source_blob": "a2b867be36862221b547caad915e79c4fc94ef82",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST5_octop_20261021T141313.json": {
+   "public_blob": "2124c1d6f7a955551b606b0e74e5842986ae1cb1",
+   "source_blob": "2124c1d6f7a955551b606b0e74e5842986ae1cb1",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST6_octop_20261021T141653.json": {
+   "public_blob": "a4331d6bb73a6dba702d5b025d84dfa982f0213c",
+   "source_blob": "a4331d6bb73a6dba702d5b025d84dfa982f0213c",
+   "transform": "copy"
+  },
+  "outbox/receipt_ACCTEST7_octop_20261021T141855.json": {
+   "public_blob": "240ff6bcb5fe07dbaaf920a3a1885da0b3d6acb7",
+   "source_blob": "240ff6bcb5fe07dbaaf920a3a1885da0b3d6acb7",
+   "transform": "copy"
+  },
+  "outbox/receipt_AI-SHARE-MIGRATE_ACK_friday_20261018T193114.json": {
+   "public_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
+   "source_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
+   "transform": "copy"
+  },
+  "outbox/receipt_BACKUP-TAKEOVER-DRILL_friday_20261020T1240+0800.json": {
+   "public_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
+   "source_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
+   "transform": "copy"
+  },
+  "outbox/receipt_BACKUP-TAKEOVER-DRILL_jarvis_20261020T1232+0800.json": {
+   "public_blob": "d13d96ddcf2e5d3fe4071d5049a8945bc3c26e75",
+   "source_blob": "026ef8c88fc0a48f051cad8f137fa694b28bbe85",
+   "transform": "redact"
+  },
+  "outbox/receipt_CONNECTTEST_muse.json": {
+   "public_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
+   "source_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
+   "transform": "copy"
+  },
+  "outbox/receipt_DRILL-M1-DISPATCH-20261023T232504_xiaodou.json": {
+   "public_blob": "70c58be66f2300bc965c754eb893d673bdfcd9a5",
+   "source_blob": "2ade65fba4f650a7a4d439891a25057fe083f4c4",
+   "transform": "redact"
+  },
+  "outbox/receipt_EXEC-005_20261019_210626.json": {
+   "public_blob": "c20aa89870bba7b6c49825ed19a282b1c71b027a",
+   "source_blob": "c20aa89870bba7b6c49825ed19a282b1c71b027a",
+   "transform": "copy"
+  },
+  "outbox/receipt_EXEC-XIAODOU-GITEA-ONBOARD-R2_xiaoka_20261021T130012.json": {
+   "public_blob": "7dbdb2516ae2dcf85ec11156959580d2b7a50048",
+   "source_blob": "7dbdb2516ae2dcf85ec11156959580d2b7a50048",
+   "transform": "copy"
+  },
+  "outbox/receipt_EXEC-XIAODOU-GITEA-ONBOARD-R2_xiaoka_20261021T130210.json": {
+   "public_blob": "b477b375442b8e0b5d171721f370de6e4bb8be26",
+   "source_blob": "eeddb9474b0197985e398beea2328943950aa69f",
+   "transform": "redact"
+  },
+  "outbox/receipt_EXEC-XIAODOU-GITEA-ONBOARD-R2_xiaoka_20261021T130905_delivery.json": {
+   "public_blob": "e3a08059aa7947997fea3ae8c1dc3f3d0704e733",
+   "source_blob": "50f06e1384057d28ec240f82982fdb9939e51566",
+   "transform": "redact"
+  },
+  "outbox/receipt_EXEC-XIAODOU-GITEA-ONBOARD-R2_xiaoka_20261021T131004_delivery.json": {
+   "public_blob": "e0576175e68dcc8a7a00bc0ab6ba28ff04282489",
+   "source_blob": "85b810d0ecf03caa751781d686d0d49fd4cd4f24",
+   "transform": "redact"
+  },
+  "outbox/receipt_FAILOVER-QUEEN-20261021_friday.json": {
+   "public_blob": "120950b0f729917480a750162fbac76aadb7c771",
+   "source_blob": "120950b0f729917480a750162fbac76aadb7c771",
+   "transform": "copy"
+  },
+  "outbox/receipt_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaodou_20261025T223057.json": {
+   "public_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
+   "source_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
+   "transform": "copy"
+  },
+  "outbox/receipt_GH-MIRROR-FIX_xiaoka_20261023.json": {
+   "public_blob": "1f2ddb10717293d0345493fc189997ecd71c943a",
+   "source_blob": "1f2ddb10717293d0345493fc189997ecd71c943a",
+   "transform": "copy"
+  },
+  "outbox/receipt_GROUP-GOVERNANCE-20261019_xiaoli2_20261019T2311+0800.json": {
+   "public_blob": "2a82c93c2dfb028ec83a55d97c26bbf283414d8e",
+   "source_blob": "2a82c93c2dfb028ec83a55d97c26bbf283414d8e",
+   "transform": "copy"
+  },
+  "outbox/receipt_GROUP-GOVERNANCE_azheng_20261019T231200.json": {
+   "public_blob": "ec2ac059255cd52718b9813380d772bd4001aeb0",
+   "source_blob": "ec2ac059255cd52718b9813380d772bd4001aeb0",
+   "transform": "copy"
+  },
+  "outbox/receipt_HANDOVER-CEO-TAKEOVER_xiaodou.json": {
+   "public_blob": "85d74d2227b5404ae54aea1315c8c2c9edd244ef",
+   "source_blob": "85d74d2227b5404ae54aea1315c8c2c9edd244ef",
+   "transform": "copy"
+  },
+  "outbox/receipt_HANDOVER-FRIDAY-TO-XIAODOU-20261022_friday.json": {
+   "public_blob": "88bbb870df88f0ecaec5b5206d073f60b7c6268d",
+   "source_blob": "88bbb870df88f0ecaec5b5206d073f60b7c6268d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HANDOVER-FRIDAY-TO-XIAODOU-20261022_xiaodou.json": {
+   "public_blob": "49c4b4727c9883e24f2a606cc2442c94f369d85c",
+   "source_blob": "de34a26b12ae435c179b1e84bf69bf5ee09597e6",
+   "transform": "redact"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_183436.json": {
+   "public_blob": "deebc787a4bcb9cb033d2f8776534e9bbd38bbc2",
+   "source_blob": "deebc787a4bcb9cb033d2f8776534e9bbd38bbc2",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_190330.json": {
+   "public_blob": "9cfc73817e03cd28a419f3a6332caf26ce846cc3",
+   "source_blob": "9cfc73817e03cd28a419f3a6332caf26ce846cc3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_190927.json": {
+   "public_blob": "94e6ef2435b9d28069bad73d0320f6eff1369e93",
+   "source_blob": "94e6ef2435b9d28069bad73d0320f6eff1369e93",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_192309.json": {
+   "public_blob": "8aab1cd3bc58de4522d6fe55bbe6e11225053068",
+   "source_blob": "8aab1cd3bc58de4522d6fe55bbe6e11225053068",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_194953.json": {
+   "public_blob": "5daaa5923e73017c4d94ba991177710098c8e2d6",
+   "source_blob": "5daaa5923e73017c4d94ba991177710098c8e2d6",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_201815.json": {
+   "public_blob": "eed312176b56e51e5f2ba761e79195e516e6ecf7",
+   "source_blob": "eed312176b56e51e5f2ba761e79195e516e6ecf7",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_204918.json": {
+   "public_blob": "bbc9e874368b3da19bf36790f5971f5ede59eba4",
+   "source_blob": "bbc9e874368b3da19bf36790f5971f5ede59eba4",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_212013.json": {
+   "public_blob": "17b9de40b68ec4a08d96e37ac43684fb606fd404",
+   "source_blob": "17b9de40b68ec4a08d96e37ac43684fb606fd404",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_212525.json": {
+   "public_blob": "d945a3a58a05acba2d4e91d5e135575591033d76",
+   "source_blob": "d945a3a58a05acba2d4e91d5e135575591033d76",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_215623.json": {
+   "public_blob": "4de12ce4f5b2ff7974b43be63c13704786c14bef",
+   "source_blob": "4de12ce4f5b2ff7974b43be63c13704786c14bef",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_222720.json": {
+   "public_blob": "0eb06c5428a6b24a46914b6d2bf674a4993118c4",
+   "source_blob": "0eb06c5428a6b24a46914b6d2bf674a4993118c4",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_225815.json": {
+   "public_blob": "16862dc52f4c26024d266c6049abdd9de5e4d99a",
+   "source_blob": "16862dc52f4c26024d266c6049abdd9de5e4d99a",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261018_232917.json": {
+   "public_blob": "7e162f34b0099a1a0ee461f25bd991265e575c3a",
+   "source_blob": "7e162f34b0099a1a0ee461f25bd991265e575c3a",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_000020.json": {
+   "public_blob": "fd87c68f98f1a1b764410394cc19a1fc2373b25c",
+   "source_blob": "fd87c68f98f1a1b764410394cc19a1fc2373b25c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_003125.json": {
+   "public_blob": "0f449e0c14d0fa55cb143db6064d26411dc91e03",
+   "source_blob": "0f449e0c14d0fa55cb143db6064d26411dc91e03",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_010247.json": {
+   "public_blob": "7f2b94ac721ae5a1938a1c80135252799cc65484",
+   "source_blob": "7f2b94ac721ae5a1938a1c80135252799cc65484",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_013427.json": {
+   "public_blob": "8e19aa685d0393c86b687097bb8bbe610524f51c",
+   "source_blob": "8e19aa685d0393c86b687097bb8bbe610524f51c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_020602.json": {
+   "public_blob": "3e9caeafad622563ad22716df49232b7f93f8a12",
+   "source_blob": "3e9caeafad622563ad22716df49232b7f93f8a12",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_023735.json": {
+   "public_blob": "6651dad5821fabce32012147ea79b323cf460203",
+   "source_blob": "6651dad5821fabce32012147ea79b323cf460203",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_030904.json": {
+   "public_blob": "e7226ddf85e742cde7c8fac221edb52d822a47ad",
+   "source_blob": "e7226ddf85e742cde7c8fac221edb52d822a47ad",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_034051.json": {
+   "public_blob": "fd737151b2313c70d1249248903fdb3b894e6843",
+   "source_blob": "fd737151b2313c70d1249248903fdb3b894e6843",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_041223.json": {
+   "public_blob": "172b7bb47994cba71f3a5dcb6cbb746cd2d74a21",
+   "source_blob": "172b7bb47994cba71f3a5dcb6cbb746cd2d74a21",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_044345.json": {
+   "public_blob": "457d3561adab0e7a700d406f640c69f2a2f51350",
+   "source_blob": "457d3561adab0e7a700d406f640c69f2a2f51350",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_051520.json": {
+   "public_blob": "935209094f535e39fe6c04c664d30d7a97759451",
+   "source_blob": "935209094f535e39fe6c04c664d30d7a97759451",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_054707.json": {
+   "public_blob": "3b8ea9944605f046b965beb9715ee147bf1c4e6d",
+   "source_blob": "3b8ea9944605f046b965beb9715ee147bf1c4e6d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_061841.json": {
+   "public_blob": "9c21740c11bed5f921d68da22fb149f87c55c8c7",
+   "source_blob": "9c21740c11bed5f921d68da22fb149f87c55c8c7",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_065018.json": {
+   "public_blob": "8d5e52efcf665a0cda99ec6c77d346597dcd9027",
+   "source_blob": "8d5e52efcf665a0cda99ec6c77d346597dcd9027",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_072202.json": {
+   "public_blob": "f697ad9ac166f683ae44fcccad823b5b3bbca6f5",
+   "source_blob": "f697ad9ac166f683ae44fcccad823b5b3bbca6f5",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_075304.json": {
+   "public_blob": "6e3d28ee680311b4a3bc9db13dbdf4e0c2fa8917",
+   "source_blob": "6e3d28ee680311b4a3bc9db13dbdf4e0c2fa8917",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_082421.json": {
+   "public_blob": "14e8a3a32837a81921e94c15544e2552deeecf15",
+   "source_blob": "14e8a3a32837a81921e94c15544e2552deeecf15",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_085525.json": {
+   "public_blob": "2035115a8c9f1e139fa9363e92321e9ade0f9686",
+   "source_blob": "2035115a8c9f1e139fa9363e92321e9ade0f9686",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_092708.json": {
+   "public_blob": "c331609e022bb6091370dbf85f31e8a4e4b84e43",
+   "source_blob": "c331609e022bb6091370dbf85f31e8a4e4b84e43",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_095843.json": {
+   "public_blob": "ef8c116840c88bef03504f03ca60e25efeba392f",
+   "source_blob": "ef8c116840c88bef03504f03ca60e25efeba392f",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_103012.json": {
+   "public_blob": "af3d1ffefb09d890d7352364014d181cabfae3d7",
+   "source_blob": "af3d1ffefb09d890d7352364014d181cabfae3d7",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_110153.json": {
+   "public_blob": "451a1b70dc0aa9ff9da6ff8e2c8555e5edefe547",
+   "source_blob": "451a1b70dc0aa9ff9da6ff8e2c8555e5edefe547",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_113324.json": {
+   "public_blob": "f1120cbb3df65e6e761986a8e802aecd202e686c",
+   "source_blob": "f1120cbb3df65e6e761986a8e802aecd202e686c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_120501.json": {
+   "public_blob": "93b00109ddc04f985dfd43d8930f8e57c6639272",
+   "source_blob": "93b00109ddc04f985dfd43d8930f8e57c6639272",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_123634.json": {
+   "public_blob": "d228e2d47adafc7acc98b15d12c735ef7b392897",
+   "source_blob": "d228e2d47adafc7acc98b15d12c735ef7b392897",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_130753.json": {
+   "public_blob": "e5bc9fbb49933604578b05dfa2cbf267084203c3",
+   "source_blob": "e5bc9fbb49933604578b05dfa2cbf267084203c3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_133936.json": {
+   "public_blob": "4107da48a9337cc3c1fd687eeb7b38855ba7e0f5",
+   "source_blob": "4107da48a9337cc3c1fd687eeb7b38855ba7e0f5",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_141045.json": {
+   "public_blob": "9ecba0a81e80e509b0c3c6ce85ae58c23b39ddfb",
+   "source_blob": "9ecba0a81e80e509b0c3c6ce85ae58c23b39ddfb",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_144221.json": {
+   "public_blob": "7c49f7b1a61dc8ca7eb486a8e2992bb943564c90",
+   "source_blob": "7c49f7b1a61dc8ca7eb486a8e2992bb943564c90",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_151357.json": {
+   "public_blob": "4e093dbef7af83cba05d20ae18a4dfa8b57072ae",
+   "source_blob": "4e093dbef7af83cba05d20ae18a4dfa8b57072ae",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_154533.json": {
+   "public_blob": "6e03801c0a2fdec547591f3a4835776c9972d8c6",
+   "source_blob": "6e03801c0a2fdec547591f3a4835776c9972d8c6",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_161714.json": {
+   "public_blob": "b930cffce496899f1b47dd50ef549bef06e21bf4",
+   "source_blob": "b930cffce496899f1b47dd50ef549bef06e21bf4",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_164854.json": {
+   "public_blob": "d4df9040be13c59ef1e93652fa489dc77d7c388d",
+   "source_blob": "d4df9040be13c59ef1e93652fa489dc77d7c388d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_172037.json": {
+   "public_blob": "bc0158fa6d725c94815d519d10030a7c3265ec18",
+   "source_blob": "bc0158fa6d725c94815d519d10030a7c3265ec18",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_175219.json": {
+   "public_blob": "e0f512189d7e381de11684eb2907e93d78bce82d",
+   "source_blob": "e0f512189d7e381de11684eb2907e93d78bce82d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_182404.json": {
+   "public_blob": "764916911566359a3dfa53a3e7ee15d287e9e68c",
+   "source_blob": "764916911566359a3dfa53a3e7ee15d287e9e68c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_185537.json": {
+   "public_blob": "dde811fa1d3456eb05b16f74ed5904f1de512f32",
+   "source_blob": "dde811fa1d3456eb05b16f74ed5904f1de512f32",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_192713.json": {
+   "public_blob": "8edf5b26eb8b0e9261a7d8a24e3463d9f8e6e9e0",
+   "source_blob": "8edf5b26eb8b0e9261a7d8a24e3463d9f8e6e9e0",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_195905.json": {
+   "public_blob": "90655cc4e0361216e884f60955378f9ccc9a20f3",
+   "source_blob": "90655cc4e0361216e884f60955378f9ccc9a20f3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_203056.json": {
+   "public_blob": "23377ee20a28d4d751413a4dd4b4788f99f33058",
+   "source_blob": "23377ee20a28d4d751413a4dd4b4788f99f33058",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_210227.json": {
+   "public_blob": "6fe61029ab9c0b940eb9677e5be21c276adeba5d",
+   "source_blob": "6fe61029ab9c0b940eb9677e5be21c276adeba5d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_213418.json": {
+   "public_blob": "33421a6a6eb55afd379d7d9d89659bc5b74e9dcf",
+   "source_blob": "33421a6a6eb55afd379d7d9d89659bc5b74e9dcf",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_220624.json": {
+   "public_blob": "531f0f3cce0e59bfcebc94db4a897ab765dce323",
+   "source_blob": "531f0f3cce0e59bfcebc94db4a897ab765dce323",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_223831.json": {
+   "public_blob": "eb764101df13173df549c58e34dc8481369ca492",
+   "source_blob": "eb764101df13173df549c58e34dc8481369ca492",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_230953.json": {
+   "public_blob": "2373c6f9cc9b9710669927143eb028e4a27646a1",
+   "source_blob": "2373c6f9cc9b9710669927143eb028e4a27646a1",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261019_234108.json": {
+   "public_blob": "4cc7353a938f291a45f355ea19314f525f286013",
+   "source_blob": "4cc7353a938f291a45f355ea19314f525f286013",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_001248.json": {
+   "public_blob": "6c2ca74a3b760b663b453d42f34d2513b6a7cdf1",
+   "source_blob": "6c2ca74a3b760b663b453d42f34d2513b6a7cdf1",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_004438.json": {
+   "public_blob": "6a9a05566f2cff019fc0e95c3115afda2039f2f0",
+   "source_blob": "6a9a05566f2cff019fc0e95c3115afda2039f2f0",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_011612.json": {
+   "public_blob": "f2807524120298bcaa48bfe58f424bdbef948fa8",
+   "source_blob": "f2807524120298bcaa48bfe58f424bdbef948fa8",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_014757.json": {
+   "public_blob": "42c8e47490a30b8cc7024da93a0ea4349a76c63c",
+   "source_blob": "42c8e47490a30b8cc7024da93a0ea4349a76c63c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_021926.json": {
+   "public_blob": "932999597664fbebb5d0b75e7dee49d9706cd3d6",
+   "source_blob": "932999597664fbebb5d0b75e7dee49d9706cd3d6",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_025109.json": {
+   "public_blob": "9b0178ff5ba68d5cd8925a9ff1626b00ddd86c43",
+   "source_blob": "9b0178ff5ba68d5cd8925a9ff1626b00ddd86c43",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_032237.json": {
+   "public_blob": "b83b92a894210a53ce573e1f76ff13ffa31eca7e",
+   "source_blob": "b83b92a894210a53ce573e1f76ff13ffa31eca7e",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_035445.json": {
+   "public_blob": "2baea469a13a5e322bfeb2359e5ea1a1c5589146",
+   "source_blob": "2baea469a13a5e322bfeb2359e5ea1a1c5589146",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_042653.json": {
+   "public_blob": "caf6559b6051ee41484f15714869a21785e21326",
+   "source_blob": "caf6559b6051ee41484f15714869a21785e21326",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_045855.json": {
+   "public_blob": "6d889c5ce0926b5014ca91689122684210dfe4a2",
+   "source_blob": "6d889c5ce0926b5014ca91689122684210dfe4a2",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_053104.json": {
+   "public_blob": "1a4067dec7f3176acbfdb574348e5513af67b6ae",
+   "source_blob": "1a4067dec7f3176acbfdb574348e5513af67b6ae",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_060318.json": {
+   "public_blob": "3b8a71a561501361553584759888eb958f9a5560",
+   "source_blob": "3b8a71a561501361553584759888eb958f9a5560",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_063535.json": {
+   "public_blob": "9e22849ff3c1fcd8b716e00da4f6fd1b7a2f35dd",
+   "source_blob": "9e22849ff3c1fcd8b716e00da4f6fd1b7a2f35dd",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_070738.json": {
+   "public_blob": "fcb826dadf404deb3f1a0b709e43347d2ccb0d0c",
+   "source_blob": "fcb826dadf404deb3f1a0b709e43347d2ccb0d0c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_073953.json": {
+   "public_blob": "66afa8c1e69c146e6c5fde15a7d7a3365f742f51",
+   "source_blob": "66afa8c1e69c146e6c5fde15a7d7a3365f742f51",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_081126.json": {
+   "public_blob": "cdd80a3928147446aa8cdcaeb85957823f6438e4",
+   "source_blob": "cdd80a3928147446aa8cdcaeb85957823f6438e4",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_084345.json": {
+   "public_blob": "d56c258074891e1775fc9ef979330c42b87e939d",
+   "source_blob": "d56c258074891e1775fc9ef979330c42b87e939d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_091547.json": {
+   "public_blob": "01bb157d0910c400fbd59918991d0483d7482dfa",
+   "source_blob": "01bb157d0910c400fbd59918991d0483d7482dfa",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_094816.json": {
+   "public_blob": "09987b5307244a94b25caf3be8e2d34f44b44fe1",
+   "source_blob": "09987b5307244a94b25caf3be8e2d34f44b44fe1",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_102018.json": {
+   "public_blob": "26ffe70a1c54f6174948a347cc49d1071a19cf79",
+   "source_blob": "26ffe70a1c54f6174948a347cc49d1071a19cf79",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_105236.json": {
+   "public_blob": "beecb30e3456bda317b96fad88f081ee8c81557d",
+   "source_blob": "beecb30e3456bda317b96fad88f081ee8c81557d",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_112459.json": {
+   "public_blob": "f2e9e1d40e8d576c67fa6c8a0538e095d811d5e8",
+   "source_blob": "f2e9e1d40e8d576c67fa6c8a0538e095d811d5e8",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_115653.json": {
+   "public_blob": "cad0b0c091a9a09fe095d94fddcb739c64c4ce84",
+   "source_blob": "cad0b0c091a9a09fe095d94fddcb739c64c4ce84",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_122852.json": {
+   "public_blob": "eff909c9cc672936e8103f13645d002d1ab55dd6",
+   "source_blob": "eff909c9cc672936e8103f13645d002d1ab55dd6",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_130008.json": {
+   "public_blob": "0e8674f3e49c6ea26c147183fceed2c0208cc9ec",
+   "source_blob": "0e8674f3e49c6ea26c147183fceed2c0208cc9ec",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_133128.json": {
+   "public_blob": "9cd6047ce0c0ff43bc7323a826ab6f6f72d2c044",
+   "source_blob": "9cd6047ce0c0ff43bc7323a826ab6f6f72d2c044",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_140326.json": {
+   "public_blob": "57b12bc8c0f58e9b447dd0104a2254cdc9baa21c",
+   "source_blob": "57b12bc8c0f58e9b447dd0104a2254cdc9baa21c",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_143532.json": {
+   "public_blob": "1879f4460f7fda605969bfd0057b42b8298c9c75",
+   "source_blob": "1879f4460f7fda605969bfd0057b42b8298c9c75",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_150705.json": {
+   "public_blob": "5cbd910097db28c2cd4c48f05220ac57f8c40c54",
+   "source_blob": "5cbd910097db28c2cd4c48f05220ac57f8c40c54",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_153832.json": {
+   "public_blob": "6bacddbac83eeabba80858974a518e6712c81b43",
+   "source_blob": "6bacddbac83eeabba80858974a518e6712c81b43",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_161020.json": {
+   "public_blob": "7123374565b652d23f8aad94338ab0929e5782a3",
+   "source_blob": "7123374565b652d23f8aad94338ab0929e5782a3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_164216.json": {
+   "public_blob": "525b8e7335a6e1468618c54c53c3b55278c255f3",
+   "source_blob": "525b8e7335a6e1468618c54c53c3b55278c255f3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_171241.json": {
+   "public_blob": "2cbf84c35695957c5c4f2ed051d1a18870c4abf0",
+   "source_blob": "2cbf84c35695957c5c4f2ed051d1a18870c4abf0",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_174403.json": {
+   "public_blob": "ac2c5681b8c6a75c5a5cc6d9deda710e6a6daee6",
+   "source_blob": "ac2c5681b8c6a75c5a5cc6d9deda710e6a6daee6",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_181526.json": {
+   "public_blob": "ae0a09d122c100e631d1294f69a364d8ea123ad7",
+   "source_blob": "ae0a09d122c100e631d1294f69a364d8ea123ad7",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_184618.json": {
+   "public_blob": "ec16fa978775aed4e92a62b7a6a460ae24dcdea3",
+   "source_blob": "ec16fa978775aed4e92a62b7a6a460ae24dcdea3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_191721.json": {
+   "public_blob": "5bc416f36ef4acc6e8ccbe7026f2f2de547d08dc",
+   "source_blob": "5bc416f36ef4acc6e8ccbe7026f2f2de547d08dc",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_194802.json": {
+   "public_blob": "a1d8d54bad9542ed6efbab50c4b7f8ca9e8e82e4",
+   "source_blob": "a1d8d54bad9542ed6efbab50c4b7f8ca9e8e82e4",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_201854.json": {
+   "public_blob": "1a5084d47d0eae50a3f5abd9e212574f81958919",
+   "source_blob": "1a5084d47d0eae50a3f5abd9e212574f81958919",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_204940.json": {
+   "public_blob": "d7e91a672b5c5504efd59379694de0fb25c744df",
+   "source_blob": "d7e91a672b5c5504efd59379694de0fb25c744df",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_212035.json": {
+   "public_blob": "aae75200ca152ccdc70c8931bcedc97ce6fbea60",
+   "source_blob": "aae75200ca152ccdc70c8931bcedc97ce6fbea60",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_215145.json": {
+   "public_blob": "12f8a8bdfd21a80cdeff7a621f97c566e0eef791",
+   "source_blob": "12f8a8bdfd21a80cdeff7a621f97c566e0eef791",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEALTH_xiaomi-codex_20261020_222344.json": {
+   "public_blob": "b8c5545276d58d33214bda50f352226180f4a513",
+   "source_blob": "b8c5545276d58d33214bda50f352226180f4a513",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEARTBEAT_lvjuren_20261019_182302.json": {
+   "public_blob": "f52383ccd25edf571f6a676fc6679006f9a106a3",
+   "source_blob": "f52383ccd25edf571f6a676fc6679006f9a106a3",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEARTBEAT_lvjuren_20261019_193333.json": {
+   "public_blob": "030e66f7d913738f272463ff63f4b6bfb2d5a779",
+   "source_blob": "b59c4b9cebeb5423537a2ccaa28d521371d4b3e2",
+   "transform": "redact"
+  },
+  "outbox/receipt_HEARTBEAT_xiaoli2_20261018_202112.json": {
+   "public_blob": "d9c944f28d17f10ce4e097016eef5177ffa3851e",
+   "source_blob": "d9c944f28d17f10ce4e097016eef5177ffa3851e",
+   "transform": "copy"
+  },
+  "outbox/receipt_HEARTBEAT_xiaoli_20261019T210200+0800.json": {
+   "public_blob": "d2fa74bb152e7d42717d5a6f823f444d024df51e",
+   "source_blob": "d2fa74bb152e7d42717d5a6f823f444d024df51e",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1228.json": {
+   "public_blob": "aeb263d1a772ee3a30a904fc123ed98880af6922",
+   "source_blob": "aeb263d1a772ee3a30a904fc123ed98880af6922",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1330.json": {
+   "public_blob": "6bd6f238099ec3779e912c9aaeecdd7caaff4517",
+   "source_blob": "6bd6f238099ec3779e912c9aaeecdd7caaff4517",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1433.json": {
+   "public_blob": "2ab712f519b8238b972cb086928ede5a7041ad0a",
+   "source_blob": "2ab712f519b8238b972cb086928ede5a7041ad0a",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1535.json": {
+   "public_blob": "0f72ecd0ba2a4dece74dc84af9f993a75fd7a06b",
+   "source_blob": "0f72ecd0ba2a4dece74dc84af9f993a75fd7a06b",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1637.json": {
+   "public_blob": "850d7cb954a9c0a4e6347f5308ae38394b625bf8",
+   "source_blob": "850d7cb954a9c0a4e6347f5308ae38394b625bf8",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1739.json": {
+   "public_blob": "93cd6f13d09f4b46f485f47445c0ed95bf7ee453",
+   "source_blob": "93cd6f13d09f4b46f485f47445c0ed95bf7ee453",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1847.json": {
+   "public_blob": "40da0e79a49c2f04d29ee993e31cb977c9aa67c9",
+   "source_blob": "40da0e79a49c2f04d29ee993e31cb977c9aa67c9",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_1950.json": {
+   "public_blob": "d4a20be3b73888bc19b4625cbdf5e24d03ef9a9d",
+   "source_blob": "d4a20be3b73888bc19b4625cbdf5e24d03ef9a9d",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_2054.json": {
+   "public_blob": "0643b3932a1613d5a724a42a8a0ddf08ffa7deab",
+   "source_blob": "0643b3932a1613d5a724a42a8a0ddf08ffa7deab",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_2157.json": {
+   "public_blob": "8ff9ac6a0631361bcac3617c1b7e69d869715a76",
+   "source_blob": "8ff9ac6a0631361bcac3617c1b7e69d869715a76",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261018_2300.json": {
+   "public_blob": "15ea92f92ed3edc2db886e56baeeb60d9a82560c",
+   "source_blob": "15ea92f92ed3edc2db886e56baeeb60d9a82560c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0004.json": {
+   "public_blob": "02c5a70ec904ea69f227fbad7f2261fab5df4cfa",
+   "source_blob": "02c5a70ec904ea69f227fbad7f2261fab5df4cfa",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0109.json": {
+   "public_blob": "5ce236c78f4b3a0e3459dcbb661aba18a2c4f1a0",
+   "source_blob": "5ce236c78f4b3a0e3459dcbb661aba18a2c4f1a0",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0212.json": {
+   "public_blob": "9b1388bf6899f2b4a629cf97efa3e60b360849bb",
+   "source_blob": "9b1388bf6899f2b4a629cf97efa3e60b360849bb",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0315.json": {
+   "public_blob": "47a27b0998f8bc8e41279c5dc3a80071fefdfbfa",
+   "source_blob": "47a27b0998f8bc8e41279c5dc3a80071fefdfbfa",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0418.json": {
+   "public_blob": "905c8ce19a8143c37bd20e20e028c7489fe2a357",
+   "source_blob": "905c8ce19a8143c37bd20e20e028c7489fe2a357",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0521.json": {
+   "public_blob": "84617a3c9451a559077601d96f68ed9d280486ee",
+   "source_blob": "84617a3c9451a559077601d96f68ed9d280486ee",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0623.json": {
+   "public_blob": "e33efb0ef8299d19c0c7a1f2312552be5158d625",
+   "source_blob": "e33efb0ef8299d19c0c7a1f2312552be5158d625",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0725.json": {
+   "public_blob": "637012a6b6562b97bc886d3442908e05767ca596",
+   "source_blob": "637012a6b6562b97bc886d3442908e05767ca596",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0828.json": {
+   "public_blob": "e114bf2d153cce82e22b7b560c8e571b47ab9a85",
+   "source_blob": "e114bf2d153cce82e22b7b560c8e571b47ab9a85",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_0945.json": {
+   "public_blob": "626a17068ba82f22e121498d8ab50a7c1416baae",
+   "source_blob": "626a17068ba82f22e121498d8ab50a7c1416baae",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1049.json": {
+   "public_blob": "01126248a25ce16d507075b639dc76fb4ae3ed9c",
+   "source_blob": "01126248a25ce16d507075b639dc76fb4ae3ed9c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1152.json": {
+   "public_blob": "a276a1c6c21548d145a1289250f95159fe60a291",
+   "source_blob": "a276a1c6c21548d145a1289250f95159fe60a291",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1255.json": {
+   "public_blob": "64eb52bdebe05a3edcde50a0199f7c46aafa7a74",
+   "source_blob": "64eb52bdebe05a3edcde50a0199f7c46aafa7a74",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1357.json": {
+   "public_blob": "2b3797bc1a2bf9e380b7db89a662f61a553c4b30",
+   "source_blob": "2b3797bc1a2bf9e380b7db89a662f61a553c4b30",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1500.json": {
+   "public_blob": "89545e9821a8d55f3942374cd2b5826d7e0e36ed",
+   "source_blob": "89545e9821a8d55f3942374cd2b5826d7e0e36ed",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1606.json": {
+   "public_blob": "d162895e570f6b1e4235744dc24bd19ca7cd9c49",
+   "source_blob": "d162895e570f6b1e4235744dc24bd19ca7cd9c49",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1710.json": {
+   "public_blob": "64d32f90b64e86b24842ac578234003a3ac8629c",
+   "source_blob": "64d32f90b64e86b24842ac578234003a3ac8629c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1812.json": {
+   "public_blob": "fd1f1331f8c91008659c8814966e8b23b9c9bdc7",
+   "source_blob": "fd1f1331f8c91008659c8814966e8b23b9c9bdc7",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_1915.json": {
+   "public_blob": "37a4a145800183f43bb3e5a748cd9a3f61c3f0a8",
+   "source_blob": "37a4a145800183f43bb3e5a748cd9a3f61c3f0a8",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_2017.json": {
+   "public_blob": "9c0ee76de7b0660c01288f8bc98fc85b83896abd",
+   "source_blob": "9c0ee76de7b0660c01288f8bc98fc85b83896abd",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_2122.json": {
+   "public_blob": "41fddc918b7c014981a939af0673a1ad79962438",
+   "source_blob": "41fddc918b7c014981a939af0673a1ad79962438",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_2225.json": {
+   "public_blob": "554779091b2bb97f1aa4424f8d91c435d74e30fd",
+   "source_blob": "554779091b2bb97f1aa4424f8d91c435d74e30fd",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261019_2329.json": {
+   "public_blob": "bca04b7b0288e594b3a2542134e7ceab6ad76bce",
+   "source_blob": "bca04b7b0288e594b3a2542134e7ceab6ad76bce",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0032.json": {
+   "public_blob": "b69729e0fe5a930c19d17324569844f744e618c9",
+   "source_blob": "b69729e0fe5a930c19d17324569844f744e618c9",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0139.json": {
+   "public_blob": "3dee75865cebd8fa1c57550a325e25c206d925bc",
+   "source_blob": "3dee75865cebd8fa1c57550a325e25c206d925bc",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0243.json": {
+   "public_blob": "b1acfa067021c82f73b0e162608469d55d441d46",
+   "source_blob": "b1acfa067021c82f73b0e162608469d55d441d46",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0346.json": {
+   "public_blob": "f8b3903c4034c3a30867ed4d89a1be0adb789767",
+   "source_blob": "f8b3903c4034c3a30867ed4d89a1be0adb789767",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0449.json": {
+   "public_blob": "b7aed738742a0dad9163d5493b252d934ffb047c",
+   "source_blob": "b7aed738742a0dad9163d5493b252d934ffb047c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0551.json": {
+   "public_blob": "389b1c00778c58962d5ce9702186fa1a21c5904a",
+   "source_blob": "389b1c00778c58962d5ce9702186fa1a21c5904a",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0657.json": {
+   "public_blob": "a22de521f822241ff237afc745bf0049782740a1",
+   "source_blob": "a22de521f822241ff237afc745bf0049782740a1",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0801.json": {
+   "public_blob": "7c2a0ec2218a72365359e429335316319530c0a6",
+   "source_blob": "7c2a0ec2218a72365359e429335316319530c0a6",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_0916.json": {
+   "public_blob": "6b5fc6ad541ff95c46a6bbc3bbdbd872dae30e07",
+   "source_blob": "6b5fc6ad541ff95c46a6bbc3bbdbd872dae30e07",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1027.json": {
+   "public_blob": "a76f4ee80dabd8ff3a4e0b4dc49eac4bdfc2e2e3",
+   "source_blob": "a76f4ee80dabd8ff3a4e0b4dc49eac4bdfc2e2e3",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1129.json": {
+   "public_blob": "127a3962334736cab36c7c8226f7f3a52e669ec2",
+   "source_blob": "127a3962334736cab36c7c8226f7f3a52e669ec2",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1231.json": {
+   "public_blob": "aad29b08daf795d2984dc1318bcf27fa9871d088",
+   "source_blob": "aad29b08daf795d2984dc1318bcf27fa9871d088",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1337.json": {
+   "public_blob": "1d72a69129a3fcd1a1671a26fd66976ddb0e17b8",
+   "source_blob": "1d72a69129a3fcd1a1671a26fd66976ddb0e17b8",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1441.json": {
+   "public_blob": "0a83731aa0bf9ddbe529fb6605de4d923f54441a",
+   "source_blob": "0a83731aa0bf9ddbe529fb6605de4d923f54441a",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1544.json": {
+   "public_blob": "2327d78a8238c3bc1e6c80932c8ba0ba3020e25e",
+   "source_blob": "2327d78a8238c3bc1e6c80932c8ba0ba3020e25e",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1646.json": {
+   "public_blob": "693dfac5396dc6f2b7b2ad5cc61badfe7d41007e",
+   "source_blob": "dfa237827aa43e6acdd626e306a74ea2acece03e",
+   "transform": "redact"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1749.json": {
+   "public_blob": "d074bae4a28e1c405733742c709a8ada9a84def3",
+   "source_blob": "d074bae4a28e1c405733742c709a8ada9a84def3",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1853.json": {
+   "public_blob": "35a3675ee307b5bc4392cc4e6cfc090703683a1c",
+   "source_blob": "35a3675ee307b5bc4392cc4e6cfc090703683a1c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_1955.json": {
+   "public_blob": "3339f96cc2d1ff46b8e8e5fd5c3ce8065a4bc681",
+   "source_blob": "3339f96cc2d1ff46b8e8e5fd5c3ce8065a4bc681",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_2058.json": {
+   "public_blob": "80db94e75fad308b064eb8951d08f0c319c3d18c",
+   "source_blob": "80db94e75fad308b064eb8951d08f0c319c3d18c",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_2201.json": {
+   "public_blob": "9c0261d2baf06f8a8073af372d4a7fd6a3bd8fda",
+   "source_blob": "9c0261d2baf06f8a8073af372d4a7fd6a3bd8fda",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_2304.json": {
+   "public_blob": "9a5165a11d8404e517a735363062acfe2b1d8480",
+   "source_blob": "9a5165a11d8404e517a735363062acfe2b1d8480",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261020_2309.json": {
+   "public_blob": "f6eae61cae480e35c9805789c3152520a1e3f462",
+   "source_blob": "f6eae61cae480e35c9805789c3152520a1e3f462",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0014.json": {
+   "public_blob": "a3648da771fb91d0576ec96a1d8a577783bb8aa7",
+   "source_blob": "a3648da771fb91d0576ec96a1d8a577783bb8aa7",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0116.json": {
+   "public_blob": "66f17945073b26fcd467bd1263a9f42536e128a6",
+   "source_blob": "66f17945073b26fcd467bd1263a9f42536e128a6",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0219.json": {
+   "public_blob": "ff8c21e40063d3dea95cc30e6f5b50c23255882b",
+   "source_blob": "ff8c21e40063d3dea95cc30e6f5b50c23255882b",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0322.json": {
+   "public_blob": "d4ce983b5eae9f9aa6bff1619d11791bc1945f79",
+   "source_blob": "d4ce983b5eae9f9aa6bff1619d11791bc1945f79",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0424.json": {
+   "public_blob": "602481930be12a540d9e7cfa3f356645a54eda22",
+   "source_blob": "602481930be12a540d9e7cfa3f356645a54eda22",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0526.json": {
+   "public_blob": "859f7384be1675720f97e320a820ffdcb4abf97a",
+   "source_blob": "859f7384be1675720f97e320a820ffdcb4abf97a",
+   "transform": "copy"
+  },
+  "outbox/receipt_IDLE_HEARTBEAT_20261021_0730.json": {
+   "public_blob": "5d3954ca34bc85f894dbffa988f18ef6ba8412e6",
+   "source_blob": "5d3954ca34bc85f894dbffa988f18ef6ba8412e6",
+   "transform": "copy"
+  },
+  "outbox/receipt_JARVIS-SYNC-20261019_jarvis.json": {
+   "public_blob": "f725c7076f3e86aca9d030cba8f3967e7a187279",
+   "source_blob": "f725c7076f3e86aca9d030cba8f3967e7a187279",
+   "transform": "copy"
+  },
+  "outbox/receipt_M0-ARCH-IDENTITY-BUS_xiaodou.json": {
+   "public_blob": "def973c035adfea1401eb27ebf28f2f62f0c4a16",
+   "source_blob": "cd62cc9d92b00a318b7d16ff41f1143a39360e11",
+   "transform": "redact"
+  },
+  "outbox/receipt_M0-ARCH-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "c54d37bc32426b8f0ad3ababbf4d411530c4ce1a",
+   "source_blob": "c54d37bc32426b8f0ad3ababbf4d411530c4ce1a",
+   "transform": "copy"
+  },
+  "outbox/receipt_M0-ARCH_xiaodou.json": {
+   "public_blob": "bcad619542a4d0228d3fe1eca131f3425ad1cb81",
+   "source_blob": "f3acc3d0f9895c16c584f919244c0c849e3723d3",
+   "transform": "redact"
+  },
+  "outbox/receipt_M0-ARCH_xiaodou_errata1.json": {
+   "public_blob": "b49f870a6a77a3ead94f4483a2a5b8e59fb2d7d2",
+   "source_blob": "54ad105bde95f0b8fdcccf269135b3151277d5ad",
+   "transform": "redact"
+  },
+  "outbox/receipt_M0-IDENTITY-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "f8376471c63dbc7a3251c706e0f0318117a73dab",
+   "source_blob": "f8376471c63dbc7a3251c706e0f0318117a73dab",
+   "transform": "copy"
+  },
+  "outbox/receipt_M0-IDENTITY_xiaodou.json": {
+   "public_blob": "4817c80cd64147a3273c5c912e6a5703582c6831",
+   "source_blob": "4817c80cd64147a3273c5c912e6a5703582c6831",
+   "transform": "copy"
+  },
+  "outbox/receipt_M0-ORDERS-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "15aabecef354ba672da78a1db358a9bf07f7d535",
+   "source_blob": "15aabecef354ba672da78a1db358a9bf07f7d535",
+   "transform": "copy"
+  },
+  "outbox/receipt_M0-ORDERS_xiaodou.json": {
+   "public_blob": "f6ad7e9b1e96a74cda4cd7b79b65ad15efb9e95c",
+   "source_blob": "7f9775b83732f5dff82708c356e2be655c6a93fd",
+   "transform": "redact"
+  },
+  "outbox/receipt_M1-1_xiaodou.json": {
+   "public_blob": "ebf3ec61bba668e99e8f9cfa588bf660132b40f5",
+   "source_blob": "ebf3ec61bba668e99e8f9cfa588bf660132b40f5",
+   "transform": "copy"
+  },
+  "outbox/receipt_M1-2_xiaodou.json": {
+   "public_blob": "a55ef6c4c8d0e1d91226d87a455d3bd6e13724fc",
+   "source_blob": "a55ef6c4c8d0e1d91226d87a455d3bd6e13724fc",
+   "transform": "copy"
+  },
+  "outbox/receipt_M1-3_xiaodou.json": {
+   "public_blob": "49a94c65d57d9107e94eac0b420613e6e65a4a2c",
+   "source_blob": "49a94c65d57d9107e94eac0b420613e6e65a4a2c",
+   "transform": "copy"
+  },
+  "outbox/receipt_M1-4_xiaodou.json": {
+   "public_blob": "269d9f60e28ba0bc3fe908e8cb3fe38183488cac",
+   "source_blob": "dbd2ba40ada939acaa40dae7457e5630f5d664c2",
+   "transform": "redact"
+  },
+  "outbox/receipt_M2-1_xiaodou.json": {
+   "public_blob": "fbd5d590d157dd29aa6a9762b35a59f791829c28",
+   "source_blob": "fbd5d590d157dd29aa6a9762b35a59f791829c28",
+   "transform": "copy"
+  },
+  "outbox/receipt_M2-2_xiaodou.json": {
+   "public_blob": "251b4bc5b511e45119ae6fed585ae4d801a6f8e4",
+   "source_blob": "4fbde31b79b7f7df0c46712ec62640f120fa90ac",
+   "transform": "redact"
+  },
+  "outbox/receipt_M2-3_xiaodou.json": {
+   "public_blob": "cd9278c6f07c5778d6b3641e90879a243d6c263e",
+   "source_blob": "053f3a582d644877e2be41c3bda8193737f9003f",
+   "transform": "redact"
+  },
+  "outbox/receipt_M2-CEO-DISPATCH-xiaoka_xiaoka.json": {
+   "public_blob": "fd4a4b5202568a47d5e92a356a5ba734e195c756",
+   "source_blob": "19391871a838fe3d568b0e07c8fef977215e5b22",
+   "transform": "redact"
+  },
+  "outbox/receipt_M3-1_xiaodou.json": {
+   "public_blob": "3d05bfd66886f01db6140be55e7501f2765d5694",
+   "source_blob": "f6440a1e50013785b70333356da863f834be96f5",
+   "transform": "redact"
+  },
+  "outbox/receipt_M3-2_xiaodou.json": {
+   "public_blob": "5d67a0495643fa82d1f0ef018a1783a75523b7b7",
+   "source_blob": "5d67a0495643fa82d1f0ef018a1783a75523b7b7",
+   "transform": "copy"
+  },
+  "outbox/receipt_M3-3_xiaodou.json": {
+   "public_blob": "fb248c848e14241c38986cdf3eaaab36e4558c77",
+   "source_blob": "fb248c848e14241c38986cdf3eaaab36e4558c77",
+   "transform": "copy"
+  },
+  "outbox/receipt_MCP-TOKEN-FRIDAY_friday_20261019T0100+0800.json": {
+   "public_blob": "d279fd959c60854f9f913f56785245c0a44cf928",
+   "source_blob": "3e434a6c5c97d35f94d38d3f95c7a9f351649a4f",
+   "transform": "redact"
+  },
+  "outbox/receipt_MERCADO-DUAL-1125_p29.json": {
+   "public_blob": "bbe3beb5df2f29588e4ad549c166b654c2bd3837",
+   "source_blob": "bbe3beb5df2f29588e4ad549c166b654c2bd3837",
+   "transform": "copy"
+  },
+  "outbox/receipt_MERCADO-SELECTION_20261020_0139.json": {
+   "public_blob": "8e523983ccc79fb7693b35f4bd1d9b0485bc2143",
+   "source_blob": "8e523983ccc79fb7693b35f4bd1d9b0485bc2143",
+   "transform": "copy"
+  },
+  "outbox/receipt_MERCADO-SELECTION_xiaoli_20261020T024500+0800.json": {
+   "public_blob": "8d459c9a22b1f3c6e1ac1cc01efc26e7cadc1ddc",
+   "source_blob": "8d459c9a22b1f3c6e1ac1cc01efc26e7cadc1ddc",
+   "transform": "copy"
+  },
+  "outbox/receipt_MUSE-A2ALOOP_friday.json": {
+   "public_blob": "e74e2a69f430334d86c63cffdcb71104e8dc7f60",
+   "source_blob": "e74e2a69f430334d86c63cffdcb71104e8dc7f60",
+   "transform": "copy"
+  },
+  "outbox/receipt_MUSE-A2ALOOP_muse.json": {
+   "public_blob": "4be1aae5e043ef1c7736f1719c8b58fd6e52a157",
+   "source_blob": "4be1aae5e043ef1c7736f1719c8b58fd6e52a157",
+   "transform": "copy"
+  },
+  "outbox/receipt_MUSE-A2ALOOP_xiaoka.json": {
+   "public_blob": "c2044229e5b8d3e07a0cb674dc60b7085836447e",
+   "source_blob": "c1d02744b2177f0094e2befb6fda665b559314be",
+   "transform": "redact"
+  },
+  "outbox/receipt_MUSE-E2E-VERIFY_muse.json": {
+   "public_blob": "b34065f0ee3892a86f054a1d4b51b6c280f3ea4b",
+   "source_blob": "b34065f0ee3892a86f054a1d4b51b6c280f3ea4b",
+   "transform": "copy"
+  },
+  "outbox/receipt_MUSE-GIT-ONBOARD_xiaoka.json": {
+   "public_blob": "21db4a216c63d18fa912b49f2d1c21b76766419c",
+   "source_blob": "163ab2c8163d95c3fe70955207888f964b01e006",
+   "transform": "redact"
+  },
+  "outbox/receipt_MUSE-KEY-PROVISION_xiaoka.json": {
+   "public_blob": "4b200a35c5b48dc86e58cf4a48a80010552b9fc3",
+   "source_blob": "1ee4dbb95c5ce0120c9587953a6f1bbf61c2d2a9",
+   "transform": "redact"
+  },
+  "outbox/receipt_MUSE-KEY-ROTATE_xiaoka.json": {
+   "public_blob": "d14134395145c8175df7c8ddcb2532d4ea86cebe",
+   "source_blob": "d14134395145c8175df7c8ddcb2532d4ea86cebe",
+   "transform": "copy"
+  },
+  "outbox/receipt_MUSE-LINK-DIAG_friday_20261025T2115+0800.json": {
+   "public_blob": "9b0c5d52011943ee97fdb954df02b4cb86df0785",
+   "source_blob": "3a98ffa92f66b6bd37815e106af593c48e3f5bac",
+   "transform": "redact"
+  },
+  "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.json": {
+   "public_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
+   "source_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
+   "transform": "copy"
+  },
+  "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859_r2.json": {
+   "public_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
+   "source_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
+   "transform": "copy"
+  },
+  "outbox/receipt_ORG-20261022-CEO-TRANSITION_friday.json": {
+   "public_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
+   "source_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
+   "transform": "copy"
+  },
+  "outbox/receipt_ORG-20261022-CEO-TRANSITION_xiaodou.json": {
+   "public_blob": "56761a162433ad49c50a8375719f0cf3de3bf4fc",
+   "source_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
+   "transform": "redact"
+  },
+  "outbox/receipt_OZON-DELIST-STOCK-AUDIT_xiaoli2_20261021T0140+0800.json": {
+   "public_blob": "5ba5ec7cca847cfb64edb29c94210f935f525a1c",
+   "source_blob": "5ba5ec7cca847cfb64edb29c94210f935f525a1c",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-G4-B2-CONTINUE_CLAIM_xiaoli2_20261020T0123+0800.json": {
+   "public_blob": "219265d46459f489de6e5fcef36afe1981f1db14",
+   "source_blob": "219265d46459f489de6e5fcef36afe1981f1db14",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-G4-B2-CONTINUE_DEADEND_xiaoli2_20261020T0145+0800.json": {
+   "public_blob": "2b7447ca7a5c45c01e594fad32a0626e85db9568",
+   "source_blob": "2b7447ca7a5c45c01e594fad32a0626e85db9568",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-G4-B2_p29.json": {
+   "public_blob": "6d9faf9a52a057d55a730ea8bf82e840a5f65bef",
+   "source_blob": "6d9faf9a52a057d55a730ea8bf82e840a5f65bef",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-G4-B2_p31.json": {
+   "public_blob": "e82c918e12191a80bf1a31654216c836ec8f3586",
+   "source_blob": "e82c918e12191a80bf1a31654216c836ec8f3586",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_azheng_20261018T201938.json": {
+   "public_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
+   "source_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_jarvis_20261018T121952Z.json": {
+   "public_blob": "22cefb1c6667948ca43524fdf8146ab6752369cd",
+   "source_blob": "22cefb1c6667948ca43524fdf8146ab6752369cd",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_leishen_20261019T1852.json": {
+   "public_blob": "7643855877d3023924e977f9d7de9379c42dfe34",
+   "source_blob": "f17379b13fa5a8a27276b44e00789c4b6cb6964e",
+   "transform": "redact"
+  },
+  "outbox/receipt_PING_lvjuren_20261019_185324.json": {
+   "public_blob": "969fd36f81a31934df73b521b8e271e6f5639bf5",
+   "source_blob": "bd0cdece2aa284c7b13bcaf7289822e55c004daf",
+   "transform": "redact"
+  },
+  "outbox/receipt_PING_xiaodou_20261023T180441.json": {
+   "public_blob": "9b297a397a61b3e2edbb04afeca17680d49f1369",
+   "source_blob": "111e931f895f742ebf6fe73d763ec33d231222a4",
+   "transform": "redact"
+  },
+  "outbox/receipt_PING_xiaodou_20261023T193610.json": {
+   "public_blob": "dd4f24c1de91a1dc2f2b888c6a66401968794a09",
+   "source_blob": "8a5270d3915778f24d965b56536c67d6dbbab11a",
+   "transform": "redact"
+  },
+  "outbox/receipt_PING_xiaoka_20261018_202003.json": {
+   "public_blob": "37da12485b88b1fb51be0499db8a14fd994119aa",
+   "source_blob": "37da12485b88b1fb51be0499db8a14fd994119aa",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_xiaoli2_20261018_202028.json": {
+   "public_blob": "449a30b840d6779a1a04412edd4383c0e4660e59",
+   "source_blob": "449a30b840d6779a1a04412edd4383c0e4660e59",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_xiaoli_20261018T202130+0800.json": {
+   "public_blob": "72b357e8b39cadc73c23b9f79a2eed1ccbcea008",
+   "source_blob": "72b357e8b39cadc73c23b9f79a2eed1ccbcea008",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_xiaomi-codex_20261027T051533.json": {
+   "public_blob": "8ffc3ef8f33135f02a51ff96341bc698771e623e",
+   "source_blob": "8ffc3ef8f33135f02a51ff96341bc698771e623e",
+   "transform": "copy"
+  },
+  "outbox/receipt_PING_xiaoqi_20261018T201930.json": {
+   "public_blob": "a81756ac9f298b7e24b17b1a92dbabc64f7c0369",
+   "source_blob": "a81756ac9f298b7e24b17b1a92dbabc64f7c0369",
+   "transform": "copy"
+  },
+  "outbox/receipt_QUEEN-REPORT_azheng_20261019T211247.json": {
+   "public_blob": "b07e0e5a94a0fb78c0d7369b497f4bfc84c2b96c",
+   "source_blob": "b07e0e5a94a0fb78c0d7369b497f4bfc84c2b96c",
+   "transform": "copy"
+  },
+  "outbox/receipt_QUEEN-ROLLCALL_azheng_20261019T215526.json": {
+   "public_blob": "023dfd2f353ff106211ce20fb2fc9f321ac10447",
+   "source_blob": "023dfd2f353ff106211ce20fb2fc9f321ac10447",
+   "transform": "copy"
+  },
+  "outbox/receipt_QUEEN_HEARTBEAT_20261018T183921+0800.json": {
+   "public_blob": "66d5bbc56c9550d1e79288149d4063088d90de11",
+   "source_blob": "66d5bbc56c9550d1e79288149d4063088d90de11",
+   "transform": "copy"
+  },
+  "outbox/receipt_QUEEN_HEARTBEAT_20261018T202652+0800.json": {
+   "public_blob": "eda1e152d2f7bf4f1ca5df16c73cbb2738036b2b",
+   "source_blob": "eda1e152d2f7bf4f1ca5df16c73cbb2738036b2b",
+   "transform": "copy"
+  },
+  "outbox/receipt_QUEEN_HEARTBEAT_xiaoqi_20261018T201930.json": {
+   "public_blob": "4a6a85495ab8eda8db504792a33775fa7ce2076f",
+   "source_blob": "4a6a85495ab8eda8db504792a33775fa7ce2076f",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-EXEC004-BROUTE-MAC-xiaoli_20261019T083200+0800.json": {
+   "public_blob": "852bd4430817161cea45403c3cc1b6050d1c2412",
+   "source_blob": "0c455a6f1ac8b7bbd80a8d4671ff6096696b2a6f",
+   "transform": "redact"
+  },
+  "outbox/receipt_SWARM-EXEC004-ONBOARD_xiaoli_20261019T080500+0800.json": {
+   "public_blob": "ebafc343e60fd0d95ff79458485b18240458dce5",
+   "source_blob": "ebafc343e60fd0d95ff79458485b18240458dce5",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-PERMCHECK-20261018_xiaoka_20261018_192319.json": {
+   "public_blob": "ea4e3f4996975090d2a567a0a3e41ee356a8ab52",
+   "source_blob": "ea4e3f4996975090d2a567a0a3e41ee356a8ab52",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-QUEEN-ACTIVE_friday_20261019T005449.json": {
+   "public_blob": "945375a38968b2c139c5c92e2de867674b4eb83a",
+   "source_blob": "945375a38968b2c139c5c92e2de867674b4eb83a",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-QUEEN-REPORT_xiaoli2_20261019T2116+0800.json": {
+   "public_blob": "c296431f9a5834dcc859aff950c20c55458a620b",
+   "source_blob": "014f0b795616522bc07aa1a09853441b177c1c3f",
+   "transform": "redact"
+  },
+  "outbox/receipt_SWARM-QUEEN-ROLLCALL_xiaoli2_20261019T2156+0800.json": {
+   "public_blob": "be0b08518e0a10374c0f5e3882db23951d9b6486",
+   "source_blob": "be0b08518e0a10374c0f5e3882db23951d9b6486",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_azheng_20261018_185100.json": {
+   "public_blob": "812aeb8767890e6331dee8a27b5c925e618c539f",
+   "source_blob": "812aeb8767890e6331dee8a27b5c925e618c539f",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_jarvis_20261018_185157.json": {
+   "public_blob": "771b8d2d3f5212439f0784eba646af6bd3cccdc8",
+   "source_blob": "771b8d2d3f5212439f0784eba646af6bd3cccdc8",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaodou_20261018_185030.json": {
+   "public_blob": "64fd3580f69aeafcd49233885be226c923f01fd4",
+   "source_blob": "e5019826cc94b95aae2f30f878c92d80ddf4f5a6",
+   "transform": "redact"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaoka_20261018T190757.json": {
+   "public_blob": "c035bb151430a97da3b76b6bf5c7ddce2014749d",
+   "source_blob": "c035bb151430a97da3b76b6bf5c7ddce2014749d",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaoli2_20261018_185130.json": {
+   "public_blob": "a782e08ba27ac7de48f2c210bfdfa39f94d0e062",
+   "source_blob": "a782e08ba27ac7de48f2c210bfdfa39f94d0e062",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaoli2_20261018_185219.json": {
+   "public_blob": "61fdc0f8e7014c2f501f81f83d2a635fbb6514ee",
+   "source_blob": "61fdc0f8e7014c2f501f81f83d2a635fbb6514ee",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaoli_20261018_185500.json": {
+   "public_blob": "5c19ad7fb217a44e0d88675f00017b2159d3709c",
+   "source_blob": "5c19ad7fb217a44e0d88675f00017b2159d3709c",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaomi-codex_20261018_185042.json": {
+   "public_blob": "2f7cd84246a164c01fa87e9b0e9d8a357ce23bbb",
+   "source_blob": "2f7cd84246a164c01fa87e9b0e9d8a357ce23bbb",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-20261018_xiaoqi_20261018T185230.json": {
+   "public_blob": "768fc76a123328724ebc0cd4769745e743c24c42",
+   "source_blob": "768fc76a123328724ebc0cd4769745e743c24c42",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE-leishen-lvjuren_20261019_180528.json": {
+   "public_blob": "c574eb0e0c629def5772ea8eaa23737346454eaa",
+   "source_blob": "264af85d2fa653c44a784bc346bde33a786bb02b",
+   "transform": "redact"
+  },
+  "outbox/receipt_SWARM-SMOKE_friday_20261018T185113.json": {
+   "public_blob": "e8629e4a8560680feb417cf323ea2e1631bcfec0",
+   "source_blob": "e8629e4a8560680feb417cf323ea2e1631bcfec0",
+   "transform": "copy"
+  },
+  "outbox/receipt_SWARM-SMOKE_leishen_20261019T1826.json": {
+   "public_blob": "13800fd5f360b55119846a30fc107995d71ffeca",
+   "source_blob": "13800fd5f360b55119846a30fc107995d71ffeca",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021-OCTOPLIVE1_octop_20261021T111842.json": {
+   "public_blob": "8f2ae79e05a4e20212082decbbc4b4b58d6bbf18",
+   "source_blob": "8f2ae79e05a4e20212082decbbc4b4b58d6bbf18",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021-OCTOPTEST1_octop_20261021T110434.json": {
+   "public_blob": "1c9a3269f86dc9a12452defb9813e0e32e2128c1",
+   "source_blob": "1c9a3269f86dc9a12452defb9813e0e32e2128c1",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021T093931-XIAODOU-PING_xiaodou.json": {
+   "public_blob": "d4b448262fa5cc09f46913bae8dbd40b4be6b04f",
+   "source_blob": "a924ac751d21fab0dfce7c720f839aa771ad12fa",
+   "transform": "redact"
+  },
+  "outbox/receipt_T-20261021T094254-XIAODOU-WELCOME_xiaodou.json": {
+   "public_blob": "e465f4abe4cd4933ef512fddef714baf08ddf63b",
+   "source_blob": "e465f4abe4cd4933ef512fddef714baf08ddf63b",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021T114140-XIAODOU-XIAOKA_xiaodou.json": {
+   "public_blob": "8036f9e67eef0c0708dbb8938c2153a7a4dcb759",
+   "source_blob": "8036f9e67eef0c0708dbb8938c2153a7a4dcb759",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021T120134-XIAODOU-XIAOKA_xiaodou.json": {
+   "public_blob": "11c5cd6dac221f1b1149db159c809831870a1825",
+   "source_blob": "11c5cd6dac221f1b1149db159c809831870a1825",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-20261021T141908-WINPC-XIAOKA_winpc.json": {
+   "public_blob": "8c6c6fe87190102b9402dda17ea2e6b7d600fcf0",
+   "source_blob": "19012b405efb955772689ebb0f83dc176b2efc34",
+   "transform": "redact"
+  },
+  "outbox/receipt_T-A2A-GITEA-KEY-JARVIS-20261021_xiaoka_20261021T150457.json": {
+   "public_blob": "5915ca6a8fe5673df849b65863e8f039a999b1fd",
+   "source_blob": "aa0cb99ea9f06a5ba3d28382a14327569ecea271",
+   "transform": "redact"
+  },
+  "outbox/receipt_T-FIX-SYNC-MERGE_friday_20261026T0030+0800.json": {
+   "public_blob": "28f091a3f83b3ca1777ce36b8c64273b9390b6b9",
+   "source_blob": "a7cecf48176d25a77f552ed30d50f564e8f1d4f9",
+   "transform": "redact"
+  },
+  "outbox/receipt_T-MUSE-ARCHIVE_friday.json": {
+   "public_blob": "d31f577787071685847e500920528f8b768ffaba",
+   "source_blob": "d31f577787071685847e500920528f8b768ffaba",
+   "transform": "copy"
+  },
+  "outbox/receipt_T-MUSE-KEY-ROTATE_friday_20261026T0130+0800.json": {
+   "public_blob": "fcb6c00dd73ac0b16dafd63e04aa32c56e07d447",
+   "source_blob": "98361374a6967c918823e9120fee3a7f74e20dfe",
+   "transform": "redact"
+  },
+  "outbox/receipt_T-MUSE-KEY-ROTATE_friday_20261026T0156+0800.json": {
+   "public_blob": "644fe11c715a378b0d81185afcbead185424a5aa",
+   "source_blob": "a119fbcfa12a55fc4c744249610156b34c93b983",
+   "transform": "redact"
+  },
+  "outbox/receipt_WIN-E2E_20261018_173100.json": {
+   "public_blob": "c13f1a374d2495e23903c48c6536f3c98375c48c",
+   "source_blob": "c13f1a374d2495e23903c48c6536f3c98375c48c",
+   "transform": "copy"
+  },
+  "outbox/receipt_WIN-TEST_20261018_171000.json": {
+   "public_blob": "62738767d1bf2dd7d648bbba1fe667cc0463138c",
+   "source_blob": "62738767d1bf2dd7d648bbba1fe667cc0463138c",
+   "transform": "copy"
+  },
+  "outbox/receipt_XIAODOU-A2A-CREDS_xiaoka_20261021T140933+0800.json": {
+   "public_blob": "6c0e3cc789642627000ad0c73a02c32cd1d84509",
+   "source_blob": "0fac9e31232f590ce2263c6b41c37f49a40d9a94",
+   "transform": "redact"
+  },
+  "outbox/receipt_XIAODOU-GITEA-ACCOUNT_jarvis_20261021T1303.json": {
+   "public_blob": "ab774d32a145d2c2f5509950e61de4af012c1fee",
+   "source_blob": "ab774d32a145d2c2f5509950e61de4af012c1fee",
+   "transform": "copy"
+  },
+  "outbox/receipt_XIAODOU-GOVERNANCE_friday_20261023T1200+0800.json": {
+   "public_blob": "97a59ae8f45a59b32ef1654f4be774973dc81ebd",
+   "source_blob": "60a0954920f3a48a7d4940e9678cb2072da5b092",
+   "transform": "redact"
+  },
+  "outbox/receipt_XIAODOU-HANDOFF_xiaodou.json": {
+   "public_blob": "bb6bd88afa27e9ed8f96d02cbe7bb1cf487ea6d1",
+   "source_blob": "bb6bd88afa27e9ed8f96d02cbe7bb1cf487ea6d1",
+   "transform": "copy"
+  },
+  "outbox/receipt_XIAODOU-MCP-TOKEN_xiaoka_20261021T125541+0800.json": {
+   "public_blob": "fa8a39e9880337a30432732abb0ea9795da1cd7e",
+   "source_blob": "fa8a39e9880337a30432732abb0ea9795da1cd7e",
+   "transform": "copy"
+  },
+  "outbox/receipt_XIAODOU-ONBOARD_xiaodou.json": {
+   "public_blob": "c47b13847f70e02eef8891d6495acb571e89e850",
+   "source_blob": "c47b13847f70e02eef8891d6495acb571e89e850",
+   "transform": "copy"
+  },
+  "outbox/task_GROUP-GOVERNANCE_20261019.json": {
+   "public_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
+   "source_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
+   "transform": "copy"
+  },
+  "receipts/20261019-jarvis-a2a-cred.md": {
+   "public_blob": "f227a21560af7a4f006e143132125a9bdeca71e1",
+   "source_blob": "d39c4ab895ec8929cb57de14921f778a89532170",
+   "transform": "redact"
+  },
+  "receipts/20261019-xiaoli-jarvis-a2a-lianTiao.md": {
+   "public_blob": "0a85b115c5dfdb5fe031dcd20511fbe7f881cc0d",
+   "source_blob": "0a85b115c5dfdb5fe031dcd20511fbe7f881cc0d",
+   "transform": "copy"
+  },
+  "receipts/audit_M0-ARCH_jarvis_20261023.json": {
+   "public_blob": "3683d1021efd1293b9200556c5169886c8593119",
+   "source_blob": "9c23fa870db910c2e41c03f8a0ee5b3adea16fc6",
+   "transform": "redact"
+  },
+  "receipts/audit_M0-ORDERS-IDENTITY_jarvis_20261023.json": {
+   "public_blob": "399f65e02bbbd0149f1cfafd4c575066638e95e1",
+   "source_blob": "399f65e02bbbd0149f1cfafd4c575066638e95e1",
+   "transform": "copy"
+  },
+  "state/audits/README-jarvis-audit-path.md": {
+   "public_blob": "5b8d2b33a521202ef88f22ea52432c1b80cc5691",
+   "source_blob": "5b8d2b33a521202ef88f22ea52432c1b80cc5691",
+   "transform": "copy"
+  },
+  "state/audits/receipt_M0-ARCH-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "c54d37bc32426b8f0ad3ababbf4d411530c4ce1a",
+   "source_blob": "c54d37bc32426b8f0ad3ababbf4d411530c4ce1a",
+   "transform": "copy"
+  },
+  "state/audits/receipt_M0-IDENTITY-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "f8376471c63dbc7a3251c706e0f0318117a73dab",
+   "source_blob": "f8376471c63dbc7a3251c706e0f0318117a73dab",
+   "transform": "copy"
+  },
+  "state/audits/receipt_M0-ORDERS-PASS_jarvis_20261023T132423Z.json": {
+   "public_blob": "15aabecef354ba672da78a1db358a9bf07f7d535",
+   "source_blob": "15aabecef354ba672da78a1db358a9bf07f7d535",
+   "transform": "copy"
+  },
+  "state/octop-health-alert.json": {
+   "public_blob": "56132973ec2fee1828901eb415574fdaa1c98865",
+   "source_blob": "56132973ec2fee1828901eb415574fdaa1c98865",
+   "transform": "copy"
+  }
+ },
+ "generated_at": "2026-10-27T09:08:14+08:00"
+}
