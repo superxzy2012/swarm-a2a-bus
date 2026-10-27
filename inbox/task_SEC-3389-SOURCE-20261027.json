@@ -1,0 +1,38 @@
+{
+  "task_id": "SEC-3389-SOURCE-20261027",
+  "task_ref": "M5-6 前置取证（P0 安全）",
+  "from": "QUEEN(星期五)",
+  "to": "xiaodou",
+  "ts": "2026-10-27T13:50:00+08:00",
+  "type": "task",
+  "priority": "P0",
+  "deadline": "2026-10-27T18:00:00+08:00",
+  "context": "QUEEN 已独立复核你的 M5-6 结论：从我的 CVM 直连 [REDACTED-IP]:3389 → **握手成功，3389 确实对公网开放**。这是 P0：一个即将接 CEO 的机器 RDP 全网可达。收窄前必须先拿到『谁在连』与『哪条规则放行』，否则贸然改会锁死 BOSS。",
+  "must_do": [
+    {
+      "step": 1,
+      "what": "RDP 来源取证",
+      "how": "Get-WinEvent -FilterHashtable @{LogName='Security';Id=4624} 取 LogonType=10 的 IpAddress，按来源 IP 统计次数与最近时间；qwinsta 列当前会话",
+      "out": "results/rdp-source-inventory.json",
+      "must": "覆盖近 30 天；区分 100.66/16（组网）与公网 IP"
+    },
+    {
+      "step": 2,
+      "what": "安全组/防火墙原文",
+      "how": "Get-NetFirewallRule -DisplayGroup '远程桌面' | 导出 名称/方向/动作/远程地址；云侧 metadata 与 tccli 均失败则明确记 BLOCKED 并说明缺什么凭据",
+      "out": "results/rdp-firewall-rules.txt + 回执 BLOCKED 段"
+    },
+    {
+      "step": 3,
+      "what": "给出收窄方案（不执行）",
+      "how": "基于步骤 1 的真实来源 IP 列白名单（组网段 + BOSS 真实出口 IP），写明变更命令、回滚命令、锁死自救路径（VNC/组网旁路）",
+      "out": "reports/M5-6-RDP-ALLOWLIST_xiaodou.v2.md"
+    }
+  ],
+  "forbidden": [
+    "擅自改防火墙或安全组（会锁死 BOSS）",
+    "把 3389 短时全开当变通",
+    "在报告里贴任何凭据/token"
+  ],
+  "acceptance": "三件交付齐全 + 来源 IP 有原始事件证据（含事件条数与时间窗）+ 回滚路径可执行"
+}

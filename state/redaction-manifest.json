@@ -90,6 +90,12 @@
    "source_blob": "adfde80d9d6e39d35d9fca63abe587ebacd495b4",
    "transform": "copy"
   },
+  "inbox/task_SEC-3389-SOURCE-20261027.json": {
+   "local_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
+   "public_blob": "05a752227bc089ebda893107acac41d3d6e4aa35",
+   "source_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
+   "transform": "redact+templatize"
+  },
   "outbox/.tmp_a_xiaoli.json": {
    "public_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
    "source_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
@@ -1686,5 +1692,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T12:40:49+08:00"
+ "generated_at": "2026-10-27T13:45:11+08:00"
 }
