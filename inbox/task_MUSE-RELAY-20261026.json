@@ -44,13 +44,13 @@
       "id": "R4",
       "name": "建隧道到 Gitea",
       "cmd": "ssh -N -f -i ~/.ssh/muse_relay -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -p 443 -L 3000:[REDACTED-IP]:3000 muse-relay@[REDACTED-IP]",
-      "verify": "curl -s -o /dev/null -w '%{http_code}' http://[REDACTED-IP]:3000/api/v1/version  # 期望 200"
+      "verify": "curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:3000/api/v1/version  # 期望 200"
     },
     {
       "id": "R5",
       "name": "用独立凭据直连正本仓",
-      "remote": "http://muse:<TOKEN>@[REDACTED-IP]:3000/anc/a2a-bus.git",
-      "cmd": "git ls-remote http://muse:<TOKEN>@[REDACTED-IP]:3000/anc/a2a-bus.git",
+      "remote": "http://muse:<TOKEN>@127.0.0.1:3000/anc/a2a-bus.git",
+      "cmd": "git ls-remote http://muse:<TOKEN>@127.0.0.1:3000/anc/a2a-bus.git",
       "note": "TOKEN 由小卡经私聊/CDP 单独投递，不进群、不进总线、不写回执。落地方式：git config credential.helper store 或写入 remote URL（本地文件权限 600）。"
     }
   ],

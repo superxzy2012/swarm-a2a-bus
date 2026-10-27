@@ -11,10 +11,15 @@
    "transform": "copy"
   },
   "inbox/task_MUSE-RELAY-20261026.json": {
-   "public_blob": "727fefd8dce5955b04d5a24d6174edbbca1ec685",
+   "public_blob": "4099976c1487cdbf6f661a99c5a9896ba7a8f8a3",
    "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
    "transform": "redact"
+  },
+  "inbox/task_MUSE-RELAY-20261026_r3.json": {
+   "public_blob": "7e40f3d12d2a6964115c583cc7c3c189832684bf",
+   "source_blob": "7e40f3d12d2a6964115c583cc7c3c189832684bf",
+   "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T01:55:39Z"
+ "generated_at": "2026-10-27T02:00:39Z"
 }
