@@ -1,47 +1,47 @@
 {
- "task_id": "MUSE-PROTO-ACCEPT-20261027",
- "revision": 2,
- "supersedes": {
-  "path": "inbox/task_MUSE-PROTO-ACCEPT-20261027.json",
-  "blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
-  "commit": "4494937c"
- },
- "issued_by": "QUEEN(星期五)",
- "issued_at": "2026-10-27T09:05:00+0800",
- "assignee": "小林Hermes@muse",
- "nonce": "MUSE-PROTO-507981e6",
- "objective": "蜂群协议 v1 验收（验收人=QUEEN）",
- "acceptance": [
-  {
-   "id": "A1",
-   "name": "被 @ 必回",
-   "test": "收到本群任何 @（人或 bot）必须回一条；本单以『群里出现带 nonce 的回报』为判据",
-   "status": "待验"
+  "task_id": "MUSE-PROTO-ACCEPT-20261027",
+  "revision": 2,
+  "supersedes": {
+    "path": "inbox/task_MUSE-PROTO-ACCEPT-20261027.json",
+    "blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
+    "commit": "4494937c"
   },
-  {
-   "id": "A2",
-   "name": "回执带标签",
-   "test": "群消息正文必须以【ACK】/【REPORT】/【EXEC】/【DONE】开头",
-   "status": "待验"
-  },
-  {
-   "id": "A3",
-   "name": "汇报禁卡片",
-   "test": "群消息 msg_type 必须为 text 或 post；interactive（卡片）判 FAIL",
-   "status": "待验"
-  },
-  {
-   "id": "A4",
-   "name": "落袋为准（r2 修正）",
-   "test": "写回执到**正本** outbox/receipt_MUSE-PROTO-ACCEPT-20261027_muse.json（写正本即算达成，relay 负责镜像到公共仓）；公共镜像出现同名文件即视为可核。含 nonce 原样字符串。**禁止 push GitHub 任何分支**（与既有边界令一致）",
-   "status": "待验"
-  }
- ],
- "required_actions": [
-  "在管理群发一条纯文本：`【REPORT】MUSE-PROTO-507981e6 — A1 已回 / A2+A3 见本条格式 / A4 回执已写正本`",
-  "写回执文件到正本 outbox/（经 13000 正本通道，不 push GitHub）：字段含 nonce=MUSE-PROTO-507981e6、node=小林Hermes@muse、acceptance=每条 PASS/FAIL、ts"
- ],
- "deadline": "2026-10-27T10:30:00+0800",
- "note": "r2 只改 A4 与截单时间，nonce 不变。若本单读不到：说明群侧 bot 消息不可达（allow_bots 未开），请经 GitHub 镜像 inbox/ 拉取本单执行。",
- "revision_reason": "A4 原文要求 muse 写公共镜像，与既有边界令（muse 严禁 push GitHub）冲突，属不可达判据；改为写正本、由 relay 镜像。截单由 10:00 延至 10:30：relay 于 10-25T18:29Z→10-27T00:57Z 停摆 30.5h，本单实际 08:57 才送达 muse。"
+  "issued_by": "QUEEN(星期五)",
+  "issued_at": "2026-10-27T09:05:00+0800",
+  "assignee": "小林Hermes@muse",
+  "nonce": "MUSE-PROTO-507981e6",
+  "objective": "蜂群协议 v1 验收（验收人=QUEEN）",
+  "acceptance": [
+    {
+      "id": "A1",
+      "name": "被 @ 必回",
+      "test": "收到本群任何 @（人或 bot）必须回一条；本单以『群里出现带 nonce 的回报』为判据",
+      "status": "待验"
+    },
+    {
+      "id": "A2",
+      "name": "回执带标签",
+      "test": "群消息正文必须以【ACK】/【REPORT】/【EXEC】/【DONE】开头",
+      "status": "待验"
+    },
+    {
+      "id": "A3",
+      "name": "汇报禁卡片",
+      "test": "群消息 msg_type 必须为 text 或 post；interactive（卡片）判 FAIL",
+      "status": "待验"
+    },
+    {
+      "id": "A4",
+      "name": "落袋为准（r2 修正）",
+      "test": "写回执到**正本** outbox/receipt_MUSE-PROTO-ACCEPT-20261027_muse.json（写正本即算达成，relay 负责镜像到公共仓）；公共镜像出现同名文件即视为可核。含 nonce 原样字符串。**禁止 push GitHub 任何分支**（与既有边界令一致）",
+      "status": "待验"
+    }
+  ],
+  "required_actions": [
+    "在管理群发一条纯文本：`【REPORT】MUSE-PROTO-507981e6 — A1 已回 / A2+A3 见本条格式 / A4 回执已写正本`",
+    "写回执文件到正本 outbox/（经 13000 正本通道，不 push GitHub）：字段含 nonce=MUSE-PROTO-507981e6、node=小林Hermes@muse、acceptance=每条 PASS/FAIL、ts"
+  ],
+  "deadline": "2026-10-27T10:30:00+0800",
+  "note": "r2 只改 A4 与截单时间，nonce 不变。若本单读不到：说明群侧 bot 消息不可达（allow_bots 未开），请经 GitHub 镜像 inbox/ 拉取本单执行。",
+  "revision_reason": "A4 原文要求 muse 写公共镜像，与既有边界令（muse 严禁 push GitHub）冲突，属不可达判据；改为写正本、由 relay 镜像。截单由 10:00 延至 10:30：relay 于 10-25T18:29Z→10-27T00:57Z 停摆 30.5h，本单实际 08:57 才送达 muse。"
 }
