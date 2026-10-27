@@ -1,0 +1,25 @@
+{
+ "doc": "已知暴露登记（QUEEN 2026-10-27 拍板：不做 git 历史重写，登记为 accepted 风险）",
+ "items": [
+  {
+   "path": "inbox/task_MUSE-RELAY-20261026.json",
+   "blobs": [
+    "35ddc21731f127944e419410b15e96a04ab44822"
+   ],
+   "first_commit": "32bf4c0f48816a3f6e6aa270d684ed6363128fc9",
+   "data_class": "internal_network_address",
+   "exposed_values": [
+    "[REDACTED-IP]:3000 (tailscale tailnet Gitea)",
+    "[REDACTED-IP] (relay public host)"
+   ],
+   "routable_from_public_internet": false,
+   "credential": false,
+   "risk": "low：tailnet/内网地址公网不可路由，非凭据，拿到也连不上；公网 relay host 仅主机地址，无凭据无开放可利用面",
+   "disposition": "accepted",
+   "decided_by": "QUEEN",
+   "decided_ts": "2026-10-27T09:40:00+08:00",
+   "remediation_applied": "现网 0 明文（v3 redactor 占位符化，muse tip 含 024cd9e0，main 同步）；历史旧 blob 保留不重写",
+   "do_not": "不做 in-place 历史重写（会毁 result_sha256_8/prev/supersedes/source_blob 不可变链）；如未来 BOSS 另有要求走『新仓+归档』"
+  }
+ ]
+}
