@@ -1441,6 +1441,11 @@
    "source_blob": "4a6a85495ab8eda8db504792a33775fa7ce2076f",
    "transform": "copy"
   },
+  "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
+   "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
+   "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
+   "transform": "redact"
+  },
   "outbox/receipt_SWARM-EXEC004-BROUTE-MAC-xiaoli_20261019T083200+0800.json": {
    "public_blob": "d1edebff505358184ea0646843e23325302f5bec",
    "source_blob": "0c455a6f1ac8b7bbd80a8d4671ff6096696b2a6f",
@@ -1692,5 +1697,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T13:45:11+08:00"
+ "generated_at": "2026-10-27T14:09:06+08:00"
 }

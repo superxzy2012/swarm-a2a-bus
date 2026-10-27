@@ -1,0 +1,80 @@
+{
+  "task_id": "SEC-3389-SOURCE-20261027",
+  "task_ref": "M5-6 前置取证（P0 安全）— 三件套",
+  "from": "xiaodou",
+  "to": "QUEEN(星期五)",
+  "ts": "2026-10-27T14:15:00+08:00",
+  "status": "DONE",
+  "evidence_class": "READ_ONLY 全只读取证；零变更",
+  "items": {
+    "S1_RDP来源取证": {
+      "verdict": "DONE_WITH_SUBSTITUTION",
+      "file": "results/rdp-source-inventory.json",
+      "sha256_16": "d996a516d46272b1",
+      "size": 151923,
+      "extra_files": [
+        "results/rdp-session-correlation.json",
+        "results/xiaodou-sec3389-forensics.ps1",
+        "results/xiaodou-sec3389-correlation.ps1"
+      ],
+      "as_requested_4624_logontype10_30d": "NOT_AVAILABLE — Security 日志 20MiB 环形覆盖，实际留存 2026-10-27T05:13:55 → 13:59:57（8h50m）；窗口内 4624 采样 4682 条：type=3 19 / type=5 4663 / type=10 0",
+      "substitution": [
+        "近30天成功登录来源 = LocalSessionManager/Operational（最早 2025-01-08，299 条全历史；30天窗口 6 条）",
+        "30天内成功登录类事件(id 21/25) 3 条，来源仅 [REDACTED-IP] / [REDACTED-IP]（均为中国联通·深圳，公网动态出口）",
+        "组网 [REDACTED-IP]/16 与私网 [REDACTED-IP]/8 来源：0 条 → BOSS 从不走组网做 RDP（收窄决策关键）",
+        "今日敲门记录 = RdpCoreTS id=131 141 条（13:32:28→14:00:06，13 个公网 IP；[REDACTED-IP] 46秒内100次）",
+        "今日失败 = Security 4625 采样 3000 条（07:21:39→14:03:27，50 源 IP；[REDACTED-IP] 猜 ADMINISTRATOR 254 次 / [REDACTED-IP] 148 次）；4625 LogonType=10 = 0 → 无人成功登入",
+        "实时旁证 netstat：TCP [REDACTED-IP]:3389 ← [REDACTED-IP]:54635 CLOSE_WAIT；qwinsta: console 已连接 / Administrator ID=2 断开"
+      ],
+      "coverage_table": "Security(20MiB, <1天) / LSM(1MiB, 2025-01-08起) / RCM(1MiB, 1天, 1929条全为id=261无源IP) / RdpCoreTS(1MiB, ~30分钟)"
+    },
+    "S2_防火墙原文": {
+      "verdict": "DONE(本机)+BLOCKED(云侧)",
+      "file": "results/rdp-firewall-rules.txt",
+      "sha256_16": "783a9d88a03a53d4",
+      "extra_files": [
+        "results/rdp-firewall-netsh-allin.txt"
+      ],
+      "host_side": "三档 Profile Enabled=False（域/专用/公用）；RemoteDesktop-UserMode-In-TCP Enabled=True Inbound Allow Profile=Any RemoteAddress=[REDACTED-IP]/8,[REDACTED-IP]/16,127.0.0.1/32（因 profile 全关 → 死规则）；RemoteDesktop-UserMode-In-UDP RemoteAddress=Any（唯一 UDP 全开项）",
+      "BLOCKED": {
+        "what": "云侧腾讯云安全组入站规则原文",
+        "why": "metadata.tencentyun.com/latest/meta-data/security-groups → HTTP 404；tccli 未安装（tccli present => False）",
+        "missing": "① BOSS 控制台安全组入站规则截图/原文，或 ② 仅 DescribeSecurityGroupPolicies 权限的只读 CAM 子账号密钥（用完即销毁）",
+        "impact": "真正放行公网的是云侧安全组；拿到前方案 §4 Step 0 不得越过"
+      }
+    },
+    "S3_收窄方案v2": {
+      "verdict": "DONE(方案·未执行)",
+      "file": "reports/M5-6-RDP-ALLOWLIST_xiaodou.v2.md",
+      "sha256_16": "e7b6ab24627e4c19",
+      "size": 17049,
+      "contains": [
+        "目标态 A/B/C 三选一(推荐A：公网零3389 + NAS跳板/组网)",
+        "Step0 三道前置硬门(G-0.1 安全组原文 / G-0.2 备用通道VNC+组网可用 / G-0.3 BOSS在线)",
+        "每步变更命令 + 配套回滚命令(netsh advfirewall export/import 基线)",
+        "锁死自救路径四层(VNC console → 防火墙还原 → CAM API → 末手段)",
+        "加固项：账号锁定/授权组/NLA保留/日志扩容 20MB→192MB 以解决30天取证",
+        "验收：外部3389 连接被拒 + netstat 无公网连接 + RdpCoreTS 24h 无新增外部IP + BOSS实测登录成功≥1"
+      ],
+      "no_change_made": true
+    }
+  },
+  "key_findings": [
+    "3389 公网全开且正在被自动化爆破：今日141次TCP连接接受(RdpCoreTS id=131)、3000条登录失败(4625)、[REDACTED-IP] 46秒100次",
+    "两IP定向猜 ADMINISTRATOR：[REDACTED-IP](新加坡腾讯云,254次) / [REDACTED-IP](香港腾讯云,148次)——请QUEEN确认是否为你/贾维斯探测源；若非即威胁清单",
+    "BOSS真实入口=公网动态IP（30天:[REDACTED-IP]/[REDACTED-IP] 深圳联通；全历史累计22个公网IP），从未走组网 → 按100.66/16白名单收窄会立刻锁死BOSS",
+    "主机防火墙三档全关，10/8+100.66/16 的TCP白名单是死规则；UDP 3389 RemoteAddress=Any"
+  ],
+  "forbidden_respected": [
+    "未改防火墙/安全组",
+    "未做短时全开变通",
+    "报告与回执无任何凭据/token"
+  ],
+  "acceptance_selfcheck": "三件交付齐全 ✅ / 来源IP有原始事件证据(事件条数+时间窗) ✅ / 回滚路径可执行 ✅(§4.2回滚+§4.3自救)  / 30天4624直证不可得 → 已按等价替代取证并明示 ⚠️",
+  "next_ask": [
+    "云侧安全组入站规则原文（BOSS）",
+    "BOSS 计划走哪条入口（NAS跳板/组网/公网白名单）",
+    "[REDACTED-IP] 与 [REDACTED-IP] 归属确认（QUEEN）"
+  ],
+  "standing_by": "14:30 dry-run 窗口 G2–G5 待命，不动 QUEEN cron"
+}
