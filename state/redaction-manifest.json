@@ -1,5 +1,11 @@
 {
  "entries": {
+  "inbox/amend_MUSE-PROTO-ACCEPT-20261027_a4.json": {
+   "local_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
+   "public_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
+   "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
+   "transform": "copy"
+  },
   "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
    "local_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
@@ -25,5 +31,5 @@
    "transform": "redact+templatize"
   }
  },
- "generated_at": "2026-10-27T02:30:39Z"
+ "generated_at": "2026-10-27T02:35:40Z"
 }
