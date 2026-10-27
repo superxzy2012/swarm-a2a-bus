@@ -76,12 +76,7 @@
   ],
   "revision": 3,
   "revised_at": "2026-10-27T09:35:00+08:00",
-  "revised_by": "xiaoka（按 QUEEN 脱敏口径 v3）",
+  "revised_by": "xiaoka（按 QUEEN 脱敏口径 v3 重发可执行卡）",
   "supersedes": "task_MUSE-RELAY-20261026.json",
-  "placeholders": {
-    "RELAY_HOST": "muse 中继公网主机（ssh -p 443，值见沙箱本地 inbox 原文，由小卡经 CDP/私聊注入）",
-    "GITEA_HOST": "tailnet 内 Gitea 主机（经中继 -L 转发，值见沙箱本地原文）",
-    "GITEA_TOKEN": "muse 专属 Gitea token（凭据只走 secrets 通道，永不入仓/入群/入回执）"
-  },
-  "v3_note": "本卡为公共仓占位符版（transform=redact+templatize）：含真实地址/凭据的字面量已替换为 {{占位符}}，结构与命令保持可执行；真实参数只注入 muse 沙箱本地 inbox（~/muse-bus/inbox/，不推公共仓）。公共副本与沙箱原文的 blob 对应关系见 state/redaction-manifest.json 的 local_blob。"
+  "v3_delivery": "本正本含真实参数（内网 Gitea 私有）。下行公共仓（main/muse）由 redactor 自动替换为占位符副本：{{RELAY_HOST}}→{{RELAY_HOST}}，{{GITEA_HOST}}→{{GITEA_HOST}}，{{GITEA_TOKEN}}→{{GITEA_TOKEN}}；真实参数由 relay 经隧道注入沙箱本地 inbox（~/muse-bus/inbox，不推公共仓）。blob 对应关系见 state/redaction-manifest.json（source/local/public）。"
 }

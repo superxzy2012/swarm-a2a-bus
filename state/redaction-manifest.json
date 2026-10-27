@@ -1,25 +1,29 @@
 {
  "entries": {
   "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
+   "local_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "source_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "transform": "copy"
   },
   "inbox/task_MUSE-PROTO-ACCEPT-20261027_r2.json": {
+   "local_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
    "public_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
    "source_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
    "transform": "copy"
   },
   "inbox/task_MUSE-RELAY-20261026.json": {
-   "public_blob": "4099976c1487cdbf6f661a99c5a9896ba7a8f8a3",
+   "local_blob": "35832ecc19bc72a762de1e66251589698a32535b",
+   "public_blob": "024cd9e0e35e14be0b8d6df66fc2cfb59a90f267",
    "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
-   "transform": "redact"
+   "transform": "redact+templatize"
   },
   "inbox/task_MUSE-RELAY-20261026_r3.json": {
-   "public_blob": "7e40f3d12d2a6964115c583cc7c3c189832684bf",
-   "source_blob": "7e40f3d12d2a6964115c583cc7c3c189832684bf",
-   "transform": "copy"
+   "local_blob": "07a3e9413671500c1b4c7f1a2f8c4585bee12ee5",
+   "public_blob": "345e39f9fe7f3de6d20841a7b4880f343cce2943",
+   "source_blob": "07a3e9413671500c1b4c7f1a2f8c4585bee12ee5",
+   "transform": "redact+templatize"
   }
  },
- "generated_at": "2026-10-27T02:00:39Z"
+ "generated_at": "2026-10-27T02:05:39Z"
 }
