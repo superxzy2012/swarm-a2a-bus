@@ -1,10 +1,20 @@
 {
  "entries": {
+  "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
+   "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
+   "source_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
+   "transform": "copy"
+  },
+  "inbox/task_MUSE-PROTO-ACCEPT-20261027_r2.json": {
+   "public_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
+   "source_blob": "ce42c07c1d2f978594604dc8aacd9ad12e0b7737",
+   "transform": "copy"
+  },
   "inbox/task_MUSE-RELAY-20261026.json": {
    "public_blob": "727fefd8dce5955b04d5a24d6174edbbca1ec685",
    "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
    "transform": "redact"
   }
  },
- "generated_at": "2026-10-27T01:25:38Z"
+ "generated_at": "2026-10-27T01:26:01Z"
 }
