@@ -4,7 +4,8 @@
   {
    "path": "inbox/task_MUSE-RELAY-20261026.json",
    "blobs": [
-    "35ddc21731f127944e419410b15e96a04ab44822"
+    "35ddc21731f127944e419410b15e96a04ab44822",
+    "43ae6273b994d7a398500afb7108cbae8ec1dc80"
    ],
    "first_commit": "32bf4c0f48816a3f6e6aa270d684ed6363128fc9",
    "data_class": "internal_network_address",
@@ -18,8 +19,18 @@
    "disposition": "accepted",
    "decided_by": "QUEEN",
    "decided_ts": "2026-10-27T09:40:00+08:00",
-   "remediation_applied": "现网 0 明文（v3 redactor 占位符化，muse tip 含 024cd9e0，main 同步）；历史旧 blob 保留不重写",
-   "do_not": "不做 in-place 历史重写（会毁 result_sha256_8/prev/supersedes/source_blob 不可变链）；如未来 BOSS 另有要求走『新仓+归档』"
+   "remediation_applied": "现网 0 明文（v3 redactor 占位符化，muse 现版 024cd9e0，main 同步）；历史旧 blob 保留不重写",
+   "do_not": "不做 in-place 历史重写（会毁 result_sha256_8/prev/supersedes/source_blob 不可变链）；如未来 BOSS 另有要求走『新仓+归档』",
+   "blob_commits": {
+    "43ae6273b994d7a398500afb7108cbae8ec1dc80": [
+     "32bf4c0f48816a3f6e6aa270d684ed6363128fc9",
+     "4a10338c9e"
+    ],
+    "35ddc21731f127944e419410b15e96a04ab44822": [
+     "c66235b885"
+    ]
+   },
+   "scan_scope": "{main,muse} × inbox × 近 60 提交，IPv4 私网/tailnet 正则（QUEEN 2026-10-27 扫：main 0 个 / muse 2 blob）"
   }
  ]
 }
