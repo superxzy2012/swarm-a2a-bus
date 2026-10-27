@@ -1,5 +1,10 @@
 {
  "entries": {
+  "inbox/amend_MUSE-PROTO-ACCEPT-20261027_a4.json": {
+   "public_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
+   "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
+   "transform": "copy"
+  },
   "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json": {
    "local_blob": "6563fa9d89d3533bfd1aa7482dfc5ab4717aac7d",
    "public_blob": "531b9330f9db3f11a608cf15a76babcd51ae37be",
@@ -1655,5 +1660,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T02:08:36Z"
+ "generated_at": "2026-10-27T10:27:03+08:00"
 }
