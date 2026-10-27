@@ -16,7 +16,7 @@
     ],
     "user": "muse-relay",
     "auth": "publickey only（密码/键盘交互全关，无 shell，命令固定 /bin/false）",
-    "permitopen": "100.66.1.7:3000  （只允许转发到 Gitea，其它目标会被 sshd 拒绝：administratively prohibited）",
+    "permitopen": "[REDACTED-IP]:3000  （只允许转发到 Gitea，其它目标会被 sshd 拒绝：administratively prohibited）",
     "hostkey_fingerprint": "SHA256:ukGKdzdBxVT1bIrmElPGumWlPsvkgy1YhswblL9iOZg",
     "hostkey_type": "ssh-ed25519",
     "known_hosts_entry": "[[REDACTED-IP]]:443 ssh-ed25519 <由 ssh-keyscan 取，需与上述指纹一致>"
@@ -43,7 +43,7 @@
     {
       "id": "R4",
       "name": "建隧道到 Gitea",
-      "cmd": "ssh -N -f -i ~/.ssh/muse_relay -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -p 443 -L 3000:100.66.1.7:3000 muse-relay@[REDACTED-IP]",
+      "cmd": "ssh -N -f -i ~/.ssh/muse_relay -o IdentitiesOnly=yes -o ExitOnForwardFailure=yes -o ServerAliveInterval=30 -p 443 -L 3000:[REDACTED-IP]:3000 muse-relay@[REDACTED-IP]",
       "verify": "curl -s -o /dev/null -w '%{http_code}' http://[REDACTED-IP]:3000/api/v1/version  # 期望 200"
     },
     {
@@ -72,6 +72,6 @@
   "constraints": [
     "私钥永不出生成机，任何私钥出现即视为泄露需轮换。",
     "凭据只走私聊/secrets 通道，禁止出现在群消息、回执、总线提交里。",
-    "中继只放行 100.66.1.7:3000，不要试图用它翻墙访问其他内网资产。"
+    "中继只放行 [REDACTED-IP]:3000，不要试图用它翻墙访问其他内网资产。"
   ]
 }
