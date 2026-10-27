@@ -1245,6 +1245,11 @@
    "source_blob": "8d626f829b66649f5148e0652e13494081a5ab6a",
    "transform": "copy"
   },
+  "outbox/receipt_M5M6-CLOSE-20261027_xiaodou.json": {
+   "public_blob": "18392b71b8072bc95b917fe8bf4396bd0f07950b",
+   "source_blob": "b657e9b1c7c19a5c44376cfa3307a0c916ab3437",
+   "transform": "redact"
+  },
   "outbox/receipt_MCP-TOKEN-FRIDAY_friday_20261019T0100+0800.json": {
    "public_blob": "d279fd959c60854f9f913f56785245c0a44cf928",
    "source_blob": "3e434a6c5c97d35f94d38d3f95c7a9f351649a4f",
@@ -1681,5 +1686,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-27T12:25:30+08:00"
+ "generated_at": "2026-10-27T12:40:49+08:00"
 }

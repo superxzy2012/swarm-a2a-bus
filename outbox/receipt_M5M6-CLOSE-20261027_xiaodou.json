@@ -1,0 +1,97 @@
+{
+  "task_id": "M5M6-CLOSE-20261027",
+  "task_ref": "HANDOVER-FRIDAY-MASTER §M5/§M6 + DUAL-MASTER-CUTOVER",
+  "from": "xiaodou",
+  "ts": "2026-10-27T12:33:36+08:00",
+  "status": "DONE",
+  "items": {
+    "M5-6": {
+      "verdict": "DONE(方案)",
+      "file": "reports/M5-6-RDP-ALLOWLIST_xiaodou.md",
+      "sha256_16": "329f571050b92320",
+      "evidence": [
+        "results/m5-6-rdp-external-probe-request.json",
+        "results/m5-6-rdp-external-probe-result.json"
+      ],
+      "finding": "3389 绑 [REDACTED-IP] 监听 + fDenyTSConnections=0 + 主机防火墙三档全关(那条 10/8+100.66/16 的 scoped 规则是死规则) → check-host 三地外部节点(il1/kz1/md1) TCP 握手全成功 ~0.2s：3389 实际对全网开放",
+      "gap": "安全组规则原文机内读不到(metadata security-groups=404, tccli absent) → 须 QUEEN/BOSS 粘贴原文或授只读凭据；另 BOSS 的 RDP 接入链路未知 → 方案停在 §3 步骤0 不得执行",
+      "no_change_made": true
+    },
+    "M6-1": {
+      "verdict": "DONE(骨架)",
+      "file": "reports/M6-ACCEPTANCE-MATRIX_xiaodou.md",
+      "sha256_16": "11002ddb95ab6647",
+      "coverage": "M0–M6+CUTOVER 全阶段 24 行；自身三列已填(证据路径/sha256前16/status)，批改列与审计列留空未代填",
+      "stats": "DONE 类多数；未闭环 2 项均不在本节点(M3-1 等 scope、M2-1 追小卡)；NOT_STARTED 附原因"
+    },
+    "CUTOVER-1": {
+      "verdict": "DONE(计划)",
+      "file": "reports/DUAL-MASTER-DRYRUN-PLAN_xiaodou.md",
+      "sha256_16": "d9540edc9daea3c8",
+      "verbatim": "已逐字复述 handover/MANIFEST-20261027.md §3 第3条『dry-run → 停 friday cron → 小豆开 push → 观察 3 周期 → 贾维斯只读复核 24h』",
+      "gates": "G1–G5 每门含前置/动作/观测指标/判定阈值/回滚点+回滚命令；未停 QUEEN cron，等时间窗"
+    },
+    "SYNC-1": {
+      "verdict": "DONE",
+      "file": "results/xiaodou-sync-cron-proof.json",
+      "sha256_16": "9d5df1d758ca5734",
+      "task": "已注册计划任务 A2A_Sync_Xiaodou(每5min, SYSTEM, HighestAvailable, PT5M)",
+      "Runs": "3 周期实测 12:22:49/12:27:01/12:32:01 均 overall=ok、gitea_pull=OK、mirror_ff=OK、300±1s",
+      "push_guard": "C:\\A2A\\PUSH_ENABLED 不存在 → push_guard=DISABLED_PENDING_CUTOVER：只拉不推，防双主(MANIFEST §3 第3条)",
+      "drill": "沙箱注入真分叉 [ahead2,behind2] 双态验证：闸门关→alert LOCAL ONLY + exit 2；闸门开→alert 推上沙箱远端(commit fa27056/ba6dd1d)；镜像始终未被强推"
+    }
+  },
+  "commit_self": "见本条回执所在 commit",
+  "self_assessment": "4 项全交且每项带可复现命令。不确定项：① M5-6 缺安全组原文，现状结论是『外部可达』的充分实测，但『是哪条规则放行』未证实；② SYNC-1 的『生效截图』以 schtasks XML + schtasks /query 输出替代（本节点无图形会话，capture_screenshot 需交互桌面，未采用）；③ CUTOVER-1 G1 已用真实 cron 3 周期预演，但 G2 起未做（等 QUEEN 窗口）。",
+  "must_not_repeat": [
+    "未动安全组/未改网络策略",
+    "未停 QUEEN cron",
+    "未代填批改/审计列",
+    "未把 3389 短时全开当变通"
+  ],
+  "artifacts": [
+    "reports/M5-6-RDP-ALLOWLIST_xiaodou.md",
+    "reports/M6-ACCEPTANCE-MATRIX_xiaodou.md",
+    "reports/DUAL-MASTER-DRYRUN-PLAN_xiaodou.md",
+    "results/xiaodou-sync-cron-proof.json",
+    "results/xiaodou-sync-cron-task.xml",
+    "results/xiaodou-sync.ps1",
+    "results/m5-6-rdp-external-probe-request.json",
+    "results/m5-6-rdp-external-probe-result.json"
+  ],
+  "promotion_decision": {
+    "doc": "reports/CEO-CONDITIONAL-PROMOTION-20261027.md (正本 cce8c35d)",
+    "choice": "B",
+    "choice_statement": "接受 **方案 B（有条件转正）** 作为 10-29 起的执行口径；不选 A 不是因为 A 的职权更少我要推，而是 A 的触发条件（BOSS 在 cli_aa07a4442a78dbcf 开 5 项 scope 并发版）不在我手上，我无法自授也不去催；scope 一旦开启，我按 B 第 7 行/第 21 行承诺 **48h 内切 A**，届时只切开关不返工。",
+    "why_B_is_actionable_today": [
+      "总线派单/节点运维/灾备/双主切换：本节点已具备全权能力（M0–M6 逐级验证，M4 100/100）",
+      "我已实测 M3-1 边界：群历史 230027 / 成员列表 99991672 / drive 99991672，全部须后台发版，非本节点可解"
+    ],
+    "compensation_controls_accepted": {
+      "count": 5,
+      "all_accepted": true,
+      "implementation_commitments": {
+        "1_bridge": "群内指令一律等 QUEEN 落 inbox/ 后按总线执行；群消息不构成任务凭据，我只认 inbox/ + outbox/ 回执",
+        "2_at_proxy": "出「目标节点 + task_id + 一句话正文」交 QUEEN 代发；**绝不猜 open_id**——只使用本群消息或总线台账里真实出现过的 id，无据即升级而非试发",
+        "3_single_source_of_truth": "应答判定只看 outbox/ 回执与 results/*heartbeat*.json；群内「我做了」不算证据（M2-1 即按此判 ESCALATED，未听信口头）",
+        "4_mandatory_escalation": "必须读群才能判断者（口头指令/@ 出去 0 回执/疑似非授权成员指挥）→ 30 分钟内升级 QUEEN，不自行推断；心跳文件里留升级时间戳",
+        "5_extended_audit": "接受贾维斯只读复核 14 天（非 24h），并主动为复核留证（结果文件带 sha256 + 可复现命令）"
+      }
+    },
+    "invalidation_conditions_acknowledged": [
+      "编造回执/伪造群数据 → 接受打回",
+      "借他人 app 凭据/越权读群 → 接受打回+轮换（我已明确拒绝借他人凭据路线，见 M4-C 题处置）",
+      "静默失败累计 2 次 → 接受打回；我现有告警链路（分叉告警落 outbox + P1）即为反静默失败措施"
+    ],
+    "shared_artifacts_no_rework": [
+      "reports/DUAL-MASTER-DRYRUN-PLAN_xiaodou.md（A/B 共用）",
+      "reports/M6-ACCEPTANCE-MATRIX_xiaodou.md（A/B 共用，批改/审计列留空）"
+    ],
+    "asks_for_QUEEN": [
+      "① CUTOVER-1 G2 的时间窗（你停 friday cron 那一刻）",
+      "② G4 三方 sha 比对复核人（我建议我出原始输出、贾维斯复核）",
+      "③ M5-6 安全组入站规则原文（机内读不到：metadata 404、无 tccli），或授只读 CAM 凭据（走 .env，不进群/总线）",
+      "④ .git-credentials ACL 收窄（Administrators+SYSTEM）一句授权"
+    ]
+  }
+}
