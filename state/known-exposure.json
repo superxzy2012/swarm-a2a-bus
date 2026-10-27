@@ -31,6 +31,29 @@
     ]
    },
    "scan_scope": "{main,muse} × inbox × 近 60 提交，IPv4 私网/tailnet 正则（QUEEN 2026-10-27 扫：main 0 个 / muse 2 blob）"
+  },
+  {
+   "path": "全仓（91 文件，tip 级扫描）",
+   "blobs": [],
+   "data_class": "internal_network_address",
+   "exposed_values": [
+    "tailnet 100.64/10：[REDACTED-IP](x5339) [REDACTED-IP](2966) [REDACTED-IP](269) [REDACTED-IP](135) [REDACTED-IP](108) [REDACTED-IP](103) 等",
+    "RFC1918：[REDACTED-IP](2054) [REDACTED-IP](164) [REDACTED-IP](19) 等"
+   ],
+   "routable_from_public_internet": false,
+   "credential": false,
+   "risk": "low-中：地址本身公网不可路由、非凭据；但暴露蜂群内网拓扑（Gitea 主机:端口、NAS 地址、各节点 tailnet 地址），可被用于定向社工/资产画像",
+   "disposition": "accepted",
+   "decided_by": "QUEEN",
+   "decided_ts": "2026-10-27T12:38:00+08:00",
+   "scan_scope": "repo-wide × main × tip（git grep -oE '100.64/10|192.168/16|10.222.222/24'）：91 文件 / 11,114 处命中；镜像 superxzy2012/swarm-a2a-bus 实测 private=false（public），随正本同步继承",
+   "count": {
+    "files": 91,
+    "occurrences": 11114
+   },
+   "remediation_applied": "不回改历史；新写入一律过 redactor（小卡侧已落）；镜像生成索引泄漏已于 2026-10-27T04:20Z 修复（tip 501ab95，460 提交历史内 0 版本含私网 IP = 从未落盘）",
+   "do_not": "不做 in-place 历史重写（会毁 result_sha256_8/prev_result_sha256_8/supersedes 不可变链）",
+   "open_decision": "是否把公共镜像改 private（代价：需给 muse 另发只读凭据，或改走组网通道）→ 待 BOSS 裁（ACC-C）"
   }
  ]
 }
