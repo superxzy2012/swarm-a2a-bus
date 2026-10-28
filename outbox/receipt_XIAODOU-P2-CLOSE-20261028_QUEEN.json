@@ -1,0 +1,55 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-P2-CLOSE-20261028",
+  "supersedes": "QUEEN-JUDGE-XIAODOU-P2-20261028",
+  "prev_result_sha256_8": "5df69c4a",
+  "judged_at_cst": "2026-10-28 12:01:36 +08:00",
+  "verdict": "PASS / CLOSED — D1、D2 均已消除，P2 项销账",
+  "verification_run_by_queen": {
+    "cmd": "env -i PATH=/usr/bin:/bin HOME=/tmp python3 test_xiaodou_watch.py",
+    "cwd": "/tmp/xw2（正本 handover/ 导出副本，非 NAS）",
+    "rc": 0,
+    "pass": 17,
+    "fail": 0,
+    "config_path_at_runtime": "/tmp/xw2/watchdog_alert_targets.json",
+    "grep_/opt/data_hits_in_output": 0,
+    "date_split": {
+      "2026-10-28": "QUEEN",
+      "2026-10-29": "QUEEN",
+      "2026-10-30": "BOSS",
+      "2026-11-15": "BOSS"
+    },
+    "fallback_matrix": {
+      "config_missing": {
+        "10-29": "QUEEN",
+        "10-30": "BOSS",
+        "11-15": "BOSS"
+      },
+      "no_matching_rule": {
+        "10-29": "QUEEN",
+        "10-30": "BOSS"
+      },
+      "all_unbound": {
+        "10-29": "QUEEN",
+        "10-30": "BOSS"
+      }
+    },
+    "conclusion": "D1 三路径全部走 _fallback_target(today)，10-30 后不再可能退回 QUEEN；D2 配置路径可 env 覆盖且自检确实读本地副本"
+  },
+  "code_fingerprint": {
+    "xiaodou_watch.py": "65a9e1a15aa5e5ea0d8610c19fc3d5673e9d60af2be919a7b355016aecccd221",
+    "test_xiaodou_watch.py": "6f0dbd6c174cd7e569f5f5561da9212fd13f5a7c955e91ed0afcb122b0ffda8a",
+    "watchdog_alert_targets.json": "622d02446089a0a7917b479d09e0da7f4c4d4946098b92823c6c91eb0445244d",
+    "purpose": "留作 NAS 运行版一致性比对基准（sha256sum /opt/data/memories/xiaodou_watch.py）"
+  },
+  "residual_risk": {
+    "id": "RUNTIME-IDENTITY",
+    "sev": "P3",
+    "detail": "正本 handover 副本已验；NAS 运行版无法从本机 diff（[REDACTED-IP]:22 超时/拒绝），依赖对方『逐字一致』声明 + 真机 idle 行为佐证",
+    "close_by": "对方贴一条 `sha256sum /opt/data/memories/xiaodou_watch.py` 与上表比对，一致即闭合"
+  },
+  "accepted_runtime_evidence": "��机 idle：『近窗无入站消息、无回合 ⇒ 无人找他，正常』— 窗口滑过 11:11 + 10min 宽限后自动转 idle，说明 idle 分支非恒 ok",
+  "open_items": [
+    "桥接 scope：等 BOSS A/B/C（DM om_x100b6122a81c98a0ce8dfeecdc82398），deadline 10-29 12:00",
+    "贾维斯 open_id（小卡 app 视角）：等 nonce OIDBIND-3f7ac21e 回卡；10-30 起 BOSS 单接可接受"
+  ]
+}

@@ -1696,6 +1696,11 @@
    "source_blob": "2679fac63b142d70754dbb8343cce02759c0becf",
    "transform": "copy"
   },
+  "outbox/receipt_XIAODOU-P2-CLOSE-20261028_QUEEN.json": {
+   "public_blob": "3eb105437328a3e8b7b8e160b5300160666d2c5a",
+   "source_blob": "3269de75fa1ddfd940dd9bae3ed707e3f9e4c7a7",
+   "transform": "redact"
+  },
   "outbox/task_GROUP-GOVERNANCE_20261019.json": {
    "public_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
    "source_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
@@ -1757,5 +1762,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T03:59:26Z"
+ "generated_at": "2026-10-28T12:01:36+08:00"
 }
