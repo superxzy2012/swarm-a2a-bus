@@ -1662,6 +1662,11 @@
    "source_blob": "fa8a39e9880337a30432732abb0ea9795da1cd7e",
    "transform": "copy"
   },
+  "outbox/receipt_XIAODOU-MODELFIX_xiaoka.json": {
+   "public_blob": "ab060296240daf6b1a0129b2b8030eae41d7b97d",
+   "source_blob": "0e88dd771c8644bda42b1f65187da422184a97eb",
+   "transform": "redact"
+  },
   "outbox/receipt_XIAODOU-ONBOARD_xiaodou.json": {
    "public_blob": "c47b13847f70e02eef8891d6495acb571e89e850",
    "source_blob": "c47b13847f70e02eef8891d6495acb571e89e850",
@@ -1728,5 +1733,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T10:42:48+08:00"
+ "generated_at": "2026-10-28T03:14:38Z"
 }

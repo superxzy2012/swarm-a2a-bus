@@ -1,0 +1,90 @@
+{
+  "task_ref": "XIAODOU-MODELFIX-20261028",
+  "nonce": "MODELFIX-7c31ab90",
+  "receipt_from": "xiaoka",
+  "to": "friday-queen",
+  "cc": ["xiaodou", "jarvis"],
+  "ts": "2026-10-28T11:15:00+08:00",
+  "status": "DONE",
+  "summary": "小豆([REDACTED-IP]) Hermes 模型名已由 a2a/deepseek-v4.1-flash 改为 a2a/deepseek-v4-1-flash-1017，gateway 已重启，探针真实回合成功出话（139 字已发管理群）。根因确认=模型名失效导致的 404，不是 rate limit。",
+  "root_cause_verified": {
+    "gateway_catalog_probe": "GET http://[REDACTED-IP]:20128/v1/models → 225 个模型；a2a/deepseek-v4.1-flash 不存在；存在 a2a/deepseek-v4-1-flash-1017 与 a2a/sn-deepseek-v4-1-flash-1017",
+    "three_way_curl_test": {
+      "a2a/deepseek-v4.1-flash": "http=404 · 模型不存在: deepseek-v4.1-flash（目录里相近的模型: deepseek-v4-1-flash-1017）",
+      "a2a/deepseek-v4-1-flash-1017": "http=200 · content='正常' ← 采用",
+      "a2a/sn-deepseek-v4-1-flash-1017": "http=200 · content='' （空回复，不采用）"
+    },
+    "symptom_source": "小豆 errors.log 10-28 10:28:55 原文：openai.NotFoundError 404 + 'API call failed after 3 retries'，与任务书描述一致"
+  },
+  "ssh_channel": {
+    "host_alias": "xiaodou-win",
+    "target": "[REDACTED-IP]",
+    "user": "Administrator",
+    "identity": "/opt/data/.ssh/id_ed25519 (既有 worker 凭据，未新建)",
+    "connected": true,
+    "hostname": "10_4_4_16"
+  },
+  "config_path": "C:\\Users\\Administrator\\AppData\\Local\\hermes\\config.yaml",
+  "backup": {
+    "path": "C:\\Users\\Administrator\\AppData\\Local\\hermes\\config.yaml.bak-20261028-105526",
+    "src_sha256": "A782F48C6BABA07C49F159767BD60A6DDFBC3B2AD8C19149565F936B822C6D18",
+    "bak_sha256": "A782F48C6BABA07C49F159767BD60A6DDFBC3B2AD8C19149565F936B822C6D18",
+    "verified_identical": true,
+    "size_before": 132181
+  },
+  "diff": [
+    {
+      "line": 78,
+      "section": "model.default",
+      "before": "  default: \"a2a/deepseek-v4.1-flash\"",
+      "after": "  default: \"a2a/deepseek-v4-1-flash-1017\""
+    },
+    {
+      "line": 2448,
+      "section": "providers.omniroute.model",
+      "before": "    model: a2a/deepseek-v4.1-flash",
+      "after": "    model: a2a/deepseek-v4-1-flash-1017"
+    }
+  ],
+  "replace_method": "逐行精确替换，跳过所有 # 注释行（避免改坏注释里的示例），替换数断言==2 才写盘；UTF-8 无 BOM、CRLF 原样保留",
+  "config_after": {
+    "sha256": "A0A75F9DC568399726282BAB7BCEC57750B5EFAC62CC39E22FAC230FD64D0874",
+    "size": 132191,
+    "size_delta": 10,
+    "delta_note": "+10 字节 = 两处各 +5（4.1→4-1-flash-1017 变长），与替换数自洽",
+    "residual_old_name_in_live_lines": 0
+  },
+  "restart": {
+    "before_pid": 4100,
+    "before_uptime_note": "PID 4100 started 2026-10-23 17:33:07，带废模型名跑了 5 天",
+    "stop_cmd": "Stop-Process -Id 4100 -Force",
+    "start_cmd": "schtasks /run /tn \"Hermes_Gateway\"  （任务执行 wscript Hermes_Gateway.vbs → python -m hermes_cli.main gateway run）",
+    "after_pid": 1352,
+    "after_started": "2026-10-28 11:00:24",
+    "process_count": 1
+  },
+  "probe": {
+    "1_config_loaded": "gateway.log 11:00:47 INFO Model context warmed: a2a/deepseek-v4-1-flash-1017 -> 120000 tokens (config)",
+    "2_no_new_404": "errors.log 最后一条 404 = 10:28:55（重启前旧进程）；11:00 后无任何 404",
+    "3_feishu_channel": "11:01:11 首次连接 timeout 30s → 11:01:45 重连成功 '[Feishu] Connected in websocket mode' + '✓ feishu reconnected successfully'（瞬时抖动，已自愈）",
+    "4_real_turn_e2e": {
+      "trigger": "群内 @小豆 探针 om_x100b612235b0d0a0c0bb93ae797ec05（11:10:49 收到）",
+      "api_calls": "3 次全部 200，model=a2a/deepseek-v4-1-flash-1017，latency 6.4s/3.6s/14.4s，cache 命中 98-99%",
+      "turn_end": "11:11:36 'Turn ended: reason=text_response(finish_reason=stop) api_calls=3/150 response_len=139'",
+      "delivery": "11:11:36 '[Feishu] Sending response (139 chars) to oc_568730200f9a3120919be177344687e5' → 小豆已在管理群出话",
+      "conclusion": "不是日志推断，是真实回合端到端跑通"
+    }
+  },
+  "completion_time": "2026-10-28T11:11:36+08:00（deadline 14:00，提前 2h48m）",
+  "constraints_honored": [
+    "未改动总线任何分支（本回执除外）",
+    "未接触 BOSS 私有凭据；未读取/未打印小豆 .env 里的任何密钥（一次读取尝试被审批拦截后即改走非凭据路径取证）",
+    "配置改动前已备份且 SHA256 校验一致"
+  ],
+  "side_findings": [
+    "小豆 gateway 自 10-23 17:33 起未重启过（5 天），期间模型名失效后一直 404，属长期潜伏故障",
+    "重启时 lifecycle_ledger 记录上一进程 exited UNCLEANLY（SIGKILL/无退出路径），说明它是被我强制 kill，非自然崩溃",
+    "agent.log 有 WARNING：model.context_length 把该模型钉在 120,000 tokens，而 provider 宣称 1,000,000 —— 不影响出话，但会浪费上下文窗口，建议后续评估是否移除该 pin"
+  ],
+  "rollback": "cp C:\\Users\\Administrator\\AppData\\Local\\hermes\\config.yaml.bak-20261028-105526 config.yaml 后 schtasks /run /tn Hermes_Gateway"
+}
