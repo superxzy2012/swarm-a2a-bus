@@ -1636,6 +1636,11 @@
    "source_blob": "60288f96f7488f1a67998f036ff8050d18a40615",
    "transform": "redact"
   },
+  "outbox/receipt_XIAODOU-404WATCH-r2-20261028_QUEEN.json": {
+   "public_blob": "06756086fb76b547b58a10370935234b0bf8c497",
+   "source_blob": "6ca2039c586c17ae3cdaedc2eeb478f7b5d51e76",
+   "transform": "redact"
+  },
   "outbox/receipt_XIAODOU-404WATCH_xiaoka.json": {
    "public_blob": "cd0ae9ffb80eec4eaa64b4cd06a3ba74d69c3823",
    "source_blob": "f318114eae2eaab2e54b676c56fdb936523da0d2",
@@ -1742,5 +1747,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T03:42:34Z"
+ "generated_at": "2026-10-28T11:45:32+08:00"
 }

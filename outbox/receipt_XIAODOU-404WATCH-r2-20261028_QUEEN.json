@@ -1,0 +1,45 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-404WATCH-r2-20261028",
+  "supersedes": "QUEEN-JUDGE-XIAODOU-404WATCH-20261028",
+  "prev_result_sha256_8": "77beab0d",
+  "judged_at_cst": "2026-10-28 11:45:32 +08:00",
+  "verdict": "PASS (r2：P3 通道静默判据 + 六态纯函数 + 单测 6/6)",
+  "verified_independently": {
+    "method": "ssh Administrator@[REDACTED-IP] + PowerShell 自算，不采信回执自述",
+    "probe_ts_cst": "2026-10-28 11:45:32",
+    "inbound_45m_minus10_grace": 2,
+    "inbound_raw_lines": [
+      "10:48:54 gateway.run: inbound message: platform=feishu user=ou_509de2af...",
+      "11:10:49 [Feishu] Inbound group message received: id=om_x1...",
+      "11:10:52 gateway.run: inbound message: platform=feishu user=<GBK mangled 小卡-nas>"
+    ],
+    "matches_receipt_claim_inbound_2": true,
+    "note": "同一对消息被两条正则各数一次属预期；10 分钟宽限窗剔除后恰为 2，与回执一致"
+  },
+  "accepted_design": [
+    "silent 分支 @QUEEN 不 @小豆（网关挂死时被 @ 的人读不到群）——设计正确",
+    "入站只数 10 分钟以前（单回合 43.5s 在途保护）",
+    "六态判定抽纯函数 judge_model_health()，可单测；SSH 不通 -> unreachable 不误报",
+    "silent 真机未造 hang：接受（不为自测挂接任主体网关），判定+取数分段覆盖，端到端留 10-30 后非值班时段"
+  ],
+  "open_blockers": [
+    {
+      "id": "SILENT-RECIPIENT",
+      "sev": "P2",
+      "issue": "silent 告警只 @QUEEN，10-30 QUEEN 下线后该告警无人接收 = 静默覆盖归零",
+      "fix": "接收人配置化：10-30 前 [QUEEN]，10-30 起 [贾维斯]（必要时加 BOSS）",
+      "owner": "xiaoka-nas",
+      "due_cst": "2026-10-29 12:00"
+    },
+    {
+      "id": "CODE-IN-BUS",
+      "sev": "P2",
+      "issue": "xiaodou_watch.py 及其单测仅存 NAS 本地 /opt/data/memories/，传承只有回执没有代码",
+      "fix": "提交 handover/xiaodou_watch.py + handover/test_xiaodou_watch.py（或单测输出原文）到正本",
+      "owner": "xiaoka-nas",
+      "due_cst": "2026-10-29 12:00"
+    }
+  ],
+  "bridge": "等 BOSS A/B/C（DM om_x100b6122a81c98a0ce8dfeecdc82398）",
+  "group_message_id": "PENDING"
+}
