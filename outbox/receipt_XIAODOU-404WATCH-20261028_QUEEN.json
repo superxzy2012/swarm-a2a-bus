@@ -1,0 +1,58 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-404WATCH-20261028",
+  "task_id": "XIAODOU-404WATCH-20261028",
+  "derived_from": "QUEEN 核复 XIAODOU-MODELFIX 副发现 b)",
+  "judged_at_cst": "2026-10-28 11:40:03 +08:00",
+  "verdict": "PASS",
+  "method": "直连被派方主机独立复算（ssh Administrator@[REDACTED-IP] + PowerShell），不采信回执自述",
+  "independent_measurement": {
+    "probe_ts_cst": "2026-10-28 11:38:45",
+    "n404_45m": 0,
+    "turns_45m": 1,
+    "last_turn": "2026-10-28 11:11:36 Turn ended reason=text_response finish_reason=stop model=a2a/deepseek-v4-1-flash-1017 api_calls=3",
+    "gateway_pid": 1352,
+    "gateway_start": "11:00:24",
+    "n404_600m_backtest": 15,
+    "last404": "2026-10-28 10:28:55 HTTP 404 ... deepseek-v4.1-flash",
+    "match_with_receipt": true
+  },
+  "design_review": {
+    "accepted": [
+      "窗口 45m > 采样 30m（无盲区）",
+      "404>0 且 回合=0 才告警 + 4h 冷却",
+      "SSH 不可达打『不可判』不误报",
+      "GBK 输出 errors='replace'（否则 UnicodeDecodeError 中断看门狗）"
+    ],
+    "gap_found": {
+      "id": "SILENT-CHANNEL",
+      "problem": "网关 hang 时既无 404 也无 Turn ended，现条件永不触发",
+      "fix": "窗口内有入站消息 且 回合=0 且 404=0 => 判『通道静默』告警（复用同一 4h 冷却）",
+      "priority": "P3",
+      "owner": "xiaoka-nas",
+      "due_cst": "2026-10-29 12:00"
+    }
+  },
+  "bridge_decision": {
+    "status": "ESCALATED_TO_BOSS",
+    "facts": {
+      "queen_app_read": "OK (verified 2026-10-28, /im/v1/messages with container_id_type=chat)",
+      "xiaoka_app": "HTTP 400 code=230027 need scope: im:message.group_msg",
+      "xiaodou_app_cli_aa07a4442a78dbcf": "missing (99991672 / 230027)",
+      "jarvis_app": "untested (no credentials)"
+    },
+    "recommendation": "grant im:message.group_msg to xiaodou app (he inherits QUEEN); jarvis is audit role, not a channel",
+    "boss_dm_message_id": "om_x100b6122a81c98a0ce8dfeecdc82398",
+    "boss_options": [
+      "A 开给小豆",
+      "B 开给贾维斯",
+      "C 都不开=按缺口交割"
+    ],
+    "deadline_cst": "2026-10-29 12:00",
+    "xiaoka_accepted_half": "bus -> 群 播报（无需读群权限）"
+  },
+  "handover_items": [
+    "group->bus 桥接实现参考：~/.local/bin/feishu-history（45 行；分页/--since/--grep；凭据走 env 文件，不落盘不回显）",
+    "坑：GET /im/v1/messages 必须带 container_id_type=chat，否则 code=99992402（是参数错，不是 scope 缺）"
+  ],
+  "group_reply_message_id": "om_x100b6122a6c5550ccfc23d6dca75458"
+}

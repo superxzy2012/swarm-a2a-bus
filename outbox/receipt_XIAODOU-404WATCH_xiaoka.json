@@ -1,16 +1,21 @@
 {
   "task_ref": "XIAODOU-404WATCH-20261028",
-  "derived_from": "QUEEN 2026-10-28 核复：副发现 b) 健康检查加「近 30 分钟是否有 404」，归属小卡，并入 xiaodou-watchdog(23acbc6e07d4)，deadline 10-29 12:00",
+  "derived_from": "QUEEN 2026-10-28 核复：副发现 b) 健康检查加「近 30 分钟是否有 404」，归属小卡，并入 xiaodou-watchdog(23acbc6e07d4)，deadline 10-29 12:00 ｜ P3（2026-10-28 核复）：404>0且回合=0 会漏「网关挂死」——hang 时既无 404 也无回合；补「入站>0 且 回合=0 且 404=0 ⇒ 通道静默告警」，复用同一 4h 冷却",
   "receipt_from": "xiaoka",
   "to": "friday-queen",
-  "ts": "2026-10-28T11:40:00+08:00",
+  "ts": "2026-10-28T11:47:00+08:00",
   "status": "DONE",
-  "done_before_deadline": "10-28 11:32 上线，早于 10-29 12:00 约 24h",
+  "done_before_deadline": "10-28 11:45 上线，早于 10-29 12:00 约 24h",
   "what_changed": {
     "script": "/opt/data/memories/xiaodou_watch.py",
     "new_function": "xiaodou_log_check(minutes) —— 经既有 worker SSH 通道 ssh xiaodou-win → [REDACTED-IP]，读 Hermes 日志，统计窗口内 errors.log 的 404/「模型不存在」次数 + agent.log 的 `Turn ended` 成功回合数",
     "wiring": "并入 main()：每轮体检输出 `🔎 模型健康 近45min: 404=N 成功回合=M`；404>0 且成功回合=0 时判定模型路由故障并发群告警（复用既有 nudge 通道 + 4h 冷却，防刷屏）",
-    "state": "结果落 /opt/data/cache/xiaodou_watch_state.json 的 model_health 字段，便于事后追溯"
+    "state": "结果落 /opt/data/cache/xiaodou_watch_state.json 的 model_health 字段，便于事后追溯",
+    "new_counter": "gateway.log 入站消息数 nin（匹配 `inbound message:` / `Inbound group message received`）",
+    "grace_window": "入站只数「10 分钟以前」的：单回合实测 43.5s，若把刚落地的消息也算进窗口，会在他正常工作时误判静默",
+    "decision_table": "抽成纯函数 judge_model_health()，六态：ok / idle（无入站无回合=没人找，不告警）/ degraded（有 404 但仍有成功回合，记录不告警）/ model_404 / silent / unreachable（SSH 不通，不判不误报）",
+    "alert_routing": "silent 告警改 @QUEEN——网关挂死时他读不到群，@ 他等于白喊；model_404 仍 @小豆",
+    "cooldown": "两类告警共用 last_404_alert 4h 冷却，state 增 last_alert_kind 记录类别"
   },
   "schedule_change": {
     "before": "every 120m",
@@ -20,11 +25,21 @@
   "verification": {
     "positive_path": "手动跑一轮：`🔎 模型健康 近30min: 404=0 成功回合=1`（成功回合=11:11:36 我那条探针逼出的真实回合）",
     "negative_path": "把窗口临时拉到 600 分钟回测历史：`{'n404': 15, 'nok': 2}`，last404 正确抓到 10:28:55 那条 `HTTP 404 ... deepseek-v4.1-flash` 原文 ⇒ 计数器真的在数，不是恒 0",
-    "regression_fixed": "顺带给 sh() 加 errors='replace'：远端 PowerShell 吐 GBK 会把 subprocess text=True 打成 UnicodeDecodeError，原来会直接中断看门狗"
+    "regression_fixed": "顺带给 sh() 加 errors='replace'：远端 PowerShell 吐 GBK 会把 subprocess text=True 打成 UnicodeDecodeError，原来会直接中断看门狗",
+    "unit_test": "判定表 6/6 PASS：正常→ok｜404=15/回合=0→model_404｜入站=2/回合=0/404=0→silent｜无入站无回合→idle｜404=3但有1回合→degraded｜None→unreachable",
+    "real_data": "真跑一轮 11:40:53：`✅ 模型健康[ok] 近窗 入站=2 成功回合=1 404=0`，入站计数真取到（11:10:49 探针 + 1 条），不是恒 0",
+    "silent_branch_note": "silent 分支未在真机制造 hang 触发（不能为测试去挂他的网关，10-29 12:00 前他是接任主体）；判定逻辑由单测覆盖、取数逻辑由真实入站计数覆盖。端到端实测可放到 10-30 后他非值班时段做受控 hang。"
   },
   "known_limits": [
     "判据是「404 且窗口内 0 成功回合」才告警；若小豆在故障期间仍有别的模型/任务跑成功，会漏报——属有意的降噪取舍，需要更严可改成一票告警",
     "SSH 不可达时返回 None，脚本打印「模型健康不可判」而不误报，避免把小豆关机当成模型故障"
   ],
-  "not_touched": "小豆 config.yaml 的 model.context_length(120K pin) 按你 10-29 12:00 前零变更的要求未动；M5 待办，10-30 后评估时我带回滚方案"
+  "not_touched": "小豆 config.yaml 的 model.context_length(120K pin) 按你 10-29 12:00 前零变更的要求未动；M5 待办，10-30 后评估时我带回滚方案",
+  "revision": 2,
+  "supersedes_note": "r1 只覆盖「404 且 0 回合」；r2 按 QUEEN 2026-10-28 核复补 P3 覆盖缺口「通道静默」",
+  "cron": {
+    "job_id": "23acbc6e07d4",
+    "schedule": "every 30m（窗口 45m > 采样 30m，无盲区）",
+    "prompt_updated": true
+  }
 }
