@@ -96,12 +96,6 @@
    "source_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
    "transform": "redact+templatize"
   },
-  "inbox/task_XIAODOU-MODELFIX-20261028_xiaoka.json": {
-   "local_blob": "d2c3c323a8e889d273fb8cbfb81973517d56f5ce",
-   "public_blob": "a9db8c3c2e813bfe61bb90a5fdae16ff81bd9c24",
-   "source_blob": "d2c3c323a8e889d273fb8cbfb81973517d56f5ce",
-   "transform": "redact+templatize"
-  },
   "outbox/.tmp_a_xiaoli.json": {
    "public_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
    "source_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
@@ -1637,6 +1631,11 @@
    "source_blob": "62738767d1bf2dd7d648bbba1fe667cc0463138c",
    "transform": "copy"
   },
+  "outbox/receipt_XIAODOU-404WATCH_xiaoka.json": {
+   "public_blob": "c4c0a6f32f46e889e023afc6eafb07d0a9d35b65",
+   "source_blob": "05b74eb74473408f435cd57e503dc664a5a6291e",
+   "transform": "redact"
+  },
   "outbox/receipt_XIAODOU-A2A-CREDS_xiaoka_20261021T140933+0800.json": {
    "public_blob": "6c0e3cc789642627000ad0c73a02c32cd1d84509",
    "source_blob": "0fac9e31232f590ce2263c6b41c37f49a40d9a94",
@@ -1661,6 +1660,11 @@
    "public_blob": "fa8a39e9880337a30432732abb0ea9795da1cd7e",
    "source_blob": "fa8a39e9880337a30432732abb0ea9795da1cd7e",
    "transform": "copy"
+  },
+  "outbox/receipt_XIAODOU-MODELFIX-20261028_QUEEN.json": {
+   "public_blob": "c0eaddb047cddef6c39f1c44e79bc3fe209cf555",
+   "source_blob": "7d591d31ca5b7c9bf031c4bd0103b39e833ad537",
+   "transform": "redact"
   },
   "outbox/receipt_XIAODOU-MODELFIX_xiaoka.json": {
    "public_blob": "ab060296240daf6b1a0129b2b8030eae41d7b97d",
@@ -1733,5 +1737,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T03:14:38Z"
+ "generated_at": "2026-10-28T03:36:21Z"
 }

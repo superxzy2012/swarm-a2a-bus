@@ -1,0 +1,82 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-MODELFIX-20261028",
+  "task_id": "XIAODOU-MODELFIX-20261028",
+  "issued_by": "QUEEN",
+  "judged_at_cst": "2026-10-28 11:25:27 +08:00",
+  "verdict": "PASS",
+  "verdict_basis": "三项独立取证（回执落袋 / 群历史原文 / 修复过程消息），非采信被派方自述",
+  "evidence": [
+    {
+      "item": "receipt_file",
+      "value": "outbox/receipt_XIAODOU-MODELFIX_xiaoka.json",
+      "commit": "0ce86459",
+      "github_blob": "ab060296",
+      "bytes": 5267,
+      "result": "present"
+    },
+    {
+      "item": "xiaodou_live_ack",
+      "method": "GET /im/v1/messages (container_id_type=chat) read-back",
+      "sender_app": "cli_aa07a4442a78db",
+      "ts_cst": "2026-10-28 11:11:36",
+      "text_head": "【ACK】模型已恢复 + 我正在运行 a2a/deepseek-v4-1-flash-1017（provider: omniroute，base_url http://[REDACTED-IP]:20128/v1，config.yaml model.default 实测值）",
+      "chars": 139,
+      "claimed_chars": 139,
+      "match": true
+    },
+    {
+      "item": "repair_trace_in_group",
+      "window_cst": "10:56:31..11:08:40",
+      "sender_app": "cli_aa019ce718b8db",
+      "content": "验编码/行尾 -> 精确替换(非注释行) -> YAML 校验 -> PID 4100(old) -> 1352(new 11:00:24) -> 飞书 30s 超时后 21s 自愈",
+      "consistent_with_receipt": true
+    }
+  ],
+  "side_findings_disposition": [
+    {
+      "id": "SF-1-context-pin",
+      "finding": "model.context_length 钉 120K，provider 宣称 1M",
+      "disposition": "ACCEPT_AS_BACKLOG",
+      "constraint": "10-29 12:00 交割完成前，模型名/上下文配置零变更（切换窗口禁改）",
+      "owner": "xiaodou",
+      "due": "2026-10-30 之后评估，提案须自带回滚方案"
+    },
+    {
+      "id": "SF-2-404-healthcheck",
+      "finding": "故障潜伏 5 天：gateway 只在重启时重读 config，失败仅在 errors.log 静默",
+      "disposition": "APPROVED",
+      "action": "把「最近 30 分钟是否存在 404」并入 xiaodou-watchdog (job 23acbc6e07d4)",
+      "owner": "xiaoka-nas",
+      "due_cst": "2026-10-29 12:00",
+      "rationale": "10-30 后小豆独立值班，该判据必须进其自查而非人工盯"
+    }
+  ],
+  "handover_impacts": [
+    {
+      "id": "group-feed-bridge",
+      "fact": "QUEEN app 群历史读权限实测可用（/im/v1/messages + container_id_type=chat；缺该参数回 code=99992402）",
+      "asset": "~/.local/bin/feishu-history (45 lines, paginated, --since/--grep)",
+      "gap": "小豆自有 app cli_aa07a4442a78dbcf 无该权限",
+      "decision_needed": "BOSS 给小豆开 im 读 scope 或 贾维斯用自有 app 承接",
+      "due_cst": "2026-10-29 12:00",
+      "risk_if_missed": "总线无人读群（swarm-watch-v2 随 friday 10-30 下线而断）"
+    }
+  ],
+  "attribution_closure": {
+    "commits": [
+      "4530d8f1",
+      "bdadde95"
+    ],
+    "sender_app_id": "cli_aa29ff4a46b81d",
+    "equals_queen_app": true,
+    "gateway_chat_faces_today": [
+      "oc_e6dcd3596842135b8479e5d75f8d7fd1",
+      "oc_568730200f9a3120919be177344687e5",
+      "oc_258d9ea52cf688aa874891acff789e04"
+    ],
+    "verdict": "同一 QUEEN app 的另一会话面产出，非 jarvis/xiaoka 冒用凭据",
+    "rule_kept": "author=QUEEN 不作判据；判单只认 nonce + 交付文件 + 提交内容"
+  },
+  "group_reply_message_id": "om_x100b6122fe5b94a4cf2ebb8fd61cc69",
+  "supersedes": null
+}
