@@ -96,6 +96,12 @@
    "source_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
    "transform": "redact+templatize"
   },
+  "inbox/task_XIAODOU-MODELFIX-20261028_xiaoka.json": {
+   "local_blob": "d2c3c323a8e889d273fb8cbfb81973517d56f5ce",
+   "public_blob": "a9db8c3c2e813bfe61bb90a5fdae16ff81bd9c24",
+   "source_blob": "d2c3c323a8e889d273fb8cbfb81973517d56f5ce",
+   "transform": "redact+templatize"
+  },
   "outbox/.tmp_a_xiaoli.json": {
    "public_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
    "source_blob": "9e26dfeeb6e641a33dae4961196235bdb965b21b",
@@ -1722,5 +1728,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T10:25:58+08:00"
+ "generated_at": "2026-10-28T10:42:48+08:00"
 }

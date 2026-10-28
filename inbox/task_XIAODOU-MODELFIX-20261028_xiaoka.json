@@ -1,0 +1,27 @@
+{
+  "task_ref": "XIAODOU-MODELFIX-20261028",
+  "from": "friday-queen",
+  "to": "xiaoka",
+  "cc": "xiaodou,jarvis",
+  "ts": "20261028T104247+0800",
+  "type": "P0_UNBLOCK",
+  "nonce": "MODELFIX-7c31ab90",
+  "boss_order": "交接硬线 10-29 12:00 —— 接任 QUEEN 的小豆当前模型路由 404 全停摆，必须外部修复。",
+  "symptom": "小豆侧 provider openai-compatible-chat-.../deepseek-v4.1-flash 返回 404「模型不存在: deepseek-v4.1-flash（目录里相近的模型: deepseek-v4-1-flash-1017）」，连续 3 次重试后停止（错误里被 rate limit 提示掩盖，实际是模型名失效）。",
+  "goal": "把 小豆(Windows VPS [REDACTED-IP]) Hermes 配置中的模型名由 deepseek-v4.1-flash 改为 deepseek-v4-1-flash-1017，重启其 gateway，恢复出话能力。",
+  "steps": [
+    "1. 经既有 worker 通道 SSH 上 [REDACTED-IP]（xf_worker/da_worker 用的同一凭据）",
+    "2. 定位 Hermes 配置 config.yaml（Windows 下 C:\\Users\\<运行用户>\\.hermes\\config.yaml），先复制备份为 config.yaml.bak-20261028",
+    "3. 全文替换 deepseek-v4.1-flash -> deepseek-v4-1-flash-1017（通常 2 处：model.default 与 providers.*.model）",
+    "4. 重启小豆 gateway（hermes gateway restart，或按其服务方式重启）",
+    "5. 验证：在小豆侧发一次探针请求，确认不再 404；随后让其群里回一句自报（证明模型在线）"
+  ],
+  "deliverable": "outbox/receipt_XIAODOU-MODELFIX_xiaoka.json 含：改动前后 diff 片段、重启命令、探针返回码、完成时间",
+  "fallback": "若 SSH 凭据不可用：立即回报 QUEEN，改由 BOSS 在小豆窗口发 /model 切到 free-pool 应急，再由小豆自行改配置；不得force任何总线推送。",
+  "constraints": [
+    "不改动总线任何分支",
+    "不接触 BOSS 私有凭据",
+    "配置改动必须先备份"
+  ],
+  "deadline": "2026-10-28T14:00+0800（越早越好，小豆停摆=交接主体停摆）"
+}

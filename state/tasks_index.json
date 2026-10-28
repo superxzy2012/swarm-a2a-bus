@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-28T10:25:58+08:00",
- "count": 177,
+ "source_head_at": "2026-10-28T10:42:48+08:00",
+ "count": 178,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -177,6 +177,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-27T13:50:00+08:00"
+  },
+  {
+   "file": "inbox/task_XIAODOU-MODELFIX-20261028_xiaoka.json",
+   "task_id": "XIAODOU-MODELFIX-20261028_xiaoka",
+   "from": "friday-queen",
+   "to": "xiaoka",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "20261028T104247+0800"
   },
   {
    "file": "processed/task_A2A-DEDUPE-VM-20261018_20261018_174600.json",
