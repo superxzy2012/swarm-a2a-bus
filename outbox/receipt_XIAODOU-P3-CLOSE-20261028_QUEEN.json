@@ -1,0 +1,40 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-P3-CLOSE-20261028",
+  "supersedes": "QUEEN-JUDGE-XIAODOU-P2-CLOSE-20261028",
+  "prev_result_sha256_8": "6e2c68e6",
+  "judged_at_cst": "2026-10-28 12:11:09 +08:00",
+  "verdict": "PASS / 小豆线全项闭合（含 RUNTIME-IDENTITY）",
+  "evidence": {
+    "canonical_blob_sha256": "65a9e1a15aa5e5ea0d8610c19fc3d5673e9d60af2be919a7b355016aecccd221",
+    "queen_derivation": "git show FETCH_HEAD:handover/xiaodou_watch.py | sha256sum（取自正本 blob，非对方转述）",
+    "peer_runtime_sha256": "65a9e1a15aa5e5ea0d8610c19fc3d5673e9d60af2be919a7b355016aecccd221",
+    "peer_runtime_path": "/opt/data/memories/xiaodou_watch.py",
+    "match": true,
+    "method_going_forward": "同类核对改为对方贴 sha256sum 原文，QUEEN 只做基准值比对，不再依赖 [REDACTED-IP]:22"
+  },
+  "closed_chain": [
+    "MODELFIX PASS",
+    "404WATCH PASS (独立复算 404=0/回合=1/10h=15/last404 10:28:55)",
+    "404WATCH-r2 PASS (入站 2 复核 + 六态)",
+    "P2-1 PASS (日期切换 4 段 + 10-30 起 BOSS 单接)",
+    "P2-2 CONDITIONAL -> D1/D2 修复 -> P2 CLOSED (17/17 rc=0 隔离复跑)",
+    "P3 RUNTIME-IDENTITY CLOSED (sha256 同值)"
+  ],
+  "remaining_blockers": [
+    {
+      "id": "BRIDGE-SCOPE",
+      "owner": "BOSS",
+      "decision": "A 开给小豆 / B 开给贾维斯 / C 都不开（按缺口交割）",
+      "deadline_cst": "2026-10-29 12:00",
+      "queen_dm": "om_x100b6122a81c98a0ce8dfeecdc82398",
+      "escalation_plan": "10-29 09:00 未见回复则再提醒一次并同步写进交割清单缺口"
+    },
+    {
+      "id": "JARVIS-OID",
+      "owner": "jarvis",
+      "nonce": "OIDBIND-3f7ac21e",
+      "fallback": "10-30 起 BOSS 单接，可接受"
+    }
+  ],
+  "xiaodou_line_status": "全绿：watchdog cron 30min 在跑，最近一轮 idle"
+}

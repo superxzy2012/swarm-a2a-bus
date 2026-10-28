@@ -1701,6 +1701,11 @@
    "source_blob": "3269de75fa1ddfd940dd9bae3ed707e3f9e4c7a7",
    "transform": "redact"
   },
+  "outbox/receipt_XIAODOU-P3-CLOSE-20261028_QUEEN.json": {
+   "public_blob": "bbba0b5d05f34b4ba4c5acb92ca48e5d0f4d2629",
+   "source_blob": "a38d2a70a9eb6f7ab5e06e5be7fe16dd2d9701e8",
+   "transform": "redact"
+  },
   "outbox/task_GROUP-GOVERNANCE_20261019.json": {
    "public_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
    "source_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
@@ -1756,11 +1761,16 @@
    "source_blob": "56132973ec2fee1828901eb415574fdaa1c98865",
    "transform": "copy"
   },
+  "state/pending-post-handover.json": {
+   "public_blob": "00ab7fec97f6e309cb638205f3857142e85ff4ee",
+   "source_blob": "00ab7fec97f6e309cb638205f3857142e85ff4ee",
+   "transform": "copy"
+  },
   "state/relay-inbound.json": {
    "public_blob": "5b5fff5751a9931a7f286c65e48f18e0b1fb067f",
    "source_blob": "5b5fff5751a9931a7f286c65e48f18e0b1fb067f",
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T12:01:36+08:00"
+ "generated_at": "2026-10-28T12:12:58+08:00"
 }
