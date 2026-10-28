@@ -1226,6 +1226,11 @@
    "source_blob": "fbd5d590d157dd29aa6a9762b35a59f791829c28",
    "transform": "copy"
   },
+  "outbox/receipt_M2-2_friday.json": {
+   "public_blob": "bb3948cc09d7164de5aff25eabdd875c3e6b16db",
+   "source_blob": "bb3948cc09d7164de5aff25eabdd875c3e6b16db",
+   "transform": "copy"
+  },
   "outbox/receipt_M2-2_xiaodou.json": {
    "public_blob": "4fbde31b79b7f7df0c46712ec62640f120fa90ac",
    "source_blob": "4fbde31b79b7f7df0c46712ec62640f120fa90ac",
@@ -1782,5 +1787,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T12:32:21+08:00"
+ "generated_at": "2026-10-28T12:45:08+08:00"
 }
