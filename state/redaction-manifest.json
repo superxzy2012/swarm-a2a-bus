@@ -41,6 +41,11 @@
    "source_blob": "bdb32a20ef8e3ed3261e9214ec0ddf2f43ba245a",
    "transform": "redact+templatize"
   },
+  "inbox/task_JARVIS-OID-BIND-20261028_xiaoka.json": {
+   "public_blob": "ba969b3684f3e2f654c01087a1c4e422d4443b8e",
+   "source_blob": "ba969b3684f3e2f654c01087a1c4e422d4443b8e",
+   "transform": "copy"
+  },
   "inbox/task_M3-REMEDIAL-20261026.json": {
    "local_blob": "725d463770b43d33a20f4cbe8d89bfffb94dda8a",
    "public_blob": "c5d8724979d8d8a5a42369835cbcf01fc727499c",
@@ -1747,5 +1752,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T11:45:32+08:00"
+ "generated_at": "2026-10-28T03:52:11Z"
 }
