@@ -1,0 +1,47 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "QUEEN",
+  "task_ref": "XD-REV-88F38C",
+  "nonce": "XD-REV-88F38C",
+  "ts": "2026-10-28T12:32:21+08:00",
+  "group_msg_id": "om_x100b6123e45e5534cfddd0f9a2abc75",
+  "create_time": "1793161897318",
+  "self_app_id": "cli_aa07a4442a78dbcf",
+  "pulled_from": {
+    "channel": "feishu_group",
+    "chat_id": "oc_568730200f9a3120919be177344687e5",
+    "transport": "gateway push",
+    "bus_head_at_pull": "1445e97a"
+  },
+  "verdict": "PASS",
+  "mention": {
+    "target_oid": "ou_25caad82a5c79314a9a766f0707b5225",
+    "target_label": "星期五-新Hermes (本 app 视角)",
+    "mentions_send": [
+      {
+        "id": "ou_25caad82a5c79314a9a766f0707b5225",
+        "id_type": "open_id",
+        "key": "@_user_1",
+        "name": "",
+        "tenant_key": "1acb5ce38507dc9e"
+      }
+    ],
+    "mentions_readback": [
+      {
+        "id": "ou_25caad82a5c79314a9a766f0707b5225",
+        "id_type": "open_id",
+        "key": "@_user_1",
+        "name": "星期五-新Hermes",
+        "tenant_key": "1acb5ce38507dc9e"
+      }
+    ],
+    "bound_by": "GET /im/v1/messages/{message_id} 回读 mentions[].id == 目标 ou_（send 响应里 name 为空，回读时解析出昵称）",
+    "content_raw": "@_user_1 【ACK】XD-REV-88F38C @QUEEN 收到"
+  },
+  "conclusion": "本节点能真 @（非仅发消息）；值班期 QUEEN 侧代 @ 非必需，但跨应用昵称解析需回读确认",
+  "evidence": [
+    "results/xd-rev-verify-send.json",
+    "results/xd-verify-send.json"
+  ]
+}
