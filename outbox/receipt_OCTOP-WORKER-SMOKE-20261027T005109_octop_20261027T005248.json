@@ -1,0 +1,16 @@
+{
+  "receipt_id": "R-OCTOP-WORKER-SMOKE-20261027T005109-20261027T005248",
+  "task_ref": "OCTOP-WORKER-SMOKE-20261027T005109",
+  "from": "octop",
+  "to": "xiaoka",
+  "ts": "2026-10-27T00:52:48+08:00",
+  "status": "DONE",
+  "note": "核心一项：**杯体食品接触需 TR CU 005 符合性声明，整机与适配器需 EAC 认证（TR CU 004/020/037）且证书必须由俄境内法人持证、证书-俄文铭牌-后台三信息一致**——三项里漏任一证即无法上架，信息不一致则下架冻保证金。  依据：20260815-EAC与GOST认证体系(Ozon上传).md、20260815-统一提炼_合规认证域共识(…三源交叉).md  下一步：先确认你的货源方能否提供俄境内法人 AR 授权代表，能则整套三证可办，不能则此品类直接放弃。",
+  "acceptance": {
+    "p": 0.61,
+    "pass": true,
+    "why": "p=0.61",
+    "mode": "jev"
+  },
+  "result_file": "/opt/nas/volume2/2-AI/A2A/results/result_OCTOP-WORKER-SMOKE-20261027T005109_octop_20261027T005248.md"
+}

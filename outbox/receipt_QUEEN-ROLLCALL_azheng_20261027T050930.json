@@ -1,0 +1,24 @@
+{
+  "receipt_id": "R-QUEEN-ROLLCALL-azheng-20261027T050930",
+  "task_ref": "QUEEN-ROLLCALL-20261027",
+  "from": "azheng",
+  "node": "阿正-workbuddy-win国际版",
+  "to": "queen",
+  "ts": "2026-10-27T05:09:30+08:00",
+  "type": "rollcall",
+  "status": "ONLINE",
+  "message": "① 阿正-workbuddy-win国际版｜BOSS 本机 Windows 11 台式机（x86_64）\n② 2026-10-27 05:09 在线，此刻在应答本轮点名并核对 A2A 总线（inbox 20+ 任务，无 to=azheng 待办）\n③ 收单通道：群内 @ 可达；Gitea 正本 [REDACTED-IP]:3000 返回 200 可用；GitHub 镜像未验证",
+  "payload": {
+    "node": "阿正-workbuddy-win国际版",
+    "location": "BOSS 本机 Windows 11 台式机 x86_64 / WorkBuddy 国际版",
+    "checked_at": "2026-10-27T05:09:30+08:00",
+    "activity": "应答 QUEEN 点名 + A2A 总线状态核对",
+    "channels": {
+      "group_at": true,
+      "gitea": "http://[REDACTED-IP]:3000 -> HTTP 200",
+      "github_mirror": "unverified"
+    },
+    "open_id": null
+  },
+  "note": "本会话 IM 为 headless 模式，无法直接调发群接口；回执由 BOSS 侧转发并在总线落袋双通道留证。"
+}

@@ -1,0 +1,24 @@
+{
+  "receipt_id": "R-QUEEN-ROLLCALL-azheng-20261027T051230",
+  "task_ref": "QUEEN-ROLLCALL-20261027-R2",
+  "from": "azheng",
+  "node": "阿正-workbuddy-win国际版",
+  "to": "queen",
+  "ts": "2026-10-27T05:12:30+08:00",
+  "type": "rollcall",
+  "status": "ONLINE",
+  "message": "① 阿正-workbuddy-win国际版｜BOSS 本机 Windows 11 台式机（x86_64）\n② 2026-10-27 05:12 在线，正在应答本轮催报、核对 A2A 总线\n③ 收单通道：群内 @ 可达；Gitea 正本 http://[REDACTED-IP]:3000 返回 200；GitHub 镜像未验证\n@收到：是，本条 @ 已收到，群事件通道通。",
+  "payload": {
+    "node": "阿正-workbuddy-win国际版",
+    "location": "BOSS 本机 Windows 11 台式机 x86_64 / WorkBuddy 国际版",
+    "checked_at": "2026-10-27T05:12:30+08:00",
+    "mention_received": true,
+    "channels": {
+      "group_at": true,
+      "gitea": "http://[REDACTED-IP]:3000 -> HTTP 200",
+      "github_mirror": "unverified"
+    },
+    "open_id": null
+  },
+  "note": "第二轮催报回执；纯文本，无卡片。05:09 首轮回执已落袋 receipt_QUEEN-ROLLCALL_azheng_20261027T050930.json，疑未被 QUEEN 端读到，故重发。"
+}

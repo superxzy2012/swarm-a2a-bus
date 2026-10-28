@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-28T08:22:09+08:00",
- "count": 176,
+ "source_head_at": "2026-10-28T01:24:27Z",
+ "count": 177,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -1002,6 +1002,17 @@
    "obsolete": false,
    "has_receipt": true,
    "ts": "2026-10-26T00:00:00+08:00"
+  },
+  {
+   "file": "processed/task_OCTOP-WORKER-SMOKE-20261027T005109_xiaoka_20261027_005109.json",
+   "task_id": "OCTOP-WORKER-SMOKE-20261027T005109_xiaoka_20261027_005109",
+   "from": "xiaoka",
+   "to": "octop:小安",
+   "status": "DONE",
+   "archived": true,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-27T00:51:09.183084+08:00"
   },
   {
    "file": "processed/task_OZON-G4-B2-CONTINUE_xiaoli2_20261020T012221.CLAIMED.json",

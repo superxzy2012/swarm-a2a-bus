@@ -1336,6 +1336,11 @@
    "source_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
    "transform": "copy"
   },
+  "outbox/receipt_OCTOP-WORKER-SMOKE-20261027T005109_octop_20261027T005248.json": {
+   "public_blob": "dd9b8948aab75db5bd422a3c6713c23f80d700c0",
+   "source_blob": "dd9b8948aab75db5bd422a3c6713c23f80d700c0",
+   "transform": "copy"
+  },
   "outbox/receipt_ORG-20261022-CEO-TRANSITION_friday.json": {
    "public_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
    "source_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
@@ -1435,6 +1440,16 @@
    "public_blob": "023dfd2f353ff106211ce20fb2fc9f321ac10447",
    "source_blob": "023dfd2f353ff106211ce20fb2fc9f321ac10447",
    "transform": "copy"
+  },
+  "outbox/receipt_QUEEN-ROLLCALL_azheng_20261027T050930.json": {
+   "public_blob": "a993143af2ced2c5c869616cc3f1a39d0dca802e",
+   "source_blob": "74e28969e6e61ecb82347ab22faa3824ab8a6a1c",
+   "transform": "redact"
+  },
+  "outbox/receipt_QUEEN-ROLLCALL_azheng_20261027T051230.json": {
+   "public_blob": "4fe6360e328651304d0a32e0d2951987d0455210",
+   "source_blob": "129a1c27453a166d2db98df904a91172cea7fc1c",
+   "transform": "redact"
   },
   "outbox/receipt_QUEEN_HEARTBEAT_20261018T183921+0800.json": {
    "public_blob": "66d5bbc56c9550d1e79288149d4063088d90de11",
@@ -1707,5 +1722,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T08:22:09+08:00"
+ "generated_at": "2026-10-28T01:24:27Z"
 }
