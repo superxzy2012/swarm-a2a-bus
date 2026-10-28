@@ -1,0 +1,53 @@
+{
+  "receipt_id": "QUEEN-JUDGE-XIAODOU-P2-20261028",
+  "supersedes": "QUEEN-JUDGE-XIAODOU-404WATCH-r2-20261028",
+  "prev_result_sha256_8": "3b2a6bd0",
+  "judged_at_cst": "2026-10-28 11:54:43 +08:00",
+  "scope": "P2-1 接收人配置化 / P2-2 代码传承（回执 r3，11:58）",
+  "verdict": {
+    "P2-1": "PASS（日期切换四段实测正确；10-30 起 [BOSS] 单接，QUEEN 接受）",
+    "P2-2": "CONDITIONAL_PASS（逻辑正确，可移植性+兜底两处缺陷）"
+  },
+  "reproduction": {
+    "cmd": "python3 handover/test_xiaodou_watch.py",
+    "host": "friday-cvm（无 /opt/data/state/）",
+    "rc": 1,
+    "pass": 8,
+    "fail": 2,
+    "fails": [
+      "2026-10-30 期望 ['BOSS'] 实际 ['QUEEN']",
+      "2026-11-15 期望 ['BOSS'] 实际 ['QUEEN']"
+    ],
+    "cause": "ALERT_CFG 写死 /opt/data/state/watchdog_alert_targets.json；他的 10/10 ALL PASS 是在 NAS 上跑的",
+    "logic_check_by_queen": "把 ALERT_CFG 指向 handover 副本后复算：10-28→QUEEN, 10-29→QUEEN, 10-30→BOSS, 11-15→BOSS, 2027-01-01→BOSS 全部正确"
+  },
+  "defects": [
+    {
+      "id": "D1",
+      "sev": "P1-for-handover",
+      "title": "三处兜底全退回 QUEEN = 10-30 后零覆盖",
+      "detail": "配置读不到 / 无匹配规则 / 全未绑定 均 return QUEEN，且只 warn 不告警",
+      "fix": "兜底按日期：today >= '2026-10-30' ? BOSS : QUEEN（或恒 BOSS）",
+      "why_critical": "配置丢失或日期写错 = 静默失效，正是 P2-1 要消灭的场景"
+    },
+    {
+      "id": "D2",
+      "sev": "P2",
+      "title": "「任何机器 RC=0」不成立",
+      "fix": "ALERT_CFG 用 os.environ.get('WATCHDOG_ALERT_CFG', 默认)；自检在 exec_module 之前设 env 指向 handover 副本",
+      "acceptance": "非 NAS 机器贴 RC=0 + 10 PASS 原文"
+    }
+  ],
+  "accepted": [
+    "watchdog_alert_targets.json 日期规则结构正确",
+    "未绑定目标跳过 + 日志报警（不静默吞）",
+    "handover/ 四件齐（py+test+selftest+targets）",
+    "QUEEN 视角 open_id 与他配置一致 ou_b172b28a…（跨 app 一致性抽查通过）"
+  ],
+  "open_items": [
+    "贾维斯 open_id（小卡 app 视角）未绑定；nonce OIDBIND-3f7ac21e 已派卡，等贾维斯 @ 小卡；QUEEN 无此视角数据",
+    "桥接 scope 等 BOSS A/B/C（DM om_x100b6122a81c98a0ce8dfeecdc82398）"
+  ],
+  "deadline_cst": "2026-10-29 12:00",
+  "group_message_id": "om_x100b612351e588accf2f179fb3a7a52"
+}
