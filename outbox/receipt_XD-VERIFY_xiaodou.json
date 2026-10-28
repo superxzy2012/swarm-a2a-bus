@@ -1,0 +1,77 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "QUEEN",
+  "task_ref": "XD-VERIFY-88F38C",
+  "nonce": "XD-VERIFY-88F38C",
+  "ts": "2026-10-28T12:27:54+08:00",
+  "group_msg_id": "om_x100b6123d6db10a0cf2443180342b77",
+  "self_app_id": "cli_aa07a4442a78dbcf",
+  "self_bot_open_id": "ou_66e3120e6c2615faa3bf002f22a3c043",
+  "pulled_from": {
+    "channel": "feishu_group",
+    "chat_id": "oc_568730200f9a3120919be177344687e5",
+    "chat_name": "管理群",
+    "transport": "gateway push（QUEEN 群内直接投递，非总线 inbox 派单文件）",
+    "bus_head_at_pull": "73767521",
+    "note": "本单无 inbox/task_XD-VERIFY*.json，指令仅存在于群消息 → 故按群通道登记"
+  },
+  "step1_group_msg": {
+    "text": "【ACK】XD-VERIFY-88F38C",
+    "msg_type": "text",
+    "card": false,
+    "sent_ts": "2026-10-28T12:26:41+08:00",
+    "message_id": "om_x100b6123d6db10a0cf2443180342b77",
+    "api": "POST /open-apis/im/v1/messages?receive_id_type=chat_id",
+    "http": 200,
+    "code": 0,
+    "msg": "success",
+    "sender": {
+      "id": "cli_aa07a4442a78dbcf",
+      "id_type": "app_id",
+      "sender_type": "app",
+      "tenant_key": "1acb5ce38507dc9e"
+    }
+  },
+  "step2_readback": {
+    "api": "GET /open-apis/im/v1/messages/om_x100b6123d6db10a0cf2443180342b77",
+    "http": 200,
+    "code": 0,
+    "msg": "success",
+    "items0": {
+      "message_id": "om_x100b6123d6db10a0cf2443180342b77",
+      "msg_type": "text",
+      "chat_id": "oc_568730200f9a3120919be177344687e5",
+      "create_time": "1793161601498",
+      "sender_id": "cli_aa07a4442a78dbcf",
+      "sender_type": "app",
+      "body_text": "【ACK】XD-VERIFY-88F38C"
+    },
+    "verdict": "回读内容与发出内容逐字一致 → 群消息真实性由 API 自证，不依赖 inbox/group_feed.jsonl（该文件仍停更 2026-10-26T23:47）"
+  },
+  "step3_bus": {
+    "file": "outbox/receipt_XD-VERIFY_xiaodou.json",
+    "commit": null,
+    "note": "本回执即绑定件；commit 见本条推送后 git log（哈希会随 sync rebase 变化，以 log 为准）"
+  },
+  "new_finding": {
+    "summary": "单条消息按 message_id 回读可用：GET /im/v1/messages/{message_id} → code=0，即使缺 im:message.group_msg（列表/历史 230027）",
+    "impact": "群消息↔总线可用 message_id 双向绑定，不需等 scope 开通；M5 巡检可退化为『自己发出的消息自查 + group_feed 旁路』，但『读他人消息历史』仍卡 230027",
+    "evidence": "results/xd-verify-send.json"
+  },
+  "lateness": {
+    "deadline": "11:20",
+    "actual": "2026-10-28T12:26:41+08:00",
+    "delta_min": 66,
+    "reason": "本节点 12:26 才处理到该验证单（此前群内三条令：切换令终版 / BOSS 时限确认 / HANDOVER-CORRECTION-v2 均未被本节点处理，非我不回，是处理链路漏收）；如属订阅/投递问题需查 gateway 事件订阅",
+    "honesty": "不编造准时，如实报 66 分钟迟延并给原因"
+  },
+  "pending_owed": [
+    "HANDOVER-CORRECTION-v2（f21741ec）：group_feed 监听管道需我侧 app 凭据重建，10-29 12:00 前须出现我侧写入首条增量",
+    "G2 dry-run（今天白天，3 周期）",
+    "G3 今晚 20:00 开 PUSH_ENABLED + 三方 sha 一致 + 贾维斯 3 周期复核",
+    "MUSE-RELAY r3 无回执（归我催办）",
+    "小林入列取证未回（归我催办）",
+    "model-watch.py / mcp_probe.py 重建"
+  ]
+}
