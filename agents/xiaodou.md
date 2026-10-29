@@ -106,3 +106,19 @@
 
 ### 6. 自检命令链
 `hermes config check`（查老配置缺段）→ `hermes doctor`（整体健康）→ `hermes config get <key>` 单点核对 → gateway 改完 `/restart` 排空后重启。
+
+## 2026-10-29 G3 切换窗口 im:* 权限复测（补 G3 中期审计缺项④）
+
+> 证据正本：`results/im-scope-reprobe-20261029T1140.json`；首测 `outbox/receipt_IM-SCOPE-PROBE-20261029_xiaodou.json`（09:23:57+08）。两次结论一致，B1 scope 至 11:40 未发版。
+
+| 能力 | 端点 | 结果 | 结论 |
+|---|---|---|---|
+| 群历史列表 | `GET /im/v1/messages?container_id_type=chat` | 400 / `230027` need scope `im:message.group_msg` | ❌ 未开通（B1 待 BOSS 发版） |
+| 群成员 | `GET /im/v1/chats/{chat}/members` | 400 / `99991672` | ❌ 未开通（需 `im:chat.members:read` 等） |
+| 云文档列表 | `GET /drive/v1/files` | 400 / `99991672` | ❌ 未开通（需 `drive:drive:readonly` 等） |
+| 群列表 | `GET /im/v1/chats` | 200 / code 0 | ✅ 可用 |
+| **单条按 id 回读** | `GET /im/v1/messages/{message_id}` | 200 / code 0 | ✅ **可用，不依赖 group_msg scope** |
+
+**可用通道结论**：本节点发群消息 + 按 `message_id` 单条 GET 回读（sender app_id / mentions / body 逐字校验）是当前唯一可靠的 IM 实测闭环；**读类列表能力缺 scope，不得在回执中声称"读群历史/成员/文档"**。G3 四要素取证即建立在该通道上（见 `outbox/receipt_G3-READONLY-AUDIT_xiaodou_20261029T0934.json`）。
+
+**连带未解项**：`group_feed.jsonl` 切换后首条增量为 0，因 watcher（`results/xiaodou-swarm-watch.py`，每 2 分钟）被 230027 阻塞；scope 生效后自愈，届时补首条增量并在此记恢复时间。

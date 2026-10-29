@@ -176,6 +176,11 @@
    "source_blob": "b34bfecee0fd64bf6298e23d762ffa4c60e4da21",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261029T035710Z_10_4_4_16.json": {
+   "public_blob": "01ee9e9a32252e2f77180f5fcf488d891eb51502",
+   "source_blob": "01ee9e9a32252e2f77180f5fcf488d891eb51502",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -364,6 +369,11 @@
   "outbox/receipt_G3-MIDTERM-AUDIT_jarvis_20261029T035500Z.json": {
    "public_blob": "8550318ea77b683eecb223a2ed41999f79175d1e",
    "source_blob": "8550318ea77b683eecb223a2ed41999f79175d1e",
+   "transform": "copy"
+  },
+  "outbox/receipt_G3-MIDTERM-FIX-20261029_xiaodou.json": {
+   "public_blob": "374425bcbe6c2bf5a1da9b02099ac8c2e6f02813",
+   "source_blob": "374425bcbe6c2bf5a1da9b02099ac8c2e6f02813",
    "transform": "copy"
   },
   "outbox/receipt_G3-PAUSE-ACK-20261029_friday.json": {
@@ -1907,5 +1917,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T03:39:20Z"
+ "generated_at": "2026-10-29T11:57:10+08:00"
 }
