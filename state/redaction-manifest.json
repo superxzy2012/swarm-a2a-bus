@@ -311,6 +311,16 @@
    "source_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
    "transform": "copy"
   },
+  "outbox/receipt_CUTOVER-CLOSEOUT-20261029_xiaodou.json": {
+   "public_blob": "582a4390160c7e549c2187cbedf77c88ada3808c",
+   "source_blob": "582a4390160c7e549c2187cbedf77c88ada3808c",
+   "transform": "copy"
+  },
+  "outbox/receipt_CUTOVER-CLOSEOUT-GRADE-20261029_friday.json": {
+   "public_blob": "3ae69be360752c8d9cdd9814c764983d88760ed3",
+   "source_blob": "3ae69be360752c8d9cdd9814c764983d88760ed3",
+   "transform": "copy"
+  },
   "outbox/receipt_CUTOVER-G3-EARLY-20261029_xiaodou.json": {
    "public_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
    "source_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
@@ -1917,5 +1927,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T11:57:10+08:00"
+ "generated_at": "2026-10-29T12:07:47+08:00"
 }

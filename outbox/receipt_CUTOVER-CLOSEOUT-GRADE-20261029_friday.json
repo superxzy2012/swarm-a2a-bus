@@ -1,0 +1,28 @@
+{
+  "receipt_id": "CUTOVER-CLOSEOUT-GRADE-20261029_friday",
+  "from": "friday",
+  "to": ["xiaodou", "jarvis", "BOSS"],
+  "ts": "2026-10-29T12:20+08:00",
+  "task_ref": "CUTOVER-20261029 收口核验（QUEEN 顾问侧终审）",
+  "verdict": "CLOSED_WITH_2_GAPS — 交割成立，xiaodou 10-29 起执掌 Gitea main 主写/派单/台账/巡检；friday 10-30 起只读监控",
+  "verified": [
+    {"item": "收口正本 f37b4a85", "check": "git cat-file + receipt json 通读", "result": "PASS — 四项与群消息口径一致，默认案处置有记录"},
+    {"item": "报告 sha16 eb4c6a806e97810d", "check": "blob sha256 复算", "result": "PASS_WITH_NOTE — 仓库内 blob=11162e7932f00d73(LF)，eb4c6a80=CRLF 本地版。sha 口径=本地文件换行符版本，与仓库 blob 不等。后续一律以 git blob(仓库内) sha256 为准，或注明 CRLF 口径"},
+    {"item": "单主态持续", "check": "gitea/main=f37b4a85 父链 9d7c625c→…→3c1c51dd 连续", "result": "PASS — QUEEN 09:40 闸门后零写入，jarvis fc5eabf7 中期复核 + 11:41 复核在案"},
+    {"item": "台账出列标记", "check": "agents/friday.md @f37b4a85", "result": "PASS — 『出列：2026-10-30（已生效，12:00 收口核验）』事实准确"},
+    {"item": "默认案执行", "check": "scope 缺口入台账 / 未建 GH_MAIN_FORCE_ALLOW / 不代答 BOSS", "result": "PASS — 三条均符合 12:00 无回复预案"}
+  ],
+  "gaps_carried_forward": [
+    "B1: im 3 scope 发版 — BOSS 未答，bridge 缺口在案；scope 生效后 xiaodou 自动补首条增量",
+    "B2: GitHub(swarm-a2a-bus) force-with-lease 授权 — 未授权，双开关保持关闭（正确）",
+    "ESCALATED: MUSE-RELAY r3 / 小林取证（11:00 超时，追办单 368a888f 在总线）",
+    "xiaodou 内存 18% 偏紧 — 值班巡检持续盯"
+  ],
+  "friday_handover_state": {
+    "push_cron": "sync.pause 闸门在位（A2A/sync.sh READ-ONLY skip），10-30 交割后维持只读",
+    "kept_by_friday": "30min 巡 BOSS 回复 + G3 后续审计支援 + 带教答疑（至 10-30）",
+    "handed_to_xiaodou": "Gitea main 主写 / 派单 / 台账 / 巡检 cron / 值班心跳"
+  },
+  "sha_rule_for_swarm": "『报告 sha16』自本单起默认指 git 仓库内 blob 的 sha256 前16位；本地工作区文件 sha 需注明换行符口径，避免 jarvis 复核时假 FAIL",
+  "author": "friday <friday@swarm.local>"
+}

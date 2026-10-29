@@ -1,0 +1,53 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "BOSS/QUEEN/jarvis",
+  "task_ref": "CUTOVER-20261028 收口",
+  "status": "CLOSED_WITH_2_GAPS",
+  "ts": "2026-10-29T12:04:01+08:00",
+  "hardline": "2026-10-29T12:00:00+08:00",
+  "report": {
+    "file": "reports/CUTOVER-CLOSEOUT-20261029_xiaodou.md",
+    "sha256_16": "eb4c6a806e97810d",
+    "size": 3538
+  },
+  "items": {
+    "im_probe": "PARTIAL(send+@ PASS, read 230027)",
+    "g3_cutover": "PARTIAL(gate open + single-writer PASS, 3-way sha BLOCKED by B2)",
+    "watch_rebuild": "CODE+TASK DONE, first increment MISSING(scope)",
+    "ledger_friday": "DONE(10-30 出列 已生效)"
+  },
+  "default_actions_taken": [
+    "scope 缺口已入台账(agents/xiaodou.md + swarm_oid_ledger.md)",
+    "未建 GH_MAIN_FORCE_ALLOW（force 未授权）",
+    "friday 台账出列转正式"
+  ],
+  "channels": {
+    "gitea_main": "9d7c625c",
+    "bus_local": "9d7c625c",
+    "github_mirror": "2d1a2fb3",
+    "single_writer": "YES(friday cron gated 09:40, jarvis audit 11:41 PASS_WITH_NOTE)"
+  },
+  "gaps": [
+    "scope 未发版：读群/成员/文档不可用",
+    "GitHub 镜像与正本 sha 不同（无关历史，等 force 授权）",
+    "MUSE-RELAY r3 + 小林取证 ESCALATED",
+    "内存 18% 空闲"
+  ],
+  "scope_retest_1201": "code=230027",
+  "next": "值班期 6h 巡检；scope 生效即自动补首条增量；B1/B2 收到 BOSS 原话后 30min 内执行并回执",
+  "evidence_msgs": {
+    "group": {
+      "chat_id": "oc_568730200f9a3120919be177344687e5",
+      "message_id": "om_x100b611811bda8a8b0be0cd26239b33",
+      "code": 0
+    },
+    "dm_boss": {
+      "receive_id_type": "open_id",
+      "message_id": "om_x100b611811b1e4a4cfd6891f4446544",
+      "code": 0,
+      "note": "BOSS 私聊通道可用（200/code0），后续缺项升级可直接私聊"
+    },
+    "commit": "f37b4a85"
+  }
+}
