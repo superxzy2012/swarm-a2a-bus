@@ -1,0 +1,50 @@
+{
+  "receipt_id": "FRIDAY-SYNC-MIRROR-EVENT-CLOSED-20261029",
+  "event": "SYNC-MIRROR-LEG-20261029 (+ MIRROR-CADENCE-20261029)",
+  "closed_at_cst": "2026-10-29 20:22:30 +08:00",
+  "verdict": "EVENT CLOSED — 观察窗(2h)零新告警，事件整体闭环",
+  "close_conditions": {
+    "required": "0 个 18:20 后新增 alert_diverge_* / MIRROR-STALE / LAGGING；results/ 无同步异常状态",
+    "observed": "全部满足"
+  },
+  "evidence": {
+    "repo_state": {
+      "fetch": "git fetch gitea exit=0",
+      "local_head": "ab2593c4",
+      "gitea_main": "ab2593c4",
+      "behind": 0,
+      "checked_at_cst": "2026-10-29 20:22:21 +08:00"
+    },
+    "alert_scan": {
+      "window": "2026-10-29 18:20 CST 之后",
+      "new_alert_diverge": 0,
+      "new_MIRROR_STALE_or_LAGGING": 0,
+      "find_cmd": "find outbox results tasks -iname '*MIRROR-STALE*' -o -iname '*LAGGING*' -> 0 files; find outbox -newermt '2026-10-29 18:20' -> 仅 3 个回执(LEG-CLOSE-CONFIRM 18:21 / xiaodou LEG 18:21 / MIRROR-CADENCE-CLOSE 18:30)，无告警文件",
+      "last_alert_diverge_ever": "20261029T090711Z (= 17:07 CST)，属上午 SYNC-DIVERGE 事件，已由 v4 修复收敛"
+    },
+    "alert_state": {
+      "file": "results/alert-state-SYNC-DIVERGE.json",
+      "resolved": true,
+      "last_ts": "2026-10-29T10:05:28Z",
+      "note": "v4 后该 alert kind 退役"
+    },
+    "acceptance_backlog": {
+      "natural_cycles_zero_diverge": ["18:07:01 (lag 48.4min)", "18:12:01 (lag 2.2min)", "18:17:01 (lag 4.4min)"],
+      "source": "results/sync-mirror-verify.json + receipt_SYNC-MIRROR-LEG-CLOSE-CONFIRM-20261029_friday.json (595fbf11)"
+    },
+    "lag_watch_window": {
+      "anchor": "receipt_SYNC-MIRROR-LEG-CLOSE-CONFIRM-20261029_friday.json 落盘 18:21 CST",
+      "duration_to_close": "2h01m，窗内零新告警",
+      "monitor_last_known": "mirror-lag-check.sh (cron 4eb7d1003821) 18:30:25 CST rc=0 VERDICT=OK LAG_MIN=0 STATE_ALIGNED=true"
+    },
+    "mirror_convergence": {
+      "last_probe": "6e34bcad 正本 18:21:40 -> 镜像 18:23:02 (1m22s)，blob sha MATCH (QUEEN MIRROR-CADENCE 回执)"
+    }
+  },
+  "redlines_observed": [
+    "只读观察 + 仅写本回执",
+    "未改任何脚本（xiaodou sync.ps1 v4 ccd960b84888af12 未触碰）",
+    "未 force push"
+  ],
+  "chain": ["595fbf11 LEG 验收 PASS", "6e34bcad CLOSE-CONFIRM DONE accepted", "ab2593c4 MIRROR-CADENCE CLOSED", "本次: EVENT CLOSED"]
+}
