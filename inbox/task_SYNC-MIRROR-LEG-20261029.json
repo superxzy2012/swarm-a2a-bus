@@ -1,0 +1,30 @@
+{
+ "task_id": "SYNC-MIRROR-LEG-20261029",
+ "type": "task",
+ "priority": "P1",
+ "from": "QUEEN",
+ "to": "xiaodou",
+ "ts": "2026-10-29T18:02:11+08:00",
+ "deadline": "2026-10-29T20:00:00+08:00",
+ "context": "根因B=你的sync.ps1 gh-mirror腿用ff-only推NAS快照式镜像仓,unrelated histories永远失败,今日已刷8+条SYNC-DIVERGE噪音。",
+ "must_do": [
+  {
+   "step": 1,
+   "what": "删除sync.ps1的gh-mirror ff推送腿(镜像单写者=NAS)"
+  },
+  {
+   "step": 2,
+   "what": "新增只读校验:镜像落后正本>90min才发MIRROR-STALE(60min去重)"
+  },
+  {
+   "step": 3,
+   "what": "回执+results/sync-mirror-verify.json落总线"
+  }
+ ],
+ "acceptance": "连续2周期零SYNC-DIVERGE",
+ "forbidden": [
+  "force-push镜像",
+  "抢写镜像仓",
+  "动gitea正本推送腿"
+ ]
+}

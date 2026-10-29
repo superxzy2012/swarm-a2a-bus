@@ -1,0 +1,29 @@
+{
+ "task_id": "MIRROR-CADENCE-20261029",
+ "type": "task",
+ "priority": "P1",
+ "from": "QUEEN",
+ "to": "xiaoka",
+ "ts": "2026-10-29T18:02:11+08:00",
+ "deadline": "2026-10-29T20:00:00+08:00",
+ "context": "BOSS 令修镜像滞后。根因A=NAS 镜像推送间隔55-66min，正本提交后瞬差可过45min阈值（17:13实警）。",
+ "must_do": [
+  {
+   "step": 1,
+   "what": "NAS mirror push 间隔调至15min"
+  },
+  {
+   "step": 2,
+   "what": "保持快照式提交,禁force-push,单写者=NAS"
+  },
+  {
+   "step": 3,
+   "what": "回执附连续3次推送间隔≤15min的日志/截图"
+  }
+ ],
+ "acceptance": "QUEEN侧mirror-lag-check连续2h零LAGGING",
+ "forbidden": [
+  "force-push",
+  "改监控脚本阈值"
+ ]
+}
