@@ -246,6 +246,36 @@
    "source_blob": "63949c047190717149ff2abf0ed522e7f2cf25c1",
    "transform": "redact"
   },
+  "outbox/alert_diverge_20261029T164703Z_10_4_4_16.json": {
+   "public_blob": "184d70661ea9907948938422bb9572095e4a4d06",
+   "source_blob": "b47a388bb79ce31d9fc984231ee245ff377d0b4a",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261029T175204Z_10_4_4_16.json": {
+   "public_blob": "40c2d10d3171a9ccd53a8439bf2b951ffbe6e1d1",
+   "source_blob": "9f70513750c2d76901af48fcdbaef71ede008cf9",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261029T185702Z_10_4_4_16.json": {
+   "public_blob": "26a6e46a4aeee12d78abc6a9f1e6420b6bd9891e",
+   "source_blob": "19800e995f672b311d35b88e88e36d7b9ab907f9",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261029T195702Z_10_4_4_16.json": {
+   "public_blob": "b2aae07872a0e49ff1b7738f250efa50da7ee963",
+   "source_blob": "525d7b429ca10545c6732d6ad53172a559be6293",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261029T205703Z_10_4_4_16.json": {
+   "public_blob": "86a8cbd7572271af52ca068d2a23fb5daa19b934",
+   "source_blob": "cbc627e46d9292eabbb54efb303a26a950ae845e",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261029T215708Z_10_4_4_16.json": {
+   "public_blob": "746ddba2b973db9c71d657f095814dec95db2e10",
+   "source_blob": "b6febf64397bf5e96e511e34718806e41e4fe661",
+   "transform": "redact"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -2032,5 +2062,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T00:16:04+08:00"
+ "generated_at": "2026-10-30T06:20:03+08:00"
 }
