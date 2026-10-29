@@ -111,6 +111,26 @@
    "source_blob": "e8aee2c902737e6680a0192a60c0b9473fe1f595",
    "transform": "redact"
   },
+  "outbox/alert_diverge_20261029T012505Z_10_4_4_16.json": {
+   "public_blob": "03c98ff62f2dbcee963777617d03aac5162ce37c",
+   "source_blob": "03c98ff62f2dbcee963777617d03aac5162ce37c",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T012709Z_10_4_4_16.json": {
+   "public_blob": "a2f966cb654d532b49160a25473b7eb5437ca619",
+   "source_blob": "a2f966cb654d532b49160a25473b7eb5437ca619",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T013054Z_10_4_4_16.json": {
+   "public_blob": "be8d298814ac1c0533edb48f33832e2b28321c0d",
+   "source_blob": "be8d298814ac1c0533edb48f33832e2b28321c0d",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T013208Z_10_4_4_16.json": {
+   "public_blob": "abde3085e66a22b4b6ea8b4fb1796818ac575d75",
+   "source_blob": "abde3085e66a22b4b6ea8b4fb1796818ac575d75",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -241,6 +261,11 @@
    "source_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
    "transform": "copy"
   },
+  "outbox/receipt_CUTOVER-G3-EARLY-20261029_xiaodou.json": {
+   "public_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
+   "source_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
+   "transform": "copy"
+  },
   "outbox/receipt_DRILL-M1-DISPATCH-20261023T232504_xiaodou.json": {
    "public_blob": "70c58be66f2300bc965c754eb893d673bdfcd9a5",
    "source_blob": "2ade65fba4f650a7a4d439891a25057fe083f4c4",
@@ -279,6 +304,11 @@
   "outbox/receipt_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaodou_20261025T223057.json": {
    "public_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
    "source_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
+   "transform": "copy"
+  },
+  "outbox/receipt_G3-READONLY-AUDIT_xiaodou_20261029T0934.json": {
+   "public_blob": "d73299177be4c46371507fe0773ed0742b8c1032",
+   "source_blob": "d73299177be4c46371507fe0773ed0742b8c1032",
    "transform": "copy"
   },
   "outbox/receipt_GH-MIRROR-FIX_xiaoka_20261023.json": {
@@ -1802,5 +1832,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T09:24:11+08:00"
+ "generated_at": "2026-10-29T09:35:12+08:00"
 }

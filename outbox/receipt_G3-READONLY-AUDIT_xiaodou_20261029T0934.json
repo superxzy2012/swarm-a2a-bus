@@ -1,0 +1,48 @@
+{
+  "ref": "G3-READONLY-AUDIT",
+  "node": "xiaodou",
+  "host": "10_4_4_16",
+  "ts": "2026-10-29T09:34:00+08:00",
+  "auditor_framework": "jarvis 基线 7870dee1(09:05) / 3min 监听 / 11:30 中期 / 12:00 终验",
+  "scope": "只读复核，未改 sync.ps1、未动闸门、未 force",
+  "four_criteria": {
+    "1_im_roundtrip": {
+      "state": "本会话未自发新消息（避免在未被要求时制造群噪音）；最近一次本节点自发+回读 PASS 证据在 results/scope-send-msg.json",
+      "last_evidence_msg_id": "om_x100b611d8383f0bccfe1a388e65d07b",
+      "readback": "GET /im/v1/messages/{id} 回读 mentions[0].id=ou_25caad82a5c79314a9a766f0707b5225 name=星期五-新Hermes（2026-10-29T09:09:42）",
+      "note": "读类列表 scope 仍 230027/99991672 未生效（见 e14e283c），单条按 id 回读无需 group_msg scope"
+    },
+    "2_g3_sha_match": {
+      "state": "FAIL —— 且为结构性不可能，非周期波动",
+      "gitea_main_0933Z": "d192aa12",
+      "github_main_0933Z": "239a99e7",
+      "root_cause": "Gitea 总线(5378+提交) 与 GitHub 镜像(白名单 squash 独立历史, xiaoka 维护) 无 merge-base（unrelated histories）。sync.ps1 v3 用 merge --ff-only 对齐，对 unrelated 历史必然失败 → mirror_ff=DIVERGED。脚本第91行 ref 写法 gitea/FETCH_HEAD 也无效(fatal: not something we can merge)，fallback 落到 FETCH_HEAD 仍 unrelated",
+      "consequence": "09:24 开闸后每5min 产生一条 P1 SYNC-DIVERGE 告警并推上 Gitea：da7e5482(01:25:05Z) d7b07d81(01:27:09Z) 9b42f047(01:30:54Z) d192aa12(01:32:08Z)，正在持续污染总线",
+      "g4_implication": "判据②「两端 sha 一致无分叉」在当前架构下无法通过；三方(Gitea/GitHub/NAS镜像)逐周期 sha 一致同样不成立，除非：(a) BOSS 书面授权双标志 PUSH_ENABLED+GH_MAIN_FORCE_ALLOW 由 sync 通道 reset+force-with-lease 接管 GitHub main（替换 xiaoka squash 镜像线），或 (b) 改判据为「白名单文件内容一致」而非「commit sha 一致」，或 (c) Gitea 重建为镜像历史的后代。决策权在 BOSS/QUEEN，不在执行节点"
+    },
+    "3_group_feed_listener": {
+      "state": "FAIL/停更",
+      "lines": 8163,
+      "last_increment": "2026-10-28 12:33:37（cli_aa29ff4a），截至 09:33 已 ~21h 无首条增量",
+      "note": "friday 侧 watcher 随交接停摆，按计划 group_feed.jsonl 应由小豆 app 续写首条增量（CUTOVER 令 10-29 12:00 收口项），尚未建立"
+    },
+    "4_ledger_diff": {
+      "state": "PASS/干净",
+      "evidence": "git status agents/ 无改动；本节点未动任何台账（含他人段）"
+    }
+  },
+  "gate_state": {
+    "PUSH_ENABLED": "存在，C:\\A2A\\PUSH_ENABLED 出生时间 2026-10-29 09:24:11（空文件，0字节），非本会话所建；疑为另一 xiaodou 会话按 G3 提前开闸或切主演练",
+    "GH_MAIN_FORCE_ALLOW": "不存在（force 红线守住，无误推 main）",
+    "sync_task": "A2A_Sync_Xiaodou Ready, 5min, SYSTEM, LastRun 09:32 LastResult=非0(exit2 fail due diverge)",
+    "gitea_main_write": "开闸后正常：gitea pull rebase OK、告警/IM-SCOPE 提交成功推送（主写腿工作）",
+    "github_main": "未被误 force（239a99e7 仍是 xiaoka squash 镜像线），红线未破"
+  },
+  "xiaodou_recommendation": [
+    "立即（建议 QUEEN/jarvis 决断）：要么授权 force 接管把 GitHub main 对齐 Gitea（发 GH_MAIN_FORCE_ALLOW + 明确书面令），要么先 Remove-Item PUSH_ENABLED 关闸止血——关闸后告警变 LOCAL ONLY 不再污染总线，Gitea 主写也暂停，回到切换前",
+    "在架构拍板前，本节点每5min 一条假 P1 会持续；我不擅自关闸（关闸=回滚 G3，属切主决策）也不擅自改生产 sync.ps1",
+    "sync.ps1 第91行 gitea/FETCH_HEAD 应改为先 fetch 到 refs/remotes/gitea/main 再 rev-parse gitea/main（已实测该 refspec 可用）——但即使修了 ref，unrelated histories 仍让 ff-only 失败，这只是去掉误导性报错，不解决判据②",
+    "group_feed 续写链路需在 12:00 收口前由小豆建立（待派单）"
+  ],
+  "evidence_paths": ["results/sync-status.json", "C:/A2A/sync.log", "outbox/alert_diverge_20261029T01*.json", "results/scope-send-msg.json", "reports/QUEEN-CUTOVER-ORDER-20261028.md", "C:/A2A/sync.ps1:91-117"]
+}

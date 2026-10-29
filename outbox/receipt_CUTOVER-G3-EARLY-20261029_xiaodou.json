@@ -1,0 +1,83 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "QUEEN/BOSS",
+  "task_ref": "CUTOVER-G3-EARLY-20261029",
+  "ts": "2026-10-29T09:33:59+08:00",
+  "status": "PARTIAL_BLOCKED",
+  "completed": [
+    {
+      "item": "PUSH_ENABLED 开闸",
+      "result": "DONE",
+      "at": "2026-10-29T09:24+08:00",
+      "evidence": "C:\\A2A\\PUSH_ENABLED exists (0 bytes marker)"
+    },
+    {
+      "item": "sync.ps1 升级 v3（Gitea 主写推送 + gh-mirror gitea remote + 无关历史保护 + force 双开关 + 三方 sha 字段）",
+      "result": "DONE",
+      "parse": "PowerShell ParseFile OK",
+      "sha256_16": "0abb41ac1ef1975b",
+      "evidence": "results/xiaodou-sync-v3.ps1",
+      "backup": "C:\\A2A\\sync.ps1.bak-20261029T092331"
+    },
+    {
+      "item": "Gitea main 主写实测",
+      "result": "DONE",
+      "evidence": "周期1: gitea main pushed (1 commits) e14e283c→origin；告警 da7e5482 亦推上 origin；exit 路径正确"
+    },
+    {
+      "item": "分叉检测实测（真实非沙箱）",
+      "result": "DONE_BEHAVIOR_CORRECT",
+      "evidence": "gh-mirror ff-only 拒绝（fatal: refusing to merge unrelated histories）→ 不强推 → 告警上总线 SYNC-DIVERGE outbox/alert_diverge_20261029T013054Z_*.json"
+    },
+    {
+      "item": "swarm-watch 用自有凭据重建（Windows port）",
+      "result": "CODE_DONE_RUNTIME_BLOCKED",
+      "sha256_16": "e215faef0ec4216a",
+      "evidence": "results/xiaodou-swarm-watch.py（本 app cli_aa07a4442a78dbcf，非 friday 凭据）",
+      "runtime": "exit=2 code=230027，证据 results/swarm-watch-last-error.json（含 log_id 20261029093233461BE016A566BE633861）"
+    },
+    {
+      "item": "群内 @ 通知（QUEEN+贾维斯）",
+      "result": "DONE",
+      "message_id": "om_x100b611e6b6b1884ce74fd45f29c864",
+      "mentions_readback": [
+        "星期五-新Hermes ou_25caad8…",
+        "贾维斯-nas ou_080331…"
+      ]
+    }
+  ],
+  "blocked": [
+    {
+      "id": "B1-scope",
+      "owner": "BOSS",
+      "need": "开放平台对 cli_aa07a4442a78dbcf 创建版本并发布+管理员审核（im:message.group_msg / im:chat.members:read 或 im:chat:readonly / drive:drive:readonly）",
+      "raw_error": "http=400 code=230027 msg='Lack of necessary permissions, ext=need scope: im:message.group_msg'；members/drive=99991672",
+      "blocks": [
+        "群监听首条增量（第③项）",
+        "M5 读群巡检"
+      ]
+    },
+    {
+      "id": "B2-github-force",
+      "owner": "BOSS",
+      "need": "书面授权 force-with-lease 用 Gitea main 覆盖 GitHub superxzy2012/swarm-a2a-bus main（两仓无 merge-base；Gitea 5378 提交 vs GitHub 129 压扁镜像提交；当前 gh=239a99e7，NAS cron 01:25 仍在推）",
+      "blocks": [
+        "三方 sha 一致",
+        "GitHub 镜像收口"
+      ],
+      "safety": "双开关 PUSH_ENABLED+GH_MAIN_FORCE_ALLOW，force-with-lease（非裸 force），建议同时通知 xiaoka 停 NAS 镜像 cron"
+    },
+    {
+      "id": "B3-double-master",
+      "owner": "QUEEN",
+      "need": "立即停 friday 侧推送 cron（Gitea main 在 09:24–09:30 仍被外部写入 da7e5482→d7b07d81→9b42f047）",
+      "blocks": [
+        "3 周期三方一致观察",
+        "主写唯一性"
+      ]
+    }
+  ],
+  "three_cycle_note": "在 B1/B2/B3 解除前无法满足『三方 sha 一致 3 周期』；Gitea 单通道主写链路已实测可用。继续观察中，下一周期 ~09:35 自动跑。",
+  "deadline": "2026-10-29T12:00+08:00"
+}

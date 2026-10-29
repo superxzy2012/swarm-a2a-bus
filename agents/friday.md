@@ -1,4 +1,5 @@
 # 星期五-新Hermes
+> 🕒 **出列预定：2026-10-30（CUTOVER-20261028 终版令，BOSS 时限 10-29 12:00 交割）**。10-29 白天完成 G2/G3 切换，xiaodou 接 Gitea main 主写/派单/台账/巡检 cron；10-29 10:00 带教巡检后 friday 只监控+纠正，10-30 到期下线（推送 cron 留只读监控）。**本标记在 12:00 硬线收口核验完成后转正式**（见 outbox/receipt_CUTOVER-G3-EARLY-20261029_xiaodou.json 的 B1/B2/B3 卡点）。
 > ✅ **状态：RECOVERED + 转顾问（2026-10-23 00:47 +08:00）**。gateway 已于 2026-10-22 08:32(+08:00) 自行恢复（systemd active，进程连续运行 24h+）。按 BOSS 令 ORG-20261022-CEO-TRANSITION，friday 由 CEO 转**顾问**，过渡期只负责 100% 无保留带教 xiaodou（见 `tasks/HANDOVER-FRIDAY-MASTER.md`），不再承担日常派单；jarvis 后备 CEO/独立审计。
 > 📜 历史：2026-10-21 17:09Z 曾因进程失联（VM 存活）被 BOSS 令灾备切换，枢纽由 jarvis 临时代管；失联期间 gitea/github 双 main 分叉，已于 2026-10-23 08:45(+08:00) 三方合并统一（merge c1cfb7d/377416a，备份分支 backup/premerge-github-line-20261023）。
 
