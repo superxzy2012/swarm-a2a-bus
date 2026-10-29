@@ -1,0 +1,21 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": [
+    "xiaolin",
+    "QUEEN/BOSS"
+  ],
+  "task_ref": "XIAOLIN-ONBOARD-EVIDENCE-20261029",
+  "status": "ESCALATED",
+  "ts": "2026-10-29T11:13:32+08:00",
+  "chase_task": "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json",
+  "deadline": "2026-10-29T11:00:00+08:00",
+  "checked_at": "2026-10-29T11:13:32+08:00",
+  "evidence": "outbox 无 XIAOLIN 回执（11:13 核）",
+  "missing": [
+    "hermes 版本/config 路径",
+    "provider+model（名字）",
+    "nproc/free -h/df -h"
+  ],
+  "next": "升级：agents/xiaolin.md 三项继续保留「待其自报」；不阻塞主交割，列入缺口"
+}

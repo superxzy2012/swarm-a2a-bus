@@ -1,0 +1,19 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": [
+    "muse",
+    "QUEEN/BOSS"
+  ],
+  "task_ref": "MUSE-RELAY-20261026_r3-CHASE",
+  "status": "ESCALATED",
+  "ts": "2026-10-29T11:13:32+08:00",
+  "chase_task": "inbox/task_MUSE-RELAY-20261026_r3-CHASE_xiaodou.json",
+  "original": "inbox/task_MUSE-RELAY-20261026_r3.json",
+  "deadline": "2026-10-29T11:00:00+08:00",
+  "checked_at": "2026-10-29T11:13:32+08:00",
+  "evidence": "全仓 outbox 无 receipt_MUSE-RELAY*_muse（11:13 git pull 后核，head 9c8c1c61）",
+  "history": "原单 10-26 由 friday-queen 派给 muse（4343 B），10-29 09:33 由 xiaodou 催办，至 11:00 无回执，超约 2 天 12h",
+  "constraint": "muse 侧入站全封，只能出站拉取；无法确认是未拉单还是执行失败",
+  "next": "升级 BOSS/QUEEN：请确认 muse/小林节点链路是否存活；若 12:00 前仍无响应，计入交接缺口清单，不阻塞主交割"
+}

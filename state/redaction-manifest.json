@@ -1441,6 +1441,11 @@
    "source_blob": "3a98ffa92f66b6bd37815e106af593c48e3f5bac",
    "transform": "redact"
   },
+  "outbox/receipt_MUSE-RELAY-r3-CHASE_xiaodou.json": {
+   "public_blob": "b17eadb24f04f13c2bfc9e1f622f66916dc5e020",
+   "source_blob": "b17eadb24f04f13c2bfc9e1f622f66916dc5e020",
+   "transform": "copy"
+  },
   "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.json": {
    "public_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
    "source_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
@@ -1826,6 +1831,11 @@
    "source_blob": "a38d2a70a9eb6f7ab5e06e5be7fe16dd2d9701e8",
    "transform": "redact"
   },
+  "outbox/receipt_XIAOLIN-ONBOARD-EVIDENCE_xiaodou.json": {
+   "public_blob": "f2cdfea956cd2bdb9a435ba945f82caea5df499f",
+   "source_blob": "f2cdfea956cd2bdb9a435ba945f82caea5df499f",
+   "transform": "copy"
+  },
   "outbox/task_GROUP-GOVERNANCE_20261019.json": {
    "public_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
    "source_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
@@ -1892,5 +1902,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T10:57:09+08:00"
+ "generated_at": "2026-10-29T11:14:00+08:00"
 }
