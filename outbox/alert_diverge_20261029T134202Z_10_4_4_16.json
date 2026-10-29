@@ -1,0 +1,10 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-29T13:42:03Z",
+    "alert":  "SYNC-PULL-FAIL",
+    "detail":  "gitea pull --rebase failed on main: git.exe : fatal: unable to access \u0027http://[REDACTED-IP]:3000/anc/a2a-bus.git/\u0027: Empty reply from server\r\n所在位置 C:\\A2A\\sync.ps1:79 字符: 7\r\n+ $po = \u0026 $GIT pull --rebase --autostash origin main 2\u003e\u00261 | Out-String\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (fatal: unable t...ply from server:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n",
+    "severity":  "P1",
+    "dedup":  "same-kind repeats update results/alert-state-\u003ckind\u003e.json only (60min window)"
+}
