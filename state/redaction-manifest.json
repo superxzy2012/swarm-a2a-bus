@@ -1161,6 +1161,16 @@
    "source_blob": "5d3954ca34bc85f894dbffa988f18ef6ba8412e6",
    "transform": "copy"
   },
+  "outbox/receipt_IM-SCOPE-230027-LOG-20261029_friday.json": {
+   "public_blob": "8a22216c45e467ac0224da275799b51c9aa1fa47",
+   "source_blob": "8a22216c45e467ac0224da275799b51c9aa1fa47",
+   "transform": "copy"
+  },
+  "outbox/receipt_IM-SCOPE-PROBE-20261029_xiaodou.json": {
+   "public_blob": "2aa3dd98c3aaeb782a9a4a75d5d303a3e8282861",
+   "source_blob": "2aa3dd98c3aaeb782a9a4a75d5d303a3e8282861",
+   "transform": "copy"
+  },
   "outbox/receipt_JARVIS-SYNC-20261019_jarvis.json": {
    "public_blob": "f725c7076f3e86aca9d030cba8f3967e7a187279",
    "source_blob": "f725c7076f3e86aca9d030cba8f3967e7a187279",
@@ -1792,5 +1802,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T09:02:12+08:00"
+ "generated_at": "2026-10-29T09:24:11+08:00"
 }

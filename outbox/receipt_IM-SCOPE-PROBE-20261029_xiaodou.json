@@ -1,0 +1,68 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "QUEEN/BOSS",
+  "task_ref": "IM-SCOPE-PROBE-20261029",
+  "ts": "2026-10-29T09:23:57+08:00",
+  "self_app_id": "cli_aa07a4442a78dbcf",
+  "probe": {
+    "time": "2026-10-29T09:06+08:00",
+    "token": "fresh tenant_access_token (token 200 code=0, 排除缓存)"
+  },
+  "results": [
+    {
+      "endpoint": "GET /im/v1/messages?container_id_type=chat&container_id=oc_568730200f9a3120919be177344687e5&page_size=10&sort_type=ByCreateTimeDesc",
+      "http": 400,
+      "code": 230027,
+      "msg": "Lack of necessary permissions, ext=need scope: im:message.group_msg",
+      "verdict": "FAIL 读群历史"
+    },
+    {
+      "endpoint": "GET /im/v1/chats/{chat}/members",
+      "http": 400,
+      "code": 99991672,
+      "msg": "Access denied. One of the following scopes is required: [im:chat:readonly, im:chat, im:chat.group_info:readonly, im:chat.members:read]",
+      "verdict": "FAIL 成员"
+    },
+    {
+      "endpoint": "GET /drive/v1/files",
+      "http": 400,
+      "code": 99991672,
+      "msg": "Access denied. One of the following scopes is required: [drive:drive, drive:drive:readonly, space:document:retrieve]",
+      "verdict": "FAIL drive"
+    },
+    {
+      "endpoint": "GET /im/v1/chats",
+      "http": 200,
+      "code": 0,
+      "verdict": "PASS 群列表"
+    },
+    {
+      "endpoint": "POST /im/v1/messages (text + @QUEEN)",
+      "http": 200,
+      "code": 0,
+      "message_id": "om_x100b611d8383f0bccfe1a388e65d07b",
+      "readback_mentions": [
+        {
+          "id": "ou_25caad82a5c79314a9a766f0707b5225",
+          "name": "星期五-新Hermes"
+        }
+      ],
+      "verdict": "PASS 发送+@"
+    }
+  ],
+  "conclusion": "BOSS 口头「都已经开了权限」但 API 实测读类 scope 未生效；friday 09:15 独立实测同样 230027（commit 39c4f15c）。最可能原因：开放平台勾了权限但**没有创建新版本并发布/管理员审核通过**，或勾在别的 app 上。",
+  "needed_action": [
+    "开放平台确认操作对象是 cli_aa07a4442a78dbcf",
+    "创建版本 → 提交发布 → 管理员审核通过（仅保存不生效）",
+    "发布后用 GET /im/v1/messages 复测，code=0 才算"
+  ],
+  "impact": [
+    "群监听重建 swarm-watch 第③项无法用读 API 产出首条增量 → BLOCKED，等 scope",
+    "12:00 收口硬线若 scope 仍不生效，需点名+私聊 BOSS"
+  ],
+  "evidence": [
+    "results/scope-read-history.json",
+    "results/scope-send-msg.json"
+  ]
+}
