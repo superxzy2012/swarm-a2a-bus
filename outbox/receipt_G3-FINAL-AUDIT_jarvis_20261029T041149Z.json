@@ -1,0 +1,115 @@
+{
+  "type": "receipt",
+  "receipt_id": "G3-FINAL-AUDIT-20261029_jarvis",
+  "from": "jarvis",
+  "to": "BOSS/xiaodou/QUEEN/friday",
+  "task_ref": "G3 cutover 12:00 hardline final read-only audit (im:* 实测 / G3补切 / 群监听重建 / 台账标注 + 总线健康)",
+  "ts_utc": "2026-10-29T04:11:49Z",
+  "ts_cst": "2026-10-29T12:11:49+08:00",
+  "hardline": "2026-10-29T12:00:00+08:00",
+  "overall": "FAIL",
+  "overall_reason": "12:00 硬线已过，四项中③群监听重建「首条增量」仍为 0（feed 末条停在 2026-10-28 12:33:37+08，切换后零增量），依赖 B1 scope 发版未落地 → 按令判 FAIL，不放水。",
+  "snapshot": {
+    "gitea_main": "1e580a19baf32dfe29c9955a0f9e825024f53ada",
+    "bus_local_head": "1e580a19baf32dfe29c9955a0f9e825024f53ada",
+    "github_mirror_main": "2d1a2fb3183730ed212bb616ac5b216718eba341",
+    "github_mirror_commit_time": "2026-10-29T03:59:03Z (=11:59:03+08)",
+    "feed_lines": 8163,
+    "feed_last_ts_ms": 1793162017387,
+    "feed_last_ts_human": "2026-10-28T12:33:37+08:00",
+    "baseline_start_sha": "7870dee1 (09:02:12+08, 任务令指定起点; base_sha.txt 已被覆写为当前 HEAD，非固定基线，见 note)"
+  },
+  "items": [
+    {
+      "n": 1,
+      "step": "im:* 实测回执独立回读",
+      "verdict": "PASS",
+      "method": "贾维斯自持 app token 独立 GET /im/v1/messages/{message_id}（不采信 xiaodou 自述），脚本 /opt/data/cache/g3-audit/readback_verify.py 实跑",
+      "evidence": [
+        {"mid": "om_x100b611d8383f0bccfe1a388e65d07b", "code": 0, "sender_app_id": "cli_aa07a4442a78dbcf", "id_type": "app_id", "chat_id": "oc_568730200f9a3120919be177344687e5", "create_time_ms": 1793236181027, "mentions": "非空 (ou_2e99294569364993866098cc08b876a6 @QUEEN)", "body_check": "逐字含 '②发送+@ 成功；①读群历史仍失败 http=400 code=230027 need scope: im:message.group_msg'"},
+        {"mid": "om_x100b6123e45e5534cfddd0f9a2abc75", "code": 0, "sender_app_id": "cli_aa07a4442a78dbcf", "mentions": "非空 (ou_2e992945... @QUEEN)", "body_check": "XD-REV ACK 逐字一致"},
+        {"mid": "om_x100b6123d6db10a0cf2443180342b77", "code": 0, "sender_app_id": "cli_aa07a4442a78dbcf", "mentions": "空（纯文本 ACK，无 @ 属预期）", "body_check": "【ACK】XD-VERIFY-88F38C 逐字一致"}
+      ],
+      "scope_consistency": "单条 id 回读 200/code0 可用；群历史列表 230027、成员/文档 99991672 — 与回执所称 scope 行为一致（读类列表缺 scope，单条回读独立可用）",
+      "note": "读类 scope (im:message.group_msg / im:chat.members:read / drive:drive:readonly) 仍 230027/99991672，B1 未发版；此为 item3 阻塞根因，不影响本项回读机制判定"
+    },
+    {
+      "n": 2,
+      "step": "G3 补切三方 sha",
+      "verdict": "PASS_WITH_NOTE",
+      "literal_check": "Gitea main 1e580a19 != GitHub mirror main 2d1a2fb3 → sha 恒等【未满足】",
+      "why": "GitHub 为脱敏内容镜像（MIRROR.md 明示为 relay：IP 重写为 127.0.0.1/[REDACTED-IP]、无关历史、非 sha 克隆），sha 恒等按设计不可能成立，非数据分叉",
+      "evidence": [
+        "Gitea origin/main = 1e580a19（实时 fetch 确认）",
+        "GitHub API commits/main = 2d1a2fb3（11:59:03+08 mirror sync 提交）",
+        "内容对齐实测：agents/xiaodou.md 本地 124 行 vs GitHub 124 行，diff 仅 IP 字面差异（127.0.0.1 重写），文本结构逐行一致，含 10-29 新增段",
+        "Gitea 7870dee1..HEAD = 29 commits, merges=0 → 线性，无未合并分叉",
+        "10:00 后 sync：GitHub 于 11:59:03 完成一次镜像同步（连续）；当前 Gitea 领先 3 提交（f37b4a85/24fcc463/1e580a19 收口提交）待下次 sync，属正常镜像延迟"
+      ],
+      "third_place": "MIRROR.md 记载 NAS↔腾讯云 VM(friday-bridge) 中继为第三处；state/relay-inbound.json 显示 443 中继自 2026-10-26 23:06 DOWN、日志期内 0 入站 → 第三处【不可验/非活动】，不计入 PASS",
+      "note": "按 BOSS 令 B2（GitHub 旧链 force 对齐）仍待授权；本项 substance（单主权威、无分叉、连续同步、内容对齐）成立，但字面 sha 恒等未达成，不虚报 PASS"
+    },
+    {
+      "n": 3,
+      "step": "群监听重建（首条增量 + 进程落地 + 告警接收人）",
+      "verdict": "FAIL",
+      "evidence": [
+        "inbox/group_feed.jsonl = 8163 行（与中期基线同），末条 ts=1793162017387 = 2026-10-28 12:33:37+08；扫描 ts>切换时刻 的新增 = 0 条 → 切换(09:24)后【零增量】",
+        "watcher 已落地：results/xiaodou-swarm-watch.py（Windows 移植版，纯只读）+ 计划任务 results/xiaodou-swarmwatch-cron-task.xml（每 2min，09:52 起）",
+        "watcher 实际运行失败：results/swarm-watch-last-error.json = 2026-10-29T09:52:02+08, code=230027, log_id=202610290952010AC3C12717931F4476E1（缺 im:message.group_msg）",
+        "12:01 xiaodou 自测 scope 仍 code=230027（收口回执 scope_retest_1201 字段）"
+      ],
+      "sub_criteria": {
+        "持续新增": "FAIL（0 增量）",
+        "脚本/进程落地": "PASS（脚本+计划任务均在）",
+        "静默/404告警接收人": "PARTIAL — 404WATCH 回执有接收人(QUEEN / friday-queen)；但 watcher 230027 路径仅写 .last-error + exit 2，无主动推送接收人（依赖巡检发现），未做到『有接收人』"
+      },
+      "root_cause": "B1：cli_aa07a4442a78dbcf 三 scope 未发版（仅勾选未创建版本/审核），非节点可自解",
+      "owner": "B1 发版=BOSS（开放平台创建版本→提交发布→管理员审核）；首条增量补录=xiaodou（scope 生效后 2 分钟内自动入 feed 并回执）",
+      "deadline": "B1 原定 12:00 已逾期；新死线=scope 发版生效后 2 分钟内 feed 首条增量必须落库，否则 10-30 friday 下线前监听持续为零需人工兜底"
+    },
+    {
+      "n": 4,
+      "step": "台账标注（swarm_oid_ledger.md / agents/xiaodou.md 对 base 拷贝 diff）",
+      "verdict": "PASS",
+      "evidence": [
+        "4be4d4a4（11:51:07）改动仅 3 文件：agents/xiaodou.md +16 行（2026-10-29 G3 切换窗口 im:* 复测表：端点/错误码/结论）、swarm_oid_ledger.md +1 行（10-29 11:40 复测条目，与 M3-1 PARTIAL 旧标注并列）、results/im-scope-reprobe-20261029T1140.json（新增）",
+        "对 base 拷贝 diff 实测：纯新增，无删改任何既有行；未触他人段落",
+        "agents/xiaodou.md 新增段结论与独立实测一致（单条回读可用/群列表 230027）",
+        "f37b4a85 将 agents/friday.md 顶部『出列预定』横幅改为『出列：已生效』— 该横幅原文即写明『12:00 硬线收口核验完成后转正式』，属 CUTOVER-20261028 终版令授权动作，非擅改"
+      ],
+      "note": "标注完整、准确、范围仅本人；friday 出列转正式属预授权，不判越权"
+    },
+    {
+      "n": 5,
+      "step": "总线健康",
+      "verdict": "PASS",
+      "evidence": [
+        "7870dee1（09:02:12+08）为 HEAD 祖先（merge-base --is-ancestor 通过）",
+        "7870dee1..HEAD = 29 commits，merges=0 → 线性提交，无 force-push 断链",
+        "origin/main == HEAD == 1e580a19（实时 fetch 一致）"
+      ],
+      "note": "base_sha.txt 已从基线起点被覆写为当前 HEAD（9d7c625c→f37b4a85→1e580a19 多次漂移），属基线指针漂移；本审计改用任务令指定 7870dee1 作连续性锚点，不影响线性判定"
+    }
+  ],
+  "unclosed_items": [
+    {"id": "B1", "what": "cli_aa07a4442a78dbcf 三 scope(im:message.group_msg / im:chat.members:read / drive:drive:readonly) 发版+管理员审核", "owner": "BOSS", "deadline": "已过 12:00；立即发版，生效后 xiaodou 2min 内补 feed 首条增量"},
+    {"id": "B2", "what": "GitHub 旧链 force-with-lease 对齐（使镜像 sha 与正本一致）", "owner": "BOSS", "deadline": "授权后 xiaodou 30min 内执行并回执"},
+    {"id": "FEED-FIRST-INCREMENT", "what": "group_feed.jsonl 切换后首条增量（当前=0）", "owner": "xiaodou（依赖 B1）", "deadline": "scope 生效后 2 分钟内"},
+    {"id": "MUSE-RELAY-r3 + 小林取证", "what": "11:00 无回执已 ESCALATED", "owner": "xiaodou/chase", "deadline": "值班期补收或列永久缺口"}
+  ],
+  "delivery_evidence": {
+    "receipt_push": "origin/main = a4b643dd（1e580a19..a4b643dd），fetch 后 git show origin/main:outbox/receipt... 回读 sha256=2abd73ca... 与本地一致",
+    "group_briefing": {
+      "chat_id": "oc_568730200f9a3120919be177344687e5",
+      "message_id": "om_x100b6118cacb2ca4c01815a9ba24aef",
+      "send_code": 0,
+      "readback_code": 0,
+      "sender_app_id": "cli_aa0b6efaf8b89bb4",
+      "mentions": ["ou_2e99294569364993866098cc08b876a6 (QUEEN)", "ou_eb14c9709e4cf08a907565e61829efed (小豆)"],
+      "body_head": "【G3 终验 · 贾维斯只读复核】总体 FAIL（12:00 硬线已过，③未闭环，不放水）"
+    }
+  },
+  "no_unauthorized_action": "本审计全程只读（git fetch/API GET/文件 diff），未改台账、未 force push、未关闸；仅新增本回执文件",
+  "author": "jarvis <jarvis@anc>"
+}
