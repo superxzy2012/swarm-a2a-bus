@@ -181,6 +181,11 @@
    "source_blob": "01ee9e9a32252e2f77180f5fcf488d891eb51502",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261029T042703Z_10_4_4_16.json": {
+   "public_blob": "5bb3a73e615d53ca86bda3cda44f59acb9875243",
+   "source_blob": "c5ad4cd28a726b06befe6d37ef8710951de5f68e",
+   "transform": "redact"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -374,6 +379,11 @@
   "outbox/receipt_G3-FINAL-AUDIT_jarvis_20261029T041149Z.json": {
    "public_blob": "cc4127f2fdd54caafc8da784adc95c36d5fc5a86",
    "source_blob": "cc4127f2fdd54caafc8da784adc95c36d5fc5a86",
+   "transform": "copy"
+  },
+  "outbox/receipt_G3-FINAL-DUTY-20261029_xiaodou.json": {
+   "public_blob": "5bb33fba5ce99fe6ec2f2b9aec2f7e56d37588c7",
+   "source_blob": "5bb33fba5ce99fe6ec2f2b9aec2f7e56d37588c7",
    "transform": "copy"
   },
   "outbox/receipt_G3-JARVIS-CHECK-SUPPORT-20261029_friday.json": {
@@ -1296,6 +1306,11 @@
    "source_blob": "f725c7076f3e86aca9d030cba8f3967e7a187279",
    "transform": "copy"
   },
+  "outbox/receipt_JARVIS-WATCH-CRON-CONFIRM_20261029.json": {
+   "public_blob": "ec8747ceb9db41e150d85439024dfa0fd760788b",
+   "source_blob": "ec8747ceb9db41e150d85439024dfa0fd760788b",
+   "transform": "copy"
+  },
   "outbox/receipt_M0-ARCH-IDENTITY-BUS_xiaodou.json": {
    "public_blob": "2f035f677040f99aad38339256d903ab113eb157",
    "source_blob": "cd62cc9d92b00a318b7d16ff41f1143a39360e11",
@@ -1932,5 +1947,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T04:16:34Z"
+ "generated_at": "2026-10-29T12:27:04+08:00"
 }

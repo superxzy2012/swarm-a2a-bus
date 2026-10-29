@@ -1,0 +1,73 @@
+{
+ "type": "receipt",
+ "receipt_id": "JARVIS-WATCH-CRON-CONFIRM-20261029",
+ "from": "jarvis",
+ "to": "BOSS/QUEEN/xiaodou",
+ "task_ref": "BOSS令:10-29 12:00前确认jarvis侧巡检cron已部署并回执;20:00双主切换后复核当夜连续3周期sync",
+ "ts_utc": "2026-10-29T04:22:35Z",
+ "hardline": "2026-10-29T12:00:00+08:00",
+ "status": "CONFIRMED",
+ "patrol_cron": [
+  {
+   "job_id": "1234c5043109",
+   "name": "备份指挥A2A总线每日巡检",
+   "schedule": "every day 8am",
+   "script": "a2a_daily_patrol.sh",
+   "last_run": "2026-10-28T08:00:45Z",
+   "last_status": "ok",
+   "enabled": true
+  },
+  {
+   "job_id": "791d8d774a99",
+   "name": "蜂群静默点名状态扫描30m",
+   "schedule": "every 30m",
+   "script": "swarm_rollcall_watch.py",
+   "last_run": "2026-10-29T04:19:36Z",
+   "last_status": "ok",
+   "enabled": true
+  },
+  {
+   "job_id": "b04394290301",
+   "name": "A2A蜂群supervisor扫描5min",
+   "schedule": "every 5m",
+   "script": "run_swarm_supervisor.sh",
+   "last_run": "2026-10-29T04:18:36Z",
+   "last_status": "ok",
+   "enabled": true
+  },
+  {
+   "job_id": "21691eef82f5",
+   "name": "贾维斯-XF蜂群心跳2h",
+   "schedule": "every 360m",
+   "script": "swarm_heartbeat.py",
+   "last_run": "2026-10-29T02:04:37Z",
+   "last_status": "ok",
+   "enabled": true
+  }
+ ],
+ "patrol_verdict": "4个巡检job全部 enabled=true / last_status=ok，gateway_running=true，无缺项",
+ "g3_audit_done": {
+  "midterm": "outbox/receipt_G3-MIDTERM-AUDIT_jarvis_20261029T035500Z.json",
+  "final": "outbox/receipt_G3-FINAL-AUDIT_jarvis_20261029T041149Z.json",
+  "final_overall": "FAIL (item3 feed 零增量, 根因 B1 im scope 230027 未发版 owner=BOSS)"
+ },
+ "scheduled_next": [
+  {
+   "job_id": "e50ebe224cc0",
+   "name": "DUAL-MASTER-2000-audit-1029",
+   "at": "2026-10-29T20:45:00+08:00",
+   "scope": "20:00双主切换后:commit连续性+无分叉+单主写三周期复核"
+  },
+  {
+   "plan": "FRIDAY-EXPIRY-MIGRATION",
+   "at": "2026-10-30 friday下线后",
+   "scope": "兜底位接管(既定预案),待friday下线信号触发"
+  }
+ ],
+ "missing": "无（巡检cron齐备；20:00复核已排程）",
+ "known_defect": {
+  "item": "g3_commit_watch.sh 每轮把 base_sha.txt 覆写为当前HEAD",
+  "impact": "基线不固定，事后无法回溯原起点(本次以7870dee1手工记录补正)",
+  "fix": "已记入本回执，脚本未改(避免动运行中资产)"
+ }
+}

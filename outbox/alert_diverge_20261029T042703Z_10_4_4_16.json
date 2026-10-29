@@ -1,0 +1,10 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-29T04:27:03Z",
+    "alert":  "SYNC-PULL-FAIL",
+    "detail":  "gitea pull --rebase failed on main: git.exe : From http://[REDACTED-IP]:3000/anc/a2a-bus\r\n所在位置 C:\\A2A\\sync.ps1:72 字符: 7\r\n+ $po = \u0026 $GIT pull --rebase --autostash origin main 2\u003e\u00261 | Out-String\r\n+       ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (From http://[REDACTED-IP]:3000/anc/a2a-bus:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n * branch              main       -\u003e FETCH_HEAD\r\nwarning: fetch updated the current branch head.\r\nfast-forwarding your working tree from\r\ncommit 5d9cb1fa90420188f06102fc33affe13c2cab6d1.\r\nerror: The following untracked working tree files would be overwritten by merge:\r\n\toutbox/receipt_G3-FINAL-DUTY-20261029_xiaodou.json\r\n\tstate/.swarm_watch_xiaodou_flag\r\nPlease move or remove them before you merge.\r\nAborting\r\nfatal: Cannot fast-forward your working tree.\r\nAfter making sure that you saved anything precious from\r\n$ git diff 5d9cb1fa90420188f06102fc33affe13c2cab6d1\r\noutput, run\r\n$ git reset --hard\r\nto recover.\r\n",
+    "severity":  "P1",
+    "dedup":  "same-kind repeats update results/alert-state-\u003ckind\u003e.json only (60min window)"
+}
