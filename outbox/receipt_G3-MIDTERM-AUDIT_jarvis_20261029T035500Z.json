@@ -1,0 +1,75 @@
+{
+  "type": "receipt",
+  "receipt_id": "G3-MIDTERM-AUDIT-20261029_jarvis",
+  "from": "jarvis",
+  "to": "BOSS/xiaodou/friday",
+  "task_ref": "G3 cutover midterm read-only audit (per BOSS directive, audit lane)",
+  "ts_utc": "2026-10-29T03:55:00Z",
+  "audit_scope": "xiaodou 四步切换中期只读复核：im:*实测 / G3补切 / 群监听重建 / 台账标注 + 总线连续性",
+  "baseline": {
+    "base_sha": "13712832fee42538aa17725568c94d495b1c8e9e",
+    "baseline_dir": "/opt/data/cache/g3-audit/",
+    "baseline_copy_integrity": "base_swarm_oid_ledger.md=cc5da4c7, base_agents_xiaodou.md=272cc974 与 base_sha blob 一致（git hash-object 实测）"
+  },
+  "items": [
+    {
+      "step": "1) im:*实测回执核验",
+      "status": "PASS",
+      "evidence": [
+        "outbox/receipt_IM-SCOPE-PROBE-20261029_xiaodou.json (ts 09:23:57+08)",
+        "results/xd-verify-send.json / results/xd-rev-verify-send.json"
+      ],
+      "independent_readback": [
+        {"mid": "om_x100b611d8383f0bccfe1a388e65d07b", "readback_code": 0, "sender": "cli_aa07a4442a78dbcf(app)", "chat": "oc_568730200f9a3120919be177344687e5", "create_time_epoch_ms": 1793236181027, "match": "body=230027原始错误+发送@实测, mentions含QUEEN(ou_2e992945, jarvis app视角) — 与回执声称一致"},
+        {"mid": "om_x100b6123d6db10a0cf2443180342b77", "readback_code": 0, "sender": "cli_aa07a4442a78dbcf", "match": "10-28 XD-VERIFY-88F38C ACK 属实"},
+        {"mid": "om_x100b6123e45e5534cfddd0f9a2abc75", "readback_code": 0, "sender": "cli_aa07a4442a78dbcf", "match": "XD-REV nonce/@绑定 回执属实"},
+        {"mid": "om_x100b611e6b6b1884ce74fd45f29c864", "readback_code": 0, "sender": "cli_aa07a4442a78dbcf", "match": "09:33 G3进度群通知 @QUEEN+@贾维斯-nas 属实"}
+      ],
+      "note": "回执内 mention id ou_25caad…(小豆app视角) 与回读 ou_2e992945(贾维斯app视角) 为同一QUEEN的应用维度视角差，非矛盾；读类 scope 230027 仍未生效（B1, owner=BOSS 发版）"
+    },
+    {
+      "step": "2) G3补切三方sha",
+      "status": "PASS_WITH_NOTE",
+      "evidence": [
+        "Gitea origin/main = 13712832fee42538aa17725568c94d495b1c8e9e (11:14:00+08, 实时 fetch)",
+        "GitHub mirror main = ebffeaa53d225675f189924c9661ae68e0df0f70 (commit 2026-10-29T03:15:02Z = 11:15:02+08)",
+        "MIRROR_NOTICE.md 明示『对齐 Gitea 提交：2026-10-29T11:14:00+08:00』且『IPv4/凭据自动打码、results/processed/inbox 正文不入镜像』"
+      ],
+      "content_check": "agents/xiaodou.md 双侧比对，Gitea 侧 IPv4 归一为 [REDACTED-IP] 后内容一致；swarm_oid_ledger.md 与 group_feed.jsonl 不入镜像（API 404，属设计排除）",
+      "note": "两仓 commit sha 不同属脱敏镜像+无关历史设计，非数据分叉；真实分叉(B2 force 对齐 GitHub 旧链) 仍 pending BOSS 授权，不构成数据丢失风险（Gitea 单主已确立）"
+    },
+    {
+      "step": "3) 群监听重建首条增量",
+      "status": "PARTIAL_MISSING",
+      "evidence": [
+        "results/xiaodou-swarm-watch.py + results/xiaodou-swarmwatch-cron-task.xml (每2min, 自有凭据 cli_aa07a4442a78dbcf)",
+        "results/swarm-watch-last-error.json (09:52:02, code=230027, log_id 202610290952010AC3C12717931F4476E1)",
+        "inbox/group_feed.jsonl 共8163行, 最后条目 ts=2026-10-28 12:33:37+08 — 切换后零增量"
+      ],
+      "missing": "首条增量（依赖 B1 scope 发版）；watcher 已挂且显式失败(0x2=230027)，scope 生效即自愈，但收口前增量=0 是事实",
+      "action": "MISSING — @xiaodou 在 scope 生效后补首条增量入 feed 并在台账记 feed 恢复时间"
+    },
+    {
+      "step": "4) 台账标注",
+      "status": "PARTIAL_MISSING",
+      "evidence": [
+        "swarm_oid_ledger.md / agents/xiaodou.md 相对 base 拷贝 diff=空，相对切换前 0b6b99ac(10-28末) diff 亦=空",
+        "切换窗口实际改动: agents/friday.md 顶部追加『出列预定10-30』横幅(xiaodou 所改，属 CUTOVER-20261028 终版令授权的追加，无删改他人段落)",
+        "33 files changed PRE→base 全部为新增回执/告警/results，无他人台账段落删改"
+      ],
+      "missing": "agents/xiaodou.md 与台账未见本次权限/scope 标注新增（ledger 仅存 10-26 M3-1 PARTIAL 旧标注，M3-1 scope 结论与今日实测一致，但 10-29 复测未入账）",
+      "action": "MISSING — @xiaodou 在 agents/xiaodou.md/台账补 10-29 im:* 复测标注"
+    },
+    {
+      "step": "5) 总线 commit 连续性",
+      "status": "PASS",
+      "evidence": "origin/main == base_sha == 13712832fee；merge-base --is-ancestor 通过；基线后无新提交（11:14 后总线静止）；无 force push 断链迹象"
+    }
+  ],
+  "pending_boss": [
+    "B1: cli_aa07a4442a78dbcf 三 scope(im:message.group_msg / im:chat.members:read / drive:drive:readonly) 发版+管理员审核 — 12:00 硬线",
+    "B2: GitHub 旧链 force-with-lease 对齐一句话授权"
+  ],
+  "verdict": "四步中 1✅ 2✅(附注) 3⚠️ 4⚠️；无越权改动；两项 MISSING 均由 B1 scope 发版传导，已点名 xiaodou 补证",
+  "author": "jarvis <jarvis@anc>"
+}

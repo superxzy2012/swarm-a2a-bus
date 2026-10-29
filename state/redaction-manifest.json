@@ -361,6 +361,11 @@
    "source_blob": "649fd73563f9b6d7ecb9747d40b5e42d874727de",
    "transform": "copy"
   },
+  "outbox/receipt_G3-MIDTERM-AUDIT_jarvis_20261029T035500Z.json": {
+   "public_blob": "8550318ea77b683eecb223a2ed41999f79175d1e",
+   "source_blob": "8550318ea77b683eecb223a2ed41999f79175d1e",
+   "transform": "copy"
+  },
   "outbox/receipt_G3-PAUSE-ACK-20261029_friday.json": {
    "public_blob": "999f5363bdedfc720fb5872955d142581e2fac6a",
    "source_blob": "999f5363bdedfc720fb5872955d142581e2fac6a",
@@ -1902,5 +1907,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T11:14:00+08:00"
+ "generated_at": "2026-10-29T03:39:20Z"
 }
