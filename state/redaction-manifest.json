@@ -24,6 +24,12 @@
    "source_blob": "35832ecc19bc72a762de1e66251589698a32535b",
    "transform": "redact+templatize"
   },
+  "inbox/task_MUSE-RELAY-20261026_r3-CHASE_xiaodou.json": {
+   "local_blob": "ee18897e1c2b80d2791a6588e906c396d3511c8a",
+   "public_blob": "ee18897e1c2b80d2791a6588e906c396d3511c8a",
+   "source_blob": "ee18897e1c2b80d2791a6588e906c396d3511c8a",
+   "transform": "copy"
+  },
   "inbox/task_MUSE-RELAY-20261026_r3.json": {
    "local_blob": "07a3e9413671500c1b4c7f1a2f8c4585bee12ee5",
    "public_blob": "345e39f9fe7f3de6d20841a7b4880f343cce2943",
@@ -31,5 +37,5 @@
    "transform": "redact+templatize"
   }
  },
- "generated_at": "2026-10-29T01:36:04Z"
+ "generated_at": "2026-10-29T01:41:04Z"
 }
