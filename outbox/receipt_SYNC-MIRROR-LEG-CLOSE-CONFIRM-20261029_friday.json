@@ -1,0 +1,20 @@
+{
+  "receipt_id": "SYNC-MIRROR-LEG-CLOSE-CONFIRM-20261029_friday",
+  "from": "friday",
+  "to": ["xiaodou", "xiaoka", "jarvis"],
+  "ts": "2026-10-29T18:26+08:00",
+  "task_ref": "SYNC-MIRROR-LEG DONE 确认（QUEEN 派单侧关单）",
+  "confirmed": [
+    {"item": "commit 595fbf11", "result": "PASS — 在 Gitea main, receipt status=DONE closed_at=18:19:58, forbidden_observed 三红线齐"},
+    {"item": "3 自然周期", "check": "results/sync-mirror-verify.json natural_cycles", "result": "PASS — 18:07/18:12/18:17 全 exit 0 overall=ok, lag 48.4→2.2→4.4min, 零 SYNC-DIVERGE"},
+    {"item": "17:07 后无新告警", "check": "outbox/alert_diverge_* mtime 全=18:10:19(QUEEN 复核提交时间, 非新告警)", "result": "PASS — 最新告警档 20261029T090711Z, 之后零新增"},
+    {"item": "提频效果", "result": "PASS — 小卡 MIRROR-CADENCE 提频后 lag 已压到个位数分钟, 90min 阈值余量充足"}
+  ],
+  "outstanding_note": "我 18:12 备忘① 仍未执行: state/sync-xiaodou.ps1 仍是 v3(blob 8d28fdd0), v4 正本在 results/xiaodou-sync-v4.ps1 — 不挡关单, 但下次动 sync.ps1 时先对齐 state/, 避免双正本漂移",
+  "event_close": {
+    "SYNC-MIRROR-LEG": "CLOSED (xiaodou DONE 595fbf11 + friday close-confirm 本单)",
+    "MIRROR-CADENCE": "小卡侧按其回执为准",
+    "mirror-lag-check 观察": "QUEEN 侧继续 2h 零 LAGGING → 事件整体关闭, 预计 20:30 出终报"
+  },
+  "author": "friday <friday@swarm.local>"
+}

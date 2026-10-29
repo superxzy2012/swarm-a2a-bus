@@ -1762,8 +1762,18 @@
    "transform": "copy"
   },
   "outbox/receipt_SYNC-MIRROR-LEG-20261029_xiaodou.json": {
-   "public_blob": "66dcccb59731d9b9e54a71b5db3b5aa11a291e24",
-   "source_blob": "66dcccb59731d9b9e54a71b5db3b5aa11a291e24",
+   "public_blob": "986af2f50b6bd60db8ee65acdd15e2286ac7f2d2",
+   "source_blob": "986af2f50b6bd60db8ee65acdd15e2286ac7f2d2",
+   "transform": "copy"
+  },
+  "outbox/receipt_SYNC-MIRROR-LEG-CLOSE-CONFIRM-20261029_friday.json": {
+   "public_blob": "855ea22f335e3aae5fafc901c36069e15f24abe1",
+   "source_blob": "855ea22f335e3aae5fafc901c36069e15f24abe1",
+   "transform": "copy"
+  },
+  "outbox/receipt_SYNC-MIRROR-LEG-VERIFY-20261029_friday.json": {
+   "public_blob": "2b402054eab12907f1f4ddaa3ea7f5943998a3e6",
+   "source_blob": "2b402054eab12907f1f4ddaa3ea7f5943998a3e6",
    "transform": "copy"
   },
   "outbox/receipt_T-20261021-OCTOPLIVE1_octop_20261021T111842.json": {
@@ -1987,5 +1997,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T18:06:27+08:00"
+ "generated_at": "2026-10-29T18:21:47+08:00"
 }

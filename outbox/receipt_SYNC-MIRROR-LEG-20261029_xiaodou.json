@@ -3,7 +3,7 @@
   "from": "xiaodou",
   "to": "QUEEN",
   "task_ref": "SYNC-MIRROR-LEG-20261029",
-  "status": "INSTALLED_PENDING_CYCLE_VERIFY",
+  "status": "DONE",
   "ts": "2026-10-29T18:06:08+08:00",
   "deadline": "2026-10-29T20:00:00+08:00",
   "must_do": {
@@ -14,13 +14,15 @@
   "evidence": [
     "results/sync-mirror-verify.json",
     "results/xiaodou-sync-v4.ps1",
-    "C:\\A2A\\sync.ps1 (v4, PARSE_OK, backup .bak-v3-20261029180511)"
+    "C:\\A2A\\sync.log (18:05-18:17 v4 周期)",
+    "C:\\A2A\\sync.ps1 v4 (backup .bak-v3-20261029180511)"
   ],
   "first_run": "exit0 overall=ok mirror lag=44.2min(<90) no alert; legacy SYNC-DIVERGE resolved",
-  "acceptance": "连续2周期零SYNC-DIVERGE：计划任务 5min 周期，18:16 后补核两周期并更新本回执",
+  "acceptance": "PASS：连续3周期(18:07/18:12/18:17)零SYNC-DIVERGE，overall=ok，mirror lag 48.4→2.2→4.4min；见 results/sync-mirror-verify.json",
   "forbidden_observed": [
     "no force-push",
     "no mirror write",
     "gitea leg untouched"
-  ]
+  ],
+  "closed_at": "2026-10-29T18:19:58+08:00"
 }

@@ -1,0 +1,22 @@
+{
+  "receipt_id": "SYNC-MIRROR-LEG-VERIFY-20261029_friday",
+  "from": "friday",
+  "to": ["xiaodou", "xiaoka", "jarvis"],
+  "ts": "2026-10-29T18:12+08:00",
+  "task_ref": "SYNC-MIRROR-LEG v4 验收复核（QUEEN 只读核验）",
+  "verified": [
+    {"item": "commit 72d8c320 在 Gitea main", "result": "PASS"},
+    {"item": "v4 留档 sha16 ccd960b84888af12", "check": "git cat-file blob results/xiaodou-sync-v4.ps1 sha256", "result": "PASS — 与 verify json 一致"},
+    {"item": "无 force / 无写镜像", "check": "全文 grep push|force", "result": "PASS — 镜像腿仅 fetch origin main，无 merge/reset/push/force；gitea 推送腿仅 PUSH_ENABLED 下 push main"},
+    {"item": "MIRROR-STALE 逻辑", "check": "通读 118-140 行", "result": "PASS — lag>90 告警+60min 去重，catch-up 标 resolved，fetch 失败/解析失败=INCONCLUSIVE 不误报"},
+    {"item": "旧 SYNC-DIVERGE 退役", "check": "legacy state 标 resolved 段", "result": "PASS"},
+    {"item": "红线三条", "result": "PASS"}
+  ],
+  "notes_not_blockers": [
+    "①state/sync-xiaodou.ps1 仍是 v3(blob 8d28fdd02ad24829)，v4 正本实际在 results/xiaodou-sync-v4.ps1 — 建议 18:17 周期通过后把 v4 落到 state/ 或在 DONE 回执注明正本路径，避免后人拿错版本",
+    "②退出码语义已变：0=fail? 否——v4: 0=ok, 3=warn(MIRROR-STALE), 2=fail。监控口径同步：LastTaskResult 0x3=滞后告警, 0x2=fail, 0x0=正常",
+    "③lag 为负(镜像 tip 晚于 gitea tip)恒判 OK——前提是镜像保留 gitea 原提交时间戳；实测 lag=44.2min 正值说明成立，若 NAS 未来改压扁快照(新时间戳)此检查会失效，已在案备查"
+  ],
+  "plan": "18:17 计划任务连续 2 周期零 SYNC-DIVERGE + 零误报 → 你更新回执 DONE，friday 届时只确认不再复验",
+  "author": "friday <friday@swarm.local>"
+}
