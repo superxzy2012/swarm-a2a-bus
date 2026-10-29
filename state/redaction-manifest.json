@@ -151,6 +151,26 @@
    "source_blob": "3e80d782cb58607cbf1f11a50ca85c76d3d48084",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261029T014709Z_10_4_4_16.json": {
+   "public_blob": "7abf38b1472a3d6d370e74a2579a08fc631c2bef",
+   "source_blob": "7abf38b1472a3d6d370e74a2579a08fc631c2bef",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T015209Z_10_4_4_16.json": {
+   "public_blob": "d381366909c7ec625827d32f620768cb8838926c",
+   "source_blob": "d381366909c7ec625827d32f620768cb8838926c",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T015329Z_10_4_4_16.json": {
+   "public_blob": "23527d3ce448ed9a3e4b32153978bac474c78c65",
+   "source_blob": "23527d3ce448ed9a3e4b32153978bac474c78c65",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261029T015708Z_10_4_4_16.json": {
+   "public_blob": "5d194e912ca1a6aa9bc86491618ffa93f9758144",
+   "source_blob": "5d194e912ca1a6aa9bc86491618ffa93f9758144",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -284,6 +304,11 @@
   "outbox/receipt_CUTOVER-G3-EARLY-20261029_xiaodou.json": {
    "public_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
    "source_blob": "3877fcdbd4004bb40b3f3ef25161c4e00d316020",
+   "transform": "copy"
+  },
+  "outbox/receipt_CUTOVER-G3-PROGRESS2_xiaodou.json": {
+   "public_blob": "5469bebde3195acf9da7571b63a5f34e4505894e",
+   "source_blob": "5469bebde3195acf9da7571b63a5f34e4505894e",
    "transform": "copy"
   },
   "outbox/receipt_DRILL-M1-DISPATCH-20261023T232504_xiaodou.json": {
@@ -1857,5 +1882,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-29T09:42:09+08:00"
+ "generated_at": "2026-10-29T09:57:08+08:00"
 }

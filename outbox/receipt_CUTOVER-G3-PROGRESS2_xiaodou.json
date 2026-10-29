@@ -1,0 +1,47 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "to": "QUEEN/BOSS",
+  "task_ref": "CUTOVER-G3-PROGRESS2-20261029",
+  "ts": "2026-10-29T09:52:56+08:00",
+  "status": "GITEA_MASTER_ACTIVE_BOTH_BOSS_BLOCKS_OPEN",
+  "g3_state": {
+    "gate": "PUSH_ENABLED exists since 09:24",
+    "auto_cycles": "09:37 / 09:42 / 09:47 三个自主周期，均 gitea pull OK、主写链路活；gh 侧因无关历史拒绝 ff 且不强推（行为正确）",
+    "gitea_sha_stable": "QUEEN 09:40 G3-PAUSE-ACK 后其推送 cron 已 gate(sync.pause)；09:42→09:47 gitea main 无外部写入（单主态达成，待贾维斯只读复核）",
+    "gh_note": "GitHub swarm-a2a-bus main 在 NAS 镜像 cron 推动：21d3665→239a99e7→2a34ef61→ed51da2d（仍在压扁快照式推送）；BOSS 授权 force 后需同步让小卡停 NAS 镜像 cron，否则会继续制造假镜像提交",
+    "queen_receipt": "outbox/receipt_G3-PAUSE-ACK-20261029_friday.json（独立复核 merge-base=EMPTY，与我结论一致；force 立场无异议但权在 BOSS）"
+  },
+  "watcher": {
+    "script": "results/xiaodou-swarm-watch.py（本 app 自有凭据，非 friday）",
+    "task": "A2A_SwarmWatch_Xiaodou 每 2min / SYSTEM / Highest（results/xiaodou-swarmwatch-cron-task.xml）",
+    "last_task_result": "0x2 = 脚本显式 exit 2（已排除 0x80070002 路径问题：真实 python 路径含工具遮罩 ****，必须用 Get-ChildItem 解析后注册，不能手抄显示串）",
+    "last_error": "230027 @ 2026-10-29T09:52:02 results/swarm-watch-last-error.json",
+    "feed_current_mtime": "inbox/group_feed.jsonl 最后写入 10-28 12:47（friday 管道停后无人写，10.6MB）",
+    "auto_recovery": "scope 一生效，下一个 2min tick 自动补写增量并更新 FLAG，无需改动；首条我侧增量即验收物"
+  },
+  "chase_sent": [
+    "inbox/task_MUSE-RELAY-20261026_r3-CHASE_xiaodou.json（commit 368a888f，deadline 11:00）",
+    "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json（deadline 11:00）"
+  ],
+  "boss_blocks": [
+    {
+      "id": "B1",
+      "decision": "BRIDGE-SCOPE：cli_aa07a4442a78dbcf 发版开通 im:message.group_msg 等 3 scope（09:49 复测仍 230027）",
+      "deadline": "12:00",
+      "default": "QUEEN 既定 C 案：总线记缺口"
+    },
+    {
+      "id": "B2",
+      "decision": "一句话原话授权 force-with-lease 把 GitHub superxzy2012/swarm-a2a-bus main 对齐到 Gitea main（双开关已就位：PUSH_ENABLED + 待建 GH_MAIN_FORCE_ALLOW）",
+      "deadline": "12:00",
+      "default": "不放第二开关，维持只 Gitea 正本；另需通知小卡停 NAS 镜像 cron"
+    }
+  ],
+  "ledger": "agents/friday.md 已加『10-30 出列预定』，12:00 收口核验后转正式",
+  "next": [
+    "10:00 巡检+日报带教（我主操）",
+    "11:00 chase 超时判定",
+    "12:00 收口/按默认案执行+总结+（需要时）私聊 BOSS"
+  ]
+}
