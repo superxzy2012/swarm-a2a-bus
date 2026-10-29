@@ -231,6 +231,11 @@
    "source_blob": "026ef8c88fc0a48f051cad8f137fa694b28bbe85",
    "transform": "redact"
   },
+  "outbox/receipt_BRIDGE-SCOPE-followup-20261029_QUEEN.json": {
+   "public_blob": "d203a267e1da324b471bfc928b543630dd19fb38",
+   "source_blob": "d203a267e1da324b471bfc928b543630dd19fb38",
+   "transform": "copy"
+  },
   "outbox/receipt_CONNECTTEST_muse.json": {
    "public_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
    "source_blob": "93e2720c7b02052ba656f7239079cbea2a4906a6",
@@ -1787,5 +1792,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-28T12:45:08+08:00"
+ "generated_at": "2026-10-29T09:02:12+08:00"
 }

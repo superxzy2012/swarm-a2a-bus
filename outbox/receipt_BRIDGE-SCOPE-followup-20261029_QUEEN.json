@@ -1,0 +1,18 @@
+{
+  "task": "BRIDGE-SCOPE-followup-20261029",
+  "subject": "飞书群「群→总线桥接」读权限 A/B/C 决策跟进",
+  "checked_at": "2026-10-29T09:01:57+08:00",
+  "boss_replied": false,
+  "checked_sources": [
+    "hermes gateway/agent logs (grep group_msg|桥接|开给小豆|开给贾维斯|都不开, 10-28 11:39 之后无 BOSS 命中)",
+    "feishu-history DM oc_e6dcd3596842135b8479e5d75f8d7fd1 -n50 since 10-28 11:00 (11 条, 0 命中 A/B/C)",
+    "feishu-history group oc_568730200f9a3120919be177344687e5 grep group_msg|桥接|scope|开给|都不开 (0 条 BOSS 回复)"
+  ],
+  "original_request_dm_id": "om_x100b6122a81c98a0ce8dfeecdc82398",
+  "action_taken": "boss_not_replied -> sent reminder DM to BOSS with options A/B/C and deadline 2026-10-29 12:00; no group messages posted",
+  "reminder_dm_id": "om_x100b611de11504b8ddedec9c4c4ae1e",
+  "message_id": "om_x100b611de11504b8ddedec9c4c4ae1e",
+  "deadline": "2026-10-29T12:00:00+08:00",
+  "on_no_reply_by_deadline": "treat as C: record handover gap in bus state/open-decisions.md; group->bus bridging stops after QUEEN offline 10-30",
+  "author": "QUEEN <queen@swarm.local>"
+}
