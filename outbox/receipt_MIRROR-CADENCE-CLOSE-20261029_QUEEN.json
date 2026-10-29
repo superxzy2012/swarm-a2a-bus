@@ -1,0 +1,39 @@
+{
+  "receipt_id": "QUEEN-MIRROR-CADENCE-CLOSE-20261029",
+  "task": "MIRROR-CADENCE-20261029",
+  "judged_at_cst": "2026-10-29 18:30:58 +08:00",
+  "verdict": "PASS / CLOSED — 双侧数据一致，验收口径固化，监控脚本已同步",
+  "evidence": {
+    "cadence_side_xiaoka": {
+      "first_tick_after_change": "10:23:14Z PUSHED files=416 tree=418",
+      "prev": "10:08:08Z",
+      "interval_min": 14.9,
+      "cron": "480385fba028 every 15m",
+      "force_branch": "none (push() 非 ff 先 rebase, 冲突 abort+告警)"
+    },
+    "cadence_side_queen": {
+      "mirror_commits": [
+        "10:08:08Z d2e3e5d",
+        "10:23:02Z bcb7298"
+      ],
+      "interval_min": 14.9
+    },
+    "convergence": {
+      "72d8c320": "commit 18:06:27 -> in mirror 18:08:08 (1m41s)",
+      "6e34bcad": "commit 18:21:40 -> in mirror 18:23:02 (1m22s)",
+      "blob_check": "receipt_SYNC-MIRROR-LEG-CLOSE-CONFIRM 等 3 文件 sha MATCH"
+    },
+    "design_note": "results/ processed/ inbox/ 正文不入镜像 = MIRROR_NOTICE.md 设计内排除；安静期 NOCHANGE 正确，不要求每笔正本提交都有镜像 commit"
+  },
+  "acceptance_criteria_fixed": [
+    "fire<=15min（看镜像 commit 时间戳）",
+    "正本 outbox/ 新文件 <=15min 进镜像",
+    "安静期 NOCHANGE=正确"
+  ],
+  "monitor_update": {
+    "file": "/home/agentuser/A2A/mirror-lag-check.sh (cron 4eb7d1003821 每 10m)",
+    "change": "判定注释块更新为三条验收口径；阈值不变（tip 龄差 >45min / state 失配 >30min / INCONCLUSIVE >180min）；三态与限额闸不动",
+    "verify_run": "rc=0, VERDICT=OK, LAG_MIN=0, ZHENGBEN=6e34bcad, MIRROR=bcb7298, STATE_ALIGNED=true (18:30:25 CST)",
+    "negative_lag_probe": "模拟镜像比正本新 180s -> LAG_MIN=0 不告警 (clamp 生效)"
+  }
+}
