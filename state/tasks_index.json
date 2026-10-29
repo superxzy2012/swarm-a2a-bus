@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-29T09:35:12+08:00",
- "count": 179,
+ "source_head_at": "2026-10-29T09:42:09+08:00",
+ "count": 181,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -146,6 +146,17 @@
    "ts": "20261026T074446+0800"
   },
   {
+   "file": "inbox/task_MUSE-RELAY-20261026_r3-CHASE_xiaodou.json",
+   "task_id": "MUSE-RELAY-20261026_r3-CHASE-20261029",
+   "from": "xiaodou",
+   "to": "muse",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
    "file": "inbox/task_MUSE-RELAY-20261026_r3.json",
    "task_id": "MUSE-RELAY-20261026_r3",
    "from": "friday-queen",
@@ -188,6 +199,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-27T13:50:00+08:00"
+  },
+  {
+   "file": "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json",
+   "task_id": "XIAOLIN-ONBOARD-EVIDENCE-20261029",
+   "from": "xiaodou",
+   "to": "xiaolin",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
   },
   {
    "file": "processed/task_A2A-DEDUPE-VM-20261018_20261018_174600.json",

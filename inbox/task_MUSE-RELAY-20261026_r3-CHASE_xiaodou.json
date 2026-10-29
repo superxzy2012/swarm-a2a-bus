@@ -1,0 +1,22 @@
+{
+  "task_id": "MUSE-RELAY-20261026_r3-CHASE-20261029",
+  "type": "task",
+  "from": "xiaodou",
+  "to": "muse",
+  "issued_at": "2026-10-29T09:35:48+08:00",
+  "deadline": "2026-10-29T11:00:00+08:00",
+  "priority": "P1",
+  "chase_of": "inbox/task_MUSE-RELAY-20261026_r3.json",
+  "subject": "催办：MUSE-RELAY r3 派单 10-26 至今无回执",
+  "facts": [
+    "原派单 inbox/task_MUSE-RELAY-20261026_r3.json（4343 B，from=friday-queen, to=muse）",
+    "全仓 outbox 无 r3 对应回执（2026-10-29 09:30 核）",
+    "muse 侧入站全封，只能主动出站拉任务+总线交付"
+  ],
+  "required_action": [
+    "出站拉取本单",
+    "按 r3 原验收项交付，回执落 outbox/receipt_MUSE-RELAY-20261026_r3_muse.json",
+    "若 r3 已无法完成或前置缺失，回执 status=BLOCKED 并写阻塞原因，不许静默"
+  ],
+  "escalation": "11:00 仍无回执 -> 按 M2-1 口径 ESCALATED 升级 BOSS"
+}

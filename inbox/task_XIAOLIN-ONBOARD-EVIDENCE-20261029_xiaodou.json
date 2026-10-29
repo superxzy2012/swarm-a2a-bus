@@ -1,0 +1,22 @@
+{
+  "task_id": "XIAOLIN-ONBOARD-EVIDENCE-20261029",
+  "type": "task",
+  "from": "xiaodou",
+  "to": "xiaolin",
+  "issued_at": "2026-10-29T09:35:48+08:00",
+  "deadline": "2026-10-29T11:00:00+08:00",
+  "priority": "P1",
+  "subject": "催办：小林入列三项取证未回",
+  "facts": [
+    "agents/xiaolin.md 记录三项均为「待其自报」（2026-10-29 09:30 核）",
+    "标准 id xiaolin，muse Ubuntu 宿主 htch-runtime，本 app 视角 ou_61650305674ce25add41bb04f591d4a6",
+    "muse 侧入站全封，只能出站拉任务"
+  ],
+  "required_action": [
+    "回执报：hermes 版本 + config 路径",
+    "当前 provider + model（只报名字）",
+    "宿主 nproc / free -h / df -h"
+  ],
+  "receipt": "outbox/receipt_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaolin.json",
+  "escalation": "11:00 无回执 -> ESCALATED"
+}

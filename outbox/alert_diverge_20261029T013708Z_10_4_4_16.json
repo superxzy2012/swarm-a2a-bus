@@ -1,0 +1,9 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-29T01:37:08Z",
+    "alert":  "SYNC-DIVERGE",
+    "detail":  "gh-mirror cannot ff onto gitea main (368a888f); unrelated/diverged history. No force applied. git.exe : fatal: refusing to merge unrelated histories\r\n所在位置 C:\\A2A\\sync.ps1:96 字符: 9\r\n+   $co = \u0026 $GIT merge --ff-only $gSha 2\u003e\u00261 | Out-String\r\n+         ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\r\n    + CategoryInfo          : NotSpecified: (fatal: refusing...lated histories:String) [], RemoteException\r\n    + FullyQualifiedErrorId : NativeCommandError\r\n \r\n",
+    "severity":  "P1"
+}
