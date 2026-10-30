@@ -1,0 +1,64 @@
+{
+  "receipt_id": "QUEEN-NOON-SIGNUP-FIELDS-ACCEPT-20261030",
+  "task": "NOON-SIGNUP-FIELDS-20261030 (小卡实采报告验收)",
+  "judged_at_cst": "2026-10-30 23:53:10 +08:00",
+  "verdict": "PASS — 报告 164 行/14,000B (sha256 c76f1f03)，证据链完整（2 截图 + 控件 JSON×2 + 官方帮助中心原文×6），内部一致、外部可交叉验证，UNKNOWN 标注规范，符合总线「不猜」纪律",
+  "checks": [
+    {
+      "item": "正本落盘",
+      "result": "PASS",
+      "evidence": "commit 20067147 (2026-10-30 15:46:04Z, author xiaoka)；reports/NOON-SIGNUP-FIELDS-20261030_xiaoka.md + evidence/noon/ 7 件"
+    },
+    {
+      "item": "结论①域名勘误",
+      "result": "PASS",
+      "evidence": "01_home_links.json 78 条链接首条即 sell.noon.com/uae-en，Register Now/Sign Up Now CTA 均指 login.noon.partners/en/register；报告 withnoon 301 自跳循环勘误与链接证据一致"
+    },
+    {
+      "item": "结论②仅 3P 自助通道",
+      "result": "PASS",
+      "evidence": "78 条链接 grep supplier/wholesale/contact sales/1p 全部 0 命中；域名分布 sell.noon.com×12 / login.noon.partners×2 / support.noon.partners×2"
+    },
+    {
+      "item": "结论③首屏字段",
+      "result": "PASS",
+      "evidence": "10_fields.json 控件级实采：displayName(text) + email(email) + g-recaptcha-response + Continue(submit)，无手机框/密码框/国家下拉，与报告分毫不差"
+    },
+    {
+      "item": "结论④文件清单",
+      "result": "PASS",
+      "evidence": "官方原文抽核：doc_documents_required.txt L55/L233 「validity of at least 15 days」；L294 「Payoneer or Lian Lian account…authorization letter, duly signed and stamped with your company seal」；L258/262 VAT「Not Required」；doc_who_can_sell.txt L43 Non-VAT 选项 + Egypt 强制本地注册"
+    },
+    {
+      "item": "结论⑤卡点定性",
+      "result": "PASS",
+      "evidence": "执照经营范围含贸易/销售/电商为硬条件、中文 OCR 标 UNKNOWN 待实测——报告原文与官方文档口径一致，未越界下结论"
+    },
+    {
+      "item": "截图文件完整性",
+      "result": "PASS",
+      "evidence": "01_home.jpg 73,917B / 10_register.jpg 56,370B，JPEG magic ffd8ff，1279×632"
+    },
+    {
+      "item": "交叉引用 ANC-D0",
+      "result": "PASS",
+      "evidence": "reports/ANC-D0-RESEARCH-NOON-1P-20261030.md 在正本，1P 走 Payoneer/noon 中国招商口径两报告一致"
+    }
+  ],
+  "acceptance_method_note": "截图像素级复核因本机 vision 模型路由 404（ark-code-latest not found，ARK 配置线已知问题）未做成；本验收以控件级 JSON + 官方原文逐条抽核替代，字段结论有机器采集原文支撑，判据强度不受影响",
+  "unknown_accepted": [
+    "手机区号下拉是否含 +86",
+    "中文执照 OCR 识别率/是否需翻译件",
+    "邮箱 OTP 后各步屏幕字段 label 原文",
+    "首页 VAT mandatory 与帮助中心 Not Required 口径冲突（以注册页实际选项为准）",
+    "1P 资质门槛（属 ANC-D0 线）"
+  ],
+  "handoff_to_boss": [
+    "①核执照经营范围是否含贸易/销售/电商/进出口（最大硬卡点）",
+    "②执照 PDF + 剩余有效期≥15天",
+    "③代表人护照（代表人≠法人需 POA）",
+    "④阿语店名候选",
+    "⑤收款通道四选一：Payoneer/连连/PingPong/WorldFirst（对公，Payoneer/连连需盖公章授权书）",
+    "不卡项：VAT(选Non-VAT)、商标(注册阶段不要求)；注册免费"
+  ]
+}

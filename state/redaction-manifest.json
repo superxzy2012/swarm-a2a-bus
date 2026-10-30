@@ -1696,6 +1696,11 @@
    "source_blob": "b17eadb24f04f13c2bfc9e1f622f66916dc5e020",
    "transform": "copy"
   },
+  "outbox/receipt_NOON-SIGNUP-FIELDS-20261030_QUEEN.json": {
+   "public_blob": "a3b8094be045c9bb89e8e936e4fe0722af6b9d0a",
+   "source_blob": "a3b8094be045c9bb89e8e936e4fe0722af6b9d0a",
+   "transform": "copy"
+  },
   "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859.json": {
    "public_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
    "source_blob": "faa548dcbc590e8f33464e11cea7828174de79a5",
@@ -2267,5 +2272,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T23:47:12+08:00"
+ "generated_at": "2026-10-30T23:53:24+08:00"
 }
