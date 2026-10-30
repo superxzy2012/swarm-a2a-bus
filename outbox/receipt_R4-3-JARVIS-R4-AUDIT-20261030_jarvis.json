@@ -1,0 +1,26 @@
+{
+  "type": "receipt",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "task_ref": "R4-3-JARVIS-R4-AUDIT-20261030",
+  "status": "PARTIAL",
+  "verdict_label": "PASS_WITH_NOTES",
+  "ts": "2026-10-30T16:26:00+08:00",
+  "deadline": "2026-10-30T16:00:00+08:00",
+  "deadline_note": "派单 commit a2287f90 推送于 16:19:13，晚于本单 deadline 19 分钟；按实际送达即时完成，不计 jarvis 超时",
+  "audit_scope": "R4-1..5 四要素/升级ABC标注/越权/编造，独立只读",
+  "per_task": {
+    "R4-1": "PARTIAL — 四要素齐/C标注可接受；镜像tip数据过时：state 实测 tip=08079b0d(06:28Z) lag=110.4min，非冻在 fbb4c7be/46h；715min fetch 失败与镜像仍在前进存在口径矛盾，需小卡先定位失败链路",
+    "R4-2": "PARTIAL — 四要素齐/B标注正确；owner/执行机错配：目标机是 xiaodou 自己 Windows，xiaoka 无该机登录通道(任务文自认)，建议改 xiaodou 自执行+xiaoka/QUEEN 复核",
+    "R4-3": "PASS — 本单",
+    "R4-4": "PASS — A标注正确；group_msg 14:01 发版有 commit 4efa6ec4 真实增量(8164起380行)佐证；注意与13:52阿正CDP9223 scope派单为并行双通道，回执须指明实际操作人",
+    "R4-5": "PASS_WITH_NOTE — B标注/边界正确；两具名文件实测存在(4,771,728B/5,128,994B)；额外发现 outbox/ 至少8枚 .smbdelete* 存量，建议另开B单，本单不得顺手删"
+  },
+  "four_elements_complete": "5/5",
+  "escalation_labels_correct": "5/5",
+  "fabrication_found": 0,
+  "overreach_found": 0,
+  "process_note": "建议派单系统校验 deadline >= created_at + 最小作业窗，防止C类超时误杀",
+  "report": "reports/R4-3-JARVIS-AUDIT-20261030.md",
+  "evidence_basis": ["git log a2287f90/4efa6ec4", "results/alert-state-MIRROR-STALE.json@08:22:09Z", "inbox/.smbdelete* ls 实测字节", "agents/xiaoka.md+jarvis.md 在册", "5 份 task JSON 全文"]
+}

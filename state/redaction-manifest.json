@@ -1821,6 +1821,11 @@
    "source_blob": "fb146a70e4083d12fd222dd961c80cbb59224097",
    "transform": "copy"
   },
+  "outbox/receipt_R4-3-JARVIS-R4-AUDIT-20261030_jarvis.json": {
+   "public_blob": "be8be8d242626812accbe4b828c2f5ae7a4847a1",
+   "source_blob": "be8be8d242626812accbe4b828c2f5ae7a4847a1",
+   "transform": "copy"
+  },
   "outbox/receipt_R4-Q4-DISPATCH-20261030_xiaodou.json": {
    "public_blob": "36d63cc246a7926142e69b7cc3a4ad0ff200dada",
    "source_blob": "36d63cc246a7926142e69b7cc3a4ad0ff200dada",
@@ -2162,5 +2167,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T16:22:10+08:00"
+ "generated_at": "2026-10-30T08:35:46Z"
 }
