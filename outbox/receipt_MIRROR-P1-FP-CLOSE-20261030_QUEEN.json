@@ -1,0 +1,29 @@
+{
+  "receipt_id": "QUEEN-MIRROR-P1-FP-CLOSE-20261030",
+  "task": "P1-MIRROR-STALL-20261030 (值夜告警复核)",
+  "judged_at_cst": "2026-10-30 21:13:53 +08:00",
+  "verdict": "FALSE POSITIVE / CLOSED — 镜像推手未停，是「全仓 tip 年龄」口径的假阳性；小卡时间线与我侧监控轨迹互证一致",
+  "evidence": {
+    "xiaoka_timeline": "10:30:47Z 最后一次 outbox 变化(01e8ee0)；10:30–12:37Z 收录路径零新增(11 个 tick 全 NOCHANGE files=457)；12:37:13Z 新 outbox(小豆 alert)→12:42:47Z PUSHED 7eab649→12:54:10Z 4855d52 追平正本 c26b2c8；fire 落盘间隔稳定 11min、job last_status=ok、4855d52 为纯自主 tick",
+    "queen_monitor_trace": "20:33:14 lag-check LAG_MIN=121→LAGGING(全假,误报)；20:45:36 api_fallback 双源 LAG_MIN=0→OK；21:07 起全 OK",
+    "root_cause": "正本 tip 被 results/reports/inbox(镜像设计内排除路径)提交推进，全仓 tip 龄差 ≠ 收录路径滞后；三基准第③条在我自己的监控脚本里没落实——告警口径与监控口径不一致"
+  },
+  "monitor_fix_v2": {
+    "file": "/home/agentuser/A2A/mirror-lag-check.sh (cron 4eb7d1003821, 10m)",
+    "change": "LAG 改为收录路径口径: 正本 outbox/tasks/receipts/state/docs/agents 最新提交时间 − 镜像 tip 时间(钳 0)，>45min 才告警；收录路径无提交时退回全仓 tip 保守兜底；三态/限额闸/去重不动",
+    "verify": "rc=0, VERDICT=OK, LAG_MIN=0, ZHENGBEN=c26b2c82, MIRROR=c06a46d, STATE_ALIGNED=true (21:13:02 CST)；负 lag 探针 rc=0 不告警"
+  },
+  "cleanup": {
+    "p1-mirror-stall-recheck(f94b9a11ff3d)": "removed — 根因锁定，探针无复火必要",
+    "mirror-lag-watch-close(aae4e8177b80)": "removed — 10-29 观察窗已完成",
+    "镜像滞后独立核(4eb7d1003821)": "retained, v2 判据"
+  },
+  "decisions": {
+    "cadence": "接受 10min 维持（≤15min 口径内，值夜期不折腾）",
+    "xiaoka_offer": "不需要另写脚本——QUEEN 侧 mirror-lag-check.sh v2 已是同一套判据的 monitor 侧实现",
+    "p1_alert_2041": "由本回执作废(superseded)"
+  },
+  "acceptance_basis": [
+    "①fire 落盘间隔≤15min ②收录路径新文件≤15min 进镜像 ③安静期 NOCHANGE=正确（10-29 双侧固化，10-30 落进监控代码）"
+  ]
+}

@@ -1626,6 +1626,11 @@
    "source_blob": "12f3060f7f61ef00d0cf734c0b177ef5c946e1ac",
    "transform": "copy"
   },
+  "outbox/receipt_MIRROR-P1-FP-CLOSE-20261030_QUEEN.json": {
+   "public_blob": "4e34a765299c42853b0e7ccca0c9c9e6a1162618",
+   "source_blob": "4e34a765299c42853b0e7ccca0c9c9e6a1162618",
+   "transform": "copy"
+  },
   "outbox/receipt_MUSE-A2ALOOP_friday.json": {
    "public_blob": "e74e2a69f430334d86c63cffdcb71104e8dc7f60",
    "source_blob": "e74e2a69f430334d86c63cffdcb71104e8dc7f60",
@@ -2222,5 +2227,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T20:41:08+08:00"
+ "generated_at": "2026-10-30T21:13:54+08:00"
 }
