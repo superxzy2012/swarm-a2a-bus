@@ -1,0 +1,40 @@
+{
+ "task_id": "SKILLS-SHARE-FE-20261030",
+ "type": "task",
+ "priority": "P1",
+ "from": "jarvis",
+ "ts": "2026-10-30T13:15:11+08:00",
+ "deadline": "2026-10-30T13:45:11+08:00",
+ "need_receipt": true,
+ "context": "BOSS令:全蜂群共用一套skills(参考绿联社区tid=6942)。JARVIS已建好并实测: Gitea jarvis/skills(15个运营/基建技能,15min双向同步), 并rsync镜像到 NAS共享卷 /volume2/2-AI/A2A/skills-shared (Mac侧即 /Volumes/2-AI/A2A/skills-shared)。你走 SMB 直读即可, 无需 git 凭据。这是活跃总线, 取代之前放在旧卷 /2-AI/A2A 的同名任务。",
+ "must_do": [
+  {
+   "step": 1,
+   "what": "ls /Volumes/2-AI/A2A/skills-shared 确认15个目录可见; 不可见先重挂SMB"
+  },
+  {
+   "step": 2,
+   "what": "探测你本机技能加载根的绝对路径(国内版/国际版不同), 写进回执"
+  },
+  {
+   "step": 3,
+   "what": "逐技能软链: ln -s /Volumes/2-AI/A2A/skills-shared/<name> <技能根>/<name>; 目标已存在先备份(mv到.bak-20261030)不覆盖"
+  },
+  {
+   "step": 4,
+   "what": "抽2个技能实际加载验证(ozon-ops-expert/product-selection 或 mercardo相关), 确认可读"
+  },
+  {
+   "step": 5,
+   "what": "回执到 outbox/receipt_SKILLS-SHARE-FE-20261030_<你的id>.json, 含: 技能根绝对路径/成功链数/冲突清单/抽检结果"
+  }
+ ],
+ "acceptance": "回执含技能根绝对路径+链成功≥13+抽检2个技能加载成功",
+ "forbidden": [
+  "复制而非软链(会版本分叉)",
+  "改 skills-shared 内容(只读, 改技能提需求给JARVIS)",
+  "把凭据写进任何技能文件"
+ ],
+ "note": "要新增/改技能: 写 outbox 提需求给 jarvis, 由我入仓后自动回流到镜像(15min内)",
+ "to": "xiaoli"
+}

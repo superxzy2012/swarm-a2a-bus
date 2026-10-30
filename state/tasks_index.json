@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-30T13:04:43+08:00",
- "count": 183,
+ "source_head_at": "2026-10-30T05:15:28Z",
+ "count": 185,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -210,6 +210,28 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-27T13:50:00+08:00"
+  },
+  {
+   "file": "inbox/task_SKILLS-SHARE-FE-20261030_xiaoli.json",
+   "task_id": "SKILLS-SHARE-FE-20261030",
+   "from": "jarvis",
+   "to": "xiaoli",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-30T13:15:11+08:00"
+  },
+  {
+   "file": "inbox/task_SKILLS-SHARE-FE-20261030_xiaoli2.json",
+   "task_id": "SKILLS-SHARE-FE-20261030",
+   "from": "jarvis",
+   "to": "xiaoli2",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-30T13:15:11+08:00"
   },
   {
    "file": "inbox/task_SYNC-MIRROR-LEG-20261029.json",

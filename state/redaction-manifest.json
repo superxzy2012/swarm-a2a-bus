@@ -111,6 +111,16 @@
    "source_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
    "transform": "redact+templatize"
   },
+  "inbox/task_SKILLS-SHARE-FE-20261030_xiaoli.json": {
+   "public_blob": "5aa3ae5b94d5bae1eb04d7296a2b86016d67ac86",
+   "source_blob": "5aa3ae5b94d5bae1eb04d7296a2b86016d67ac86",
+   "transform": "copy"
+  },
+  "inbox/task_SKILLS-SHARE-FE-20261030_xiaoli2.json": {
+   "public_blob": "5a641f1e539e10452ec2464e1eef563cbe78dc9e",
+   "source_blob": "5a641f1e539e10452ec2464e1eef563cbe78dc9e",
+   "transform": "copy"
+  },
   "inbox/task_SYNC-MIRROR-LEG-20261029.json": {
    "public_blob": "45d88ee1e87bd02a131bbd9c40dd698fddc4c02e",
    "source_blob": "45d88ee1e87bd02a131bbd9c40dd698fddc4c02e",
@@ -2102,5 +2112,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T13:04:43+08:00"
+ "generated_at": "2026-10-30T05:15:28Z"
 }
