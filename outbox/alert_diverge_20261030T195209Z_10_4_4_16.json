@@ -1,0 +1,10 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-30T19:52:09Z",
+    "alert":  "MIRROR-STALE",
+    "detail":  "GitHub mirror pusher alive (hb 0.4min) but content behind: hb.gitea_sha=bb88703d != gitea tip bb88703d beyond 15m grace. Read-only.",
+    "severity":  "P1",
+    "dedup":  "same-kind repeats update results/alert-state-\u003ckind\u003e.json only (60min window)"
+}
