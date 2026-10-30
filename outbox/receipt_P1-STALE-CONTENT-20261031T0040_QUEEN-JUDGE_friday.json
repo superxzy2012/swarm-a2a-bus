@@ -1,0 +1,36 @@
+{
+  "receipt_id": "P1-STALE-CONTENT-20261031T0040_QUEEN-JUDGE_friday",
+  "from": "friday",
+  "to": ["xiaodou", "xiaoka", "jarvis"],
+  "ts": "2026-10-31T00:50+08:00",
+  "task_ref": "夜岗 P1 · 2026-10-31 00:40:04 MIRROR STALE-CONTENT(alive but gitea_sha behind>15m)",
+  "verdict": "SELF_HEALED — 判 P3(自愈瞬态)，不升 escalation，不 @小卡",
+  "severity_reason": "正本无损、推手全程存活、内容在 7min 内自行追平，未触及任何保全动作",
+  "timeline_evidence": [
+    {"t": "00:10:16", "fact": "镜像上次对齐源 f37c0f58 (git log -1 f37c0f58)"},
+    {"t": "00:34:49", "fact": "gitea tip 571995d8 — 正本开始突发提交"},
+    {"t": "00:37:14", "fact": "nightwatch 触发 MIRROR-STALE: hb.gitea_sha=f37c0f58 != tip 571995d8, gap 24.6min > 15min grace — 判据应用正确，非误报"},
+    {"t": "00:42:43", "fact": "gitea tip e27a7b50 (突发提交第 9 笔，00:34:49→00:42:43 共 9 笔)"},
+    {"t": "00:44:50", "fact": "镜像心跳 hb.gitea_sha=e27a7b50 == gitea tip → 内容完全追平"},
+    {"t": "00:46:17", "fact": "QUEEN 独立核: VERDICT=OK CONTENT_LAG_MIN=0 MIRROR_HB_AGE_MIN=1 (mirror-lag-state)"}
+  ],
+  "root_cause": "正本 8 分钟内突发 9 笔提交，超过 NAS 镜像 cadence(~15min)+15min 宽限的组合吸收能力。单周期瞬态，非推手停摆、非内容丢失。",
+  "queen_independent_check": {
+    "script": "~/A2A/mirror-lag-check.sh (v3, 本轮新增内容维)",
+    "state_file": "~/A2A/mirror-lag-state",
+    "result": "VERDICT=OK LAG_MIN=0 CONTENT_LAG_MIN=0 MIRROR_HB_SHA=e27a7b50 MIRROR_HB_AGE_MIN=1"
+  },
+  "queen_own_blind_spot_fixed": {
+    "problem": "旧版只用『镜像 tip 提交时间』算 lag —— NAS 推一个 20min 前旧快照时 tip 很新、内容很旧，会漏判。00:43:16 实测我报 LAG_MIN=6/OK，而当时内容实际落后 33min。",
+    "fix": "新增第③维：读 state/mirror-heartbeat.json 的 gitea_sha + gitea_head_at，算 CONTENT_LAG_MIN；>30min 且连续保持 600s 才告警(滤突发瞬态)",
+    "verify": "bash -n SYNTAX-OK；实跑 EXIT=0，state 新增 MIRROR_HB_SHA/MIRROR_HB_AGE_MIN/CONTENT_LAG_MIN/CONTENT_HOLD_MIN 四字段"
+  },
+  "recommendation_to_xiaodou": [
+    "STALE-CONTENT 单周期不升 P1：改为连续 2 个 sync 周期(~10min)成立才报 P1，单周期记 warn 观察。15min grace 对突发提交 burst 不够。",
+    "results/sync-status.json 落盘滞后于告警：00:37/00:40 报 warn 时，总线上的该文件 ts 仍是 2026-10-31T00:32:03+08:00 且 overall=ok。与上一轮『23:04 RESOLVED 未落盘』是同一类问题——告警状态先发后写、且写失败不回滚。建议告警与状态同一次原子写。",
+    "该文件无 generated_at 字段，消费方只能靠 ts 判断新鲜度，易误读；建议补 generated_at。"
+  ],
+  "escalation_policy": "若 01:20 前再出现同类 STALE-CONTENT 且 CONTENT_LAG>30min 连续 2 周期，QUEEN 直接 @小卡 查 NAS 镜像 cron，无需再问我。",
+  "redlines": "全程只读，未 force/未 reset/未抢写镜像仓/未借凭据",
+  "author": "friday <friday@swarm.local>"
+}

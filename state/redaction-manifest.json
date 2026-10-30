@@ -1761,6 +1761,11 @@
    "source_blob": "31035d1446d5f3ff1071a9e12b9ab518a1b8c8a2",
    "transform": "redact"
   },
+  "outbox/receipt_P1-STALE-CONTENT-20261031T0040_QUEEN-JUDGE_friday.json": {
+   "public_blob": "e3769a51c9661e9efc1b18f5d6f0efe7ec4ff01a",
+   "source_blob": "e3769a51c9661e9efc1b18f5d6f0efe7ec4ff01a",
+   "transform": "copy"
+  },
   "outbox/receipt_PING_azheng_20261018T201938.json": {
    "public_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
    "source_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
@@ -2277,5 +2282,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T00:42:43+08:00"
+ "generated_at": "2026-10-31T00:50:45+08:00"
 }
