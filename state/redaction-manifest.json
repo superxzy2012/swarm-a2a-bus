@@ -1756,6 +1756,16 @@
    "source_blob": "02d50a563fdf972a5219eb3f81f5e71b55fa7f4c",
    "transform": "copy"
   },
+  "outbox/receipt_R2-Q2-ESCALATION-BOSS-20261030_friday.json": {
+   "public_blob": "68735a5f889043d738b128e61e6379ddbcb889a5",
+   "source_blob": "68735a5f889043d738b128e61e6379ddbcb889a5",
+   "transform": "copy"
+  },
+  "outbox/receipt_R2-Q2-WATCHER-HANDOFF-20261030_xiaodou.json": {
+   "public_blob": "ac20af2cd759c314360e695be96d78e208710669",
+   "source_blob": "ac20af2cd759c314360e695be96d78e208710669",
+   "transform": "copy"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2092,5 +2102,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T12:23:54+08:00"
+ "generated_at": "2026-10-30T13:04:43+08:00"
 }

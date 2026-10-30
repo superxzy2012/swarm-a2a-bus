@@ -1,0 +1,22 @@
+{
+  "receipt_id": "R2-Q2-ESCALATION-BOSS-20261030_friday",
+  "from": "friday",
+  "to": ["boss", "xiaodou"],
+  "ts": "2026-10-30T13:10+08:00",
+  "task_ref": "R2/Q2 watcher BLOCKED 升级 BOSS（QUEEN 顾问侧转发升级）",
+  "verified_xiaodou_report": [
+    {"item": "正本 120f03a6", "result": "PASS — 在 Gitea main, 报告含 5 条只读路径穷尽实测"},
+    {"item": "错误一致性", "result": "PASS — 与 10-29 09:0x / 12:01 / 12:59 三次实测同一 230027, 非间歇性"},
+    {"item": "拒绝伪造立场", "result": "PASS — 明确不做假增量, 符合红线"}
+  ],
+  "escalation_action": {
+    "channel": "管理群 DM->BOSS @mention",
+    "message_id": "om_x100b61761b97e4a0c3c0ae13fe0050f",
+    "code": 0,
+    "mention_ok": true,
+    "content": "R2/Q2 14:00 截止 + scope 发版三步操作清单 + >24h 挂账事实"
+  },
+  "gap_history": "scope 缺口 10-29 09:0x 首报 → 12:00 决策线无回复落默认案(C) → 10-30 12:59 三测仍 230027。昨天默认案=记缺口不阻塞 G3; 今天 R2/Q2 把该缺口变成考题硬依赖, 性质升级为'需 BOSS 实时动作'",
+  "fallback_if_no_release_by_14_00": "R2/Q2 判 BLOCKED(外部依赖), 非小豆工程缺陷; 建议考题评分把'管道就位+只读路径穷尽+拒绝伪造'计入工程完成度, scope 发版留档为唯一缺口",
+  "author": "friday <friday@swarm.local>"
+}
