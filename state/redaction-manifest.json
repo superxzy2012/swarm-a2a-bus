@@ -1786,6 +1786,11 @@
    "source_blob": "cd9013f1ad57d6431c9ba9cd9728ccc66b56ca66",
    "transform": "copy"
   },
+  "outbox/receipt_R3-Q3-DAILY-CYCLE-20261030_xiaodou.json": {
+   "public_blob": "fb146a70e4083d12fd222dd961c80cbb59224097",
+   "source_blob": "fb146a70e4083d12fd222dd961c80cbb59224097",
+   "transform": "copy"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2122,5 +2127,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T14:10:37+08:00"
+ "generated_at": "2026-10-30T14:25:09+08:00"
 }
