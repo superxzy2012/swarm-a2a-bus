@@ -1,0 +1,59 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "ref": "R4-Q4-DISPATCH-20261030",
+  "title": "R4/Q4 派单实战：5单已派出（四要素+升级三条件），待回执",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md R4 (deadline 17:00)",
+  "status": "DISPATCHED",
+  "submitted_at": "2026-10-30T08:18:41Z",
+  "four_elements": "objective / owner+channel / acceptance(可核验) / deadline+evidence_path，逐单写入 task JSON",
+  "escalation_three": "A超权限能力(不自授升级BOSS) / B数据安全风险(只出方案等授权) / C超时无回执(deadline+30min点名+ESCALATED)",
+  "tasks": [
+    {
+      "ref": "R4-1-MIRROR-WRITER-20261030",
+      "owner": "xiaoka",
+      "prio": "P1",
+      "esc": "C",
+      "deadline": "10-30 16:30",
+      "basis": "镜像冻fbb4c7be 46h+fetch715min失败"
+    },
+    {
+      "ref": "R4-2-GITCREDS-ACL-20261030",
+      "owner": "xiaoka",
+      "prio": "P2",
+      "esc": "B",
+      "deadline": "10-31 12:00",
+      "basis": ".git-credentials 含BUILTIN\\Users:RX"
+    },
+    {
+      "ref": "R4-3-JARVIS-R4-AUDIT-20261030",
+      "owner": "jarvis",
+      "prio": "P2",
+      "esc": "C",
+      "deadline": "10-30 16:00",
+      "basis": "独立只读审计5单"
+    },
+    {
+      "ref": "R4-4-FEISHU-SCOPES-REMAIN-20261030",
+      "owner": "xiaoka",
+      "prio": "P2",
+      "esc": "A",
+      "deadline": "10-31 18:00",
+      "basis": "im:chat:readonly/members/drive 仍99991672，需BOSS发版"
+    },
+    {
+      "ref": "R4-5-SMBDELETE-CLEANUP-20261030",
+      "owner": "xiaoka",
+      "prio": "P3",
+      "esc": "B",
+      "deadline": "10-31 12:00",
+      "basis": ".smbdelete*两枚9.9MB"
+    }
+  ],
+  "escalation_judgment_required": "含>=1单升级判断：R4-4=A(scope无法自授)，R4-2/R4-5=B(凭据/删除风险只出方案)，R4-1/R4-3=C(时限)",
+  "no_fabrication": "5单均基于当日实测(审计单/ACL/API code/文件大小)，owner均agents在册；不代填回执不替DONE",
+  "evidence": [
+    "reports/R4-Q4-DISPATCH-5TASKS-20261030_xiaodou.md",
+    "inbox/task_R4-1..5_*.json"
+  ]
+}

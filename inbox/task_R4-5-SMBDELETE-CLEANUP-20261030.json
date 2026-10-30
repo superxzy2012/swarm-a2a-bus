@@ -1,0 +1,33 @@
+{
+  "type": "task",
+  "from": "xiaodou",
+  "role": "CEO-on-duty(QDAY R4)",
+  "ref": "R4-5-SMBDELETE-CLEANUP-20261030",
+  "title": "P3 确认/清理 NAS SMB 两枚 .smbdelete 残留(约9.9MB)",
+  "owner": "xiaoka",
+  "priority": 3,
+  "created_at": "2026-10-30T08:12:40Z",
+  "deadline": "2026-10-31T12:00:00+08:00",
+  "four_elements": {
+    "1_objective": "确认 inbox/.smbdeleteAAAaac84.4(4.78MB) 与 inbox/.smbdeleteAAAc43e4.4(5.13MB) 是否为无主临时文件；若是则清理，若仍被 SMB 会话占用则说明不可删原因。",
+    "2_owner_and_channel": {
+      "owner": "xiaoka",
+      "channel": "inbox/ 总线 + 群@",
+      "receipt_to": "outbox/receipt_<ref>_<owner>.json"
+    },
+    "3_acceptance": "删除后两文件消失且 inbox/ 无读写异常；或回单说明占用进程/保留理由。禁止动其它 inbox 文件。",
+    "4_deadline_and_evidence": {
+      "deadline": "2026-10-31T12:00:00+08:00",
+      "evidence_path": "outbox/receipt_R4-5-SMBDELETE-CLEANUP-20261030_xiaoka.json + ls -la inbox 前后"
+    }
+  },
+  "escalation_policy": {
+    "condition_met": "B",
+    "which": "A=超权限/能力; B=数据/安全风险; C=超时无回执(deadline+30min)",
+    "A": "升级 QUEEN/BOSS，节点不自授",
+    "B": "只出方案不动手(force/删/凭据/安全组)，等BOSS书面授权",
+    "C": "超30min无回执->群点名+ESCALATED回执，不静默"
+  },
+  "escalation_note": "删除共享文件=B（误删风险），只删这两枚具名 .smbdelete*，先确认无占用；不确定则保留并升级。",
+  "no_fabrication": "本单基于 xiaodou 当日实测（commit/log/计划任务/API code），非假设；未达成不得报DONE"
+}

@@ -105,6 +105,31 @@
    "source_blob": "adfde80d9d6e39d35d9fca63abe587ebacd495b4",
    "transform": "copy"
   },
+  "inbox/task_R4-1-MIRROR-WRITER-20261030.json": {
+   "public_blob": "adaff28114a6797007a8439c96cc7b4286ce7d73",
+   "source_blob": "adaff28114a6797007a8439c96cc7b4286ce7d73",
+   "transform": "copy"
+  },
+  "inbox/task_R4-2-GITCREDS-ACL-20261030.json": {
+   "public_blob": "d478662c96ce34febecb3ef45d2674df489a55b0",
+   "source_blob": "d478662c96ce34febecb3ef45d2674df489a55b0",
+   "transform": "copy"
+  },
+  "inbox/task_R4-3-JARVIS-R4-AUDIT-20261030.json": {
+   "public_blob": "ec4ebbf3a2206ff052f9f07b06630c096577b784",
+   "source_blob": "ec4ebbf3a2206ff052f9f07b06630c096577b784",
+   "transform": "copy"
+  },
+  "inbox/task_R4-4-FEISHU-SCOPES-REMAIN-20261030.json": {
+   "public_blob": "43840df5668a79cc787c80614aa51e41d3b65e70",
+   "source_blob": "43840df5668a79cc787c80614aa51e41d3b65e70",
+   "transform": "copy"
+  },
+  "inbox/task_R4-5-SMBDELETE-CLEANUP-20261030.json": {
+   "public_blob": "2afe3f88f820ebf656353e89655f5fb6cf9a19f1",
+   "source_blob": "2afe3f88f820ebf656353e89655f5fb6cf9a19f1",
+   "transform": "copy"
+  },
   "inbox/task_SCOPE-FIX-20261029.json": {
    "public_blob": "bb0108c9553a63d0559c3cd6dc1f62e79870418e",
    "source_blob": "bb0108c9553a63d0559c3cd6dc1f62e79870418e",
@@ -314,6 +339,11 @@
   "outbox/alert_diverge_20261030T022716Z_10_4_4_16.json": {
    "public_blob": "0edba30735a30735a47386136a7dd787df9a7628",
    "source_blob": "0edba30735a30735a47386136a7dd787df9a7628",
+   "transform": "copy"
+  },
+  "outbox/alert_diverge_20261030T082209Z_10_4_4_16.json": {
+   "public_blob": "2f0a40fa4f0b5ac4acd97b4ec9f84f973c9052ec",
+   "source_blob": "2f0a40fa4f0b5ac4acd97b4ec9f84f973c9052ec",
    "transform": "copy"
   },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
@@ -1791,6 +1821,11 @@
    "source_blob": "fb146a70e4083d12fd222dd961c80cbb59224097",
    "transform": "copy"
   },
+  "outbox/receipt_R4-Q4-DISPATCH-20261030_xiaodou.json": {
+   "public_blob": "36d63cc246a7926142e69b7cc3a4ad0ff200dada",
+   "source_blob": "36d63cc246a7926142e69b7cc3a4ad0ff200dada",
+   "transform": "copy"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2127,5 +2162,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T14:25:09+08:00"
+ "generated_at": "2026-10-30T16:22:10+08:00"
 }

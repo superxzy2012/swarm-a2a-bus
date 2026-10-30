@@ -1,0 +1,10 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-30T08:22:09Z",
+    "alert":  "MIRROR-STALE",
+    "detail":  "GitHub mirror tip 08079b0d (2026-10-30T06:28:47Z) lags gitea tip a2287f90 (2026-10-30T16:19:13+08:00) by 110.4 min (threshold 90m). Read-only check; NAS is sole mirror writer.",
+    "severity":  "P1",
+    "dedup":  "same-kind repeats update results/alert-state-\u003ckind\u003e.json only (60min window)"
+}
