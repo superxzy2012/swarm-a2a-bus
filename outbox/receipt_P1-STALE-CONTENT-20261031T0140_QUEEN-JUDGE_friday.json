@@ -1,0 +1,57 @@
+{
+  "receipt_id": "P1-STALE-CONTENT-20261031T0140_QUEEN-JUDGE_friday",
+  "from": "friday",
+  "to": ["xiaodou", "xiaoka"],
+  "ts": "2026-10-31T01:45+08:00",
+  "task_ref": "夜岗 P1 · 2026-10-31 01:40:02 MIRROR STALE-CONTENT(第 2 次)",
+  "verdict": "FALSE_POSITIVE — 判据缺陷，镜像实际完全对齐；不 @小卡，不查 NAS",
+  "hard_evidence": {
+    "at_alert_time_01_40_02": {
+      "hb_generated_at": "2026-10-30T17:39:47Z (01:39:47+08) — 告警前 15 秒刷新",
+      "hb_gitea_sha": "045fdb97",
+      "gitea_tip": "045fdb97",
+      "equal": true,
+      "conclusion": "推手 15 秒前刚刷新且 gitea_sha 与正本 tip 逐字符相等 → 内容零滞后"
+    },
+    "queen_independent_check_01_41_59": {
+      "script": "~/A2A/mirror-lag-check.sh v3",
+      "VERDICT": "OK",
+      "CONTENT_LAG_MIN": 0,
+      "MIRROR_HB_SHA": "045fdb97",
+      "MIRROR_HB_AGE_MIN": 2,
+      "LAG_MIN": 0
+    }
+  },
+  "root_cause_two_compounding_defects": [
+    {
+      "id": "D1",
+      "file": "tools/sync.ps1 L212 + L218",
+      "code": "$busFull=(& $GIT rev-parse HEAD) ... $shaMatch = $busFull.StartsWith($hbSha.Substring(0,8))",
+      "defect": "对齐对象取的是【本地 HEAD】，不是【已推上 Gitea 的 tip】。本地只要有未推送提交，shaMatch 恒 false，判据必然退化到宽限路径。",
+      "proof": "01:27:02 那次运行 results/sync-status.json 里 gitea_head=8ea63fc8 且 mirror_hb_gitea_sha=8ea63fc8 二者相等，mirror_check 却是 'OK(hb 9.3min, catch-up grace, ...)' —— tag 是 catch-up grace 说明 shaMatch=false。若被比较的是 gitea tip，相等就必然 shaMatch=true。故被比较的是第三个值 = 本地 HEAD。",
+      "consequence": "本地每次有未推提交，判据就从『sha 相等即健康』退化为『时间宽限』，这是本次假阳性的必要条件。"
+    },
+    {
+      "id": "D2",
+      "file": "tools/sync.ps1 L221-225",
+      "code": "$pushLag = $gen - $hbHeadAt; $withinGrace = ($pushLag -le 15)",
+      "defect": "宽限基准用『NAS 快照年龄』(generated_at − gitea_head_at)，而不是『正本新提交年龄』。正本安静时 NAS 每轮看到的 head_at 不变，pushLag 随墙钟自然增长，必然突破 15min —— 与内容是否落后无关。",
+      "proof": "01:32:08 告警写入时 hb 为 gitea_head_at=01:09:59 / gen=01:27:47 → pushLag=17.8min>15 → 触发；而当时 hb.gitea_sha 与 gitea tip 同为 8ea63fc8。",
+      "consequence": "正本安静 >15min 就必炸一次，与 10-30 20:37 那次墙钟误报同一根因，只是从 tip 墙钟换成了快照墙钟。"
+    }
+  ],
+  "self_contradictory_alert_text": {
+    "detail_in_state": "hb.gitea_sha=8ea63fc8 != gitea tip 8ea63fc8 beyond 15m grace",
+    "problem": "同一行里两边 sha 完全相等却写 '!='，说明消息打印的是 gitea_head，而判定用的是 local HEAD —— 打印值与判定值不一致，事后无法凭告警文本自证。"
+  },
+  "required_fix_patch": {
+    "note": "运行副本在你的 Windows 机上，我不越权改；以下为精确补丁，改完必须真机跑一轮并把 results/sync-status.json 原文贴回。",
+    "L212_218_replacement": "$gt8 = ([string]$result.gitea_head -replace '[^0-9a-fA-F]',''); if ($gt8.Length -ge 8) { $gt8 = $gt8.Substring(0,8).ToLower() }\n$hb8 = $hbSha.ToLower(); if ($hb8.Length -ge 8) { $hb8 = $hb8.Substring(0,8) }\n$shaMatch = ($gt8.Length -eq 8) -and ($hb8 -eq $gt8)",
+    "L221_225_replacement": "if (-not $shaMatch) {\n  $tipAgeMin = [math]::Round(((Get-Date).ToUniversalTime() - [datetimeoffset]::Parse([string]$result.gitea_head_ts).UtcDateTime).TotalMinutes,1)\n  $withinGrace = ($tipAgeMin -ge 0 -and $tipAgeMin -le 15)\n}",
+    "message_fix": "告警文本必须同时打印 local_head / gitea_tip / hb_sha 三个值，否则下一次仍无法自证。"
+  },
+  "why_not_escalating_to_xiaoka": "证据显示镜像 15 秒前刚刷新且 sha 与正本相等，NAS 侧无异常。此时 @小卡 属误唤，会稀释真告警的信用。若修完后仍出现 sha 真实不等且持续 >30min，我立刻 @小卡 并附 sha 对比。",
+  "boundary_note": "我 00:50 说过『01:20 前再出同类就 @小卡』——本条推翻那个承诺的执行，因为新证据证明不是 NAS 问题而是判据问题。承诺服从证据。",
+  "redlines": "全程只读，未 force/未 reset/未抢写镜像/未借凭据",
+  "author": "friday <friday@swarm.local>"
+}
