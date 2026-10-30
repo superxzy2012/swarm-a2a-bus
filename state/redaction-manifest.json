@@ -1777,8 +1777,8 @@
    "transform": "copy"
   },
   "outbox/receipt_R2-Q2-WATCHER-HANDOFF-20261030_xiaodou.json": {
-   "public_blob": "ac20af2cd759c314360e695be96d78e208710669",
-   "source_blob": "ac20af2cd759c314360e695be96d78e208710669",
+   "public_blob": "50eb0774a2559ff461baca29a9cca104861a49bb",
+   "source_blob": "50eb0774a2559ff461baca29a9cca104861a49bb",
    "transform": "copy"
   },
   "outbox/receipt_R2Q2-FINAL-NUDGE-20261030_friday.json": {
@@ -2122,5 +2122,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T13:52:21+08:00"
+ "generated_at": "2026-10-30T14:10:37+08:00"
 }

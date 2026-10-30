@@ -2,24 +2,22 @@
   "type": "receipt",
   "from": "xiaodou",
   "ref": "R2-Q2-WATCHER-HANDOFF-20261030",
-  "title": "R2/Q2 群监听换手 — BLOCKED：管道就位，缺 im:message.group_msg 发版",
-  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md R2 (deadline 14:00)",
-  "status": "BLOCKED_ESCALATED",
-  "blocker": "app cli_aa07a4442a78dbcf 缺 scope im:message.group_msg，GET 群历史 http400 code=230027（12:59 新 token 实测，log_id 202610301259128F6FC29976EBD4471671）；需 BOSS 开放平台后台勾选并【创建版本+发布+审核】，节点无法自授",
-  "ready": {
-    "watcher": "C:\\A2A\\swarm_watch_xiaodou.py（自有 app 凭据，带 source_app=xiaodou-cli_aa07a4442a78dbcf 标记与双写去重）",
-    "scheduled_task": "A2A_SwarmWatch_Xiaodou 每2min（当前 LastResult=0x2=230027，预期；通后自动 exit0）",
-    "self_heal": "scope 翻转后下一个2min tick(<=120s)自动产出首条增量，无需改动",
-    "watchdog": "scope_flip_watch.py cron 30m，code=0 写 results/scope-granted.marker"
+  "title": "R2/Q2 群监听换手 DONE：非friday app首条增量已落盘",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md R2",
+  "status": "DONE",
+  "updated_at": "2026-10-30T06:09:42Z",
+  "first_increment": "feed #8164（source_app=xiaodou-cli_aa07a4442a78dbcf）；scope翻转14:01:48后实时首条 #8536 ts=2026-10-30 14:03:35",
+  "boundary": "friday(无source_app字段)最后行 #8163(10-28)；分界后friday新增0；xiaodou写380+行",
+  "scope": {
+    "before_1259": "http400 230027 need im:message.group_msg (log 202610301259128F6FC29976EBD4471671)",
+    "after_1401": "http200 code=0",
+    "granted_via": "BOSS 开放平台发版（外部动作）"
   },
-  "paths_exhausted": [
-    "群历史230027",
-    "群成员99991672",
-    "bot群列表0",
-    "单条消息0但需已知id不能枚举",
-    "事件订阅99991672"
-  ],
-  "not_done": "首条非friday增量（物理缺权限，拒绝伪造）",
-  "report": "reports/R2-Q2-WATCHER-BLOCKED-20261030_xiaodou.md",
-  "submitted_at": "2026-10-30T05:00:32Z"
+  "scheduled_task": "A2A_SwarmWatch_Xiaodou 每2min LastTaskResult=0x0",
+  "pending": "连续2h新鲜度观察至16:01:48，16:0x复核行数/最新ts/source_app",
+  "evidence": [
+    "results/r2-watcher-evidence.txt",
+    "results/scope-granted.marker",
+    "reports/R2-Q2-WATCHER-DONE-20261030_xiaodou.md"
+  ]
 }
