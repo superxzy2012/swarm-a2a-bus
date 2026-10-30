@@ -1,0 +1,10 @@
+﻿{
+    "type":  "alert",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-10-30T16:47:43Z",
+    "alert":  "SYNC-PULL-FAIL",
+    "detail":  "gitea pull --rebase failed on all sources (mesh/tunnel/github-mirror), 6 attempts, 2s/5s/10s backoff",
+    "severity":  "P1",
+    "dedup":  "same-kind repeats update results/alert-state-\u003ckind\u003e.json only (60min window)"
+}

@@ -1,0 +1,39 @@
+{
+  "task_id": "T-ANC-L5-D1",
+  "object_id": "OBJ-QUALITY-SERVICE",
+  "old_state": "RUNNING",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-31T00:53:01+08:00",
+  "evidence_links": [
+    "reports/QualityService/L5-D1-DELIVERABLE-20261031_xiaodou.md",
+    "evidence/quality/20261031/SOURCES-benchmarks.md",
+    "evidence/quality/20261031/SAMPLE-EN-PSI-report.md",
+    "ledgers/ledger_tasks.csv#T-ANC-L5-D1",
+    "ledgers/ledger_objects.csv#OBJ-QUALITY-SERVICE"
+  ],
+  "ledger_updated": true,
+  "cost_actual": {
+    "cny": 0,
+    "usd": 0,
+    "note": "免费模型; 0元预算; 无外部付费"
+  },
+  "revenue_actual": 0,
+  "decision": "continue",
+  "next_action": "D2: Upwork英文profile/service card(S1/S2)+样品上架, 建20采购代理清单; D3: 发5 proposal+10 BD, 回写真实回复数; 首个真询回填CM1假设",
+  "next_owner": "xiaodou(L5 Owner); 黄色项(收款主体/合同/履历背书/检验员雇佣)报QUEEN/BOSS; 贾维斯独立审计",
+  "deliverables_summary": {
+    "three_quotable_forms": [
+      "S1 供应商桌面尽调 $120-180/家 6-10h",
+      "S2 PSI AQL验货 $268-328/人日 10-11h",
+      "S3 CAPA整改方案 $200-400/案 8-16h"
+    ],
+    "two_channels": [
+      "Upwork(在招Ongoing实证; 14天>=3回复/1单)",
+      "采购代理B2B2B转介绍(20封>=4回复/1意向)"
+    ],
+    "english_sample": "evidence/quality/20261031/SAMPLE-EN-PSI-report.md (FICTIONAL SAMPLE明示)",
+    "profit_three_questions": "S2订单级样算CM1平台单约¥867(~40%)/直客约¥1146-1346(53-63%); 检验员到手价等关键输入标UNKNOWN待真询回填; 止损四条件+24h执行"
+  },
+  "honesty": "自有曝光/询盘/成交=0(未投放), 未编转化率; 报价为第三方公开基准回源, 汇率7.2为计划假设; v3文件尚未入docs/ANC,以00:30群令为准"
+}

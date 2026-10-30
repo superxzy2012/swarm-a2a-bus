@@ -371,6 +371,11 @@
    "source_blob": "53449010b62a4153680e262af85da25a89fea692",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261030T164743Z_10_4_4_16.json": {
+   "public_blob": "e07446a5b2948230273aead71a9597ff5deb4ec7",
+   "source_blob": "e07446a5b2948230273aead71a9597ff5deb4ec7",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -489,6 +494,11 @@
   "outbox/receipt_AI-SHARE-MIGRATE_ACK_friday_20261018T193114.json": {
    "public_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
    "source_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
+   "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1-L5_xiaodou.json": {
+   "public_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
+   "source_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
    "transform": "copy"
   },
   "outbox/receipt_ANC-D1_xiaodou.json": {
@@ -2282,5 +2292,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T00:50:45+08:00"
+ "generated_at": "2026-10-31T01:03:24+08:00"
 }
