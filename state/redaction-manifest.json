@@ -2186,6 +2186,11 @@
    "source_blob": "f2cdfea956cd2bdb9a435ba945f82caea5df499f",
    "transform": "copy"
   },
+  "outbox/retraction_MIRROR-STALE-RELAPSE_20261030_xiaodou.json": {
+   "public_blob": "d23582747a67f61d1cbd8afc1366909e480d15c5",
+   "source_blob": "d23582747a67f61d1cbd8afc1366909e480d15c5",
+   "transform": "copy"
+  },
   "outbox/task_GROUP-GOVERNANCE_20261019.json": {
    "public_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
    "source_blob": "4da800f6a79836aefb2e4b86564f1bb6753b65a6",
@@ -2252,5 +2257,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T23:02:11+08:00"
+ "generated_at": "2026-10-30T23:08:20+08:00"
 }

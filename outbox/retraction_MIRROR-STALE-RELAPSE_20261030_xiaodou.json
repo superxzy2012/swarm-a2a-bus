@@ -1,0 +1,12 @@
+{
+  "type": "retraction",
+  "from": "xiaodou",
+  "ts": "2026-10-30T23:07:53+08:00",
+  "retracts": "outbox/escalation_MIRROR-STALE-RELAPSE_20261030T123828_xiaodou.json",
+  "related_task": "R4-1-RELAPSE-MIRROR-20261030",
+  "verdict": "FALSE_POSITIVE_SELF_INFLICTED",
+  "reason": "①墙钟lag>90判据对事件驱动镜像在源端安静时必然误报；②'人工补推960484df未持续'未回源(ls-remote该sha在GitHub为空)。小卡心跳双维证据成立，推手未停。",
+  "accepted_receipt": "outbox/receipt_R4-1-RELAPSE-MIRROR-20261030_xiaoka.json (NOT_A_RELAPSE__MONITOR_FALSE_POSITIVE)",
+  "remediation": "sync.ps1 v6 双维判据(generated_at存活+gitea_sha内容,15min宽限)+nightwatch去墙钟自判；见 reports/CORRECTION-MIRROR-FALSE-POSITIVE-20261030_xiaodou.md",
+  "redlines": "未force/未抢写镜像/未改凭据"
+}
