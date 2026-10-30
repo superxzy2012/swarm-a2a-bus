@@ -1846,6 +1846,11 @@
    "source_blob": "fb146a70e4083d12fd222dd961c80cbb59224097",
    "transform": "copy"
   },
+  "outbox/receipt_R4-1-RELAPSE-MIRROR-20261030_xiaoka.json": {
+   "public_blob": "19d879c54813b13d24b1989769d4a293d9942a57",
+   "source_blob": "19d879c54813b13d24b1989769d4a293d9942a57",
+   "transform": "copy"
+  },
   "outbox/receipt_R4-1_xiaoka.json": {
    "public_blob": "03101f1c0832125f2fe12648029f4783efd882ba",
    "source_blob": "03101f1c0832125f2fe12648029f4783efd882ba",
@@ -2227,5 +2232,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T21:13:54+08:00"
+ "generated_at": "2026-10-30T21:31:04+08:00"
 }

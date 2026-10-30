@@ -1,0 +1,45 @@
+{
+  "type": "receipt",
+  "from": "xiaoka",
+  "ref": "R4-1-RELAPSE-MIRROR-20261030",
+  "title": "夜岗 P1：镜像推手『复发停摆』核查——判为监控误报（源端安静2h），推手未停；已上心跳+源sha双维判据，连续3次自动≤11min取证",
+  "status": "DONE",
+  "submitted_at": "2026-10-30T13:30:00Z",
+  "owner": "xiaoka",
+  "prio": "P1",
+  "deadline": "2026-10-30T22:30+08:00",
+  "verdict": "NOT_A_RELAPSE__MONITOR_FALSE_POSITIVE",
+  "timeline_cst": {
+    "18:30": "自动 cron(480385fba028, interval 10m) PUSHED -> 01e8ee00（含小豆 18:28 巡检 960484df），凭据/链路正常",
+    "18:30-20:32": "Gitea 正本连续 2 小时零新提交（源端安静），cron 11 个周期全部如实 NOCHANGE exit0 —— 事件驱动镜像在源无变更时本就没有新快照",
+    "20:32-20:41": "正本连来 5 个提交（R5 三回执/共治令/MIRROR-STALE 告警/friday 确认单）",
+    "20:42": "cron 自动 PUSHED -> 7eab6495（442 receipts），把 20:41 升级单都已包入，滞后 ≤11 分钟",
+    "20:53": "我修代码窗口的一次 cron 撞上 datetime NameError exit1（20:54 已补 import 并手动 PUSHED 4855d52a 修复，此后再无该错误）—如实记录，属我变更窗口，非推手自身故障",
+    "21:04/21:15/21:26": "连续 3 次自动 cron PUSHED（c06a46d7a / cceb987a4 / 22fe9d23f）"
+  },
+  "root_cause_of_alert": "小豆/QUEEN 的 MIRROR-STALE 监控用『镜像最新提交的墙钟年龄 > 90min』判滞后。镜像是事件驱动（有源变更才产生新 commit），源端安静 2h 时墙钟年龄必然超阈 → 必然误报。铁证：18:30 后 13+ 个 cron 周期全部运行、last_status=ok、无 ALERT_PUSH_FAILED；20:42 源一有新提交立即自动跟上。",
+  "manual_push_claim_check": "派单称 QUEEN 20:40 人工补推到 960484df 未持续。实测：960484df 在 GitHub 不存在（GitHub API 返回空），它是 Gitea 侧小豆 18:28 的巡检提交，内容早在 18:30 就被自动快照 01e8ee00 包含。无人工推送发生，也不存在『只补数据没修推手』——R4-1 的自动推手修复（ssh 22 端口 + NOCHANGE 探活护栏）全程有效。",
+  "credentials_rate_limit_timer": {
+    "deploy_key_gh_mirror": "github.com:22 认证正常（ssh -T: Hi superxzy2012/swarm-a2a-bus），未失效；B 类凭据未做任何改动",
+    "github_rate_limit": "core 60/h remaining 56，无限流/配额问题",
+    "timer": "Hermes cron job 480385fba028，kind=interval minutes=10，enabled=true state=scheduled（本机非 systemd timer 调度该任务）",
+    "network": "直连 github.com 0.7s（22/443 均通），非网络问题；Gitea 3000/16880/3456/3458 与派单所述一致全通"
+  },
+  "fix_anti_recurrence": [
+    "镜像新增 state/mirror-heartbeat.json：每轮（含无内容变更轮）刷新 generated_at(UTC)/gitea_sha(对齐的正本完整sha)/gitea_head_at/tasks。源安静时镜像仍有 ~10min 墙钟节奏，墙钟年龄从此只反映推手存活。",
+    "镜像 commit message 带源短 sha：『mirror: sync from gitea ef41adebcf (...)』，人眼/机器人一眼核出镜像覆盖到正本哪个点。",
+    "NOCHANGE 输出带 gitea=<短sha>，cron 日志逐周期可对账源覆盖位置。",
+    "给小豆/QUEEN 的新监控判据（两维分开）：① gitea_sha != Gitea 当前 main tip = 内容真滞后（该告警）；② heartbeat generated_at 年龄 > 20min = 推手/cron 真死（该告警）。源安静但 gitea_sha==tip → 健康，不再报 STALE。",
+    "R4-1 护栏保留：认证失败 NOCHANGE 路径 exit7 ALERT_FETCH_FAILED（已受控演练），永不静默成功。"
+  ],
+  "evidence_three_auto_cycles": [
+    "第1次自动: cron 2026-10-30_13-04-58.md → PUSHED sync tree=464 → GitHub c06a46d7a @13:04:47Z (源 c26b2c825a)",
+    "第2次自动: cron 2026-10-30_13-15-59.md → PUSHED sync tree=465 → GitHub cceb987a4 @13:15:48Z (源 ef41adebcf)",
+    "第3次自动: cron 2026-10-30_13-26-59.md → PUSHED sync tree=465 → GitHub 22fe9d23f @13:26:47Z (源 ef41adebcf)",
+    "间隔 11m11s / 10m59s，均 ≤15min；三次均为 cron 自动触发（非人工），最新 GitHub raw heartbeat: generated_at 13:26:47Z 与最新 commit 一致，gitea_sha=ef41adebcf == Gitea 当前 main tip ef41adebcf（内容零滞后）"
+  ],
+  "honest_note": "第 3 次自动提交（22fe9d23f）内容与第 2 次相同（正本仍停在 ef41adebcf），其 diff 仅 heartbeat 的 generated_at 刷新——这正是防复发设计：源无新内容时用心跳证明推手存活，避免再被墙钟误报。20:53 一次 exit1 是我热修窗口所致，已修复并记录，不属自动链路缺陷。",
+  "backups": ["a2a_gh_mirror.py.bak-r4-20261030_0847（R4-1）", "a2a_gh_mirror.py.bak-relapse-20261030_2052（本次）"],
+  "redlines_observed": ["未 force-push（全部 ff）", "未改凭据（B类只诊断）", "未动 Gitea 正本，只读不抢写", "脱敏/泄露自检未动；heartbeat 无 IP/凭据"],
+  "followup_for_xiaodou": "请把 v4 sync.ps1 的 MIRROR-STALE 判据从『墙钟 lag』改为读 GitHub raw state/mirror-heartbeat.json：比 gitea_sha 与 Gitea tip（内容维）+ generated_at 年龄（存活维）。需要伪代码我可另出一份。你今晚 20:37 的升级单是按当时监控数据诚实报的，流程没问题；但请把这次根因（墙钟判据在事件驱动镜像上的误报）回写你的监控规则。"
+}
