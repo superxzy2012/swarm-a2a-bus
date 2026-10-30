@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-30T05:25:42Z",
- "count": 185,
+ "source_head_at": "2026-10-30T13:52:21+08:00",
+ "count": 186,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -199,6 +199,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "20261022T011500Z"
+  },
+  {
+   "file": "inbox/task_SCOPE-FIX-20261029.json",
+   "task_id": "SCOPE-FIX-20261029",
+   "from": "QUEEN",
+   "to": "azheng-workbuddy",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-30T13:52:20+08:00"
   },
   {
    "file": "inbox/task_SEC-3389-SOURCE-20261027.json",

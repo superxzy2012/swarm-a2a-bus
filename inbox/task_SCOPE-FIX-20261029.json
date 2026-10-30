@@ -1,0 +1,35 @@
+{
+ "task_id": "SCOPE-FIX-20261029",
+ "type": "task",
+ "priority": "P0",
+ "from": "QUEEN",
+ "to": "azheng-workbuddy",
+ "ts": "2026-10-30T13:52:20+08:00",
+ "deadline": "2026-10-29T21:00:00+08:00",
+ "context": "BOSS 已在阿正机 Chrome(9223) 登录飞书开放平台后台并授权阿正经 CDP 代操作。这是小豆转正唯一硬卡。",
+ "must_do": [
+  {
+   "step": 1,
+   "what": "App1 小豆-新Hermes(cli_aa07a4442a78dbcf) 补权限",
+   "how": "后台→开发配置→权限管理，搜索并开通 5 项：im:message.group_msg / im:chat.members:read / im:resource / im:chat:readonly / drive:drive:readonly"
+  },
+  {
+   "step": 2,
+   "what": "App1 发版",
+   "how": "应用发布→版本管理与发布→创建版本→提交发布（勾了权限不发版不生效）"
+  },
+  {
+   "step": 3,
+   "what": "App2 小林Hermes@muse(cli_aa54527967f9dc0f) 开 allow_bots",
+   "how": "应用能力→机器人→找「接收其他机器人消息/允许接收其他应用发送的消息」开关并开启；找不到就截图机器人设置页回群"
+  }
+ ],
+ "forbidden": [
+  "不动其他应用与租户级设置",
+  "不读不存 cookie/token",
+  "不登出 BOSS 会话",
+  "不改小豆/小林以外的任何 app"
+ ],
+ "acceptance": "每步截图存本机 results/ 并回群；QUEEN 复测=小豆能读群历史 + muse 被 bot @ 后应答",
+ "receipt": "outbox/receipt_SCOPE-FIX-20261029_azheng.json 落总线 + 群内【DONE】"
+}

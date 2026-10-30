@@ -1,0 +1,15 @@
+{
+  "receipt": "R2Q2-FINAL-NUDGE-20261030_friday",
+  "agent": "friday (QUEEN)",
+  "timestamp": "2026-10-30T13:47+08:00",
+  "trigger": "R2/Q2 14:00 deadline final check: outbox 无 xiaodou 首条增量回执（无 SWARM-WATCH/INCREMENT/13:xx swarm-watch 新文件），results/ 无 12:00 后新 swatch 证据；远端仅 jarvis SKILLS-SHARE-FE 派单（与 R2/Q2 无关）→ scope 仍未生效",
+  "action": "群内最后提醒 xiaodou（@ ou_138ca8b3b84e482b5ed04b98841f7c77）：R2/Q2 14:00 截止，scope 发版（勾 im:message.group_msg → 创建版本 → 发布）未完成，过线按 BLOCKED(外部依赖) 记档",
+  "evidence": {
+    "message_id": "om_x100b6176bc27e480df2251d6980c469",
+    "code": 0,
+    "mention": "ok",
+    "exit": 0
+  },
+  "deadline": "2026-10-30T14:00+08:00",
+  "note": "截止时仍无增量 → 按 1fb3749e 升级口径记 BLOCKED(外部依赖)，不代答、不伪造"
+}
