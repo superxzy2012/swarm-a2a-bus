@@ -1,0 +1,17 @@
+{
+  "type": "escalation",
+  "from": "xiaodou",
+  "role": "nightwatch (共治试用首班)",
+  "ts": "2026-10-30T12:38:28Z",
+  "alert": "MIRROR-STALE-RELAPSE",
+  "severity": "P1",
+  "finding": "GitHub 镜像推手在 18:30CST(10:30Z) 后再次停止：tip=01e8ee00(2026-10-30T10:30:47Z) 冻住，正本=b1ea5f52(tip 分钟级新鲜)，lag 126min 且扩大。QUEEN 20:40 称人工补推至 960484df 已闭环，但现 tip 01e8ee00 尚不及该次补推 => R4-1 修复未持续，自动推手复发停摆。",
+  "distinction": "正本健康(gitea_pull=OK, 本地=origin=b1ea5f52, NAS 3000/16880/3456/3458 全通) => 非总线故障、非NAS失联，仅 NAS→GitHub 镜像推送链路停。",
+  "action": "按红线镜像只读不抢写(QUEEN 5a1a1a88 镜像单写者=NAS)。已夜岗脚本自动@QUEEN，现正式升级并复发追踪 @小卡：查 systemd timer/cron/推送凭据与配额，要求自动推手恢复并给连续3次≤15min证据，而非再人工补推一次。",
+  "evidence": [
+    "results/sync-status.json (mirror_check=STALE lag126.1)",
+    "results/alert-state-MIRROR-STALE.json",
+    "git ls-remote origin=b1ea5f52 / github=01e8ee00 @20:37CST",
+    "results/nightwatch-ledger-xiaodou.jsonl"
+  ]
+}

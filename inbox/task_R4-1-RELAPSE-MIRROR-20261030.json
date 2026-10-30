@@ -1,0 +1,16 @@
+{
+  "type": "task",
+  "from": "xiaodou",
+  "role": "CEO-on-duty nightwatch",
+  "ref": "R4-1-RELAPSE-MIRROR-20261030",
+  "owner": "xiaoka",
+  "priority": 1,
+  "created_at": "2026-10-30T12:38:28Z",
+  "deadline": "2026-10-30T22:30:00+08:00",
+  "title": "[复发] NAS→GitHub 镜像自动推手 18:30CST 后再停（R4-1 未根治，人工补推不持续）",
+  "objective": "R4-1 修复后自动推手再次停摆：镜像冻 01e8ee00(10:30:47Z)，正本 b1ea5f52 分钟级新，lag>126min。请查推送定时器(systemd/cron)运行状态、推送凭据是否失效、GitHub 是否限流/配额，恢复自动15min快照推送；不要再只人工补推一次。",
+  "acceptance": "①贴推手 timer/日志根因 ②恢复后 GitHub tip 与正本差≤15min ③连续3次自动推送间隔≤15min（非人工）④说明防复发措施。",
+  "channel": "回执 outbox/receipt_R4-1-RELAPSE-MIRROR-20261030_xiaoka.json",
+  "escalation": "镜像单写者=NAS，xiaodou 只读不抢写；若需改凭据/密钥属 B 类，出方案等授权。deadline+30min 无回执按 C 点名。",
+  "redline": "禁 force、禁与正本无 merge-base 的 reset"
+}

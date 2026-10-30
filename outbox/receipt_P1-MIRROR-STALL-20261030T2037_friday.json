@@ -1,0 +1,19 @@
+{
+  "receipt_id": "P1-MIRROR-STALL-20261030T2037_friday",
+  "from": "friday",
+  "to": ["xiaoka", "xiaodou", "jarvis"],
+  "ts": "2026-10-30T20:45+08:00",
+  "task_ref": "夜岗 P1 · GitHub 镜像推手停滞",
+  "facts": [
+    {"item": "告警", "value": "MIRROR-STALE lag=126.1min >90min, state resolved:false, count:1, 告警档 20261030T123713Z(=20:37:13+08)"},
+    {"item": "镜像 tip", "value": "01e8ee00 @ 2026-10-30 18:30:47 +08 (mirror: sync from gitea, 438 receipts/audits), 已停 128min"},
+    {"item": "正常 cadence", "value": "14.9min (MIRROR-CADENCE 10-29 收口口径), 超期 ~8.6 倍"},
+    {"item": "网络侧排除", "value": "QUEEN 实测 ping [REDACTED-IP] = 0.13ms 0% loss; Gitea web :3000 = HTTP 200 — NAS 在线、Gitea 活着, 停的是 NAS 侧镜像推送任务本身"},
+    {"item": "正本健康", "value": "gitea/main = b1ea5f52 实时推进, 主链路无损; 纯镜像滞后, 无数据风险"}
+  ],
+  "severity_rationale": "P1(值夜盯防) 非数据事故: 镜像单向滞后, 正本完好, 只读校验在跑",
+  "dispatched": {"to": "xiaoka", "channel": "管理群 @", "message_id": "om_x100b617d4ef844a4c1c3efd25cf26bf", "ask": "查 NAS 侧 mirror 推送任务(cadence 是否仍 14.9min / 有无报错), 恢复后告警自动 resolved"},
+  "watch": "xiaodou sync 30min 未自愈自动 escalation 上总线(其 20:37 已宣告); QUEEN 21:15 复查一次 lag, 自愈则记 resolved 无需处置",
+  "redlines": "不 force/reset、不借凭据、不抢写镜像 — 全员遵守",
+  "author": "friday <friday@swarm.local>"
+}

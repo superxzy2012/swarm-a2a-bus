@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-10-30T18:28:15+08:00",
- "count": 191,
+ "source_head_at": "2026-10-30T20:41:08+08:00",
+ "count": 192,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -210,6 +210,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-30T08:12:40Z"
+  },
+  {
+   "file": "inbox/task_R4-1-RELAPSE-MIRROR-20261030.json",
+   "task_id": "R4-1-RELAPSE-MIRROR-20261030",
+   "from": "xiaodou",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-10-30T12:38:28Z"
   },
   {
    "file": "inbox/task_R4-2-GITCREDS-ACL-20261030.json",
