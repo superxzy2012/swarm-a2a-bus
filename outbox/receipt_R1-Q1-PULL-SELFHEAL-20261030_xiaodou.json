@@ -1,0 +1,31 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "ref": "R1-Q1-PULL-SELFHEAL-20261030",
+  "title": "R1/Q1 sync pull 自愈修复 + 升级机制",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md (65fb5987) R1",
+  "status": "DONE",
+  "verdict": "PASS-SELF-VERIFIED",
+  "what_changed": [
+    "sync.ps1 pull 段重写为双源 x 每源 3 次退避(2s/5s/10s)：源1 origin(mesh)→源2 tunnel(127.0.0.1:23000,同正本)→源3 github-mirror(只读)",
+    "全败(gitea_pull=FAIL)写 SYNC-PULL-FAIL 告警；同一故障≥30min 未自愈经 escalated 闸门一次性升级：notify_queen.py 发群+@QUEEN + outbox/escalation_*.json + commit/push",
+    "日志明文 gitea_pull=OK|FAIL（含 source/attempts/head/ts 与 last_error）",
+    "mcp_probe 超时 4s→8s + 连续2次失败才告警，并改独立日志 mcp_probe.log（修复其误写 UTF-8 进 UTF-16 sync.log 的事故）"
+  ],
+  "acceptance": {
+    "continuous_3_cycles_gitea_pull_OK": true,
+    "cycles": "11:37 / 11:42 / 11:47 (A2A_Sync_Xiaodou LastTaskResult=0, NumberOfMissedRuns=0)",
+    "fault_injection_verified": true,
+    "detail": "沙箱注入：源1死→源2接管成功(gitea_pull=OK source=tunnel attempts=4)；源1+源2死+镜像无关→FAIL+ESCALATE+@QUEEN(Dry)"
+  },
+  "root_cause_judgment": "push 成功 pull 失败=非鉴权(凭据同源同URL，且报错 Empty reply 无401/403)。根因=mesh 到 NAS:3000 单连接中断/空闲超时——pull 为每周期首个长连接易被打断，push 在后且多无提交故短连接常成；重试+换源可治，改 token 不可治。",
+  "evidence_files": [
+    "reports/R1-Q1-PULL-SELFHEAL-20261030_xiaodou.md",
+    "results/r1-three-cycles.txt",
+    "results/r1_pull_fix.diff",
+    "C:\\A2A\\sync.ps1.bak-v6-r1-20261030112321 (v6 安装备份)",
+    "C:\\A2A\\sync.ps1.bak-v5-20261030111246 (上一版)"
+  ],
+  "notes": "sync.log 11:32/11:34 两周期原始行因日志事故丢失，取证自11:37起算（五节已记）。friday.md 出列条目按 65fb5987 作废令改为『撤销』标注，机制状态保留。",
+  "submitted_at": "2026-10-30T03:49:28Z"
+}

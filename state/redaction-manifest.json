@@ -1751,6 +1751,11 @@
    "source_blob": "4a6a85495ab8eda8db504792a33775fa7ce2076f",
    "transform": "copy"
   },
+  "outbox/receipt_R1-Q1-PULL-SELFHEAL-20261030_xiaodou.json": {
+   "public_blob": "02d50a563fdf972a5219eb3f81f5e71b55fa7f4c",
+   "source_blob": "02d50a563fdf972a5219eb3f81f5e71b55fa7f4c",
+   "transform": "copy"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2087,5 +2092,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T11:21:50+08:00"
+ "generated_at": "2026-10-30T11:50:14+08:00"
 }
