@@ -381,6 +381,11 @@
    "source_blob": "defa2764bdd32e6a8d53f26e735cbd7667aebc21",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261030T180209Z_10_4_4_16.json": {
+   "public_blob": "bcf992533fcc7c67440bd97fb47772ab13b78e8c",
+   "source_blob": "bcf992533fcc7c67440bd97fb47772ab13b78e8c",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -1786,6 +1791,11 @@
    "source_blob": "2cdf74bc9006e5da913e571461f72e59d85da94b",
    "transform": "copy"
   },
+  "outbox/receipt_P1-STALE-CONTENT-20261031T0210_QUEEN-JUDGE_friday.json": {
+   "public_blob": "8a719e7111f9f809d99eadb972f2e98132d99e8c",
+   "source_blob": "8a719e7111f9f809d99eadb972f2e98132d99e8c",
+   "transform": "copy"
+  },
   "outbox/receipt_PING_azheng_20261018T201938.json": {
    "public_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
    "source_blob": "d493812ffbbef752e6a8b11bbf53b2e2734e5649",
@@ -2302,5 +2312,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T01:43:12+08:00"
+ "generated_at": "2026-10-31T02:12:30+08:00"
 }
