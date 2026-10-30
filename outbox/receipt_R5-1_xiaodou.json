@@ -1,0 +1,19 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "ref": "R5-1-BUS-FORK",
+  "title": "场景①总线分叉：本地 a1b2 / 正本 c3d4 有冲突提交",
+  "exam": "QDAY R5 盲答（处置方案，非真实事故，未谎称演练已发生）",
+  "answered_at": "2026-10-30T09:46:52Z",
+  "status": "ANSWERED",
+  "decision_and_steps": [
+    "判定（先fetch正本，不凭本地）：git fetch origin 后用 merge-base a1b2 c3d4 分三种——(a) merge-base=a1b2：本地是正本祖先=纯落后，git rebase origin/main 即可，非分叉；(b) merge-base=c3d4：本地领先，正常 push ff；(c) merge-base 是第三个提交且互不为祖先=真分叉，才走冲突合并。",
+    "处置：①立即停止任何推送（main 单主，sync 闸门 PUSH_ENABLED 下 push 会被非ff拒，确认不绕过）②先保全：git branch backup/fork-<ts> 记录双方sha，工作区 commit/stash 干净 ③绝不用 git reset --hard origin/main（会吃掉本地未合并提交），也绝不 force push main ④git fetch 后 git merge --no-ff origin/main（或临时 worktree）逐文件解冲突，只解自己拥有的文件；涉及他人提交的冲突不擅合 ⑤解完本地验证（sync.ps1 跑通、results/*.json 合法、脚本 PARSE_OK）⑥普通合并提交 push origin main（非force）；push 被拒说明正本又前进，回③重来。",
+    "解不开/冲突触及他人或主写权归属不清 → 停止并升级 QUEEN，保留备份分支等裁决。"
+  ],
+  "evidence_to_collect": [
+    "双方短sha、git merge-base 原始输出、git log --graph --oneline 截图等价文本、冲突文件清单 git diff --name-only、备份分支名、合并提交sha、push 响应、outbox/incident_BUS-FORK-<ts>.json"
+  ],
+  "redline": "force push main 必须 BOSS 书面授权；与正本无 merge-base 的无关历史（如NAS快照镜像）禁止 reset 到对方；冲突中不覆盖他人提交。",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md 第四节"
+}

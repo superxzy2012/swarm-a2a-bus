@@ -1,0 +1,19 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "ref": "R5-3-MODEL-404",
+  "title": "场景③模型404：报‘404 模型不存在’，重试3次后停止出话",
+  "exam": "QDAY R5 盲答（处置方案，非真实事故，未谎称演练已发生）",
+  "answered_at": "2026-10-30T09:46:52Z",
+  "status": "ANSWERED",
+  "decision_and_steps": [
+    "判定：404 是确定性错误（模型名不存在/下线改名/provider 后端撤模型/路由 model 名配错），**重试同一模型无意义**——区别于限流(429)和鉴权(401)。3次同404即应立即换路，不再原地重试。",
+    "30秒自救：①停止重试该模型 ②切 fallback：按 model-watch 规格3败回退 auto（候选模型），用 `hermes config set` 改 model/provider（不手改 config.yaml；OmniRoute 必须 key_env: OMNIROUTE_API_KEY 填变量名，providers 段只插子树不整段覆盖）③/reset 或重启 gateway 使配置生效 ④先用 fallback 发一句‘模型X 404，已降级到 auto 运行’证明 agent 存活并透明 ⑤最小一次调用验证 code=200 后恢复正常作业。",
+    "防复发：model-watch 探针(10min)周期探活，3败自动回退auto+告警，不靠人发现；配置维护‘主模型+fallback候选’；记录下线模型名/provider/时间/log_id，后续把它移出默认候选；所有变更走 config set 留痕，key 只在.env 不打印不入memory。"
+  ],
+  "evidence_to_collect": [
+    "404原文(模型名/provider/log_id)、切换前后 hermes config get 输出、/reset或重启时间、fallback首次成功调用证据、model-watch 告警与自动回退记录"
+  ],
+  "redline": "不打印/不转述 key；不手改 config.yaml；404 不得靠无限重试掩盖；降级状态必须显式告知，不假装正常。",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md 第四节"
+}

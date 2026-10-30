@@ -1851,6 +1851,21 @@
    "source_blob": "36d63cc246a7926142e69b7cc3a4ad0ff200dada",
    "transform": "copy"
   },
+  "outbox/receipt_R5-1_xiaodou.json": {
+   "public_blob": "b458f08114fea91ff7b3c221f6fd0bc1de5d52ca",
+   "source_blob": "b458f08114fea91ff7b3c221f6fd0bc1de5d52ca",
+   "transform": "copy"
+  },
+  "outbox/receipt_R5-2_xiaodou.json": {
+   "public_blob": "845baab7fb3802cc912cec7159730eb7f8f580e7",
+   "source_blob": "845baab7fb3802cc912cec7159730eb7f8f580e7",
+   "transform": "copy"
+  },
+  "outbox/receipt_R5-3_xiaodou.json": {
+   "public_blob": "d77911225d45f78e61c4c984c32eca7922a0375d",
+   "source_blob": "d77911225d45f78e61c4c984c32eca7922a0375d",
+   "transform": "copy"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2187,5 +2202,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T17:11:22+08:00"
+ "generated_at": "2026-10-30T17:48:13+08:00"
 }

@@ -1,0 +1,19 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "ref": "R5-2-NODE-PORT3000",
+  "title": "场景②小卡 NAS：3000 端口不可达5分钟，但 16880 通",
+  "exam": "QDAY R5 盲答（处置方案，非真实事故，未谎称演练已发生）",
+  "answered_at": "2026-10-30T09:46:52Z",
+  "status": "ANSWERED",
+  "decision_and_steps": [
+    "判定：16880 存活探测通=主机/mesh IP 活着；仅 3000(Gitea) 不通=**服务/端口级故障，不是主机宕机或 IP 变更**。可能：Gitea 进程挂/重启中、未监听3000、服务级防火墙。严禁据此宣布‘节点失联’或触发IP重新发现。",
+    "处置：①按 mcp_probe 现规则吸收抖动（8s超时、连续2次失败才告警，单次只 WARN）②区分探针：nas_alive(16880)=true 而 gitea(3000)=false → 标 service-down 而非 host-down ③本节点同步走 sync v5 兜底：pull 先重试2/5/10s，再走隧道127.0.0.1:23000；隧道同源也挂时 GitHub 镜像只读取对象（滞后且无关历史，不reset/rebase）④本地照常 commit 但不强推（push 失败 sync 记 fail，提交不丢），不把‘拉不到’当‘数据丢’ ⑤立刻@小卡查 Gitea：systemctl status gitea / docker ps、ss -ltnp|:3000、容器/服务日志，恢复后我侧 fetch 校验 sha 连续 ⑥升级阈值：3000 连续≥15min 不通且16880通→P1 服务告警(@小卡+@QUEEN)；一旦16880也挂→才升级为主机/mesh级并做IP重新发现。",
+    "恢复确认：连续3周期 gitea_pull=OK、3000 mcp 端点 true、正本 sha 连续无回退，告警 resolved。"
+  ],
+  "evidence_to_collect": [
+    "results/mcp-probe-status.json（nas_alive vs endpoints.gitea）、探测时间线、16880/3000 对比回显、给小卡的通知message_id、恢复后3周期OK原文"
+  ],
+  "redline": "16880通不得宣告节点失联/改IP；镜像只读不抢写；不因为拉不到就 force 或 reset。",
+  "spec_ref": "reports/QUEEN-GAUNTLET-QDAY-20261030.md 第四节"
+}
