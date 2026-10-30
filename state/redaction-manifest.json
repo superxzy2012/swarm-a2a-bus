@@ -276,6 +276,31 @@
    "source_blob": "b6febf64397bf5e96e511e34718806e41e4fe661",
    "transform": "redact"
   },
+  "outbox/alert_diverge_20261029T230202Z_10_4_4_16.json": {
+   "public_blob": "144ed6183c71144cfb0800243e9b9a8544af2bc5",
+   "source_blob": "d2b5763baf6e4a719fe8099c2e142d94df76b0e4",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261030T000202Z_10_4_4_16.json": {
+   "public_blob": "92aa20cdf32e69f0c170f532163d4fe05968194d",
+   "source_blob": "c0c21128d91cd2027a85b2f99b6c33a2837dd396",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261030T010202Z_10_4_4_16.json": {
+   "public_blob": "3a2ef3054d10a50112459cbb4d15c1adbe926f41",
+   "source_blob": "eb0e2818b82e4a6535d41e0896b0240de51b90b1",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261030T020203Z_10_4_4_16.json": {
+   "public_blob": "20f146f04ec3565080b64575da293c1fcd18a7b5",
+   "source_blob": "47dc528f9db1e1b155c12b9501482cafa87c118d",
+   "transform": "redact"
+  },
+  "outbox/alert_diverge_20261030T022716Z_10_4_4_16.json": {
+   "public_blob": "0edba30735a30735a47386136a7dd787df9a7628",
+   "source_blob": "0edba30735a30735a47386136a7dd787df9a7628",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -2062,5 +2087,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T06:20:03+08:00"
+ "generated_at": "2026-10-30T10:27:16+08:00"
 }
