@@ -1,0 +1,22 @@
+{
+  "type": "receipt",
+  "from": "xiaodou",
+  "sim": true,
+  "ref": "SIM-T-REASSIGN-001",
+  "title": "§3.2 测试3：模拟失败->自动改派（隔离演练，不触业务）",
+  "task_id": "SIM-T-REASSIGN-001",
+  "object_id": "OBJ-SIM-REASSIGN",
+  "old_state": "RUNNING",
+  "new_state": "FAILED",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-30T22:31:51+08:00",
+  "fail_reason": "模拟：测试执行者连续2次无法完成（演练注入，非真实故障）",
+  "fail_count": 2,
+  "evidence_links": [
+    "ledgers/ledger_tasks.csv#SIM-T-REASSIGN-001"
+  ],
+  "ledger_updated": false,
+  "cost_actual": 0,
+  "revenue_actual": 0,
+  "note": "D1 §3.2-3 用；按手册6.2 节点无响应/失败第1次自动改派健康节点，第2次降级。"
+}

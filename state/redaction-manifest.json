@@ -366,6 +366,11 @@
    "source_blob": "a37cc6a8ac684636685209abb4dfcd32d33e3f09",
    "transform": "copy"
   },
+  "outbox/reassign_SIM-T-REASSIGN-001_223151_xiaodou.json": {
+   "public_blob": "867a56c9201541078e75547c8da59c2cee155c26",
+   "source_blob": "867a56c9201541078e75547c8da59c2cee155c26",
+   "transform": "copy"
+  },
   "outbox/receipt_A2A-DEDUPE-VM_friday_20261018T174929.json": {
    "public_blob": "80f4863cd10d10d0550568b7a5cda45fa99efbd8",
    "source_blob": "80f4863cd10d10d0550568b7a5cda45fa99efbd8",
@@ -469,6 +474,11 @@
   "outbox/receipt_AI-SHARE-MIGRATE_ACK_friday_20261018T193114.json": {
    "public_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
    "source_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
+   "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1_xiaodou.json": {
+   "public_blob": "10d1f2e5094210468dfd1a10df4a9f33e4493eaf",
+   "source_blob": "10d1f2e5094210468dfd1a10df4a9f33e4493eaf",
    "transform": "copy"
   },
   "outbox/receipt_BACKUP-TAKEOVER-DRILL_friday_20261020T1240+0800.json": {
@@ -1901,6 +1911,11 @@
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
    "transform": "redact"
   },
+  "outbox/receipt_SIM-T-REASSIGN-001_xiaodou.json": {
+   "public_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
+   "source_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
+   "transform": "copy"
+  },
   "outbox/receipt_SWARM-EXEC004-BROUTE-MAC-xiaoli_20261019T083200+0800.json": {
    "public_blob": "d1edebff505358184ea0646843e23325302f5bec",
    "source_blob": "0c455a6f1ac8b7bbd80a8d4671ff6096696b2a6f",
@@ -2232,5 +2247,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-30T22:02:33+08:00"
+ "generated_at": "2026-10-30T22:43:00+08:00"
 }

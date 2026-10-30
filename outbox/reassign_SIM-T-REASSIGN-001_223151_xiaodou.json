@@ -1,0 +1,20 @@
+{
+  "type": "reassignment",
+  "by": "xiaodou",
+  "sim": true,
+  "ts": "2026-10-30T22:31:51+08:00",
+  "task_id": "SIM-T-REASSIGN-001",
+  "object_id": "OBJ-SIM-REASSIGN",
+  "business_line": "SwarmGov",
+  "trigger": "FAILED x2（模拟注入）",
+  "rule": "02手册 §6.2 第1次失败->自动改派健康节点",
+  "from_executor": "xiaodou",
+  "to_executor": "jarvis（在册独立审计/健康节点；只读复核类适配）",
+  "old_state": "FAILED",
+  "new_state": "ASSIGNED",
+  "timeout_action_if_fail_again": "degrade->人工/替代通道",
+  "object_lost": false,
+  "evidence": [
+    "receipt_SIM-T-REASSIGN-001_xiaodou.json"
+  ]
+}

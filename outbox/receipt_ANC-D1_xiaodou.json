@@ -1,0 +1,31 @@
+{
+  "task_id": "T-ANC-D1-ONBOARD",
+  "object_id": "OBJ-ANC-ONBOARD",
+  "old_state": "RUNNING",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-30T22:33:48+08:00",
+  "evidence_links": [
+    "reports/ANC-D1-xiaodou-20261030.md",
+    "ledgers/ledger_tasks.csv (4 rows, gate accepted=4 rejected=0)",
+    "anc_ledger_gate.py (退出码0; 负例缺oid/purple 均拦截)",
+    "daily_cycle_xiaodou.py#ANC台账闸门 (五项检查实跑OK)",
+    "ledgers/ozon_cm1_orders.csv sha256 f36b70f88db2e491 (测试1)",
+    "outbox/receipt_SIM-T-REASSIGN-001_xiaodou.json (测试3失败回执)",
+    "outbox/reassign_SIM-T-REASSIGN-001_*_xiaodou.json (测试3自动改派jarvis)",
+    "commit:见本回执所在提交"
+  ],
+  "ledger_updated": true,
+  "cost_actual": {
+    "cny": 0,
+    "usd": 0,
+    "model": "ark-code-latest 包月内, OpenRouter免费额度0"
+  },
+  "revenue_actual": 0,
+  "decision": "continue",
+  "next_action": "QUEEN/贾维斯核验D1三测试(尤其测试3 jarvis改派闭环); 明早09:00共治第一卡daily_cycle自动出报; Ozon CM1 等BOSS亲导后台3单",
+  "next_owner": "friday(核验)/jarvis(SIM改派确认)/BOSS(Ozon数据)",
+  "red_lines": "零触碰:无证券/无资金/无越权/无付款; 测试2低风险变化已回滚; 测试1 UNKNOWN未填0未引用2亏1断供",
+  "three_required_gate": "object_id/business_line/permission_level 已强制，缺字段不入队",
+  "status": "SUBMITTED_REVIEW"
+}
