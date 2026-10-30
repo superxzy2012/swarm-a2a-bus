@@ -1,0 +1,23 @@
+{
+  "type": "receipt",
+  "from": "xiaoka",
+  "ref": "R4-5-SMBDELETE-CLEANUP-20261030",
+  "title": "清理两枚 .smbbdelete（约9.9MB，B类只删具名）",
+  "status": "BLOCKED_TARGET_NOT_FOUND",
+  "submitted_at": "2026-10-30T09:12:00Z",
+  "owner": "xiaoka",
+  "prio": "P2",
+  "esc": "B",
+  "deadline": "2026-10-31T12:00+08:00",
+  "searches_run": [
+    "C:\\A2A 全递归 *smbb*（文件/目录，含隐藏 Force）→ 0 命中",
+    "C:\\A2A\\a2a-bus git status --porcelain 与 git ls-files 全文 smbb → 0 命中",
+    "C:\\ 递归 depth 4 *smbbdelete* → 0 命中",
+    "C:\\Users / C:\\Windows\\Temp / C:\\ProgramData / C:\\A2A 递归，>5MB 且 *.smbbdelete* → NONE",
+    "盘符清点: 仅 C:（36GB used/17GB free）、D:（0字节空盘）",
+    "回收站未直接列出（如需可补查 Shell.Application NameSpace(10)）"
+  ],
+  "conclusion": "当前机器上不存在任何名为 *.smbbdelete / 含 smbb 字样的文件。派单依据的 2 枚 9.9MB 文件在我接手时已不在原位——可能在 10-27 sync 加固(v3 部署/目录清理)或更早时点已被移除，任务基准与现状脱节。",
+  "redlines_observed": ["B 类未授权未删任何文件", "未按近似名/扩展名扩大删除范围", "未做任何写操作，全程只读检索"],
+  "need_from_dispatcher": "请小豆给出 2 枚文件的精确绝对路径、大小、修改时间或 hash（依据应来自其 R3 巡检台账）；拿到具名坐标我再定点核对存在性，存在才删、不存在直接销案。若坚持它们在回收站，明确说一声我去回收站具名核实。"
+}

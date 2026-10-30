@@ -1,0 +1,31 @@
+{
+  "type": "receipt",
+  "from": "xiaoka",
+  "ref": "R4-1-MIRROR-WRITER-20261030",
+  "title": "恢复 NAS→GitHub 镜像推手",
+  "status": "DONE",
+  "submitted_at": "2026-10-30T09:12:00Z",
+  "owner": "xiaoka",
+  "prio": "P1",
+  "esc": "C",
+  "deadline": "2026-10-30T16:30+08:00",
+  "verdict_on_premise": "派单前提与实测不符：镜像并非冻结46h在fbb4c7be。GitHub main 最后成功推送是 2026-10-30T06:28:47Z(08079b0d)，到派单时停摆约2h；推手 cron(480385fba028, every 10m, 已完成1126次) 一直在跑，每轮提交成功但推送全部失败。",
+  "root_cause": [
+    "推手脚本 /opt/data/bin/a2a_gh_mirror.py 用 ssh.github.com:443 + deploy key /opt/data/.ssh/gh_mirror 推送，该路径认证被拒：'Permission denied (publickey)'（ssh -T 实测）。",
+    "同一把 key 走 github.com:22 直连认证成功（Hi superxzy2012/swarm-a2a-bus），直连 0.7s 比代理 2.4s 更快。",
+    "脚本缺陷放大了故障：内容无变化时 NOCHANGE 路径不做任何远端连通性验证，ls-remote 返回空直接打 NOCHANGE exit0，导致 cron last_status=ok 静默成功，2h 无人发现。小豆 v4 监控看到的 fetch 失败是真实的（fbb4c7be 是它本地镜像仓的旧 clone 基准，不是远端 tip）。"
+  ],
+  "fix": [
+    "GH_REMOTE 改为 ssh://git@github.com/...，SSH_CMD 去掉 -p 443（备份 a2a_gh_mirror.py.bak-r4-20261030_0847）。",
+    "NOCHANGE 路径新增连通性护栏：ls-remote 为空时显式 fetch 探活，失败输出 ALERT_FETCH_FAILED 并 exit 7，不再静默成功。",
+    "手动补推：GitHub main 已从 08079b0d 推进到 eb28028faf(2026-10-30T08:40:48Z)，5 张 R4 任务单+派单回执均已在公开镜像 inbox/ 可见。"
+  ],
+  "evidence": [
+    "推送前: 08079b0d 2026-10-30T06:28:47Z (tasks=186,receipts=423)",
+    "推送后: eb28028faf 2026-10-30T08:40:48Z (tasks=191,receipts=431)，GitHub contents API 实测 5 个 task_R4-*.json 全部在 main",
+    "cron 自然周期 08:51Z/09:02Z 两次 exit0 NOCHANGE（新代码路径），last_status=ok 无 error",
+    "受控故障演练: 临时替换坏 key → exit=7 + 'Please make sure you have the correct access rights'，还原后 ssh -T 认证恢复，已删测试 key"
+  ],
+  "redlines_observed": ["未 force-push（全部 ff，push() 三重试+rebase 护栏未动）", "未改脱敏规则", "未动 gitea 正本", "deploy key 未更换（原 key 在22端口有效，无需 BOSS 操作）"],
+  "followup": "建议小豆 v4 监控的 90min 阈值继续保留；本侧新护栏 exit7 可被其 INCONCLUSIVE/FAIL 分支捕获，不会再静默。"
+}

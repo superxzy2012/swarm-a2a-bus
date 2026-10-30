@@ -1,0 +1,29 @@
+{
+  "type": "receipt",
+  "from": "xiaoka",
+  "ref": "R4-4-FEISHU-SCOPES-REMAIN-20261030",
+  "title": "走 BOSS P0 申请补剩余读类 scope（im:chat / drive）",
+  "status": "WAITING_BOSS",
+  "submitted_at": "2026-10-30T09:12:00Z",
+  "owner": "xiaoka",
+  "prio": "P2",
+  "esc": "A",
+  "deadline": "2026-10-31T12:00+08:00",
+  "why_blocked": "A 类：飞书开放平台权限只能由应用所有者/管理员在开发者后台勾选并发版，agent 无法自助开通。本回执只整理申请材料，不代点发布。",
+  "application_context": {
+    "app_id_that_lacks_scope": "cli_aa07a4442a78dbcf（小豆-新Hermes 本 app，小豆自报缺 im:message.group_msg 群消息读取）",
+    "xiaoka_note": "小卡本 app 群消息收发正常，本单的 scope 缺口属于小豆 app；若同时给小豆补 drive 读权限，请 BOSS 在同一个应用下一并勾选。"
+  },
+  "scopes_requested_read_only": [
+    {"scope": "im:chat", "purpose": "读取群信息/群成员、拉取群会话列表（只读）", "risk": "低，读类"},
+    {"scope": "im:message.group_msg", "purpose": "读取群聊历史消息（小豆 swarm-watch 直读群消息的替代路径，避免依赖总线镜像延迟）", "risk": "读类，含群内历史消息可见面扩大，BOSS 知悉"},
+    {"scope": "drive:drive:readonly 或 docx/document 只读项", "purpose": "读取云文档/知识库（按实际要读的资源类型在后台勾最小读权限）", "risk": "低，只读"}
+  ],
+  "steps_for_boss": [
+    "登录 https://open.feishu.cn → 开发者后台 → 选应用 cli_aa07a4442a78dbcf",
+    "权限管理 → 勾选上述读类 scope → 创建版本 → 提交发布（企业自建应用通常管理员即审即过）",
+    "发布后把版本号/生效时间发群里，我负责在小豆侧复测（群消息直读、云文档读取各一次真实读取）"
+  ],
+  "my_commitment_after_publish": "A 类我只做复测：用新 scope 跑一次真实群消息读取和一次文档读取，输出成功/失败+返回字段，不做任何写操作。",
+  "deadline_management": "若 10-31 12:00 前 BOSS 未发版，状态保持 WAITING_BOSS（外部依赖），不算小卡 C 超时；需要小豆继续靠总线镜像读群，其根因已在 R4-1 修复（镜像推送恢复）。"
+}

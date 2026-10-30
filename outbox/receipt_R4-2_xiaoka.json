@@ -1,0 +1,37 @@
+{
+  "type": "receipt",
+  "from": "xiaoka",
+  "ref": "R4-2-GITCREDS-ACL-20261030",
+  "title": "收窄 C:\\A2A\\.git-credentials ACL（B 类，先评审备份，不动原文件）",
+  "status": "WAITING_AUTHORIZATION",
+  "submitted_at": "2026-10-30T09:12:00Z",
+  "owner": "xiaoka",
+  "prio": "P2",
+  "esc": "B",
+  "deadline": "2026-10-31T12:00+08:00",
+  "review_findings": {
+    "path": "C:\\A2A\\.git-credentials",
+    "size_bytes": 189,
+    "mtime": "2026-10-30T16:47:03+08:00",
+    "current_acl_icacls": [
+      "NT AUTHORITY\\SYSTEM:(I)(F)",
+      "BUILTIN\\Administrators:(I)(F)",
+      "BUILTIN\\Users:(I)(RX)"
+    ],
+    "finding": "三条均为继承项 (I)。BUILTIN\\Users:RX 意味着本机任何普通用户可读取文件内容（HTTPS 凭据明文 URL，含 GitHub token 形态）。实际风险评估：本机日常以 Administrator 单用户运行、非域机、远程 SSH 仅密钥+组网/白名单，利用面有限；但凭据明文+任何本地进程可读，纵深防御上应收窄。",
+    "content_not_read": "评审只读取文件大小/时间/ACL，未打印或回传文件内容。"
+  },
+  "backup_done": {
+    "path": "C:\\A2A\\r4-reviews\\git-credentials_20261030_170409.bak",
+    "acl_after_backup": ["BUILTIN\\Administrators:(F)", "NT AUTHORITY\\SYSTEM:(F)"],
+    "note": "评审副本已禁继承(/inheritance:r)并仅授 SYSTEM+Administrators，回滚有保障。"
+  },
+  "proposed_change": {
+    "command": "icacls C:\\A2A\\.git-credentials /inheritance:r /grant \"SYSTEM:F\" \"Administrators:F\"",
+    "effect": "去继承，仅 SYSTEM 与 Administrators 完全控制，BUILTIN\\Users 读取权移除",
+    "rollback": "恢复继承或从评审副本还原；git push 走 Administrator 上下文不受影响",
+    "side_effect_check": "sync.ps1 v4 / worker 均以 Administrator 运行；gh-mirror 相关进程同上下文，收窄不影响现有任务"
+  },
+  "blocker": "B 类：未获 BOSS 明确授权前不改原文件 ACL（本次只做评审+副本）。",
+  "evidence": ["icacls 原件输出 3 条继承 ACE（含 BUILTIN\\Users:(I)(RX)）", "评审副本 icacls 仅 2 条非继承 ACE"]
+}
