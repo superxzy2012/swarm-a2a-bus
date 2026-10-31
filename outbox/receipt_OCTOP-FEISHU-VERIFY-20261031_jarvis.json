@@ -1,0 +1,70 @@
+{
+ "type": "receipt",
+ "receipt_id": "OCTOP-FEISHU-VERIFY-20261031_jarvis",
+ "from": "jarvis",
+ "to": "BOSS",
+ "ts_utc": "2026-10-31T16:32:33Z",
+ "artifact": "reports/octop/OCTOP-FEISHU-INTEGRATION-VERIFY-20261031_jarvis.md",
+ "app": {
+  "name": "章鱼-OCTOP",
+  "app_id_prefix4": "cli_",
+  "app_id_tail4": "9ce0",
+  "open_id_my_scope": "ou_98c57d19f428550cf225ded19a031647",
+  "bound_agent": "美客多选品专家(071WV5,running)",
+  "container": "octop(NAS, ghcr.io/tencentcloud/octop:1.0.2, host8088, no separate bridge)",
+  "event_mode": "websocket long-conn ACTIVE (conn 7702864179430411521 @16:07:16)",
+  "version": "app_versions=1.0.0 publish_status=null but app functional (send ok)"
+ },
+ "scopes_probed": {
+  "ok": [
+   "im:message read single msg",
+   "im:message:send_as_bot",
+   "im:chat list",
+   "im.message.reaction.* events(889/48h)"
+  ],
+  "missing": [
+   "im:message.group_msg(230027)",
+   "im:chat:members:read(99991672)",
+   "contact dept(40004)"
+  ]
+ },
+ "root_cause": "event subscription list lacks im.message.receive_v1 -> 0 message events in 48h (only 889 reaction). Code already registers it at feishu.py:247. No code change/restart needed.",
+ "group_test": {
+  "at_mid": "om_x100b61553865fca0c4792ec25cfc45f",
+  "mention_resolved": true,
+  "reply_received": false,
+  "reply_events_20min": 0,
+  "send_as_octop_mid": "om_x100b61553479fca4c133d0af0bc25bb",
+  "send_verified_chat": "oc_568730200f9a3120919be177344687e5",
+  "verdict": "单向通：能发不能收"
+ },
+ "robustness": {
+  "reconnect": "3-layer(SDK 3600s rotation + 30s watchdog/180s stale/3600s hard restart + 5s backoff); 48 reconnects/48h all self-healed, gap<5s; traceback=CancelledError from sleep(3600) NOT crash",
+  "idempotent": "message_id dedup OrderedDict max 2000 FIFO",
+  "reply_timeout": "NONE (constraints.py:40 'Feishu: no hard timeout'); silent hang risk",
+  "residual_risk": "~0.14% msg loss in reconnect blind window (Feishu does not replay)"
+ },
+ "blockers": [
+  {
+   "id": "A",
+   "item": "add event im.message.receive_v1 (long-conn) in dev console",
+   "owner": "BOSS",
+   "hard": true
+  },
+  {
+   "id": "B",
+   "item": "add scopes im:message.group_msg + im:chat:members:read",
+   "owner": "BOSS",
+   "hard": false
+  },
+  {
+   "id": "C",
+   "item": "feishu channel bound to 美客多选品专家 not a router -> decide rebind or treat as vertical line",
+   "owner": "BOSS",
+   "hard": true
+  }
+ ],
+ "readonly": true,
+ "mutations": 0,
+ "group_msgs_sent": 2
+}

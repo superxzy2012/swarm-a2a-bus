@@ -2056,6 +2056,11 @@
    "source_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
    "transform": "copy"
   },
+  "outbox/receipt_OCTOP-FEISHU-VERIFY-20261031_jarvis.json": {
+   "public_blob": "c5a0d38e28676fdf1a646e661c363bac3c4ff174",
+   "source_blob": "c5a0d38e28676fdf1a646e661c363bac3c4ff174",
+   "transform": "copy"
+  },
   "outbox/receipt_OCTOP-NOON-FEES-MATRIX-20261031.json": {
    "public_blob": "c14b1d08ee4d770ccba41e0982c23662b7c609b3",
    "source_blob": "c14b1d08ee4d770ccba41e0982c23662b7c609b3",
@@ -2662,5 +2667,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T00:21:29+08:00"
+ "generated_at": "2026-10-31T16:32:38Z"
 }
