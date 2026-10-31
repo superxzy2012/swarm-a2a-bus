@@ -1991,6 +1991,11 @@
    "source_blob": "dd9b8948aab75db5bd422a3c6713c23f80d700c0",
    "transform": "copy"
   },
+  "outbox/receipt_ORDER-DEPLOY-SYNCFIX-20261031_friday.json": {
+   "public_blob": "98dc6d17ed0430658328dc77a569b168b6867359",
+   "source_blob": "041391756b2bbeed1b284b175d81e71db7c10603",
+   "transform": "redact"
+  },
   "outbox/receipt_ORG-20261022-CEO-TRANSITION_friday.json": {
    "public_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
    "source_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
@@ -2562,5 +2567,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T21:17:10+08:00"
+ "generated_at": "2026-10-31T21:28:56+08:00"
 }
