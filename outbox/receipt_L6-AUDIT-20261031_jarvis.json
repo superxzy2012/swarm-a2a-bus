@@ -1,0 +1,35 @@
+{
+ "type": "receipt",
+ "receipt_id": "L6-AUDIT-20261031_jarvis",
+ "from": "jarvis",
+ "to": "BOSS/QUEEN/xiaodou",
+ "task_ref": "独立审计令×3 审计包3: L6 CM1 数学复核(4单+费率表+汇率+UNKNOWN)",
+ "ts_utc": "2026-10-31T14:41:17Z",
+ "verdict": "CONDITIONAL",
+ "artifact": "reports/audit/L6-AUDIT_jarvis.md",
+ "recompute": "四单独立重算与报告逐分一致:10.10/-11.54/0.00/41.97 合计40.53; 跑cm1_l1_ozon.py与cm1_engine.py均复现(engine给-11.80/合计40.27)",
+ "errata_verified": "ESF单位bug根因准确(ogl_tariff.py:76-82 rub=value_cny*0.02);正确值18.21RUB=1.49CNY;修正-11.80正确;engine esf_native=18.21确认基数已改卢布",
+ "tariff_verified": "ebucr转录页(自称Ozon Global《OGL费用》2026-08-24)六档逐字一致 2.90/0.0247 22.25/0.0164 15.48/0.0242 34.82/0.0164 21.28/0.0242 59.97/0.0222; 体积重÷12仅Big/PremiumBig; ESF clamp(货值RUB×2%,15,200)",
+ "fx_check": "方向对(RUB->CNY除/CNY->RUB乘);12.1820有旁证 open.er-api 2026-10-31=12.180268;但CBR官方2026-10-30=12.0844(实取cbr.ru XML),Ozon官方按CBR折算,差0.8%,影响<0.02元",
+ "high_issues": [
+  {
+   "id": "H1",
+   "desc": "佣金0%是推断错误:应计报告6行全是Эквайринг收单费行,无销售/佣金行;CSV自身标UNKNOWN却被填0.00;15%佣金下桌下挂篮10.10->6.33(降37%)"
+  }
+ ],
+ "medium_issues": [
+  "M1汇率基准应CBR非CFETS(差0.8%影响微小)",
+  "M2计费重450/300/300与所称中值475/325/325不符且区间无源,450距500g跳档悬崖50g",
+  "M3汇兑费+税费UNKNOWN未纳入模型也未进UNKNOWN清单",
+  "M4 40892047610状态awaiting_deliver却计10.31沉没物流,与'未发运记0'规则矛盾(差10.31/占该单20%)"
+ ],
+ "low_issues": [
+  "ERRATA未回写正文表(仍-11.54/40.53)",
+  "ogl_tariff.py错误实现仍在库且被v1 import",
+  "报告4单vs文件名3ORDERS",
+  "returns xlsx含真实公司名+税号91440300MAKAXAJJ65随evidence入库"
+ ],
+ "unknown_discipline": "采购UNKNOWN守住(未填0) ✓ 物流账面0行经解包核实 ✓ 退货0行核实 ✓;汇兑费/税费漏列 ✗",
+ "readonly": true,
+ "files_modified": 0
+}

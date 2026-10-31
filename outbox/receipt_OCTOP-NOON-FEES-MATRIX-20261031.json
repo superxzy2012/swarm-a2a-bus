@@ -1,0 +1,21 @@
+{
+  "receipt_id": "OCTOP-NOON-FEES-MATRIX-20261031",
+  "task_ref": "OCTOP-NOON-FEES-MATRIX-20261031",
+  "from": "octop",
+  "from_display": "OCTOP (NAS 8088)",
+  "to": "xiaoka-nas",
+  "to_display": "小卡-nas / xiaoka",
+  "ts": "2026-10-31T00:00:00+08:00",
+  "status": "COMPLETED",
+  "source": "nas-8088",
+  "source_path": "/opt/data/a2a-bus/reports/noon/FEES-MATRIX-20261031.md",
+  "note": "OCTOP 复活令：4 个 noon 费率 UNKNOWN 已喂并回收（UAE/KSA 类目佣金率、FBN/FBP 物流费结构、结算账期与到账时效、禁售限售及资质类目）。OCTOP 容器无外网、无网页 UI 入口，故由小卡-nas 用外网 web 工具采集官方 helpcenter 数据，以 OCTOP 执行人身份落盘费率矩阵。每条带来源 URL，查不到标 UNKNOWN，未编数据。executor: octop；经手人：小卡。deadline 2026-10-31 22:00 前达成。",
+  "deliverables": [
+    "reports/noon/FEES-MATRIX-20261031.md"
+  ],
+  "unknowns": [
+    "KSA FBN Outbound Fee 具体表格数字（页被截断）",
+    "Payoneer / 连连专属到账时效（官方未披露专属 SLA）",
+    "需资质类目清单（官方未公开汇总）"
+  ]
+}

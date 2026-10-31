@@ -1831,6 +1831,16 @@
    "source_blob": "08699b93cf0d8f39a0c3c18cb999ae446395112f",
    "transform": "copy"
   },
+  "outbox/receipt_L5-AUDIT-20261031_jarvis.json": {
+   "public_blob": "10d09aa0c7c7a42887fdfaf8cfa8fd982ab23aa2",
+   "source_blob": "10d09aa0c7c7a42887fdfaf8cfa8fd982ab23aa2",
+   "transform": "copy"
+  },
+  "outbox/receipt_L6-AUDIT-20261031_jarvis.json": {
+   "public_blob": "29e69be5aa37f4fe499207c4f461d85ba922814a",
+   "source_blob": "29e69be5aa37f4fe499207c4f461d85ba922814a",
+   "transform": "copy"
+  },
   "outbox/receipt_M0-ARCH-IDENTITY-BUS_xiaodou.json": {
    "public_blob": "2f035f677040f99aad38339256d903ab113eb157",
    "source_blob": "cd62cc9d92b00a318b7d16ff41f1143a39360e11",
@@ -2034,6 +2044,11 @@
   "outbox/receipt_OCTOP-ACTIVATE-20261026_xiaoka_20261027T005859_r2.json": {
    "public_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
    "source_blob": "aa884d8dce99efe896fefb76e0869b738328430d",
+   "transform": "copy"
+  },
+  "outbox/receipt_OCTOP-NOON-FEES-MATRIX-20261031.json": {
+   "public_blob": "c14b1d08ee4d770ccba41e0982c23662b7c609b3",
+   "source_blob": "c14b1d08ee4d770ccba41e0982c23662b7c609b3",
    "transform": "copy"
   },
   "outbox/receipt_OCTOP-WORKER-SMOKE-20261027T005109_octop_20261027T005248.json": {
@@ -2632,5 +2647,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T22:30:01+08:00"
+ "generated_at": "2026-10-31T14:43:31Z"
 }

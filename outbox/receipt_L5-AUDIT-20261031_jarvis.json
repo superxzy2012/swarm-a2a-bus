@@ -1,0 +1,64 @@
+{
+ "type": "receipt",
+ "receipt_id": "L5-AUDIT-20261031_jarvis",
+ "from": "jarvis",
+ "to": "BOSS/QUEEN/xiaodou",
+ "task_ref": "独立审计令×3 审计包2: L5品质服务成品脱敏复核",
+ "ts_utc": "2026-10-31T14:36:28Z",
+ "verdict": "CONDITIONAL",
+ "artifact": "reports/audit/L5-AUDIT_jarvis.md",
+ "desensitization": "PASS — 0真实公司/人名/联系方式/URL; word/media不存在(0图); thumbnail像素级核验min=max=255 唯一色数=1 纯白空图; core.xml creator=python-docx Company空",
+ "method_note": "视觉模型误读thumbnail为含中文文字的文档预览,经Pillow逐像素复验证伪(纯白图),结论以像素为准",
+ "promise_scan": "0正向承诺;4处命中全是否定句或自我约束(No outcome is guaranteed/no guaranteed pass/不承诺零缺陷)",
+ "leads_verified": {
+  "total": 5,
+  "live": 3,
+  "dead": 2,
+  "LEAD-01": {
+   "status": "live",
+   "budget": "$150.00(另一次渲染$180.00)",
+   "posted": "2026-10-21",
+   "verified_claims": [
+    "proposal must start with word INSPECTION",
+    "anonymized sample report",
+    "AQL GL II",
+    "24h English"
+   ]
+  },
+  "LEAD-02": {
+   "status": "live",
+   "budget": "$40.00"
+  },
+  "LEAD-03": {
+   "status": "DEAD",
+   "reason": "仅返回Upwork通用索引页,重试3次+搜索引擎均无该职位"
+  },
+  "LEAD-04": {
+   "status": "live",
+   "budget": "$350.00",
+   "posted": "2026-10-24",
+   "verified_claims": [
+    "no sourcing agents/commissions"
+   ]
+  },
+  "LEAD-05": {
+   "status": "DEAD",
+   "reason": "HTTP 404,项目页已不存在"
+  }
+ },
+ "high_issues": [
+  "H1 线索2/5失效,名单不可直接外发",
+  "H2 报价页与样品报告合订,索样即泄价目,应拆分"
+ ],
+ "medium_issues": [
+  "M1 geolocated照片承诺可能做不到",
+  "M2 Hi-pot/burn-in电气测试疑超能力边界",
+  "M3 docx属性creator=python-docx+created=2013-12-23",
+  "M4 平台佣金10%未入模型",
+  "M5 lead_type掩盖竞标制",
+  "M6 LEAD-01预算$150/$180待确认"
+ ],
+ "aql_recheck": "Lot2000 GLII→样本码K→n=125 ✓; Critical0 Ac0 ✓; Major2.5 Ac7 found4 ✓; Minor4.0 Ac10 found9 ✓ 全对;表头'Allowed'应改Ac",
+ "readonly": true,
+ "files_modified": 0
+}
