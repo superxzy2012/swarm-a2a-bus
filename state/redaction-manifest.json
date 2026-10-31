@@ -2186,6 +2186,11 @@
    "source_blob": "a81756ac9f298b7e24b17b1a92dbabc64f7c0369",
    "transform": "copy"
   },
+  "outbox/receipt_QUEEN-LEDGER-REPAIR-20261031_friday.json": {
+   "public_blob": "b3dbfee2f3da12741cd80af891df441ea15d1ee9",
+   "source_blob": "b3dbfee2f3da12741cd80af891df441ea15d1ee9",
+   "transform": "copy"
+  },
   "outbox/receipt_QUEEN-REPORT_azheng_20261019T211247.json": {
    "public_blob": "b07e0e5a94a0fb78c0d7369b497f4bfc84c2b96c",
    "source_blob": "b07e0e5a94a0fb78c0d7369b497f4bfc84c2b96c",
@@ -2647,5 +2652,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T23:03:46+08:00"
+ "generated_at": "2026-10-31T23:07:09+08:00"
 }
