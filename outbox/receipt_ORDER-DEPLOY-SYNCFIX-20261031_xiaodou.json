@@ -1,0 +1,40 @@
+{
+  "task_id": "ORDER-DEPLOY-SYNCFIX",
+  "object_id": "OBJ-SYNC-INFRA",
+  "old_state": "ASSIGNED",
+  "new_state": "DONE_PENDING_REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-31T21:54:54+08:00",
+  "deployed": {
+    "patch": "f71d5dd9",
+    "file": "C:\\A2A\\sync.ps1",
+    "backup": "C:\\A2A\\sync.ps1.bak-20261031",
+    "sha256": "687d12c4e45c2411f3f798100cb91aa8ccd1b4738c106a335bcf2cef9682de61",
+    "match_bus": true
+  },
+  "run_1": {
+    "ts": "2026-10-31T21:32:47+08:00",
+    "mirror_check": "OK(hb 5.2min, catch-up grace, lag=1.2min)",
+    "overall": "ok"
+  },
+  "defect_found": "D1 补丁只改注释未改来源: gitea_head 仍由 rev-parse HEAD 赋值 -> 未推送提交时 sha_match 恒 False, 只能靠 15min 宽限兜底(第11次FP机制)",
+  "fix_applied": "2行: gitea_head/gitea_head_ts 改取 origin/main (正本已推送tip); 1行方案实测无效(镜像段在$MIR目录,origin/main解析成镜像仓ref)",
+  "run_2": {
+    "ts": "2026-10-31T21:47:14+08:00",
+    "mirror_check": "OK(hb 8.6min, caught-up, lag=-9.8min)",
+    "overall": "ok",
+    "sha_match": true
+  },
+  "evidence_unpushed": {
+    "local_head": "15e1c900",
+    "origin_main": "5d19ca7b",
+    "ahead": 1,
+    "sha_match": true,
+    "note": "隔离副本跑部署后同一字节,仅替换BUS/LOG/PUSH_FLAG/心跳源"
+  },
+  "evidence_stale_content_format": "content behind [hb=8964bb0f gitea_tip=f71d5dd9 local_head=21d3665f] (三元组已生效)",
+  "evidence_link": "reports/SYNC-PATCH-DEPLOY-20261031_xiaodou.md",
+  "ask": "QUEEN 复核 2 行修法是否并入正本(已独立 commit,可单独 revert,不影响 D2/D3/D4)",
+  "not_done": "未临时删除 Write-DivergeAlert 行(补丁已跑通,无需降级)",
+  "red_lines": "未 force-push;未改镜像仓;未动推送闸门语义;测试全程在隔离副本"
+}
