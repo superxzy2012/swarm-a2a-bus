@@ -746,6 +746,11 @@
    "source_blob": "10d1f2e5094210468dfd1a10df4a9f33e4493eaf",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-L2-RESEARCH-M1M2_xiaodou.json": {
+   "public_blob": "3f3db449899541c046d9c1bbead04bdff73c707a",
+   "source_blob": "3f3db449899541c046d9c1bbead04bdff73c707a",
+   "transform": "copy"
+  },
   "outbox/receipt_BACKUP-TAKEOVER-DRILL_friday_20261020T1240+0800.json": {
    "public_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
    "source_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
@@ -2547,5 +2552,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T20:17:21+08:00"
+ "generated_at": "2026-10-31T20:32:37+08:00"
 }
