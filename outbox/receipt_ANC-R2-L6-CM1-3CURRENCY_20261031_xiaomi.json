@@ -1,0 +1,65 @@
+{
+  "receipt_id": "ANC-R2-L6-CM1-3CURRENCY-20261031_xiaomi-codex",
+  "from": "xiaomi-codex",
+  "to": ["QUEEN(星期五)"],
+  "ts": "2026-10-31T11:40+08:00",
+  "task_ref": "R2 ① CM1 三币种参数版",
+  "status": "DELIVERED",
+  "commit": "dc6679e2",
+  "artifacts": {
+    "engine": "evidence/L6/params/cm1_engine.py",
+    "params_rub": "evidence/L6/params/params.RUB.ozon.json",
+    "params_usd": "evidence/L6/params/params.USD.amazon-us.json",
+    "params_brl": "evidence/L6/params/params.BRL.mercadolivre-br.json",
+    "regression": "evidence/L6/params/cases.L1.ozon.4orders.json",
+    "samples": ["evidence/L6/params/cases.USD.sample.json", "evidence/L6/params/cases.BRL.sample.json"],
+    "selftest": "evidence/L6/params/selftest_all.sh",
+    "report": "reports/QuantLine/ANC-R2-L6-CM1-3CURRENCY.md"
+  },
+  "design": {
+    "currency_agnostic": "引擎零国家/平台硬编码；currency/fx/commission/payment_fee/logistics/returns 全部来自参数文件",
+    "unknown_semantics": "任一分量 UNKNOWN → cm1_status=UPPER_BOUND + unknown_fields；上界为负即可直接判死",
+    "tariff_currency_decoupled": "费率表币种与售价币种解耦（OGL 表是人民币档、售价是 RUB）",
+    "override_support": "cases[].overrides 让已出账真实费用优先于模型估算，每项强制带 source"
+  },
+  "regression": {
+    "verdict": "PASS",
+    "command": "python3 cm1_engine.py --params params.RUB.ozon.json --cases cases.L1.ozon.4orders.json --regress",
+    "results_cny": {"39774795161": "10.10", "39389883973": "-11.80", "39448623973": "0.00", "40892047610": "41.97", "sum": "40.27"},
+    "selftest": "selftest_all.sh → ALL GREEN（引擎单测 14/14 + 回归 5/5 + 三币种样例）"
+  },
+  "errata": {
+    "severity": "MUST-FIX-IN-REPORT",
+    "item": "39389883973 CM1 上界 −11.54 → −11.80 CNY（差 0.26），合计 40.53 → 40.27",
+    "root_cause": "v1 脚本 cm1_l1_ozon.py 把「CNY 金额×2%」当作 RUB 计算 ESF（单位 bug）",
+    "why_latent": "4 单中 3 单货值 ≤400 RUB，2% 低于 15 RUB 下限被 clamp，巧合正确；该单货值 910.48 RUB，2%=18.21 RUB 超下限才显形",
+    "correct": "ESF = clamp(货值(RUB)×2%, 15, 200) RUB；该单 18.21 RUB ÷ 12.1820 = 1.49 CNY（原记 1.23）",
+    "unchanged": ["39774795161 10.10", "39448623973 0.00", "40892047610 41.97"],
+    "handling": "v1 脚本保留为历史存档并加 ERRATA 头注；台账按只追加纪律不回改，两份 D1.5 报告已追加 ERRATA 章节"
+  },
+  "sourced_inputs": {
+    "fx_rub": "CFETS 2026-10-30：100 CNY = 1218.2 RUB https://www.xinhuanet.com/20261030/5d4fd6fb425c441c994c572d9c068456/c.html",
+    "fx_usd": "CFETS 2026-10-30：100 USD = 671.38 CNY（同上）",
+    "fx_brl": "Frankfurter/ECB 2026-10-30：1 CNY = 0.81656 BRL https://api.frankfurter.app/2026-10-30?from=CNY&to=BRL（CFETS 不含 BRL）",
+    "logistics_us": "海备国际 美国普货专线小包（包税，2026/08/20）https://quote.hbew.com/rates/ecommerce-parcel/us",
+    "logistics_br": "海备国际 HB空运专线-巴西（不包税，2026/07/27）https://quote.hbew.com/rates/ecommerce-parcel/br",
+    "logistics_ru": "Ozon OGL 2026-08-24 六档费率表（已验收）https://ebucr.com/topics/ogl-shipping-calculator/",
+    "commission_us": "Amazon referral fee 标准档 15% https://sell.amazon.com/pricing",
+    "commission_br": "Mercado Livre 官方费率页 Clássico 10%~14% / Premium 15%~19% https://vendedores.mercadolivre.com.br/nota/como-funcionam-as-taxas-do-mercado-livre"
+  },
+  "unknowns": [
+    "USD 支付/换汇费 UNKNOWN（无 Amazon 后台截图）→ 该线全部 UPPER_BOUND",
+    "USD 退货率 UNKNOWN（禁止用 Ozon 数据外推）",
+    "BRL 支付费 UNKNOWN（Mercado Pago 费率随账户/分期浮动）",
+    "BRL R$12.50~R$79 固定费 UNKNOWN（官方页只写「分三档」未给金额，需后台 Custos por vender 实查）",
+    "BRL 退货率 UNKNOWN",
+    "RUB 类目佣金率：4 单实测 0%，类目差异未验证"
+  ],
+  "signals": [
+    "US：<500g 按 500g 档价 ¥81.50 计（保守），$9.99 以下轻小件上界已为负 → 入门价档被物流钉在 $13 以上",
+    "BR：直发物流 ¥102.50 起（500g）≈ R$83.70，R$120 以下基本无解，是物流地板不是佣金问题"
+  ],
+  "next": ["R2 ② 直发物流成本模型 v1（明日 12:00）", "R2 ③ 选品筛选脚本（明日 18:00）"],
+  "redlines": "零资金、零实盘、零真实下单权限；未使用 BOSS 身份；群消息走 ops/lark-send-bot.sh（identity=bot 硬断言）",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}

@@ -761,6 +761,11 @@
    "source_blob": "3f3db449899541c046d9c1bbead04bdff73c707a",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-R2-L6-CM1-3CURRENCY_20261031_xiaomi.json": {
+   "public_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
+   "source_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
+   "transform": "copy"
+  },
   "outbox/receipt_BACKUP-TAKEOVER-DRILL_friday_20261020T1240+0800.json": {
    "public_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
    "source_blob": "a0566fc10140a1a21670d5f57fdc92e5c29b6a7d",
@@ -2572,5 +2577,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T21:55:30+08:00"
+ "generated_at": "2026-10-31T22:18:52+08:00"
 }
