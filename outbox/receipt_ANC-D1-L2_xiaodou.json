@@ -1,0 +1,41 @@
+{
+  "task_id": "ANC-D1-L2",
+  "object_id": "OBJ-AMAZON",
+  "old_state": "RUNNING",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-31T20:16:55+08:00",
+  "evidence_links": [
+    "evidence/amazon/D1-3_UNIT-ECONOMICS-TEMPLATE.md",
+    "evidence/amazon/D1-3_unit-economics-template.csv",
+    "evidence/amazon/D1-4_SKU-SOURCE-SHORTLIST.md",
+    "evidence/amazon/D1-4_sku-source-shortlist.csv",
+    "evidence/amazon/D1-2_B-PATH-DATA-SPEC.md",
+    "tools/amazon_bpath_parse.py",
+    "reports/amazon/L2-D1-DRAFT-20261031_xiaodou.md"
+  ],
+  "delivered": [
+    "D1-3 单位经济模板(18字段+公式+3场景样算)",
+    "D1-4 货源初筛(5家真实货源+SKU-A+5项上架前验证)",
+    "D1-2 B路取数说明+可运行解析器(selftest PASS)"
+  ],
+  "blocked": [
+    "D1-1 店铺现状审计截图:session全过期需BOSS 2SV重登",
+    "D1-2 订单页截图:同上,已给B路CSV替代"
+  ],
+  "ledger_updated": true,
+  "cost_actual": {
+    "cny": 0,
+    "usd": 0,
+    "note": "0投放0订阅0采购"
+  },
+  "revenue_actual": 0,
+  "decision": "continue",
+  "profit_q1": "CM1可算但关键输入全为ESTIMATE/ASSUMPTION(采购=公开页/头程=公开基准/佣金=类目默认15%/退款广告=假设),未实测不报已验证",
+  "profit_q2": "零单零流量,后台不可达,不编数字",
+  "profit_q3": "量化止损:连续20单CM1<0 或 周退款率>8% 或 ACOS>35%且TACOS>20% -> xiaodou 24h内停线;worst_case列已算采购+20%/头程+30%/退款x2/广告+50%",
+  "red_lines": "0元;未采购未囤货;未用FBA/海外仓(模板fba_fee/storage_fee恒0禁填);未接触账号凭据;PII入库即脱敏;1688反爬已留证未编价",
+  "next_action": "等BOSS选A(远程桌面2SV后我自动导出)或B(丢6份CSV到C:\\A2A\\inbox\\amazon\\);收到即30分钟内出FILLED表+对账+缺口清单",
+  "next_owner": "BOSS(选路并取数)",
+  "deadline_hard": "2026-11-02T21:00:00+08:00"
+}
