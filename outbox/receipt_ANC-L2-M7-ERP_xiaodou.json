@@ -1,0 +1,38 @@
+{
+  "task_id": "ANC-L2-M7-ERP",
+  "object_id": "OBJ-AMAZON",
+  "old_state": "ASSIGNED",
+  "new_state": "DONE_PENDING_REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-01T00:16:11+08:00",
+  "deliverable": "reports/Amazon/M7-ERP-COMPARE-20261031_xiaodou.md",
+  "recommendation": {
+    "amazon": "店小秘",
+    "meli_ozon": "妙手(维持已跑通链路)",
+    "mode": "双ERP分工",
+    "fallback_single_erp": "全用妙手可行但 Amazon 只能单SKU无变体、A+放弃 → 不推荐",
+    "basis": [
+      "Amazon 文档深度差一个量级：店小秘有变体/UPC豁免/变种MPN/多站点/FBA STA/平台结算/平台利润逐项文档；妙手 Amazon 帮助中心无变体/A+条目",
+      "蜂群已用妙手跑通 MELI/Ozon 实单，换 ERP 推翻已验证链路",
+      "两 ERP 只多一个后台，0 元预算内"
+    ]
+  },
+  "four_questions": {
+    "auth_sp_api": "两家均为跳转 amazon 官方域登录→选择账户→勾选同意→Confirm，ERP 不接收密码=非账密托管(已证)；是否 SP-API 未直接证实(两家文档无 SP-API 字样)，按 Amazon 现役唯一 OAuth2.0 公共应用授权机制推定，绑定时可 5 分钟实测跳转 URL",
+    "listing_variants_aplus": "店小秘：单品/多变体+UPC豁免+变种MPN+多站点+Haul+售价估算(深)；妙手：采集认领批量发布+AI五点描述(无变体/A+条目)(浅)；A+ 两家都无文档 → 现阶段不做",
+    "batch_inventory": "店小秘 批量发布+库存模块+FBA STA 同步(并写明后台手改库存不同步)；妙手 批量发布+发布频率控制+WMS库存(Amazon 库存同步无专文)",
+    "orders_finance": "店小秘 平台结算(Amazon)/平台利润(Amazon)/利润核算/预估利润=强；妙手 利润明细/回款/账务助手但 Amazon 专项未列明=中"
+  },
+  "shared_limits": [
+    "仅 Professional 卖家可被 ERP 授权",
+    "新店 API 权限需等 3-5 天",
+    "授权须在常用电脑网络下完成",
+    "平台回写为准，后台手改数据 ERP 拿不到"
+  ],
+  "unverified": [
+    "是否真 SP-API OAuth（验跳转 URL 含 /apps/authorize/consent 与 application_id）",
+    "妙手利润统计是否含 Amazon"
+  ],
+  "red_lines": "未登录任何卖家后台、未注册 ERP 账号、0 元；全程官方文档+Amazon SP-API 文档",
+  "evidence_sources_count": 15
+}
