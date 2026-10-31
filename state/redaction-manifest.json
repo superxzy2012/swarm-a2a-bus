@@ -811,6 +811,11 @@
    "source_blob": "120950b0f729917480a750162fbac76aadb7c771",
    "transform": "copy"
   },
+  "outbox/receipt_FIX-MIRROR-STALE-CRITERIA-20261031_QUEEN_friday.json": {
+   "public_blob": "807edbc990056d37cc70b22d7b44cd71cc2fa75d",
+   "source_blob": "807edbc990056d37cc70b22d7b44cd71cc2fa75d",
+   "transform": "copy"
+  },
   "outbox/receipt_FIX-XIAODOU-FEISHU-ALLOWBOTS_xiaodou_20261025T223057.json": {
    "public_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
    "source_blob": "74e4992b72595a2093feeaff2a3e5850d700e1d1",
@@ -2532,5 +2537,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T19:17:10+08:00"
+ "generated_at": "2026-10-31T19:33:45+08:00"
 }
