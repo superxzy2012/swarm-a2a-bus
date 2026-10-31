@@ -1,0 +1,29 @@
+{
+  "task_id": "ANC-D1.5-L5-TIER1",
+  "object_id": "OBJ-QUALITY-SERVICE",
+  "old_state": "RUNNING",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-10-31T11:09:11+08:00",
+  "evidence_links": [
+    "reports/QualityService/QSVC-PSI-Service-Report-TEMPLATE-20261031.docx",
+    "reports/QualityService/L5-D1.5-TIER1-20261031_xiaodou.md",
+    "outreach/leads_quality-service_20261031.csv",
+    "ledgers/ledger_tasks.csv#ANC-D1.5-L5-TIER1",
+    "ledgers/ledger_experiments.csv#EXP-L5-TIER1-LEADS"
+  ],
+  "ledger_updated": true,
+  "cost_actual": {
+    "cny": 0,
+    "usd": 0,
+    "note": "python-docx为本地pip免费库;0投放0订阅"
+  },
+  "revenue_actual": 0,
+  "decision": "continue",
+  "first_launch": "S2 PSI (素材最全, 与在招标需求AQL/匿名样品完全对齐); S1随附引流",
+  "deliverable_docx": "可打开(6项程序自检PASS), 全占位/样例明示, 0内嵌图无logo, 无保证承诺, 收款通道留空待授权",
+  "leads": "5条真实在招/在标(4 Upwork+1 Freelancer), 均带来源URL/公司或发布方/预算/入口; 首选LEAD-01 Navixa与LEAD-05; LEAD-04高价值需BOSS专业背书",
+  "next_action": "QUEEN核验三验收线->GREEN; 黄色请示(服务主体+收款通道/LEAD-04履历背书)放行后D2发首proposal; 实验14天判据>=3回复或1付费试单",
+  "next_owner": "friday(验收)/BOSS(主体收款+背书授权)",
+  "red_lines": "0元;无雇主素材/客户/报价单/logo;无保证通过;未冒充已联系;未采购未囤货"
+}

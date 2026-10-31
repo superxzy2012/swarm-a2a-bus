@@ -621,6 +621,11 @@
    "source_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-D1.5-L5_xiaodou.json": {
+   "public_blob": "1fe3ac1dee2a8ed59f6fd3f65c3b0084f6374abb",
+   "source_blob": "1fe3ac1dee2a8ed59f6fd3f65c3b0084f6374abb",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-D1.5-L6_20261031_xiaomi.json": {
    "public_blob": "f70772f52064d9b2bac9855e4e8bff0409b35a2a",
    "source_blob": "052fdda13f02bc14c83138fd046a04ec427d5838",
@@ -2427,5 +2432,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T10:59:04+08:00"
+ "generated_at": "2026-10-31T11:09:40+08:00"
 }
