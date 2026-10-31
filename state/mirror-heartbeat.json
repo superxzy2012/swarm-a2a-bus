@@ -1,5 +1,5 @@
 {
- "generated_at": "2026-10-31T08:08:47Z",
+ "generated_at": "2026-10-31T08:19:47Z",
  "gitea_head_at": "2026-10-31T16:02:10+08:00",
  "gitea_sha": "51e85e6fb1602ec50dfa77c5fbfc106801a10017",
  "note": "事件驱动镜像：gitea_sha 与正本 tip 一致即健康，墙钟只用于检测推手存活",
