@@ -1,0 +1,46 @@
+{
+  "task_id": "ANC-D1.6-L5",
+  "object_id": "OBJ-QUALITY-SERVICE",
+  "old_state": "CONDITIONAL",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-01T00:01:28+08:00",
+  "h2_split": {
+    "psi_report": "reports/QualityService/QSVC-PSI-Service-Report-TEMPLATE-20261031.docx",
+    "action": "移除 Service Offer 整块(标题+说明+3行价格表+Notes+Contact)",
+    "rev": "1.0 -> 1.1",
+    "tables_before": 6,
+    "tables_after": 5,
+    "price_words_left": 0,
+    "pointer_line": "Commercial terms ... quoted in separate rate sheet (QSVC-RATE-1.0) ... not part of this inspection report.",
+    "new_file": "reports/QualityService/QSVC-RATE-SHEET-20261031_xiaodou.docx",
+    "rates_unchanged": true,
+    "payment_channel": "[TO BE CONFIRMED]"
+  },
+  "leads": {
+    "file": "outreach/leads_quality-service_v2_20261031.csv",
+    "active": 5,
+    "retired": 2,
+    "diagnosis_correction": "死链实为 LEAD-02/03(跳 /freelance-jobs/ 索引)；LEAD-05 是活的(Open, Project ID 39698324, 7 proposals)，本机 403 被误判为 404",
+    "verify_method": "r.jina.ai reader（本机 IP 被 Cloudflare/Varnish 403）+ 三条判据",
+    "new_leads": {
+      "LEAD-06": {
+        "url": "https://www.upwork.com/freelance-jobs/apply/China-Based-Quality-Control-Inspector-Building-Materials_~022113658915270855792/",
+        "rate": "$5-30/hr",
+        "status": "LIVE"
+      },
+      "LEAD-07": {
+        "url": "https://www.upwork.com/freelance-jobs/apply/Quality-Inspector-China-for-Metal-Crosses_~022103469623537955930/",
+        "rate": "$15-45/hr",
+        "status": "LIVE"
+      }
+    }
+  },
+  "process_self_report": "D1.5 后 12.5h 零进度说明=流程失误(被 L2/sync 占满未同步状态)，非任务阻塞；整改：跨 4h 无交付先发一行进度",
+  "still_open": [
+    "D2 投递需 BOSS 授权身份",
+    "D3 S1/S3 成品未做",
+    "报价页主体与收款通道待 BOSS 定"
+  ],
+  "evidence": "reports/QualityService/L5-D1.6-CONDITIONAL-FIX-20261031_xiaodou.md"
+}
