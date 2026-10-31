@@ -1,0 +1,51 @@
+{
+  "receipt_id": "ANC-D1.5-L6-20261031_xiaomi-codex",
+  "from": "xiaomi-codex",
+  "to": ["QUEEN(星期五)"],
+  "ts": "2026-10-31T11:05+08:00",
+  "task_ref": "L6 Tier1 D1.5 · CM1 4单回填 + 选品漏斗v1 + 台账流水",
+  "status": "DELIVERED",
+  "commit": "f4880eb1",
+  "branch": "main",
+  "remote": "gitea http://[REDACTED-IP]:3000/anc/a2a-bus.git",
+  "artifacts": {
+    "cm1_report": "reports/QuantLine/ANC-D1.5-L6-CM1-4ORDERS.md",
+    "funnel_report": "reports/QuantLine/ANC-D1.5-L6-FUNNEL-v1.md",
+    "ledger_report": "reports/QuantLine/ANC-D1.5-L6-LEDGER.md",
+    "cm1_script": "evidence/L6/params/cm1_l1_ozon.py",
+    "ogl_tariff": "evidence/L6/params/ogl_tariff.py",
+    "funnel_script": "evidence/L6/params/funnel_v1.py",
+    "ledger": "evidence/L6/sim/ledger.csv",
+    "orders_input": "evidence/L6/sim/orders.L1.ozon.4orders.json"
+  },
+  "acceptance": {
+    "1_cm1_4orders_match_csv": {
+      "verdict": "PASS",
+      "detail": "4 单售价/件数/佣金率/收单费/退款逐项对得上原始 CSV 与应计报告；两笔取消单实收记 0（后台财务 销售和退货 0 ₽），未把卖家定价当收入",
+      "sum_cm1_upper_bound_cny": "40.53"
+    },
+    "2_funnel_5_categories": {
+      "verdict": "PASS",
+      "detail": "5 类目 × 3 价档，含逐步测算过程、500g/501g 跳档(恒 -15.22 元)、135→136 元跳档(-12.35~-12.54 元)、635→636 元跳档(-5.80 元)；假设值全部标 ASSUMPTION"
+    },
+    "3_ledger_closure": {
+      "verdict": "PASS",
+      "detail": "4 行流水逐笔算式闭合，L1 线合计 +40.53 元；check 退出码 0，止损规则无一触发"
+    }
+  },
+  "key_numbers": [
+    {"order_id": "39774795161", "status": "运输中", "cm1_upper_bound_cny": "10.10", "purchase_max_cny": "10.10"},
+    {"order_id": "39389883973", "status": "取消(已发运)", "cm1_upper_bound_cny": "-11.54", "purchase_max_cny": "-11.54", "note": "确定亏损：上界为负"},
+    {"order_id": "39448623973", "status": "取消(未发运)", "cm1_upper_bound_cny": "0.00", "purchase_max_cny": "0.00"},
+    {"order_id": "40892047610", "status": "待发运", "qty": 2, "cm1_upper_bound_cny": "41.97", "purchase_max_cny": "41.97"}
+  ],
+  "unknowns": [
+    "4/4 采购成本 UNKNOWN（L1 未提供 1688 采购台账）→ CM1 全部为 UPPER_BOUND，不是精确值",
+    "4/4 实际计费重为品类中值假设（原始 detail JSON 未导出）",
+    "物流账面 0（物流报告 2026-10-01~10-30 共 0 行），沉没测算用 OGL 2026-08-24 费率表",
+    "4 单均未结算到账（财务 销售和退货 0 ₽），售价为应计口径"
+  ],
+  "selftest": "evidence/L6/sim/selftest.sh → 10/10 PASS (exit 0)",
+  "redlines": "零资金、零真实下单权限；未使用 BOSS 身份；群消息走 ops/lark-send-bot.sh（identity=bot 硬断言）",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}

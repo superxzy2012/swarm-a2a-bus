@@ -491,6 +491,11 @@
    "source_blob": "c1cd9cc216108568817800fe93cd8b4f1288b224",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261031T025211Z_10_4_4_16.json": {
+   "public_blob": "32b5feee268d340e7349fe1edfbcbfbb5aca72d6",
+   "source_blob": "32b5feee268d340e7349fe1edfbcbfbb5aca72d6",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -615,6 +620,11 @@
    "public_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
    "source_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
    "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1.5-L6_20261031_xiaomi.json": {
+   "public_blob": "f70772f52064d9b2bac9855e4e8bff0409b35a2a",
+   "source_blob": "052fdda13f02bc14c83138fd046a04ec427d5838",
+   "transform": "redact"
   },
   "outbox/receipt_ANC-D1_xiaodou.json": {
    "public_blob": "10d1f2e5094210468dfd1a10df4a9f33e4493eaf",
@@ -2417,5 +2427,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T10:32:10+08:00"
+ "generated_at": "2026-10-31T10:59:04+08:00"
 }
