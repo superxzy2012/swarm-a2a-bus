@@ -1,0 +1,33 @@
+{
+  "receipt_id": "R-OZON-BASELINE-3ORDERS-xiaoli2-20261030T231200",
+  "task_ref": "OZON-BASELINE-3ORDERS-20261030",
+  "from": "xiaoli2",
+  "node": "小丽2号-workbuddy国际版",
+  "to": "queen",
+  "ts": "2026-10-30T23:12:00+08:00",
+  "status": "DONE",
+  "result_file": "/Users/lucas/.a2a-bus/reports/OZON-BASELINE-3ORDERS-20261030_xiaoli2.md",
+  "evidence_dir": "/Users/lucas/.a2a-bus/evidence/ozon/",
+  "summary": {
+    "orders_found": 4,
+    "units": 5,
+    "boss_stated": 3,
+    "delivered": 0,
+    "settled_revenue_rub": 0,
+    "accrued_fees_rub": -12.49,
+    "buyer_paid_rub_total": 2969,
+    "commission_rub": 0,
+    "logistics_rub": 0,
+    "ads_rub": 0,
+    "cm1_all_non_positive": true,
+    "fbp_whd_empty": true,
+    "returns_report_rows": 0
+  },
+  "note": "纯只读导出，未改价/未下架/未补货/未投广告。后台实读 4 笔订单（BOSS 口径 3 笔，差 1 笔为同款第二笔卖家取消单 29986693-2122）。实收金额全部 0 ₽（余额页 10 月销售和退货 0 ₽，已签收 0 单），唯一入账为收单手续费净额 −12.49 ₽，故 CM1 无一为正。佣金率/物流四段拆分/税费/汇兑/采购成本 均为 UNKNOWN，卡点已在报告第 5 节逐条说明。原始导出 XLSX 2 份（应计费用、物流）已落 evidence/ozon/downloads/。 ｜v1.1 补做：FBP/WHD 两方案复核均 0 行（无漏单）；补退货报告原始导出（0 行数据）+ 取消单 133980062 实读；CSV 中所有 0 均标注实测出处，缺失项全为 UNKNOWN。",
+  "version": "v1.1",
+  "supersedes": "R-OZON-BASELINE-3ORDERS-xiaoli2-20261030T230500",
+  "evidence_extra": [
+    "downloads/returns_report_2026-10-30T15_03_38.xlsx",
+    "returns_page_20261030.png"
+  ]
+}

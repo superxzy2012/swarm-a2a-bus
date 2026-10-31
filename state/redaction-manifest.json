@@ -731,6 +731,16 @@
    "source_blob": "b776b013f42fd425d2bfcf4654a95fb3b6713c09",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-D0-OZON-BASELINE_xiaoli2.json": {
+   "public_blob": "bbc7404a893c38afe394e99016707892228e1fe8",
+   "source_blob": "0215d3f27f8674bd1c7a9d600bd965cf0d9ea0cd",
+   "transform": "redact"
+  },
+  "outbox/receipt_ANC-D1-L1_xiaoli2.json": {
+   "public_blob": "a6fe7180c9491cea5f0a6bfedcc39ab447aa5c4b",
+   "source_blob": "a6fe7180c9491cea5f0a6bfedcc39ab447aa5c4b",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-D1-L2_xiaodou.json": {
    "public_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
    "source_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
@@ -1786,6 +1796,41 @@
    "source_blob": "ec8747ceb9db41e150d85439024dfa0fd760788b",
    "transform": "copy"
   },
+  "outbox/receipt_L1-CM1-BACKFILL_xiaoli2_20261031T155822.json": {
+   "public_blob": "46dbf78b38979c17e7137c902e69b53b724ad89e",
+   "source_blob": "46dbf78b38979c17e7137c902e69b53b724ad89e",
+   "transform": "copy"
+  },
+  "outbox/receipt_L1-DAILY-BRIEF_xiaoli2_20261031T222848.json": {
+   "public_blob": "b5f2be1bb1ab2ee6d062ee2a0fce587c5fad4230",
+   "source_blob": "b5f2be1bb1ab2ee6d062ee2a0fce587c5fad4230",
+   "transform": "copy"
+  },
+  "outbox/receipt_L1-THREE-Q_xiaoli2_20261031T180351.json": {
+   "public_blob": "ae7169ff573c17a86e2d30537fc85d84ebe072f3",
+   "source_blob": "ae7169ff573c17a86e2d30537fc85d84ebe072f3",
+   "transform": "copy"
+  },
+  "outbox/receipt_L2-AMAZON-PREFLIGHT_xiaoli2_20261031T113434.json": {
+   "public_blob": "696929365c1289bc6996cf4a903608d03f062665",
+   "source_blob": "696929365c1289bc6996cf4a903608d03f062665",
+   "transform": "copy"
+  },
+  "outbox/receipt_L2-AMAZON-PREFLIGHT_xiaoli2_20261031T155822.json": {
+   "public_blob": "6f252bcd6c83605deb9379692488f395197578be",
+   "source_blob": "6f252bcd6c83605deb9379692488f395197578be",
+   "transform": "copy"
+  },
+  "outbox/receipt_L2-AUDIT-20261031_jarvis.json": {
+   "public_blob": "ac941f97b1d25a283c4a4982faae41fbfe21603f",
+   "source_blob": "ac941f97b1d25a283c4a4982faae41fbfe21603f",
+   "transform": "copy"
+  },
+  "outbox/receipt_L2-HANDOVER_xiaoli2_20261031T183122.json": {
+   "public_blob": "08699b93cf0d8f39a0c3c18cb999ae446395112f",
+   "source_blob": "08699b93cf0d8f39a0c3c18cb999ae446395112f",
+   "transform": "copy"
+  },
   "outbox/receipt_M0-ARCH-IDENTITY-BUS_xiaodou.json": {
    "public_blob": "2f035f677040f99aad38339256d903ab113eb157",
    "source_blob": "cd62cc9d92b00a318b7d16ff41f1143a39360e11",
@@ -2014,6 +2059,16 @@
   "outbox/receipt_ORG-20261022-CEO-TRANSITION_xiaodou.json": {
    "public_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
    "source_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-BASELINE-3ORDERS_xiaoli2_20261030T230500.json": {
+   "public_blob": "af1c8405bcf6a1d375205b6d08a237c89560bc75",
+   "source_blob": "af1c8405bcf6a1d375205b6d08a237c89560bc75",
+   "transform": "copy"
+  },
+  "outbox/receipt_OZON-BASELINE-3ORDERS_xiaoli2_20261030T231200.json": {
+   "public_blob": "9cc9eadea663b052213e48266f3e83eb20526da9",
+   "source_blob": "9cc9eadea663b052213e48266f3e83eb20526da9",
    "transform": "copy"
   },
   "outbox/receipt_OZON-DELIST-STOCK-AUDIT_xiaoli2_20261021T0140+0800.json": {
@@ -2577,5 +2632,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-10-31T22:18:52+08:00"
+ "generated_at": "2026-10-31T22:30:01+08:00"
 }

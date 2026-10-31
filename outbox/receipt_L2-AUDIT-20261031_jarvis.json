@@ -1,0 +1,36 @@
+{
+ "type": "receipt",
+ "receipt_id": "L2-AUDIT-20261031_jarvis",
+ "from": "jarvis",
+ "to": "BOSS/QUEEN/xiaodou",
+ "task_ref": "独立审计令×3 审计包1: L2亚马逊研究包(M1/M2/M2B/L2-D1)",
+ "ts_utc": "2026-10-31T14:23:01Z",
+ "verdict": "CONDITIONAL",
+ "artifact": "reports/audit/L2-AUDIT_jarvis.md",
+ "not_reject_reason": "核心数字全部独立复验一致,无编造;主动自我勘误(头程低估2.98x)属高水准自审",
+ "high_issues": [
+  {
+   "id": "H1",
+   "desc": "M2闸门CM1>=$3.00 与 M2B修正后真实CM1 $1.96 冲突,按新口径全部SKU判死"
+  },
+  {
+   "id": "H2",
+   "desc": "M1最坏亏损=广告费+样机费,漏退货全额损失$6.5/单+关税未包税$5.10/单"
+  },
+  {
+   "id": "H3",
+   "desc": "OTDR保护依赖Amazon Buy Shipping中国起运支持,未核实,90%达标无保障"
+  }
+ ],
+ "verified_numbers": "165K/-44%/1.65M/+31%/ACoS30.4%/80%/58%/22%/$30K/6.3x + 宠物0.43-0.91-14.0-26/家居0.32-0.88-11.4-31/户外0.30-0.82-10.3-33 全部逐字复验一致",
+ "unsourced": ">100000 ASIN/日 & <5% Top100 为三级转引无一手源(中)",
+ "ironclad_check": "纯FBM一致:无FBA/Vine/SFP/预囤方案;D1-3模板fba_fee/storage_fee结构锁死",
+ "not_verifiable": [
+  "sellercentral帮助页需登录",
+  "货代书面报价单未取得",
+  "HS编码实际税率未核",
+  "D1-4货源链接未逐条打开"
+ ],
+ "readonly": true,
+ "files_modified": 0
+}

@@ -1,0 +1,161 @@
+{
+ "receipt_id": "L1-DAILY-BRIEF-20261031T20261031T222848",
+ "type": "DAILY_BRIEF",
+ "task_ref": "BOSS-L1-CONTINUE-20261031（A 存量链接优化 / B 零成本上新 / C 每日简报）+ QUEEN 20:24/22:20 两次催办",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN) / BOSS",
+ "ts": "2026-10-31T22:28:48",
+ "status": "DONE",
+ "line": "L1",
+ "owner": "小丽2号",
+ "role": "L1 Ozon Owner",
+ "date": "2026-10-31",
+ "one_liners": {
+  "1_brief": "今日简报已落 outbox（本文件）+ 报告 reports/L1/OZON-L1-LISTING-OPT-20261031_xiaoli2.md",
+  "2_listing_opt": "2 条在售链接诊断完成、改造单 11 项已出，已执行 0 项（全部需授权）。三个硬伤：挂篮主图属性被清空（卡片更新失败根因）、洗脸巾现价是已售同款的 4.28 倍、洗脸巾类目挂在「理发师配件」",
+  "3_rating_fix": "后台实读 realFBS 错误指数 0%、罚款 0、14 天货件 0——评级尚未被打坏，属「分母为 0 未暴露」；修复方案已出（4 条铁律 + 决策树 + 每日监控项）"
+ },
+ "brief": {
+  "new_listings": 0,
+  "optimizations_diagnosed": 2,
+  "change_items_total": 11,
+  "change_items_applied": 0,
+  "orders_new_today": 0,
+  "orders_in_flight": [
+   {
+    "posting": "0171504681-0498-1",
+    "status": "运输中",
+    "offer": "LANHAI-UNDER_DESK_BASKET-072",
+    "price_cny": 25.14,
+    "buyer_rub": 387
+   },
+   {
+    "posting": "57138618-0359-2",
+    "status": "已准备发运",
+    "offer": "LANHAI-FACE_TOWEL-070（已归档）",
+    "price_cny": 51.46,
+    "qty": 2,
+    "buyer_rub": 523
+   }
+  ],
+  "rating": {
+   "realFBS_error_index": "0%",
+   "fines_14d": 0,
+   "shipments_14d": 0,
+   "seller_fault_cancels": "—",
+   "on_time": "表现优异",
+   "product_score": "-.--",
+   "complaints": "-.--",
+   "window": "2026-10-17 ~ 2026-10-30",
+   "risk": "分母为 0 故未判罚；下一单正常发货后，窗口内 1 次取消即 100% → 13.5% 罚款 + 封锁档"
+  },
+  "inventory": {
+   "in_sale": 57,
+   "zero_stock": 3,
+   "zero_stock_skus": [
+    "LANHAI-UNDER_DESK_BASKET-072",
+    "LANHAI-PET_WARM_BLANKET-022",
+    "LANHAI-DISH_INSERT-083"
+   ],
+   "card_error": 19,
+   "card_error_code": "error_card_with_deleted_photos",
+   "source_unverified_in_sale": 56
+  },
+  "red_line_compliance": "未改价/图/标题/类目/库存，未采购下单，未刷单刷评，未做批量同质链接"
+ },
+ "key_findings": [
+  "挂篮 item 6542292960：主图属性 4194 与附加图 4195 均为空串，图仍在富内容 22967(1张)/22968(2张) → error_card_with_deleted_photos 的根因是「图没挂回 legacy 属性」，不是图被平台删了",
+  "洗脸巾 V2-073 现价 110.00 CNY（划线 148），前代 -070 成交价 25.73 CNY/件（10-29 单 51.46/2件），涨 4.28 倍；竞品 100 个装零售 296–646 ₽ → 定价已出市场带，文案优化无法救",
+  "洗脸巾类目 17038366 = Аксессуары для парикмахера（理发师配件），买家搜 полотенца для лица одноразовые 返回全是「一次性毛巾/厨房纸巾」，类目错配直接损失搜索相关性",
+  "洗脸巾 HS 编码 7607111901（铝箔）/ 9615900000（发夹）与商品不符，属清关口径错误；描述「около 100 шт」与标题「100 шт」不一致",
+  "挂篮材质三处口径不一：描述「金属喷塑」、属性 6383「Нержавеющая сталь」、自动生成名「нержавеющая сталь」；描述「承重 5 кг」无供应商数据支撑（无来源宣称）",
+  "买家端实测：搜「корзина под стол」首页前 9 全是桌下电源收纳盒（723–2399₽，评价 172–5104），该词意图不是挂篮 → 改打 подвесная/навесная 长尾",
+  "待发运单 57138618-0359-2 挂在已归档 offer FACE_TOWEL-070 上；在售为 V2-073（库存 30）——发完这单洗脸巾只剩 4.28 倍溢价款在卖"
+ ],
+ "deliverables": {
+  "report": "reports/L1/OZON-L1-LISTING-OPT-20261031_xiaoli2.md",
+  "report_sha256": "4cf67d6d1353c6d2a8100573b90b99f5db919e3b868fe4d544ec035145e2b81e",
+  "evidence_dir": "evidence/ozon/20261031_listing_opt/",
+  "evidence_files": {
+   "buyer_search_korzina_pod_stol.json": {
+    "sha256": "fefedc7a8acfd1723f9e076e5ffbbf6694912fb211a07302291a909ebb9159eb",
+    "bytes": 4038
+   },
+   "buyer_search_polotenca_lica.json": {
+    "sha256": "3984f16edf57cddaf00dad0c50ede8c0807e3f860d85127d5f3857fb4e4284f5",
+    "bytes": 4065
+   },
+   "listing_attrs_snapshot.json": {
+    "sha256": "0beeabd8ba8246bdba2c18240e64d6ed32fb7320872319e45109452729512f32",
+    "bytes": 11290
+   },
+   "seller_rating_fbs.json": {
+    "sha256": "1d6a5c1b788d0c2eea11e1c298d1ab78dc803b56903b1ad56326897a36635c9f",
+    "bytes": 1472
+   }
+  },
+  "sku_list": "evidence/ozon/OZON_SKU_LIST_20261031.csv",
+  "cm1_ledger": "ledgers/ozon_cm1_orders.csv"
+ },
+ "zero_cost_listings": {
+  "purchase_caps": {
+   "basket_cny": 10.1,
+   "towel_cny": 20.99,
+   "source": "L6 测算"
+  },
+  "candidates": [
+   {
+    "n": 1,
+    "item": "洗脸巾 20×15 小包",
+    "offer_1688": "756931830701",
+    "purchase_cny": 1.88,
+    "under_cap": true,
+    "blocker": "缺变体主图（供应商图无授权/无实拍）"
+   },
+   {
+    "n": 2,
+    "item": "洗脸巾 20×15 中包",
+    "offer_1688": "756931830701",
+    "purchase_cny": 3.0,
+    "under_cap": true,
+    "blocker": "缺变体主图"
+   },
+   {
+    "n": 3,
+    "item": "挂篮变体（其他颜色/尺寸）",
+    "offer_1688": "823505034425",
+    "purchase_cny": "UNKNOWN",
+    "under_cap": "待核",
+    "blocker": "缺图 + 主 SKU 现库存 0，会扩大「零库存在售」"
+   }
+  ],
+  "can_list_today": 0,
+  "paid_tier_budget_request_cny": 0,
+  "note": "三候选全在「现有 1688 货源 + 一件代发」范围内，无需新采购/样本费；唯一可能支出是 6 张实拍，未报价前不动"
+ },
+ "needs_authorization": [
+  "洗脸巾 V2 改价 110 → 35 CNY（划线 45）",
+  "挂篮主图写回 4194/4195（用现存 22967/22968 的 3 张图）",
+  "洗脸巾类目迁出「理发师配件」（目标类目需后台确认）",
+  "3 款零库存处置：下架 or 补 30 件（命令已备）",
+  "两条标题按报告 1.2② / 1.3④ 替换"
+ ],
+ "rating_repair_protocol": {
+  "formula": "指数 = 卖家过失取消 × 100% ÷ 14 天内所有货件数",
+  "iron_rules": [
+   "「转到发运」之前是唯一止损窗口；过线后任何原因都不得取消（2116 单实证：货值 14.80 元全损 + 干线未出账）",
+   "宁可超时不可主动取消：超时进「按时发运率」，罚款上限远低于取消进 13.5%+封锁档",
+   "取消只允许 3 种情形：买家主动要求 / 地址确实无法配送且买家拒绝改址 / 平台判责。「我们没货」不在其中",
+   "零库存 SKU 是取消源头：当前 3 款零库存在售，处置优先级高于任何文案优化"
+  ],
+  "last_three_steps": [
+   "联系买家给改期/换款/赠品选项（买家同意取消 → 归买家取消，不进卖家指数）",
+   "买家不同意 → 提交问题件走平台判责，不自己点取消",
+   "以上不通才取消，且 24h 内把该 SKU 库存置 0 / 暂时下架"
+  ],
+  "daily_monitor": "/app/rating/fbs 三项：错误指数、14 天货件数（分母）、卖家过失取消数；分母>0 且指数>0 当天停上新"
+ },
+ "three_questions_link": "reports/L1/OZON-L1-THREE-Q-20261031_xiaoli2.md（18:03 已交；本单把第 2 问从漏斗数字升级为买家端搜索结果实测）",
+ "deadline": "2026-11-02 21:00（D1-D3）"
+}

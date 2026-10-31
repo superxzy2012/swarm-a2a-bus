@@ -1,0 +1,61 @@
+{
+ "receipt_id": "L2-HANDOVER-20261031T20261031T183122",
+ "task_ref": "QUEEN-L2-WITHDRAW-20261031T1831（BOSS 决定 L2 改派小豆，撤销我的兼任）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN) / 小豆（接手方）",
+ "ts": "2026-10-31T18:31:22",
+ "status": "DONE",
+ "type": "HANDOVER",
+ "line": "L2",
+ "owner": "小豆（接手）",
+ "previous_owner": "小丽2号（兼任 11:21-18:31，已卸）",
+ "ack": "L2 已卸。不再推进、不再交付、不再占考核。",
+ "what_i_actually_have": {
+  "usable_assets": [
+   "evidence/amazon/20261031/ 7 文件 + MANIFEST(sha256)：Seller Central 探测、Chrome 历史线索、总线缺证、LinkFox 通道状态",
+   "AMAZON_UNIT_ECON_TEMPLATE.csv：23 列 FBM 直发单位经济模板（对齐 Ozon CM1 同尺）",
+   "cm1_calc.py：CM1 计算器，缺字段自动写 UNKNOWN 并列缺项，已自测通过（正例 CM1 82.06 元/率 38.5%/盈亏平衡价 17.69 USD）",
+   "reports/L2/AMAZON-L2-PREFLIGHT-20261031_xiaoli2.md：预研页（已标 WITHDRAWN，可作参考不算交付）"
+  ],
+  "three_findings_worth_handing_over": [
+   "① 我这台机器 Seller Central 未登录（/home 302 到 /ap/signin）——小豆有登录态，这条对他不构成问题，但说明别在我这边找登录态",
+   "② LinkFox API Key 在本机 ~/.zshrc（LINKFOX_AGENT_API_KEY），API 通（errcode 200）但**已授权 Amazon 店铺 0 家**，且**算力 402 积分余额不足**——小豆若走 LinkFox 路线，先充值再授权",
+   "③ 本机 Chrome 历史有 sellercentral.amazon.com/selection/cross-listing 与 amazon.com/stores/HOMSHADE 两条记录，属旁证不属结论，账号归属未证实，供小豆核对是否是同一个店"
+  ],
+  "scripts_reusable": "~/WorkBuddy AI/Claw/L2-amazon/ 下 l2_probe.py（新建标签+焦点模拟）/ attach.py（附着已有标签）/ collect_evidence.py 可直接复用"
+ },
+ "not_done_and_should_not_be_counted": "90 天订单、店铺现状 6 项字段、三问答卷——全部未取到真值，全标 UNKNOWN，无任何编造数字。",
+ "red_lines_respected": "只读。未登录任何 Amazon 账号、未改价/库存/广告/上架/采购。",
+ "files": {
+  "AMAZON_UNIT_ECON_TEMPLATE.csv": {
+   "sha256": "948df9f1290d5c6f49c3b669f6f1756e4087079380692239caa6e27bc1da9617",
+   "bytes": 428
+  },
+  "_sha256_index.json": {
+   "sha256": "b6e240fce691ed4c6fa200adc86d35de1a1027d6a4f64921eabdec3c325c95da",
+   "bytes": 397
+  },
+  "amazon_sellercentral_probe.json": {
+   "sha256": "424d9272eaa15d7288c968ccbc4c6349e4f9fa4a36daa075908ff6ab7efa076a",
+   "bytes": 1412
+  },
+  "bus_l2_absence.json": {
+   "sha256": "9a06a21eafdffa2973c2ac5dcedef5bf81264f2d275e84ac1aacf02e37728cb2",
+   "bytes": 596
+  },
+  "chrome_history_amazon.json": {
+   "sha256": "3299f63a3f4ef17ccd174082700b27b6e31058389c83df880b6413818f6fb9f1",
+   "bytes": 2552
+  },
+  "cm1_calc.py": {
+   "sha256": "9d4adec92d8a359838c550a0bf60c3f37ea836fdefc0bebd126c58facb303eac",
+   "bytes": 3999
+  },
+  "linkfox_channel_status.json": {
+   "sha256": "bae46ae327b25c9b29c4126c5b7bad67a326946da5cac7290864fc649f65c422",
+   "bytes": 511
+  }
+ },
+ "l1_status": "已回 L1：三件套已于 18:03 交付（提交 53fffcec），逐单台账 + SKU 清单 + 三问已落总线；等 BOSS 拍板 3 项。"
+}

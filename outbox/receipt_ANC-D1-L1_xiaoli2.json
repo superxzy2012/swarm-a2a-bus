@@ -1,0 +1,99 @@
+{
+  "receipt_id": "R-ANC-D1-L1-xiaoli2-20261031T005800",
+  "task_ref": "ANC-D1-L1",
+  "from": "xiaoli2",
+  "node": "小丽2号-workbuddy国际版",
+  "to": "queen",
+  "ts": "2026-10-31T00:58:00+08:00",
+  "status": "DONE",
+  "line": "L1",
+  "owner": "小丽2号",
+  "role": "L1 Ozon Owner",
+  "result_file": "/Users/lucas/.a2a-bus/reports/L1/OZON-L1-D1-INVENTORY-20261031_xiaoli2.md",
+  "evidence_dir": "/Users/lucas/.a2a-bus/evidence/L1/20261031",
+  "cross_ref_evidence": "/Users/lucas/.a2a-bus/evidence/ozon/20261030",
+  "files": [
+    {
+      "path": "reports/L1/OZON-L1-D1-INVENTORY-20261031_xiaoli2.md",
+      "sha256": "625b0f97fc104dcc79cb6a10dd74d0401db0034717fc9b058f30b773a534a5b0",
+      "bytes": 10767,
+      "desc": "L1 D1 交付报告：3单导出结论 + 57 SKU 清单 + 盈利三问"
+    },
+    {
+      "path": "evidence/L1/20261031/L1_SKU_inventory_20261031.csv",
+      "sha256": "6db4b275289d048cb664a511ffb5cc78f6d724168f0d2c82bc48b9cf17b98c33",
+      "bytes": 20125,
+      "desc": "57 行 SKU 清单 CSV"
+    },
+    {
+      "path": "evidence/L1/20261031/store_raw_20261031_v2.json",
+      "sha256": "6d6f077fe4160c21f19327d01201ca9c6779fe803959da35bc3a41aba9a36c3b",
+      "bytes": 1345973,
+      "desc": "全量原始 JSON v2"
+    },
+    {
+      "path": "evidence/L1/20261031/store_raw_20261031.json",
+      "sha256": "ebf434028575b2d0e226d5d04dbc2484f0943c24bf9f9a3758273db2aac8d5fa",
+      "bytes": 200914,
+      "desc": "全量原始 JSON v1（过程留痕）"
+    }
+  ],
+  "headline": {
+    "orders": 4,
+    "units": 5,
+    "settled_revenue_rub": 0,
+    "accrued_fee_rub": -12.49,
+    "cm1_rub": {
+      "0171504681-0498-1": -2.55,
+      "29986693-2116-1": 0,
+      "29986693-2122-1": 0,
+      "57138618-0359-2": -9.94
+    },
+    "sku_active": 57,
+    "sku_archived": 115,
+    "stock_units": 1620,
+    "sku_zero_stock": 3,
+    "sku_card_update_failed": 19,
+    "price_cny_range": [
+      25.0,
+      260.0
+    ],
+    "price_cny_median": 47.66
+  },
+  "three_questions": {
+    "q1_can_profit": "CM1 逐单 −2.55/0/0/−9.94 元，合计 −12.49 元（实收来源：财务余额 10 月销售和退货 0 ₽；减数来源：应计费用报告 6 行）。稳态 CM1 给不出，唯一缺口是采购成本，不编区间不编百分比。",
+    "q2_sustainable": "渠道=Ozon 站内自然流量，零投放（广告费 0 ₽ 为证）。已验证数字：已订购 5 件/4 单、245 ¥、买家实付 2 969 ₽、已签收 0 单。样本不足，不足证可持续。",
+    "q3_stop_loss": "最坏亏：已实证取消单手续费 −19.55/−19.57 元但被全额冲回（净损 0）；已发运后取消的去程物流费必然发生但本月未出账 → 金额 UNKNOWN。止损条件 4 条可量化（零库存即下架 / 同 SKU 30 天 ≥2 单取消停售 / 单 SKU 30 天 CM1<0 下架 / 全店月 CM1<0 且无签收停线）。执行人：小丽2号，接令后 2 小时内完成并落回执。"
+  },
+  "red_line_findings": [
+    "3 款零库存仍在架接单（UNDER_DESK_BASKET-072 / PET_WARM_BLANKET-022 / DISH_INSERT-083），触碰 v3「先验货源再上架」红线，其中 UNDER_DESK_BASKET-072 正是 10-22 在途订单同款",
+    "19 款卡片更新失败（error_card_with_deleted_photos，图被删空、旧图仍在售），买家看到的是旧版卡片",
+    "1 款视频上传超时（PET_BARRIER_NET-028，WARNING，不影响在售）"
+  ],
+  "pending_boss": [
+    "3 款零库存处置：下架 or 补库存 30（30 分钟内可执行）",
+    "19 款卡片重发布（写操作，需授权）",
+    "采购成本数据源授权（1688 订单 / 云雀入库单）"
+  ],
+  "unknown_items": [
+    "采购成本",
+    "佣金率与佣金金额",
+    "物流费四段拆分",
+    "退款金额",
+    "税费",
+    "汇兑费"
+  ],
+  "red_lines_respected": [
+    "未改价",
+    "未下架",
+    "未补货",
+    "未投广告",
+    "无后台写操作",
+    "未 bringToFront"
+  ],
+  "git": {
+    "local": "pending-commit",
+    "push": "blocked-network-policy"
+  },
+  "note": "ANC v3 定版后 L1 首交。全部只读取证，接口与页面双源核对。盈利三问只填有来源的数，缺采购成本不编数。3 款零库存在售已触碰 v3 红线，等令处置。"
+}

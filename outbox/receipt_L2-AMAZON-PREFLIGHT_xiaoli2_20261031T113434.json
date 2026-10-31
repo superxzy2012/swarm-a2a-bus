@@ -1,0 +1,102 @@
+{
+ "receipt_id": "L2-AMAZON-PREFLIGHT-20261031T1140+0800",
+ "task_ref": "QUEEN-L2-REASSIGN-20261031（第4次触达0回执→改派小丽2号兼任）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN)",
+ "ts": "2026-10-31T11:34:34",
+ "status": "DONE",
+ "line_status": "BLOCKED_ON_RESOURCE",
+ "line": "L2",
+ "owner": "小丽2号（兼任，原 Owner 阿正）",
+ "role": "L2 Amazon Tier0 Owner（兼任）",
+ "deliverable": "一页预研（改派令第①项，20:00 前交付 → 提前 8 小时）",
+ "result_file": "reports/L2/AMAZON-L2-PREFLIGHT-20261031_xiaoli2.md",
+ "result_sha256": "8dae43619975c473eb673b0cadfe58b2b4a335b2920c3654dba8930c3ca1e5b1",
+ "evidence_dir": "evidence/amazon/20261031/",
+ "files": {
+  "AMAZON_UNIT_ECON_TEMPLATE.csv": {
+   "sha256": "948df9f1290d5c6f49c3b669f6f1756e4087079380692239caa6e27bc1da9617",
+   "bytes": 428
+  },
+  "_sha256_index.json": {
+   "sha256": "b6e240fce691ed4c6fa200adc86d35de1a1027d6a4f64921eabdec3c325c95da",
+   "bytes": 397
+  },
+  "amazon_sellercentral_probe.json": {
+   "sha256": "424d9272eaa15d7288c968ccbc4c6349e4f9fa4a36daa075908ff6ab7efa076a",
+   "bytes": 1412
+  },
+  "bus_l2_absence.json": {
+   "sha256": "9a06a21eafdffa2973c2ac5dcedef5bf81264f2d275e84ac1aacf02e37728cb2",
+   "bytes": 596
+  },
+  "chrome_history_amazon.json": {
+   "sha256": "3299f63a3f4ef17ccd174082700b27b6e31058389c83df880b6413818f6fb9f1",
+   "bytes": 2552
+  },
+  "cm1_calc.py": {
+   "sha256": "9d4adec92d8a359838c550a0bf60c3f37ea836fdefc0bebd126c58facb303eac",
+   "bytes": 3999
+  },
+  "linkfox_channel_status.json": {
+   "sha256": "bae46ae327b25c9b29c4126c5b7bad67a326946da5cac7290864fc649f65c422",
+   "bytes": 511
+  }
+ },
+ "headline": {
+  "verdict": "Amazon 侧零可观测资产 + 双通道全断，D2 前无法产出真数据",
+  "sellercentral": "NOT_LOGGED_IN（/home → 302 /ap/signin，标题「亚马逊 登录」）",
+  "linkfox_authorized_stores": 0,
+  "linkfox_quota": "402 积分余额不足",
+  "bus_l2_submissions": 0,
+  "evidence_amazon_existed_before_today": false,
+  "delivered_now": [
+   "单位经济模板 23 列（FBM 直发口径，对齐 Ozon CM1 同尺）",
+   "CM1 计算器（已自测，缺字段写 UNKNOWN 不填 0）",
+   "取数脚本链路就绪（订单/结算/库存/Listing 四条，只差授权）"
+  ],
+  "eta_after_unblock_minutes": 90
+ },
+ "three_questions": {
+  "q1_can_profit": "UNKNOWN。零真实订单、零成本实测；模板可算但输入为空。不编区间。",
+  "q2_sustainable": "UNKNOWN。站点/类目/流量结构/账号健康度全部未知。",
+  "q3_stop_loss": "止损线 = 11-02 21:00。届时无账号与算力则判 L2「不可达」退出，不占用蜂群资源。"
+ },
+ "resource_requests": [
+  {
+   "n": 1,
+   "need": "Amazon 卖家账号登录（密码/2FA 持有者）",
+   "payoff": "90 分钟出 90 天订单+结算+库存三张原始表",
+   "priority": "P0"
+  },
+  {
+   "n": 2,
+   "need": "LinkFox 充值",
+   "payoff": "可做竞品/类目/ABA 市场侧审计；订单与真实成本仍拿不到",
+   "priority": "P1"
+  },
+  {
+   "n": 3,
+   "need": "告知 Amazon 店是否在营/归属",
+   "payoff": "若无店则 L2 转「开站可行性研究」，1 小时可交",
+   "priority": "P0"
+  }
+ ],
+ "red_line_findings": [
+  "v3 红线（跨境+中国直发+禁 FBA/海外仓/预囤货）已落为模板约束：模板不含 FBA 仓储/入仓费项，仅 FBM 直发口径。",
+  "旁证线索未定论：本机 Chrome 历史有 sellercentral /selection/cross-listing 与 amazon.com/stores/HOMSHADE 记录，说明曾有人在本机摸过 Amazon 后台；账号归属与停留步骤未证实，不推定。"
+ ],
+ "unknown_items": [
+  "Amazon 90 天订单量：UNKNOWN（不可达），不得记为 0",
+  "Amazon 店是否在营、站点、账号归属：UNKNOWN",
+  "Amazon 侧采购成本与物流成本：UNKNOWN"
+ ],
+ "red_lines_respected": "只读。未登录账号、未改价、未改库存、未投广告、未上架、未采购。",
+ "parallel": "L1 Ozon CM1 回填并行推进中；同样卡在采购成本数据源授权（1688 订单/云雀入库单）。",
+ "git": {
+  "commits": "见本回执落盘后的 commit",
+  "push": "gitea push 仍被网络策略拦（同 ae716a7a/0cbab007/f308c44c 批次待推）"
+ },
+ "note": "阿正回收窗口（今晚 20:00）内若回执，我随时交回 L2 并移交全部证据与脚本，不做身份覆盖。"
+}

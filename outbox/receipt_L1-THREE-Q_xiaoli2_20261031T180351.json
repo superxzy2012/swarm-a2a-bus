@@ -1,0 +1,98 @@
+{
+ "receipt_id": "L1-THREE-Q-20261031T20261031T180351",
+ "task_ref": "QUEEN-L1-D1-URGE-20261031T1756（三件套：采购成本精确值 / SKU清单 / 盈利三问）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN)",
+ "ts": "2026-10-31T18:03:51",
+ "status": "DONE",
+ "line": "L1",
+ "owner": "小丽2号",
+ "role": "L1 Ozon Owner",
+ "result_file": "reports/L1/OZON-L1-THREE-Q-20261031_xiaoli2.md",
+ "result_sha256": "44a2da39e286e186720ca22e512c10207f1d9f6114b94f965c6188708b0e7356",
+ "deliverables": {
+  "1_purchase_cost": {
+   "file": "ledgers/ozon_cm1_orders.csv",
+   "sha256": "c99c69def8ac8ee33e0ececb989e03ceddf41650627efa605ce88c6f29363c62",
+   "rows": 4,
+   "cols": 36,
+   "status": "DONE-报价口径",
+   "unit_price": {
+    "UNDER_DESK_BASKET-072": 3.1,
+    "FACE_TOWEL-070": 3.8,
+    "AQUA_UV_STERILIZER": 14.8
+   },
+   "links": {
+    "UNDER_DESK_BASKET-072": "https://detail.1688.com/offer/823505034425.html",
+    "FACE_TOWEL-070": "https://detail.1688.com/offer/756931830701.html",
+    "AQUA_UV_STERILIZER": "https://detail.1688.com/offer/570495126916.html"
+   },
+   "caveat": "1688 同款当前报价（2026-10-31 实抓），非历史成交价；历史价卡在 air.1688.com 容器页价格区块不渲染",
+   "evidence": "evidence/L1/20261031/1688_quotes_20261031.json"
+  },
+  "2_sku_list": {
+   "file": "evidence/ozon/OZON_SKU_LIST_20261031.csv",
+   "sha256": "1a0f7dbafeddb1418f5ea65b1202b8d6ca3b972dfa51d9eb9ff00510d52f1227",
+   "rows": 59,
+   "cols": 16,
+   "listing": {
+    "在架正常": 36,
+    "在架卡片失败": 18,
+    "在架零库存+卡片失败": 2,
+    "在架零库存": 1,
+    "已归档": 2
+   },
+   "source_verified": {
+    "已验证-已实际采购": 1,
+    "部分验证-有链接无采购": 1,
+    "部分验证-无云雀记录": 1,
+    "未验证-无采购记录无1688链接": 56
+   },
+   "red_flag": "在架 56 款无 1688 链接，货源仅靠仓内 30 件库存支撑"
+  },
+  "3_three_questions": {
+   "file": "reports/L1/OZON-L1-THREE-Q-20261031_xiaoli2.md",
+   "q1": "已实现 −12.49 元；毛利层 +16.04/+59.94/UNKNOWN/+38.86；CM1 仍 UNKNOWN，缺佣金率+干线费两项",
+   "q2": "28天 1828展示/1108搜索/107点卡/7加购/5订购；广告份额 0.0%、有评价商品 0%、评级 0.0；促销单占比 82%、折扣 14%",
+   "q3": "已实证最坏=货销毁亏 14.80 元+干线(未出账)；止损 4 条中第 1、2 条已触发"
+  }
+ },
+ "evidence": {
+  "evidence/L1/20261031/": {
+   "1688_quotes_20261031.json": {
+    "sha256": "761e7dc13233ead2e6e2c529616d80808e09bb05888790fd998d86fc75fefa8d",
+    "bytes": 3038
+   },
+   "L1_SKU_inventory_20261031.csv": {
+    "sha256": "6db4b275289d048cb664a511ffb5cc78f6d724168f0d2c82bc48b9cf17b98c33",
+    "bytes": 20125
+   },
+   "store_raw_20261031.json": {
+    "sha256": "ebf434028575b2d0e226d5d04dbc2484f0943c24bf9f9a3758273db2aac8d5fa",
+    "bytes": 200914
+   },
+   "store_raw_20261031_v2.json": {
+    "sha256": "6d6f077fe4160c21f19327d01201ca9c6779fe803959da35bc3a41aba9a36c3b",
+    "bytes": 1345973
+   },
+   "yunque_orders_raw_20261031.json": {
+    "sha256": "4f81cf76ae8a289fff2421f03d8ea301d8cffff0042a94d67403a1c9fc5cd7e3",
+    "bytes": 17842
+   }
+  },
+  "evidence/ozon/20261031/": {
+   "ozon_funnel_20261031.json": {
+    "sha256": "a4034b3677500a75fa531427e370c0441c7620d1baf38506cb76cce728d60f59",
+    "bytes": 2056
+   }
+  }
+ },
+ "pending_boss": [
+  "3 款零库存：下架 or 补 30（命令已备，等授权）",
+  "56 款未验货源：是否投 4 小时逐款以图搜款补 1688 链接",
+  "Ozon 佣金费率表 + CEL/OGL 计费标准：有这两张 CM1 才能从毛利层落到净利层"
+ ],
+ "red_lines_respected": "只读。未改价/下架/补货/投放/采购；未预囤货、未开海外仓。",
+ "note": "L6 的 40.53 上界已被本台账替换为可复算的精确报价口径；未调平、未编区间。"
+}

@@ -1,0 +1,76 @@
+{
+ "receipt_id": "L1-CM1-BACKFILL-20261031T20261031T155822",
+ "task_ref": "QUEEN-L1L2-URGE-20261031 第②项（L1 CM1 回填）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN)",
+ "ts": "2026-10-31T15:58:22",
+ "status": "DONE",
+ "line": "L1",
+ "owner": "小丽2号",
+ "role": "L1 Ozon Owner",
+ "result_file": "ledgers/ozon_cm1_orders.csv",
+ "result_sha256": "1a11ffdb713d24d1679316439300b253147217ec7365eb115ebcb05fe891153b",
+ "report_file": "reports/L1/OZON-L1-CM1-BACKFILL-20261031_xiaoli2.md",
+ "report_sha256": "35ae5ae6291b9bd6979a39c0f0b433e0733f663675ae55c57370231c149a900a",
+ "evidence_dir": "evidence/L1/20261031/",
+ "headline": {
+  "rows": 4,
+  "cols": 28,
+  "realized_cm1_cny": {
+   "0171504681-0498-1": -2.55,
+   "29986693-2116-1": 0.0,
+   "29986693-2122-1": 0.0,
+   "57138618-0359-2": -9.94
+  },
+  "realized_cm1_sum_cny": -12.49,
+  "steady_cm1": "UNKNOWN（仅缺采购成本 + 头程两项）",
+  "filled_from_source": [
+   "平台佣金=0（应计报告，签收后计提）",
+   "广告分摊=0（余额页 0₽）",
+   "云雀操作费 2.50/单（新打通接口）",
+   "快递费 0（同源）",
+   "已实现 CM1 −12.49（实收 0 − 应计费用）"
+  ],
+  "unknown_cells": [
+   "采购成本 ×4",
+   "头程 ×4",
+   "尾程 ×2（取消单无云雀记录）",
+   "退款计提 ×2（后台无金额字段）",
+   "Ozon OGL 干线（物流报告 0 行）"
+  ],
+  "new_evidence": "云雀 WMS 订单接口打通（X-Access-Token），2 单原始落证 + 1688 采购单号映射"
+ },
+ "screenshot_requests": [
+  "1688 订单 3317159892070001789 详情页（单价+实付+运费）",
+  "1688 订单 435411416901585 详情页（同上）",
+  "Ozon 退货 133980062 退款明细",
+  "Ozon 财务→物流报告：确认 0 行=未出账还是无费用"
+ ],
+ "three_questions": {
+  "q1_can_profit": "已实现 −12.49 元/4 单；稳态 UNKNOWN，只差 COGS+头程两项。不编区间不编百分比。",
+  "q2_sustainable": "不可判：4 单样本、已签收 0 单、广告 0₽、自然流量未测。签收为 0 前任何可持续结论都是编的。",
+  "q3_stop_loss": "4 条量化止损已定；第 1 条已触发（3 款零库存在售），等授权即下架。"
+ },
+ "red_lines_respected": "只读。未改价/下架/补货/投广。",
+ "blocked_on": "1688 订单详情价格区块（本机 air.1688.com 容器渲染不全，价格组件未加载；mtop 网关 faasName 不在可读 chunk）",
+ "files": {
+  "L1_SKU_inventory_20261031.csv": {
+   "sha256": "6db4b275289d048cb664a511ffb5cc78f6d724168f0d2c82bc48b9cf17b98c33",
+   "bytes": 20125
+  },
+  "store_raw_20261031.json": {
+   "sha256": "ebf434028575b2d0e226d5d04dbc2484f0943c24bf9f9a3758273db2aac8d5fa",
+   "bytes": 200914
+  },
+  "store_raw_20261031_v2.json": {
+   "sha256": "6d6f077fe4160c21f19327d01201ca9c6779fe803959da35bc3a41aba9a36c3b",
+   "bytes": 1345973
+  },
+  "yunque_orders_raw_20261031.json": {
+   "sha256": "4f81cf76ae8a289fff2421f03d8ea301d8cffff0042a94d67403a1c9fc5cd7e3",
+   "bytes": 17842
+  }
+ },
+ "note": "0 无一处是猜的：每个 0 都带 *_src 列指向具体报告行。"
+}

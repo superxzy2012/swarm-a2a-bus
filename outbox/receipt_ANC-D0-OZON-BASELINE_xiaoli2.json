@@ -1,0 +1,95 @@
+{
+  "receipt_id": "R-ANC-D0-OZON-BASELINE-xiaoli2-20261030T235800",
+  "task_ref": "ANC-D0-OZON-BASELINE",
+  "from": "xiaoli2",
+  "node": "小丽2号-workbuddy国际版",
+  "to": "queen",
+  "ts": "2026-10-30T23:58:00+08:00",
+  "status": "DONE",
+  "verdict_ref": "QUEEN-VERDICT-OZON-BASELINE-20261030（PASS 有条件，扣 2 分项已补齐）",
+  "result_file": "/Users/lucas/.a2a-bus/reports/OZON-BASELINE-3ORDERS-20261030_xiaoli2.md",
+  "evidence_dir": "/Users/lucas/.a2a-bus/evidence/ozon/20261030",
+  "evidence_manifest": "/Users/lucas/.a2a-bus/evidence/ozon/20261030/MANIFEST.md",
+  "files": [
+    {
+      "path": "reports/OZON-BASELINE-3ORDERS-20261030_xiaoli2.md",
+      "sha256": "ed42794561581e28e2691c97c9cd6dbf622dfbf792845a716efaa13cd733dff9",
+      "bytes": 15478,
+      "desc": "审计基线报告 v1.1（4 单全量、字段逐项、卡点、复核路径）"
+    },
+    {
+      "path": "evidence/ozon/20261030/OZON-3ORDERS-RAW-20261030.csv",
+      "sha256": "8c2edab35b8f0b7bd9c3820d9a59014bf602fa8669698bf3f2344ea5adf81f09",
+      "bytes": 3600,
+      "desc": "机器可读：28 列 × 4 行，0 值均标实测出处"
+    },
+    {
+      "path": "evidence/ozon/20261030/downloads/Отчет по начислениям_01.10.2026-30.10.2026.xlsx",
+      "sha256": "5ae142d15991c29000c300b222a0a840f920b3c9b4805ff34d8e366b2c69b0bb",
+      "bytes": 4173,
+      "desc": "后台原始导出：应计费用 6 行，合计 −12.49 ₽"
+    },
+    {
+      "path": "evidence/ozon/20261030/downloads/Отчет по логистике за период 2026-10-01 - 2026-10-30.xlsx",
+      "sha256": "fee07a8c56d60b587f39d662592bb2582da5e810d95df350fb8a0ed12f397ade",
+      "bytes": 3565,
+      "desc": "后台原始导出：物流报告 0 行数据"
+    },
+    {
+      "path": "evidence/ozon/20261030/downloads/returns_report_2026-10-30T15_03_38.xlsx",
+      "sha256": "f3fec20f89115cf9cf7506abb4406734c51b104368f638c2645e87b0a04d1a84",
+      "bytes": 3772,
+      "desc": "后台原始导出：退货报告 0 行数据"
+    }
+  ],
+  "remediation": {
+    "item_1": "① 证据落正本：全套 23 个文件已落 evidence/ozon/20261030/（含 3 份后台原始 XLSX、4 份 posting JSON、4 份详情页正文+截图、6 张页面截图、CSV），并附 MANIFEST.md 逐文件 sha256 与「数字→文件」对照表",
+    "item_2": "② outbox 回执：本文件 receipt_ANC-D0-OZON-BASELINE_xiaoli2.json，含 5 个交付文件 sha256（已逐一对磁盘复核一致）"
+  },
+  "summary": {
+    "orders_found": 4,
+    "units": 5,
+    "boss_stated": 3,
+    "delivered": 0,
+    "settled_revenue_rub": 0,
+    "accrued_fees_rub": -12.49,
+    "book_balance_rub": -12,
+    "buyer_paid_rub_total": 2969,
+    "commission_rub": 0,
+    "logistics_rub": 0,
+    "ads_rub": 0,
+    "cm1_rub": {
+      "0171504681-0498-1": -2.55,
+      "29986693-2116-1": 0,
+      "29986693-2122-1": 0,
+      "57138618-0359-2": -9.94
+    },
+    "cm1_all_non_positive": true
+  },
+  "unknown_items": [
+    "标价RUB",
+    "折扣",
+    "佣金率",
+    "物流费四段拆分",
+    "汇兑费",
+    "税费",
+    "取消单退款金额",
+    "采购成本"
+  ],
+  "red_lines_respected": [
+    "未改价",
+    "未下架",
+    "未补货",
+    "未投广告",
+    "无后台写操作",
+    "未 bringToFront"
+  ],
+  "note": "补齐 QUEEN 验收扣分两项。证据正本路径 evidence/ozon/20261030/，MANIFEST.md 内附 23 文件 sha256 与抽查对照表。结论未变：4 笔订单、实收全 0 ₽、CM1 无一为正。下次交付纪律：先总线后群聊，群内只发纯文本结论。",
+  "git": {
+    "local_commit": "ae716a7a",
+    "branch": "main",
+    "remote": "gitea http://[REDACTED-IP]:3000/anc/a2a-bus.git",
+    "push_status": "PENDING_NETWORK_POLICY",
+    "detail": "本地已提交 ae716a7a（工作区 clean）。推送被网络策略拦截：git fetch gitea 返回 403 且网络访问 [REDACTED-IP] 的授权被拒，未能 fetch/merge 远端 fbc1ed90（含 QUEEN c82c5414）。需放行后执行：cd ~/.a2a-bus && git fetch gitea && git rebase gitea/main && git push gitea main"
+  }
+}
