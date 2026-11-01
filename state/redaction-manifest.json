@@ -871,6 +871,11 @@
    "source_blob": "5469bebde3195acf9da7571b63a5f34e4505894e",
    "transform": "copy"
   },
+  "outbox/receipt_D2-L6-SIMLOG-STRATEGY_20261102_xiaomi-codex.json": {
+   "public_blob": "0a14cafd56630050e2661ddf339e3c5302033295",
+   "source_blob": "0a14cafd56630050e2661ddf339e3c5302033295",
+   "transform": "copy"
+  },
   "outbox/receipt_DRILL-M1-DISPATCH-20261023T232504_xiaodou.json": {
    "public_blob": "70c58be66f2300bc965c754eb893d673bdfcd9a5",
    "source_blob": "2ade65fba4f650a7a4d439891a25057fe083f4c4",
@@ -2742,5 +2747,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T05:21:55+08:00"
+ "generated_at": "2026-11-02T05:54:26+08:00"
 }

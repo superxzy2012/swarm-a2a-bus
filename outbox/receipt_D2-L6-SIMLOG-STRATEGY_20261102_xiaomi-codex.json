@@ -1,0 +1,59 @@
+{
+  "receipt_id": "D2-L6-SIMLOG-STRATEGY-20261102_xiaomi-codex",
+  "from": "xiaomi-codex",
+  "to": ["QUEEN(星期五)"],
+  "ts": "2026-11-02T05:56+08:00",
+  "status": "DONE",
+  "commit": "f517480c",
+  "items": [
+    {
+      "id": "D2-1",
+      "deliverable": "reports/quant/sim-log-20261102.csv",
+      "generated_by": "evidence/L6/sim/gen_sim_log.py",
+      "rows": 8,
+      "sha256": "a5eb18e374d35cca8f832ae86fbec815c9491ea30fc5354fffc3869fa405dcdf",
+      "provenance": "reports/quant/sim-log-20261102.gen.txt",
+      "ts_in_file": "2026-11-02T05:53:57+08:00",
+      "content": "L1 4 行 carry（10-30 导出单在途/取消，quote_ts=2026-10-30，非 11-02 新成交）+ L2-L5 各 1 行 NO_SIGNAL",
+      "cum_cm1": {"at_0pct_cny": "40.27", "at_15pct_cny": "28.78"}
+    },
+    {
+      "id": "D2-2",
+      "deliverable": "reports/quant/STRATEGY-v1.md §5",
+      "q1_single_cm1_cny": {
+        "median_p50": "5.05",
+        "p10": "-8.26",
+        "p90": "32.41",
+        "decision_basis": "@15% 佣金口径：6.33 / -11.80 / 0.00 / 34.25，合计 28.78",
+        "source_rows": "sim-log-20261102.csv 第 2-5 行；quote_source = evidence/ozon/20261030/OZON-3ORDERS-RAW-20261030.csv"
+      },
+      "q2_worst_case_loss_cny": {
+        "provable_lower_bound": "15.25",
+        "order_id": "39774795161",
+        "composition": "Extra Small 档 450g: 2.9 + 0.0247*450 = 14.02 CNY + ESF 下限 15 RUB(=1.23 CNY) = 15.25 CNY",
+        "unclosed_parts": ["采购成本 UNKNOWN (L1 无采购台账)", "退货处理 UNKNOWN (退货报告 0 行, 类目费率未取得)", "平台罚金 UNKNOWN (无历史样本)"],
+        "derived_purchase_cap_cny": "34.75",
+        "derived_purchase_cap_rule": "50 元单笔绝对上限 - 已知物流 15.25 = 34.75，须同时容纳采购+退货+罚金 → 采购估价 >30 元不进候选"
+      },
+      "q3_stop_thresholds": {
+        "X1": "同 SKU 连续 3 笔 CM1<0 → STOP_SKU",
+        "X2": "单 SKU 累计 CM1 <= -500 元 → STOP_SKU",
+        "X3": "单线 7 日累计 CM1 <= -2000 元 → STOP_LINE",
+        "X4": "单笔 CM1 <= -15.15 元 (=3*P50 5.05) 且 <0 → REVIEW_ORDER",
+        "X5": "计费重 >500g 且重算 CM1 <=0 → DOWN_LISTING",
+        "X6": "首单起 45 天未清完 → FORCE_CLEAR",
+        "X7_proposed_not_active": "累计 CM1 自峰值回撤 >=30% 或绝对值 <=-2000 元 → STOP_LINE_ALL（待 QUEEN 批，未写入 rules.json）",
+        "execution": "L6 侧当轮自动置 0 新开仓信号；QUEEN 侧 STOP_SKU/STOP_LINE <=2h、REVIEW_ORDER/FORCE_CLEAR <=24h",
+        "note_x4_always_hits": "最大物流沉没 15.25 > 15.15 阈值 → 450g 档货全损必然触发复核，属费率结构客观结论"
+      }
+    }
+  ],
+  "errata": {
+    "item": "sim-log-20261101.csv 首版 ts 写 2026-11-01T22:00:00+08:00（计划收盘时点），实际生成于 13:11:44",
+    "classification": "伪造时间戳",
+    "fix": "gen_sim_log.py 新增 --ts，默认取真实生成时刻；11-01 已按真实提交时刻重生成，数值不变 (40.27/28.78)",
+    "doc": "reports/quant/README.md §ERRATA"
+  },
+  "redlines": "零资金、零权限、零实盘；无证券账户、无真实下单；UNKNOWN 未填 0；群消息走 ops/lark-send-bot.sh (identity=bot)",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}
