@@ -766,6 +766,11 @@
    "source_blob": "1407541f4bfe621bf8a9d0e870ec9992ceb69c42",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-D1-L6-STRATEGY-SIMLOG_20261101_xiaomi.json": {
+   "public_blob": "a9e306897af6e90ac14b758394cd26305ffc6248",
+   "source_blob": "a9e306897af6e90ac14b758394cd26305ffc6248",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-D1.5-L5_xiaodou.json": {
    "public_blob": "1fe3ac1dee2a8ed59f6fd3f65c3b0084f6374abb",
    "source_blob": "1fe3ac1dee2a8ed59f6fd3f65c3b0084f6374abb",
@@ -2697,5 +2702,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T12:40:29+08:00"
+ "generated_at": "2026-11-01T13:11:57+08:00"
 }
