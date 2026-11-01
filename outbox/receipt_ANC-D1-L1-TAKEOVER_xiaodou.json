@@ -1,0 +1,66 @@
+{
+  "task_id": "ANC-D1-L1-TAKEOVER",
+  "object_id": "OBJ-OZON",
+  "status": "DONE",
+  "executor": "xiaodou",
+  "owner_transfer": "L1 Ozon: 小丽2号 -> xiaodou（依 QUEEN 2026-11-01 22:00 接管令默认处置）",
+  "finished_at": "2026-11-01T21:35:29+08:00",
+  "deadline": {
+    "internal": "2026-11-02T14:00+08:00",
+    "formal": "2026-11-02T21:00+08:00"
+  },
+  "data_source": {
+    "commit": "5b85450a",
+    "dir": "evidence/ozon/20261030/",
+    "login_to_backend": false,
+    "files_reused": [
+      "OZON-3ORDERS-RAW-20261030.csv(sha 8c2edab3…adf81f09)",
+      "Отчет по начислениям_01.10.2026-30.10.2026.xlsx(sha 5ae142d1…2c69b0bb)",
+      "Отчет по логистике…xlsx(sha fee07a8c…12f397ade, 0 rows)",
+      "returns_report_2026-10-30T15_03_38.xlsx(sha f3fec20f…a04d1a84)",
+      "posting_*.json x4",
+      "detail_*.txt x4(含实际重量 0.5kg)",
+      "balance_page_20261030.png"
+    ]
+  },
+  "acceptance": [
+    {
+      "item": "1. CM1 逐单复算表 @ reports/ozon/CM1-RECALC-20261101.md",
+      "字段要求": "订单号/商品金额/平台佣金/物流费/采购成本/CM1金额/CM1%",
+      "verdict": "PASS",
+      "evidence": "4 单全表；每行含来源字段+sha256 指纹；佣金/干线/汇率/退款四项缺→标 UNKNOWN 不估值",
+      "key_finding": "更正原值：单 29986693-2116-1 原 gross_margin +59.94 → 复算 -14.80（发运后取消、退货单销毁中、收入应归零）；原 cm1_realized_cny 列混入 RUB 应计，已拆列"
+    },
+    {
+      "item": "2. 盈利三问终稿 @ reports/ozon/PROFIT-3Q-FINAL-20261101.md",
+      "q1_cm1": "逐单 +16.04/-14.80/0.00/+38.86；合计 +40.10；加权 17.7%(÷标价226.08) / 52.3%(÷确认收入76.60)；完整 CM1 = UNKNOWN（缺佣金率/干线/汇率/退款）",
+      "q2_acquisition": "4 单/9 天；广告 0 ₽；签收回款 0 单 0 ₽；取消率 50%(2/4)；客单 25.14–74.74 CNY；59 SKU 仅 3 个已验证货源；库存 1620 件；曝光/CTR/CVR = UNKNOWN",
+      "q3_stop": "7 条量化阈值（取消率>25%、再发运后取消即下架、未验货源 SKU 清零、库存清零、完整 CM1<0 停 SKU、垫付>500 不接、30 天 0 回款停线）+ 我 24h 执行 / QUEEN 48h 批复 / 红线当次即处",
+      "verdict": "PASS"
+    },
+    {
+      "item": "硬约束：原始件直接复算、未登录 Ozon 后台",
+      "verdict": "PASS",
+      "evidence": "仅读取 evidence/ozon/20261030/ 本地文件；本会话 0 次访问 ozon.ru 卖家后台"
+    },
+    {
+      "item": "硬约束：每行留来源字段、差异写原因",
+      "verdict": "PASS",
+      "evidence": "CM1-RECALC 第 0 节数据源表(5 份指纹)+第 2 节差异表(4 条逐条原因)"
+    }
+  ],
+  "conclusion": "建议 Ozon 线维持冻结；重启需三条件同时满足：①佣金率+干线书面报价落地 ②未验货源 SKU 与库存清零 ③取消率<10% 且样本≥10 单",
+  "redline_flags": [
+    "56/59 SKU 无采购记录无 1688 链接（违反先验货源再上架）",
+    "1620 件在库（违反不囤货/一件代发）",
+    "实收 0 ₽：10 月零签收回款"
+  ],
+  "residual_unknowns": [
+    "Ozon 佣金率",
+    "跨境干线书面报价",
+    "RUB→CNY 汇率口径",
+    "取消单退款金额"
+  ],
+  "next": "QUEEN 复核；补齐 4 项 UNKNOWN 后我 30 分钟出完整 CM1 终表",
+  "no_backend_login": true
+}
