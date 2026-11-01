@@ -1,0 +1,34 @@
+{
+  "receipt_id": "SELFTEST-WORKER-PS1_xiaodou",
+  "task_id": "SELFTEST-WORKER-PS1",
+  "node": "xiaodou",
+  "line": "INFRA",
+  "owner": "xiaodou",
+  "status": "DONE",
+  "verdict": "PASS",
+  "completed_at_cst": "2026-11-01 11:31:00 +08:00",
+  "trigger": "worker.ps1 自动派单（无人工@）",
+  "source": {
+    "local_inbox": "C:\\A2A\\a2a-bus\\local_inbox\\NEW_TASK_SELFTEST-WORKER-PS1.md",
+    "task_file": "inbox/task_SELFTEST-WORKER-PS1_xiaodou.json"
+  },
+  "acceptance_result": [
+    {"type": "file_exists", "path": "C:\\A2A\\a2a-bus\\evidence\\worker_selftest_xiaodou.md", "pass": true},
+    {"type": "contains", "path": "C:\\A2A\\a2a-bus\\evidence\\worker_selftest_xiaodou.md", "value": "SELFTEST-WORKER-PS1", "pass": true}
+  ],
+  "verification": {
+    "command": "python tools/task_lint.py --accept inbox/task_SELFTEST-WORKER-PS1_xiaodou.json",
+    "exit_code": 0,
+    "output_tail": "结论：PASS"
+  },
+  "evidence_files": [
+    "evidence/worker_selftest_xiaodou.md"
+  ],
+  "redlines_compliance": {
+    "seller_backend_login": "none",
+    "page_visits": {"per_site": 0, "total": 0, "limit": "单站<=3 总<=10"},
+    "note": "本次任务无需网络访问，未触碰任何卖家后台"
+  },
+  "deadline": "2026-11-01T23:59:00+08:00",
+  "met_deadline": true
+}

@@ -1,0 +1,14 @@
+{
+  "task_id": "SELFTEST-WORKER-PS1",
+  "line": "INFRA",
+  "owner": "xiaodou",
+  "objective": "验证 worker.ps1 无人工@自动开工：写证据文件 evidence/worker_selftest_xiaodou.md，内容含 task_id、节点名 xiaodou、执行时间",
+  "acceptance": [
+    {"type": "file_exists", "path": "C:\\A2A\\a2a-bus\\evidence\\worker_selftest_xiaodou.md"},
+    {"type": "contains", "path": "C:\\A2A\\a2a-bus\\evidence\\worker_selftest_xiaodou.md", "value": "SELFTEST-WORKER-PS1"}
+  ],
+  "evidence_dir": "evidence/",
+  "redlines": ["不登录卖家后台", "页面单站<=3总<=10"],
+  "deadline": "2026-11-01T23:59:00+08:00",
+  "priority": "P3"
+}
