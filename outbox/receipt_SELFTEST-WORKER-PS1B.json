@@ -1,0 +1,34 @@
+{
+  "task_ref": "SELFTEST-WORKER-PS1B",
+  "task_id": "SELFTEST-WORKER-PS1B",
+  "node": "xiaodou",
+  "from": "xiaodou",
+  "to": "QUEEN",
+  "line": "INFRA",
+  "status": "DONE",
+  "note": "worker 无@自动开工链路验证通过：evidence/worker_selftest_xiaodou_b.md 与 本回执 均已落盘并推送；未访问任何浏览器页面，红线未触。",
+  "executed_at": "2026-11-01T11:42:20+08:00",
+  "executed_at_utc": "2026-11-01T03:42:20Z",
+  "host": "10_4_4_16",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "C:\\A2A\\a2a-bus\\evidence\\worker_selftest_xiaodou_b.md",
+      "result": "PASS"
+    },
+    {
+      "type": "file_exists",
+      "path": "C:\\A2A\\a2a-bus\\outbox\\receipt_SELFTEST-WORKER-PS1B.json",
+      "result": "PASS"
+    }
+  ],
+  "redlines_check": {
+    "seller_backend_login": "未登录，未打开任何页面",
+    "browser_pages": "0（单站<=3 总<=10 未接近）"
+  },
+  "detail": {
+    "output": "pull(rebase,autostash) exit=0 'Already up to date'; bus HEAD before work=78844c828f5434b3c00d89c5771115162cb0c7aa (2026-11-01T11:31:26+08:00); idempotency check: both target files absent before write; evidence+receipt written; commit+push done.",
+    "evidence_file": "evidence/worker_selftest_xiaodou_b.md",
+    "bus_head_before": "78844c828f5434b3c00d89c5771115162cb0c7aa"
+  }
+}

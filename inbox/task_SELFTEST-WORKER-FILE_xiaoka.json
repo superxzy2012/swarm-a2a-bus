@@ -1,0 +1,13 @@
+{
+  "task_id": "SELFTEST-WORKER-FILE",
+  "line": "INFRA",
+  "owner": "xiaoka",
+  "objective": "验证 worker.py 领取链路（wake=file）：只写 local_inbox，不调 agent",
+  "acceptance": [
+    {"type": "file_exists", "path": "processed/task_SELFTEST-WORKER-FILE_xiaoka.CLAIMED.json"}
+  ],
+  "evidence_dir": "evidence/infra/",
+  "redlines": ["不登录卖家后台", "页面单站≤3总≤10"],
+  "deadline": "2026-11-02T12:00:00+08:00",
+  "priority": "P3"
+}

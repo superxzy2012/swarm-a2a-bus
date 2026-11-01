@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-11-01T11:31:26+08:00",
- "count": 195,
+ "source_head_at": "2026-11-01T03:44:38Z",
+ "count": 197,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -287,6 +287,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-27T13:50:00+08:00"
+  },
+  {
+   "file": "inbox/task_SELFTEST-WORKER-FILE_xiaoka.json",
+   "task_id": "SELFTEST-WORKER-FILE",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
   },
   {
    "file": "inbox/task_SELFTEST-WORKER-PS1_xiaodou.json",
@@ -1211,6 +1222,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-20T01:22:21+08:00"
+  },
+  {
+   "file": "processed/task_SELFTEST-WORKER-FILE_xiaoka.json.CLAIMED.json",
+   "task_id": "SELFTEST-WORKER-FILE",
+   "from": "",
+   "to": "",
+   "status": "DONE",
+   "archived": true,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": "2026-11-01T11:00:47+08:00"
   },
   {
    "file": "processed/task_SELFTEST-WORKER-PS1_xiaodou.json.CLAIMED.json",

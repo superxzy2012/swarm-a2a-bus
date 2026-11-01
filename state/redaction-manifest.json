@@ -146,6 +146,11 @@
    "source_blob": "d6a34cc9bddd4dc932fce7bd3004db0a19c8b43c",
    "transform": "redact+templatize"
   },
+  "inbox/task_SELFTEST-WORKER-FILE_xiaoka.json": {
+   "public_blob": "aa52e7d6726716a8bf7a8dd779dd42021e1fe66b",
+   "source_blob": "aa52e7d6726716a8bf7a8dd779dd42021e1fe66b",
+   "transform": "copy"
+  },
   "inbox/task_SELFTEST-WORKER-PS1_xiaodou.json": {
    "public_blob": "c39fecd160c0e8d104f59a498d9387fd59ae24af",
    "source_blob": "c39fecd160c0e8d104f59a498d9387fd59ae24af",
@@ -2341,6 +2346,11 @@
    "source_blob": "eff60089d8a3c9d3a9ab7e41495a0c8d4a383c82",
    "transform": "copy"
   },
+  "outbox/receipt_SELFTEST-WORKER-PS1B.json": {
+   "public_blob": "62002a121793ea941845c03ee78c6b7a9fdc744c",
+   "source_blob": "62002a121793ea941845c03ee78c6b7a9fdc744c",
+   "transform": "copy"
+  },
   "outbox/receipt_SIM-T-REASSIGN-001_xiaodou.json": {
    "public_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
    "source_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
@@ -2682,5 +2692,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T11:31:26+08:00"
+ "generated_at": "2026-11-01T03:44:38Z"
 }
