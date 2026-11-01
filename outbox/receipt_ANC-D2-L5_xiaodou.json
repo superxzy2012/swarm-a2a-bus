@@ -1,0 +1,54 @@
+{
+  "task_id": "ANC-D2-L5",
+  "object_id": "OBJ-QUALITY-SERVICE",
+  "status": "DONE_BLOCKED_SEND",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-02T05:21:47+08:00",
+  "ruling_ref": "QUEEN D2 身份裁定：投递身份=BOSS 名下既有账号；禁新建；禁登录任何卖家/接单后台",
+  "deliverable": {
+    "path": "reports/QualityService/L5-D2-OUTREACH-READY-20261102_xiaodou.md",
+    "sha256": "4ecf2e005d87c28b84dfc7aa3f45370dfc64b74f3dc1096a7193c2233cd809a8",
+    "lines": 240
+  },
+  "acceptance": [
+    {
+      "item": "英文 sample report（对外版）",
+      "verdict": "DONE",
+      "detail": "完整内联 7 节 PSI 样品报告；ISO 2859-1 Level II/lot 3200/n=125/AQL C0 M2.5 m4.0；5 项发现(2 Major 4 Minor 0 Critical)、测量表、12 张照片索引、免责与独立性声明；客户/工厂/PO 全 [ANONYMIZED]，标 SAMPLE(合成数据)；**价格词命中 0**"
+    },
+    {
+      "item": "3 个报价形态（USD+工时）",
+      "verdict": "DONE",
+      "detail": "A 人日制 $268/$220/$350/$328+差旅；B 小时制 $25/$32/$18(4h/2h 起订)；C 打包制 $268/$420/$200/$420；每项标注工时；与 QSVC-RATE-1.0 一致，费率未改；收款通道保留 [TO BE CONFIRMED]"
+    },
+    {
+      "item": "5 条活链买家触达渠道清单",
+      "verdict": "DONE",
+      "detail": "LEAD-01/04/05/06/07 逐条给平台+精确入口 URL+触达动作+预估金额+优先级；全部依赖 BOSS 账号一次登录，我不代发"
+    },
+    {
+      "item": "每条一条英文首触模板(~100词)",
+      "verdict": "DONE",
+      "detail": "5 条：99/111/94/97/91 词；LEAD-01 首词 INSPECTION(其硬性要求)；LEAD-07 明说 individual expert, not an agency"
+    },
+    {
+      "item": "投递 0/回复 0 保留原样 + 标注",
+      "verdict": "DONE",
+      "detail": "§1 表格保留 投递0/回复0/付费试单0，注 BLOCKED_BY_CREDENTIAL: 平台账号；转化率标 ASSUMPTION"
+    }
+  ],
+  "blocked": "BLOCKED_BY_CREDENTIAL: 平台账号（Upwork/Freelancer 属 BOSS 主体，我无权开、不能登录）",
+  "needs_boss_once": [
+    "平台账号授权（Upwork/Freelancer 既有账号）",
+    "收款主体（发票/收款通道）"
+  ],
+  "not_done_by_design": [
+    "未发送任何消息",
+    "未注册账号",
+    "未登录任何平台后端",
+    "价格未写入 sample report",
+    "未承诺保证通过",
+    "未扩范围（只此一份）"
+  ],
+  "no_outreach_sent": true
+}
