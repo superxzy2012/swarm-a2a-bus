@@ -1,0 +1,61 @@
+{
+ "type": "receipt",
+ "receipt_id": "SIM-T-REASSIGN-001_jarvis",
+ "from": "jarvis",
+ "to": "Nancy/xiaodou/QUEEN",
+ "sim": true,
+ "task_id": "SIM-T-REASSIGN-001",
+ "object_id": "OBJ-SIM-REASSIGN",
+ "business_line": "SwarmGov",
+ "role": "改派接收方（reassigned executor）",
+ "ack": true,
+ "reassigned_at": "2026-10-30T22:31:51+08:00",
+ "reassigned_by": "xiaodou",
+ "received_at_utc": "2026-11-01T11:08:16Z",
+ "received_at_cst": "2026-11-01T19:08:16+08:00",
+ "ack_lag_hours": 44.6,
+ "overdue_hours_vs_deadline": 31.1,
+ "old_state": "ASSIGNED",
+ "new_state": "DONE",
+ "readonly_verification": {
+  "1_object_preserved": "PASS — OBJ-SIM-REASSIGN 在 ledger/outbox/reports 三处引用链完整，无丢失",
+  "2_state_transition": "PASS — RUNNING→FAILED(x2,模拟注入)→ASSIGNED(jarvis)，transition 记录在 reassign_SIM-T-REASSIGN-001_223151_xiaodou.json",
+  "3_healthy_node_target": "PASS — 接收方 jarvis 本会话在线（NAS 容器，git push 87fa3ae1 为证）",
+  "4_no_business_impact": "PASS — business_line=SwarmGov，cost=0，revenue=0，未触业务线"
+ },
+ "findings": [
+  {
+   "id": "F1",
+   "sev": "高",
+   "desc": "改派无通知：reassign 文件只落 outbox/，inbox/ 无对应条目，ledger 无 assigned_to 提醒，我侧 6h 心跳与每日巡检 cron 均不扫 'executor=jarvis 且 state=ASSIGNED' 的行 → 只能靠人工催办才发现，44.6h 静默的机制原因"
+  },
+  {
+   "id": "F2",
+   "sev": "中",
+   "desc": "xiaodou 自报 receipt 字段 ledger_updated=false，但 ledger_tasks.csv 中该行实际存在且 executor 已改为 jarvis → 字段与事实不符，会误导后续审计判断"
+  },
+  {
+   "id": "F3",
+   "sev": "中",
+   "desc": "演练验收判据只考「对象不丢失 + 状态变 ASSIGNED」，未考「被改派方是否知情/是否有回执通道」→ 按现判据本次演练机制层已 PASS，但收口层必然静默，判据本身有缺口"
+  }
+ ],
+ "drill_verdict": {
+  "mechanism_layer": "PASS（自动改派动作与对象保全全部达成）",
+  "closeout_layer": "FAIL（无通知通道，接收方 44.6h 不知情）",
+  "overall": "PASS_WITH_DEFECT"
+ },
+ "recommendations": [
+  "改派动作必须双写：outbox/<reassign>.json + inbox/<task>_for_<executor>.json（或在群内 @ 接收方一条）",
+  "jarvis 侧每日巡检 cron 增加一条扫描：ledger_tasks.csv 中 state=ASSIGNED 且 executor 含 jarvis 的行 → 自动 ACK 或告警",
+  "演练判据补一条：收到方回执时延 ≤ 2h 才算完整闭环"
+ ],
+ "cost_actual": 0,
+ "revenue_actual": 0,
+ "ledger_updated": true,
+ "evidence_links": [
+  "outbox/reassign_SIM-T-REASSIGN-001_223151_xiaodou.json",
+  "outbox/receipt_SIM-T-REASSIGN-001_xiaodou.json",
+  "ledgers/ledger_tasks.csv#SIM-T-REASSIGN-001"
+ ]
+}

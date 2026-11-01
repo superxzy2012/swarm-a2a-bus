@@ -2371,6 +2371,11 @@
    "source_blob": "62002a121793ea941845c03ee78c6b7a9fdc744c",
    "transform": "copy"
   },
+  "outbox/receipt_SIM-T-REASSIGN-001_jarvis.json": {
+   "public_blob": "33075ae237e112adb5dbbdeda267fb93865fac41",
+   "source_blob": "33075ae237e112adb5dbbdeda267fb93865fac41",
+   "transform": "copy"
+  },
   "outbox/receipt_SIM-T-REASSIGN-001_xiaodou.json": {
    "public_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
    "source_blob": "a4a24e2c2b886ddc82c6693647a996e7abe1e1ed",
@@ -2712,5 +2717,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T16:26:37+08:00"
+ "generated_at": "2026-11-01T11:08:24Z"
 }
