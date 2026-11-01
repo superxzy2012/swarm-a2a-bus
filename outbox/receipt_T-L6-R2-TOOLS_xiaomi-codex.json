@@ -1,0 +1,64 @@
+{
+  "receipt_id": "T-L6-R2-TOOLS_xiaomi-codex",
+  "task": "T-L6-R2-TOOLS",
+  "from": "xiaomi-codex",
+  "to": ["Nancy", "QUEEN(星期五)"],
+  "ts": "2026-11-02T08:05+08:00",
+  "status": "DONE",
+  "commit": "dd5efd68",
+  "items": [
+    {
+      "id": "R2-1",
+      "name": "CM1 三币种参数化",
+      "commit": "dc6679e2",
+      "files": ["evidence/L6/params/cm1_engine.py", "evidence/L6/params/params.RUB.ozon.json", "evidence/L6/params/params.USD.amazon-us.json", "evidence/L6/params/params.BRL.mercadolivre-br.json"],
+      "fx_sources": {
+        "RUB": "CFETS 2026-10-30 中间价 1 CNY = 12.1820 RUB",
+        "USD": "CFETS 2026-10-30 中间价 1 USD = 6.7138 CNY",
+        "BRL": "Frankfurter/ECB 2026-10-30 1 CNY = 0.81656 BRL（CFETS 不含 BRL，来源差异已注明）"
+      },
+      "repro": "python3 cm1_engine.py --params params.RUB.ozon.json --cases cases.L1.ozon.4orders.json --regress"
+    },
+    {
+      "id": "R2-2",
+      "name": "直发物流成本模型 v1",
+      "files": ["evidence/L6/params/logistics_model.json", "evidence/L6/params/logistics.py", "evidence/L6/params/R2.md"],
+      "coverage": "3 走廊 (CN->RU/US/BR) x 3 渠道 (邮政小包/专线/商业快递) = 9 格；6 格有公开费率，3 格 UNKNOWN",
+      "sources": {
+        "postal_small_packet": "广州E邮宝价格表 2026-09-28 14:00 起 https://goodhope86.com/express/eubg.html（RU 92元/KG+10元票, US 76+12, BR 80+27）",
+        "dedicated_line_RU": "Ozon Global OGL 2026-08-24 费率表 https://ebucr.com/topics/ogl-shipping-calculator/",
+        "dedicated_line_US": "海备国际 美国专线 2026-08-20 https://quote.hbew.com/rates/ecommerce-parcel/us",
+        "dedicated_line_BR": "海备国际 巴西专线 2026-07-27 https://quote.hbew.com/rates/ecommerce-parcel/br",
+        "commercial_express": "UNKNOWN: 无签约协议价（含燃油/偏远附加费），缺折扣率"
+      },
+      "repro": "python3 logistics.py matrix --weights 250,450,1000",
+      "real_output_sample": "CN->RU postal 450g = 51.40 CNY; CN->RU OGL 450g/25.14元 = 15.25 CNY（与 CM1 引擎一致）; CN->US dedicated 450g = 81.50 CNY; commercial_express 全 UNKNOWN"
+    },
+    {
+      "id": "R2-3",
+      "name": "选品筛选脚本",
+      "files": ["evidence/L6/params/sku_screen.py", "evidence/L6/params/cases.R2.screen.json"],
+      "verdict_codes": ["E1 物流不可行", "E2 CM1@15%<=0", "E3 CM1@0%<=0", "E4 采购上限<=0", "E5 采购>=上限", "PASS_CONDITIONAL", "REVIEW_UNKNOWN", "PASS"],
+      "repro": "python3 sku_screen.py --input cases.R2.screen.json",
+      "real_output_sample": "RU-DESK-BASKET-450g PASS CM1@15%=32.78 采购上限50.78; RU-UV-STERILIZER-300g PASS_CONDITIONAL 采购<38.26; US-* REVIEW_UNKNOWN(收单费UNKNOWN); BR-CHEAP-TOWEL-250g ELIMINATED CM1@15%=-10.00; exit=2"
+    }
+  ],
+  "selftest": {
+    "cmd": "bash evidence/L6/params/selftest_all.sh",
+    "result": "ALL GREEN",
+    "r2_assertions": 8,
+    "note": "含 ① 引擎单测 + RUB 4 单回归 + USD/BRL 样例；② 物流 4 项（含 UNKNOWN 必须为 null、超重必须 UNKNOWN）；③ 筛选器 4 项（含 L1 实单回归 5.62、ELIMINATED 退出码 2、矩阵 9 格）"
+  },
+  "known_deltas": [
+    "筛选器复算 L1 39774795161 得 CM1@15%=5.62，台账为 6.33：台账用实单收单费 -2.55 RUB（贷记），筛选器用 2% 模型（0.50 元），属事前/事后口径差异，已在 R2.md §3.4 说明"
+  ],
+  "unknowns": [
+    "商业快递 3 格：无签约协议价",
+    "时效档：邮政小包/OGL/海备 US 未公布承诺时效（仅海备 BR 15-25 天）",
+    "巴西进口税/ICMS 未计入",
+    "美国站收单费缺后台截图",
+    "E邮宝俄罗斯线当期是否停收未核实"
+  ],
+  "redlines": "零资金、零权限、零实盘；无证券账户、无真实下单；UNKNOWN 未填 0；群消息走 ops/lark-send-bot.sh (identity=bot)",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}

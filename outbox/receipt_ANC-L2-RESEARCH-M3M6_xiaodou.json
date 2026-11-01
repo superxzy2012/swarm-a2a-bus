@@ -1,0 +1,60 @@
+{
+  "task_id": "ANC-L2-RESEARCH",
+  "object_id": "OBJ-AMAZON",
+  "status": "DONE_PENDING_REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-02T07:12:58+08:00",
+  "reply_to": "Nancy 2026-11-02 07:10 催办 ③",
+  "modules": {
+    "M1": "M1-MARKET-RESEARCH-20261031_xiaodou.md (已交)",
+    "M2": "M2-LAUNCH-PLAYBOOK-20261031_xiaodou.md (已交)",
+    "M2B": "M2B-FBM-SPEC-20261031_xiaodou.md (已交)",
+    "M3": "M3-COMPLIANCE-20261102_xiaodou.md (本次)",
+    "M4": "M4-SELECTION-METHOD-20261102_xiaodou.md (本次)",
+    "M5": "M5-AI-LISTING-20261102_xiaodou.md (本次)",
+    "M6": "M6-LISTING-SOP-20261102_xiaodou.md (本次)",
+    "M7": "M7-ERP-COMPARE-20261031_xiaodou.md (已交)"
+  },
+  "files": {
+    "reports/amazon/M3-COMPLIANCE-20261102_xiaodou.md": {
+      "sha256_16": "53b6cfa736b3b775",
+      "lines": 92,
+      "bytes": 7123
+    },
+    "reports/amazon/M4-SELECTION-METHOD-20261102_xiaodou.md": {
+      "sha256_16": "db5e34466f351fcf",
+      "lines": 94,
+      "bytes": 6320
+    },
+    "reports/amazon/M5-AI-LISTING-20261102_xiaodou.md": {
+      "sha256_16": "1fadef8a6731a5fd",
+      "lines": 97,
+      "bytes": 6829
+    },
+    "reports/amazon/M6-LISTING-SOP-20261102_xiaodou.md": {
+      "sha256_16": "a3862febecc53867",
+      "lines": 117,
+      "bytes": 6984
+    }
+  },
+  "sources_all_public": true,
+  "path_note": "台账 evidence_required 写 reports/Amazon/（大写）与实际跟踪路径 reports/amazon/（小写）不一致；本次全部落小写，已验证 git 收录",
+  "key_findings": [
+    "标题 2026 起限 75 字符（非 200），item highlights ≤125 — 官方 G200390640",
+    "CPSC eFiling 已生效：进口受管制消费品须在进入美国商业流通前电子提交合规证书；FTZ 场景 2027-01-08",
+    "AI 生成人物图须打标 contains-synthetic-performer（2026-07-23 生效，XMP dc:subject）",
+    "UFLPA 实体清单 2026-10-29 更新（此前 2026-08-03 一批）",
+    "M4 用 6 维打分复算 SKU-A = 3.42 < 3.5 门槛 → 按自定规则 FAIL（合规门槛与竞争密度拖累）"
+  ],
+  "unknowns": [
+    "SKU HTS 与 301 税率",
+    "供应商 CPC/GCC/FDA 报告是否存在",
+    "类目准入是否需审批",
+    "ABA 搜索量与竞品月销"
+  ],
+  "redline_notes": [
+    "未登录卖家后台",
+    "未使用任何付费工具",
+    "A+/Vine/品牌注册 均标为不可用并说明冲突"
+  ]
+}

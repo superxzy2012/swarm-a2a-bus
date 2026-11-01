@@ -831,6 +831,11 @@
    "source_blob": "3f3db449899541c046d9c1bbead04bdff73c707a",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-L2-RESEARCH-M3M6_xiaodou.json": {
+   "public_blob": "bf9619d4c7aaa1c468e36b5c8dde962e34b11120",
+   "source_blob": "bf9619d4c7aaa1c468e36b5c8dde962e34b11120",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-R2-L6-CM1-3CURRENCY_20261031_xiaomi.json": {
    "public_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
    "source_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
@@ -2571,6 +2576,11 @@
    "source_blob": "a7cecf48176d25a77f552ed30d50f564e8f1d4f9",
    "transform": "redact"
   },
+  "outbox/receipt_T-L6-R2-TOOLS_xiaomi-codex.json": {
+   "public_blob": "c73c0e861144430945e4908005fcd059c33563e2",
+   "source_blob": "c73c0e861144430945e4908005fcd059c33563e2",
+   "transform": "copy"
+  },
   "outbox/receipt_T-MUSE-ARCHIVE_friday.json": {
    "public_blob": "d31f577787071685847e500920528f8b768ffaba",
    "source_blob": "d31f577787071685847e500920528f8b768ffaba",
@@ -2757,5 +2767,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T06:57:46+08:00"
+ "generated_at": "2026-11-02T07:13:47+08:00"
 }
