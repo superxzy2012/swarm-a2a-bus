@@ -1,0 +1,105 @@
+{
+  "task_id": "ANC-D1-L2-D1-3FILLED",
+  "object_id": "OBJ-AMAZON",
+  "status": "PARTIAL_DONE",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-02T03:18:56+08:00",
+  "reply_to": "QUEEN L2 第二次催办（三项三选）",
+  "acceptance": [
+    {
+      "item": "③ D1-3 单位经济表 FILLED",
+      "verdict": "DONE",
+      "deliverables": [
+        {
+          "path": "evidence/amazon/L2-D1-3_UNIT-ECONOMICS-FILLED-20261101.csv",
+          "sha256_16": "cdb7ca32dad90287",
+          "rows": 3
+        },
+        {
+          "path": "reports/amazon/L2-D1-3-FILLED-20261101_xiaodou.md",
+          "sha256_16": "b9c003fa7282a621",
+          "lines": 68
+        }
+      ],
+      "commission": {
+        "value": "15%",
+        "min_usd": "0.30",
+        "basis": "MEASURED",
+        "category": "Pet Products",
+        "src": "https://sellercentral.amazon.com/help/hub/reference/external/GTG4BAWSY39Z98Z3",
+        "fetched": "2026-11-01",
+        "login_required": false,
+        "note": "计费基数=含运费的 total sales price，不含税"
+      },
+      "last_mile": {
+        "value_usd": "0.00",
+        "basis": "MEASURED(报价结构)",
+        "note": "中国直发专线门到门，尾程含在 first_leg，单列会重复计费"
+      },
+      "refund_accrual": {
+        "value": "UNKNOWN",
+        "missing_source": "店铺近90天退货报告（后台 Reports>Fulfilment>Returns / SP-API Reports）",
+        "why": "通道令后不可得；不填估值"
+      },
+      "ads_alloc": {
+        "value": "UNKNOWN",
+        "missing_source": "广告报告（Advertising>Reports / SP-API Advertising）"
+      },
+      "cm1": {
+        "upper": {
+          "14.99": "6.21",
+          "16.99": "7.91",
+          "19.99": "10.46"
+        },
+        "upper_pct": {
+          "14.99": "41.4%",
+          "16.99": "46.6%",
+          "19.99": "52.3%"
+        },
+        "cny": {
+          "14.99": "44.71",
+          "16.99": "56.95",
+          "19.99": "75.31"
+        },
+        "assumption_case": {
+          "14.99": "0.96",
+          "16.99": "1.96",
+          "19.99": "3.46"
+        },
+        "acos_cap": {
+          "14.99": "36.4%",
+          "16.99": "41.6%",
+          "19.99": "47.3%"
+        },
+        "status": "上界非终值：退款/广告两项UNKNOWN"
+      },
+      "erratum": "D1.7 的 $14.99 ACOS 上限 33.2% 应为 36.4%（复算）；$16.99/$19.99 两档与 D1.7 一致",
+      "verification_level": "2/5 关键项 MEASURED → 仅可称样算+两项实测，不可称已验证盈利"
+    },
+    {
+      "item": "① 店铺现状审计（SP-API / 妙手 9333）",
+      "verdict": "BLOCKED_BY_CREDENTIAL",
+      "checked_at": "2026-11-02T03:18:56+08:00",
+      "checks": [
+        "hermes .env 内 SP-API/LWA/妙手/店小秘 相关 KEY 数量 = 0（只列 KEY 名，未读值）",
+        "curl 127.0.0.1:9333/json/version 无响应 → 无活浏览器",
+        "evidence/amazon/ 内无任何 SP-API 调用痕迹",
+        "evidence/amazon/20261031/ 仅有 probe.json + chrome_history，均为登录态弃用前残留，不可当后台证据"
+      ],
+      "blocker": "SP-API 需卖家账号持有者在授权页点「同意」生成 refresh_token；妙手需已绑店账号。二者均不在我手上，且自建账号=红线",
+      "unblock_owner": "BOSS（一次授权点击）或 QUEEN 改派持权节点"
+    },
+    {
+      "item": "② 近90天真实订单 / 空结果+调用参数",
+      "verdict": "BLOCKED_BY_CREDENTIAL",
+      "reason": "建立在①的通道上；无 token 连空结果都取不到。用官网公开页凑=QUEEN 明令禁止的冒充后台证据，不做",
+      "note": "若 BOSS 走 A 路导 6 份 CSV，此项 30 分钟内转为 DONE（零单则零单证明 + 导出件本身即证据）"
+    }
+  ],
+  "redline_compliance": {
+    "cdp_login_backend": false,
+    "public_page_as_backend_evidence": false,
+    "notes": "全程公开页只用于费率/政策事实，不用于冒充店铺数据"
+  },
+  "next_if_unblocked": "拿到 refresh_token 或 6 份 CSV 后 30 分钟：①店铺审计表 ②90天订单事实表 ③D1-3 由 UNKNOWN→MEASURED 的终版 CM1"
+}

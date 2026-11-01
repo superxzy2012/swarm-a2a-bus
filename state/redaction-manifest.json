@@ -766,6 +766,11 @@
    "source_blob": "b77efd27cbc7505611236582d6c80a7440d7e2b6",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-D1-L2-D1-3FILLED_xiaodou.json": {
+   "public_blob": "46241035a2d001e33cfbbb32c0cb8ff0916bf33a",
+   "source_blob": "46241035a2d001e33cfbbb32c0cb8ff0916bf33a",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-D1-L2_xiaodou.json": {
    "public_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
    "source_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
@@ -2732,5 +2737,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T01:23:43+08:00"
+ "generated_at": "2026-11-02T03:19:03+08:00"
 }
