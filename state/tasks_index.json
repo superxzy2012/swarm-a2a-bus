@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-11-01T09:00:09+08:00",
- "count": 192,
+ "source_head_at": "2026-11-01T10:26:37+08:00",
+ "count": 193,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -320,6 +320,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-29T18:02:11+08:00"
+  },
+  {
+   "file": "inbox/task_T-DEMO-001.json",
+   "task_id": "T-DEMO-001",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
   },
   {
    "file": "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json",

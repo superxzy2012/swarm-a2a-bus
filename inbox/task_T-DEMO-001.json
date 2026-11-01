@@ -1,0 +1,16 @@
+{
+  "task_id": "T-DEMO-001",
+  "line": "L2",
+  "owner": "xiaodou",
+  "objective": "验证任务协议与自动验收可用（示例单）",
+  "acceptance": [
+    {"type": "file_exists", "path": "reports/amazon/M1-MARKET-RESEARCH-20261031_xiaodou.md"},
+    {"type": "contains", "path": "reports/amazon/M1-MARKET-RESEARCH-20261031_xiaodou.md", "value": "FBM"},
+    {"type": "rows_gte", "path": "ledgers/ledger_tasks.csv", "n": 20},
+    {"type": "command", "cmd": "python3 -c 'print(1)'", "expect_exit": 0}
+  ],
+  "evidence_dir": "reports/amazon/",
+  "redlines": ["不登录卖家后台"],
+  "deadline": "2026-11-01T12:00:00+08:00",
+  "priority": "P2"
+}
