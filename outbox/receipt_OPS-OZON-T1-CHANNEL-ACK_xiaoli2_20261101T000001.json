@@ -1,0 +1,82 @@
+{
+ "receipt_id": "OPS-OZON-T1-CHANNEL-ACK_xiaoli2_20261101T000001",
+ "type": "ACK",
+ "task_ref": "BOSS-CHANNEL-CHANGE-20261031（账户安全三级通道制 / OPS-ACCOUNT-SECURITY-20261031.md）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "BOSS / friday(QUEEN)",
+ "ts": "2026-11-01T00:00:01",
+ "status": "ACKNOWLEDGED",
+ "line": "L1",
+ "owner": "小丽2号",
+ "answers": {
+  "1_ozon_backend_login_state": {
+   "state": "有登录态（已弃用）",
+   "detail": "23:44 时本机 9222 Chrome 内有 seller.ozon.ru/app/products 标签，登录店铺 Lanhai Century Tech（company_id 4879137，来自 cookie sc_company_id）。已于 23:58 关闭该标签，现浏览器内 0 个 Ozon 卖家后台页面。",
+   "session_not_revoked": "我未执行登出、未清 cookie —— 会话仍留在 Chrome profile 内。本地清 cookie 会同时踢掉 BOSS 自己在同一浏览器的会话，属账户操作，我不擅动。**建议 BOSS 侧改密或后台强制下线**，这才是真正的吊销。",
+   "i_will_not": "不再打开 seller.ozon.ru 任何页面（含只读），不再调后台同源 API"
+  },
+  "2_cdp_port": {
+   "port": 9222,
+   "note": "lsof 实测仅 Google Chrome(pid 56323) 监听 127.0.0.1:9222；9333/9223 未启用",
+   "pages_now": 3,
+   "pages_detail": {
+    "air.1688.com": 1,
+    "wms.yunque56.com": 1,
+    "www.1688.com": 1
+   },
+   "hygiene": "合规（单站 ≤3 / 合计 ≤10）",
+   "tool": "python3 ~/.a2a-bus/tools/browser_hygiene.py --port 9222"
+  },
+  "3_api_token": {
+   "state": "不具备（MISSING）",
+   "checked": [
+    "环境变量 OZON_CLIENT_ID / OZON_API_KEY：无",
+    "~/.ozon/creds.env：不存在",
+    "~/.ozon/creds.json：不存在",
+    "~/.a2a-bus 内无 ozon 凭证文件"
+   ],
+   "capability": "客户端已写好并自测通过：只读白名单 24 个端点（订单/财务/库存/价格/分析/退货/报表），写操作按路径段硬拒。token 一到即可调，不需要再改代码。",
+   "selftest": "3 个只读端点 PASS allow；6 个写端点 PASS deny；CREDS MISSING"
+  }
+ },
+ "scripts_ready": {
+  "client": "ozon-api/ozon_seller_api.py（工作区）+ tools/ozon_seller_api_readonly.py（总线，供审计）",
+  "client_sha256": "1c60ef5420b2f54aff48cc07538313ad0a60447ebbc12f49bdcc5671386067e9",
+  "usage": [
+   "python3 ozon_seller_api.py --selftest  # 离线自测，不联网",
+   "python3 ozon_seller_api.py --check     # 查凭证是否就位（不打印明文）",
+   "python3 ozon_seller_api.py --call /v3/posting/fbs/list --body '{...}'"
+  ],
+  "cred_placement": "~/.ozon/creds.env  内容 OZON_CLIENT_ID=... / OZON_API_KEY=...  chmod 600；**不进聊天、不进总线**",
+  "first_calls_after_token": [
+   "/v3/posting/fbs/list（90 天订单，补齐 L1 三问的订单级明细）",
+   "/v3/finance/transaction/list（真实结算/佣金/退款，替代后台应计报告）",
+   "/v4/product/info/stocks + /v5/product/info/prices（在架 57 款库存与价格现状）",
+   "/v4/product/info/attributes（19 款 error_card_with_deleted_photos 的当前属性态）"
+  ]
+ },
+ "deprecated_scripts": {
+  "ozon_api.py": "已加停用横幅：直接 CDP 读 seller.ozon.ru 同源 API，红线禁区",
+  "capture_listing_ev.py": "已加停用横幅：含卖家评级页/商品属性后台读取",
+  "l2_probe.py": "保留（用于买家端与非 Ozon 站点）；已具备同站复用 + 总数闸门 + 自动关页",
+  "note": "历史交付（evidence/ozon/20261030、20261031_listing_opt 等）均为 10-31 已发生的后台实读快照，按令有效不追责；但**不能再刷新**，后续引用一律标注「2026-10-31 快照」"
+ },
+ "impact_on_L1": {
+  "now_unknown": [
+   "Ozon 后台实时订单状态",
+   "实时库存/价格",
+   "realFBS 错误指数实时值",
+   "卡片错误实时数量"
+  ],
+  "can_still_use": "10-31 快照：在架 57 / 零库存 3 / 卡片错误 19 / 评级指数 0% / 4 单 CM1 台账",
+  "blocked_actions": [
+   "洗脸巾改价（原计划后台改）→ 改走妙手 ERP（T2），绑定由 BOSS 做",
+   "挂篮主图写回 4194/4195（后台写操作）→ 需 BOSS 在妙手或后台亲自执行",
+   "类目迁移 → 同上"
+  ],
+  "i_will_do": "无 token 期间：L1 侧凡需后台数据的一律标 UNKNOWN 并注明「等 T1 token」；不再开后台；可继续做不依赖后台的工作（1688 报价核价、买家端搜索词与竞品价带、CM1 台账回填）"
+ },
+ "ack": "通道变更令已收到并执行：Ozon 卖家后台=禁区，我这边后台页面已清零，脚本已停用，只读 API 客户端待 token。",
+ "deadline_note": "D1-D3 总截止 2026-11-02 21:00 不变"
+}

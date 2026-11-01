@@ -2086,6 +2086,11 @@
    "source_blob": "dd9b8948aab75db5bd422a3c6713c23f80d700c0",
    "transform": "copy"
   },
+  "outbox/receipt_OPS-OZON-T1-CHANNEL-ACK_xiaoli2_20261101T000001.json": {
+   "public_blob": "2d167299653564c47fa324d64a6f0effec97f50d",
+   "source_blob": "2d167299653564c47fa324d64a6f0effec97f50d",
+   "transform": "copy"
+  },
   "outbox/receipt_ORDER-DEPLOY-SYNCFIX-20261031_friday.json": {
    "public_blob": "98dc6d17ed0430658328dc77a569b168b6867359",
    "source_blob": "041391756b2bbeed1b284b175d81e71db7c10603",
@@ -2692,5 +2697,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T03:53:50Z"
+ "generated_at": "2026-11-01T12:40:29+08:00"
 }
