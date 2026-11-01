@@ -2386,6 +2386,11 @@
    "source_blob": "7f1ceee708258fa7d820e6924971f6da7f9b17b2",
    "transform": "copy"
   },
+  "outbox/receipt_RULING-SYNC-STALL-SENSOR-20261102_friday.json": {
+   "public_blob": "0950d6c22d78273b0f29fc382b646152f54e8121",
+   "source_blob": "fe8bfd49730101d7c28602e2e97b146fff308ff9",
+   "transform": "redact"
+  },
   "outbox/receipt_SEC-3389-SOURCE-20261027_xiaodou.json": {
    "public_blob": "4977d2a5e22d9c8eaaf4449b8024a6cdbe236d9a",
    "source_blob": "76ee8d115c54aeeb1f29f3d12b4c2d0c2841225a",
@@ -2767,5 +2772,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T07:26:22+08:00"
+ "generated_at": "2026-11-02T07:32:26+08:00"
 }
