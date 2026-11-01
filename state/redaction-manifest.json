@@ -2146,6 +2146,11 @@
    "source_blob": "42a797f0fc14baf8d98135268f460826914b8818",
    "transform": "copy"
   },
+  "outbox/receipt_ORDER-SYNC-HEARTBEAT-FIX-20261102_xiaodou.json": {
+   "public_blob": "214fb5421164cb24ac48d92b6e4ae0f1dc918589",
+   "source_blob": "214fb5421164cb24ac48d92b6e4ae0f1dc918589",
+   "transform": "copy"
+  },
   "outbox/receipt_ORG-20261022-CEO-TRANSITION_friday.json": {
    "public_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
    "source_blob": "6da8d682e549ce22da3629ffe08117d81b2090c0",
@@ -2772,5 +2777,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T07:32:26+08:00"
+ "generated_at": "2026-11-02T07:44:32+08:00"
 }

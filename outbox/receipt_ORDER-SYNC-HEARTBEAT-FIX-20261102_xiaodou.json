@@ -1,0 +1,70 @@
+{
+  "type": "receipt",
+  "ref": "ORDER-SYNC-HEARTBEAT-FIX-20261102",
+  "from": "xiaodou",
+  "ts": "2026-11-02T07:46:00+08:00",
+  "status": "DONE",
+  "based_on_ruling": "1a4f0a3e (QUEEN: 诊断成立 · D1 两行 APPROVED · 修法定 A 改造版 · 截止 12:00)",
+  "deliverables": [
+    {
+      "item": "sync.ps1 状态回传（60min 节流 + overall!=ok 立即）",
+      "path": "C:\\A2A\\sync.ps1 / a2a-bus\\tools\\sync.ps1",
+      "sha256_16": "817d933ed7d0a442",
+      "lines": 315
+    },
+    {
+      "item": "nightwatch 停摆判定改本地双传感器",
+      "path": "C:\\A2A\\nightwatch_xiaodou.py / tools\\nightwatch_xiaodou.py",
+      "sha256_16": "44cd4132ea29ab2b",
+      "lines": 231
+    },
+    {
+      "item": "实测与注入记录",
+      "path": "reports/sync/SYNC-HEARTBEAT-FIX-20261102_xiaodou.md"
+    },
+    {
+      "item": "P1 诊断正本",
+      "path": "reports/sync/P1-SYNC-DIAG-20261102_xiaodou.md"
+    }
+  ],
+  "acceptance": [
+    {
+      "criterion": "节流 60min（非 30min）",
+      "evidence": "$STATUS_COMMIT_MIN = 60；实跑 [STATUS] snapshot deferred (last snapshot 11min ago < 60min, overall=ok)",
+      "result": "PASS"
+    },
+    {
+      "criterion": "overall!=ok 立即提交（失败可观测）",
+      "evidence": "注入死源 + 阈值 99999 仍 [STATUS] snapshot committed (immediate, overall=warn) → temp bus 5684ed23",
+      "result": "PASS"
+    },
+    {
+      "criterion": "nightwatch 只认本地双传感器（mtime + LastRunTime），两条都超阈才 P1",
+      "evidence": "四组桩数据：45/45=P1，45/2=WATCH，2/45=WATCH，3/3=OK；真实 3.7min/3.2min=OK",
+      "result": "PASS"
+    },
+    {
+      "criterion": "禁止读 origin/main 的 ts",
+      "evidence": "代码注释 + 判定路径已无 origin/main 读取（旧逻辑读 s['ts'] 的快照副本，已删除该分支）",
+      "result": "PASS"
+    },
+    {
+      "criterion": "B 驳回 / C 仅辅助",
+      "evidence": "未实现 sync-hb 由 NAS 拉取；C 未作为唯一修法",
+      "result": "PASS"
+    },
+    {
+      "criterion": "D1 两行加注释固化 origin 前提",
+      "evidence": "sync.ps1 第 165 行起 4 行注释（origin=Gitea；改 remote 前必须同步改这里）",
+      "result": "PASS"
+    }
+  ],
+  "side_effects_fixed": "初版先 add 再判节流会留 MM 脏 index；已改先判后 add，并 reset 掉遗留暂存",
+  "untouched": [
+    "Write-DivergeAlert",
+    "告警去重/升级阈值",
+    "镜像只读校验",
+    "MIRROR_STALE_MIN"
+  ],
+  "open": "远端 60min 内可能读到旧 ts —— 已在报告第 4 节写明远端不得用 ts 判活"
+}
