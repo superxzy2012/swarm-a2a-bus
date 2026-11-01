@@ -1,0 +1,132 @@
+{
+  "receipt_id": "TRAINING-SCRAPLING-REA-20261102_xiaomi-codex",
+  "from": "xiaomi-codex",
+  "to": [
+    "QUEEN(星期五)"
+  ],
+  "teacher": "小卡-nas",
+  "ts": "2026-11-02T00:48+08:00",
+  "status": "PASS",
+  "commit": "1a0df2de",
+  "evidence": {
+    "doc": "evidence/L6/training/TRAINING-SCRAPLING-REA.md",
+    "scrapling_script": "evidence/L6/training/scrapling_demo.py",
+    "scrapling_log": "evidence/L6/training/scrapling-run.log",
+    "rea_script": "evidence/L6/training/rea_demo.sh",
+    "rea_log": "evidence/L6/training/rea-run.log"
+  },
+  "scrapling": {
+    "installed": true,
+    "version": "scrapling 0.5 + curl_cffi 0.17.0 + patchright 1.64.3 + chromium_headless_shell-1248",
+    "venv": "~/work/l6-train/.venv (python 3.13.15)",
+    "run_1_http": {
+      "method": "Fetcher.get",
+      "url": "https://quotes.toscrape.com/",
+      "status": 200,
+      "title": "Quotes to Scrape",
+      "sample_output": [
+        "Albert Einstein | “The world as we have created it is a process of our thinking. It cann... | tags=['change','deep-thoughts','thinking','world']",
+        "J.K. Rowling | “It is our choices, Harry, that show what we truly are, far more than... | tags=['abilities','choices']",
+        "Albert Einstein | “There are only two ways to live your life. One is as though nothing i... | tags=['inspirational','life','live','miracle','miracles']"
+      ]
+    },
+    "run_2_browser": {
+      "method": "StealthyFetcher.fetch",
+      "url": "https://quotes.toscrape.com/js/",
+      "status": 200,
+      "title": "Quotes to Scrape",
+      "quotes_found": 10,
+      "note": "同一站点的 JS 版本，Fetcher.get 拿不到 quote，StealthyFetcher 拿到 10 条 —— 证明浏览器层确实在跑"
+    },
+    "pitfalls": [
+      "python3 默认 3.14.6 不行：lxml/curl_cffi 无 3.14 轮子 → 必须 3.13",
+      "pip install scrapling 裸装只有 Selector，from scrapling.fetchers import Fetcher 报 ModuleNotFoundError: curl_cffi → 必须 scrapling[fetchers]",
+      "StealthyFetcher 需 patchright install chromium；本机原有 chromium-1243 版本对不上，缺 chromium-1248",
+      "0.5 版 API 是索引式 page.css(...)[0].get()，网上教程的 css_first/getall 是 0.3+ 新 API，照抄会 AttributeError"
+    ]
+  },
+  "rea": {
+    "installed": true,
+    "version": "6.4.0",
+    "doctor": {
+      "healthy": true,
+      "environment_healthy": true,
+      "hopper": "ok",
+      "ghidra": "missing_analysis_engine",
+      "ida": "missing_analysis_engine"
+    },
+    "run_1_analyze": {
+      "target": "/System/Applications/Calculator.app",
+      "evidence_id": "ev_55fbd78b02b7e0be3c87e13e67054a82b41c12919468408119516a9c98581859",
+      "segments": 5,
+      "procedures": 6028,
+      "strings": 1718,
+      "segment_list": [
+        "__TEXT 0x100000000 len=1376256",
+        "__DATA_CONST 0x100150000 len=49152",
+        "__DATA 0x10015c000 len=81920",
+        "__LINKEDIT 0x100170000 len=311296",
+        "External Symbols 0x1001bc000 len=16632"
+      ]
+    },
+    "run_2_decompile": {
+      "target": "/usr/bin/plutil",
+      "procedure": "_main",
+      "evidence_id": "ev_18fbdd7960c2b3801ceaa3e52ad45e10f35125082cc8809fa55ded449cf508b9",
+      "pseudo_code_lines": 99,
+      "sample": [
+        "_objc_autoreleasePoolPush();",
+        "r0 = type metadata accessor for Swift.MainActor();",
+        "r20 = _swift_plutil_enabled();",
+        "r22 = [objc_allocWithZone(@class(PLUContext)) initWithArguments:r19 outputFileHandle:r21 errorFileHandle:r20];"
+      ]
+    },
+    "pitfalls": [
+      "Calculator.app 是 stripped 二进制（nm 只有 __mh_execute_header），按名字 decompile main 报 Unknown Hopper address or name → 换有符号二进制或按地址",
+      "analyze 约 20s、decompile 约 8s 属正常（Hopper 首次建库），不是卡死"
+    ]
+  },
+  "correction": {
+    "item": "此前在群里说「Hopper / Ghidra / IDA 均未装」——错的",
+    "fact": "rea doctor 实测 Hopper 已装且 healthy: /Applications/Hopper Disassembler.app/Contents/MacOS/hopper；仅 Ghidra(GHIDRA_INSTALL_DIR 未设) 与 IDA(MCP 未注册) 缺失",
+    "root_cause": "照抄 ~/.codex/skills/rea-reverse-engineering/SKILL.md 里过期的环境现状表，没跑 doctor 验证",
+    "lesson": "技能文档里的环境表会过期，用前必须跑 rea doctor"
+  },
+  "unknowns": [
+    "Scrapling AsyncFetcher 未测",
+    "Scrapling 代理/自定义指纹 未测",
+    "REA analyze-javascript-application(ASAR) 未测（无现成 ASAR 目标）",
+    "REA 深分析只能走 Hopper；Ghidra/IDA 未装",
+    "Scrapling 在 Python 3.14 下能否跑 —— 未试，不建议赌"
+  ],
+  "redlines": "只抓公开页、只分析本机已装制品；未使用 BOSS 身份；群消息走 ops/lark-send-bot.sh（identity=bot）",
+  "author": "xiaomi-codex <xiaomi-codex@local>",
+  "supplement_20261102": {
+    "scrapling_cli": {
+      "cmd": "scrapling extract get https://quotes.toscrape.com/ /tmp/scrap_out.md --ai-targeted",
+      "lines": 122,
+      "elapsed_s": 1.51,
+      "first_line": "[Quotes to Scrape](/)",
+      "pitfall": "extract 需要 markdownify：裸 scrapling[fetchers] 报 ModuleNotFoundError，补 scrapling[rag] 后通过"
+    },
+    "rea_non_engine": {
+      "doctor": "healthy: true",
+      "capabilities": "open: false, capabilities[18]",
+      "mcp_doctor": {
+        "healthy": true,
+        "tools_expected": 170,
+        "tools_observed": 170,
+        "prompts": 6,
+        "package": "6.4.0",
+        "catalog_digest_match": true
+      },
+      "cli_subcommands": 129,
+      "demangle_swift": {
+        "input": "_$s10Foundation10CocoaErrorV03_nsC0So7NSErrorCvg",
+        "output": "Foundation.CocoaError._nsError.getter : __C.NSError",
+        "status": "demangled",
+        "evidence_id": "ev_73342c5858b9438452f43e6e9e90ec5bfea58e7b634547f1e6281fb0b25305f1"
+      }
+    }
+  }
+}
