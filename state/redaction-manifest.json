@@ -2531,6 +2531,11 @@
    "source_blob": "aa0cb99ea9f06a5ba3d28382a14327569ecea271",
    "transform": "redact"
   },
+  "outbox/receipt_T-D0-002.json": {
+   "public_blob": "243694d6c018eda20b536e7f45cc4c7509f2d666",
+   "source_blob": "243694d6c018eda20b536e7f45cc4c7509f2d666",
+   "transform": "copy"
+  },
   "outbox/receipt_T-FIX-SYNC-MERGE_friday_20261026T0030+0800.json": {
    "public_blob": "28f091a3f83b3ca1777ce36b8c64273b9390b6b9",
    "source_blob": "a7cecf48176d25a77f552ed30d50f564e8f1d4f9",
@@ -2717,5 +2722,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T19:19:27+08:00"
+ "generated_at": "2026-11-01T11:38:09Z"
 }

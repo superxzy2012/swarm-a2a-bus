@@ -1,0 +1,102 @@
+{
+  "receipt_id": "T-D0-002-DELIVERY-20261101",
+  "task_id": "T-D0-002",
+  "task": "noon 注册表单字段实采",
+  "node": "xiaoka-nas",
+  "status": "DONE",
+  "delivered_at_cst": "2026-11-01 19:38:08 +08:00",
+  "note": "本任务已于 2026-10-30 完成并经 QUEEN 判 PASS（receipt QUEEN-NOON-SIGNUP-FIELDS-ACCEPT-20261030，23:53:10）。本回执仅做台账对账：把正本归入 reports/noon/ 并挂上 task_id T-D0-002。",
+  "artifacts": [
+    {
+      "path": "reports/noon/FIELDS-NOON-SIGNUP-20261030.md",
+      "lines": 164,
+      "sha256_16": "c76f1f030f327dcf",
+      "what": "字段表正本（字段名/类型/是否必填/取值格式/控件形态）"
+    },
+    {
+      "path": "reports/NOON-SIGNUP-FIELDS-20261030_xiaoka.md",
+      "what": "原始正本（commit 20067147，未改动）"
+    },
+    {
+      "path": "evidence/noon/10_register.jpg",
+      "bytes": 56370,
+      "what": "注册首屏截图（关键页）"
+    },
+    {
+      "path": "evidence/noon/01_home.jpg",
+      "bytes": 73917,
+      "what": "卖家门户首页截图（入口/CTA）"
+    },
+    {
+      "path": "evidence/noon/10_fields.json",
+      "what": "控件级实采 JSON（displayName/email/g-recaptcha-response/submit）"
+    },
+    {
+      "path": "evidence/noon/doc_registration_process.txt",
+      "what": "官方 Seller Help Center 原文"
+    },
+    {
+      "path": "evidence/noon/doc_documents_required.txt",
+      "what": "官方所需文件 FAQ 原文"
+    },
+    {
+      "path": "evidence/noon/doc_who_can_sell.txt",
+      "what": "官方 who-can-sell 原文"
+    },
+    {
+      "path": "reports/noon/FEES-MATRIX-20261031.md",
+      "lines": 288,
+      "what": "同任务线产出：noon 费率矩阵"
+    }
+  ],
+  "acceptance_map": [
+    {
+      "要求": "字段名",
+      "落点": "报告 §2 表格首列（含 name 属性原文，如 displayName / email）"
+    },
+    {
+      "要求": "是否必填",
+      "落点": "报告 §2 表格『必填』列（UI 置灰行为 + 官方文档口径）"
+    },
+    {
+      "要求": "取值格式",
+      "落点": "报告 §2 表格『格式/要求』列"
+    },
+    {
+      "要求": "实际看到的控件形态",
+      "落点": "报告 §2 表格『类型』列 + evidence/noon/10_fields.json 控件级 JSON"
+    },
+    {
+      "要求": "关键页截图",
+      "落点": "evidence/noon/10_register.jpg（注册首屏）、01_home.jpg（入口页）"
+    },
+    {
+      "要求": "放在 reports/noon/ 下",
+      "落点": "reports/noon/FIELDS-NOON-SIGNUP-20261030.md"
+    }
+  ],
+  "deviations": [
+    {
+      "项": "采集网络",
+      "实际": "Hyperbrowser 云 Chromium（stealth，美国 IP）",
+      "派单要求": "家庭宽带实采",
+      "说明": "机房/部分代理 IP 被 Akamai 403，家庭宽带出口当时不可用；字段与控件形态不受出口 IP 影响。若必须家庭宽带 IP 复采，需用 BOSS Windows 机器上的浏览器，可另开一轮。"
+    },
+    {
+      "项": "后续步骤字段",
+      "实际": "Step 2/3 字段取自官方 Seller Help Center 现行原文（逐条标注）",
+      "说明": "未注册账号、未提交申请（红线），邮箱验证后的页面无法进入，已标 UNKNOWN 不猜。"
+    }
+  ],
+  "redlines_check": [
+    "未注册账号",
+    "未提交任何申请",
+    "未登录卖家后台",
+    "页面卫生 单站<=3 总<=10"
+  ],
+  "queen_verdict": {
+    "receipt": "outbox/receipt_NOON-SIGNUP-FIELDS-20261030_QUEEN.json",
+    "verdict": "PASS",
+    "judged_at_cst": "2026-10-30 23:53:10 +08:00"
+  }
+}
