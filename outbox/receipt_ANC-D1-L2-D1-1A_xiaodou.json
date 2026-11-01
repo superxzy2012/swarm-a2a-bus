@@ -1,0 +1,14 @@
+{
+  "task_id": "ANC-D1-L2-D1-1A",
+  "object_id": "OBJ-AMAZON",
+  "old_state": "BLOCKED_BY_REDLINE",
+  "new_state": "DONE",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-01T13:45:36+08:00",
+  "queen_ruling": "10-31 账户安全通道令优先于 v3 后台截图要求；D1-1 验收口径=A路6份CSV 或 B路T1只读，二选一",
+  "deliverable": "evidence/amazon/D1-1A_EXPORT-CHECKLIST-20261101_xiaodou.md",
+  "content": "6 份导出件：order.csv / settlement.csv / returns.csv / advertising.csv / inventory.csv / account_health.pdf；每份给后台导出位置、必需列名、时间范围(2026-08-01~10-31 主口径)、用途；命名 <YYYYMMDD>_<type>.csv 落 C:\\A2A\\inbox\\amazon\\；含脱敏规则(删买家姓名地址明细/订单号打码/原始CSV不入库)与导不出来的处置",
+  "turnaround": "收到后 30 分钟出 FILLED 单位经济表 + 90 天订单事实表(零单出零单证明)",
+  "recommendation": "先 A 路(BOSS 点几下导出，零授权)，B 路留到需要日更时间序列时再上",
+  "note": "上一份 D1-1_BACKEND-EVIDENCE_BLOCKED.md 已标 SUPERSEDED，仅留档"
+}

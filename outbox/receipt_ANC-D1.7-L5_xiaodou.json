@@ -1,0 +1,29 @@
+{
+  "task_id": "ANC-D1.7-L5",
+  "object_id": "OBJ-QUALITY-SERVICE",
+  "old_state": "CONDITIONAL",
+  "new_state": "REVIEW",
+  "executor": "xiaodou",
+  "finished_at": "2026-11-01T13:45:36+08:00",
+  "deliverables": [
+    "reports/QualityService/L5-D1.7-PROFIT-THREE-QUESTIONS-20261101_xiaodou.md",
+    "reports/QualityService/L5-D1.6-VERIFY-20261101_xiaodou.md"
+  ],
+  "profit_three": {
+    "cm1": "S2 广东省内 $268 -> CM1 $213.2(79.5%)；LEAD-06 $200/日 -> $152(76%)；LEAD-04 $350 -> $287(82%)；LEAD-07 $328(差旅客户承担) -> $295(90%)",
+    "veto": "<$150/人日不接；需垫付 >¥1,500 差旅不接",
+    "acquisition": "5 条活链(11-01 13:44 复验全 LIVE)，3 条明确要匿名样品/AQL/独立个人；同池竞标 7–9 人；**实际投递 0、回复 0、付费试单 0**；转化假设 20 proposals→1 单(ASSUMPTION)",
+    "worst_case": "现金最坏 -$285(一次外省拒付+一次省内垫付)；零货权=无库存跌价风险",
+    "stop_rules": "14天0回复换渠道/20份0试单重做报价页/垫付>¥1500拒单/要求保证通过拒单/碰雇主素材拒单/单日>1h连续3天停投",
+    "stop_owner": "我 24h 内停投下架并写停线报告；QUEEN 48h 批复；红线拒单当次即拒不请示"
+  },
+  "d16_verify": {
+    "verdict": "PASS",
+    "checked_at": "2026-11-01T13:44+08:00",
+    "h2": "PSI 表 6->5、价格词 0 命中、Rev 1.1、指针句存在；报价页 1 表 6 行 S1/S2/S3/S2+/S4 齐全、费率未改、无保证承诺、收款通道占位",
+    "leads": "5/5 LIVE(LEAD-01/04/05/06/07)；LEAD-02/03 跳索引=已下架(退役留痕)",
+    "audit_correction": "贾维斯说 LEAD-05 404 不成立(页面 Open/Project ID 39698324/7 proposals，本机 IP 被 Varnish 拦)；LEAD-02 才是死链且审计漏掉"
+  },
+  "fact_correction": "QUEEN 引用「最后 L5 commit 52611f9f」已过期：其后有 b2ee8252(ANC-D1.6-L5, 5 files/119 insertions, merge-base --is-ancestor=ANCESTOR_OK)，故「26 小时无交付」不成立",
+  "still_blocked": "D2 获客动作卡在「用哪个身份投 proposal」——不自建账号是红线，需 BOSS 指定"
+}

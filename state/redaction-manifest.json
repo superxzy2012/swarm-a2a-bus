@@ -756,6 +756,11 @@
    "source_blob": "a6fe7180c9491cea5f0a6bfedcc39ab447aa5c4b",
    "transform": "copy"
   },
+  "outbox/receipt_ANC-D1-L2-D1-1A_xiaodou.json": {
+   "public_blob": "b77efd27cbc7505611236582d6c80a7440d7e2b6",
+   "source_blob": "b77efd27cbc7505611236582d6c80a7440d7e2b6",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-D1-L2_xiaodou.json": {
    "public_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
    "source_blob": "5c0d4cac162695346bde64eb4ceb1e3f3207386c",
@@ -784,6 +789,11 @@
   "outbox/receipt_ANC-D1.6-L5_xiaodou.json": {
    "public_blob": "82ca1e330881ea66d46ed2c5287f30973e89d60c",
    "source_blob": "82ca1e330881ea66d46ed2c5287f30973e89d60c",
+   "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1.7-L5_xiaodou.json": {
+   "public_blob": "222e15369389fee20e8072759de7402e42c634ff",
+   "source_blob": "222e15369389fee20e8072759de7402e42c634ff",
    "transform": "copy"
   },
   "outbox/receipt_ANC-D1_xiaodou.json": {
@@ -2702,5 +2712,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-01T13:14:35+08:00"
+ "generated_at": "2026-11-01T13:45:47+08:00"
 }
