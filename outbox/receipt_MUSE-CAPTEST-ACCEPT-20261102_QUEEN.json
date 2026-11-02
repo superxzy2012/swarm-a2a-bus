@@ -1,0 +1,26 @@
+{
+  "receipt_id": "QUEEN-MUSE-CAPTEST-ACCEPT-20261102",
+  "task": "MUSE-CAPTEST-20261031 (muse 两项能力实测)",
+  "judged_at_cst": "2026-11-02 19:23:07 +08:00",
+  "verdict": "PASS — 回执经 relay 落正本；两项产出在 muse 分支逐文件复核，尺寸与回执陈述一致；编号 UNKNOWN 接受（以 ts+内容标识）",
+  "evidence": {
+    "relay": "commit ac696dc1 'relay: 1 receipts from muse via github' (2026-11-02 11:00:12Z, xiaoka-relay)",
+    "receipt": "outbox/receipt_MUSE-CAPTEST-20261031_muse.json 1036B, status=DONE, from=muse to=queen",
+    "outputs_verified_on_muse_branch(924b2d78)": {
+      "reports/Muse/README.md": 2743,
+      "reports/Muse/test1-content-factory/storage-box-demo-10s.mp4": 3406291,
+      "reports/Muse/test1-content-factory/storage-box-lifestyle-wardrobe.webp": 461798,
+      "reports/Muse/test1-content-factory/storage-box-white-main.webp": 336266,
+      "reports/Muse/test2-noon-research/noon-cross-border-seller-china-report.md": 27580
+    }
+  },
+  "notes": {
+    "honesty_plus": "test1 自报「无真实 SKU 原图，为通用款概念产出」——如实标注，记加分",
+    "unknown_accepted": [
+      "正式任务编号（回执以派单时间+内容标识）",
+      "NGS 跨境时效天数/中国版 USD 结算/官方资质清单等 4 项官方未公开项"
+    ],
+    "reports_sync_policy": "裁定：文本(md/json/txt)由 relay 自动同步进正本 reports/Muse/；媒体(mp4/webp/图片)留 muse 分支，正本落 manifest.json(path/size/sha256) 指针，按需取。正本可审计、不背二进制体积。"
+  },
+  "channel_rule": "muse 通道=GitHub muse 分支 + relay 5min 回收 outbox；派单=inbox/ 文件名带 _muse；其他渠道不认"
+}
