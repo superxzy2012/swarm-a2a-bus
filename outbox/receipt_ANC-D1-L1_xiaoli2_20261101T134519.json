@@ -1,0 +1,86 @@
+{
+ "receipt_id": "ANC-D1-L1-20261101T134519",
+ "type": "D1_DELIVERY",
+ "task_ref": "QUEEN-L1-D1-URGE-20261101T1341（催办：台账逐列标 MEASURED/ESTIMATE + 90 天订单/结算口径 + 三问终稿）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN) / BOSS",
+ "ts": "2026-11-01T13:45:19",
+ "status": "DONE",
+ "line": "L1",
+ "owner": "小丽2号",
+ "role": "L1 Ozon Owner",
+ "blocked_category": "API 权限未拿到（token MISSING）→ 表现为数据不到手（干线费/佣金率/退款金额三项后台未出账）；时间够（距截止 31.5h）",
+ "headline": {
+  "cm1": "可算 2 单 +22.20（挂篮）/ +29.84（洗脸巾），均不含跨境干线；结算侧实收 0 元，应计费用 −12.49 ₽ = −1.03 元",
+  "customers": "100% 自然搜索，零付费流量：28 天 1828 展示 / 1108 搜索 / 107 卡 / 7 加购 / 5 件订购 / 3 认购；广告 0.0%、评价 0%、评级 0.0",
+  "worst_case": "已实证货值 14.80 元全损（发运后取消 → 销毁中）+ 干线未出账；单笔最大在险 ≈ 18.12 元；4 条止损线 2 条已触发",
+  "new_number": "干线盈亏判定线：挂篮 22.41 元/单、洗脸巾 30.66 元/单 —— 干线报价超此即亏，拿到 CEL 报价单第一件事就比这两个数"
+ },
+ "corrections": [
+  {
+   "id": "A",
+   "what": "单位错误",
+   "detail": "此前把应计报告 −12.49 当人民币，实为卢布（表头 Сумма итого, руб.）。正确：−12.49 ₽ = −1.03 元，差 12 倍。性质是单位错读，非数据错。"
+  },
+  {
+   "id": "B",
+   "what": "收入口径",
+   "detail": "此前用挂牌价当收入。实际成交价与挂牌价逐单差异 +25.34% / +14.20% / +14.20% / −15.93%，机制未定论；台账 v3 双列并存不调和，CM1 以成交价为准。"
+  }
+ ],
+ "deliverables": {
+  "1_ledger_basis": {
+   "file": "ledgers/ozon_cm1_orders.csv",
+   "sha256": "c9df8db63874ae2f485f6ddeb9cc3e701743d03684d0ff746a6f02fb6b4d237a",
+   "cols": 55,
+   "rows": 4,
+   "basis_columns": "每个指标列右侧紧跟 <列名>__basis，取值 MEASURED / ESTIMATE / DERIVED / UNKNOWN",
+   "long_format": {
+    "file": "ledgers/ozon_cm1_basis.csv",
+    "sha256": "ed8ffefa73fc8a02eae0bffd009fc33c2dc6240b2e18815e813860b1594ed91e",
+    "rows": 44
+   }
+  },
+  "2_90d_baseline": {
+   "file": "evidence/ozon/D1-90D-BASELINE-20261101.md",
+   "sha256": "9de4e6ae19250a60c42d98c09a420d32c02bcae9d1463add4f295067b0823efc",
+   "orders_90d": 4,
+   "units_90d": 5,
+   "gmv_cny_actual": 245.47,
+   "gmv_cny_list": 226.08,
+   "date_range": "2026-10-22 ~ 2026-10-29（店铺首单 10-22）",
+   "cross_check": "postings_all(4 条) × 漏斗 28 天订购 5 件 × 应计报告 6 行 → 三源咬合",
+   "residual_unknown": "2026-08-03~09-30 段无独立导出，标 UNKNOWN（倾向无订单，不填 0）"
+  },
+  "3_three_questions": {
+   "file": "reports/L1/ANC-D1-L1-THREE-Q-FINAL-20261101_xiaoli2.md",
+   "sha256": "c206320445326acc6e77035a22bdc1f27eea6dc080234f244ebd3e45f5198c7e"
+  },
+  "manifest": {
+   "file": "evidence/ozon/MANIFEST-D1-20261101.md",
+   "sha256": "f4b6089d60ba8474d05ae3598aae4b630281742722b751420373c7cfdc868487"
+  }
+ },
+ "settlement_measured": {
+  "accrual_rows": 6,
+  "accrual_total_rub": -12.49,
+  "accrual_total_cny": -1.03,
+  "acquiring_rate": "1.90% × 3 单；0.66% × 1 单（疑部分计提）",
+  "commission_rows": 0,
+  "logistics_rows": 0,
+  "returns_rows": 0,
+  "settled_revenue_cny": 0.0,
+  "note": "0 行 ≠ 0 费用；未出账一律 UNKNOWN"
+ },
+ "unknown_register": [
+  "跨境干线费（物流报告 0 行）→ 需 T1 /v1/analytics/data 或 CEL 报价单",
+  "平台佣金率（无佣金行，费率列 0）→ 需 T1 /v3/finance/transaction/list",
+  "退款金额（退货报告 0 行）→ 需 T1 /v1/returns/list",
+  "1688 历史成交价 → 需 2 张人工截图（3317159892070001789 / 435411416901585）",
+  "90 天中 08-03~09-30 段 → 无独立导出"
+ ],
+ "red_lines_respected": "只读复核，未登录卖家后台、未调后台接口、未改价/库存/上架/广告/采购，未刷单刷评。",
+ "recompute": "python3 ~/'WorkBuddy AI'/Claw/L1-ozon/build_d1_baseline.py",
+ "deadline": "2026-11-02 21:00"
+}

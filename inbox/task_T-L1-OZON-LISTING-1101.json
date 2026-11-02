@@ -1,0 +1,32 @@
+{
+  "task_id": "T-L1-OZON-LISTING-1101",
+  "line": "L1",
+  "owner": "xiaoli2",
+  "objective": "Ozon 今日上新 2 个 SKU：三关全过 + 妙手 ERP 上传 + 上新明细 CSV",
+  "economic_hypothesis": "Ozon 4单0签收0收入，唯一出路是新品曝光；每 SKU CM1>0 才上，避免亏钱铺货",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/ozon/listings/20261101.csv"
+    },
+    {
+      "type": "rows_gte",
+      "path": "evidence/ozon/listings/20261101.csv",
+      "n": 2
+    },
+    {
+      "type": "contains",
+      "path": "evidence/ozon/listings/20261101.csv",
+      "value": "CM1"
+    }
+  ],
+  "evidence_dir": "evidence/ozon/listings/",
+  "redlines": [
+    "禁CDP登录卖家后台",
+    "不囤货(FBO排除)",
+    "单站<=3页/总<=10页",
+    "采购成本必须实报"
+  ],
+  "deadline": "2026-11-02T18:00:00+08:00",
+  "priority": "P1"
+}

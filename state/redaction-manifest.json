@@ -176,6 +176,11 @@
    "source_blob": "e0518801b1ce47f61f01d654e27848f1b9033c87",
    "transform": "copy"
   },
+  "inbox/task_T-L1-OZON-LISTING-1101.json": {
+   "public_blob": "58764f7028c21f5ac16320f9b3d1620bf4fac1ca",
+   "source_blob": "58764f7028c21f5ac16320f9b3d1620bf4fac1ca",
+   "transform": "copy"
+  },
   "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json": {
    "public_blob": "2fdac342bb135f8f1b7b040d39c86f04c29e0fe5",
    "source_blob": "2fdac342bb135f8f1b7b040d39c86f04c29e0fe5",
@@ -764,6 +769,16 @@
   "outbox/receipt_ANC-D1-L1_xiaoli2.json": {
    "public_blob": "a6fe7180c9491cea5f0a6bfedcc39ab447aa5c4b",
    "source_blob": "a6fe7180c9491cea5f0a6bfedcc39ab447aa5c4b",
+   "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1-L1_xiaoli2_20261101T134519.json": {
+   "public_blob": "64f07202246be6e9abaf252dc658d496e0c0a37c",
+   "source_blob": "64f07202246be6e9abaf252dc658d496e0c0a37c",
+   "transform": "copy"
+  },
+  "outbox/receipt_ANC-D1-L1_xiaoli2_20261101T144434.json": {
+   "public_blob": "0276b4d5ca9d77a9e056c2dcdd75c57c4fb34f4d",
+   "source_blob": "0276b4d5ca9d77a9e056c2dcdd75c57c4fb34f4d",
    "transform": "copy"
   },
   "outbox/receipt_ANC-D1-L2-D1-1A_xiaodou.json": {
@@ -2777,5 +2792,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T11:57:08+08:00"
+ "generated_at": "2026-11-02T12:25:17+08:00"
 }

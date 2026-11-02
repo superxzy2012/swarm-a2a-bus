@@ -1,0 +1,95 @@
+{
+ "receipt_id": "ANC-D1-L1-20261101T144434",
+ "type": "D1_DELIVERY_ROUND2",
+ "task_ref": "QUEEN-L1-D1-URGE-20261101T1443（第二次催办：原始导出件 / 三问终稿 / 改造单落地结果 + 通道 A/B 选择）",
+ "from": "xiaoli2",
+ "node": "小丽2号-workbuddy国际版",
+ "to": "friday(QUEEN) / BOSS",
+ "ts": "2026-11-01T14:44:34",
+ "status": "DONE",
+ "line": "L1",
+ "owner": "小丽2号",
+ "role": "L1 Ozon Owner",
+ "status_one_line": "第 1、2 件已交（原始件字节复制 + 三问终稿）；第 3 件卡在写通道：11 项改造单落地 0 项，其中 8 项只差「妙手 T2 绑定」，2 项差素材，1 项差报关口径。通道选择：**A（T1 只读 token）**。",
+ "blocked": {
+  "which_item": "第 3 件：存量 2 SKU 改造单落地",
+  "at_what_action": "所有 11 项都是写操作（改价/改图/改类目/改标题/改属性），而 10-31 账户安全令把后台定为禁区，写操作唯一合法通道是 T2 妙手 ERP，**妙手店铺绑定未完成**。",
+  "channel_choice": "A",
+  "why_A": "A 能补三问里唯一还缺的干线/佣金/退款三项，且能自动验收改造单；B 只能执行不能取数。改造单改成什么我已全部定好，缺的是能点的手；CM1 缺的三项除 A 无第二条路。",
+  "if_both": "最佳顺序：先 A 补数 → 再 B 执行 → 我用 A 验收"
+ },
+ "deliverables": {
+  "1_raw_export": {
+   "dir": "ledgers/raw_export_20261030/",
+   "note": "字节级复制（cp -p），未改列名/字段名、未手抄；与 evidence/ozon/20261030 同名文件 sha256 逐一对齐",
+   "files": {
+    "posting_0171504681-0498-1.json": {
+     "sha256": "229f75cdc30101e2c9ce8e603661a737599f2a48a652bd383f48755653405a05",
+     "bytes": 6148
+    },
+    "posting_29986693-2116-1.json": {
+     "sha256": "6ed82ee4023c646da4c359e85009cb011f4978e15d8c18b9e9718ad9ef44ab03",
+     "bytes": 5859
+    },
+    "posting_29986693-2122-1.json": {
+     "sha256": "fbe9854f3bd29e6147c1caaf30e60412d2ba0d79122b520a2f721648918545a7",
+     "bytes": 5580
+    },
+    "posting_57138618-0359-2.json": {
+     "sha256": "a37e85d6f605593aa85b8b6abc956a6c8679fec74a500cc382131376a77a207a",
+     "bytes": 5840
+    },
+    "postings_all_20261030.json": {
+     "sha256": "bf6e34372339b783b4e11a509f5113d77e15ece4921584c05088fa0c93e67e07",
+     "bytes": 24349
+    },
+    "returns_report_2026-10-30T15_03_38.xlsx": {
+     "sha256": "f3fec20f89115cf9cf7506abb4406734c51b104368f638c2645e87b0a04d1a84",
+     "bytes": 3772
+    },
+    "Отчет по логистике за период 2026-10-01 - 2026-10-30.xlsx": {
+     "sha256": "fee07a8c56d60b587f39d662592bb2582da5e810d95df350fb8a0ed12f397ade",
+     "bytes": 3565
+    },
+    "Отчет по начислениям_01.10.2026-30.10.2026.xlsx": {
+     "sha256": "5ae142d15991c29000c300b222a0a840f920b3c9b4805ff34d8e366b2c69b0bb",
+     "bytes": 4173
+    }
+   },
+   "sha256sums": "ledgers/raw_export_20261030/SHA256SUMS.txt（shasum -c 全部 OK）",
+   "readme": "ledgers/raw_export_20261030/README.md",
+   "honesty": "后台「下载报告」原文件只有三份 xlsx；订单侧后台无导出按钮，原始件是 5 个 JSON 接口原始响应体。ozon_cm1_orders.csv 是派生计算表，非原始件，两者分开放互不覆盖。"
+  },
+  "2_three_questions": {
+   "file": "reports/L1/ANC-D1-L1-THREE-Q-FINAL-20261101_xiaoli2.md",
+   "sha256": "c206320445326acc6e77035a22bdc1f27eea6dc080234f244ebd3e45f5198c7e",
+   "note": "上一轮 131c6aa6 已交，本轮原样保留未改数字"
+  },
+  "2b_ledger": {
+   "file": "ledgers/ozon_cm1_orders.csv",
+   "sha256": "c9df8db63874ae2f485f6ddeb9cc3e701743d03684d0ff746a6f02fb6b4d237a",
+   "cols": 55,
+   "basis_long": "ledgers/ozon_cm1_basis.csv",
+   "basis_sha256": "ed8ffefa73fc8a02eae0bffd009fc33c2dc6240b2e18815e813860b1594ed91e",
+   "basis_rows": 44
+  },
+  "3_listing_opt_status": {
+   "file": "reports/L1/ANC-D1-L1-LISTING-OPT-STATUS-20261101_xiaoli2.md",
+   "sha256": "2146218c78f78e1ba240292eb7d3661932b4a84fbd40ad7134d57b853e0f26f9",
+   "landed": 0,
+   "total": 11,
+   "blocked_by": {
+    "T2_binding": 8,
+    "assets": 2,
+    "customs_hs": 1
+   }
+  }
+ },
+ "ask": [
+  "A：下发 T1 Seller API 只读 token（放 ~/.ozon/creds.env，chmod 600，不走聊天/总线）→ 我 2 小时内出净利层 CM1 + 自动验收改造单",
+  "B：妙手 ERP 绑定 Ozon 店铺 → 11 项改造单我可代执行（绑定动作按令由你亲自做）",
+  "若只给一个：给 A"
+ ],
+ "red_lines_respected": "只读。未登录卖家后台、未调后台同源接口、未改价/图/标题/类目/库存、未上架、未投放、未采购。",
+ "deadline": "2026-11-02 21:00（剩 30 小时）"
+}
