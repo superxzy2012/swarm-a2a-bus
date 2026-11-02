@@ -1,0 +1,56 @@
+{
+  "type": "receipt",
+  "ref": "ANC-D3-L5-CLOSEOUT",
+  "from": "xiaodou",
+  "ts": "2026-11-02T17:55:00+08:00",
+  "status": "DONE",
+  "acceptance": [
+    {
+      "item": "① D3 收口页：PSI 定稿版 + 3 报价形态 + 5 活链 LIVE/DEAD 带抓取时间",
+      "result": "DONE",
+      "evidence": [
+        "reports/QualityService/QSVC-PSI-SAMPLE-REPORT-D3-20261102_xiaodou.docx (38360 B, sha256 5706b49c511b8459, 3 表 7 节, 价格词 0)",
+        "reports/QualityService/L5-D3-CLOSEOUT-20261102_xiaodou.md §1/§2/§3",
+        "evidence/quality-service/livecheck-20261102.json (5 条 ACTIVE 全 LIVE, 抓取 17:51:26–17:51:47)"
+      ]
+    },
+    {
+      "item": "② 盈利三问逐项",
+      "result": "DONE",
+      "evidence": [
+        "L5-D3 §4.1 CM1 基准 +213.20/人日(79.6%)、压价 +170.00(77.3%)、省外客户承担 +295.20(90.0%)、省外自担 +45.20(13.8%)、最坏 -66 现金+10h 白干",
+        "§4.2 获客：5 LIVE / 投递 0 / 回复 0 / 成交 0 / 转化率 UNKNOWN（缺「用 BOSS 账号投出」这一步）",
+        "§4.3 止损 7 条，逐条触发值+动作+时限"
+      ]
+    },
+    {
+      "item": "③ BOSS 两样凭据清单一行",
+      "result": "DONE",
+      "evidence": [
+        "L5-D3 §5：平台账号授权（BOSS 名下 Upwork/Freelancer 既有账号 + 绑定收款主体）"
+      ]
+    },
+    {
+      "item": "投递项不计欠交",
+      "result": "BLOCKED_BY_CREDENTIAL: 平台账号",
+      "evidence": "本轮 0 发送 / 0 注册 / 0 登录"
+    }
+  ],
+  "non_actions": [
+    "未发送未投标未注册未登录",
+    "价格未进 sample report",
+    "未新开凭据请求"
+  ],
+  "files": {
+    "docx_sha256": "5706b49c511b8459b0fdf9acf66e8f84ce5c55418cb83579369eae46720a0340",
+    "docx_bytes": 38360,
+    "evidence": [
+      "livecheck-20261102.json",
+      "livecheck_LEAD-01_20261102.txt",
+      "livecheck_LEAD-04_20261102.txt",
+      "livecheck_LEAD-05_20261102.txt",
+      "livecheck_LEAD-06_20261102.txt",
+      "livecheck_LEAD-07_20261102.txt"
+    ]
+  }
+}
