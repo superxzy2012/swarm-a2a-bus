@@ -2091,6 +2091,11 @@
    "source_blob": "c1d02744b2177f0094e2befb6fda665b559314be",
    "transform": "copy"
   },
+  "outbox/receipt_MUSE-CAPTEST-20261031_muse.json": {
+   "public_blob": "6b2d4427fdd645ec556d674dcd7a02d027d2e0ac",
+   "source_blob": "6b2d4427fdd645ec556d674dcd7a02d027d2e0ac",
+   "transform": "copy"
+  },
   "outbox/receipt_MUSE-E2E-VERIFY_muse.json": {
    "public_blob": "b34065f0ee3892a86f054a1d4b51b6c280f3ea4b",
    "source_blob": "b34065f0ee3892a86f054a1d4b51b6c280f3ea4b",
@@ -2797,5 +2802,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T18:22:11+08:00"
+ "generated_at": "2026-11-02T11:00:12Z"
 }
