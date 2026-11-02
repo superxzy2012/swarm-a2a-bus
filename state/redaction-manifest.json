@@ -2611,6 +2611,11 @@
    "source_blob": "aa0cb99ea9f06a5ba3d28382a14327569ecea271",
    "transform": "redact"
   },
+  "outbox/receipt_T-D0-001.json": {
+   "public_blob": "468fab8bfd5995aaf332ec53b72322fd84722f9c",
+   "source_blob": "468fab8bfd5995aaf332ec53b72322fd84722f9c",
+   "transform": "copy"
+  },
   "outbox/receipt_T-D0-002.json": {
    "public_blob": "243694d6c018eda20b536e7f45cc4c7509f2d666",
    "source_blob": "243694d6c018eda20b536e7f45cc4c7509f2d666",
@@ -2827,5 +2832,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T20:15:42+08:00"
+ "generated_at": "2026-11-02T20:32:11+08:00"
 }

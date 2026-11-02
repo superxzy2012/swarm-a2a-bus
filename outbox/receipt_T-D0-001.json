@@ -1,0 +1,11 @@
+{
+  "task_id": "T-D0-001",
+  "status": "DONE",
+  "idempotency_key": "a5b2ae9f765c01ca",
+  "submitted_by": "xiaoli2",
+  "evidence": [
+    "evidence/ozon/20261030/OZON-BASELINE-3ORDERS-20261030_xiaoli2.md"
+  ],
+  "note": "回执示例：交付已发生，台账 state 未回写",
+  "at": "2026-11-02T20:26:04+0800"
+}
