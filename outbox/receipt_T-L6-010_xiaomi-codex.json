@@ -1,0 +1,64 @@
+{
+  "receipt_id": "T-L6-010_xiaomi-codex",
+  "task": "T-L6-010",
+  "from": "xiaomi-codex",
+  "to": ["QUEEN(星期五)", "Nancy"],
+  "ts": "2026-11-02T20:05+08:00",
+  "status": "DONE",
+  "commit": "2761feae",
+  "deliverable": "reports/quant/RATES-LOGISTICS-v1.md",
+  "sections": {
+    "postal_small_packet": {
+      "channels": {
+        "P1_SAL": {"grade": "ESTIMATE-OFFICIAL", "source": "中国邮政《国际函件资费表》§2 https://soft.chinapost.com.cn/cn/report/1910/11959-1.htm", "source_date": "2019-10-29 (现行版)", "rule": "100g内基价32 + 续重每100g 28 (第三组)", "cells_450g_cny": {"CN->RU": 144.0, "CN->US": 144.0, "CN->BR": "UNKNOWN"}},
+        "P2_AIR": {"grade": "ESTIMATE-OFFICIAL", "source": "同上 §1", "rule": "100g内基价35 + 续重每100g 33 (第三组)", "cells_450g_cny": {"CN->RU": 167.0, "CN->US": 167.0, "CN->BR": "UNKNOWN"}},
+        "P3_EUBG": {"grade": "ESTIMATE-TRANSCRIBED", "source": "广州E邮宝价格表 https://goodhope86.com/express/eubg.html", "source_date": "2026-09-28 14:00 起", "cells_450g_cny": {"CN->RU": 51.4, "CN->US": 46.2, "CN->BR": 63.0}}
+      },
+      "br_unknown_reason": "SAL 小包只公布第一/二/三组基价，第四组(含巴西)小包资费未公布"
+    },
+    "commercial_express": {
+      "basis": "1KG（商业快递最小计费 0.5KG，450g 档未取得）",
+      "cells_1kg_cny": {
+        "CN->RU": {"value": 766.9, "product": "大陆DHL特惠小货", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/russian-federation.html", "source_date": "2026年10月第5周"},
+        "CN->US": {"value": 234.43, "product": "香港DHL美国非FBA价(页内最低)", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/usa.html", "source_date": "2026年10月第5周"},
+        "CN->BR": {"value": 260.38, "product": "香港DHL代理价(页内最低)", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/brazil.html", "source_date": "2026年10月第5周"}
+      },
+      "caveat": "页面自述为代理最低折扣价，不含关税/偏远/退件/燃油；我方无签约账号 → 非可下单协议价"
+    },
+    "no_cell_is_measured": {
+      "fact": "evidence/ozon/20261030 物流报告 xlsx sharedStrings 为 0 条，无任何物流明细行；RAW CSV 四列物流字段 4 单全 UNKNOWN",
+      "conclusion": "4 单真实物流扣费零凭证，全部物流数字均为 ESTIMATE"
+    }
+  },
+  "risk_disposition": {
+    "R-L6-005": {
+      "verdict": "CONFIRMED_OPEN",
+      "one_line": "15.25 降级为 ESTIMATE-TRANSCRIBED；物流凭证到手前 L1 CM1 一律报 UPPER_BOUND_ESTIMATE 并同时列 SAL 口径下界 −354.36(@0%) / −365.85(@15%)；禁止单独对外引用 +40.27。",
+      "queen_numbers_recomputed": {"39774795161_cm1_at_sal": -118.65, "40892047610_cm1_at_sal": -91.72, "match": true},
+      "root_cause": "不是 OGL 算式错（2.9+0.0247*450=14.02 + ESF 15RUB=1.23 = 15.25 可复现），是 15.25 被当成已发生成本使用",
+      "cannot_distinguish": "无法用现有证据区分 (a) OGL 为平台集货协议价 与 (b) 转录表档位/币种看错 —— 两者都需要后台原件",
+      "unblock": "Ozon 后台 Отчет по логистике 出现非空行，或取得 ОГЛ 费率原件截图",
+      "owner": "xiaomi-codex（复核）/ L1（提供后台导出）"
+    },
+    "R-L6-004": {
+      "verdict": "FIXED",
+      "one_line": "确认两处缺陷成立；已改代码（SKU 样本<3 回退组合中位数，仍不足显式 SKIPPED_NO_BASELINE）+ 改口径（P50/P90 取 @15% 列 3.17/25.87，X4 阈值 15.15→9.50），selftest_x4 4/4 PASS。",
+      "defect_a": "sim_ledger.py 旧实现 p50=sorted(sku_rows)[len//2] 按 SKU 取中位数，n=1 时阈值=3×|自身| → 永不触发",
+      "defect_b": "§5.1 P50 5.05 / P90 32.41 取自 @0% 列；@15% 列实为 3.17 / 25.87。P10 两列巧合同为 −8.26 掩盖了取错列",
+      "code_change": "新增 review_p50()：SKU n>=min_samples(3) 用自身中位数@sku；否则回退全台账组合中位数@portfolio；仍不足 → REVIEW_ORDER:SKIPPED_NO_BASELINE；P50<=0 时取 abs 并标 _abs",
+      "regression": "evidence/L6/sim/selftest_x4.py 4/4 PASS（n=1回退组合 / n=4用SKU / 样本不足显式报缺 / 正常单不误触发）",
+      "restated": "按新阈值 9.50，450g 档物流沉没 15.25 > 9.50 → 货全损仍必然命中 X4（重算结论，非沿用旧数）"
+    }
+  },
+  "unknowns": [
+    "SAL/航空 小包第四组（巴西）基价与续重单价 — 官方页未公布",
+    "DHL 0.5KG 档报价 — 未取得",
+    "DHL 燃油/偏远附加费 — 需协议价明细",
+    "4 单真实物流扣费 — Отчет по логистике 当前 0 行",
+    "OGL 费率原件 — 需 Ozon 后台截图",
+    "时效档 — 除海备 BR(15-25天) 外全部未公布"
+  ],
+  "repro": "cd evidence/L6/sim && python3 selftest_x4.py; cd ../params && bash selftest_all.sh; cd ~/work/a2a-bus/evidence/ozon/20261030 && python3 -c \"import zipfile;print(len(zipfile.ZipFile('downloads/Отчет по логистике за период 2026-10-01 - 2026-10-30.xlsx').read('xl/sharedStrings.xml')))\"",
+  "redlines": "零资金、零权限、零实盘；无证券账户、无真实下单；UNKNOWN 未填 0、未给区间；群消息走 ops/lark-send-bot.sh (identity=bot)",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}

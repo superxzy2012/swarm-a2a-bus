@@ -1,0 +1,55 @@
+{
+  "type": "receipt",
+  "ref": "T-L1-OZON-LISTING-CADENCE",
+  "from": "xiaodou",
+  "ts": "2026-11-02T19:31:00+08:00",
+  "status": "DONE",
+  "deliverable": {
+    "path": "evidence/ozon/L1-CADENCE-GATE-20261102.md",
+    "bytes": 7087,
+    "sha256": "6bf28d325e86254f0ab0a9bdf44f4edbcb63a835e3b17992bf2ee2f09c93e905"
+  },
+  "gate_result": {
+    "verdict": "HOLD",
+    "passed": "0/2",
+    "SKU-1": {
+      "name": "洗脸巾 20×15 小包",
+      "cost_cny": 1.88,
+      "source": "PARTIAL",
+      "realfbs": "PARTIAL",
+      "compliance": "FAIL"
+    },
+    "SKU-2": {
+      "name": "洗脸巾 20×15 中包",
+      "cost_cny": 3.0,
+      "source": "PARTIAL",
+      "realfbs": "PARTIAL",
+      "compliance": "FAIL"
+    }
+  },
+  "acceptance": [
+    {
+      "item": "货源可验",
+      "result": "PARTIAL",
+      "detail": "同 offer 大包有真实成交实证；20×15 两个规格无单独成交记录；1688 直链今日被反爬(cloud_ip_bl)不可复核"
+    },
+    {
+      "item": "realFBS",
+      "result": "PARTIAL",
+      "detail": "错误指数 0%、罚款 0₽，但近14天货件 0（空分母，一次取消即100%）；待处理转发运 1 单"
+    },
+    {
+      "item": "合规",
+      "result": "FAIL",
+      "detail": "一次性纺织品需 ТР ТС 017/2011 符合性文件；我方 0 份，供应商页面无声明编号/检测报告；Ozon 类目上传要求需后台确认（我不登录）"
+    }
+  ],
+  "side_finding": "evidence/ozon/20261031_listing_opt/buyer_search_korzina_pod_stol.json 文件名与内容不符（内容是洗脸巾搜索页），登记瑕疵未改他人文件，本复核不依赖它",
+  "boundaries": [
+    "未上新",
+    "未登录后台",
+    "未动妙手ERP",
+    "未改价图标题类目库存",
+    "未花钱"
+  ]
+}

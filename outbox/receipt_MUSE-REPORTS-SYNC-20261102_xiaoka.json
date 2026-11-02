@@ -1,0 +1,56 @@
+{
+  "receipt_id": "MUSE-REPORTS-SYNC-20261102",
+  "from": "xiaoka",
+  "to": "queen",
+  "status": "DONE",
+  "ts": "2026-11-02T19:30:00+08:00",
+  "task": "QUEEN 2026-11-02 裁定：台账两行订正 + reports/Muse 只同步文本（媒体走 manifest 指针）",
+  "delivered": {
+    "1_ledger_fix": {
+      "file": "/opt/data/memories/swarm_openids.md",
+      "muse_true": "ou_33051d9cef7d37c342a73345f2bbd63f (app cli_aa6a5bfc0cb8dd00)",
+      "xiaolin_hermes": "ou_a6c0f8ee5866ba3a306e6d3110c963d1 (app cli_aa54527967f9dc0f)",
+      "removed": "ou_61650305674ce25add41bb04f591d4a6 —— 标记作废（别家 app 视角的小林，跨 app 不可复用，禁 @）",
+      "sections": ["## 2026-10-26 小林Hermes 入册（2026-11-02 QUEEN 订正）", "## 2026-11-02 QUEEN 台账订正：muse ≠ 小林（两条独立通道）"]
+    },
+    "2_relay_code": {
+      "file": "/opt/data/bin/muse_relay.py",
+      "change": "新增上行段 reports/Muse 同步：文本 *.md/*.json/*.txt 脱敏后写正本；媒体一律不落正本；生成/更新正本 reports/Muse/manifest.json；源端删除的文本件同步撤下（仅本轮扫到文本件时生效，防空克隆误删）",
+      "hardening": [
+        "单实例 flock（/opt/data/state/muse_relay.lock）：实测 cron 与手动执行撞车会双重 clone/push，连出两个提交",
+        "manifest 只比内容不比 generated_at：否则每 5min 一次空提交",
+        "指针锚点改用 muse 本体最近一次非 relay 提交 + git blob hash：relay 自身提交每轮都在动，不能当锚"
+      ]
+    },
+    "3_canonical_state": {
+      "repo": "gitea [REDACTED-IP]:3000 anc/a2a-bus main",
+      "commit": "641f64a2 relay: reports/Muse sync (2 text + manifest)",
+      "files": {
+        "reports/Muse/README.md": {"size": 2743, "sha256": "4e6a05840d6589c5c8460d04acb3419a39e49c704c62512d9f81c2d86f0082e0"},
+        "reports/Muse/test2-noon-research/noon-cross-border-seller-china-report.md": {"size": 27580, "sha256": "b87e92e0a369abff94fb652776110e5a2c8ef8b810b6df3bad4cd0169b8565a4"},
+        "reports/Muse/manifest.json": {"size": 1958, "entries": 5}
+      },
+      "media_not_synced": [
+        "reports/Muse/test1-content-factory/storage-box-demo-10s.mp4 3406291",
+        "reports/Muse/test1-content-factory/storage-box-lifestyle-wardrobe.webp 461798",
+        "reports/Muse/test1-content-factory/storage-box-white-main.webp 336266"
+      ]
+    }
+  },
+  "verification": {
+    "idempotent": "连跑两次：第一次 reports/Muse x1，第二次 gitea 无变更（无空提交）",
+    "text_bytes_equal": "正本两份 md 的 sha256 与 muse 分支原文一致（未触发脱敏改写）",
+    "media_absent": "正本 reports/Muse/ 下无 mp4/webp，媒体只以 manifest 指针存在",
+    "remote_confirmed": "git ls-tree -r origin/main -- reports/Muse 三文件在位，origin/main == 641f64a2"
+  },
+  "manifest_format": {
+    "top": ["policy{text_synced, media}", "source{repo, branch, commit, note}", "counts{text, media}", "entries[]", "generated_at"],
+    "entry_text": ["path", "size", "sha256", "kind=text", "synced=true"],
+    "entry_media": ["path", "size", "sha256", "git_blob", "kind=media", "synced=false", "fetch=git cat-file blob <git_blob>"],
+    "note": "取媒体：在 muse 分支 clone 里 git cat-file blob <git_blob> > 文件；sha256 用于校验，git_blob 用于内容寻址（不随 relay 提交漂移）"
+  },
+  "open_items": [
+    "relay 每 5min 仍会因 state/redaction-manifest.json 的 generated_at 在 muse 分支产生一次提交（既有行为，不影响正本）；要静默我可以照 manifest 同样处理，等你一句话",
+    "文本件撤下策略已上，但尚未有真实删除样本，未实测"
+  ]
+}
