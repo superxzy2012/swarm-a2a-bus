@@ -2,26 +2,75 @@
   "receipt_id": "T-L6-010_xiaomi-codex",
   "task": "T-L6-010",
   "from": "xiaomi-codex",
-  "to": ["QUEEN(星期五)", "Nancy"],
-  "ts": "2026-11-02T20:05+08:00",
-  "status": "DONE",
-  "commit": "2761feae",
+  "to": [
+    "QUEEN(星期五)",
+    "Nancy"
+  ],
+  "ts": "2026-11-03T04:45+08:00",
+  "status": "DONE_REV2",
+  "commit": "debce77e",
   "deliverable": "reports/quant/RATES-LOGISTICS-v1.md",
   "sections": {
     "postal_small_packet": {
       "channels": {
-        "P1_SAL": {"grade": "ESTIMATE-OFFICIAL", "source": "中国邮政《国际函件资费表》§2 https://soft.chinapost.com.cn/cn/report/1910/11959-1.htm", "source_date": "2019-10-29 (现行版)", "rule": "100g内基价32 + 续重每100g 28 (第三组)", "cells_450g_cny": {"CN->RU": 144.0, "CN->US": 144.0, "CN->BR": "UNKNOWN"}},
-        "P2_AIR": {"grade": "ESTIMATE-OFFICIAL", "source": "同上 §1", "rule": "100g内基价35 + 续重每100g 33 (第三组)", "cells_450g_cny": {"CN->RU": 167.0, "CN->US": 167.0, "CN->BR": "UNKNOWN"}},
-        "P3_EUBG": {"grade": "ESTIMATE-TRANSCRIBED", "source": "广州E邮宝价格表 https://goodhope86.com/express/eubg.html", "source_date": "2026-09-28 14:00 起", "cells_450g_cny": {"CN->RU": 51.4, "CN->US": 46.2, "CN->BR": 63.0}}
+        "P1_SAL": {
+          "grade": "ESTIMATE-OFFICIAL",
+          "source": "中国邮政《国际函件资费表》§2 https://soft.chinapost.com.cn/cn/report/1910/11959-1.htm",
+          "source_date": "2019-10-29 (现行版)",
+          "rule": "100g内基价32 + 续重每100g 28 (第三组)",
+          "cells_450g_cny": {
+            "CN->RU": 144.0,
+            "CN->US": 144.0,
+            "CN->BR": "UNKNOWN"
+          }
+        },
+        "P2_AIR": {
+          "grade": "ESTIMATE-OFFICIAL",
+          "source": "同上 §1",
+          "rule": "100g内基价35 + 续重每100g 33 (第三组)",
+          "cells_450g_cny": {
+            "CN->RU": 167.0,
+            "CN->US": 167.0,
+            "CN->BR": "UNKNOWN"
+          }
+        },
+        "P3_EUBG": {
+          "grade": "ESTIMATE-TRANSCRIBED",
+          "source": "广州E邮宝价格表 https://goodhope86.com/express/eubg.html",
+          "source_date": "2026-09-28 14:00 起",
+          "cells_450g_cny": {
+            "CN->RU": 51.4,
+            "CN->US": 46.2,
+            "CN->BR": 63.0
+          }
+        }
       },
       "br_unknown_reason": "SAL 小包只公布第一/二/三组基价，第四组(含巴西)小包资费未公布"
     },
     "commercial_express": {
       "basis": "1KG（商业快递最小计费 0.5KG，450g 档未取得）",
       "cells_1kg_cny": {
-        "CN->RU": {"value": 766.9, "product": "大陆DHL特惠小货", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/russian-federation.html", "source_date": "2026年10月第5周"},
-        "CN->US": {"value": 234.43, "product": "香港DHL美国非FBA价(页内最低)", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/usa.html", "source_date": "2026年10月第5周"},
-        "CN->BR": {"value": 260.38, "product": "香港DHL代理价(页内最低)", "grade": "ESTIMATE-TRANSCRIBED", "source": "https://www.gjkdwl.com/dhl/brazil.html", "source_date": "2026年10月第5周"}
+        "CN->RU": {
+          "value": 766.9,
+          "product": "大陆DHL特惠小货",
+          "grade": "ESTIMATE-TRANSCRIBED",
+          "source": "https://www.gjkdwl.com/dhl/russian-federation.html",
+          "source_date": "2026年10月第5周"
+        },
+        "CN->US": {
+          "value": 234.43,
+          "product": "香港DHL美国非FBA价(页内最低)",
+          "grade": "ESTIMATE-TRANSCRIBED",
+          "source": "https://www.gjkdwl.com/dhl/usa.html",
+          "source_date": "2026年10月第5周"
+        },
+        "CN->BR": {
+          "value": 260.38,
+          "product": "香港DHL代理价(页内最低)",
+          "grade": "ESTIMATE-TRANSCRIBED",
+          "source": "https://www.gjkdwl.com/dhl/brazil.html",
+          "source_date": "2026年10月第5周"
+        }
       },
       "caveat": "页面自述为代理最低折扣价，不含关税/偏远/退件/燃油；我方无签约账号 → 非可下单协议价"
     },
@@ -34,7 +83,11 @@
     "R-L6-005": {
       "verdict": "CONFIRMED_OPEN",
       "one_line": "15.25 降级为 ESTIMATE-TRANSCRIBED；物流凭证到手前 L1 CM1 一律报 UPPER_BOUND_ESTIMATE 并同时列 SAL 口径下界 −354.36(@0%) / −365.85(@15%)；禁止单独对外引用 +40.27。",
-      "queen_numbers_recomputed": {"39774795161_cm1_at_sal": -118.65, "40892047610_cm1_at_sal": -91.72, "match": true},
+      "queen_numbers_recomputed": {
+        "39774795161_cm1_at_sal": -118.65,
+        "40892047610_cm1_at_sal": -91.72,
+        "match": true
+      },
       "root_cause": "不是 OGL 算式错（2.9+0.0247*450=14.02 + ESF 15RUB=1.23 = 15.25 可复现），是 15.25 被当成已发生成本使用",
       "cannot_distinguish": "无法用现有证据区分 (a) OGL 为平台集货协议价 与 (b) 转录表档位/币种看错 —— 两者都需要后台原件",
       "unblock": "Ozon 后台 Отчет по логистике 出现非空行，或取得 ОГЛ 费率原件截图",
@@ -60,5 +113,96 @@
   ],
   "repro": "cd evidence/L6/sim && python3 selftest_x4.py; cd ../params && bash selftest_all.sh; cd ~/work/a2a-bus/evidence/ozon/20261030 && python3 -c \"import zipfile;print(len(zipfile.ZipFile('downloads/Отчет по логистике за период 2026-10-01 - 2026-10-30.xlsx').read('xl/sharedStrings.xml')))\"",
   "redlines": "零资金、零权限、零实盘；无证券账户、无真实下单；UNKNOWN 未填 0、未给区间；群消息走 ops/lark-send-bot.sh (identity=bot)",
-  "author": "xiaomi-codex <xiaomi-codex@local>"
+  "author": "xiaomi-codex <xiaomi-codex@local>",
+  "revision_2": {
+    "ts": "2026-11-03T04:45+08:00",
+    "trigger": "QUEEN 2026-11-02 19:28 派单 + 11-03 04:00 ledger auto_action 规格更新；首催 n=2",
+    "scope": "两条 P0 处置按 QUEEN 新规格重改；T-L6-010 R2②③ 交付物本身未改动（已 VERIFIED）",
+    "R-L6-005": {
+      "verdict": "BASELINE_RECLASSIFIED",
+      "ruling": "中国邮政 SAL / 航空小包属「函件」类产品，不能作为跨境电商物流基准 → P1/P2 标 DISQUALIFIED；144.00 / 167.00 禁止任何决策引用",
+      "new_basis": "E邮宝 EUBG（广州）代理公布价，新资费 2026-09-28 14:00 起（https://goodhope86.com/express/eubg.html），等级 ESTIMATE-TRANSCRIBED",
+      "l1_recompute": {
+        "39774795161": {
+          "weight_g": 450,
+          "eubg": 51.4,
+          "ogl": 15.25,
+          "cm1_at0_ogl": 10.1,
+          "cm1_at0_eubg": -26.05,
+          "cm1_at15_ogl": 6.33,
+          "cm1_at15_eubg": -29.82
+        },
+        "39389883973": {
+          "weight_g": 300,
+          "eubg": 37.6,
+          "ogl": 11.81,
+          "cm1_at0_ogl": -11.8,
+          "cm1_at0_eubg": -37.59,
+          "cm1_at15_ogl": -11.8,
+          "cm1_at15_eubg": -37.59
+        },
+        "39448623973": {
+          "weight_g": 300,
+          "eubg": 0.0,
+          "ogl": 0.0,
+          "note": "未发运，物流按每票不计"
+        },
+        "40892047610": {
+          "weight_g": 250,
+          "eubg": 33.0,
+          "ogl": 10.31,
+          "cm1_at0_ogl": 41.97,
+          "cm1_at0_eubg": 19.28,
+          "cm1_at15_ogl": 34.25,
+          "cm1_at15_eubg": 11.56
+        }
+      },
+      "totals": {
+        "cm1_at0_ogl": 40.27,
+        "cm1_at0_eubg": -44.36,
+        "cm1_at15_ogl": 28.78,
+        "cm1_at15_eubg": -55.85
+      },
+      "ratio": "3.4x（OGL 15.25 vs E邮宝 51.40）",
+      "void": "先前基于 SAL 144 的 -354.36 / -365.85 / -118.65 / -91.72 及 9.4 倍差幅全部作废，不得再引用",
+      "decision_impact": "450g 档 E邮宝 51.40 已超 §4.2 单笔 50 元绝对上限 → 采购成本再低也不进候选；OGL 口径仅在后台物流报告出现非空行后可启用",
+      "disposition": "物流凭证到手前 L1 CM1 一律报 UPPER_BOUND_ESTIMATE 并同时给 E邮宝区间 -44.36(@0%) / -55.85(@15%)，禁止单引 +40.27",
+      "owner": "xiaomi-codex（复核）/ L1（提供 Отчет по логистике 导出）",
+      "source_file": "reports/quant/RATES-LOGISTICS-v1.md §1/§3"
+    },
+    "R-L6-004": {
+      "verdict": "FIXED_PER_QUEEN_SPEC",
+      "queen_spec": "改 p50 为组合口径插值中位数；口径统一 @15%；n<5 时 X4 只出 INSUFFICIENT_SAMPLE",
+      "code_change": [
+        "新增 cm1_at_15pct(row)：每行按 (price - 0.15*price - payment - purchase - return)*qty - logistics 重算，不读实单 0% 列",
+        "新增 interp_median(vals)：偶数样本取中间两值平均",
+        "review_p50() 重写：全台账组合口径（不再按 SKU 分组）+ 插值中位数 + n<min_samples 返回 None",
+        "evaluate() 不足时写 REVIEW_ORDER:INSUFFICIENT_SAMPLE:insufficient_n=N<5",
+        "新增 is_informational()；cmd_check() 信息项显示 INSUFFICIENT、exit 0，不判 STOP"
+      ],
+      "config": "evidence/L6/sim/rules.json → single_order_review{multiple_of_p50:3, min_samples:5, basis:portfolio, cm1_basis:at_15pct}",
+      "current_state": "台账 4 行 < 5 → X4 无阈值，仅 3 个 SKU 各出 INSUFFICIENT_SAMPLE（信息项，exit 0）",
+      "retracted": "19:32 版「按 9.50 重算、450g 货全损必然命中 X4」作废：9.50 建立在旧口径（SKU 中位数 / n=1）之上",
+      "regression": "evidence/L6/sim/selftest_x4.py 8/8 PASS → X4 ALL GREEN",
+      "source_file": "reports/quant/STRATEGY-v1.md §3/§5.3"
+    },
+    "repro": [
+      "cd evidence/L6/sim && python3 selftest_x4.py",
+      "cd evidence/L6/sim && python3 sim_ledger.py check --ledger ledger.csv",
+      "cd evidence/L6/params && bash selftest_all.sh"
+    ],
+    "observed_output": {
+      "selftest_x4": "8 PASS + X4 ALL GREEN，exit 0",
+      "sim_ledger_check": "3 行 INSUFFICIENT [info]，exit 0",
+      "selftest_all": "引擎单测 ALL PASS / RUB 4 单回归 ALL PASS / R2 ALL GREEN / ALL GREEN，exit 0"
+    },
+    "unknowns_unchanged": [
+      "E邮宝当期是否停收俄罗斯 — 代理表未标注，需向货代确认",
+      "SAL/航空第四组（巴西）基价 — 官方页未公布，且该产品已 DISQUALIFIED",
+      "DHL 0.5KG 档与燃油/偏远附加费 — 未取得",
+      "4 单真实物流扣费 — Отчет по логистике 当前 0 行",
+      "采购/退货/罚金 — L1 未提供"
+    ],
+    "redlines": "零资金、零权限、零实盘；未接证券账户、未真实下单；无估算冒充实测，缺数据标 UNKNOWN"
+  }
 }

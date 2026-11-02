@@ -2637,8 +2637,8 @@
    "transform": "copy"
   },
   "outbox/receipt_T-L6-010_xiaomi-codex.json": {
-   "public_blob": "d4e9d4188378b29701ce80d0c155d39079f35e08",
-   "source_blob": "d4e9d4188378b29701ce80d0c155d39079f35e08",
+   "public_blob": "05e4c058fe508654119f493ecdff28af3ffc8199",
+   "source_blob": "05e4c058fe508654119f493ecdff28af3ffc8199",
    "transform": "copy"
   },
   "outbox/receipt_T-L6-R2-TOOLS_xiaomi-codex.json": {
@@ -2832,5 +2832,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-02T20:00:11Z"
+ "generated_at": "2026-11-02T20:10:11Z"
 }
