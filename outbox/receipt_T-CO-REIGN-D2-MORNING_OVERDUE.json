@@ -1,0 +1,14 @@
+{
+  "type": "receipt",
+  "ref": "T-CO-REIGN-D2-MORNING",
+  "from": "xiaodou",
+  "ts": "2026-11-03T09:36:24+08:00",
+  "status": "OVERDUE",
+  "note": "共治 D2 09:00 首卡（巡检四项+日报）——共治期已于 2026-10-31 00:30 BOSS v3 定版作废（小豆转 L5 品质服务线 Owner，QUEEN=唯一经营结果负责人），此任务失去执行主体；未执行不补造（补造=造假交付）。台账行已标 VOID（next_action 写明作废依据与 Nancy 07:10 授权）。写此 OVERDUE 回执以关账，停止超期计数。",
+  "original_deadline": "2026-10-31T09:10:00+08:00",
+  "overdue_hours": 72.4,
+  "evidence": [
+    "ledgers/ledger_tasks.csv line 6 (state=VOID, next_action=作废关账...)"
+  ],
+  "action": "no_further_action_required"
+}
