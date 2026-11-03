@@ -2641,6 +2641,11 @@
    "source_blob": "8817dde225ee30d3f3bb5506e7379c04909312d2",
    "transform": "copy"
   },
+  "outbox/receipt_T-L6-010_nancy_xiaomi-codex.json": {
+   "public_blob": "dc65f6a6a4187172b475fd10b8ca4e58df6fe86c",
+   "source_blob": "dc65f6a6a4187172b475fd10b8ca4e58df6fe86c",
+   "transform": "copy"
+  },
   "outbox/receipt_T-L6-010_xiaomi-codex.json": {
    "public_blob": "05e4c058fe508654119f493ecdff28af3ffc8199",
    "source_blob": "05e4c058fe508654119f493ecdff28af3ffc8199",
@@ -2837,5 +2842,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-03T05:20:10Z"
+ "generated_at": "2026-11-03T13:32:04+08:00"
 }

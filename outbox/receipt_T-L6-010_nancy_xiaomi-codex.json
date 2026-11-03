@@ -1,0 +1,74 @@
+{
+  "receipt_id": "T-L6-010_nancy_xiaomi-codex",
+  "task": "T-L6-010",
+  "from": "xiaomi-codex",
+  "to": [
+    "Nancy"
+  ],
+  "ts": "2026-11-03T09:15+08:00",
+  "status": "DONE",
+  "answers_nancy_ask": {
+    "rate_table": "reports/quant/RATES-LOGISTICS-v1.md",
+    "unknown_list": "§5 UNKNOWN 清单 + 每格 UNKNOWN 原因",
+    "receipt": "outbox/receipt_T-L6-010_xiaomi-codex.json (revision_2)",
+    "ledger": "ledgers/ledger_tasks.csv T-L6-010 state COMMITTED→VERIFIED"
+  },
+  "commits": [
+    "2761feae",
+    "debce77e",
+    "4f723538"
+  ],
+  "verified_by": "QUEEN T-L6-010d VERIFIED (2026-11-03T04:30)",
+  "cell_coverage": {
+    "postal_small_packet": {
+      "cells": 3,
+      "graded": {
+        "P1_SAL": "DISQUALIFIED",
+        "P2_AIR": "DISQUALIFIED",
+        "P3_EUBG": "ESTIMATE-TRANSCRIBED"
+      },
+      "urls": 3,
+      "source_dates": 3
+    },
+    "commercial_express": {
+      "cells": 3,
+      "graded": {
+        "CN-RU": "ESTIMATE-TRANSCRIBED",
+        "CN-US": "ESTIMATE-TRANSCRIBED",
+        "CN-BR": "ESTIMATE-TRANSCRIBED"
+      },
+      "note": "1KG 档；450g 档未取得 → 该格 UNKNOWN"
+    },
+    "measured_cells": 0,
+    "no_interval_values": true
+  },
+  "conflict_with_nancy_brief": {
+    "nancy_brief_says": "公开替代源：chinapost.com.cn 国际函件资费表 SAL 450g RU=144 元 / 航空 167 元",
+    "queen_ruling": "QUEEN 2026-11-02 04:00 裁决：SAL/航空小包属「函件」类产品，非跨境电商包裹，不能作为基准 → DISQUALIFIED",
+    "resolution": "按 QUEEN 裁决执行。144.00 / 167.00 已在表中存档并标 DISQUALIFIED，禁止任何决策与 CM1 计算引用",
+    "why_not_revert": "Nancy 的验收口径与 QUEEN 裁决冲突，QUEEN 是决策方；按 SAL 重算的 -354.36/-365.85/-118.65/-91.72 及「9.4 倍」已全部作废",
+    "effective_basis": "E邮宝 EUBG（广州）代理公布价 92 元/KG + 10 元/票，RU 450g=51.40，生效 2026-09-28 14:00，来源 https://goodhope86.com/express/eubg.html",
+    "l1_impact": "L1 合计 +40.27(@0% OGL) → -44.36(@0% E邮宝) / -55.85(@15% E邮宝)",
+    "ask": "请把台账 evidence_required 里的 SAL 数字替换为 E邮宝口径，否则后续验收会再次撞同一冲突"
+  },
+  "unknowns": [
+    "SAL/航空第四组（巴西）基价 — 官方页未公布（且该产品已 DISQUALIFIED，不再追）",
+    "DHL 0.5KG 档 — 未取得",
+    "DHL 燃油/偏远附加费 — 需协议价明细",
+    "4 单真实物流扣费 — Ozon Отчет по логистике 当前 0 行（sharedStrings=0）",
+    "OGL 费率原件 — 需后台截图",
+    "E邮宝当期是否停收俄罗斯 — 代理表未标注"
+  ],
+  "repro": [
+    "python3 evidence/L6/params/logistics.py matrix --weights 250,450,1000",
+    "bash evidence/L6/params/selftest_all.sh",
+    "python3 evidence/L6/sim/selftest_x4.py"
+  ],
+  "observed_output": {
+    "logistics_matrix": "9 格：6 OK 有价 / 3 UNKNOWN（commercial_express 全 UNKNOWN）",
+    "selftest_all": "引擎单测 ALL PASS + RUB 4 单回归 ALL PASS + R2 ALL GREEN + ALL GREEN, exit 0",
+    "selftest_x4": "8 PASS + X4 ALL GREEN, exit 0"
+  },
+  "redlines": "零资金、零权限、零实盘；无证券账户、无真实下单；UNKNOWN 未填 0、未给区间",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}
