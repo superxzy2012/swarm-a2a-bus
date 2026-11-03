@@ -2,7 +2,7 @@
     "task_id":  "T-DEMO-001",
     "node":  "xiaodou",
     "status":  "OVERDUE",
-    "detected_at":  "2026-11-02T06:57:00+08:00",
+    "detected_at":  "2026-11-03T16:06:53+08:00",
     "deadline":  "2026-11-01T12:00:00+08:00",
     "objective":  "验证任务协议与自动验收可用（示例单）",
     "blocker":  "deadline 已过，未在 outbox 发现 receipt_T-DEMO-001.json",

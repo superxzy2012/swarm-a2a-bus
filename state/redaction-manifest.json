@@ -636,6 +636,11 @@
    "source_blob": "358f6e4d67a9840639c6af1fe249095ca292809a",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261103T080750Z_10_4_4_16.json": {
+   "public_blob": "771780c7027f4fe9f0b1fe6b315cd3edace1fa2e",
+   "source_blob": "771780c7027f4fe9f0b1fe6b315cd3edace1fa2e",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -2627,8 +2632,8 @@
    "transform": "copy"
   },
   "outbox/receipt_T-DEMO-001_OVERDUE.json": {
-   "public_blob": "90b26bd4a13651b3f10ab3f475f2cb887e957be6",
-   "source_blob": "90b26bd4a13651b3f10ab3f475f2cb887e957be6",
+   "public_blob": "770ea56a2ae1c75e111de5788720d5b83f9d95f4",
+   "source_blob": "770ea56a2ae1c75e111de5788720d5b83f9d95f4",
    "transform": "copy"
   },
   "outbox/receipt_T-FIX-SYNC-MERGE_friday_20261026T0030+0800.json": {
@@ -2842,5 +2847,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-03T07:55:55Z"
+ "generated_at": "2026-11-03T16:07:51+08:00"
 }
