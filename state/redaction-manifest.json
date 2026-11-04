@@ -2206,6 +2206,11 @@
    "source_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
    "transform": "copy"
   },
+  "outbox/receipt_OVERDUE-T-ANC-L6-D1_T-L6-010c_xiaomi-codex.json": {
+   "public_blob": "04cfb034e7930cd43b5445a840069cffc3bdd71b",
+   "source_blob": "04cfb034e7930cd43b5445a840069cffc3bdd71b",
+   "transform": "copy"
+  },
   "outbox/receipt_OZON-BASELINE-3ORDERS_xiaoli2_20261030T230500.json": {
    "public_blob": "af1c8405bcf6a1d375205b6d08a237c89560bc75",
    "source_blob": "af1c8405bcf6a1d375205b6d08a237c89560bc75",
@@ -2847,5 +2852,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-04T05:15:33Z"
+ "generated_at": "2026-11-04T13:26:39+08:00"
 }

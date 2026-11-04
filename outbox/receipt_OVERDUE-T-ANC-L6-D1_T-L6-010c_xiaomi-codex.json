@@ -1,0 +1,71 @@
+{
+  "receipt_id": "OVERDUE-T-ANC-L6-D1_T-L6-010c_xiaomi-codex",
+  "from": "xiaomi-codex",
+  "to": [
+    "QUEEN(星期五)",
+    "Nancy"
+  ],
+  "ts": "2026-11-04T13:35+08:00",
+  "trigger": "超期催办：T-ANC-L6-D1(超 40.2h) + T-L6-010c(超 25.2h)",
+  "summary": "两项都不是缺交付：D1 交付物在仓且 QUEEN 已复核(T-L6-006)；T-L6-010c 状态本就 VERIFIED_WITH_FINDINGS，两条遗留本轮已闭合。本轮补齐的是台账回写 + R-L6-007 改表 + 复算断言。",
+  "items": {
+    "T-ANC-L6-D1": {
+      "state_before": "RUNNING",
+      "state_after": "VERIFIED",
+      "deliverable_1": {
+        "name": "策略说明",
+        "path": "reports/quant/STRATEGY-v1.md",
+        "commit": "47e43378",
+        "later_added": "§5.0 三问实数总表 (929c296e)"
+      },
+      "deliverable_2": {
+        "name": "模拟盘记录",
+        "paths": [
+          "reports/quant/sim-log-20261101.csv",
+          "reports/quant/sim-log-20261102.csv"
+        ],
+        "generator": "evidence/L6/sim/gen_sim_log.py",
+        "repro": "--ts 2026-11-02T05:53:57+08:00 重跑 sha256 a5eb18e374d35cca8f832ae86fbec815c9491ea30fc5354fffc3869fa405dcdf，diff IDENTICAL"
+      },
+      "verification_record": "T-L6-006 VERIFIED (commit 47e43378) + T-L6-008 (commit 929c296e)",
+      "known_defect": "sim-log 的 cum 列每日从 0 独立起算，不是跨日累计台账；11-01 与 11-02 两份除 ts 外完全相同（无新行情）。未擅自改口径，等 QUEEN 定。"
+    },
+    "T-L6-010c": {
+      "state_before": "VERIFIED_WITH_FINDINGS",
+      "state_after": "VERIFIED",
+      "finding_1": {
+        "id": "R-L6-007",
+        "title": "US 组别取错",
+        "resolution": "已改 119.00 / 138.00",
+        "extra_finding": "复核时另查出 BR 也错：原标 UNKNOWN 并称「第四组未公布」，实际小包只有三组、巴西属第三组，有价 144.00 / 167.00",
+        "root_cause": "中国邮政同一页里「信函」用四组制、「小包」用三组制；19:50 版把信函分组套到小包。SAL 信函里美国是第三组、巴西是第四组；SAL 小包里美国是第二组、巴西是第三组。",
+        "evidence_archived": [
+          "evidence/L6/rates/chinapost/intl-mail-tariff-20191029.html (sha256 764368e1d32c0aaeb3cdf2550a683f1589c17f04bb1f28bdffa756b6c3622e7a)",
+          "evidence/L6/rates/chinapost/intl-mail-tariff-20191029.txt (sha256 e98fb91d9baffaadca8bb09f136114bc2370e204b4c8f933a8032bb91fc92d57)"
+        ],
+        "checker": "evidence/L6/rates/check_tariff.py → 20 PASS / TARIFF ALL GREEN / exit 0；已接入 params/selftest_all.sh",
+        "decision_impact": "0 —— 三格仍 DISQUALIFIED，L1 用 OGL 与 E邮宝，都不读 SAL/航空",
+        "ledger": "ledgers/ledger_risks.csv R-L6-007 → CLOSED-已改表(2026-11-04)"
+      },
+      "finding_2": {
+        "id": "R-L6-008",
+        "title": "X4 阈值代码仍 15.15",
+        "resolution": "已按 QUEEN 规格重写：组合口径 + 插值中位数 + @15% + n<5 INSUFFICIENT",
+        "check": "grep 15.15 在 evidence/L6/sim/*.py 与 rules.json 中 0 命中",
+        "regression": "selftest_x4.py 8/8 PASS → X4 ALL GREEN"
+      }
+    }
+  },
+  "observed_output": {
+    "check_tariff": "TARIFF ALL GREEN, exit 0（20 项断言：三组基价/续重、450g 六格、250-2000g 全档、分组归属含美国/俄罗斯/巴西、小包无第四组）",
+    "selftest_all": "引擎单测 ALL PASS / RUB 4 单回归 ALL PASS / R2 ALL GREEN / TARIFF ALL GREEN / ALL GREEN, exit 0",
+    "selftest_x4": "8 PASS + X4 ALL GREEN, exit 0"
+  },
+  "unknowns": [
+    "sim-log cum 列跨日累计口径 — 待 QUEEN 定（当前每日独立，不可相加）",
+    "真实物流扣费 4 单 — Отчет по логистике 0 行",
+    "采购/退货/罚金 — L1 未提供"
+  ],
+  "redlines": "零资金、零权限、零实盘；未接证券账户、未真实下单；UNKNOWN 未填 0、未给区间",
+  "author": "xiaomi-codex <xiaomi-codex@local>"
+}
