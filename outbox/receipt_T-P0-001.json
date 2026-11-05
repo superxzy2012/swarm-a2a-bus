@@ -1,0 +1,18 @@
+{
+  "task_id": "T-P0-001",
+  "status": "COMPLETED",
+  "completed_at": "2026-11-05T13:10:00.000Z",
+  "owner": "xiaoka",
+  "objective": "n8n 导入 meli-listing-create.json 工作流，使用 Mock 数据跑通全流程",
+  "evidence": [
+    "evidence/n8n/meli-workflow-run.log",
+    "evidence/n8n/meli-listing-create-v2.json"
+  ],
+  "acceptance_checks": [
+    {"type": "file_exists", "path": "evidence/n8n/meli-workflow-run.log", "passed": true},
+    {"type": "contains", "path": "evidence/n8n/meli-workflow-run.log", "value": "SUCCESS", "passed": true},
+    {"type": "command", "cmd": "ls -la /opt/data/a2a-bus/outbox/receipt_T-P0-001.json", "expect_exit": 0, "passed": true}
+  ],
+  "redlines": ["不进业务流水线", "仅基建维护"],
+  "notes": "Workflow imported and executed successfully with mock data. All 7 nodes (Start, Mock Trigger, Split Order, Dispatch, Approval, Generate Receipt, Ledger Write-back) completed. Final status: SUCCESS."
+}

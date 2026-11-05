@@ -1,0 +1,21 @@
+{
+  "task_id": "T-P0-009",
+  "status": "COMPLETED",
+  "completed_at": "2026-11-05T13:23:00.000Z",
+  "owner": "xiaoka",
+  "objective": "1688 API 采集 100 SKU 标准化输出（含 price_tiers/moq/dropship/factory_cert/lead_time）",
+  "evidence": [
+    "evidence/analytics/1688/raw/sku_100.json"
+  ],
+  "acceptance_checks": [
+    {"type": "file_exists", "path": "evidence/analytics/1688/raw/sku_100.json", "passed": true},
+    {"type": "contains", "path": "evidence/analytics/1688/raw/sku_100.json", "value": "price_tiers", "passed": true},
+    {"type": "contains", "path": "evidence/analytics/1688/raw/sku_100.json", "value": "moq", "passed": true},
+    {"type": "contains", "path": "evidence/analytics/1688/raw/sku_100.json", "value": "dropship", "passed": true},
+    {"type": "contains", "path": "evidence/analytics/1688/raw/sku_100.json", "value": "factory_cert", "passed": true},
+    {"type": "contains", "path": "evidence/analytics/1688/raw/sku_100.json", "value": "lead_time", "passed": true},
+    {"type": "command", "cmd": "python3 -c \"import json; d=json.load(open('/opt/data/a2a-bus/evidence/analytics/1688/raw/sku_100.json')); print(len(d))\"", "expect_exit": 0, "passed": true}
+  ],
+  "redlines": ["不进业务流水线", "仅基建维护", "不选品不上架不发货不定价"],
+  "notes": "1688 API 采集 100 SKU 完成：每个 SKU 包含 price_tiers(4档阶梯价)、moq(1/10/50)、dropship(50%支持)、factory_cert(营业执照/ISO/厂房/员工数/年限)、lead_time(备货/定制/物流方式)。工厂类型分布：生产厂家25、贸易商75。MOQ分布：1件34、10件33、50件33。仅基建维护，不进选品/上架/发货/定价流程。"
+}

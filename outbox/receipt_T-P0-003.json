@@ -1,0 +1,17 @@
+{
+  "task_id": "T-P0-003",
+  "status": "COMPLETED",
+  "completed_at": "2026-11-05T13:18:00.000Z",
+  "owner": "xiaoka",
+  "objective": "验证 OmniRoute 6 级降级链配置",
+  "evidence": [
+    "evidence/omniroute/fallback-chain-validation.json"
+  ],
+  "acceptance_checks": [
+    {"type": "file_exists", "path": "evidence/omniroute/fallback-chain-validation.json", "passed": true},
+    {"type": "contains", "path": "evidence/omniroute/fallback-chain-validation.json", "value": "PASSED", "passed": true},
+    {"type": "command", "cmd": "ls -la /opt/data/a2a-bus/outbox/receipt_T-P0-003.json", "expect_exit": 0, "passed": true}
+  ],
+  "redlines": ["不进业务流水线", "仅基建维护"],
+  "notes": "OmniRoute free-pool combo validated: 19-level fallback chain (exceeds 6-level requirement). All providers active, priority strategy with proper retry/handoff config. First 6 levels: Kilo 550B (x2), InternLM, AGNES (x2), Grok-Web."
+}

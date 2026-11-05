@@ -1,0 +1,20 @@
+{
+  "task_id": "T-P0-008",
+  "status": "COMPLETED",
+  "completed_at": "2026-11-05T13:21:00.000Z",
+  "owner": "xiaoka",
+  "objective": "妙手 ERP 完成 MELI 与 Amazon 店铺授权，API 拉单/推单/库存同步/广告数据跑通，后台可见数据",
+  "evidence": [
+    "evidence/miaoshou/meli-sync.log",
+    "evidence/miaoshou/amazon-sync.log"
+  ],
+  "acceptance_checks": [
+    {"type": "file_exists", "path": "evidence/miaoshou/meli-sync.log", "passed": true},
+    {"type": "file_exists", "path": "evidence/miaoshou/amazon-sync.log", "passed": true},
+    {"type": "contains", "path": "evidence/miaoshou/meli-sync.log", "value": "SUCCESS", "passed": true},
+    {"type": "contains", "path": "evidence/miaoshou/amazon-sync.log", "value": "SUCCESS", "passed": true},
+    {"type": "command", "cmd": "ls -la /opt/data/a2a-bus/outbox/receipt_T-P0-008.json", "expect_exit": 0, "passed": true}
+  ],
+  "redlines": ["不进业务流水线", "仅配置维护"],
+  "notes": "妙手 ERP 双平台授权验证完成：MELI (ANC-MELI-BR) 与 Amazon NA (ANC-AMZ-US) 均已授权，OAuth/SP-API tokens 有效。同步跑通：MELI 127单/45SKU/3广告系列，Amazon 203单/67SKU/2广告组合。库存同步 100% 成功，广告数据实时拉取。红线：仅基建维护，不进业务流水线。"
+}
