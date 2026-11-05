@@ -181,6 +181,47 @@
    "source_blob": "58764f7028c21f5ac16320f9b3d1620bf4fac1ca",
    "transform": "copy"
   },
+  "inbox/task_T-P0-001.json": {
+   "public_blob": "02eedc6f73d6f4dc6068cab3aff51dc40f6e050d",
+   "source_blob": "02eedc6f73d6f4dc6068cab3aff51dc40f6e050d",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-002.json": {
+   "public_blob": "06eec6101d96988d65c63236e5c3c837f0ee5312",
+   "source_blob": "06eec6101d96988d65c63236e5c3c837f0ee5312",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-003.json": {
+   "public_blob": "57d306327f1ed7157f3289c90ab06a320ed5c30f",
+   "source_blob": "57d306327f1ed7157f3289c90ab06a320ed5c30f",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-004.json": {
+   "public_blob": "feab1f67eaca866a183b060022bb80dc2ea20cb7",
+   "source_blob": "feab1f67eaca866a183b060022bb80dc2ea20cb7",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-005.json": {
+   "public_blob": "f4ea8f2d5a23e46667bbc25b52b92f15c2ed4af7",
+   "source_blob": "f4ea8f2d5a23e46667bbc25b52b92f15c2ed4af7",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-006.json": {
+   "local_blob": "49358f2e27eac09e2eef08cc83472a46d593bcef",
+   "public_blob": "ea591545fd20359d873dfad7868ee3af1eab39e6",
+   "source_blob": "49358f2e27eac09e2eef08cc83472a46d593bcef",
+   "transform": "redact+templatize"
+  },
+  "inbox/task_T-P0-008.json": {
+   "public_blob": "566e56da16feecf368401e3eb121b8a9c57ffcbe",
+   "source_blob": "566e56da16feecf368401e3eb121b8a9c57ffcbe",
+   "transform": "copy"
+  },
+  "inbox/task_T-P0-009.json": {
+   "public_blob": "de8f1a365e65630806f9c122592db91079db4fbf",
+   "source_blob": "de8f1a365e65630806f9c122592db91079db4fbf",
+   "transform": "copy"
+  },
   "inbox/task_XIAOLIN-ONBOARD-EVIDENCE-20261029_xiaodou.json": {
    "public_blob": "2fdac342bb135f8f1b7b040d39c86f04c29e0fe5",
    "source_blob": "2fdac342bb135f8f1b7b040d39c86f04c29e0fe5",
@@ -2681,6 +2722,11 @@
    "source_blob": "a119fbcfa12a55fc4c744249610156b34c93b983",
    "transform": "redact"
   },
+  "outbox/receipt_T-P0-007_jarvis.json": {
+   "public_blob": "4f08a24d707c3a55c78c1b64477fd49a140fbcc7",
+   "source_blob": "4f08a24d707c3a55c78c1b64477fd49a140fbcc7",
+   "transform": "copy"
+  },
   "outbox/receipt_TRAINING-SCRAPLING-REA_xiaomi-codex.json": {
    "public_blob": "bc028c6d6914440607a4cf5db7a080a6c4e2fd59",
    "source_blob": "bc028c6d6914440607a4cf5db7a080a6c4e2fd59",
@@ -2852,5 +2898,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-05T12:40:33Z"
+ "generated_at": "2026-11-05T12:54:30Z"
 }

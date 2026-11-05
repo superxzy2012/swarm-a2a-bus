@@ -1,0 +1,29 @@
+{
+  "task_id": "T-P0-006",
+  "line": "INFRA",
+  "owner": "queen",
+  "objective": "在 Gitea 建立 anc/swarm-templates 仓库，推入 chart.json (MELI/Amazon)、两个工作流、选品/内容/验收脚本、Foreman 清单",
+  "acceptance": [
+    {
+      "type": "command",
+      "cmd": "curl -s http://{{GITEA_HOST}}:3000/api/v1/repos/anc/swarm-templates | grep -q 'swarm-templates'",
+      "expect_exit": 0
+    },
+    {
+      "type": "command",
+      "cmd": "git ls-remote http://{{GITEA_HOST}}:3000/anc/swarm-templates.git | grep -q HEAD",
+      "expect_exit": 0
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-006.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "swarm-templates/",
+  "redlines": [],
+  "deadline": "2026-11-05T22:47:37.000228",
+  "priority": "P0",
+  "idempotency_key": "cd324e08dfe7c746",
+  "economic_hypothesis": "模板库独立仓库 = 新业务 fork 即用、版本化晋升、CI 守门、不污染业务正本"
+}

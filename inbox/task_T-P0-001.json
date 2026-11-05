@@ -1,0 +1,31 @@
+{
+  "task_id": "T-P0-001",
+  "line": "L3",
+  "owner": "xiaoka",
+  "objective": "n8n 导入 meli-listing-create.json 工作流，使用 Mock 数据跑通全流程（触发→拆单→派单→审批→回执→台账回写），输出执行日志截图",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/n8n/meli-workflow-run.log"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/n8n/meli-workflow-run.log",
+      "value": "SUCCESS"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-001.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/n8n/",
+  "redlines": [
+    "不进业务流水线",
+    "仅基建维护"
+  ],
+  "deadline": "2026-11-05T22:47:37.000183",
+  "priority": "P0",
+  "idempotency_key": "436164664ad458ed",
+  "economic_hypothesis": "n8n 工作流是自动化编排核心，跑通 = 后续所有业务派单零摩擦"
+}

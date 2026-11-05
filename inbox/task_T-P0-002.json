@@ -1,0 +1,31 @@
+{
+  "task_id": "T-P0-002",
+  "line": "L2",
+  "owner": "xiaoka",
+  "objective": "n8n 导入 amazon-fbm-listing-create.json 工作流，使用 Mock 数据跑通全流程，输出执行日志截图",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/n8n/amazon-workflow-run.log"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/n8n/amazon-workflow-run.log",
+      "value": "SUCCESS"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-002.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/n8n/",
+  "redlines": [
+    "不进业务流水线",
+    "仅基建维护"
+  ],
+  "deadline": "2026-11-05T22:47:37.000207",
+  "priority": "P0",
+  "idempotency_key": "16711fa7ea565065",
+  "economic_hypothesis": "Amazon FBM 流程与 MELI 同构，复用 n8n 模板 = 零边际开发成本"
+}

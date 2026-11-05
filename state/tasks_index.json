@@ -1,6 +1,6 @@
 {
- "source_head_at": "2026-11-05T12:40:33Z",
- "count": 198,
+ "source_head_at": "2026-11-05T12:54:30Z",
+ "count": 207,
  "tasks": [
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
@@ -357,6 +357,94 @@
   {
    "file": "inbox/task_T-L1-OZON-LISTING-1101.json",
    "task_id": "T-L1-OZON-LISTING-1101",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-001.json",
+   "task_id": "T-P0-001",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-002.json",
+   "task_id": "T-P0-002",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-003.json",
+   "task_id": "T-P0-003",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-004.json",
+   "task_id": "T-P0-004",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-005.json",
+   "task_id": "T-P0-005",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-006.json",
+   "task_id": "T-P0-006",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-008.json",
+   "task_id": "T-P0-008",
+   "from": "",
+   "to": "",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_T-P0-009.json",
+   "task_id": "T-P0-009",
    "from": "",
    "to": "",
    "status": "",
@@ -2047,6 +2135,17 @@
    "obsolete": false,
    "has_receipt": false,
    "ts": "2026-10-21T14:00:00+08:00"
+  },
+  {
+   "file": "processed/task_T-P0-007.json",
+   "task_id": "T-P0-007",
+   "from": "",
+   "to": "",
+   "status": "DONE",
+   "archived": true,
+   "obsolete": false,
+   "has_receipt": true,
+   "ts": ""
   },
   {
    "file": "processed/task_TAILSCALE-UP-AUTH_muse_20261024T153000.json",

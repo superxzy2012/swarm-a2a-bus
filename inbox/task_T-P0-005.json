@@ -1,0 +1,33 @@
+{
+  "task_id": "T-P0-005",
+  "line": "INFRA",
+  "owner": "queen",
+  "objective": "触发 Nancy 手动执行 1 次，验证进度快照生成、超期预警输出、台账回写字段齐全",
+  "acceptance": [
+    {
+      "type": "command",
+      "cmd": "python3 /home/agentuser/.a2a-bus/tools/nancy.py --once",
+      "expect_exit": 0
+    },
+    {
+      "type": "file_exists",
+      "path": "reports/nancy/latest.md"
+    },
+    {
+      "type": "contains",
+      "path": "reports/nancy/latest.md",
+      "value": "未闭环"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-005.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "reports/nancy/",
+  "redlines": [],
+  "deadline": "2026-11-05T22:47:37.000224",
+  "priority": "P0",
+  "idempotency_key": "f7c3028e89ea0dfb",
+  "economic_hypothesis": "Nancy 是进度正本，台账回写自动化 = QUEEN 不当记账员、日报自动生成"
+}

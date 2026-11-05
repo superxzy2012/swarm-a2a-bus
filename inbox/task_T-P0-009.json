@@ -1,0 +1,36 @@
+{
+  "task_id": "T-P0-009",
+  "line": "L2,L3",
+  "owner": "xiaoka",
+  "objective": "1688 开放平台 API 采集 100 SKU（MELI/Amazon 共用货源池），输出标准化字段：阶梯价/MOQ/一件代发支持/工厂资质/发货时效",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/analytics/1688/raw/sku_100.json"
+    },
+    {
+      "type": "command",
+      "cmd": "python3 -c \"import json; d=json.load(open('evidence/analytics/1688/raw/sku_100.json')); print(len(d))\"",
+      "expect_exit": 0
+    },
+    {
+      "type": "command",
+      "cmd": "python3 -c \"import json; d=json.load(open('evidence/analytics/1688/raw/sku_100.json')); assert all(k in d[0] for k in ('price_tiers','moq','dropship','factory_cert','lead_time'))\"",
+      "expect_exit": 0
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-009.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/analytics/1688/",
+  "redlines": [
+    "不跑选品逻辑",
+    "仅数据采集"
+  ],
+  "deadline": "2026-11-05T22:47:37.000248",
+  "priority": "P0",
+  "idempotency_key": "48bdd7a1e8859652",
+  "economic_hypothesis": "1688 API 是选品货源池，100 SKU 标准化 = CM1 试算有实数据、不靠猜"
+}

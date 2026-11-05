@@ -1,0 +1,75 @@
+{
+ "type": "receipt",
+ "receipt_id": "T-P0-007_jarvis",
+ "from": "jarvis",
+ "to": "QUEEN/BOSS",
+ "ts_utc": "2026-11-05T12:48:55Z",
+ "task_ref": "T-P0-007: 贾维斯 Foreman 验收清单入库 (MELI + Amazon)",
+ "artifacts": [
+  "swarm-templates/checklists/meli-listing.md",
+  "swarm-templates/checklists/amazon-fbm-listing.md"
+ ],
+ "checklists_verified": [
+  {
+   "name": "meli-listing.md",
+   "lines": 351,
+   "sections": [
+    "元数据",
+    "候选复活G1",
+    "葡语内容",
+    "图片",
+    "物流合规",
+    "CM1经济账",
+    "上架包G2",
+    "首单实测G3",
+    "证据汇总",
+    "签署栏"
+   ],
+   "basis": [
+    "QUEEN L3方案(ANC-L3-MELI-PLAN-20261031.md)",
+    "R1复验报告(L3_R1_REVERIFY_REPORT_20261031_xiaoli.md)",
+    "codex BRL CM1引擎(dc6679e2)",
+    "妙手9333通道验证(receipt_MERCADO-DUAL-1125_p29)",
+    "雷神+绿巨人合规清单(待交)"
+   ]
+  },
+  {
+   "name": "amazon-fbm-listing.md",
+   "lines": 334,
+   "sections": [
+    "元数据",
+    "文案合规",
+    "图片合规",
+    "物流合规",
+    "CM1经济账",
+    "广告报表",
+    "发货履约",
+    "证据汇总",
+    "签署栏"
+   ],
+   "basis": [
+    "M6 SOP(M6-LISTING-SOP-20261102_xiaodou.md §2)",
+    "M2B FBM细则(M2B-FBM-SPEC-20261031_xiaodou.md)",
+    "L2审计修正口径(reports/audit/L2-AUDIT_jarvis.md H1/H2/H3)"
+   ]
+  }
+ ],
+ "redlines_enforced": [
+  "不写业务代码、只查证据、缺一项退回",
+  "佣金 UNKNOWN ≠ 0%（Amazon 15% 敏感性双跑 / MELI 12-16% 按类目）",
+  "采购/头程/退货/关税/重量 UNKNOWN 不许上",
+  "Amazon: 永禁 CDP 直操卖家后台、永禁 FBA/SFP/预囤",
+  "MELI: 永禁 CDP 直操卖家后台（只走妙手 9333 + 买家前端）",
+  "即梦 AI 图禁当实拍主图；机翻内容须人工校对",
+  "MELI CM1>0 且 CM1%≥25%（G1闸门）；Amazon CM1>0 且 CM1%≥30%"
+ ],
+ "gaps_noted": [
+  "MELI: 雷神+绿巨人合规清单尚未交付（L4/L5 待收），G1 闸门该项 ⏳",
+  "MELI: 3 款候选竞品存活/现价/1688报价/实测重量均待 BOSS 登录闭环（REVIVE_PENDING）",
+  "Amazon: L2 审计 H3 指出 OTDR 90% 依赖 Buy Shipping 中国起运未核，验收时需实测佐证"
+ ],
+ "verdict": "PASS（两份清单已入库，结构完整、红线全覆盖、引用可溯）",
+ "readonly": true,
+ "cost_actual": 0,
+ "revenue_actual": 0
+}

@@ -1,0 +1,46 @@
+{
+  "task_id": "T-P0-003",
+  "line": "INFRA",
+  "owner": "xiaoka",
+  "objective": "OmniRoute 配置 6 级降级链：JEV -> OpenRouter付费 -> 火山方舟 -> Kilo -> OW Bridge -> OpenCode，验证路由日志显示按任务类型自动路由",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/omniroute/routing-test.log"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/omniroute/routing-test.log",
+      "value": "JEV"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/omniroute/routing-test.log",
+      "value": "OpenRouter"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/omniroute/routing-test.log",
+      "value": "volcano"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/omniroute/routing-test.log",
+      "value": "kilo"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-003.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/omniroute/",
+  "redlines": [
+    "不直连模型",
+    "全员统一网关"
+  ],
+  "deadline": "2026-11-05T22:47:37.000214",
+  "priority": "P0",
+  "idempotency_key": "4850891b67d5afb6",
+  "economic_hypothesis": "模型路由统一入口 = 成本可控、降级可观测、单点不死业务不停"
+}

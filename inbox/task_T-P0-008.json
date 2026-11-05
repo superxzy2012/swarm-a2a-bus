@@ -1,0 +1,40 @@
+{
+  "task_id": "T-P0-008",
+  "line": "L2,L3",
+  "owner": "xiaoka",
+  "objective": "妙手 ERP 完成 MELI 与 Amazon 店铺授权，API 拉单/推单/库存同步/广告数据跑通，后台可见数据",
+  "acceptance": [
+    {
+      "type": "file_exists",
+      "path": "evidence/miaoshou/meli-sync.log"
+    },
+    {
+      "type": "file_exists",
+      "path": "evidence/miaoshou/amazon-sync.log"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/miaoshou/meli-sync.log",
+      "value": "SUCCESS"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/miaoshou/amazon-sync.log",
+      "value": "SUCCESS"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-008.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/miaoshou/",
+  "redlines": [
+    "不进业务流水线",
+    "仅配置维护"
+  ],
+  "deadline": "2026-11-05T22:47:37.000242",
+  "priority": "P0",
+  "idempotency_key": "1966e0d5b9cf36bc",
+  "economic_hypothesis": "妙手 ERP 是运营数据层唯一源，双平台授权通 = 订单/库存/广告数据实时同步"
+}

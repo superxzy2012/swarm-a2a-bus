@@ -1,0 +1,41 @@
+{
+  "task_id": "T-P0-004",
+  "line": "INFRA",
+  "owner": "queen",
+  "objective": "验证 Mac M4 16G SSH 免密登录，codex/Claude Code/OpenCode 版本可用，并发 2+3+2 会话启动测试",
+  "acceptance": [
+    {
+      "type": "command",
+      "cmd": "ssh -o ConnectTimeout=10 macmini 'codex --version && claude --version && opencode --version'",
+      "expect_exit": 0
+    },
+    {
+      "type": "file_exists",
+      "path": "evidence/mac/ssh-test.log"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/mac/ssh-test.log",
+      "value": "codex"
+    },
+    {
+      "type": "contains",
+      "path": "evidence/mac/ssh-test.log",
+      "value": "claude"
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-004.json",
+      "expect_exit": 0
+    }
+  ],
+  "evidence_dir": "evidence/mac/",
+  "redlines": [
+    "不直接 SSH 进业务",
+    "全走 n8n 调度"
+  ],
+  "deadline": "2026-11-05T22:47:37.000219",
+  "priority": "P0",
+  "idempotency_key": "2a0d01029ab770d8",
+  "economic_hypothesis": "Mac M4 是首席工程师执行池，SSH 直连 + CLI 就绪 = 代码生成零等待"
+}
