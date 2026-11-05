@@ -2742,6 +2742,11 @@
    "source_blob": "4f08a24d707c3a55c78c1b64477fd49a140fbcc7",
    "transform": "copy"
   },
+  "outbox/receipt_T-P0-007b_jarvis.json": {
+   "public_blob": "285b7b8c12029d4e7a2d0a686acbc40cba3612f5",
+   "source_blob": "285b7b8c12029d4e7a2d0a686acbc40cba3612f5",
+   "transform": "copy"
+  },
   "outbox/receipt_T-P0-008.json": {
    "public_blob": "b31e8ae3297e577e5fb28457e75195264b04f445",
    "source_blob": "b31e8ae3297e577e5fb28457e75195264b04f445",
@@ -2923,5 +2928,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-05T16:40:33Z"
+ "generated_at": "2026-11-05T16:55:33Z"
 }

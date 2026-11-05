@@ -1,0 +1,31 @@
+{
+ "type": "receipt",
+ "receipt_id": "T-P0-007b_jarvis",
+ "from": "jarvis",
+ "to": "QUEEN/BOSS",
+ "ts_utc": "2026-11-05T16:54:29Z",
+ "task_ref": "T-P0-007 扩展：岗位合同表13岗+任务协议§六+Nancy5类异常 → foreman-acceptance.md",
+ "artifact": "swarm-templates/checklists/foreman-acceptance.md",
+ "sections_included": [
+  "元数据（含 idempotency_key/acceptance/deadline/priority）",
+  "岗位合同合规（R1-R5：Owner在册/工作目录隔离/审批门前置/派发链规范/红线条款入单）",
+  "任务协议§六执行核验（K1-K2幂等键、R1-R6回执、S1-S2槽位、H1-H2交接）",
+  "Nancy5类异常判定标准（未闭环/超期/待验收/未落地决策/未关闭风险——含触发条件/处置动作/验收时核查）",
+  "证据齐全汇总表、签署栏、版本记录"
+ ],
+ "basis": [
+  "docs/SWARM-DUTY-ROSTER.md（岗位合同表v1：13岗/审批门/派发规则/收工汇报/值班表）",
+  "docs/SWARM-TASK-PROTOCOL-20261031.md §六（幂等键/回执/并发槽位/交接继承）",
+  "reports/nancy/nancy_state.json（overdue/unverified/pending_writeback/decisions_open/risks_open 四大池）",
+  "swarm-templates/checklists/meli-listing.md、amazon-fbm-listing.md（已入库两线清单）"
+ ],
+ "gaps_noted": [
+  "ledger_approvals.csv 尚未建（审批门记录表），R3 审批门前置暂以任务单 approvals 字段代替",
+  "task_lint.py 尚未验证在所有节点生效（小卡出模板待交付）",
+  "Nancy 推进器告警升级链（@一次→两次无响应升级 QUEEN）尚未实测"
+ ],
+ "verdict": "PASS（结构完整、红线全覆盖、引用可溯、可作为全线通用 Foreman 验收模板）",
+ "readonly": true,
+ "cost_actual": 0,
+ "revenue_actual": 0
+}
