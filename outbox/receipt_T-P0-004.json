@@ -1,0 +1,53 @@
+{
+  "task_id": "T-P0-004",
+  "line": "INFRA",
+  "owner": "queen",
+  "status": "COMPLETED",
+  "started_at": "2026-11-06T01:24:42+08:00",
+  "completed_at": "2026-11-06T01:25:15+08:00",
+  "objective": "验证 Mac M4 16G SSH 免密登录，codex/Claude Code/OpenCode 版本可用，并发 2+3+2 会话启动测试",
+  "acceptance_results": [
+    {
+      "type": "command",
+      "cmd": "ssh -o ConnectTimeout=10 lucas@[REDACTED-IP] 'codex --version && claude --version && opencode --version'",
+      "expect_exit": 0,
+      "actual_exit": 0,
+      "passed": true
+    },
+    {
+      "type": "file_exists",
+      "path": "evidence/mac/ssh-test.log",
+      "passed": true
+    },
+    {
+      "type": "contains",
+      "path": "evidence/mac/ssh-test.log",
+      "value": "codex",
+      "passed": true
+    },
+    {
+      "type": "contains",
+      "path": "evidence/mac/ssh-test.log",
+      "value": "claude",
+      "passed": true
+    },
+    {
+      "type": "command",
+      "cmd": "ls -la /home/agentuser/.a2a-bus/outbox/receipt_T-P0-004.json",
+      "expect_exit": 0,
+      "passed": true
+    }
+  ],
+  "evidence": {
+    "ssh_test_log": "evidence/mac/ssh-test.log",
+    "versions": {
+      "codex": "0.160.1",
+      "claude_code": "2.1.318",
+      "opencode": "1.19.5"
+    },
+    "host": "LucasdeMac-mini-2.local",
+    "user": "lucas",
+    "ip": "[REDACTED-IP]"
+  },
+  "idempotency_key": "2a0d01029ab770d8"
+}
