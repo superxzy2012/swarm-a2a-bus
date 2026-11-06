@@ -682,6 +682,11 @@
    "source_blob": "771780c7027f4fe9f0b1fe6b315cd3edace1fa2e",
    "transform": "copy"
   },
+  "outbox/alert_diverge_20261106T150750Z_10_4_4_16.json": {
+   "public_blob": "28fe99f2aa2f22b1d27b8a4bc3071b503a4520d9",
+   "source_blob": "28fe99f2aa2f22b1d27b8a4bc3071b503a4520d9",
+   "transform": "copy"
+  },
   "outbox/diag_GH-MIRROR-STALL-20261023_xiaodou.json": {
    "public_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
    "source_blob": "0a490966f6671b8f4dea40d351b08b454602765e",
@@ -2933,5 +2938,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-06T15:05:35Z"
+ "generated_at": "2026-11-06T15:25:28Z"
 }
