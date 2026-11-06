@@ -1,0 +1,13 @@
+﻿{
+    "type":  "escalation",
+    "from":  "xiaodou",
+    "host":  "10_4_4_16",
+    "ts":  "2026-11-06T20:27:40Z",
+    "alert":  "SYNC-PULL-FAIL",
+    "severity":  "P0-ESCALATED",
+    "age_min":  40,
+    "occurrences":  7,
+    "first_ts":  "2026-11-06T19:47:40Z",
+    "detail":  "同一故障持续 40min 未自愈（已重试 2s/5s/10s + 隧道 + 镜像三源兜底）。按 Q1 口径自动升级，需人工决策。",
+    "last_error":  "gitea pull --rebase failed on all sources (mesh/tunnel/github-mirror), 6 attempts, 2s/5s/10s backoff"
+}
