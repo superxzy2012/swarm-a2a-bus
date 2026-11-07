@@ -1,7 +1,7 @@
 {
- "generated_at": "2026-11-07T10:34:30Z",
- "gitea_head_at": "2026-11-07T10:34:28Z",
- "gitea_sha": "cd48d9768a05c5e8e8d0e9a3597467ab5e2ce447",
+ "generated_at": "2026-11-07T10:45:29Z",
+ "gitea_head_at": "2026-11-07T10:40:31Z",
+ "gitea_sha": "8ef8cbd988cee31ab96ebfc2d6631bfe7f8b294f",
  "note": "事件驱动镜像：gitea_sha 与正本 tip 一致即健康，墙钟只用于检测推手存活",
  "tasks": 219,
  "tree_files": null
