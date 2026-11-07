@@ -10,11 +10,6 @@
    "source_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
    "transform": "copy"
   },
-  "inbox/task_ANC-P0-107_friday_20261107T093541Z.json": {
-   "public_blob": "531b47fb60725b501556214aa93ebc6f4924f4be",
-   "source_blob": "531b47fb60725b501556214aa93ebc6f4924f4be",
-   "transform": "copy"
-  },
   "inbox/task_ANC-P1-201-A_xiaoka_20261107T083541Z.json": {
    "public_blob": "0ac57e764851300c4456cc278de75bb7de7f7f83",
    "source_blob": "0ac57e764851300c4456cc278de75bb7de7f7f83",
@@ -1122,6 +1117,11 @@
    "source_blob": "429527115d9f79367b0fae1a832925c6e288d547",
    "transform": "redact"
   },
+  "outbox/receipt_ANC-P0-107_xiaomi.json": {
+   "public_blob": "ba224bbb1dde94384425ff407417533fd4f8d3a9",
+   "source_blob": "ba224bbb1dde94384425ff407417533fd4f8d3a9",
+   "transform": "copy"
+  },
   "outbox/receipt_ANC-R2-L6-CM1-3CURRENCY_20261031_xiaomi.json": {
    "public_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
    "source_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
@@ -1206,6 +1206,11 @@
    "public_blob": "120950b0f729917480a750162fbac76aadb7c771",
    "source_blob": "120950b0f729917480a750162fbac76aadb7c771",
    "transform": "copy"
+  },
+  "outbox/receipt_FAILOVER-QUEEN-20261021_xiaoqi.json": {
+   "public_blob": "82d0a97ba7a532674185d1b5514ed3b96f3332f3",
+   "source_blob": "a086b89d89116304d718d1b6d1e2bc3d4d264c80",
+   "transform": "redact"
   },
   "outbox/receipt_FIX-MIRROR-STALE-CRITERIA-20261031_QUEEN_friday.json": {
    "public_blob": "807edbc990056d37cc70b22d7b44cd71cc2fa75d",
@@ -2462,6 +2467,11 @@
    "source_blob": "ef203fd99e348c1b0942219d6ee7b4be019a62e0",
    "transform": "copy"
   },
+  "outbox/receipt_ORG-20261022-CEO-TRANSITION_xiaoqi.json": {
+   "public_blob": "557ab0e1e536272c40fedb544b84a0f719c4a836",
+   "source_blob": "557ab0e1e536272c40fedb544b84a0f719c4a836",
+   "transform": "copy"
+  },
   "outbox/receipt_OVERDUE-T-ANC-L6-D1_T-L6-010c_xiaomi-codex.json": {
    "public_blob": "04cfb034e7930cd43b5445a840069cffc3bdd71b",
    "source_blob": "04cfb034e7930cd43b5445a840069cffc3bdd71b",
@@ -3163,5 +3173,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T10:20:31Z"
+ "generated_at": "2026-11-07T10:34:28Z"
 }

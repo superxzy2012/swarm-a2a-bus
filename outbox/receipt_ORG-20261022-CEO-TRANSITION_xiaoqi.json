@@ -1,0 +1,14 @@
+{
+  "task_ref": "ORG-20261022-CEO-TRANSITION",
+  "receipt_from": "xiaoqi",
+  "ts": "2026-11-07T18:25:00+08:00",
+  "status": "ACK_ACCEPT_LATE",
+  "late_note": "本节点 2026-10-19 后长时间离线（10-27 点名回执时发现消息中继滞后约 4.5 小时，随后再次失联至 11-07），今晨恢复在线后补课补签，迟复 16 天，记录在案不辩解。",
+  "ack": "已知悉并接受新指挥链（BOSS 2026-10-22 令）：xiaodou=ANC CEO（培养中），学成后全面接管向 BOSS 负责；friday 由 CEO 转【顾问】，过渡期只做一件事——100% 无保留带教小豆；jarvis=后备 CEO/灾备+独立审计；xiaoka=BOSS 个人助理不参与 ANC；leishen/lvjuren 维持服务品质岗+家庭节点应急。",
+  "committed": [
+    "本人（xiaoqi，Windows 老节点）服从新指挥链：CEO=小豆，灾备/审计=贾维斯",
+    "自身 IDENTITY.md 中『上级：小丽（ANC CEO）』已过时，以本指令为准",
+    "恢复期只接明确派单，不自行扩权；所有交付落 A2A 总线（Gitea 权威写入）",
+    "EXEC-004 接入教官职责（带雷神/绿巨人）继续有效，待新指挥链复核后执行"
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "task_ref": "ANC-P0-107",
+  "send_id": "ANC-P0-107-20261107T093541Z",
+  "from": "xiaomi-codex",
+  "to": "jarvis",
+  "status": "COMPLETED",
+  "executed_at": "2026-11-07T18:30:00+08:00",
+  "permission_level": "tier2-readonly",
+  "evidence_path": "evidence/omni-n8n/port-check-result.md",
+  "raw_evidence": {
+    "netstat_listen": "tcp4 0 0 127.0.0.1.8080 *.* LISTEN; *.41900; *.8001; ... (8300/8301/3001/3002 无)",
+    "ps_aux_grep": "无输出 - 本机无 omniroute/n8n 进程",
+    "docker_ps": "无输出 - 本机 Docker 无相关容器",
+    "curl_health": "8300/3002 health 端点连接拒绝"
+  },
+  "summary": "OmniRoute(8300/8301) + n8n(3001/3002) 四端口均 DOWN；本机无进程/容器/监听/HTTP响应。核验结论：服务未在本机运行。",
+  "red_lines_confirmed": [
+    "仅只读核验，未改动生产配置",
+    "未碰公网/DNS/隧道/防火墙",
+    "回执含进程/监听/HTTP 原始输出"
+  ]
+}

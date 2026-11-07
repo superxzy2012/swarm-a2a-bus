@@ -1,5 +1,5 @@
 {
- "source_head_at": "2026-11-07T10:20:31Z",
+ "source_head_at": "2026-11-07T10:34:28Z",
  "count": 219,
  "tasks": [
   {
@@ -7,17 +7,6 @@
    "task_id": "ANC-P0-106",
    "from": "jarvis",
    "to": "xiaodou",
-   "status": "",
-   "archived": false,
-   "obsolete": false,
-   "has_receipt": false,
-   "ts": ""
-  },
-  {
-   "file": "inbox/task_ANC-P0-107_friday_20261107T093541Z.json",
-   "task_id": "ANC-P0-107",
-   "from": "jarvis",
-   "to": "friday",
    "status": "",
    "archived": false,
    "obsolete": false,
@@ -1232,6 +1221,17 @@
    "archived": true,
    "obsolete": false,
    "has_receipt": true,
+   "ts": ""
+  },
+  {
+   "file": "processed/task_ANC-P0-107_friday_20261107T093541Z.json",
+   "task_id": "ANC-P0-107",
+   "from": "jarvis",
+   "to": "friday",
+   "status": "DONE",
+   "archived": true,
+   "obsolete": false,
+   "has_receipt": false,
    "ts": ""
   },
   {
