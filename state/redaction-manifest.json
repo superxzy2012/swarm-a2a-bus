@@ -2937,6 +2937,11 @@
    "source_blob": "b367ebbf376995e6e795f600ab484f1f0b975c2f",
    "transform": "copy"
   },
+  "outbox/receipt_T-P0-006.json": {
+   "public_blob": "e1bf2b28e7c66137ce28236759a8998964bb52cf",
+   "source_blob": "9bd637754d967e8314de18d87f8613b56b7bb30c",
+   "transform": "redact"
+  },
   "outbox/receipt_T-P0-007_jarvis.json": {
    "public_blob": "4f08a24d707c3a55c78c1b64477fd49a140fbcc7",
    "source_blob": "4f08a24d707c3a55c78c1b64477fd49a140fbcc7",
@@ -3128,5 +3133,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T09:15:31Z"
+ "generated_at": "2026-11-07T17:27:04+08:00"
 }
