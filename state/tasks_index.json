@@ -1,12 +1,34 @@
 {
- "source_head_at": "2026-11-07T15:07:30Z",
- "count": 221,
+ "source_head_at": "2026-11-07T15:20:15Z",
+ "count": 223,
  "tasks": [
   {
    "file": "inbox/task_ANC-DUAL-CH-TEST-001_jarvis_20261107T1505Z.json",
    "task_id": "ANC-DUAL-CH-TEST-001",
    "from": "jarvis",
    "to": "all-nodes",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-DUAL-CH-TEST-002_jarvis_20261107T1515Z.json",
+   "task_id": "ANC-DUAL-CH-TEST-002",
+   "from": "jarvis",
+   "to": "all-nodes",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-GH-DUAL-001_xiaoka.json",
+   "task_id": "ANC-GH-DUAL-001",
+   "from": "jarvis",
+   "to": "xiaoka",
    "status": "",
    "archived": false,
    "obsolete": false,

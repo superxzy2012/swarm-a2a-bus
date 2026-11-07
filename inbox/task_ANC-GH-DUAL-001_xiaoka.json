@@ -1,0 +1,30 @@
+{
+  "task_id": "ANC-GH-DUAL-001",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "issued_at": "2026-11-07T15:12:39Z",
+  "deadline": "2026-11-07T16:30:00Z",
+  "priority": "P1",
+  "subject": "GitHub private 仓 anc-com/a2a-bus 建仓 + 挂 write deploy key（双通道 A2A 备通道）",
+  "context": "BOSS 令 GitHub+Gitea 双通道派单取单。Gitea 主通道 jarvis 已闭环(回读 SHA 一致)。GitHub 网络面已通(ssh.github.com:443)，jarvis 已生成专用 deploy key，缺建仓与 key 注册，BOSS 指定归小卡执行。",
+  "actions": [
+    "1. GitHub org anc-com 下建 private 仓 a2a-bus（空仓，不勾 README/gitignore/license）",
+    "2. 仓 Settings->Deploy keys->Add，Title=jarvis-nas-a2a-bus，勾 Allow write，粘贴下方公钥",
+    "3. 若 anc-com org 不存在/无权限，立即 BLOCKED 回报具体缺失，勿自行换 owner",
+    "4. 完成回 outbox/receipt_ANC-GH-DUAL-001_xiaoka.json，status=DONE 附仓 SSH clone 地址"
+  ],
+  "deploy_key_public": "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIPb9ZSXI065+Q3cTd3vKY1gFeiJdam2vTr6/ctPbUeAl jarvis-nas-a2a-bus",
+  "key_fingerprint": "SHA256:BdWGSOD/Jes8PWDB+FiqPBfkBnxfsvBl32YZqpuECFA",
+  "acceptance": [
+    "仓存在且 private",
+    "deploy key 已挂且 write",
+    "jarvis 侧 git ls-remote github 不再 Permission denied"
+  ],
+  "redlines": [
+    "公钥可公开，私钥不出 jarvis 容器",
+    "PAT/密码禁发群",
+    "不动 Gitea 仓与依赖容器"
+  ],
+  "note_channel": "2-AI 热通道当前权限锁死(d---------), 本单走 Gitea git 中继, 回执同样走 git outbox"
+}

@@ -11,6 +11,16 @@
    "source_blob": "2f85928f4194a566538a8c38cc6fc75d8461e576",
    "transform": "redact+templatize"
   },
+  "inbox/task_ANC-DUAL-CH-TEST-002_jarvis_20261107T1515Z.json": {
+   "public_blob": "a5f77e05f080d92fbaf4a6073e11fd4531f5a4a3",
+   "source_blob": "a5f77e05f080d92fbaf4a6073e11fd4531f5a4a3",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-GH-DUAL-001_xiaoka.json": {
+   "public_blob": "3c3a49a0153cc05c21a82a7a41afd79562541be0",
+   "source_blob": "3c3a49a0153cc05c21a82a7a41afd79562541be0",
+   "transform": "copy"
+  },
   "inbox/task_ANC-P0-106_xiaodou_20261107T093541Z.json": {
    "public_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
    "source_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
@@ -3184,5 +3194,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T15:07:30Z"
+ "generated_at": "2026-11-07T15:20:15Z"
 }
