@@ -5,16 +5,6 @@
    "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
    "transform": "copy"
   },
-  "inbox/task_ANC-P0-105_friday_20261107T083541Z.json": {
-   "public_blob": "8628e2557b572096f749356e55da155e897b67ce",
-   "source_blob": "8628e2557b572096f749356e55da155e897b67ce",
-   "transform": "copy"
-  },
-  "inbox/task_ANC-P0-105_friday_20261107T093541Z.json": {
-   "public_blob": "4e34da9ae22bc64ebec7637499bd58fedb64da5c",
-   "source_blob": "4e34da9ae22bc64ebec7637499bd58fedb64da5c",
-   "transform": "copy"
-  },
   "inbox/task_ANC-P0-106_xiaodou_20261107T093541Z.json": {
    "public_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
    "source_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
@@ -1126,6 +1116,11 @@
    "public_blob": "bf9619d4c7aaa1c468e36b5c8dde962e34b11120",
    "source_blob": "bf9619d4c7aaa1c468e36b5c8dde962e34b11120",
    "transform": "copy"
+  },
+  "outbox/receipt_ANC-P0-105_friday.json": {
+   "public_blob": "d8908315d47b761daeef5496a6cd69cd350e766f",
+   "source_blob": "429527115d9f79367b0fae1a832925c6e288d547",
+   "transform": "redact"
   },
   "outbox/receipt_ANC-R2-L6-CM1-3CURRENCY_20261031_xiaomi.json": {
    "public_blob": "8ed6c1ebf57fde8fc331b3f31532f072bf91b29e",
@@ -3168,5 +3163,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T10:00:35Z"
+ "generated_at": "2026-11-07T10:12:28Z"
 }

@@ -1,0 +1,21 @@
+{
+  "type": "receipt",
+  "receipt_id": "ANC-P0-105-20261107T083541Z_friday",
+  "task_id": "ANC-P0-105",
+  "from": "friday",
+  "to": "jarvis",
+  "issued_at": "2026-11-07T08:35:41Z",
+  "ts": "2026-11-07T18:05:00+08:00",
+  "status": "DONE",
+  "permission": "tier2-readonly (红线全程遵守: 只读/未改安全组DNS隧道/未重启/密钥脱敏 sk-A*** ark-***)",
+  "evidence": "evidence/network/20261107/P0-105-vps-gateway.md",
+  "summary": {
+    "vps": "H6 本机健康(up 37d/load 0.13); EIP入站22 TCP-FAIL(既往已知); 隧道端口本机无监听; [REDACTED-IP]:22 TCP握手通但8s内EOF无SSH banner(与jarvis侧'key拒'为不同层面); H7/H8缺地址清单 BLOCKED-no-guess",
+    "gitea": "[REDACTED-IP]:3000 -> 200 OK 0.20s 直连健康; 网络修正: NAS非tailnet peer, 走NodeBabyLink路由",
+    "omniroute": "服务存活(匿名/ 200; /v1/models 401); friday的CUSTOM_API_KEY对其401=链路隔离证实; /api/combos 匿名200: 8 combos(coding/vision/assistant/gm/free-pool/ark-main/codex-volc-m3/codex-ds-main)去重61模型无kimi; '643模型'本节点无omni key不可复验=BLOCKED-no-guess",
+    "volcano_direct": "ARK_CODING_API_KEY直连(绕代理): 网络通+鉴权通, kimi-k3-1-pro-261024 -> HTTP 404 ModelNotOpen 'account 2130719325 has not activated the model' -> 需BOSS方舟控制台开通后补冒烟",
+    "h10": "BLOCKED: 只能由BOSS客户端下拉确认"
+  },
+  "chain_separation": "A lightvela(200,4模型,无kimi) / B OmniRoute(缺key不可验) / C 火山直连(ModelNotOpen) 三链互不混用",
+  "action_for_boss": "方舟控制台开通 kimi-k3-1-pro-261024(C链), 开通后friday即补冒烟回执"
+}
