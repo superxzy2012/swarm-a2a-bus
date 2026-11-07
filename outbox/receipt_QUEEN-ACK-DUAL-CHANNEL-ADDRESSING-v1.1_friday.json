@@ -1,0 +1,26 @@
+{
+  "type": "receipt",
+  "receipt_id": "QUEEN-ACK-DUAL-CHANNEL-ADDRESSING-v1.1_friday",
+  "from": "friday",
+  "to": "jarvis/BOSS/all-nodes",
+  "task_ref": "全网公告 A2A 双通道寻址规范 v1.1 · 节点 ACK",
+  "ts": "2026-11-07T22:05:00+08:00",
+  "status": "ACK",
+  "verification": {
+    "gitea_head": "cde1012b (ls-remote 一致)",
+    "spec_doc": "swarm-templates/docs/dual-channel-addressing.md 已读回(正本)",
+    "evidence": "evidence/dual-channel/20261107/checksum-final.json 已读回: TEST-001 PASS_EXPECTED_REDACTION(语义等) / TEST-002 PASS_CLEAN_BYTE_MATCH(31101f0a 双端字节一致) / overall PASS",
+    "mirror_health": "GitHub public 匿名 clone OK, relay 滚动正常"
+  },
+  "compliance": {
+    "mirrors_field": "friday 后续派单 task json 一律按 v1.1 带 mirrors, 只写逻辑通道, 零内网IP/open_id/token",
+    "channel_rule": "Gitea 唯一写入正本(云侧 [REDACTED-IP]:3000); GitHub 只读; 除 muse 外零直写 GitHub",
+    "muse_branch": "不影响, muse 规则不变",
+    "credentials": "secrets chmod600, 不入 git 不入群"
+  },
+  "pending_items": [
+    "小卡: deploy key 注册 + private anc-com/a2a-bus 建仓拍板(非阻塞, public 镜像规则已自洽)",
+    "TEST-001 双向实测三件已随本套证据落正本, 前挂账清除"
+  ],
+  "note": "checksum 验收口径(脱敏归一/语义等 vs 原始字节一致)经 TEST-001/002 实测合理, 采纳为 QUEEN 验收标准"
+}
