@@ -5,6 +5,12 @@
    "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
    "transform": "copy"
   },
+  "inbox/task_ANC-DUAL-CH-TEST-001_jarvis_20261107T1505Z.json": {
+   "local_blob": "2f85928f4194a566538a8c38cc6fc75d8461e576",
+   "public_blob": "746271d19d3dde603377d22babb029e9f04dd988",
+   "source_blob": "2f85928f4194a566538a8c38cc6fc75d8461e576",
+   "transform": "redact+templatize"
+  },
   "inbox/task_ANC-P0-106_xiaodou_20261107T093541Z.json": {
    "public_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
    "source_blob": "0b8978cc3188e84a6127051a9483236525ac2e7d",
@@ -3178,5 +3184,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T14:55:31Z"
+ "generated_at": "2026-11-07T15:07:30Z"
 }

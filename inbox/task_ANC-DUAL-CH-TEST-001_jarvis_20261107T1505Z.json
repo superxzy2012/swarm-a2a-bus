@@ -1,0 +1,36 @@
+{
+  "task_id": "ANC-DUAL-CH-TEST-001",
+  "send_id": "ANC-DUAL-CH-TEST-001-20261107T1505Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "all-nodes",
+  "issued_at": "2026-11-07T15:05:00Z",
+  "priority": "P1",
+  "subject": "双通道寻址双向 checksum 验证单（Gitea 正本 + GitHub 镜像）",
+  "idempotency": {
+    "key": "ANC-DUAL-CH-TEST-001-20261107T1505Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  },
+  "mirrors": [
+    {
+      "channel": "gitea",
+      "url": "http://[REDACTED-IP]:3000/anc/a2a-bus.git",
+      "branch": "main",
+      "role": "write-authority",
+      "path": "inbox/task_ANC-DUAL-CH-TEST-001_jarvis_20261107T1505Z.json"
+    },
+    {
+      "channel": "github",
+      "url": "https://github.com/superxzy2012/swarm-a2a-bus.git",
+      "branch": "main",
+      "role": "read-mirror",
+      "path": "inbox/task_ANC-DUAL-CH-TEST-001_jarvis_20261107T1505Z.json"
+    }
+  ],
+  "objective": "验证 Gitea 写入后 GitHub 镜像可见且 sha256 一致；验证回执双向可见",
+  "acceptance": [
+    {"type": "checksum", "desc": "Gitea 与 GitHub 同 path 文件 sha256 一致"},
+    {"type": "file_exists", "path": "evidence/dual-channel/20261107/checksum-*.json"}
+  ],
+  "redlines": ["只读镜像不直写 GitHub", "凭据脱敏", "测试态不污染业务台账"]
+}
