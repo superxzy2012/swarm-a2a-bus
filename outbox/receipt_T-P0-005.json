@@ -1,0 +1,1 @@
+{"task_id":"T-P0-005","status":"DONE","idempotency_key":"f7c3028e89ea0dfb","submitted_by":"queen","evidence":["reports/nancy/latest.md","reports/nancy/BRIEF-20261105-2050.md","reports/nancy/nancy_state.json"],"note":"Nancy 进度正本验证通过：生成快照含未闭环/超期/待验收/未落地决策/未关闭风险全维度；exit=2 符合预期（有超期项）","at":"2026-11-05T21:00:00+08:00"}

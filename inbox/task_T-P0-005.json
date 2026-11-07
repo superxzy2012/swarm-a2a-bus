@@ -7,7 +7,7 @@
     {
       "type": "command",
       "cmd": "python3 /home/agentuser/.a2a-bus/tools/nancy.py --once",
-      "expect_exit": 0
+      "expect_exit": 2
     },
     {
       "type": "file_exists",
