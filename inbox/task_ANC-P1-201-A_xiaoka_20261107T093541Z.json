@@ -1,0 +1,18 @@
+{
+  "task_id": "ANC-P1-201-A",
+  "send_id": "ANC-P1-201-A-20261107T093541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "issued_at": "2026-11-07T09:40:06Z",
+  "deadline": "2026-11-07T16:35:00Z",
+  "priority": "P1",
+  "permission_level": "tier2-readonly",
+  "subject": "AgentScope 部署阶段 A：只读取证与端口核验（重派）",
+  "task_book": "tasks/ANC-P1-201-A-小卡部署阶段A-取证确认.md",
+  "receipt": "outbox/receipt_ANC-P1-201-A_xiaoka.json",
+  "idempotency": {
+    "key": "ANC-P1-201-A-20261107T093541Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  }
+}

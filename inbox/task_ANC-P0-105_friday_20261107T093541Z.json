@@ -1,0 +1,18 @@
+{
+  "task_id": "ANC-P0-105",
+  "send_id": "ANC-P0-105-20261107T093541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "friday",
+  "issued_at": "2026-11-07T09:40:06Z",
+  "deadline": "2026-11-07T16:35:00Z",
+  "priority": "P0",
+  "permission_level": "tier2-readonly",
+  "subject": "VPS、网关与模型链路只读取证（重派）",
+  "task_book": "tasks/ANC-P0-105-friday-VPS与网关只读取证.md",
+  "receipt": "outbox/receipt_ANC-P0-105_friday.json",
+  "idempotency": {
+    "key": "ANC-P0-105-20261107T093541Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  }
+}

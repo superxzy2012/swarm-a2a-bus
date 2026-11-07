@@ -1,0 +1,18 @@
+{
+  "task_id": "ANC-P2-300-L3",
+  "send_id": "ANC-P2-300-L3-20261107T093541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "issued_at": "2026-11-07T09:40:06Z",
+  "deadline": "2026-11-08T16:35:00Z",
+  "priority": "P2",
+  "permission_level": "tier2-readonly",
+  "subject": "投研模板 + 合规四不声明（重派）",
+  "task_book": "tasks/ANC-P2-300-L3-投研生产化任务书.md",
+  "receipt": "outbox/receipt_ANC-P2-300-L3_xiaodou.json",
+  "idempotency": {
+    "key": "ANC-P2-300-L3-20261107T093541Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  }
+}

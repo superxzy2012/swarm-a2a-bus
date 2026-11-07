@@ -1,0 +1,18 @@
+{
+  "task_id": "ANC-P0-106",
+  "send_id": "ANC-P0-106-20261107T093541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "issued_at": "2026-11-07T09:40:06Z",
+  "deadline": "2026-11-08T16:35:00Z",
+  "priority": "P0",
+  "permission_level": "tier2-readonly",
+  "subject": "四 SOP 最小字段集 + registry schema v1",
+  "task_book": "tasks/ANC-P0-106-xiaodou-SOP-registry-schema.md",
+  "receipt": "outbox/receipt_ANC-P0-106_xiaodou.json",
+  "idempotency": {
+    "key": "ANC-P0-106-20261107T093541Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  }
+}
