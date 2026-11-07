@@ -1,0 +1,43 @@
+{
+ "task_id": "ANC-P0-107",
+ "send_id": "ANC-P0-107-xiaomi-2026-11-07T09-55-10Z",
+ "type": "task",
+ "from": "jarvis",
+ "to": "xiaomi-codex",
+ "issued_at": "2026-11-07T09:55:10Z",
+ "deadline": "2026-11-07T23:59:00+08:00",
+ "priority": "P0",
+ "permission_level": "tier2-readonly",
+ "subject": "OmniRoute/n8n 端口与存活只读核验",
+ "task_book": "tasks/ANC-P0-107-xiaomi-omni-n8n-port-check.md",
+ "idempotency": {
+  "key": "ANC-P0-107-xiaomi-2026-11-07T09-55-10Z",
+  "duplicate_action": "ack_existing_receipt_no_rerun"
+ },
+ "objective": "核验 OmniRoute(8300/8301) 与 n8n(3001/3002) 端口监听与存活，确认路由可用",
+ "acceptance": [
+  {
+   "type": "command",
+   "cmd": "ss -tlnp | grep -E '8300|8301|3001|3002'",
+   "expect_exit": 0
+  },
+  {
+   "type": "command",
+   "cmd": "curl -s -o /dev/null -w '%{http_code}' http://127.0.0.1:8300/health",
+   "expect": "200"
+  },
+  {
+   "type": "file_exists",
+   "path": "evidence/omni-n8n/port-check-result.md"
+  },
+  {
+   "type": "file_exists",
+   "path": "outbox/receipt_ANC-P0-107_xiaomi.json"
+  }
+ ],
+ "redlines": [
+  "只读不改动",
+  "不碰生产配置",
+  "回执含进程/监听/HTTP 原文"
+ ]
+}
