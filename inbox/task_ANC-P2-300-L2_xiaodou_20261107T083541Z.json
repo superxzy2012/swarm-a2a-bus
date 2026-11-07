@@ -1,0 +1,17 @@
+{
+  "task_id": "ANC-P2-300-L2",
+  "send_id": "ANC-P2-300-L2-20261107T083541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "cc": ["winpc", "octop:小安"],
+  "issued_at": "2026-11-07T08:35:41Z",
+  "deadline": "2026-11-09T16:35:41Z",
+  "priority": "P1",
+  "permission_level": "internal-draft-only",
+  "subject": "L2 品质服务：验货服务四件套、成本模型与脱敏模拟订单",
+  "task_book": "tasks/ANC-P2-300-L2-品质服务生产化任务书.md",
+  "receipt": "outbox/receipt_ANC-P2-300-L2_xiaodou.json",
+  "idempotency": {"key": "ANC-P2-300-L2-20261107T083541Z", "duplicate_action": "ack_existing_receipt_no_rerun"},
+  "redlines": ["真实客户/工厂数据未授权不入执行体", "执行人不得自验", "不对外发送/报价/上线网站", "数据出境需合规复核"]
+}

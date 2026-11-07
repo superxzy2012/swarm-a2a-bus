@@ -1,0 +1,17 @@
+{
+  "task_id": "ANC-P2-300-L1",
+  "send_id": "ANC-P2-300-L1-20261107T083541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "cc": ["xiaoli2", "octop"],
+  "issued_at": "2026-11-07T08:35:41Z",
+  "deadline": "2026-11-08T16:35:41Z",
+  "priority": "P1",
+  "permission_level": "internal-draft-only",
+  "subject": "L1 Ozon 生产化：SOP、合规清单、单位经济模型与 listing 草稿准备",
+  "task_book": "tasks/ANC-P2-300-L1-Ozon生产化任务书.md",
+  "receipt": "outbox/receipt_ANC-P2-300-L1_xiaodou.json",
+  "idempotency": {"key": "ANC-P2-300-L1-20261107T083541Z", "duplicate_action": "ack_existing_receipt_no_rerun"},
+  "redlines": ["不上架/不改价/不下架", "五维零共享", "未知金额写 UNKNOWN", "执行者不得自验"]
+}

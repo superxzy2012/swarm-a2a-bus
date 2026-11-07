@@ -1,0 +1,25 @@
+{
+  "task_id": "ANC-P1-201-A",
+  "send_id": "ANC-P1-201-A-20261107T083541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "issued_at": "2026-11-07T08:35:41Z",
+  "deadline": "2026-11-07T16:35:41Z",
+  "priority": "P1",
+  "permission_level": "tier2-readonly",
+  "subject": "AgentScope 生产部署阶段 A：只读取证与端口核验",
+  "task_book": "tasks/ANC-P1-201-A-小卡部署阶段A-取证确认.md",
+  "receipt": "outbox/receipt_ANC-P1-201-A_xiaoka.json",
+  "idempotency": {
+    "key": "ANC-P1-201-A-20261107T083541Z",
+    "duplicate_action": "ack_existing_receipt_no_rerun"
+  },
+  "redlines": [
+    "本阶段只读，禁止启动/停止/删除任何容器或卷",
+    "禁止公网/DNS/隧道/新端口变更",
+    "禁止改动 lanproxy、gwforward、3001/3002",
+    "禁止输出明文密钥",
+    "不得把 jarvis 预取证当作执行方自验，必须独立复跑命令并留原始输出"
+  ]
+}

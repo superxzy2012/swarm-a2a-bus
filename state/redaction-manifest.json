@@ -5,6 +5,31 @@
    "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
    "transform": "copy"
   },
+  "inbox/task_ANC-P0-105_friday_20261107T083541Z.json": {
+   "public_blob": "8628e2557b572096f749356e55da155e897b67ce",
+   "source_blob": "8628e2557b572096f749356e55da155e897b67ce",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-P1-201-A_xiaoka_20261107T083541Z.json": {
+   "public_blob": "0ac57e764851300c4456cc278de75bb7de7f7f83",
+   "source_blob": "0ac57e764851300c4456cc278de75bb7de7f7f83",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-P2-300-L1_xiaodou_20261107T083541Z.json": {
+   "public_blob": "4c7f97fc3f99aeee295ac91ccb16bc5b9842f899",
+   "source_blob": "4c7f97fc3f99aeee295ac91ccb16bc5b9842f899",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-P2-300-L2_xiaodou_20261107T083541Z.json": {
+   "public_blob": "24c88cceb56af1260477c89a81b3af243bc5dd18",
+   "source_blob": "24c88cceb56af1260477c89a81b3af243bc5dd18",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-P2-300-L3_xiaodou_20261107T083541Z.json": {
+   "public_blob": "4c919cf67b5dda237df80afc5663b325f0070909",
+   "source_blob": "4c919cf67b5dda237df80afc5663b325f0070909",
+   "transform": "copy"
+  },
   "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json": {
    "local_blob": "6563fa9d89d3533bfd1aa7482dfc5ab4717aac7d",
    "public_blob": "531b9330f9db3f11a608cf15a76babcd51ae37be",
@@ -3103,5 +3128,5 @@
    "transform": "copy"
   }
  },
- "generated_at": "2026-11-07T08:40:31Z"
+ "generated_at": "2026-11-07T08:50:31Z"
 }

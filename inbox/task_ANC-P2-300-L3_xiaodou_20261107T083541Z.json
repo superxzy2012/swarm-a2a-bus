@@ -1,0 +1,17 @@
+{
+  "task_id": "ANC-P2-300-L3",
+  "send_id": "ANC-P2-300-L3-20261107T083541Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaodou",
+  "cc": ["octop:老钱", "octop:小安"],
+  "issued_at": "2026-11-07T08:35:41Z",
+  "deadline": "2026-11-08T16:35:41Z",
+  "priority": "P2",
+  "permission_level": "internal-research-only",
+  "subject": "L3 投研模板与合规四不声明（不构成投资建议）",
+  "task_book": "tasks/ANC-P2-300-L3-投研生产化任务书.md",
+  "receipt": "outbox/receipt_ANC-P2-300-L3_xiaodou.json",
+  "idempotency": {"key": "ANC-P2-300-L3-20261107T083541Z", "duplicate_action": "ack_existing_receipt_no_rerun"},
+  "redlines": ["不给具体买卖标的/仓位/收益承诺", "不自动交易", "引用可追溯100%", "最终决策归BOSS"]
+}

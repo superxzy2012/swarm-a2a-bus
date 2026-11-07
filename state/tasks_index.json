@@ -1,7 +1,62 @@
 {
- "source_head_at": "2026-11-07T08:40:31Z",
- "count": 207,
+ "source_head_at": "2026-11-07T08:50:31Z",
+ "count": 212,
  "tasks": [
+  {
+   "file": "inbox/task_ANC-P0-105_friday_20261107T083541Z.json",
+   "task_id": "ANC-P0-105",
+   "from": "jarvis",
+   "to": "friday",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-P1-201-A_xiaoka_20261107T083541Z.json",
+   "task_id": "ANC-P1-201-A",
+   "from": "jarvis",
+   "to": "xiaoka",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-P2-300-L1_xiaodou_20261107T083541Z.json",
+   "task_id": "ANC-P2-300-L1",
+   "from": "jarvis",
+   "to": "xiaodou",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-P2-300-L2_xiaodou_20261107T083541Z.json",
+   "task_id": "ANC-P2-300-L2",
+   "from": "jarvis",
+   "to": "xiaodou",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
+  {
+   "file": "inbox/task_ANC-P2-300-L3_xiaodou_20261107T083541Z.json",
+   "task_id": "ANC-P2-300-L3",
+   "from": "jarvis",
+   "to": "xiaodou",
+   "status": "",
+   "archived": false,
+   "obsolete": false,
+   "has_receipt": false,
+   "ts": ""
+  },
   {
    "file": "inbox/task_EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305.json",
    "task_id": "EXEC-XIAODOU-GITEA-ONBOARD_xiaoka_20261020T1305",
