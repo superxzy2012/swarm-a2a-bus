@@ -1,0 +1,218 @@
+{
+  "task": "A股纸面账户 + AkShare 回测冒烟",
+  "timestamp": "2026-11-12T07:05:04.480437",
+  "mode": "PAPER_ONLY",
+  "zero_real_funds": true,
+  "symbol": "000001",
+  "data_source": "AkShare stock_zh_a_hist (qfq)",
+  "strategy": "SMA_CROSS (5/20)",
+  "period": "2024-01-01 to 2024-12-31",
+  "result": {
+    "initial_cash": 100000,
+    "final_equity": 107961.19,
+    "total_return_pct": 7.96,
+    "sharpe_ratio": 0.4335,
+    "max_drawdown_pct": -17.41,
+    "win_rate": 1.0,
+    "total_trades": 22,
+    "equity_curve": [
+      {
+        "date": "2024-12-18",
+        "equity": 107483.29
+      },
+      {
+        "date": "2024-12-19",
+        "equity": 106871.29
+      },
+      {
+        "date": "2024-12-20",
+        "equity": 107177.29
+      },
+      {
+        "date": "2024-12-23",
+        "equity": 108299.29
+      },
+      {
+        "date": "2024-12-24",
+        "equity": 109625.29
+      },
+      {
+        "date": "2024-12-25",
+        "equity": 110237.29
+      },
+      {
+        "date": "2024-12-26",
+        "equity": 109625.29
+      },
+      {
+        "date": "2024-12-27",
+        "equity": 109319.29
+      },
+      {
+        "date": "2024-12-30",
+        "equity": 110543.29
+      },
+      {
+        "date": "2024-12-31",
+        "equity": 107993.29
+      }
+    ],
+    "trades": [
+      {
+        "date": "2024-01-30",
+        "action": "BUY",
+        "price": 7.33,
+        "shares": 13600,
+        "cost": 99717.91
+      },
+      {
+        "date": "2024-03-15",
+        "action": "SELL",
+        "price": 8.43,
+        "shares": 13600,
+        "revenue": 114613.61
+      },
+      {
+        "date": "2024-03-22",
+        "action": "BUY",
+        "price": 8.19,
+        "shares": 14000,
+        "cost": 114694.4
+      },
+      {
+        "date": "2024-03-26",
+        "action": "SELL",
+        "price": 8.43,
+        "shares": 14000,
+        "revenue": 117984.59
+      },
+      {
+        "date": "2024-03-27",
+        "action": "BUY",
+        "price": 8.36,
+        "shares": 14100,
+        "cost": 117911.36
+      },
+      {
+        "date": "2024-04-11",
+        "action": "SELL",
+        "price": 8.08,
+        "shares": 14100,
+        "revenue": 113893.82
+      },
+      {
+        "date": "2024-04-22",
+        "action": "BUY",
+        "price": 8.33,
+        "shares": 13700,
+        "cost": 114155.24
+      },
+      {
+        "date": "2024-06-05",
+        "action": "SELL",
+        "price": 8.7,
+        "shares": 13700,
+        "revenue": 119154.24
+      },
+      {
+        "date": "2024-07-02",
+        "action": "BUY",
+        "price": 8.95,
+        "shares": 13300,
+        "cost": 119070.71
+      },
+      {
+        "date": "2024-07-10",
+        "action": "SELL",
+        "price": 8.69,
+        "shares": 13300,
+        "revenue": 115542.33
+      },
+      {
+        "date": "2024-07-16",
+        "action": "BUY",
+        "price": 8.85,
+        "shares": 13000,
+        "cost": 115084.52
+      },
+      {
+        "date": "2024-07-26",
+        "action": "SELL",
+        "price": 8.58,
+        "shares": 13000,
+        "revenue": 111506.54
+      },
+      {
+        "date": "2024-08-21",
+        "action": "BUY",
+        "price": 8.9,
+        "shares": 12500,
+        "cost": 111283.38
+      },
+      {
+        "date": "2024-09-04",
+        "action": "SELL",
+        "price": 8.57,
+        "shares": 12500,
+        "revenue": 107092.86
+      },
+      {
+        "date": "2024-09-26",
+        "action": "BUY",
+        "price": 9.7,
+        "shares": 11100,
+        "cost": 107702.3
+      },
+      {
+        "date": "2024-10-30",
+        "action": "SELL",
+        "price": 10.11,
+        "shares": 11100,
+        "revenue": 112187.33
+      },
+      {
+        "date": "2024-11-14",
+        "action": "BUY",
+        "price": 10.33,
+        "shares": 10800,
+        "cost": 111597.47
+      },
+      {
+        "date": "2024-11-15",
+        "action": "SELL",
+        "price": 10.23,
+        "shares": 10800,
+        "revenue": 110450.85
+      },
+      {
+        "date": "2024-11-21",
+        "action": "BUY",
+        "price": 10.38,
+        "shares": 10700,
+        "cost": 111099.32
+      },
+      {
+        "date": "2024-11-26",
+        "action": "SELL",
+        "price": 10.06,
+        "shares": 10700,
+        "revenue": 107609.71
+      },
+      {
+        "date": "2024-12-09",
+        "action": "BUY",
+        "price": 10.46,
+        "shares": 10200,
+        "cost": 106724.01
+      },
+      {
+        "date": "2024-12-31",
+        "action": "SELL",
+        "price": 10.49,
+        "shares": 10200,
+        "revenue": 106965.9
+      }
+    ]
+  },
+  "status": "SUCCESS"
+}

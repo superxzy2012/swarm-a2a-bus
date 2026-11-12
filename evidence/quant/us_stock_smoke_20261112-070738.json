@@ -1,0 +1,120 @@
+{
+  "task": "美股纸面账户 + 实时行情冒烟",
+  "timestamp": "2026-11-12T07:07:38.192138",
+  "mode": "PAPER_ONLY",
+  "zero_real_funds": true,
+  "symbol": "AAPL",
+  "data_source": "yfinance (Yahoo Finance)",
+  "strategy": "SMA_CROSS (20/50)",
+  "period": "2025-11-12 to 2026-11-12",
+  "result": {
+    "initial_cash": 100000.0,
+    "final_equity": 114697.79,
+    "total_return_pct": 14.7,
+    "sharpe_ratio": 0.8831,
+    "max_drawdown_pct": -12.7,
+    "win_rate": 0.5,
+    "total_trades": 8,
+    "equity_curve": [
+      {
+        "date": "2026-10-29",
+        "equity": 112533.95
+      },
+      {
+        "date": "2026-10-30",
+        "equity": 111155.79
+      },
+      {
+        "date": "2026-11-02",
+        "equity": 109123.97
+      },
+      {
+        "date": "2026-11-03",
+        "equity": 107056.73
+      },
+      {
+        "date": "2026-11-04",
+        "equity": 112727.15
+      },
+      {
+        "date": "2026-11-05",
+        "equity": 111007.67
+      },
+      {
+        "date": "2026-11-06",
+        "equity": 110428.07
+      },
+      {
+        "date": "2026-11-09",
+        "equity": 113107.11
+      },
+      {
+        "date": "2026-11-10",
+        "equity": 112405.15
+      },
+      {
+        "date": "2026-11-11",
+        "equity": 114697.79
+      }
+    ],
+    "trades": [
+      {
+        "date": "2026-02-23",
+        "action": "BUY",
+        "price": 265.71,
+        "shares": 376,
+        "cost": 99905.38
+      },
+      {
+        "date": "2026-03-18",
+        "action": "SELL",
+        "price": 249.49,
+        "shares": 376,
+        "revenue": 93810.03
+      },
+      {
+        "date": "2026-04-23",
+        "action": "BUY",
+        "price": 272.94,
+        "shares": 344,
+        "cost": 93892.36
+      },
+      {
+        "date": "2026-07-08",
+        "action": "SELL",
+        "price": 313.12,
+        "shares": 344,
+        "revenue": 107713.27
+      },
+      {
+        "date": "2026-07-09",
+        "action": "BUY",
+        "price": 315.95,
+        "shares": 340,
+        "cost": 107422.15
+      },
+      {
+        "date": "2026-08-26",
+        "action": "SELL",
+        "price": 313.45,
+        "shares": 340,
+        "revenue": 106573.0
+      },
+      {
+        "date": "2026-09-15",
+        "action": "BUY",
+        "price": 331.34,
+        "shares": 322,
+        "cost": 106691.48
+      },
+      {
+        "date": "2026-11-11",
+        "action": "SELL",
+        "price": 355.63,
+        "shares": 322,
+        "revenue": 114512.86
+      }
+    ]
+  },
+  "status": "SUCCESS"
+}
