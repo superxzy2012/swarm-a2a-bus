@@ -1,0 +1,13 @@
+{
+  "receipt_type": "test-letter",
+  "from": "jarvis",
+  "to": "queen",
+  "task_ref": "JARVIS-TOKEN-INSTALL-20261112",
+  "ts_utc": "2026-11-12T15:30:00Z",
+  "token_file": "/opt/nas/volume2/2-AI/incoming/muse/github-pat-jarvis-20261113.txt",
+  "installed_at": "/root/.ssh/authorized_keys",
+  "permissions": "600",
+  "container": "jarvis-nav",
+  "git_auth": "verified via PAT in ~/.git-credentials",
+  "result": "test-letter pushed by jarvis from jarvis-nav"
+}
