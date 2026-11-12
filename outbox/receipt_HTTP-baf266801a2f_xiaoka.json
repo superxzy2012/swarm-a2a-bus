@@ -1,0 +1,13 @@
+{
+  "task_id": "HTTP-baf266801a2f",
+  "status": "DONE",
+  "business_line": "unknown",
+  "sub_line": "",
+  "claimed_by": "agentscope-swarm",
+  "claimed_at": "2026-11-12T23:16:18Z",
+  "source": "a2a_daemon_wrapper",
+  "exit_code": 0,
+  "finished_at": "2026-11-12T23:16:33Z",
+  "stdout_tail": "通道正常\n\n## Round 1 进度摘要\n- 已完成: [测试模型调用]\n- 进行中: []\n- 卡点/风险: []\n- 下一步计划: 无\n- 需人工确认: 否\n",
+  "stderr_tail": "2026-11-12 23:16:22,335 | WARNING | _toolkit:add_tool:661 - Duplicate tool name 'generate_report' found in group 'basic', overwriting it.\n2026-11-12 23:16:22,335 [INFO] main: Created 5 agents: ['main', 'sourcing', 'ops', 'supply_chain', 'finance']\n2026-11-12 23:16:23,565 [INFO] httpx2: HTTP Request: POST http://192.168.199.2:20128/v1/chat/completions \"HTTP/1.1 200 OK\"\n"
+}
