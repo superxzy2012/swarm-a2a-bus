@@ -1,0 +1,14 @@
+{
+  "receipt_type": "test-letter",
+  "from": "jarvis",
+  "to": "queen",
+  "task_ref": "JARVIS-TOKEN-INSTALL-20261112",
+  "ts_utc": "2026-11-12T15:00:00Z",
+  "token_file": "/opt/nas/volume2/2-AI/incoming/muse/github-pat-jarvis-20261113.txt",
+  "token_len": 93,
+  "installed_at": "/root/.ssh/authorized_keys",
+  "permissions": "600",
+  "container": "jarvis-nav",
+  "result": "token installed, authorized_keys written, pending git auth verification",
+  "note": "jarvis-nav container has no git binary; push will be executed from NAS host/hermes-ancgm with xiaoka-bus-push-2 PAT"
+}
