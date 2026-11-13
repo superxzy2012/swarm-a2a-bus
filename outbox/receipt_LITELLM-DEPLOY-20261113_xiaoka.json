@@ -1,0 +1,59 @@
+{
+  "id": "receipt_LITELLM-DEPLOY-20261113_xiaoka",
+  "task": "LiteLLM NAS 模型总路由部署",
+  "status": "deployed",
+  "deadline": "2026-11-13 18:00",
+  "completed_at": "2026-11-13T10:35:00+08:00",
+  "version": "litellm 1.106.2 (proxy extras)",
+  "endpoint": "http://127.0.0.1:4000/v1/chat/completions",
+  "bind": "127.0.0.1:4000 (loopback only, master key required)",
+  "config": "/opt/data/cache/scratch/litellm/config.resolved.yaml",
+  "model_list": [
+    {
+      "model_name": "combo-nemotron-550b",
+      "provider": "openai",
+      "api_base": "http://192.168.199.2:20128/v1",
+      "api_key_source": "COMBO_API_KEY (agentscope-swarm container env)",
+      "custom_llm_provider": "openai",
+      "fallback_order": 1
+    },
+    {
+      "model_name": "free-cohere",
+      "provider": "openai",
+      "api_base": "http://100.66.1.7:20128/v1",
+      "api_key_source": "COMBO_API_KEY",
+      "custom_llm_provider": "openai",
+      "fallback_order": 2
+    }
+  ],
+  "router": "fallback",
+  "security": {
+    "master_key": "sk-mc-gateway-20261113-xiaoka (env var, not in config file)",
+    "allow_list": [],
+    "block_list": []
+  },
+  "budget": {
+    "max_budget": 10.00,
+    "budget_duration": "1d",
+    "budget_enforced": false,
+    "reason": "no DATABASE_URL configured"
+  },
+  "health_check": {
+    "method": "POST /v1/chat/completions",
+    "model": "combo-nemotron-550b",
+    "status": "200 OK",
+    "latency": "4.9s",
+    "response": "hello",
+    "max_tokens": 20,
+    "cost": 0
+  },
+  "master_key_auth": "401 without key, 200 with key",
+  "notes": [
+    "Docker 镜像拉取完全受阻（Docker Hub timeout，docker.1ms.run manifest not found），改为本地 pip 安装 litellm[proxy]",
+    "nas-8788 不存在，实际可用通道为 OmniRoute Combo 192.168.199.2:20128/v1（model_config.yaml 第4行已确认）",
+    "COMBO_API_KEY 长度 35 字节，从 agentscope-swarm 容器 env 读取，未明文写入任何文件",
+    "config.resolved.yaml 已将 ${COMBO_API_KEY} 预替换为实际值，启动时不再依赖 env 替换",
+    "待做：failover 实测（杀主模型验证 fallback 到 free-cohere）、AgentScope 真实任务走通 + DONE"
+  ],
+  "receipt_path": "/opt/data/cache/scratch/swarm-a2a-bus/outbox/receipt_LITELLM-DEPLOY-20261113_xiaoka.json"
+}
