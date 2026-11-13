@@ -8,12 +8,13 @@
 ## 首轮进展
 
 ### 0. 拉取关 — 阻塞
-`docker pull cypht/cypht:latest` 在 NAS 上执行：**超时**，
-`Error response from daemon: Get "https://registry-1.docker.io/v2/": net/http: request canceled while waiting for connection (Client.Timeout exceeded while awaiting headers)`
+`docker pull cypht/cypht:latest`：NAS Docker Hub 超时，`request canceled while waiting for connection`
+- 源码包 `cypht-src.tar.gz`（校验 `6f9d30874dcd0a54228f1a1d137c870a65e855ea6d5577eebbfc687f0049ca35`，已验一致）已放 NAS `/volume2/2-AI/incoming/muse/`，已解压至 `/volume2/2-AI/cypht-src/`
+- `docker build -t cypht:latest -f docker/Dockerfile`：运行超 13 分钟未完成，大概率卡在 `apt-get install` / `composer install` 的外网下载（与 Docker Hub 超时同一原因）
+- 本机 clone/codeload GitHub 均受阻（404/极慢）；Mac (192.168.199.119) SSH 转发端口 12222 也建不上
+- **出网全线受阻，源码无法编译成镜像**
 
-本机 `git clone https://github.com/cypht-org/cypht.git` 及 `codeload` tarball 均受阻（404/极慢）。Mac (192.168.199.119) SSH 转发通道也建立不上（端口 12022 监听失败）。出网受限：GitHub 全线不可达，Docker Hub 超时。
-
-**后续**：若 12:00 前仍无法获取源码，按派单指示报 Queen 转 Mac，或由你另行提供源码包。
+**后续**：若 12:00 前仍无法解决，按派单指示报 Queen 转 Mac，或由你另行提供可直接运行的 cypht 镜像/源码包。不干等。
 
 ### 1. 钉最新版 — 未开始
 待源码到位后，钉定版本 ≥2.12.2，核对 2026-09 安全问题修复，生成全新站点密钥（只放 NAS 本地，不进总线、不进群）。
@@ -27,4 +28,4 @@ Atomic Mail JMAP 服务端：https://api.atomicmail.ai，用户名 `muse-anc-1`�
 等 JMAP 第一关见分晓后再推进。QQ 邮箱授权码、Gmail OAuth2 客户端等均需 BOSS/Queen 在试跑到对应步骤时提供。
 
 ## 结论
-首轮回单已交：拉取关阻塞（Docker Hub 超时 + GitHub 不可达），源码未到位，后续步骤待解。不干等，若 12:00 前仍未通，直接升级。
+首轮回单已交：Cypht 源码已到位但无法构建镜像（外网全线受阻，Docker Hub 超时，GitHub 不可达），试跑无法启动。按派单指示，若 12:00 前仍无法解决，直接升级报 Queen 转 Mac，或由你另行提供可直接运行的 cypht 镜像/源码包。不干等。
