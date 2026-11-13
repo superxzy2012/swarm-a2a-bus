@@ -1,0 +1,21 @@
+{
+  "id": "receipt_MISSION_CONTROL_LOGIN_403_FIX_20261113_xiaoka",
+  "task": "Mission Control 任务控制台登录 403 排查与修复",
+  "status": "fixed",
+  "completed_at": "2026-11-13T11:15:00+08:00",
+  "container": "mission-control (ghcr.io/builderz-labs/mission-control:latest)",
+  "bind": "127.0.0.1:3011 -> container 3000",
+  "root_cause": "src/proxy.ts host allowlist (第 173-183 行)。生产环境下未设 MC_ALLOW_ANY_HOST 时，只允许 localhost/127.0.0.1/::1/容器 hostname；从宿主机 192.168.199.2:3011 访问，Host 不在允许列表，proxy() 直接返回 403 Forbidden。容器内 localhost:3000 访问正常，证实非登录/Aegis 故障。",
+  "fix": "重新运行容器，注入环境变量 MC_ALLOWED_HOSTS=192.168.199.2,localhost,127.0.0.1",
+  "verification": [
+    { "method": "GET", "path": "http://192.168.199.2:3011/", "expected": "307 redirect to /login", "actual": "307" },
+    { "method": "GET", "path": "http://192.168.199.2:3011/api/setup", "expected": "200", "actual": "200" },
+    { "method": "POST", "path": "http://192.168.199.2:3011/api/auth/login", "expected": "400 (empty body)", "actual": "400" }
+  ],
+  "notes": [
+    "容器已重新启动，状态 healthy，restart policy unless-stopped",
+    "容器内 /api/status?action=health 未显式测试，如需可补充",
+    "派单要求：门禁实测（未审批推完成被拦）尚未做，需 BOSS/贾维斯按派单信流程再做一次实测"
+  ],
+  "receipt_path": "/opt/data/cache/scratch/swarm-a2a-bus/outbox/receipt_MISSION_CONTROL_LOGIN_403_FIX_20261113_xiaoka.json"
+}
