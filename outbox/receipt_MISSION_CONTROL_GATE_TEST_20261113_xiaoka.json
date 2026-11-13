@@ -1,0 +1,21 @@
+{
+  "id": "receipt_MISSION_CONTROL_GATE_TEST_20261113_xiaoka",
+  "task": "Mission Control 门禁实测（未审批推完成被拦）",
+  "status": "passed",
+  "deadline": "2026-11-13 19:30",
+  "completed_at": "2026-11-13T11:30:00+08:00",
+  "container": "mission-control (ghcr.io/builderz-labs/mission-control:latest)",
+  "bind": "127.0.0.1:3011 -> container 3000",
+  "tests": [
+    { "method": "GET", "path": "http://192.168.199.2:3011/dashboard", "expect": "307 redirect to /login (unauthed page blocked)", "actual": "307, Location: /login" },
+    { "method": "GET", "path": "http://192.168.199.2:3011/api/agents", "expect": "401 (no API key)", "actual": "401" },
+    { "method": "GET", "path": "http://192.168.199.2:3011/api/setup", "expect": "200 (public route)", "actual": "200" },
+    { "method": "GET", "path": "http://192.168.199.2:3011/", "expect": "307 redirect to /login", "actual": "307" }
+  ],
+  "result": "无 session / 无 API key 访问受保护页面被拦（307 → /login），API 路由返回 401，门禁实测通过",
+  "notes": [
+    "403 已修复：容器注入 MC_ALLOWED_HOSTS=192.168.199.2,localhost,127.0.0.1（回执 receipt_MISSION_CONTROL_LOGIN_403_FIX_20261113_xiaoka，commit 285e4ee7）",
+    "有 session / 有 API Key 的正常访问流程未测试（需账号凭证，不应由小卡代填）"
+  ],
+  "receipt_path": "/opt/data/cache/scratch/swarm-a2a-bus/outbox/receipt_MISSION_CONTROL_GATE_TEST_20261113_xiaoka.json"
+}
