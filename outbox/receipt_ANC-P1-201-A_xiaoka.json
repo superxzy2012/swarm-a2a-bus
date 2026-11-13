@@ -1,0 +1,90 @@
+{
+  "task_id": "ANC-P1-201-A",
+  "send_id": "ANC-P1-201-A-20261107T083541Z",
+  "status": "CLAIMED",
+  "claimed_at": "2026-11-07T09:01:45+08:00",
+  "claimed_by": "xiaoka",
+  "evidence": {
+    "A1_dual_hermes_mounts": {
+      "hermes": {
+        "home_mount": "/volume2/hermes/data -> /opt/data (rw)",
+        "nas_mount": "/volume2 -> /opt/nas/volume2 (rw)",
+        "logs_mount": "/volume2/hermes/logs -> /opt/logs (rw)",
+        "downloads_mount": "/volume2/hermes/downloads -> /opt/downloads (rw)",
+        "profile": "default (free-pool)",
+        "env": "HERMES_HOME=/opt/data, HERMES_WRITE_SAFE_ROOT=/opt/data"
+      },
+      "hermes_ancgm": {
+        "home_mount": "/volume2/hermes/ancgm-home -> /opt/data (rw)",
+        "nas_mount": "/volume2 -> /opt/nas/volume2 (rw)",
+        "logs_mount": "/volume2/hermes/ancgm-logs -> /opt/logs (rw)",
+        "profile": "default (coding)",
+        "env": "HERMES_HOME=/opt/data, HERMES_WRITE_SAFE_ROOT=/opt/data",
+        "A2A_symlink": "/opt/data/A2A -> /opt/nas/volume2/2-AI/A2A"
+      },
+      "separation_confirmed": true,
+      "both_can_access_A2A": true
+    },
+    "A2_agentscope_compose": {
+      "compose_path": "/home/DY/agentscope_deploy/docker-compose.yml",
+      "project_network": "agentscope_deploy_swarm-net",
+      "services_defined": [
+        "agentscope (swarm runtime)",
+        "postgres (pgvector/pgvector:pg16, port 5435)",
+        "redis (redis:7-alpine, port 6380)",
+        "neo4j (neo4j:5.15, ports 7474/7687)",
+        "nats (nats:2.10-alpine, ports 4222/8222)",
+        "minio (commented out)"
+      ],
+      "container_status": {
+        "agentscope-swarm": "Created",
+        "agentscope-postgres": "Exited (0) 18h ago",
+        "agentscope-redis": "Created",
+        "agentscope-neo4j": "Exited (0) 18h ago",
+        "agentscope-nats": "Exited (1) 18h ago"
+      },
+      "nats_exit_log": "Exited on 2026/11/06 15:06:28 UTC (terminated signal). Storage was /tmp/nats/jetstream (ephemeral, data lost on reboot per log warning). No persistent volume mounted.",
+      "agentscope_swarm_code": "/opt/data/agentscope_swarm NOT FOUND on NAS. Only /home/DY/agentscope_deploy exists.",
+      "env_file": "/home/DY/agentscope_deploy/.env uses OMNIRUTE_BASE_URL=http://localhost:12018/api/v1 (SSH tunnel to Mac OpenMausBot), test credentials for Feishu/DB"
+    },
+    "A3_port_validation": {
+      "required_ports": [8300, 8301, 8310, 8311],
+      "results": {
+        "8300": "NOT LISTENING",
+        "8301": "NOT LISTENING",
+        "8310": "NOT LISTENING",
+        "8311": "NOT LISTENING"
+      },
+      "related_ports_listening": {
+        "8642": "hermes (main)",
+        "8643": "hermes-ancgm",
+        "8788": "wb-proxy (OpenMausBot)",
+        "8321": "c2atools",
+        "20128": "omniroute",
+        "4222": "NOT LISTENING (nats exited)",
+        "8222": "NOT LISTENING (nats exited)",
+        "5435": "NOT LISTENING (postgres exited)",
+        "6380": "NOT LISTENING (redis exited)",
+        "7474": "NOT LISTENING (neo4j exited)",
+        "7687": "NOT LISTENING (neo4j exited)",
+        "8789": "NOT LISTENING (agentscope not running)"
+      }
+    },
+    "A4_official_version_sources": {
+      "AgentScope_2x_docs": "https://agentscope.io/docs",
+      "A2AAgent_A2A_extra": "https://github.com/modelscope/agentscope/blob/main/agentscope/agents/a2a_agent.py",
+      "web_ui_agent_service": "https://github.com/modelscope/agentscope/blob/main/agentscope/service/web_ui.py",
+      "Workspace_sandbox": "https://github.com/modelscope/agentscope/blob/main/agentscope/sandbox/",
+      "Migration_2x_vs_1x": "https://github.com/modelscope/agentscope/blob/main/MIGRATION.md"
+    }
+  },
+  "redlines_check": {
+    "no_container_start_stop": true,
+    "no_port_dns_tunnel_changes": true,
+    "no_lanproxy_gwforward_changes": true,
+    "no_plaintext_secrets": true,
+    "independent_verification": true
+  },
+  "ack": "CLAIMED - evidence collected per task book A1-A4. All services in Created/Exited state. No required ports listening. NATS storage was ephemeral (/tmp). AgentScope swarm code not deployed at /opt/data/agentscope_swarm.",
+  "receipt_path": "outbox/receipt_ANC-P1-201-A_xiaoka.json"
+}
