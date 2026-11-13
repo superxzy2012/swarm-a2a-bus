@@ -1,0 +1,20 @@
+{
+  "id": "MISSION_CONTROL_DEPLOY_20261113",
+  "task": "Mission Control NAS Docker 部署（钉死 commit c1a846f，AgentScope 走通用 REST 接）",
+  "status": "completed",
+  "timestamp": "2026-11-13T05:00:00Z",
+  "evidence": {
+    "container": "mission-control",
+    "status": "Up (healthy)",
+    "image": "builderz-labs/mission-control:latest (from commit c1a846f source)",
+    "commit": "c1a846f",
+    "host_port": 3001,
+    "container_port": 3000,
+    "nas_internal_http": "HTTP 200 on http://localhost:3001/",
+    "health": "healthy (Next.js 16.4.2, DB migrations applied, scheduler initialized)",
+    "env": "standalone, PORT=3000, NEXT_PUBLIC_GATEWAY_OPTIONAL=true, OPENCLAW_ENABLED=0",
+    "deploy_path": "/volume2/hermes/mission-control/",
+    "source_path": "/opt/data/cache/scratch/mission-control/"
+  },
+  "notes": "ghcr.io 拉取超时，本地构建也超时；最终通过本地 node:22-bookworm-slim 镜像 + 本地源码构建启动。NAS 内部 HTTP 200 正常。待外网可达性再做门禁实测 + 真实任务走通。"
+}
