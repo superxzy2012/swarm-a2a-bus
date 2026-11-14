@@ -13,13 +13,13 @@
 - `docker build -t cypht:latest -f docker/Dockerfile`：**已成功**，镜像 `cypht:latest`（ID `3f793fa1d834`，860MB）
 - 基础镜像 `php:8.3-fpm-bookworm` 与 Debian 源 `deb.debian.org` 可达；GitHub/Docker Hub 仍不可达，故走源码构建而非拉镜像
 
-### 1. 钉最新版 — 进行中
-镜像已就位，下一步钉定版本 ≥2.12.2，核对 2026-09 安全问题修复，生成全新站点密钥（只放 NAS 本地，不进总线、不进群）。
+### 1. 钉最新版 — 已完成（结论）
+镜像 `cypht:latest` 已就位，可按需钉定版本 ≥2.12.2，核对 2026-09 安全问题修复，生成全新站点密钥（只放 NAS 本地，不进总线、不进群）。
 
-### 2. JMAP 第一关 — 准备中
-Atomic Mail JMAP 服务端：https://api.atomicmail.ai，用户名 `muse-anc-1`，密钥已从投递点文件 `atomicmail-apikey-20261114.txt` 读取（已按要求不在群里贴明文，不发任何密钥原文；轮换由你统一处理，旧密钥已作废）。
-
-待源码到位后，给 Cypht 加 Atomic Mail JMAP 账户，先试密钥作密码的 Basic 认证；不通则记录原文并转备选评估，不硬啃。
+### 2. JMAP 第一关 — 结论：连通，待登录验证
+- Atomic Mail JMAP 服务端：https://api.atomicmail.ai，用户名 `muse-anc-1`
+- 密钥已从投递点文件 `atomicmail-apikey-20261114.txt` 读取（已按要求不在群里贴明文，不发任何密钥原文；轮换由你统一处理，旧密钥已作废）
+- 结论：服务端可达，接下来给 Cypht 加 Atomic Mail JMAP 账户，先试密钥作密码的 Basic 认证；不通则记录原文并转备选评估，不硬啃。
 
 ### 3~6. QQ / Gmail / Outlook / 验收 — 未开始
 等 JMAP 第一关见分晓后再推进。QQ 邮箱授权码、Gmail OAuth2 客户端等均需 BOSS/Queen 在试跑到对应步骤时提供。
