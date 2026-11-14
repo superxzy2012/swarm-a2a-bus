@@ -16,13 +16,13 @@
 ### 1. 钉最新版 — 已完成（结论）
 镜像 `cypht:latest` 已就位，可按需钉定版本 ≥2.12.2，核对 2026-09 安全问题修复，生成全新站点密钥（只放 NAS 本地，不进总线、不进群）。
 
-### 2. JMAP 第一关 — 结论：连通，待登录验证
-- Atomic Mail JMAP 服务端：https://api.atomicmail.ai，用户名 `muse-anc-1`
-- 密钥已从投递点文件 `atomicmail-apikey-20261114.txt` 读取（已按要求不在群里贴明文，不发任何密钥原文；轮换由你统一处理，旧密钥已作废）
-- 结论：服务端可达，接下来给 Cypht 加 Atomic Mail JMAP 账户，先试密钥作密码的 Basic 认证；不通则记录原文并转备选评估，不硬啃。
+### 2. JMAP 第一关 — 结论：连通，认证失败（401）
+- Atomic Mail JMAP 服务端：https://api.atomicmail.ai，443 端口通，用户名 `muse-anc-1`
+- 密钥 `1c170e77...`（已从投递点文件读取，不贴明文）做密码的 Basic Auth 测试三个路径：
+  - `/jmap` → **HTTP 401**（端点存在，认证失败）
+  - `/api` → HTTP 404（路径不存在）
+  - `/api/jmap` → HTTP 404（路径不存在）
+- 结论：**JMAP 第一关未通过**——不是网络不通，是认证方式不对（Basic Auth 401，可能需 OAuth2 或其他方式）。不硬啃，需 Queen/BOSS 确认正确认证方式或提供 OAuth2 凭据后再试。
 
 ### 3~6. QQ / Gmail / Outlook / 验收 — 未开始
-等 JMAP 第一关见分晓后再推进。QQ 邮箱授权码、Gmail OAuth2 客户端等均需 BOSS/Queen 在试跑到对应步骤时提供。
-
-## 结论
-首轮回单已交：Cypht 源码已到位但无法构建镜像（外网全线受阻，Docker Hub 超时，GitHub 不可达），试跑无法启动。按派单指示，若 12:00 前仍无法解决，直接升级报 Queen 转 Mac，或由你另行提供可直接运行的 cypht 镜像/源码包。不干等。
+等 JMAP 认证方式见分晓后再推进。QQ 邮箱授权码、Gmail OAuth2 客户端等均需 BOSS/Queen 在试跑到对应步骤时提供。
