@@ -1,0 +1,29 @@
+{
+  "task_id": "ANC-G36-CRED-ROTATE-MUSE",
+  "send_id": "ANC-G36-CRED-ROTATE-MUSE-20261108T0240Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "xiaoka",
+  "issued_at": "2026-11-08T02:40:00Z",
+  "deadline": "2026-11-08T03:40:00Z",
+  "priority": "P0",
+  "subject": "G36 第3轮：轮换 muse deploy key（GitHub muse 分支部署，仅 muse 节点用）",
+  "idempotency": {"key": "ANC-G36-CRED-ROTATE-MUSE-20261108T0240Z", "duplicate_action": "ack_existing_receipt_no_rerun"},
+  "mirrors": [
+    {"channel": "gitea", "repo": "anc/a2a-bus", "branch": "main", "role": "write-authority", "path": "inbox/task_ANC-G36-CRED-ROTATE-MUSE_xiaoka.json"},
+    {"channel": "github", "repo": "superxzy2012/swarm-a2a-bus", "branch": "main", "role": "read-mirror", "path": "inbox/task_ANC-G36-CRED-ROTATE-MUSE_xiaoka.json"}
+  ],
+  "context": "BOSS 令 G36 立即执行。第3轮 = muse deploy key（GitHub 仓 superxzy2012/swarm-a2a-bus 的 muse 分支部署 key，仅 muse 节点使用）。新 key 落 secrets/muse_deploy_key chmod600。",
+  "actions": [
+    "在 GitHub 仓生成新 deploy key（勾 write，repo-scoped 仅 muse 分支）",
+    "更新 muse 节点 secrets/muse_deploy_key，chmod600",
+    "验证：muse 节点 git fetch origin muse + 推送可用",
+    "回执：outbox/receipt_G36_MUSE_DEPLOY_xiaoka.json，含新旧 key 末 4 位脱敏"
+  ],
+  "acceptance": [
+    "muse 节点 deploy key 新值生效，可读写 muse 分支",
+    "旧 key 已撤销",
+    "secrets chmod600，不入 git/群/回执正文"
+  ],
+  "redlines": ["不 reboot NAS", "不动其他容器", "旧 key 轮完即撤销"]
+}

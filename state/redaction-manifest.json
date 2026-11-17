@@ -6,6 +6,18 @@
    "source_blob": "793889887b8ce6a6bfa0880c55a70dfef0eb91fc",
    "transform": "copy"
   },
+  "inbox/task_ANC-G36-CRED-ROTATE-MUSE_xiaoka.json": {
+   "local_blob": "4b1484dd9b7d3bbe8f9f7baeecbe2d5da1133dfe",
+   "public_blob": "4b1484dd9b7d3bbe8f9f7baeecbe2d5da1133dfe",
+   "source_blob": "4b1484dd9b7d3bbe8f9f7baeecbe2d5da1133dfe",
+   "transform": "copy"
+  },
+  "inbox/task_ANC-WO-MUSE-D3-VOUCHERS-20261111_xiaolin.json": {
+   "local_blob": "196cdbd97043bb95760c64b297880aaeb478396f",
+   "public_blob": "196cdbd97043bb95760c64b297880aaeb478396f",
+   "source_blob": "196cdbd97043bb95760c64b297880aaeb478396f",
+   "transform": "copy"
+  },
   "inbox/task_MUSE-PROTO-ACCEPT-20261027.json": {
    "local_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
    "public_blob": "80dd9ae61bb2a705acb07118b548cb978860d8e3",
@@ -37,5 +49,5 @@
    "transform": "redact+templatize"
   }
  },
- "generated_at": "2026-11-17T16:39:01Z"
+ "generated_at": "2026-11-17T16:41:15Z"
 }

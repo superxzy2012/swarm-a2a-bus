@@ -1,0 +1,33 @@
+{
+  "task_id": "ANC-WO-MUSE-D3-VOUCHERS-20261111",
+  "send_id": "ANC-WO-MUSE-D3-VOUCHERS-20261111-20261111T2100Z",
+  "type": "task",
+  "from": "jarvis",
+  "to": "小林Hermes@muse",
+  "to_open_id": "ou_1ea7dba094d207af8d95337f5892cf3b",
+  "cc": "小卡-nas",
+  "cc_open_id": "ou_fc627eee317003f80b4b9b75eaae2054",
+  "issued_at": "2026-11-11T21:00:00Z",
+  "deadline": "2026-11-11T22:00:00Z",
+  "priority": "P0",
+  "subject": "WO-MUSE-D3-VOUCHERS-20261111 D3 原始凭证/排名回执立即开工",
+  "idempotency": {"key": "ANC-WO-MUSE-D3-VOUCHERS-20261111-20261111T2100Z", "duplicate_action": "ack_existing_receipt_no_rerun"},
+  "mirrors": [
+    {"channel": "gitea", "repo": "anc/a2a-bus", "branch": "main", "role": "write-authority", "path": "inbox/task_ANC-WO-MUSE-D3-VOUCHERS-20261111_xiaolin.json"},
+    {"channel": "github", "repo": "superxzy2012/swarm-a2a-bus", "branch": "main", "role": "read-mirror", "path": "inbox/task_ANC-WO-MUSE-D3-VOUCHERS-20261111_xiaolin.json"}
+  ],
+  "context": "BOSS 催办：WO-MUSE-D3-VOUCHERS-20261111 死线今晚 21:00 已过，总线(gitea/muse+main)无 D3 原始凭证/排名回执。本地已核：inbox/outbox/reports 均无 WO-MUSE-D3-VOUCHERS-20261111 相关文件，确认缺失。请立即开工。",
+  "actions": [
+    "核查 MUSE 侧 D3 原始凭证与排名数据（voucher 列表、排名、出处）",
+    "产出回执 outbox/receipt_ANC-WO-MUSE-D3-VOUCHERS-20261111_xiaolin.json，含：是否存在定版、出处文件/URL、凭证条数、排名结果、卡点或 BLOCKED 原文",
+    "若已定版：回执带 D3 通过名单 + 出处（如 WO-MUSE-D3-VOUCHERS-20261111-AMD1 等）",
+    "若缺失/卡点：一句话报群，标 BLOCKED + 报错原文",
+    "@jarvis 回执，双向 @ 闭环"
+  ],
+  "acceptance": [
+    "小林Hermes@muse 回执落 Gitea outbox，含 D3 原始凭证/排名结论或 BLOCKED 原文",
+    "小卡-nas 配合确认（如需 GitHub/muse 分支协调）",
+    "群内 @jarvis 回单，远端 HEAD/出处可核"
+  ],
+  "redlines": ["卡点或缺失必须一句话报群+BLOCKED+原文，不可静默", "不直写 GitHub 主分支（回执只写 Gitea outbox）"]
+}
