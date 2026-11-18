@@ -1,0 +1,61 @@
+{
+  "task_id": "QUEEN-TUTORIALS-INGEST-20261118",
+  "from": "xiaoka",
+  "to": "queen",
+  "ts": "2026-11-18T08:55:00+08:00",
+  "status": "done_with_flags",
+  "commit": "6bc30115",
+  "branch": "muse",
+  "repo": "superxzy2012/swarm-a2a-bus",
+  "deliverables": {
+    "docs_ANC": {
+      "path": "docs/ANC/",
+      "files": [
+        "ANC蜂群接入教程-agentscope-swarm.md",
+        "ANC蜂群接入教程-n8n.md",
+        "ANC蜂群接入教程-octop.md"
+      ],
+      "bytes": [10602, 12089, 16588],
+      "pushed": true,
+      "push_ref": "59477f02..6bc30115  muse -> muse",
+      "secret_scan": "PASS - 无 sk-/ghp_/github_pat_/omb-/n8n- 明文；凭据仅以 env 字段名 + <queen-injected> 占位",
+      "fix_applied": "OMNIRUTE_API_KEY -> OMNIROUTE_API_KEY (agentscope 7处 / octop 2处)"
+    }
+  },
+  "endpoint_reachability_from_bus": {
+    "probe_source": "agentscope-swarm 容器内 (swarm-net, 总线侧)",
+    "hermes_nas_8321": {"url": "http://192.168.199.2:8321/health", "http_code": 200, "rtt_s": 0.002},
+    "omniroute_20128": {"url": "http://192.168.199.2:20128/api/health", "http_code": 200, "rtt_s": 0.008, "note": "/v1/models 无 Bearer 返回 401 AUTH_002 属预期"},
+    "n8n_api_5680": {"url": "http://192.168.199.2:5680/healthz", "http_code": 200, "rtt_s": 0.003, "note": "/api/v1/* 需 X-N8N-API-KEY，无 key 401 属预期"},
+    "verdict": "三端点从总线侧全部可达，延迟均 <10ms"
+  },
+  "openmausbot_acp_bridge": {
+    "host": "192.168.199.119 (LucasdeMac-mini-2.local)",
+    "version": "0.1.143 darwin",
+    "server": {"port": 8799, "health": "http://192.168.199.119:8799/api/health = 200", "pid": 1144, "launchd": ["com.openmausbot.serve", "com.openmausbot.gwforward", "com.openmausbot.lanproxy"]},
+    "outbound_acp_client": {
+      "capable": true,
+      "evidence": [
+        "/api/cli-candidates?name=claude -> /Users/lucas/.nvm/versions/node/v22.23.2/bin/claude, /Users/lucas/Library/pnpm/bin/claude",
+        "/api/cli-candidates?name=codex -> /opt/homebrew/bin/codex, /Users/lucas/Library/pnpm/bin/codex",
+        "POST /api/cli-test {cli: claude} -> {\"ok\":true,\"version\":\"2.1.274 (Claude Code)\"}"
+      ],
+      "enabled": false,
+      "reason": "bots.json 16 个 bot 的 modelSelection.instanceId 全部 = openaiCompat，无一个走 claudeCode/codex ACP provider"
+    },
+    "inbound_acp_server": {
+      "listening": false,
+      "reason": "Octop 侧 ACP_SERVER 未开启；NAS 8089 未监听（ss -ltn 无 8089）；octop 容器 env 无 ACP_* 变量",
+      "octop_container": {"name": "octop", "status": "Up 5 days (healthy)", "ports": "8088->8088"}
+    },
+    "hermes_acp_adapter": {"path": "/Users/lucas/.local/bin/hermes-acp", "version": "git.9fc7f17", "check": "Hermes ACP check OK", "running": false, "note": "stdio server，无常驻进程属正常（按需拉起）"},
+    "ow_bridge": {"mac_41980_upstream": "DOWN (41981 网关返回 upstream not reachable)", "nas_ow_bridge_container": "Exited (0) 2026-11-03T14:16Z", "impact": "OW Bridge 通道断开 2 周"},
+    "verdict": "出向 ACP 客户端能力就绪但未启用（16 bot 全走 openaiCompat）；入向 ACP server 未开（Octop ACP_SERVER=false, 8089 未监听）。双向桥当前=单向可用、未闭环。"
+  },
+  "flags": [
+    "入向 ACP 需在 octop 容器加 ACP_SERVER=true / ACP_PORT=8089 / ACP_ALLOWED_DELEGATES 并放通 8089 —— 属启停容器改端口，按红线不自行执行，等派单",
+    "NAS ow-bridge 容器已 Exited 2 周、Mac 侧 41980 上游亦不通；如需 OW 通道请一并派单",
+    "16 个 bot 若要用 ACP（claude/codex）需逐个改 modelSelection.instanceId，属配置变更，等派单"
+  ],
+  "next_if_ordered": "①octop 开 ACP_SERVER + 8089 放通 ②ow-bridge 容器重启 ③指定 bot 切 ACP provider 后跑一次端到端委托验证"
+}
