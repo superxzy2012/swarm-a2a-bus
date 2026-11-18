@@ -1,0 +1,93 @@
+# ANC-C-001 回测配置快照
+# 版本: V1.0
+# 生成时间: 2026-11-18
+# 关联设计稿: tasks/ANC-C-001_C线研究设计_20261118.md
+
+task_id: "ANC-C-001"
+strategy_name: "momentum_reversal_20d_5d"
+mode: "PAPER_ONLY"
+zero_real_funds: true
+
+# === 数据源 ===
+data_source:
+  provider: "akshare"
+  symbols_universe: "hs300"
+  price_adjust: "qfq"
+  start_date: "2020-01-01"
+  end_date: "2025-11-17"
+  oos_start_date: "2025-01-01"
+  frequency: "1d"
+
+# === 策略参数 ===
+strategy:
+  lookback_window: 20
+  holding_period: 5
+  long_quantile: 0.2
+  short_quantile: 0.2
+  rebalance_freq: "1d"
+  signal_shift: 1
+
+# === 成本模型 ===
+costs:
+  commission_bps: 2.5
+  slippage_bps: 1.0
+  stamp_tax_bps: 10.0
+
+# === 交易限制 ===
+constraints:
+  max_participation_rate: 0.10
+  max_position_weight: 0.05
+  exclude_st: true
+  exclude_delisting: true
+  limit_up_down_block: true
+  min_listing_days: 60
+
+# === 样本外切分 ===
+sample_splitting:
+  methods:
+    - name: "walk_forward"
+      train_window: 252
+      val_window: 63
+      step: 21
+      horizon_buffer: 5
+      purge: true
+      embargo_pct: 0.01
+    - name: "expanding_window"
+      train_window: "expanding"
+      val_window: 63
+      step: 21
+      horizon_buffer: 5
+    - name: "timeseriessplit"
+      n_splits: 5
+      test_size: 63
+      gap: 5
+
+# === 过拟合检查 ===
+overfitting_checks:
+  permutation_test:
+    n_permutations: 1000
+    threshold_percentile: 95
+  parameter_sensitivity:
+    lookback_windows: [15, 20, 25]
+    holding_periods: [3, 5, 7]
+    require_consistent_direction: true
+  purged_kfold:
+    n_splits: 5
+    gap: 5
+    embargo_pct: 0.01
+  ic_thresholds:
+    train_ic_mean_min: 0.02
+    oos_ic_mean_min: 0.0
+
+# === 基准 ===
+benchmark:
+  symbol: "000300"
+  total_return: true
+
+# === 输出 ===
+output:
+  equity_curve: true
+  trades: true
+  positions: true
+  metrics: ["return", "sharpe", "max_drawdown", "win_rate", "turnover", "ic", "ic_ir"]
+  artifacts_dir: "artifacts/anc_c001"

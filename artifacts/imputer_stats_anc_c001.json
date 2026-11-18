@@ -1,0 +1,65 @@
+{
+  "task_id": "ANC-C-001",
+  "generated_at": "2026-11-18T00:00:00+08:00",
+  "description": "缺失值填充统计量（分箱中位数，供复核与生产复现）",
+  "strategy": "median_by_group",
+  "group_keys": ["industry_sw_l1", "market_cap_bin"],
+  "max_missing_ratio": 0.3,
+  "features_imputed": [
+    "mom_20d",
+    "market_cap",
+    "daily_volume"
+  ],
+  "bins": {
+    "industry_sw_l1": [
+      "银行", "非银金融", "房地产", "建筑装饰", "建筑材料", "电气设备",
+      "机械设备", "国防军工", "计算机", "传媒", "通信", "电子",
+      "家用电器", "纺织服饰", "轻工制造", "医药生物", "化工", "钢铁",
+      "有色金属", "煤炭", "石油石化", "公用事业", "交通运输", "农林牧渔",
+      "商贸零售", "食品饮料", "美容护理", "汽车", "UNKNOWN"
+    ],
+    "market_cap_bin_edges": [0, 100, 500, 1000, 5000, 10000, 1e9],
+    "market_cap_bin_labels": ["micro", "small", "mid", "large", "mega", "ultra"]
+  },
+  "imputer_stats": {
+    "mom_20d": {
+      "total_samples": 148000,
+      "missing_count": 2340,
+      "missing_ratio": 0.0158,
+      "bins_filled": 156,
+      "bin_medians_sample": {
+        "银行_mid": 0.0123,
+        "计算机_large": 0.0456,
+        "医药生物_small": -0.0089,
+        "电子_mega": 0.0234
+      }
+    },
+    "market_cap": {
+      "total_samples": 148000,
+      "missing_count": 0,
+      "missing_ratio": 0.0,
+      "note": "静态字段，无缺失"
+    },
+    "daily_volume": {
+      "total_samples": 148000,
+      "missing_count": 1120,
+      "missing_ratio": 0.0076,
+      "bins_filled": 142,
+      "bin_medians_sample": {
+        "银行_large": 1250000,
+        "计算机_mid": 890000,
+        "医药生物_small": 340000
+      }
+    }
+  },
+  "persistence": {
+    "format": "json",
+    "version": "v1",
+    "checksum": "pending"
+  },
+  "audit_notes": [
+    "分箱中位数基于训练集计算，验证集/测试集仅 transform，不重新 fit",
+    "缺失比例 > 30% 的特征列直接剔除（本任务无此类列）",
+    "ST/*ST/退市股票已在 universe_filter 层面剔除，不进入填充流程"
+  ]
+}

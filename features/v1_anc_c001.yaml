@@ -1,0 +1,98 @@
+# ANC-C-001 特征版本清单 v1
+# 生成时间: 2026-11-18
+# 关联设计稿: tasks/ANC-C-001_C线研究设计_20261118.md
+
+feature_version: "v1_anc_c001"
+description: "动量反转策略核心特征集（仅含入选因子，无冗余）"
+created_by: "小米-codex"
+status: "DRAFT_PENDING_AUDIT"
+
+features:
+  # === 核心信号特征 ===
+  - name: "mom_20d"
+    description: "过去 20 个交易日累计收益率（前复权价格）"
+    formula: "(close / close.shift(20) - 1)"
+    source: "akshare:stock_zh_a_hist(qfq)"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 强制：信号日 T 收盘计算，T+1 生效"
+      - "缺失值：前向填充至多 5 日，超 5 日置 NaN"
+    universe_filter: "沪深300 成分股（调仓日快照）"
+    pit_compliant: true
+    horizon_aligned: true  # 标签 horizon=5 对齐
+
+  # === 控制/中性化特征（可选，用于正交化）===
+  - name: "market_cap"
+    description: "流通市值（亿元），用于分箱中性化"
+    formula: "close * free_float_shares / 1e8"
+    source: "akshare:stock_zh_a_hist + 基本面"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1)"
+      - "行业+市值分箱中位数填充"
+    pit_compliant: true
+
+  - name: "industry_sw_l1"
+    description: "申万一级行业分类（字符串），用于分组中性化"
+    source: "akshare:stock_board_industry_name_em"
+    frequency: "1d"
+    preprocessing:
+      - "调仓日快照固化"
+      - "缺失标记为 'UNKNOWN'"
+    pit_compliant: true
+
+  # === 风险控制特征 ===
+  - name: "is_st"
+    description: "ST/*ST/退市风险警示标识（布尔）"
+    formula: "name.str.contains('ST') 或退市标识"
+    source: "akshare:stock_zh_a_hist 名称字段"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 强制"
+    pit_compliant: true
+
+  - name: "listing_days"
+    description: "上市天数"
+    formula: "(date - list_date).dt.days"
+    source: "akshare:stock_info_a_code_name"
+    frequency: "1d"
+    preprocessing:
+      - "静态字段，无需 shift"
+    pit_compliant: true
+
+  - name: "daily_volume"
+    description: "日成交量（手），用于 participation rate 限制"
+    source: "akshare:stock_zh_a_hist"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1)"
+    pit_compliant: true
+
+  - name: "limit_up"
+    description: "涨停标识（布尔）"
+    formula: "close >= pre_close * 1.1 * (1 - 1e-4)  # 含主板 10% 涨停"
+    source: "akshare:stock_zh_a_hist"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 强制：T 日涨停 -> T+1 不可买入"
+    pit_compliant: true
+
+  - name: "limit_down"
+    description: "跌停标识（布尔）"
+    formula: "close <= pre_close * 0.9 * (1 + 1e-4)"
+    source: "akshare:stock_zh_a_hist"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 强制：T 日跌停 -> T+1 不可卖出"
+    pit_compliant: true
+
+# === 衍生/扩展特征（预留，不参与核心假设）===
+extended_features: []
+# 未来可扩展：动量分解、换手率、资金流、基本面因子等
+
+# === 版本锁定 ===
+version_lock:
+  depends_on:
+    - "labels/v1_anc_c001.yaml"
+    - "config/anc_c001_backtest.yaml"
+  checksum: "pending"  # 贾维斯复核后填入 SHA256

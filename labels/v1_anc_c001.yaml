@@ -1,0 +1,78 @@
+# ANC-C-001 标签版本清单 v1
+# 生成时间: 2026-11-18
+# 关联设计稿: tasks/ANC-C-001_C线研究设计_20261118.md
+
+label_version: "v1_anc_c001"
+description: "动量反转策略标签定义（未来 5 日超额收益，多空分位）"
+created_by: "小米-codex"
+status: "DRAFT_PENDING_AUDIT"
+
+labels:
+  - name: "fwd_ret_5d"
+    description: "未来 5 个交易日累计收益率（T+1 开盘买入 -> T+5 收盘卖出）"
+    formula: "(close.shift(-5) / open.shift(-1) - 1)"
+    source: "akshare:stock_zh_a_hist(qfq)"
+    frequency: "1d"
+    preprocessing:
+      - "horizon=5 强制：标签天然 horizon>=1，无前视"
+      - "缺失值：未来 5 日内有停牌/缺失 -> 置 NaN，样本剔除"
+      - "涨跌停约束：标签计算已隐含 T+1 开盘成交假设"
+    universe_filter: "沪深300 成分股（调仓日快照）"
+    pit_compliant: true
+    horizon: 5
+    shift_applied: true  # 已隐含 shift(1) 语义
+
+  - name: "excess_ret_5d"
+    description: "未来 5 日超额收益（相对沪深300 指数同期收益）"
+    formula: "fwd_ret_5d - benchmark_fwd_ret_5d"
+    source: "fwd_ret_5d + akshare:index_zh_a_hist(000300)"
+    frequency: "1d"
+    preprocessing:
+      - "基准同期 horizon=5 对齐计算"
+      - "缺失同步剔除"
+    pit_compliant: true
+    horizon: 5
+
+  - name: "quantile_20d_mom"
+    description: "过去 20 日动量在沪深300 截面内的分位数（0-1）"
+    formula: "rank(pct=True) of mom_20d within cross_section"
+    source: "features/v1_anc_c001.yaml:mom_20d"
+    frequency: "1d"
+    preprocessing:
+      - "每日截面独立排名"
+      - "缺失值置 NaN，不参与排名"
+    pit_compliant: true
+
+  - name: "signal_long"
+    description: "多头信号：动量分位数 ≤ 0.2（后 20%）"
+    formula: "quantile_20d_mom <= 0.2 ? 1 : 0"
+    source: "quantile_20d_mom"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 已在 mom_20d 层面强制"
+    pit_compliant: true
+
+  - name: "signal_short"
+    description: "空头信号：动量分位数 ≥ 0.8（前 20%）"
+    formula: "quantile_20d_mom >= 0.8 ? 1 : 0"
+    source: "quantile_20d_mom"
+    frequency: "1d"
+    preprocessing:
+      - "shift(1) 已在 mom_20d 层面强制"
+    pit_compliant: true
+
+  - name: "signal_combined"
+    description: "合成信号：多头 +1、空头 -1、中性 0"
+    formula: "signal_long - signal_short"
+    source: "signal_long + signal_short"
+    frequency: "1d"
+    preprocessing:
+      - "值域 {-1, 0, 1}"
+    pit_compliant: true
+
+# === 版本锁定 ===
+version_lock:
+  depends_on:
+    - "features/v1_anc_c001.yaml"
+    - "config/anc_c001_backtest.yaml"
+  checksum: "pending"  # 贾维斯复核后填入 SHA256
