@@ -1,0 +1,62 @@
+{
+  "task_id": "ANC-COMM-E2E-001",
+  "title": "Queen→GitHub→Mac拉取→OpenMausBot执行→回写→飞书通知 全链路验收测试",
+  "assignee": "xiaomi-codex (Mac节点)",
+  "status": "COMPLETED",
+  "exec_log": [
+    {
+      "step": 1,
+      "action": "总线拉取任务文件",
+      "detail": "git pull gitea gh-main -> tasks/task_ANC-COMM-E2E-001.json",
+      "timestamp": "2026-11-21T19:55:00+08:00",
+      "status": "OK"
+    },
+    {
+      "step": 2,
+      "action": "调用 OMB API 让美客多妹执行测试指令",
+      "detail": "POST http://127.0.0.1:8799/api/bots/cd6dcbaa-63d4-4758-8ab9-19ed27be6854 (thread 6e748ab3-c80f-4fcb-8aa8-4dcb8d1177f5) -> 发送『请回复你的 bot 名、当前默认模型名、以及 2+3 的计算结果』",
+      "timestamp": "2026-11-21T19:55:10+08:00",
+      "status": "OK"
+    },
+    {
+      "step": 3,
+      "action": "获取 bot 原始回复并写入回执",
+      "detail": "美客多妹回复: 1. bot名=美客多妹 2. 默认模型=Agnes-3.0-flash (Sapiens AI) 3. 2+3=5",
+      "timestamp": "2026-11-21T19:55:15+08:00",
+      "status": "OK"
+    },
+    {
+      "step": 4,
+      "action": "回执 push 到总线 outbox/",
+      "detail": "写入 outbox/receipt_ANC-COMM-E2E-001_xiaomi-codex.json, git add/commit/push gitea muse",
+      "timestamp": "2026-11-21T19:55:20+08:00",
+      "status": "OK"
+    },
+    {
+      "step": 5,
+      "action": "桥发[美客多妹]开始/完成通知",
+      "detail": "lark-cli im +messages-send 发送开始+完成通知到管理群",
+      "timestamp": "2026-11-21T19:55:25+08:00",
+      "status": "OK"
+    }
+  ],
+  "result": {
+    "bot_name": "美客多妹",
+    "default_model": "Agnes-3.0-flash (Sapiens AI)",
+    "calculation": "5",
+    "raw_response": "1. **bot 名**：美客多妹\n2. **默认模型**：Agnes-3.0-flash（Sapiens AI）\n3. **2+3**：5",
+    "thread_id": "6e748ab3-c80f-4fcb-8aa8-4dcb8d1177f5",
+    "bot_id": "cd6dcbaa-63d4-4758-8ab9-19ed27be6854",
+    "om_api_endpoint": "http://127.0.0.1:8799"
+  },
+  "acceptance_check": {
+    "1_拉取时间戳": "2026-11-21T19:55:00+08:00",
+    "2_OMB执行": "OK",
+    "3_原始回复入回执": "OK",
+    "4_回执push总线": "OK",
+    "5_桥发开始完成通知": "OK",
+    "6_QUEEN读取验收": "PENDING"
+  },
+  "idempotency_note": "processed/ 无 ANC-COMM-E2E-001 记录，首次执行",
+  "completed_at": "2026-11-21T19:55:30+08:00"
+}
